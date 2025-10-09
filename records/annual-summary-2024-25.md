@@ -1,7 +1,7 @@
 # 2024-25 Season Summary
 ## Tanque Verde High School Swimming
 
-**Generated:** October 09, 2025 at 09:44 AM
+**Generated:** October 09, 2025 at 09:46 AM
 
 ---
 
@@ -38,13 +38,13 @@
 ## 🏆 Records Broken
 
 **Boys 100 BR SCY**
-- **NEW:** 00:59.51 - Zach Duerkop (JR)
-- *Previous:* 00:59.51 - Zach Duerkop
+- **NEW:** 59.51 - Zach Duerkop (JR)
+- *Previous:* 59.51 - Zach Duerkop
 - *Date:* Sep 14, 2024 at Canyon del Oro Classic (Oro Valley, AZ)
 
 **Girls 100 FL SCY**
-- **NEW:** 01:01.84 - Brianne Foley (SR)
-- *Previous:* 01:01.84 - Brianne Foley
+- **NEW:** 1:01.84 - Brianne Foley (SR)
+- *Previous:* 1:01.84 - Brianne Foley
 - *Date:* Nov 09, 2024 at 2024 D3 State Championship (Paradise Valley, AZ)
 
 
@@ -54,14 +54,14 @@
 
 | Event | Boys Time | Boys Swimmer | Girls Time | Girls Swimmer |
 |-------|----------:|--------------|-----------:|---------------|
-| 50 Free | 00:24.02 | Jackson Eftekhar (SO) | 00:25.83 | Brianne Foley (SR) |
-| 100 Free | 00:50.64 | Zach Duerkop (JR) | 00:58.11 | Grace Davis (SO) |
-| 200 Free | 01:51.39 | Zach Duerkop (JR) | 02:11.13 | Grace Davis (SO) |
-| 500 Free | 05:26.96 | Jackson Machamer (SO) | 06:23.38 | Kadynce Drummond (SO) |
-| 100 Back | 01:01.43 | Wade Olsson (SO) | 01:05.38 | Logan Sulger (JR) |
-| 100 Breast | 00:59.51 | Zach Duerkop (JR) | 01:16.16 | Adrianna Witte (JR) |
-| 100 Fly | 00:54.45 | Zach Duerkop (JR) | 01:01.84 | Brianne Foley (SR) |
-| 200 IM | 02:04.11 | Zach Duerkop (JR) | 02:35.12 | Ella Bissmeyer (FR) |
+| 50 Free | 24.02 | Jackson Eftekhar (SO) | 25.83 | Brianne Foley (SR) |
+| 100 Free | 50.64 | Zach Duerkop (JR) | 58.11 | Grace Davis (SO) |
+| 200 Free | 1:51.39 | Zach Duerkop (JR) | 2:11.13 | Grace Davis (SO) |
+| 500 Free | 5:26.96 | Jackson Machamer (SO) | 6:23.38 | Kadynce Drummond (SO) |
+| 100 Back | 1:01.43 | Wade Olsson (SO) | 1:05.38 | Logan Sulger (JR) |
+| 100 Breast | 59.51 | Zach Duerkop (JR) | 1:16.16 | Adrianna Witte (JR) |
+| 100 Fly | 54.45 | Zach Duerkop (JR) | 1:01.84 | Brianne Foley (SR) |
+| 200 IM | 2:04.11 | Zach Duerkop (JR) | 2:35.12 | Ella Bissmeyer (FR) |
 
 ---
 
@@ -117,4 +117,4 @@
 
 ---
 
-*Generated: October 09, 2025 at 09:44 AM*
+*Generated: October 09, 2025 at 09:46 AM*
