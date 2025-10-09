@@ -1,7 +1,7 @@
 # All-Time Top 10 - Girls
 ## Tanque Verde High School Swimming
 
-**Generated:** October 09, 2025 at 09:46 AM
+**Generated:** October 09, 2025 at 11:59 AM
 
 ---
 
@@ -39,16 +39,16 @@
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| 1 | 2:04.70 | Isabelle Sansom | SR | Nov 01, 2019 | Canyon Del Oro Invite (AZ) |
-| 2 | 2:05.30 | Hazel Dasse | SR | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
-| 3 | 2:07.61 | Natalie Armstrong | SO | Nov 06, 2021 | AIA  D-III Girls State (AZ) |
-| 4 | 2:07.85 | Maggie Colombo | SR | Oct 22, 2022 | Pecan Classic (sahuarita, AZ) |
-| 5 | 2:09.78 | Grace Davis | FR | Sep 23, 2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
-| 6 | 2:10.40 | Brianne Foley | JR | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
-| 7 | 2:15.91 | Summer Cugini | SR | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
-| 8 | 2:18.06 | Paisley White | FR | Sep 27, 2019 | Red Wolf Qualifier (Sahuarita, AZ) |
-| 9 | 2:19.02 | Ella Bissmeyer | FR | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
-| 10 | 2:19.15 | Kennady Pautler | JR | Nov 01, 2019 | Canyon Del Oro Invite (AZ) |
+| 1 | 1:43.71 | Paisley White | SR | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
+| 2 | 1:43.71 | Natalie Armstrong | JR | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
+| 3 | 1:43.71 | Maggie Colombo | SR | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
+| 4 | 1:43.71 | Brianne Foley | SO | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
+| 5 | 1:44.10 | Isabelle Sansom | SR | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
+| 6 | 1:44.10 | Sarynn Patterson | SR | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
+| 7 | 1:44.97 | Grace Davis | FR | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
+| 8 | 1:46.46 | Shaye Sulgar | SR | Nov 06, 2021 | AIA  D-III Girls State (AZ) |
+| 9 | 1:46.81 | Adrianna Witte | JR | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
+| 10 | 1:46.81 | Hadley Cusson | SO | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
 
 ### 500 Freestyle
 
@@ -127,4 +127,4 @@
 
 ---
 
-*Generated: October 09, 2025 at 09:46 AM*
+*Generated: October 09, 2025 at 11:59 AM*

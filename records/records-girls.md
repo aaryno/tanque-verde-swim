@@ -1,7 +1,7 @@
 # Tanque Verde (Tucson, AZ) - Girls
 ## Team Records - Short Course Yards (SCY)
 
-**Generated:** October 09, 2025 at 09:47 AM
+**Generated:** October 09, 2025 at 11:59 AM
 
 ---
 
@@ -51,7 +51,7 @@
 |-------|-----:|---------|------|------|
 | Freshman | 1:06.38 | Sarynn Patterson | Nov 04, 2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
 | Sophomore | 1:05.84 | Paisley White | Nov 05, 2020 | AIA State Meet - D3 (AZ) |
-| Junior | 1:04.64 | Sarynn Patterson | Nov 03, 2018 | 2018 D-3 AIA State Championships (AZ) |
+| Junior | 1:04.64 | Sarynn Patterson | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
 | Senior | 1:02.65 | Calla Isenberg | Oct 27, 2017 | Southern Arizona Regional Qualifier (Oro Valley, AZ) |
 | **Open** | **1:02.65** | **Calla Isenberg** | **Oct 27, 2017** | **Southern Arizona Regional Qualifier (Oro Valley, AZ)** |
 
@@ -87,4 +87,4 @@
 
 ---
 
-*Generated: October 09, 2025 at 09:47 AM*
+*Generated: October 09, 2025 at 11:59 AM*
