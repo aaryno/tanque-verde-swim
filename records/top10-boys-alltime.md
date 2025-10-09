@@ -1,7 +1,7 @@
 # All-Time Top 10 - Boys
 ## Tanque Verde High School Swimming
 
-**Generated:** October 09, 2025 at 11:59 AM
+**Generated:** October 09, 2025 at 12:49 PM
 
 ---
 
@@ -39,16 +39,16 @@
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| 1 | 1:31.81 | Grayson The | SR | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
-| 2 | 1:31.81 | Wade Olsson | JR | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
-| 3 | 1:31.81 | Zachary Duerkop | SR | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
-| 4 | 1:31.81 | Jackson Eftekhar | JR | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
-| 5 | 1:32.46 | Nicholas Spilotro | SO | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
-| 6 | 1:32.46 | Logan Radomsky | SR | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
-| 7 | 1:32.46 | Sam Stott | FR | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
-| 8 | 1:32.46 | Trevor Clausen | SO | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
-| 9 | 1:33.90 | Nick Cusson | JR | Nov 05, 2022 | 2022 D-3 AIA Boys State Championships (AZ) |
-| 10 | 1:33.90 | Alejandro Alvarez | SR | Nov 05, 2022 | 2022 D-3 AIA Boys State Championships (AZ) |
+| 1 | 1:43.60 | Nick Cusson | JR | Nov 05, 2022 | 2022 D-3 AIA Boys State Championships (AZ) |
+| 2 | 1:44.73 | Sam Stott | JR | Nov 05, 2021 | AIA  D-III Boys State (AZ) |
+| 3 | 1:48.60 | John Deninghoff | — | Nov 01, 2018 | AIA D-III Boys State Meet (AZ) |
+| 4 | 1:48.76 | Joseph Breinholt | JR | Nov 06, 2015 | 2015 AIA Division II State Swimming & Diving Championships (Mesa, AZ) |
+| 5 | 1:49.68 | Joe Breinholt | SR | Oct 01, 2016 | 2016 TYR High School Classic (Tucson, AZ) |
+| 6 | 1:51.39 | Zachary Duerkop | JR | Sep 28, 2024 | 21st Annual TYR HS Classic (Tucson, AZ) |
+| 7 | 1:54.76 | Austin Morris | SR | Nov 06, 2015 | 2015 AIA Division II State Swimming & Diving Championships (Mesa, AZ) |
+| 8 | 2:00.16 | Jackson Machamer | SO | Sep 14, 2024 | Canyon del Oro Classic (Oro Valley, AZ) |
+| 9 | 2:00.98 | Jackson Eftekhar | SO | Oct 19, 2024 | Pecan Classic (Sahuarita, AZ) |
+| 10 | 2:01.41 | Peyton Kowalski | SR | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
 
 ### 500 Freestyle
 
@@ -127,4 +127,4 @@
 
 ---
 
-*Generated: October 09, 2025 at 11:59 AM*
+*Generated: October 09, 2025 at 12:49 PM*
