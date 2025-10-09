@@ -15,21 +15,6 @@
 
 ## Team Records
 
-### Short Course Yards (SCY)
-
-- [Boys Records](records/scy/records-boys.md)
-- [Girls Records](records/scy/records-girls.md)
-
-## Top 10 All-Time Lists
-
-### Short Course Yards (SCY)
-
-**Boys:**
-- [Top10 Boys 2024 25](records/scy/top10-boys-2024-25.md)
-
-**Girls:**
-- [Top10 Girls 2024 25](records/scy/top10-girls-2024-25.md)
-
 ---
 
 ## About
