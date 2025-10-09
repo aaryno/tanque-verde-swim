@@ -1,53 +1,87 @@
-# Tanque Verde (Tucson, AZ) - Swimming Records
+# Tanque Verde High School Swimming Records
 
-## ⚠️ UNOFFICIAL RECORDS - INTERNAL REVIEW ONLY
+**Tucson, Arizona**
 
-**These records are UNOFFICIAL and automatically generated from USA Swimming data.**
-
-- **For internal team review only**
-- **Requires verification by club administrators before official use**
-- **May contain errors or missing data**
-- **Not approved for external distribution or official team use**
-
-**Last Updated:** October 09, 2025
+**Last Updated:** October 9, 2025
 
 ---
 
-## Team Records
+## 📊 Team Records
+
+All records are for Short Course Yards (SCY) - the standard high school swimming course.
+
+### All-Time Records
+
+| Category | Boys | Girls |
+|----------|------|-------|
+| **Team Records by Grade** | [records-boys.md](records/records-boys.md) | [records-girls.md](records/records-girls.md) |
+| **All-Time Top 10** | [top10-boys-alltime.md](records/top10-boys-alltime.md) | [top10-girls-alltime.md](records/top10-girls-alltime.md) |
+
+### 2024-25 Season
+
+| Category | Boys | Girls |
+|----------|------|-------|
+| **Current Season Top 10** | [top10-boys-2024-25.md](records/top10-boys-2024-25.md) | [top10-girls-2024-25.md](records/top10-girls-2024-25.md) |
+| **Season Summary** | [annual-summary-2024-25.md](records/annual-summary-2024-25.md) | |
 
 ---
 
-## About
+## 📈 What's Included
 
-This repository contains **UNOFFICIAL** team records for Tanque Verde (Tucson, AZ). All data is sourced from USA Swimming official results.
+### Team Records by Grade
+- Best times for each grade level (Freshman, Sophomore, Junior, Senior)
+- **Open** category showing all-time best across all grades
+- 8 standard high school events
+- Historical coverage: 2001-2025
 
-### ⚠️ Important Disclaimers
+### All-Time Top 10 Lists
+- Top 10 fastest times in team history
+- One entry per swimmer (best time only)
+- Includes year (FR/SO/JR/SR), date, and meet
+- All events ranked by time
 
-**UNOFFICIAL STATUS:** These records are automatically generated and have NOT been verified or approved by club administrators. They are provided for internal team review and analysis only.
+### Current Season Top 10
+- Top 10 times for 2024-25 season only
+- Updated after each meet
+- Track season progress and improvement
 
-**VERIFICATION REQUIRED:** Before using these records for any official purpose, they MUST be reviewed and approved by club administrators.
+### Season Summary
+- Total swims, swimmers, and meets
+- Participation by gender and grade
+- Complete meet schedule
+- Season best times by event
+- Active roster with swim counts
 
-**NO WARRANTY:** These records may contain errors, omissions, or discrepancies. The tool and data are provided "as-is" without warranty of any kind.
+---
 
-**INTERNAL USE ONLY:** Not approved for external distribution, official team communications, or meet submissions.
+## 🏊 Events Tracked
 
-### Privacy & Data
+- 50 Freestyle
+- 100 Freestyle
+- 200 Freestyle
+- 500 Freestyle
+- 100 Backstroke
+- 100 Breaststroke
+- 100 Butterfly
+- 200 Individual Medley
 
-**Privacy:** This repository contains no personally identifiable information (PII). Only team records, times, and public results are included.
+---
 
-**Updates:** Records are automatically updated after each meet using [swim-data-tool](https://github.com/aaryno/swim-data-tool).
+## 📖 Data Sources
 
-## Repository Structure
+**MaxPreps** - Current season results and athlete profiles  
+**AIA State Championships** - 24 years of state meet results (2001-2024)
 
-```
-records/
-├── scy/          # Short Course Yards records
-├── lcm/          # Long Course Meters records
-├── scm/          # Short Course Meters records
-├── top10/        # Top 10 all-time performers (if available)
-└── annual/       # Season summaries (if available)
-```
+All data is sourced from publicly available high school swimming results.
 
-## Contact
+---
 
-For questions about these records, please contact the team administrators.
+## 🔄 Updates
+
+Records are automatically updated after each meet using automated data collection and processing.
+
+**Maintained by:** Tanque Verde High School Swimming
+
+---
+
+*These records are compiled from MaxPreps and Arizona Interscholastic Association (AIA) official results. All times are Short Course Yards (SCY).*
