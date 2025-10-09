@@ -1,7 +1,7 @@
 # Tanque Verde (Tucson, AZ) - Girls
 ## Team Records - Short Course Yards (SCY)
 
-**Generated:** October 08, 2025 at 09:58 PM
+**Generated:** October 09, 2025 at 08:28 AM
 
 ---
 
@@ -9,59 +9,59 @@
 
 | Grade | Time | Athlete | Date | Meet |
 |-------|------|---------|------|------|
-| Freshman | 00:28.55 | Rachel Anderson | 9/20/2025 | Canyon del Oro Classic (Tucson, AZ) |
+| Freshman | 00:27.26 | Maggie Colombo | 10/5/2019 | High School Classic (Tucson, AZ) |
 | Sophomore | 00:25.95 | Grace Davis | 9/28/2024 | 21st Annual TYR HS Classic (Tucson, AZ) |
-| Junior | 00:26.89 | Hadley Cusson | 9/27/2025 | Arena High School Classic (Tucson, AZ) |
-| Senior | 00:28.03 | Logan Sulger | 9/27/2025 | Arena High School Classic (Tucson, AZ) |
-| Open | 00:24.91 | Isabelle Sansom | 10/5/2019 | High School Classic (Tucson, AZ) |
+| Junior | 00:26.03 | Brianne Foley | 9/16/2023 | CDO Classic (Oro Valley Aquatic Center, AZ) |
+| Senior | 00:25.83 | Brianne Foley | 9/14/2024 | Canyon del Oro Classic (Oro Valley, AZ) |
+| Open | 00:25.83 | Brianne Foley | 9/14/2024 | Canyon del Oro Classic (Oro Valley, AZ) |
 
 ### 100 Freestyle
 
 | Grade | Time | Athlete | Date | Meet |
 |-------|------|---------|------|------|
-| Freshman | 01:02.68 | Stella Eftekhar | 9/27/2025 | Arena High School Classic (Tucson, AZ) |
-| Sophomore | 00:58.11 | Grace Davis | 11/9/2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
-| Junior | 00:58.60 | Hadley Cusson | 9/27/2025 | Arena High School Classic (Tucson, AZ) |
-| Senior | 01:01.87 | Adrianna Witte | 9/28/2024 | 21st Annual TYR HS Classic (Tucson, AZ) |
-| Open | 00:54.11 | Isabelle Sansom | 11/7/2019 | 2019 AIA D-III State Meet (AZ) |
+| Freshman | 00:58.58 | Natalie Armstrong | 11/5/2020 | AIA State Meet - D3 (AZ) |
+| Sophomore | 00:58.00 | Natalie Armstrong | 11/6/2021 | AIA  D-III Girls State (AZ) |
+| Junior | 00:57.37 | Brianne Foley | 10/25/2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
+| Senior | 00:57.21 | Natalie Armstrong | 10/21/2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
+| Open | 00:57.21 | Natalie Armstrong | 10/21/2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
 
 ### 200 Freestyle
 
 | Grade | Time | Athlete | Date | Meet |
 |-------|------|---------|------|------|
-| Freshman | 02:19.96 | Rachel Anderson | 9/27/2025 | Arena High School Classic (Tucson, AZ) |
-| Sophomore | 02:09.78 | Grace Davis | 9/23/2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
-| Junior | 02:19.61 | Kadynce Drummond | 9/27/2025 | Arena High School Classic (Tucson, AZ) |
-| Senior | 02:20.34 | Adrianna Witte | 9/28/2024 | 21st Annual TYR HS Classic (Tucson, AZ) |
-| Open | 02:04.70 | Isabelle Sansom | 11/1/2019 | Canyon Del Oro Invite (AZ) |
+| Freshman | 02:08.36 | Natalie Armstrong | 11/5/2020 | AIA State Meet - D3 (AZ) |
+| Sophomore | 02:07.61 | Natalie Armstrong | 11/6/2021 | AIA  D-III Girls State (AZ) |
+| Junior | 02:08.09 | Natalie Armstrong | 10/22/2022 | Pecan Classic (sahuarita, AZ) |
+| Senior | 02:07.85 | Maggie Colombo | 10/22/2022 | Pecan Classic (sahuarita, AZ) |
+| Open | 02:07.61 | Natalie Armstrong | 11/6/2021 | AIA  D-III Girls State (AZ) |
 
 ### 500 Freestyle
 
 | Grade | Time | Athlete | Date | Meet |
 |-------|------|---------|------|------|
-| Freshman | 06:18.22 | Talia Schwab | 9/20/2025 | Canyon del Oro Classic (Tucson, AZ) |
-| Sophomore | — | — | — | — |
-| Junior | 06:17.63 | Kadynce Drummond | 10/21/2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
-| Senior | — | — | — | — |
-| Open | 06:13.72 | Sarynn Patterson | 10/19/2019 | Mike Ward Invitational (Tucson, AZ) |
+| Freshman | 06:17.63 | Kadynce Drummond | 10/21/2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
+| Sophomore | 06:23.38 | Kadynce Drummond | 10/25/2024 | Southern Arizona Qualifier (Oro Valley, AZ) |
+| Junior | 06:22.50 | Kadynce Drummond | 9/20/2025 | Canyon del Oro Classic (Tucson, AZ) |
+| Senior | 06:31.49 | Summer Cugini | 10/19/2024 | Pecan Classic (Sahuarita, AZ) |
+| Open | 06:17.63 | Kadynce Drummond | 10/21/2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
 
 ### 100 Backstroke
 
 | Grade | Time | Athlete | Date | Meet |
 |-------|------|---------|------|------|
-| Freshman | 01:12.20 | Isla Cerepak | 9/20/2025 | Canyon del Oro Classic (Tucson, AZ) |
-| Sophomore | — | — | — | — |
-| Junior | 01:14.47 | Amira Alitiem | 9/20/2025 | Canyon del Oro Classic (Tucson, AZ) |
-| Senior | 01:05.38 | Logan Sulger | 11/9/2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
-| Open | 01:03.34 | Sarynn Patterson | 11/7/2019 | 2019 AIA D-III State Meet (AZ) |
+| Freshman | 01:06.77 | Paisley White | 11/7/2019 | 2019 AIA D-III State Meet (AZ) |
+| Sophomore | 01:05.84 | Paisley White | 11/5/2020 | AIA State Meet - D3 (AZ) |
+| Junior | 01:05.38 | Logan Sulger | 11/9/2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
+| Senior | 01:04.81 | Paisley White | 11/5/2022 | 2022 D-3 AIA Girls State Championships (AZ) |
+| Open | 01:04.81 | Paisley White | 11/5/2022 | 2022 D-3 AIA Girls State Championships (AZ) |
 
 ### 100 Breaststroke
 
 | Grade | Time | Athlete | Date | Meet |
 |-------|------|---------|------|------|
-| Freshman | 02:04.68 | Kayley Chavez | 10/28/2022 | Southern AZ Regional Qualifier (AZ) |
-| Sophomore | 01:22.38 | Ella Bissmeyer | 9/27/2025 | Arena High School Classic (Tucson, AZ) |
-| Junior | 01:20.17 | Lily Niccum | 11/9/2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
+| Freshman | 01:24.71 | Ella Bissmeyer | 9/28/2024 | 21st Annual TYR HS Classic (Tucson, AZ) |
+| Sophomore | 01:18.94 | Madeline Barnard | 10/25/2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
+| Junior | 01:16.16 | Adrianna Witte | 11/9/2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
 | Senior | 01:13.71 | Adrianna Witte | 9/20/2025 | Canyon del Oro Classic (Tucson, AZ) |
 | Open | 01:13.71 | Adrianna Witte | 9/20/2025 | Canyon del Oro Classic (Tucson, AZ) |
 
@@ -69,22 +69,22 @@
 
 | Grade | Time | Athlete | Date | Meet |
 |-------|------|---------|------|------|
-| Freshman | 01:08.74 | Stella Eftekhar | 9/20/2025 | Canyon del Oro Classic (Tucson, AZ) |
-| Sophomore | 01:06.15 | Grace Davis | 10/25/2024 | Southern Arizona Qualifier (Oro Valley, AZ) |
-| Junior | 01:12.79 | Amira Alitiem | 9/27/2025 | Arena High School Classic (Tucson, AZ) |
-| Senior | 01:12.50 | Adrianna Witte | 9/20/2025 | Canyon del Oro Classic (Tucson, AZ) |
+| Freshman | 01:05.90 | Paisley White | 11/7/2019 | 2019 AIA D-III State Meet (AZ) |
+| Sophomore | 01:05.63 | Paisley White | 11/5/2020 | AIA State Meet - D3 (AZ) |
+| Junior | 01:03.68 | Brianne Foley | 9/23/2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
+| Senior | 01:01.84 | Brianne Foley | 11/9/2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
 | Open | 01:01.84 | Brianne Foley | 11/9/2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
 
 ### 200 Individual Medley
 
 | Grade | Time | Athlete | Date | Meet |
 |-------|------|---------|------|------|
-| Freshman | 02:35.94 | Isla Cerepak | 9/20/2025 | Canyon del Oro Classic (Tucson, AZ) |
-| Sophomore | 02:35.12 | Ella Bissmeyer | 11/9/2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
-| Junior | 02:40.54 | Hadley Cusson | 9/14/2024 | Canyon del Oro Classic (Oro Valley, AZ) |
+| Freshman | 02:35.12 | Ella Bissmeyer | 11/9/2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
+| Sophomore | 02:36.48 | Ella Bissmeyer | 9/27/2025 | Arena High School Classic (Tucson, AZ) |
+| Junior | 02:36.65 | Paisley White | 10/23/2021 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
 | Senior | 02:35.54 | Adrianna Witte | 9/27/2025 | Arena High School Classic (Tucson, AZ) |
-| Open | 02:20.75 | Sarynn Patterson | 11/7/2019 | 2019 AIA D-III State Meet (AZ) |
+| Open | 02:35.12 | Ella Bissmeyer | 11/9/2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
 
 ---
 
-*Generated: October 08, 2025 at 09:58 PM*
+*Generated: October 09, 2025 at 08:28 AM*
