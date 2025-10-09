@@ -23,12 +23,24 @@
 | **Relay Records** | [relay-records-boys.md](records/relay-records-boys.md) | [relay-records-girls.md](records/relay-records-girls.md) |
 | **All-Time Top 10** | [top10-boys-alltime.md](records/top10-boys-alltime.md) | [top10-girls-alltime.md](records/top10-girls-alltime.md) |
 
-### 2024-25 Season
+### Season Records
 
-| Category | Boys | Girls |
-|----------|------|-------|
-| **Current Season Top 10** | [top10-boys-2024-25.md](records/top10-boys-2024-25.md) | [top10-girls-2024-25.md](records/top10-girls-2024-25.md) |
-| **Season Summary** | [annual-summary-2024-25.md](records/annual-summary-2024-25.md) | |
+| Season | Boys Top 10 | Girls Top 10 | Annual Summary |
+|--------|-------------|--------------|----------------|
+| **2025-26** | — | — | *In Progress* |
+| **2024-25** | [Boys](records/top10-boys-2024-25.md) | [Girls](records/top10-girls-2024-25.md) | [Summary](records/annual-summary-2024-25.md) |
+| **2023-24** | [Boys](records/top10-boys-2023-24.md) | [Girls](records/top10-girls-2023-24.md) | [Summary](records/annual-summary-2023-24.md) |
+| **2022-23** | [Boys](records/top10-boys-2022-23.md) | [Girls](records/top10-girls-2022-23.md) | [Summary](records/annual-summary-2022-23.md) |
+| **2021-22** | [Boys](records/top10-boys-2021-22.md) | [Girls](records/top10-girls-2021-22.md) | [Summary](records/annual-summary-2021-22.md) |
+| **2020-21** | [Boys](records/top10-boys-2020-21.md) | [Girls](records/top10-girls-2020-21.md) | [Summary](records/annual-summary-2020-21.md) |
+| **2019-20** | [Boys](records/top10-boys-2019-20.md) | [Girls](records/top10-girls-2019-20.md) | [Summary](records/annual-summary-2019-20.md) |
+| **2018-19** | [Boys](records/top10-boys-2018-19.md) | [Girls](records/top10-girls-2018-19.md) | [Summary](records/annual-summary-2018-19.md) |
+| **2017-18** | [Boys](records/top10-boys-2017-18.md) | [Girls](records/top10-girls-2017-18.md) | [Summary](records/annual-summary-2017-18.md) |
+| **2016-17** | [Boys](records/top10-boys-2016-17.md) | [Girls](records/top10-girls-2016-17.md) | [Summary](records/annual-summary-2016-17.md) |
+| **2015-16** | [Boys](records/top10-boys-2015-16.md) | [Girls](records/top10-girls-2015-16.md) | [Summary](records/annual-summary-2015-16.md) |
+| **2014-15** | [Boys](records/top10-boys-2014-15.md) | [Girls](records/top10-girls-2014-15.md) | [Summary](records/annual-summary-2014-15.md) |
+| **2013-14** | [Boys](records/top10-boys-2013-14.md) | [Girls](records/top10-girls-2013-14.md) | [Summary](records/annual-summary-2013-14.md) |
+| **2012-13** | [Boys](records/top10-boys-2012-13.md) | [Girls](records/top10-girls-2012-13.md) | [Summary](records/annual-summary-2012-13.md) |
 
 ---
 
@@ -130,15 +142,15 @@ Records are compiled from multiple sources:
 
 ```
 records/
-├── records-boys.md              # Boys team records by grade
-├── records-girls.md             # Girls team records by grade
-├── relay-records-boys.md        # Boys relay records (top 10)
-├── relay-records-girls.md       # Girls relay records (top 10)
-├── top10-boys-alltime.md        # All-time top 10 boys
-├── top10-girls-alltime.md       # All-time top 10 girls
-├── top10-boys-2024-25.md        # Current season top 10 boys
-├── top10-girls-2024-25.md       # Current season top 10 girls
-└── annual-summary-2024-25.md    # 2024-25 season summary
+├── records-boys.md                    # Boys team records by grade
+├── records-girls.md                   # Girls team records by grade
+├── relay-records-boys.md              # Boys relay records (top 10)
+├── relay-records-girls.md             # Girls relay records (top 10)
+├── top10-boys-alltime.md              # All-time top 10 boys
+├── top10-girls-alltime.md             # All-time top 10 girls
+├── top10-boys-YYYY-YY.md              # Season top 10 boys (2012-13 through 2024-25)
+├── top10-girls-YYYY-YY.md             # Season top 10 girls (2012-13 through 2024-25)
+└── annual-summary-YYYY-YY.md          # Season summaries (2012-13 through 2024-25)
 ```
 
 ## Statistics
