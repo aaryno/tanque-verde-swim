@@ -1,7 +1,7 @@
 # Tanque Verde (Tucson, AZ) - Girls
 ## Team Records - Short Course Yards (SCY)
 
-**Generated:** October 09, 2025 at 08:28 AM
+**Generated:** October 09, 2025 at 08:36 AM
 
 ---
 
@@ -9,7 +9,7 @@
 
 | Grade | Time | Athlete | Date | Meet |
 |-------|------|---------|------|------|
-| Freshman | 00:27.26 | Maggie Colombo | 10/5/2019 | High School Classic (Tucson, AZ) |
+| Freshman | 00:27.26 | Maggie Colombo | 11/7/2019 | 2019 AIA D-III State Meet (AZ) |
 | Sophomore | 00:25.95 | Grace Davis | 9/28/2024 | 21st Annual TYR HS Classic (Tucson, AZ) |
 | Junior | 00:26.03 | Brianne Foley | 9/16/2023 | CDO Classic (Oro Valley Aquatic Center, AZ) |
 | Senior | 00:25.83 | Brianne Foley | 9/14/2024 | Canyon del Oro Classic (Oro Valley, AZ) |
@@ -59,8 +59,8 @@
 
 | Grade | Time | Athlete | Date | Meet |
 |-------|------|---------|------|------|
-| Freshman | 01:24.71 | Ella Bissmeyer | 9/28/2024 | 21st Annual TYR HS Classic (Tucson, AZ) |
-| Sophomore | 01:18.94 | Madeline Barnard | 10/25/2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
+| Freshman | 01:21.98 | Sage Weatherwax | 10/26/2018 | Southern Arizona Regional Qualifier (AZ) |
+| Sophomore | 01:18.30 | Sage Weatherwax | 11/1/2019 | Canyon Del Oro Invite (AZ) |
 | Junior | 01:16.16 | Adrianna Witte | 11/9/2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
 | Senior | 01:13.71 | Adrianna Witte | 9/20/2025 | Canyon del Oro Classic (Tucson, AZ) |
 | Open | 01:13.71 | Adrianna Witte | 9/20/2025 | Canyon del Oro Classic (Tucson, AZ) |
@@ -87,4 +87,4 @@
 
 ---
 
-*Generated: October 09, 2025 at 08:28 AM*
+*Generated: October 09, 2025 at 08:36 AM*

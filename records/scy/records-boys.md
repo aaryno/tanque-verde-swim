@@ -1,7 +1,7 @@
 # Tanque Verde (Tucson, AZ) - Boys
 ## Team Records - Short Course Yards (SCY)
 
-**Generated:** October 09, 2025 at 08:28 AM
+**Generated:** October 09, 2025 at 08:36 AM
 
 ---
 
@@ -22,8 +22,8 @@
 | Freshman | 00:47.93 | Sam Stott | 11/7/2019 | 2019 AIA D-III State Meet (AZ) |
 | Sophomore | 00:47.71 | Sam Stott | 11/5/2020 | AIA State Meet - D3 (AZ) |
 | Junior | 00:48.08 | Sam Stott | 11/5/2021 | AIA  D-III Boys State (AZ) |
-| Senior | 00:47.57 | Nick Cusson | 9/23/2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
-| Open | 00:47.57 | Nick Cusson | 9/23/2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
+| Senior | 00:46.44 | Nicholas Cusson | 11/4/2023 | 2023 D-3 AIA State Championships (AZ) |
+| Open | 00:46.44 | Nicholas Cusson | 11/4/2023 | 2023 D-3 AIA State Championships (AZ) |
 
 ### 200 Freestyle
 
@@ -39,11 +39,11 @@
 
 | Grade | Time | Athlete | Date | Meet |
 |-------|------|---------|------|------|
-| Freshman | 05:26.18 | Kent Olsson | 9/27/2025 | Arena High School Classic (Tucson, AZ) |
+| Freshman | 05:17.84 | Wade Olsson | 11/4/2023 | 2023 D-3 AIA State Championships (AZ) |
 | Sophomore | 05:19.88 | Zachary Duerkop | 10/25/2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
 | Junior | 05:35.70 | Jackson Machamer | 9/20/2025 | Canyon del Oro Classic (Tucson, AZ) |
 | Senior | 05:37.04 | Peyton Kowalski | 11/9/2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
-| Open | 05:19.88 | Zachary Duerkop | 10/25/2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
+| Open | 05:17.84 | Wade Olsson | 11/4/2023 | 2023 D-3 AIA State Championships (AZ) |
 
 ### 100 Backstroke
 
@@ -52,8 +52,8 @@
 | Freshman | 01:00.60 | Kent Olsson | 9/27/2025 | Arena High School Classic (Tucson, AZ) |
 | Sophomore | 00:56.59 | Nick Cusson | 10/23/2021 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
 | Junior | 00:52.83 | Nick Cusson | 11/5/2022 | 2022 D-3 AIA Boys State Championships (AZ) |
-| Senior | 00:53.42 | Nick Cusson | 9/16/2023 | CDO Classic (Oro Valley Aquatic Center, AZ) |
-| Open | 00:52.83 | Nick Cusson | 11/5/2022 | 2022 D-3 AIA Boys State Championships (AZ) |
+| Senior | 00:52.68 | Nicholas Cusson | 11/4/2023 | 2023 D-3 AIA State Championships (AZ) |
+| Open | 00:52.68 | Nicholas Cusson | 11/4/2023 | 2023 D-3 AIA State Championships (AZ) |
 
 ### 100 Breaststroke
 
@@ -79,7 +79,7 @@
 
 | Grade | Time | Athlete | Date | Meet |
 |-------|------|---------|------|------|
-| Freshman | 02:13.56 | Wade Olsson | 10/25/2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
+| Freshman | 02:10.74 | Wade Olsson | 11/4/2023 | 2023 D-3 AIA State Championships (AZ) |
 | Sophomore | 02:04.88 | Wade Olsson | 11/9/2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
 | Junior | 02:00.20 | Wade Olsson | 9/27/2025 | Arena High School Classic (Tucson, AZ) |
 | Senior | 02:01.13 | Zachary Duerkop | 9/27/2025 | Arena High School Classic (Tucson, AZ) |
@@ -87,4 +87,4 @@
 
 ---
 
-*Generated: October 09, 2025 at 08:28 AM*
+*Generated: October 09, 2025 at 08:36 AM*
