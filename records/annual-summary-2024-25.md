@@ -1,7 +1,7 @@
 # 2024-25 Season Summary
 ## Tanque Verde High School Swimming
 
-**Generated:** October 09, 2025 at 09:42 AM
+**Generated:** October 09, 2025 at 09:44 AM
 
 ---
 
@@ -40,12 +40,12 @@
 **Boys 100 BR SCY**
 - **NEW:** 00:59.51 - Zach Duerkop (JR)
 - *Previous:* 00:59.51 - Zach Duerkop
-- *Date:* 2024-09-14 00:00:00 at Canyon del Oro Classic (Oro Valley, AZ)
+- *Date:* Sep 14, 2024 at Canyon del Oro Classic (Oro Valley, AZ)
 
 **Girls 100 FL SCY**
 - **NEW:** 01:01.84 - Brianne Foley (SR)
 - *Previous:* 01:01.84 - Brianne Foley
-- *Date:* 2024-11-09 00:00:00 at 2024 D3 State Championship (Paradise Valley, AZ)
+- *Date:* Nov 09, 2024 at 2024 D3 State Championship (Paradise Valley, AZ)
 
 
 ---
@@ -117,4 +117,4 @@
 
 ---
 
-*Generated: October 09, 2025 at 09:42 AM*
+*Generated: October 09, 2025 at 09:44 AM*
