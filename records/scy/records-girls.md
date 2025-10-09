@@ -1,7 +1,7 @@
 # Tanque Verde (Tucson, AZ) - Girls
 ## Team Records - Short Course Yards (SCY)
 
-**Generated:** October 09, 2025 at 09:02 AM
+**Generated:** October 09, 2025 at 09:14 AM
 
 ---
 
@@ -20,7 +20,7 @@
 | Grade | Time | Athlete | Date | Meet |
 |-------|-----:|---------|------|------|
 | Freshman | 58.58 | Natalie Armstrong | 11/5/2020 | AIA State Meet - D3 (AZ) |
-| Sophomore | 58.00 | Natalie Armstrong | 10/23/2021 | 2021 D-3 AIA State Championships (AZ) |
+| Sophomore | 58.00 | Natalie Armstrong | 11/6/2021 | AIA  D-III Girls State (AZ) |
 | Junior | 56.94 | Isabelle Sansom | 11/1/2018 | AIA D-III Girls State Meet (AZ) |
 | Senior | 54.11 | Isabelle Sansom | 11/7/2019 | 2019 AIA D-III State Meet (AZ) |
 | **Open** | **54.11** | **Isabelle Sansom** | **11/7/2019** | **2019 AIA D-III State Meet (AZ)** |
@@ -87,4 +87,4 @@
 
 ---
 
-*Generated: October 09, 2025 at 09:02 AM*
+*Generated: October 09, 2025 at 09:14 AM*
