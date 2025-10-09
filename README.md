@@ -80,7 +80,7 @@ All data is sourced from publicly available high school swimming results.
 
 Records are automatically updated after each meet using automated data collection and processing.
 
-**Maintained by:** Tanque Verde High School Swimming
+**Maintained by:** Aaryn Olsson
 
 ---
 
