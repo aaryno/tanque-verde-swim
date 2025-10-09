@@ -60,14 +60,14 @@ This repository contains **UNOFFICIAL** team records for Tanque Verde High Schoo
 Records are compiled from multiple sources:
 
 **Primary Source - MaxPreps:**
-- Current season results from [MaxPreps.com](https://www.maxpreps.com)
+- Current season results from [MaxPreps.com](https://www.maxpreps.com/az/tucson/tanque-verde-hawks/swimming/)
 - Athlete career pages with season-by-season results
 - Historical data back to 2018
 - Grade-level tracking (Freshman, Sophomore, Junior, Senior)
 
 **Supplemental Source - AIA State Championships:**
-- Arizona Interscholastic Association (AIA) state meet results
-- Official state championship PDFs (2001-2024)
+- [Arizona Interscholastic Association (AIA)](https://aiaonline.org) state meet results
+- [Official state championship PDFs](https://aiaonline.org/activity/swim-and-dive) (2001-2024)
 - 24 years of historical state meet coverage
 - Provides verification and fills gaps in MaxPreps data
 
