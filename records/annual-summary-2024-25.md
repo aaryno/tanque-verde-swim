@@ -1,7 +1,7 @@
 # 2024-25 Season Summary
 ## Tanque Verde High School Swimming
 
-**Generated:** October 09, 2025 at 11:59 AM
+**Generated:** October 09, 2025
 
 ---
 
@@ -65,57 +65,4 @@
 
 ---
 
-## Active Swimmers
-
-### Boys
-
-**FR:**
-- Bennett Johnston (8 swims)
-- Bo Spilotro (1 swims)
-- Quinn Scott (5 swims)
-
-**SO:**
-- Jackson Eftekhar (18 swims)
-- Jackson Machamer (23 swims)
-- Wade Olsson (20 swims)
-
-**JR:**
-- Carter Caballero (9 swims)
-- Daniel Lotti (1 swims)
-- Grayson The (14 swims)
-- Zachary Duerkop (24 swims)
-
-**SR:**
-- Ethan Thompson (7 swims)
-- Lucas Soeder (16 swims)
-- Owen Adair (1 swims)
-- Peyton Kowalski (16 swims)
-
-### Girls
-
-**FR:**
-- Ella Bissmeyer (17 swims)
-- Lauren Kowlaski (3 swims)
-
-**SO:**
-- Grace Davis (23 swims)
-- Hadley Cusson (18 swims)
-- Kadynce Drummond (15 swims)
-- Lily Niccum (5 swims)
-
-**JR:**
-- Adrianna Witte (20 swims)
-- Brooklyn Johnson (4 swims)
-- Logan Sulger (18 swims)
-- Madeline Barnard (15 swims)
-
-**SR:**
-- Brianne Foley (24 swims)
-- Brigette Gerhart (1 swims)
-- Clementine  Dasse (8 swims)
-- Molly Guyman (7 swims)
-- Summer Cugini (19 swims)
-
----
-
-*Generated: October 09, 2025 at 11:59 AM*
+*Generated: October 09, 2025*
