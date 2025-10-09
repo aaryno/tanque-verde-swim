@@ -1,7 +1,7 @@
 # Tanque Verde (Tucson, AZ) - Girls
 ## Team Records - Short Course Yards (SCY)
 
-**Generated:** October 09, 2025 at 08:54 AM
+**Generated:** October 09, 2025 at 09:02 AM
 
 ---
 
@@ -13,7 +13,7 @@
 | Sophomore | 25.95 | Grace Davis | 9/28/2024 | 21st Annual TYR HS Classic (Tucson, AZ) |
 | Junior | 26.03 | Brianne Foley | 9/16/2023 | CDO Classic (Oro Valley Aquatic Center, AZ) |
 | Senior | 24.91 | Isabelle Sansom | 10/5/2019 | High School Classic (Tucson, AZ) |
-| Open | 24.91 | Isabelle Sansom | 10/5/2019 | High School Classic (Tucson, AZ) |
+| **Open** | **24.91** | **Isabelle Sansom** | **10/5/2019** | **High School Classic (Tucson, AZ)** |
 
 ### 100 Freestyle
 
@@ -23,7 +23,7 @@
 | Sophomore | 58.00 | Natalie Armstrong | 10/23/2021 | 2021 D-3 AIA State Championships (AZ) |
 | Junior | 56.94 | Isabelle Sansom | 11/1/2018 | AIA D-III Girls State Meet (AZ) |
 | Senior | 54.11 | Isabelle Sansom | 11/7/2019 | 2019 AIA D-III State Meet (AZ) |
-| Open | 54.11 | Isabelle Sansom | 11/7/2019 | 2019 AIA D-III State Meet (AZ) |
+| **Open** | **54.11** | **Isabelle Sansom** | **11/7/2019** | **2019 AIA D-III State Meet (AZ)** |
 
 ### 200 Freestyle
 
@@ -33,7 +33,7 @@
 | Sophomore | 2:05.33 | Hazel Dasse | 11/4/2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
 | Junior | 2:08.09 | Natalie Armstrong | 10/22/2022 | Pecan Classic (sahuarita, AZ) |
 | Senior | 2:04.70 | Isabelle Sansom | 11/1/2019 | Canyon Del Oro Invite (AZ) |
-| Open | 2:04.70 | Isabelle Sansom | 11/1/2019 | Canyon Del Oro Invite (AZ) |
+| **Open** | **2:04.70** | **Isabelle Sansom** | **11/1/2019** | **Canyon Del Oro Invite (AZ)** |
 
 ### 500 Freestyle
 
@@ -43,7 +43,7 @@
 | Sophomore | 5:32.67 | Anna Ellis | 11/4/2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
 | Junior | 5:45.23 | Anna Ellis | 11/3/2017 | 2017 AIA Division III State Championships (Girls) (Mesa, AZ) |
 | Senior | 6:13.72 | Sarynn Patterson | 10/19/2019 | Mike Ward Invitational (Tucson, AZ) |
-| Open | 5:32.67 | Anna Ellis | 11/4/2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
+| **Open** | **5:32.67** | **Anna Ellis** | **11/4/2016** | **2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ)** |
 
 ### 100 Backstroke
 
@@ -51,9 +51,9 @@
 |-------|-----:|---------|------|------|
 | Freshman | 1:06.38 | Sarynn Patterson | 11/4/2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
 | Sophomore | 1:05.84 | Paisley White | 11/5/2020 | AIA State Meet - D3 (AZ) |
-| Junior | 1:04.64 | Sarynn Patterson | 11/1/2018 | AIA D-III Girls State Meet (AZ) |
+| Junior | 1:04.64 | Sarynn Patterson | 11/3/2018 | 2018 D-3 AIA State Championships (AZ) |
 | Senior | 1:02.65 | Calla Isenberg | 10/27/2017 | Southern Arizona Regional Qualifier (Oro Valley, AZ) |
-| Open | 1:02.65 | Calla Isenberg | 10/27/2017 | Southern Arizona Regional Qualifier (Oro Valley, AZ) |
+| **Open** | **1:02.65** | **Calla Isenberg** | **10/27/2017** | **Southern Arizona Regional Qualifier (Oro Valley, AZ)** |
 
 ### 100 Breaststroke
 
@@ -63,7 +63,7 @@
 | Sophomore | 1:07.01 | Lindsey Sohoel-Smith | 11/4/2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
 | Junior | 1:16.16 | Adrianna Witte | 11/9/2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
 | Senior | 1:13.71 | Adrianna Witte | 9/20/2025 | Canyon del Oro Classic (Tucson, AZ) |
-| Open | 1:05.10 | Lindsey Schoel-Smith | 11/1/2018 | AIA D-III Girls State Meet (AZ) |
+| **Open** | **1:05.10** | **Lindsey Schoel-Smith** | **11/1/2018** | **AIA D-III Girls State Meet (AZ)** |
 
 ### 100 Butterfly
 
@@ -73,7 +73,7 @@
 | Sophomore | 1:05.63 | Paisley White | 11/5/2020 | AIA State Meet - D3 (AZ) |
 | Junior | 1:03.68 | Brianne Foley | 9/23/2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
 | Senior | 1:01.84 | Brianne Foley | 11/9/2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
-| Open | 1:01.84 | Brianne Foley | 11/9/2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
+| **Open** | **1:01.84** | **Brianne Foley** | **11/9/2024** | **2024 D3 State Championship (Paradise Valley, AZ)** |
 
 ### 200 Individual Medley
 
@@ -83,8 +83,8 @@
 | Sophomore | 2:15.55 | Lindsey Sohoel-Smith | 11/4/2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
 | Junior | 2:21.97 | Isabelle Sansom | 11/1/2018 | AIA D-III Girls State Meet (AZ) |
 | Senior | 2:20.75 | Sarynn Patterson | 11/7/2019 | 2019 AIA D-III State Meet (AZ) |
-| Open | 2:15.55 | Lindsey Sohoel-Smith | 11/4/2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
+| **Open** | **2:15.55** | **Lindsey Sohoel-Smith** | **11/4/2016** | **2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ)** |
 
 ---
 
-*Generated: October 09, 2025 at 08:54 AM*
+*Generated: October 09, 2025 at 09:02 AM*
