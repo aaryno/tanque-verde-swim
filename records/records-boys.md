@@ -11,7 +11,7 @@
 |-------|-----:|---------|------|------|
 | Freshman | 25.03 | Jackson Machamer | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
 | Sophomore | 21.99 | Nicholas Cusson | Oct 23, 2021 | 2021 D-3 AIA State Championships (AZ) |
-| Junior | 22.13 | Nick Cusson | Oct 28, 2022 | Southern AZ Regional Qualifier (AZ) |
+| Junior | 22.13 | Nicholas Cusson | Oct 28, 2022 | Southern AZ Regional Qualifier (AZ) |
 | Senior | 22.13 | Sam Stott | Nov 05, 2022 | 2022 D-3 AIA Boys State Championships (AZ) |
 | **Open** | **21.99** | **Nicholas Cusson** | **Oct 23, 2021** | **2021 D-3 AIA State Championships (AZ)** |
 
@@ -22,8 +22,8 @@
 | Freshman | 47.93 | Sam Stott | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
 | Sophomore | 48.30 | Nick Cusson | Nov 05, 2021 | AIA  D-III Boys State (AZ) |
 | Junior | 48.08 | Samuel Stott | Oct 23, 2021 | 2021 D-3 AIA State Championships (AZ) |
-| Senior | 46.44 | Nicholas Cusson | Nov 04, 2023 | 2023 D-3 AIA State Championships (AZ) |
-| **Open** | **46.44** | **Nicholas Cusson** | **Nov 04, 2023** | **2023 D-3 AIA State Championships (AZ)** |
+| Senior | 46.44 | Nick Cusson | Nov 04, 2023 | 2023 D-3 AIA State Championships (AZ) |
+| **Open** | **46.44** | **Nick Cusson** | **Nov 04, 2023** | **2023 D-3 AIA State Championships (AZ)** |
 
 ### 200 Freestyle
 
@@ -52,8 +52,8 @@
 | Freshman | 59.71 | Kent Olsson | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
 | Sophomore | 56.59 | Nick Cusson | Oct 23, 2021 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
 | Junior | 52.83 | Nick Cusson | Nov 05, 2022 | 2022 D-3 AIA Boys State Championships (AZ) |
-| Senior | 52.68 | Nicholas Cusson | Nov 04, 2023 | 2023 D-3 AIA State Championships (AZ) |
-| **Open** | **52.68** | **Nicholas Cusson** | **Nov 04, 2023** | **2023 D-3 AIA State Championships (AZ)** |
+| Senior | 52.68 | Nick Cusson | Nov 04, 2023 | 2023 D-3 AIA State Championships (AZ) |
+| **Open** | **52.68** | **Nick Cusson** | **Nov 04, 2023** | **2023 D-3 AIA State Championships (AZ)** |
 
 ### 100 Breaststroke
 
