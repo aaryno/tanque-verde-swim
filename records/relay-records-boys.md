@@ -9,16 +9,16 @@
 
 | Rank | Time | Participants | Date | Meet |
 |-----:|-----:|--------------|------|------|
-| **1** | **1:41.80** | **Wade Olsson (JR), Jackson Eftekhar (JR), Kent Olsson (FR), Zachary Duerkop (SR)** | **Oct 24, 2025** | **Southern Arizona Qualifier (Tucson, AZ)** |
+| **1** | **1:41.80** | **Kent Olsson (FR), Wade Olsson (JR), Zachary Duerkop (SR), Jackson Eftekhar (JR)** | **Oct 24, 2025** | **Southern Arizona Qualifier (Tucson, AZ)** |
 | 2 | 1:42.70 | Kent Olsson (FR), Wade Olsson (JR), Zachary Duerkop (SR), Grayson The (SR) | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 3 | 1:45.73 | Jackson Machamer (SO), Wade Olsson (SO), Jackson Eftekhar (SO), Zachary Duerkop (JR) | Oct 25, 2024 | Southern Arizona Qualifier (Oro Valley, AZ) |
-| 4 | 1:46.38 | Jackson Machamer (JR), Wade Olsson (JR), Kent Olsson (FR), Zachary Duerkop (SR) | Sep 20, 2025 | Canyon del Oro Classic (Tucson, AZ) |
+| 3 | 1:45.73 | Jackson Machamer (SO), Wade Olsson (SO), Zachary Duerkop (JR), Jackson Eftekhar (SO) | Oct 25, 2024 | Southern Arizona Qualifier (Oro Valley, AZ) |
+| 4 | 1:46.38 | Kent Olsson (FR), Wade Olsson (JR), Zachary Duerkop (SR), Jackson Machamer (JR) | Sep 20, 2025 | Canyon del Oro Classic (Tucson, AZ) |
 | 5 | 1:47.54 | Wade Olsson (FR), Nolan Radomsky (SR), Nick Cusson (SR), Zachary Duerkop (SO) | Sep 23, 2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
 | 6 | 1:47.66 | Oren Zadorozny (FR), Nick Spilotro (SR), Nick Cusson (SO), Sam Stott (JR) | Oct 23, 2021 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
 | 7 | 1:48.53 | Jackson Machamer (SO), Wade Olsson (SO), Lucas Soeder (SR), Jackson Eftekhar (SO) | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
-| 8 | 1:49.35 | Jackson Machamer (JR), Jackson Eftekhar (JR), Kent Olsson (FR), Grayson The (SR) | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
-| 9 | 1:49.35 | Jackson Machamer (SO), Wade Olsson (SO), Jackson Eftekhar (SO), Zachary Duerkop (JR) | Oct 19, 2024 | Pecan Classic (Sahuarita, AZ) |
-| 10 | 1:50.36 | Jackson Machamer (JR), Wade Olsson (JR), Kent Olsson (FR), Grayson The (SR) | Oct 18, 2025 | Pecan Classic (Sahuarita, AZ) |
+| 8 | 1:49.35 | Kent Olsson (FR), Jackson Machamer (JR), Jackson Eftekhar (JR), Grayson The (SR) | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
+| 9 | 1:49.35 | Jackson Machamer (SO), Wade Olsson (SO), Zachary Duerkop (JR), Jackson Eftekhar (SO) | Oct 19, 2024 | Pecan Classic (Sahuarita, AZ) |
+| 10 | 1:50.36 | Kent Olsson (FR), Wade Olsson (JR), Jackson Machamer (JR), Grayson The (SR) | Oct 18, 2025 | Pecan Classic (Sahuarita, AZ) |
 
 ---
 
