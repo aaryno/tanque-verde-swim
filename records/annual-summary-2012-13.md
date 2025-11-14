@@ -7,19 +7,19 @@
 
 ## Season Overview
 
-**Total Swims:** 55
+**Total Swims:** 29
 **Swimmers:** 11
 **Meets Attended:** 2
 
 ### Participation by Gender
-- **Boys:** 36 swims
-- **Girls:** 19 swims
+- **Boys:** 16 swims
+- **Girls:** 13 swims
 
 ### Participation by Grade
-- **Freshman:** 4 swims
+- **Freshman:** 2 swims
 - **Sophomore:** 2 swims
-- **Junior:** 30 swims
-- **Senior:** 19 swims
+- **Junior:** 16 swims
+- **Senior:** 9 swims
 
 ---
 
@@ -44,8 +44,8 @@
 - *Previous:* None (First Record)
 - *Date:* Oct 13, 2012 at Tiger Last Chance Invitational (Tucson, AZ)
 
-**Boys 200 FR RELAY SCY**
-- **NEW:** 1:51.71 - Andrew Lam (JR)
+**Boys 200 FR SCY**
+- **NEW:** 2:13.28 - Keith Kristofitz (SR)
 - *Previous:* None (First Record)
 - *Date:* Oct 13, 2012 at Tiger Last Chance Invitational (Tucson, AZ)
 
@@ -79,8 +79,8 @@
 - *Previous:* None (First Record)
 - *Date:* Oct 13, 2012 at Tiger Last Chance Invitational (Tucson, AZ)
 
-**Girls 200 FR RELAY SCY**
-- **NEW:** 1:56.16 - Sierra Roh (FR)
+**Girls 200 FR SCY**
+- **NEW:** 2:34.75 - Sierra Roh (FR)
 - *Previous:* None (First Record)
 - *Date:* Oct 06, 2012 at High School Classic (Tucson, AZ)
 
@@ -108,7 +108,7 @@
 |-------|----------:|--------------|-----------:|---------------|
 | 50 Free | 25.27 | Andrew Lam (JR) | 32.34 | Amanda Grimshaw (JR) |
 | 100 Free | 55.89 | Andrew Lam (JR) | 1:01.51 | Meghan Marner (JR) |
-| 200 Free | 1:51.71 | Andrew Lam (JR) | 1:56.16 | Sierra Roh (FR) |
+| 200 Free | 2:13.28 | Keith Kristofitz (SR) | 2:34.75 | Sierra Roh (FR) |
 | 500 Free | 5:53.49 | Keith Kristofitz (SR) | — | — |
 | 100 Back | — | — | 1:14.92 | Meghan Marner (JR) |
 | 100 Breast | 1:31.27 | Forrest Carlton (JR) | 1:22.02 | Meghan Marner (JR) |

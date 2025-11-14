@@ -7,19 +7,19 @@
 
 ## Season Overview
 
-**Total Swims:** 127
+**Total Swims:** 65
 **Swimmers:** 13
 **Meets Attended:** 4
 
 ### Participation by Gender
-- **Boys:** 74 swims
-- **Girls:** 53 swims
+- **Boys:** 42 swims
+- **Girls:** 23 swims
 
 ### Participation by Grade
-- **Freshman:** 41 swims
-- **Sophomore:** 20 swims
-- **Junior:** 55 swims
-- **Senior:** 11 swims
+- **Freshman:** 25 swims
+- **Sophomore:** 11 swims
+- **Junior:** 24 swims
+- **Senior:** 5 swims
 
 ---
 
@@ -35,6 +35,11 @@
 ---
 
 ## 🏆 Records Broken
+
+**Boys 200 FR SCY**
+- **NEW:** 2:00.05 - Austin Morris (JR)
+- *Previous:* 2:13.28 - Keith Kristofitz
+- *Date:* Oct 31, 2014 at Southern Arizona Region Qualifier (Tucson, AZ)
 
 **Boys 500 FR SCY**
 - **NEW:** 5:27.34 - Austin Morris (JR)
@@ -70,7 +75,7 @@
 |-------|----------:|--------------|-----------:|---------------|
 | 50 Free | 26.89 | Alex Flores (SO) | 28.41 | Alix Morris (JR) |
 | 100 Free | 54.09 | Austin Morris (JR) | 1:02.38 | Alix Morris (JR) |
-| 200 Free | 1:52.84 | Kyle Ramsden (SO) | 2:06.60 | Kayla Kumle (JR) |
+| 200 Free | 2:00.05 | Austin Morris (JR) | — | — |
 | 500 Free | 5:27.34 | Austin Morris (JR) | — | — |
 | 100 Back | 1:00.88 | Austin Morris (JR) | 1:47.02 | Nicole Ortega (SR) |
 | 100 Breast | 1:20.46 | Jerah Francone (FR) | 1:16.11 | Madisyn Clausen (SR) |

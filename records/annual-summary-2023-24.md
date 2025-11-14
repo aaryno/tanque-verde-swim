@@ -7,19 +7,19 @@
 
 ## Season Overview
 
-**Total Swims:** 348
-**Swimmers:** 36
+**Total Swims:** 173
+**Swimmers:** 34
 **Meets Attended:** 5
 
 ### Participation by Gender
-- **Boys:** 190 swims
-- **Girls:** 158 swims
+- **Boys:** 94 swims
+- **Girls:** 79 swims
 
 ### Participation by Grade
-- **Freshman:** 110 swims
-- **Sophomore:** 69 swims
-- **Junior:** 85 swims
-- **Senior:** 74 swims
+- **Freshman:** 56 swims
+- **Sophomore:** 33 swims
+- **Junior:** 39 swims
+- **Senior:** 38 swims
 
 ---
 
@@ -76,7 +76,7 @@
 |-------|----------:|--------------|-----------:|---------------|
 | 50 Free | 25.03 | Jackson Machamer (FR) | 26.03 | Brianne Foley (JR) |
 | 100 Free | 46.44 | Nicholas Cusson (SR) | 57.21 | Natalie Armstrong (SR) |
-| 200 Free | 1:35.27 | Jackson Machamer (FR) | 1:44.97 | Grace Davis (FR) |
+| 200 Free | 1:47.33 | Nick Cusson (SR) | 2:07.92 | Natalie Armstrong (SR) |
 | 500 Free | 5:17.84 | Wade Olsson (FR) | 6:17.63 | Kadynce Drummond (FR) |
 | 100 Back | 52.68 | Nicholas Cusson (SR) | 1:07.29 | Brianne Foley (JR) |
 | 100 Breast | 1:04.17 | Zachary Duerkop (SO) | 1:18.30 | Alexa Barrera |

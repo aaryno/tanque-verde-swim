@@ -7,19 +7,19 @@
 
 ## Season Overview
 
-**Total Swims:** 396
-**Swimmers:** 34
+**Total Swims:** 213
+**Swimmers:** 33
 **Meets Attended:** 5
 
 ### Participation by Gender
-- **Boys:** 200 swims
-- **Girls:** 196 swims
+- **Boys:** 112 swims
+- **Girls:** 101 swims
 
 ### Participation by Grade
-- **Freshman:** 118 swims
-- **Sophomore:** 149 swims
-- **Junior:** 43 swims
-- **Senior:** 86 swims
+- **Freshman:** 65 swims
+- **Sophomore:** 80 swims
+- **Junior:** 22 swims
+- **Senior:** 46 swims
 
 ---
 
@@ -47,11 +47,6 @@
 - *Previous:* 49.10 - Joseph Breinholt
 - *Date:* Oct 29, 2016 at Southern Arizona Regional Qualifier (Tucson, AZ)
 
-**Boys 200 FR RELAY SCY**
-- **NEW:** 1:37.46 - Xander Flores (SR)
-- *Previous:* 1:48.76 - Joseph Breinholt
-- *Date:* Sep 17, 2016 at Canyon Del Oro Classic (Tucson, AZ)
-
 **Boys 100 BR SCY**
 - **NEW:** 1:09.05 - Tanner Morris (SR)
 - *Previous:* 1:20.46 - Jerah Francone
@@ -67,10 +62,10 @@
 - *Previous:* 2:21.41 - Andrew Lam
 - *Date:* Nov 05, 2016 at 2016 D-3 AIA State Championships (AZ)
 
-**Girls 200 FR RELAY SCY**
-- **NEW:** 1:51.95 - Hazel Dasse (SO)
-- *Previous:* 1:56.16 - Sierra Roh
-- *Date:* Oct 29, 2016 at Southern Arizona Regional Qualifier (Tucson, AZ)
+**Girls 200 FR SCY**
+- **NEW:** 2:05.33 - Hazel Dasse (SO)
+- *Previous:* 2:20.08 - Anna Ellis
+- *Date:* Nov 04, 2016 at 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ)
 
 **Girls 500 FR SCY**
 - **NEW:** 5:32.67 - Anna Ellis (SO)
@@ -101,7 +96,7 @@
 |-------|----------:|--------------|-----------:|---------------|
 | 50 Free | 22.76 | Joe Breinholt (SR) | 27.06 | Hazel Dasse (SO) |
 | 100 Free | 47.98 | Joe Breinholt (SR) | 1:00.95 | Hazel Dasse (SO) |
-| 200 Free | 1:37.46 | Xander Flores (SR) | 1:51.95 | Hazel Dasse (SO) |
+| 200 Free | 1:49.68 | Joe Breinholt (SR) | 2:05.33 | Hazel Dasse (SO) |
 | 500 Free | 6:03.77 | Malachi Poulsen (JR) | 5:32.67 | Anna Ellis (SO) |
 | 100 Back | 1:00.82 | Sam Merrill (JR) | 1:05.85 | Hazel Dasse (SO) |
 | 100 Breast | 1:09.05 | Tanner Morris (SR) | 1:07.01 | Lindsey Sohoel-Smith (SO) |

@@ -7,19 +7,19 @@
 
 ## Season Overview
 
-**Total Swims:** 304
+**Total Swims:** 159
 **Swimmers:** 19
 **Meets Attended:** 6
 
 ### Participation by Gender
-- **Boys:** 156 swims
-- **Girls:** 148 swims
+- **Boys:** 80 swims
+- **Girls:** 79 swims
 
 ### Participation by Grade
-- **Freshman:** 80 swims
-- **Sophomore:** 83 swims
-- **Junior:** 111 swims
-- **Senior:** 30 swims
+- **Freshman:** 39 swims
+- **Sophomore:** 46 swims
+- **Junior:** 58 swims
+- **Senior:** 16 swims
 
 ---
 
@@ -48,11 +48,6 @@
 - *Previous:* 1:00.66 - Madisyn Clausen
 - *Date:* Oct 07, 2017 at 2017 TYR High School Classic (Tucson, AZ)
 
-**Girls 200 FR RELAY SCY**
-- **NEW:** 1:50.63 - Calla Isenberg (SR)
-- *Previous:* 1:51.95 - Hazel Dasse
-- *Date:* Oct 07, 2017 at 2017 TYR High School Classic (Tucson, AZ)
-
 **Girls 100 BK SCY**
 - **NEW:** 1:02.65 - Calla Isenberg (SR)
 - *Previous:* 1:05.85 - Hazel Dasse
@@ -67,7 +62,7 @@
 |-------|----------:|--------------|-----------:|---------------|
 | 50 Free | 28.38 | Dominic Colombo (FR) | 25.89 | Calla Isenberg (SR) |
 | 100 Free | 59.56 | Eli Stott (SO) | 58.30 | Calla Isenberg (SR) |
-| 200 Free | 1:53.90 | Logan Radomsky (SO) | 1:50.63 | Calla Isenberg (SR) |
+| 200 Free | 2:11.69 | Logan Radomsky (SO) | 2:08.16 | Hazel Dasse (JR) |
 | 500 Free | 5:50.41 | Titan Flint (JR) | 5:45.23 | Anna Ellis (JR) |
 | 100 Back | 1:09.82 | Will Isenberg (JR) | 1:02.65 | Calla Isenberg (SR) |
 | 100 Breast | 1:19.19 | Dominic Colombo (FR) | 1:18.71 | Sarynn Patterson (SO) |

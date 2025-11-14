@@ -7,19 +7,19 @@
 
 ## Season Overview
 
-**Total Swims:** 120
+**Total Swims:** 72
 **Swimmers:** 30
 **Meets Attended:** 2
 
 ### Participation by Gender
-- **Boys:** 55 swims
-- **Girls:** 65 swims
+- **Boys:** 31 swims
+- **Girls:** 41 swims
 
 ### Participation by Grade
-- **Freshman:** 8 swims
-- **Sophomore:** 8 swims
-- **Junior:** 6 swims
-- **Senior:** 7 swims
+- **Freshman:** 4 swims
+- **Sophomore:** 4 swims
+- **Junior:** 3 swims
+- **Senior:** 2 swims
 
 ---
 
@@ -58,7 +58,7 @@
 |-------|----------:|--------------|-----------:|---------------|
 | 50 Free | 22.24 | Sam Stott | 26.31 | Chloe Weatherwax |
 | 100 Free | 47.71 | Sam Stott | 58.58 | Natalie Armstrong (FR) |
-| 200 Free | 1:38.14 | Nick Spilotro (JR) | 1:48.20 | Paisley White (SO) |
+| 200 Free | 1:54.31 | Nick Cusson (FR) | 2:08.36 | Natalie Armstrong (FR) |
 | 500 Free | 5:57.26 | Julian Pacheco | 6:23.20 | Sage Weatherwax (JR) |
 | 100 Back | 1:04.06 | Nick Spilotro (JR) | 1:05.84 | Paisley White (SO) |
 | 100 Breast | 1:12.89 | Dominic Colombo | 1:16.95 | Sage Weatherwax |

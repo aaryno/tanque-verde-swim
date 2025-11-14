@@ -7,19 +7,19 @@
 
 ## Season Overview
 
-**Total Swims:** 371
-**Swimmers:** 30
+**Total Swims:** 241
+**Swimmers:** 29
 **Meets Attended:** 5
 
 ### Participation by Gender
-- **Boys:** 163 swims
-- **Girls:** 208 swims
+- **Boys:** 103 swims
+- **Girls:** 138 swims
 
 ### Participation by Grade
-- **Freshman:** 34 swims
-- **Sophomore:** 133 swims
-- **Junior:** 105 swims
-- **Senior:** 99 swims
+- **Freshman:** 27 swims
+- **Sophomore:** 85 swims
+- **Junior:** 62 swims
+- **Senior:** 67 swims
 
 ---
 
@@ -56,7 +56,7 @@
 |-------|----------:|--------------|-----------:|---------------|
 | 50 Free | 24.02 | Jackson Eftekhar (SO) | 25.83 | Brianne Foley (SR) |
 | 100 Free | 50.64 | Zachary Duerkop (JR) | 58.11 | Grace Davis (SO) |
-| 200 Free | 1:35.01 | Peyton Kowalski (SR) | 1:46.81 | Adrianna Witte (JR) |
+| 200 Free | 1:51.39 | Zachary Duerkop (JR) | 2:11.13 | Grace Davis (SO) |
 | 500 Free | 5:26.96 | Jackson Machamer (SO) | 6:23.38 | Kadynce Drummond (SO) |
 | 100 Back | 1:01.43 | Wade Olsson (SO) | 1:05.38 | Logan Sulger (JR) |
 | 100 Breast | 59.51 | Zachary Duerkop (JR) | 1:16.16 | Adrianna Witte (JR) |

@@ -7,19 +7,19 @@
 
 ## Season Overview
 
-**Total Swims:** 569
+**Total Swims:** 317
 **Swimmers:** 37
 **Meets Attended:** 5
 
 ### Participation by Gender
-- **Boys:** 211 swims
-- **Girls:** 358 swims
+- **Boys:** 103 swims
+- **Girls:** 214 swims
 
 ### Participation by Grade
-- **Freshman:** 185 swims
-- **Sophomore:** 148 swims
-- **Junior:** 101 swims
-- **Senior:** 135 swims
+- **Freshman:** 106 swims
+- **Sophomore:** 85 swims
+- **Junior:** 52 swims
+- **Senior:** 74 swims
 
 ---
 
@@ -42,9 +42,9 @@
 - *Previous:* 47.98 - Joe Breinholt
 - *Date:* Nov 07, 2019 at 2019 AIA D-III State Meet (AZ)
 
-**Boys 200 FR RELAY SCY**
-- **NEW:** 1:32.46 - Logan Radomsky (SR)
-- *Previous:* 1:37.46 - Xander Flores
+**Boys 200 FR SCY**
+- **NEW:** 1:46.05 - Sam Stott (FR)
+- *Previous:* 1:48.60 - John Deninghoff
 - *Date:* Nov 07, 2019 at 2019 AIA D-III State Meet (AZ)
 
 **Boys 100 FL SCY**
@@ -67,10 +67,10 @@
 - *Previous:* 56.94 - Isabelle Sansom
 - *Date:* Nov 07, 2019 at 2019 AIA D-III State Meet (AZ)
 
-**Girls 200 FR RELAY SCY**
-- **NEW:** 1:44.10 - Isabelle Sansom (SR)
-- *Previous:* 1:47.69 - Isabelle Sansom
-- *Date:* Nov 07, 2019 at 2019 AIA D-III State Meet (AZ)
+**Girls 200 FR SCY**
+- **NEW:** 2:04.70 - Isabelle Sansom (SR)
+- *Previous:* 2:05.30 - Hazel Dasse
+- *Date:* Nov 01, 2019 at Canyon Del Oro Invite (AZ)
 
 **Girls 100 FL SCY**
 - **NEW:** 1:05.90 - Paisley White (FR)
@@ -86,7 +86,7 @@
 |-------|----------:|--------------|-----------:|---------------|
 | 50 Free | 23.34 | Trevor Clausen (SO) | 24.91 | Isabelle Sansom (SR) |
 | 100 Free | 47.93 | Sam Stott (FR) | 54.11 | Isabelle Sansom (SR) |
-| 200 Free | 1:32.46 | Logan Radomsky (SR) | 1:44.10 | Isabelle Sansom (SR) |
+| 200 Free | 1:46.05 | Sam Stott (FR) | 2:04.70 | Isabelle Sansom (SR) |
 | 500 Free | 5:08.11 | Sam Stott (FR) | 6:13.72 | Sarynn Patterson (SR) |
 | 100 Back | 1:02.75 | Nicholas Spilotro (SO) | 1:03.34 | Sarynn Patterson (SR) |
 | 100 Breast | 1:13.87 | Dominic Colombo (JR) | 1:17.02 | Sarynn Patterson (SR) |

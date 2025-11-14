@@ -7,19 +7,19 @@
 
 ## Season Overview
 
-**Total Swims:** 301
-**Swimmers:** 24
+**Total Swims:** 140
+**Swimmers:** 23
 **Meets Attended:** 7
 
 ### Participation by Gender
-- **Boys:** 137 swims
-- **Girls:** 164 swims
+- **Boys:** 57 swims
+- **Girls:** 83 swims
 
 ### Participation by Grade
-- **Freshman:** 170 swims
-- **Sophomore:** 16 swims
-- **Junior:** 52 swims
-- **Senior:** 63 swims
+- **Freshman:** 84 swims
+- **Sophomore:** 8 swims
+- **Junior:** 25 swims
+- **Senior:** 23 swims
 
 ---
 
@@ -46,7 +46,7 @@
 
 **Boys 200 FR SCY**
 - **NEW:** 1:48.76 - Joseph Breinholt (JR)
-- *Previous:* 1:51.71 - Andrew Lam
+- *Previous:* 2:00.05 - Austin Morris
 - *Date:* Nov 06, 2015 at 2015 AIA Division II State Swimming & Diving Championships (Mesa, AZ)
 
 **Boys 500 FR SCY**
@@ -67,6 +67,11 @@
 **Girls 50 FR SCY**
 - **NEW:** 27.05 - Hazel Dasse (FR)
 - *Previous:* 28.41 - Alix Morris
+- *Date:* Oct 30, 2015 at Southern Arizona Regional Qualifier (Tucson, AZ)
+
+**Girls 200 FR SCY**
+- **NEW:** 2:20.08 - Anna Ellis (FR)
+- *Previous:* 2:28.50 - Sierra Roh
 - *Date:* Oct 30, 2015 at Southern Arizona Regional Qualifier (Tucson, AZ)
 
 **Girls 500 FR SCY**
@@ -103,7 +108,7 @@
 |-------|----------:|--------------|-----------:|---------------|
 | 50 Free | 29.21 | Andrew Savage (SO) | 27.05 | Hazel Dasse (FR) |
 | 100 Free | 49.10 | Joseph Breinholt (JR) | 1:03.16 | Anna Ellis (FR) |
-| 200 Free | 1:48.76 | Joseph Breinholt (JR) | 2:00.40 | Monet Pokrant (FR) |
+| 200 Free | 1:48.76 | Joseph Breinholt (JR) | 2:20.08 | Anna Ellis (FR) |
 | 500 Free | 5:04.10 | Joseph Breinholt (JR) | 5:35.08 | Anna Ellis (FR) |
 | 100 Back | 59.61 | Austin Morris (SR) | 1:06.58 | Hazel Dasse (FR) |
 | 100 Breast | 1:27.72 | Justin Marcus (FR) | 1:08.97 | Lindsey Sohoel-Smith (FR) |

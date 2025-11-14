@@ -7,19 +7,19 @@
 
 ## Season Overview
 
-**Total Swims:** 130
+**Total Swims:** 75
 **Swimmers:** 14
-**Meets Attended:** 4
+**Meets Attended:** 3
 
 ### Participation by Gender
-- **Boys:** 72 swims
-- **Girls:** 58 swims
+- **Boys:** 40 swims
+- **Girls:** 35 swims
 
 ### Participation by Grade
-- **Freshman:** 38 swims
-- **Sophomore:** 16 swims
-- **Junior:** 21 swims
-- **Senior:** 55 swims
+- **Freshman:** 27 swims
+- **Sophomore:** 7 swims
+- **Junior:** 11 swims
+- **Senior:** 30 swims
 
 ---
 
@@ -30,7 +30,6 @@
 | Oct 05, 2013 | High School Classic (Tucson, AZ) |
 | Oct 26, 2013 | Mike Ward Memorial Invitational (Tucson, AZ) |
 | Nov 02, 2013 | Southern Arizona Regional Qualifier (Tucson, AZ) |
-| Nov 09, 2013 | 2013 AIA Division II State Championships (Finals) (Mesa, AZ) |
 
 ---
 
@@ -66,6 +65,11 @@
 - *Previous:* 1:01.51 - Meghan Marner
 - *Date:* Oct 05, 2013 at High School Classic (Tucson, AZ)
 
+**Girls 200 FR SCY**
+- **NEW:** 2:28.50 - Sierra Roh (SO)
+- *Previous:* 2:34.75 - Sierra Roh
+- *Date:* Oct 26, 2013 at Mike Ward Memorial Invitational (Tucson, AZ)
+
 **Girls 100 BK SCY**
 - **NEW:** 1:11.04 - Madisyn Clausen (JR)
 - *Previous:* 1:14.92 - Meghan Marner
@@ -85,7 +89,7 @@
 |-------|----------:|--------------|-----------:|---------------|
 | 50 Free | 27.94 | Greg Wheeler (SR) | 29.95 | Talea Hamel (SR) |
 | 100 Free | 53.91 | Andrew Lam (SR) | 1:00.66 | Madisyn Clausen (JR) |
-| 200 Free | 1:54.29 | Andrew Lam (SR) | 2:17.47 | Nicole Ortega (JR) |
+| 200 Free | 2:26.73 | Greg Wheeler (SR) | 2:28.50 | Sierra Roh (SO) |
 | 500 Free | — | — | — | — |
 | 100 Back | 1:15.51 | Greg Wheeler (SR) | 1:11.04 | Madisyn Clausen (JR) |
 | 100 Breast | 1:25.84 | Forrest Carlton (SR) | 1:26.33 | Amanda Grimshaw (SR) |

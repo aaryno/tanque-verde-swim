@@ -7,19 +7,19 @@
 
 ## Season Overview
 
-**Total Swims:** 452
-**Swimmers:** 39
+**Total Swims:** 241
+**Swimmers:** 38
 **Meets Attended:** 6
 
 ### Participation by Gender
-- **Boys:** 223 swims
-- **Girls:** 229 swims
+- **Boys:** 119 swims
+- **Girls:** 122 swims
 
 ### Participation by Grade
-- **Freshman:** 91 swims
-- **Sophomore:** 106 swims
-- **Junior:** 159 swims
-- **Senior:** 71 swims
+- **Freshman:** 48 swims
+- **Sophomore:** 56 swims
+- **Junior:** 84 swims
+- **Senior:** 38 swims
 
 ---
 
@@ -41,6 +41,11 @@
 **Boys 50 FR SCY**
 - **NEW:** 21.99 - Nick Cusson (SO)
 - *Previous:* 22.24 - Sam Stott
+- *Date:* Nov 05, 2021 at AIA  D-III Boys State (AZ)
+
+**Boys 200 FR SCY**
+- **NEW:** 1:44.73 - Sam Stott (JR)
+- *Previous:* 1:46.05 - Sam Stott
 - *Date:* Nov 05, 2021 at AIA  D-III Boys State (AZ)
 
 **Boys 100 BK SCY**
@@ -67,7 +72,7 @@
 |-------|----------:|--------------|-----------:|---------------|
 | 50 Free | 21.99 | Nick Cusson (SO) | 26.36 | Paisley White (JR) |
 | 100 Free | 48.08 | Sam Stott (JR) | 57.92 | Maggie Colombo (JR) |
-| 200 Free | 1:33.93 | Alejandro Alvarez (JR) | 1:46.46 | Shaye Sulgar (SR) |
+| 200 Free | 1:44.73 | Sam Stott (JR) | 2:07.61 | Natalie Armstrong (SO) |
 | 500 Free | 5:49.29 | Stephen Moreland (FR) | 6:25.55 | Sydney Hagerman (JR) |
 | 100 Back | 56.59 | Nick Cusson (SO) | 1:06.47 | Paisley White (JR) |
 | 100 Breast | 1:12.28 | Oren Zadorozny (FR) | 1:21.26 | Lainie Radomsky (SR) |
