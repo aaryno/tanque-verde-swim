@@ -27,6 +27,43 @@ def parse_time_to_seconds(time_str):
         return float(parts[0])
 
 
+def get_pre_state_pr(swimmer_name, event, state_date='2025-11-08'):
+    """Get swimmer's PR before the state meet"""
+    # Find the swimmer's CSV file
+    swimmers_dir = Path('data/raw/swimmers')
+    
+    # Search for the swimmer's file
+    for swimmer_file in swimmers_dir.glob('*.csv'):
+        df_swimmer = pd.read_csv(swimmer_file)
+        if df_swimmer.empty:
+            continue
+            
+        # Check if this is the right swimmer
+        if df_swimmer.iloc[0]['Name'] == swimmer_name:
+            # Filter for the same event and before state date
+            df_event = df_swimmer[
+                (df_swimmer['Event'] == event) &
+                (pd.to_datetime(df_swimmer['SwimDate']) < pd.to_datetime(state_date))
+            ].copy()
+            
+            if df_event.empty:
+                return None
+            
+            # Convert times and find best
+            df_event['time_seconds'] = df_event['SwimTime'].apply(parse_time_to_seconds)
+            best_time = df_event['time_seconds'].min()
+            best_row = df_event[df_event['time_seconds'] == best_time].iloc[0]
+            
+            return {
+                'time': best_row['SwimTime'],
+                'time_seconds': best_time,
+                'date': best_row['SwimDate'],
+                'meet': best_row['MeetName']
+            }
+    
+    return None
+
+
 def main():
     # Load state meet data
     state_file = Path('data/raw/aia-state/tvhs-state-2025.csv')

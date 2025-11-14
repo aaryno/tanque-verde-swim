@@ -63,6 +63,16 @@ def create_nav_html():
                             <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2024-25.html">2024-25</a></li>
                             <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2023-24.html">2023-24</a></li>
                             <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2022-23.html">2022-23</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2021-22.html">2021-22</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2020-21.html">2020-21</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2019-20.html">2019-20</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2018-19.html">2018-19</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2017-18.html">2017-18</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2016-17.html">2016-17</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2015-16.html">2015-16</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2014-15.html">2014-15</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2013-14.html">2013-14</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2012-13.html">2012-13</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -109,6 +119,16 @@ def create_nav_html():
                             <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2024-25.html">2024-25</a></li>
                             <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2023-24.html">2023-24</a></li>
                             <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2022-23.html">2022-23</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2021-22.html">2021-22</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2020-21.html">2020-21</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2019-20.html">2019-20</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2018-19.html">2018-19</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2017-18.html">2017-18</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2016-17.html">2016-17</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2015-16.html">2015-16</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2014-15.html">2014-15</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2013-14.html">2013-14</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2012-13.html">2012-13</a></li>
                         </ul>
                     </li>
                 </ul>
