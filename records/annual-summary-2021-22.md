@@ -1,25 +1,25 @@
 # 2021-22 Season Summary
 ## Tanque Verde High School Swimming
 
-**Generated:** October 09, 2025
+**Generated:** November 14, 2025
 
 ---
 
 ## Season Overview
 
-**Total Swims:** 431
-**Swimmers:** 37
-**Meets Attended:** 5
+**Total Swims:** 452
+**Swimmers:** 39
+**Meets Attended:** 6
 
 ### Participation by Gender
-- **Boys:** 213 swims
-- **Girls:** 218 swims
+- **Boys:** 223 swims
+- **Girls:** 229 swims
 
 ### Participation by Grade
-- **Freshman:** 90 swims
-- **Sophomore:** 98 swims
-- **Junior:** 150 swims
-- **Senior:** 68 swims
+- **Freshman:** 91 swims
+- **Sophomore:** 106 swims
+- **Junior:** 159 swims
+- **Senior:** 71 swims
 
 ---
 
@@ -29,6 +29,7 @@
 |------|------|
 | Sep 25, 2021 | TYR HS Classic (AZ) |
 | Oct 23, 2021 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
+| Oct 23, 2021 | 2021 D-3 AIA State Championships (AZ) |
 | Oct 29, 2021 | Southern AZ Regional Qualifier (Oro Valley Aquatic Center, AZ) |
 | Nov 05, 2021 | AIA  D-III Boys State (AZ) |
 | Nov 06, 2021 | AIA  D-III Girls State (AZ) |
@@ -75,4 +76,4 @@
 
 ---
 
-*Generated: October 09, 2025*
+*Generated: November 14, 2025*

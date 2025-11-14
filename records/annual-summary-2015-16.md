@@ -1,24 +1,24 @@
 # 2015-16 Season Summary
 ## Tanque Verde High School Swimming
 
-**Generated:** October 09, 2025
+**Generated:** November 14, 2025
 
 ---
 
 ## Season Overview
 
-**Total Swims:** 298
-**Swimmers:** 23
-**Meets Attended:** 6
+**Total Swims:** 301
+**Swimmers:** 24
+**Meets Attended:** 7
 
 ### Participation by Gender
-- **Boys:** 135 swims
-- **Girls:** 163 swims
+- **Boys:** 137 swims
+- **Girls:** 164 swims
 
 ### Participation by Grade
-- **Freshman:** 169 swims
+- **Freshman:** 170 swims
 - **Sophomore:** 16 swims
-- **Junior:** 50 swims
+- **Junior:** 52 swims
 - **Senior:** 63 swims
 
 ---
@@ -33,6 +33,7 @@
 | Oct 24, 2015 | Small School Championships (Paradise Valley, AZ) |
 | Oct 30, 2015 | Southern Arizona Regional Qualifier (Tucson, AZ) |
 | Nov 06, 2015 | 2015 AIA Division II State Swimming & Diving Championships (Mesa, AZ) |
+| Nov 07, 2015 | 2015 D-3 AIA State Championships (AZ) |
 
 ---
 
@@ -111,4 +112,4 @@
 
 ---
 
-*Generated: October 09, 2025*
+*Generated: November 14, 2025*

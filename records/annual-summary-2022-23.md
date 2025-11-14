@@ -1,7 +1,7 @@
 # 2022-23 Season Summary
 ## Tanque Verde High School Swimming
 
-**Generated:** October 09, 2025
+**Generated:** November 14, 2025
 
 ---
 
@@ -46,7 +46,7 @@
 
 **Boys 100 BR SCY**
 - **NEW:** 1:08.06 - Sam Stott (SR)
-- *Previous:* 1:09.34 - Tanner Morris
+- *Previous:* 1:09.05 - Tanner Morris
 - *Date:* Oct 28, 2022 at Southern AZ Regional Qualifier (AZ)
 
 **Girls 200 FR RELAY SCY**
@@ -77,4 +77,4 @@
 
 ---
 
-*Generated: October 09, 2025*
+*Generated: November 14, 2025*

@@ -1,25 +1,25 @@
 # 2017-18 Season Summary
 ## Tanque Verde High School Swimming
 
-**Generated:** October 09, 2025
+**Generated:** November 14, 2025
 
 ---
 
 ## Season Overview
 
-**Total Swims:** 298
+**Total Swims:** 304
 **Swimmers:** 19
-**Meets Attended:** 5
+**Meets Attended:** 6
 
 ### Participation by Gender
 - **Boys:** 156 swims
-- **Girls:** 142 swims
+- **Girls:** 148 swims
 
 ### Participation by Grade
 - **Freshman:** 80 swims
-- **Sophomore:** 81 swims
-- **Junior:** 109 swims
-- **Senior:** 28 swims
+- **Sophomore:** 83 swims
+- **Junior:** 111 swims
+- **Senior:** 30 swims
 
 ---
 
@@ -32,6 +32,7 @@
 | Oct 27, 2017 | Southern Arizona Regional Qualifier (Oro Valley, AZ) |
 | Nov 03, 2017 | 2017 AIA Division III State Championships (Girls) (Mesa, AZ) |
 | Nov 03, 2017 | 2017 AIA Division III State Championships (Boys) (Mesa, AZ) |
+| Nov 04, 2017 | 2017 D-3 AIA State Championships (AZ) |
 
 ---
 
@@ -75,4 +76,4 @@
 
 ---
 
-*Generated: October 09, 2025*
+*Generated: November 14, 2025*

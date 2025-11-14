@@ -1,7 +1,7 @@
 # 2019-20 Season Summary
 ## Tanque Verde High School Swimming
 
-**Generated:** October 09, 2025
+**Generated:** November 14, 2025
 
 ---
 
@@ -49,12 +49,12 @@
 
 **Boys 100 FL SCY**
 - **NEW:** 55.94 - Sam Stott (FR)
-- *Previous:* 1:01.77 - Xander Flores
+- *Previous:* 59.89 - Xander Flores
 - *Date:* Oct 19, 2019 at Mike Ward Invitational (Tucson, AZ)
 
 **Boys 200 IM SCY**
 - **NEW:** 2:07.98 - Sam Stott (FR)
-- *Previous:* 2:18.02 - Xander Flores
+- *Previous:* 2:13.67 - Xander Flores
 - *Date:* Nov 01, 2019 at Canyon Del Oro Invite (AZ)
 
 **Girls 50 FR SCY**
@@ -95,4 +95,4 @@
 
 ---
 
-*Generated: October 09, 2025*
+*Generated: November 14, 2025*

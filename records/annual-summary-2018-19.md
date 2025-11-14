@@ -1,25 +1,25 @@
 # 2018-19 Season Summary
 ## Tanque Verde High School Swimming
 
-**Generated:** October 09, 2025
+**Generated:** November 14, 2025
 
 ---
 
 ## Season Overview
 
-**Total Swims:** 361
-**Swimmers:** 31
-**Meets Attended:** 7
+**Total Swims:** 367
+**Swimmers:** 32
+**Meets Attended:** 8
 
 ### Participation by Gender
-- **Boys:** 166 swims
-- **Girls:** 195 swims
+- **Boys:** 167 swims
+- **Girls:** 200 swims
 
 ### Participation by Grade
-- **Freshman:** 75 swims
+- **Freshman:** 76 swims
 - **Sophomore:** 56 swims
-- **Junior:** 87 swims
-- **Senior:** 97 swims
+- **Junior:** 90 swims
+- **Senior:** 99 swims
 
 ---
 
@@ -34,6 +34,7 @@
 | Oct 26, 2018 | Southern Arizona Regional Qualifier (AZ) |
 | Nov 01, 2018 | AIA D-III Boys State Meet (AZ) |
 | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
+| Nov 03, 2018 | 2018 D-3 AIA State Championships (AZ) |
 
 ---
 
@@ -72,4 +73,4 @@
 
 ---
 
-*Generated: October 09, 2025*
+*Generated: November 14, 2025*

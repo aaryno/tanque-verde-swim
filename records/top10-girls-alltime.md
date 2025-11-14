@@ -1,7 +1,7 @@
 # All-Time Top 10 - Girls
 ## Tanque Verde High School Swimming
 
-**Generated:** November 14, 2025 at 12:01 AM
+**Generated:** November 14, 2025 at 12:05 AM
 
 ---
 
@@ -15,7 +15,7 @@
 | 4 | 25.95 | Grace Davis | SO | Sep 28, 2024 | 21st Annual TYR HS Classic (Tucson, AZ) |
 | 5 | 26.05 | Maggie Colombo | SR | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
 | 6 | 26.31 | Chloe Weatherwax | — | Oct 30, 2020 | SQ  @ CDO (Oro Valley, AZ) |
-| 7 | 26.36 | Paisley White | JR | Nov 06, 2021 | AIA  D-III Girls State (AZ) |
+| 7 | 26.36 | Paisley White | JR | Oct 23, 2021 | 2021 D-3 AIA State Championships (AZ) |
 | 8 | 26.77 | Natalie Armstrong | SR | Sep 23, 2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
 | 9 | 26.87 | Hadley Cusson | JR | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
 | 10 | 27.05 | Hazel Dasse | FR | Oct 30, 2015 | Southern Arizona Regional Qualifier (Tucson, AZ) |
@@ -41,7 +41,7 @@
 |-----:|-----:|---------|------|------|------|
 | 1 | 2:04.70 | Isabelle Sansom | SR | Nov 01, 2019 | Canyon Del Oro Invite (AZ) |
 | 2 | 2:05.30 | Hazel Dasse | SR | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
-| 3 | 2:07.61 | Natalie Armstrong | SO | Nov 06, 2021 | AIA  D-III Girls State (AZ) |
+| 3 | 2:07.61 | Natalie Armstrong | SO | Oct 23, 2021 | 2021 D-3 AIA State Championships (AZ) |
 | 4 | 2:07.85 | Maggie Colombo | SR | Oct 22, 2022 | Pecan Classic (sahuarita, AZ) |
 | 5 | 2:09.78 | Grace Davis | FR | Sep 23, 2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
 | 6 | 2:10.40 | Brianne Foley | JR | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
@@ -127,4 +127,4 @@
 
 ---
 
-*Generated: November 14, 2025 at 12:01 AM*
+*Generated: November 14, 2025 at 12:05 AM*
