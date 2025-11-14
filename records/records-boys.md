@@ -1,7 +1,7 @@
 # Tanque Verde (Tucson, AZ) - Boys
 ## Team Records - Short Course Yards (SCY)
 
-**Generated:** November 14, 2025 at 12:05 AM
+**Generated:** November 14, 2025 at 12:26 AM
 
 ---
 
@@ -13,7 +13,7 @@
 | Sophomore | 21.99 | Nicholas Cusson | Oct 23, 2021 | 2021 D-3 AIA State Championships (AZ) |
 | Junior | 22.13 | Nick Cusson | Oct 28, 2022 | Southern AZ Regional Qualifier (AZ) |
 | Senior | 22.13 | Sam Stott | Nov 05, 2022 | 2022 D-3 AIA Boys State Championships (AZ) |
-| **Open** | **21.99** | **Nick Cusson** | **Nov 05, 2021** | **AIA  D-III Boys State (AZ)** |
+| **Open** | **21.99** | **Nicholas Cusson** | **Oct 23, 2021** | **2021 D-3 AIA State Championships (AZ)** |
 
 ### 100 Freestyle
 
@@ -39,7 +39,7 @@
 
 | Grade | Time | Athlete | Date | Meet |
 |-------|-----:|---------|------|------|
-| Freshman | 5:08.11 | Sam Stott | Nov 01, 2019 | Canyon Del Oro Invite (AZ) |
+| Freshman | 5:07.85 | Kent Olsson | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
 | Sophomore | 5:19.88 | Zachary Duerkop | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
 | Junior | 5:04.10 | Joseph Breinholt | Oct 24, 2015 | Small School Championships (Paradise Valley, AZ) |
 | Senior | 5:19.99 | Austin Morris | Sep 10, 2015 | Desert Christian / Tanque Verde / Amphi (Tucson, AZ) |
@@ -71,9 +71,9 @@
 |-------|-----:|---------|------|------|
 | Freshman | 55.94 | Sam Stott | Oct 19, 2019 | Mike Ward Invitational (Tucson, AZ) |
 | Sophomore | 55.19 | Nick Cusson | Oct 23, 2021 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
-| Junior | 54.45 | Zachary Duerkop | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
-| Senior | 53.01 | Zachary Duerkop | Sep 20, 2025 | Canyon del Oro Classic (Tucson, AZ) |
-| **Open** | **53.01** | **Zachary Duerkop** | **Sep 20, 2025** | **Canyon del Oro Classic (Tucson, AZ)** |
+| Junior | 54.41 | Jackson Eftekhar | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
+| Senior | 52.48 | Zachary Duerkop | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
+| **Open** | **52.48** | **Zachary Duerkop** | **Nov 08, 2025** | **2025 D-3 AIA State Championships (AZ)** |
 
 ### 200 Individual Medley
 
@@ -81,10 +81,10 @@
 |-------|-----:|---------|------|------|
 | Freshman | 2:07.98 | Sam Stott | Nov 01, 2019 | Canyon Del Oro Invite (AZ) |
 | Sophomore | 2:04.88 | Wade Olsson | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
-| Junior | 2:00.20 | Wade Olsson | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
+| Junior | 1:57.78 | Wade Olsson | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
 | Senior | 2:00.80 | Zachary Duerkop | Oct 18, 2025 | Pecan Classic (Sahuarita, AZ) |
-| **Open** | **2:00.20** | **Wade Olsson** | **Sep 27, 2025** | **Arena High School Classic (Tucson, AZ)** |
+| **Open** | **1:57.78** | **Wade Olsson** | **Nov 08, 2025** | **2025 D-3 AIA State Championships (AZ)** |
 
 ---
 
-*Generated: November 14, 2025 at 12:05 AM*
+*Generated: November 14, 2025 at 12:26 AM*

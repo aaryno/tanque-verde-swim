@@ -1,25 +1,25 @@
 # 2025-26 Season Summary
 ## Tanque Verde High School Swimming
 
-**Generated:** November 14, 2025 at 12:05 AM
+**Generated:** November 14, 2025 at 12:27 AM
 
 ---
 
 ## Season Overview
 
-**Total Swims:** 304
+**Total Swims:** 361
 **Swimmers:** 30
-**Meets Attended:** 4
+**Meets Attended:** 5
 
 ### Participation by Gender
-- **Boys:** 140 swims
-- **Girls:** 164 swims
+- **Boys:** 162 swims
+- **Girls:** 199 swims
 
 ### Participation by Grade
-- **Freshman:** 83 swims
-- **Sophomore:** 39 swims
-- **Junior:** 97 swims
-- **Senior:** 85 swims
+- **Freshman:** 99 swims
+- **Sophomore:** 44 swims
+- **Junior:** 118 swims
+- **Senior:** 100 swims
 
 ---
 
@@ -31,6 +31,7 @@
 | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
 | Oct 18, 2025 | Pecan Classic (Sahuarita, AZ) |
 | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
+| Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
 
 ---
 
@@ -42,14 +43,19 @@
 - *Date:* Sep 27, 2025 at Arena High School Classic (Tucson, AZ)
 
 **Boys 100 FL SCY**
-- **NEW:** 53.01 - Zachary Duerkop (SR)
+- **NEW:** 52.48 - Zachary Duerkop (SR)
 - *Previous:* 53.45 - Nick Cusson
-- *Date:* Sep 20, 2025 at Canyon del Oro Classic (Tucson, AZ)
+- *Date:* Nov 08, 2025 at 2025 D-3 AIA State Championships (AZ)
 
 **Boys 200 IM SCY**
-- **NEW:** 2:00.20 - Wade Olsson (JR)
+- **NEW:** 1:57.78 - Wade Olsson (JR)
 - *Previous:* 2:02.29 - Nick Cusson
-- *Date:* Sep 27, 2025 at Arena High School Classic (Tucson, AZ)
+- *Date:* Nov 08, 2025 at 2025 D-3 AIA State Championships (AZ)
+
+**Girls 100 BK SCY**
+- **NEW:** 1:02.29 - Logan Sulger (SR)
+- *Previous:* 1:02.65 - Calla Isenberg
+- *Date:* Nov 08, 2025 at 2025 D-3 AIA State Championships (AZ)
 
 
 ---
@@ -58,14 +64,14 @@
 
 | Event | Boys Time | Boys Swimmer | Girls Time | Girls Swimmer |
 |-------|----------:|--------------|-----------:|---------------|
-| 50 Free | 22.96 | Zachary Duerkop (SR) | 26.87 | Hadley Cusson (JR) |
-| 100 Free | 51.43 | Jackson Eftekhar (JR) | 58.60 | Hadley Cusson (JR) |
+| 50 Free | 22.96 | Zachary Duerkop (SR) | 26.61 | Hadley Cusson (JR) |
+| 100 Free | 51.43 | Jackson Eftekhar (JR) | 58.02 | Isla Cerepak (FR) |
 | 200 Free | 1:31.81 | Wade Olsson (JR) | 1:50.57 | Stella Eftekhar (FR) |
-| 500 Free | 5:23.06 | Kent Olsson (FR) | 6:10.97 | Talia Schwab (FR) |
-| 100 Back | 57.27 | Wade Olsson (JR) | 1:04.83 | Logan Sulger (SR) |
+| 500 Free | 5:07.85 | Kent Olsson (FR) | 6:01.25 | Talia Schwab (FR) |
+| 100 Back | 57.27 | Wade Olsson (JR) | 1:02.29 | Logan Sulger (SR) |
 | 100 Breast | 59.61 | Zachary Duerkop (SR) | 1:13.71 | Adrianna Witte (SR) |
-| 100 Fly | 53.01 | Zachary Duerkop (SR) | 1:08.74 | Stella Eftekhar (FR) |
-| 200 IM | 2:00.20 | Wade Olsson (JR) | 2:35.08 | Madeline Barnard (SR) |
+| 100 Fly | 52.48 | Zachary Duerkop (SR) | 1:07.42 | Stella Eftekhar (FR) |
+| 200 IM | 1:57.78 | Wade Olsson (JR) | 2:30.38 | Madeline Barnard (SR) |
 
 ---
 
@@ -74,53 +80,53 @@
 ### Boys
 
 **FR:**
-- Kent Olsson (17 swims)
+- Kent Olsson (21 swims)
 - Shane Gardner (4 swims)
 
 **SO:**
-- Bennett Johnston (11 swims)
-- Quinn Scott (8 swims)
+- Bennett Johnston (12 swims)
+- Quinn Scott (10 swims)
 - wyatt.rodems Wyatt R (8 swims)
 
 **JR:**
-- Jackson Eftekhar (17 swims)
-- Jackson Machamer (14 swims)
-- Wade Olsson (18 swims)
+- Jackson Eftekhar (19 swims)
+- Jackson Machamer (18 swims)
+- Wade Olsson (22 swims)
 
 **SR:**
 - Carter Caballero (7 swims)
-- Grayson The (18 swims)
-- Zachary Duerkop (18 swims)
+- Grayson The (20 swims)
+- Zachary Duerkop (21 swims)
 
 ### Girls
 
 **FR:**
-- Isla Cerepak (14 swims)
-- Laila Alitiem (5 swims)
+- Isla Cerepak (16 swims)
+- Laila Alitiem (6 swims)
 - Laine Lightcap (2 swims)
 - Laura Feldman (3 swims)
 - Magdalena McGovern (3 swims)
 - Niccum Violet (3 swims)
-- Rachel Anderson (11 swims)
-- Stella Eftekhar (12 swims)
-- Talia Schwab (9 swims)
+- Rachel Anderson (14 swims)
+- Stella Eftekhar (15 swims)
+- Talia Schwab (12 swims)
 
 **SO:**
-- Ella Bissmeyer (12 swims)
+- Ella Bissmeyer (14 swims)
 
 **JR:**
-- Amelia Kidd (6 swims)
-- Amira Alitiem (9 swims)
-- Hadley Cusson (18 swims)
-- Kadynce Drummond (10 swims)
+- Amelia Kidd (8 swims)
+- Amira Alitiem (12 swims)
+- Hadley Cusson (22 swims)
+- Kadynce Drummond (12 swims)
 - Lily Niccum (5 swims)
 
 **SR:**
-- Adrianna Witte (13 swims)
+- Adrianna Witte (16 swims)
 - Brooklyn Johnson (2 swims)
-- Logan Sulger (14 swims)
-- Madeline Barnard (13 swims)
+- Logan Sulger (17 swims)
+- Madeline Barnard (17 swims)
 
 ---
 
-*Generated: November 14, 2025 at 12:05 AM*
+*Generated: November 14, 2025 at 12:27 AM*

@@ -1,7 +1,7 @@
 # Tanque Verde (Tucson, AZ) - Girls
 ## Team Records - Short Course Yards (SCY)
 
-**Generated:** November 14, 2025 at 12:05 AM
+**Generated:** November 14, 2025 at 12:26 AM
 
 ---
 
@@ -19,7 +19,7 @@
 
 | Grade | Time | Athlete | Date | Meet |
 |-------|-----:|---------|------|------|
-| Freshman | 58.58 | Natalie Armstrong | Nov 05, 2020 | AIA State Meet - D3 (AZ) |
+| Freshman | 58.02 | Isla Cerepak | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
 | Sophomore | 58.00 | Natalie Armstrong | Nov 06, 2021 | AIA  D-III Girls State (AZ) |
 | Junior | 56.94 | Isabelle Sansom | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
 | Senior | 54.11 | Isabelle Sansom | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
@@ -51,9 +51,9 @@
 |-------|-----:|---------|------|------|
 | Freshman | 1:06.38 | Sarynn Patterson | Nov 04, 2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
 | Sophomore | 1:05.84 | Paisley White | Nov 05, 2020 | AIA State Meet - D3 (AZ) |
-| Junior | 1:04.64 | Sarynn Patterson | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
-| Senior | 1:02.65 | Calla Isenberg | Oct 27, 2017 | Southern Arizona Regional Qualifier (Oro Valley, AZ) |
-| **Open** | **1:02.65** | **Calla Isenberg** | **Oct 27, 2017** | **Southern Arizona Regional Qualifier (Oro Valley, AZ)** |
+| Junior | 1:04.64 | Sarynn Patterson | Nov 03, 2018 | 2018 D-3 AIA State Championships (AZ) |
+| Senior | 1:02.29 | Logan Sulger | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
+| **Open** | **1:02.29** | **Logan Sulger** | **Nov 08, 2025** | **2025 D-3 AIA State Championships (AZ)** |
 
 ### 100 Breaststroke
 
@@ -87,4 +87,4 @@
 
 ---
 
-*Generated: November 14, 2025 at 12:05 AM*
+*Generated: November 14, 2025 at 12:26 AM*
