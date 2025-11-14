@@ -1,9 +1,10 @@
 /* Tanque Verde High School Swim Records Website */
 
 :root {
-  --tvhs-primary: #003366;
-  --tvhs-secondary: #FFD700;
-  --tvhs-accent: #00509E;
+  --tvhs-primary: #2C5F2D;      /* Forest Green */
+  --tvhs-secondary: #C0C0C0;    /* Silver */
+  --tvhs-accent: #4A7C4E;       /* Light Forest Green */
+  --tvhs-dark-green: #1B4332;   /* Dark Forest Green */
   --bg-light: #f8f9fa;
   --text-dark: #212529;
 }
@@ -52,11 +53,11 @@ body {
 
 /* Gender-specific navigation rows */
 .girls-nav {
-  background-color: #8B008B; /* Purple for girls */
+  background-color: #808080; /* Silver/Grey for girls */
 }
 
 .boys-nav {
-  background-color: #003366; /* Navy blue for boys */
+  background-color: #2C5F2D; /* Forest green for boys */
 }
 
 /* Page header */
