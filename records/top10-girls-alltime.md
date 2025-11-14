@@ -1,7 +1,7 @@
 # All-Time Top 10 - Girls
 ## Tanque Verde High School Swimming
 
-**Generated:** October 09, 2025 at 12:49 PM
+**Generated:** November 14, 2025 at 12:01 AM
 
 ---
 
@@ -17,7 +17,7 @@
 | 6 | 26.31 | Chloe Weatherwax | — | Oct 30, 2020 | SQ  @ CDO (Oro Valley, AZ) |
 | 7 | 26.36 | Paisley White | JR | Nov 06, 2021 | AIA  D-III Girls State (AZ) |
 | 8 | 26.77 | Natalie Armstrong | SR | Sep 23, 2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
-| 9 | 26.89 | Hadley Cusson | JR | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
+| 9 | 26.87 | Hadley Cusson | JR | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
 | 10 | 27.05 | Hazel Dasse | FR | Oct 30, 2015 | Southern Arizona Regional Qualifier (Tucson, AZ) |
 
 ### 100 Freestyle
@@ -31,9 +31,9 @@
 | 5 | 58.11 | Grace Davis | SO | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
 | 6 | 58.30 | Calla Isenberg | SR | Oct 07, 2017 | 2017 TYR High School Classic (Tucson, AZ) |
 | 7 | 58.60 | Hadley Cusson | JR | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
-| 8 | 1:00.66 | Madisyn Clausen | JR | Oct 05, 2013 | High School Classic (Tucson, AZ) |
-| 9 | 1:00.95 | Hazel Dasse | SO | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
-| 10 | 1:01.37 | Kennady Pautler | — | Oct 30, 2020 | SQ  @ CDO (Oro Valley, AZ) |
+| 8 | 1:00.36 | Ella Bissmeyer | SO | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
+| 9 | 1:00.66 | Madisyn Clausen | JR | Oct 05, 2013 | High School Classic (Tucson, AZ) |
+| 10 | 1:00.95 | Hazel Dasse | SO | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
 
 ### 200 Freestyle
 
@@ -46,9 +46,9 @@
 | 5 | 2:09.78 | Grace Davis | FR | Sep 23, 2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
 | 6 | 2:10.40 | Brianne Foley | JR | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
 | 7 | 2:15.91 | Summer Cugini | SR | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
-| 8 | 2:18.06 | Paisley White | FR | Sep 27, 2019 | Red Wolf Qualifier (Sahuarita, AZ) |
-| 9 | 2:19.02 | Ella Bissmeyer | FR | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
-| 10 | 2:19.15 | Kennady Pautler | JR | Nov 01, 2019 | Canyon Del Oro Invite (AZ) |
+| 8 | 2:17.38 | Hadley Cusson | JR | Oct 18, 2025 | Pecan Classic (Sahuarita, AZ) |
+| 9 | 2:18.06 | Paisley White | FR | Sep 27, 2019 | Red Wolf Qualifier (Sahuarita, AZ) |
+| 10 | 2:19.02 | Ella Bissmeyer | FR | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
 
 ### 500 Freestyle
 
@@ -56,10 +56,10 @@
 |-----:|-----:|---------|------|------|------|
 | 1 | 5:32.67 | Anna Ellis | SO | Nov 04, 2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
 | 2 | 5:45.11 | Hazel Dasse | SO | Sep 17, 2016 | Canyon Del Oro Classic (Tucson, AZ) |
-| 3 | 6:13.72 | Sarynn Patterson | SR | Oct 19, 2019 | Mike Ward Invitational (Tucson, AZ) |
-| 4 | 6:17.63 | Kadynce Drummond | FR | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
-| 5 | 6:18.22 | Talia Schwab | FR | Sep 20, 2025 | Canyon del Oro Classic (Tucson, AZ) |
-| 6 | 6:19.09 | Rachel Anderson | FR | Sep 20, 2025 | Canyon del Oro Classic (Tucson, AZ) |
+| 3 | 6:10.97 | Talia Schwab | FR | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
+| 4 | 6:13.72 | Sarynn Patterson | SR | Oct 19, 2019 | Mike Ward Invitational (Tucson, AZ) |
+| 5 | 6:15.73 | Rachel Anderson | FR | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
+| 6 | 6:17.63 | Kadynce Drummond | FR | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
 | 7 | 6:22.94 | Summer Cugini | JR | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
 | 8 | 6:23.20 | Sage Weatherwax | JR | Nov 05, 2020 | AIA State Meet - D3 (AZ) |
 | 9 | 6:25.55 | Sydney Hagerman | JR | Oct 29, 2021 | Southern AZ Regional Qualifier (Oro Valley Aquatic Center, AZ) |
@@ -73,7 +73,7 @@
 | 2 | 1:03.12 | Lindsey Schoel-Smith | — | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
 | 3 | 1:03.34 | Sarynn Patterson | SR | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
 | 4 | 1:04.81 | Paisley White | SR | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
-| 5 | 1:05.38 | Logan Sulger | JR | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
+| 5 | 1:04.83 | Logan Sulger | SR | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
 | 6 | 1:05.85 | Hazel Dasse | SO | Nov 04, 2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
 | 7 | 1:06.23 | Brianne Foley | SR | Oct 25, 2024 | Southern Arizona Qualifier (Oro Valley, AZ) |
 | 8 | 1:07.64 | Shaye Sulgar | SR | Sep 25, 2021 | TYR HS Classic (AZ) |
@@ -107,8 +107,8 @@
 | 6 | 1:08.74 | Stella Eftekhar | FR | Sep 20, 2025 | Canyon del Oro Classic (Tucson, AZ) |
 | 7 | 1:12.50 | Adrianna Witte | SR | Sep 20, 2025 | Canyon del Oro Classic (Tucson, AZ) |
 | 8 | 1:12.79 | Amira Alitiem | JR | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
-| 9 | 1:13.52 | Madison Winkle | FR | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
-| 10 | 1:14.62 | Ella Bissmeyer | SO | Sep 20, 2025 | Canyon del Oro Classic (Tucson, AZ) |
+| 9 | 1:13.51 | Isla Cerepak | FR | Oct 18, 2025 | Pecan Classic (Sahuarita, AZ) |
+| 10 | 1:13.52 | Madison Winkle | FR | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
 
 ### 200 Individual Medley
 
@@ -119,12 +119,12 @@
 | 3 | 2:21.97 | Isabelle Sansom | JR | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
 | 4 | 2:27.21 | Hazel Dasse | FR | Oct 24, 2015 | Small School Championships (Paradise Valley, AZ) |
 | 5 | 2:35.04 | Madisyn Clausen | JR | Oct 26, 2013 | Mike Ward Memorial Invitational (Tucson, AZ) |
-| 6 | 2:35.12 | Ella Bissmeyer | FR | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
-| 7 | 2:35.54 | Adrianna Witte | SR | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
-| 8 | 2:35.94 | Isla Cerepak | FR | Sep 20, 2025 | Canyon del Oro Classic (Tucson, AZ) |
-| 9 | 2:36.65 | Paisley White | JR | Oct 23, 2021 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
-| 10 | 2:37.75 | Anna Ellis | FR | Sep 10, 2015 | DC / Amphi / TV (Tucson, AZ) |
+| 6 | 2:35.08 | Madeline Barnard | SR | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
+| 7 | 2:35.12 | Ella Bissmeyer | FR | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
+| 8 | 2:35.54 | Adrianna Witte | SR | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
+| 9 | 2:35.94 | Isla Cerepak | FR | Sep 20, 2025 | Canyon del Oro Classic (Tucson, AZ) |
+| 10 | 2:36.65 | Paisley White | JR | Oct 23, 2021 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
 
 ---
 
-*Generated: October 09, 2025 at 12:49 PM*
+*Generated: November 14, 2025 at 12:01 AM*
