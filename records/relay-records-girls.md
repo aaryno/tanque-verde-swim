@@ -15,10 +15,10 @@
 | 4 | 1:58.82 | Isabelle Sansom (SR), Maggie Colombo (FR), Paisley White (FR), Sarynn Patterson (SR) | Oct 05, 2019 | High School Classic (Tucson, AZ) |
 | 5 | 1:58.91 | Isabelle Sansom (SR), Maggie Colombo (FR), Paisley White (FR), Sarynn Patterson (SR) | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
 | 6 | 2:00.34 | Madison Winkle (FR), Lindsey Sohoel-Smith (SO), Hazel Dasse (SO) | Nov 04, 2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
-| 7 | 2:00.67 | Isabelle Sansom (SR), Maggie Colombo (FR), Paisley White (FR), Sarynn Patterson (SR) | Nov 01, 2019 | Canyon Del Oro Invite (AZ) |
-| 8 | 2:00.97 | Maggie Colombo (SR), Paisley White (SR), Brianne Foley (SO), Natalie Armstrong (JR) | Sep 24, 2022 | TYR High School Classic (AZ) |
-| 9 | 2:01.40 | Adrianna Witte (JR), Hadley Cusson (SO), Brianne Foley (SR), Logan Sulger (JR) | Sep 14, 2024 | Canyon del Oro Classic (Oro Valley, AZ) |
-| 10 | 2:01.94 | Stella Eftekhar (FR), Adrianna Witte (SR), Hadley Cusson (JR), Logan Sulger (SR) | Sep 20, 2025 | Canyon del Oro Classic (Tucson, AZ) |
+| 7 | 2:00.57 | Logan Sulger (SR), Adrianna Witte (SR), Hadley Cusson (JR), Isla Cerepak (FR) | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
+| 8 | 2:00.67 | Isabelle Sansom (SR), Maggie Colombo (FR), Paisley White (FR), Sarynn Patterson (SR) | Nov 01, 2019 | Canyon Del Oro Invite (AZ) |
+| 9 | 2:00.97 | Maggie Colombo (SR), Paisley White (SR), Brianne Foley (SO), Natalie Armstrong (JR) | Sep 24, 2022 | TYR High School Classic (AZ) |
+| 10 | 2:01.40 | Adrianna Witte (JR), Hadley Cusson (SO), Brianne Foley (SR), Logan Sulger (JR) | Sep 14, 2024 | Canyon del Oro Classic (Oro Valley, AZ) |
 
 ---
 
