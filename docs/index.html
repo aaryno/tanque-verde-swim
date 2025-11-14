@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanque Verde High School Swimming & Diving</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/tanque-verde-swim/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏊</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/tanque-verde-swim/index.html">
+                🏊 Tanque Verde Swimming
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Girls Navigation Row -->
+    <nav class="navbar navbar-expand-lg navbar-dark girls-nav">
+        <div class="container-fluid">
+            <span class="navbar-text text-white me-3"><strong>GIRLS</strong></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#girlsNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="girlsNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Team Records
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/records/girls-overall.html">Overall Records</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/records/girls-relays.html">Relay Records</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Top 10 Lists
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/top10/girls-alltime.html">All-Time</a></li>
+                            <li><hr class="dropdown-divider" style="border-color: rgba(255,255,255,0.2);"></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/top10/girls-2024-25.html">2024-25</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/top10/girls-2023-24.html">2023-24</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Annual Summaries
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2025-26.html">2025-26</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2024-25.html">2024-25</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2023-24.html">2023-24</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Boys Navigation Row -->
+    <nav class="navbar navbar-expand-lg navbar-dark boys-nav">
+        <div class="container-fluid">
+            <span class="navbar-text text-white me-3"><strong>BOYS</strong></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#boysNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="boysNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Team Records
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/records/boys-overall.html">Overall Records</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/records/boys-relays.html">Relay Records</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Top 10 Lists
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/top10/boys-alltime.html">All-Time</a></li>
+                            <li><hr class="dropdown-divider" style="border-color: rgba(255,255,255,0.2);"></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/top10/boys-2024-25.html">2024-25</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/top10/boys-2023-24.html">2023-24</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Annual Summaries
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2025-26.html">2025-26</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2024-25.html">2024-25</a></li>
+                            <li><a class="dropdown-item" href="/tanque-verde-swim/annual/2023-24.html">2023-24</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <div class="page-header" style="background: linear-gradient(135deg, #003366 0%, #8B008B 100%); padding: 4rem 0;">
+        <div class="container text-center">
+            <h1 style="font-size: 3rem; margin-bottom: 1rem;">🏊 Tanque Verde High School</h1>
+            <h2 style="font-size: 2rem; font-weight: 300;">Swimming & Diving Records</h2>
+            <p class="subtitle" style="font-size: 1.3rem; margin-top: 1.5rem;">Tucson, Arizona | AIA Division III</p>
+        </div>
+    </div>
+    
+    <!-- Quick Links -->
+    <div class="container my-5">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h4 class="mb-0">👧 Girls Records & Stats</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li class="mb-2">📊 <a href="/tanque-verde-swim/records/girls-overall.html">Team Records (Overall)</a></li>
+                            <li class="mb-2">🏃 <a href="/tanque-verde-swim/records/girls-relays.html">Relay Records</a></li>
+                            <li class="mb-2">🔟 <a href="/tanque-verde-swim/top10/girls-alltime.html">All-Time Top 10</a></li>
+                            <li class="mb-2">📅 <a href="/tanque-verde-swim/annual/2025-26.html">2025-26 Season Summary</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h4 class="mb-0">👦 Boys Records & Stats</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li class="mb-2">📊 <a href="/tanque-verde-swim/records/boys-overall.html">Team Records (Overall)</a></li>
+                            <li class="mb-2">🏃 <a href="/tanque-verde-swim/records/boys-relays.html">Relay Records</a></li>
+                            <li class="mb-2">🔟 <a href="/tanque-verde-swim/top10/boys-alltime.html">All-Time Top 10</a></li>
+                            <li class="mb-2">📅 <a href="/tanque-verde-swim/annual/2025-26.html">2025-26 Season Summary</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 2025 State Championship Highlights -->
+    <div class="container my-5">
+        <div class="highlight-box">
+            <h3>🏆 2025 AIA D3 State Championship Highlights</h3>
+            <p class="mb-3"><strong>November 8, 2025 | Paradise Valley High School</strong></p>
+            <p>Outstanding performance with <strong>23 top-10 finishes</strong> from <strong>21 swimmers</strong> across <strong>37 events</strong>!</p>
+            
+            <h5 class="mt-4 mb-3">Top Finishers:</h5>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title"><span class="place-badge place-2">2nd</span> Zachary Duerkop</h6>
+                            <p class="card-text mb-0">Boys 100 Fly - <span class="time">52.48</span> (School Record)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title"><span class="place-badge place-2">2nd</span> Wade Olsson</h6>
+                            <p class="card-text mb-0">Boys 200 IM - <span class="time">1:57.78</span> (School Record)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title"><span class="place-badge place-3">3rd</span> Wade Olsson</h6>
+                            <p class="card-text mb-0">Boys 100 Breast - <span class="time">1:00.82</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title"><span class="place-badge place-top10">4th</span> Kent Olsson</h6>
+                            <p class="card-text mb-0">Boys 500 Free - <span class="time">5:07.85</span> (8.72s drop!)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title"><span class="place-badge place-top10">5th</span> Logan Sulger</h6>
+                            <p class="card-text mb-0">Girls 100 Back - <span class="time">1:02.29</span> (School Record)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title"><span class="place-badge place-top10">10th</span> Grayson The</h6>
+                            <p class="card-text mb-0">Boys 50 Free - <span class="time">23.54</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Records Broken -->
+    <div class="container my-5">
+        <h2 class="mb-4">📈 Records Broken - 2025-26 Season</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card school-record">
+                    <div class="card-body">
+                        <h5 class="card-title">Boys 100 Breaststroke</h5>
+                        <p class="mb-2"><strong>NEW:</strong> <span class="time">59.61</span> - <strong>Zachary Duerkop</strong> (SR)</p>
+                        <p class="mb-2"><em>Previous:</em> 1:04.17</p>
+                        <p class="mb-0 text-success"><strong>Improvement: 4.56 seconds</strong></p>
+                        <small class="text-muted">Sep 20, 2025 at Canyon del Oro Classic</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card school-record">
+                    <div class="card-body">
+                        <h5 class="card-title">Boys 100 Butterfly</h5>
+                        <p class="mb-2"><strong>NEW:</strong> <span class="time">52.48</span> - <strong>Zachary Duerkop</strong> (SR)</p>
+                        <p class="mb-2"><em>Previous:</em> 53.45 - Nick Cusson</p>
+                        <p class="mb-0 text-success"><strong>Improvement: 0.97 seconds</strong></p>
+                        <small class="text-muted">Nov 8, 2025 at AIA D3 State Championship</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card school-record">
+                    <div class="card-body">
+                        <h5 class="card-title">Boys 200 IM</h5>
+                        <p class="mb-2"><strong>NEW:</strong> <span class="time">1:57.78</span> - <strong>Wade Olsson</strong> (JR)</p>
+                        <p class="mb-2"><em>Previous:</em> 2:02.29 - Nick Cusson</p>
+                        <p class="mb-0 text-success"><strong>Improvement: 4.51 seconds</strong></p>
+                        <small class="text-muted">Nov 8, 2025 at AIA D3 State Championship</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card school-record">
+                    <div class="card-body">
+                        <h5 class="card-title">Girls 100 Backstroke</h5>
+                        <p class="mb-2"><strong>NEW:</strong> <span class="time">1:02.29</span> - <strong>Logan Sulger</strong> (SR)</p>
+                        <p class="mb-2"><em>Previous:</em> 1:02.65 - Calla Isenberg</p>
+                        <p class="mb-0 text-success"><strong>Improvement: 0.36 seconds</strong></p>
+                        <small class="text-muted">Nov 8, 2025 at AIA D3 State Championship</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Senior Spotlights -->
+    <div class="container my-5">
+        <h2 class="mb-4">🎓 Senior Class of 2026</h2>
+        <p class="lead mb-4">Celebrating our 7 seniors: 181 individual swims | 31 state meet swims</p>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Zachary Duerkop</h5>
+                        <p class="mb-2"><strong>3 State Meets</strong> (9 events)</p>
+                        <p class="mb-1"><small>100 Fly: <span class="time">52.48</span> (School Record)</small></p>
+                        <p class="mb-1"><small>100 Breast: <span class="time">59.51</span></small></p>
+                        <p class="mb-1"><small>200 IM: <span class="time">2:00.80</span></small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Logan Sulger</h5>
+                        <p class="mb-2"><strong>2 State Meets</strong> (6 events)</p>
+                        <p class="mb-1"><small>100 Back: <span class="time">1:02.29</span> (School Record)</small></p>
+                        <p class="mb-0"><small class="text-success">14.10s improvement over 4 years</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Madeline Barnard</h5>
+                        <p class="mb-2"><strong>2 State Meets</strong> (7 events)</p>
+                        <p class="mb-1"><small>200 IM: <span class="time">2:30.38</span></small></p>
+                        <p class="mb-1"><small>100 Breast: <span class="time">1:15.32</span></small></p>
+                        <p class="mb-0"><small class="text-success">13.68s improvement in 200 IM</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Grayson The</h5>
+                        <p class="mb-2"><strong>2 State Meets</strong> (3 events)</p>
+                        <p class="mb-1"><small>50 Free: <span class="time">23.54</span></small></p>
+                        <p class="mb-1"><small>100 Free: <span class="time">53.57</span></small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Adrianna Witte</h5>
+                        <p class="mb-2"><strong>2 State Meets</strong> (6 events)</p>
+                        <p class="mb-1"><small>100 Breast: <span class="time">1:13.71</span></small></p>
+                        <p class="mb-1"><small>100 Fly: <span class="time">1:12.50</span></small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Carter Caballero</h5>
+                        <p class="mb-2"><strong>4 Years Active</strong></p>
+                        <p class="mb-0"><small class="text-success">16.93s improvement in 100 Free!</small></p>
+                        <p class="mb-0"><small class="text-success">23.26s improvement in 100 Breast!</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Brooklyn Johnson</h5>
+                        <p class="mb-2"><strong>4 Years Active</strong></p>
+                        <p class="mb-1"><small>100 Free: <span class="time">1:15.38</span></small></p>
+                        <p class="mb-0"><small class="text-success">4.17s improvement</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container text-center">
+            <p class="mb-2">&copy; 2025 Tanque Verde High School Swimming & Diving</p>
+            <p class="mb-0">
+                <small>
+                    Generated on November 14, 2025 | 
+                    <a href="https://github.com/aaryno/tanque-verde-swim">View on GitHub</a>
+                </small>
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
