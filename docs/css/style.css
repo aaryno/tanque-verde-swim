@@ -16,20 +16,31 @@ body {
 }
 
 /* Navigation */
-.navbar-brand {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: var(--tvhs-secondary) !important;
-}
-
 .navbar {
   background-color: var(--tvhs-primary) !important;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-logo {
+  height: 40px;
+  width: auto;
 }
 
 .navbar .nav-link {
   color: #fff !important;
   transition: color 0.3s ease;
+  padding: 0.5rem 0.75rem !important;
+  font-weight: 500;
 }
 
 .navbar .nav-link:hover {
@@ -39,25 +50,38 @@ body {
 .dropdown-menu {
   background-color: var(--tvhs-primary);
   border: none;
+  border-radius: 0 0 8px 8px;
+  margin-top: 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.dropdown-menu-scroll {
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 .dropdown-item {
   color: #fff !important;
   transition: background-color 0.3s ease;
+  padding: 0.5rem 1rem;
 }
 
-.dropdown-item:hover {
+.dropdown-item:hover,
+.dropdown-item:focus {
   background-color: var(--tvhs-accent) !important;
   color: var(--tvhs-secondary) !important;
 }
 
-/* Gender-specific navigation rows */
-.girls-nav {
-  background-color: #808080; /* Silver/Grey for girls */
+.dropdown-header {
+  color: var(--tvhs-secondary) !important;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.boys-nav {
-  background-color: #2C5F2D; /* Forest green for boys */
+.dropdown-divider {
+  border-color: rgba(255,255,255,0.2);
 }
 
 /* Page header */

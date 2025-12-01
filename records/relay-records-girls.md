@@ -1,24 +1,27 @@
 # Girls Relay Records
 ## Tanque Verde High School Swimming
 
-**Generated:** November 14, 2025
-
 ---
 
 ## 200 Medley Relay
 
 | Rank | Time | Participants | Date | Meet |
 |-----:|-----:|--------------|------|------|
-| **1** | **1:54.87** | **Hazel Dasse (SR), Sarynn Patterson (JR), Lindsey Schoel-Smith** | **Nov 01, 2018** | **AIA D-III Girls State Meet (AZ)** |
-| 2 | 1:56.42 | Hazel Dasse (SR), Sarynn Patterson (JR), Lindsey Schoel-Smith | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
-| 3 | 1:58.80 | Isabelle Sansom (SR), Maggie Colombo (FR), Paisley White (FR), Sarynn Patterson (SR) | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
-| 4 | 1:58.82 | Isabelle Sansom (SR), Maggie Colombo (FR), Paisley White (FR), Sarynn Patterson (SR) | Oct 05, 2019 | High School Classic (Tucson, AZ) |
-| 5 | 1:58.91 | Isabelle Sansom (SR), Maggie Colombo (FR), Paisley White (FR), Sarynn Patterson (SR) | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
-| 6 | 2:00.34 | Madison Winkle (FR), Lindsey Sohoel-Smith (SO), Hazel Dasse (SO) | Nov 04, 2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
-| 7 | 2:00.57 | Logan Sulger (SR), Adrianna Witte (SR), Hadley Cusson (JR), Isla Cerepak (FR) | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 8 | 2:00.67 | Isabelle Sansom (SR), Maggie Colombo (FR), Paisley White (FR), Sarynn Patterson (SR) | Nov 01, 2019 | Canyon Del Oro Invite (AZ) |
-| 9 | 2:00.97 | Maggie Colombo (SR), Paisley White (SR), Brianne Foley (SO), Natalie Armstrong (JR) | Sep 24, 2022 | TYR High School Classic (AZ) |
-| 10 | 2:01.40 | Adrianna Witte (JR), Hadley Cusson (SO), Brianne Foley (SR), Logan Sulger (JR) | Sep 14, 2024 | Canyon del Oro Classic (Oro Valley, AZ) |
+| **1** | **01:52.15** | **Grace Davis, Ella Bissmeyer, Adrianna Witte, Logan Sulger** | **Oct 25, 2024** | **Southern Arizona Qualifier (Oro Valley, AZ)** |
+| 2 | 01:52.45 | Amelia Kidd, Logan Sulger, Adrianna Witte, Hadley Cusson | Oct 18, 2025 | Pecan Classic (Sahuarita, AZ) |
+| 3 | 01:53.19 | Logan Sulger, Kadynce Drummond, Madeline Barnard, Isla Cerepak | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
+| 4 | 01:53.50 | Isabelle Sansom, Sarynn Patterson, Kennady Pautler, Lindsey Schoel-Smith | Oct 26, 2018 | Southern Arizona Regional Qualifier (AZ) |
+| 5 | 01:53.58 | Isabelle Sansom, Kennady Pautler, Violet Dasse, Trinity Weatherwax | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
+| 6 | 01:54.06 | Hazel Dasse, Sarynn Patterson, Ellie Radomsky, Lindsey Sohoel-Smith | Oct 01, 2016 | 2016 TYR High School Classic (Tucson, AZ) |
+| 7 | 01:54.87 | Sarynn Patterson, Lindsey Schoel-Smith, Hazel Dasse, Ellie Radomsky | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
+| 8 | 01:55.49 | Ellie Randomsky, Emma Morris, Regan Hughes, Sarynn Patterson | Nov 04, 2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
+| 9 | 01:56.01 | Summer Cugini, Logan Sulger, Ella Bissmeyer, Adrianna Witte | Sep 28, 2024 | 21st Annual TYR HS Classic (Tucson, AZ) |
+| 10 | 01:56.16 | Marisol Rivera, Sierra Roh, Amanda Grimshaw, Meghan Marner | Oct 06, 2012 | High School Classic (Tucson, AZ) |
+| 11 | 01:56.54 | Emma Morris, Hayley Jones, Violet Dasse, Ellie Radomsky | Oct 27, 2017 | Southern Arizona Regional Qualifier (Oro Valley, AZ) |
+| 12 | 01:56.96 | Shaye Sulgar, Lainie Radomsky, Sydney Hagerman, Alexandra Foley | Sep 25, 2021 | TYR HS Classic (AZ) |
+| 13 | 01:58.24 | Emma Morris, Ellie Radomsky, Madison Winkle, Anna Ellis | Sep 17, 2016 | Canyon Del Oro Classic (Tucson, AZ) |
+| 14 | 01:58.70 | Amira Alitiem, Lily Niccum, Madeline Barnard, Summer Cugini | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
+| 15 | 01:58.80 | Sarynn Patterson, Isabelle Sansom, Paisley White, Maggie Colombo | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
 
 ---
 
@@ -26,16 +29,21 @@
 
 | Rank | Time | Participants | Date | Meet |
 |-----:|-----:|--------------|------|------|
-| **1** | **1:43.71** | **Maggie Colombo (SR), Paisley White (SR), Brianne Foley (SO), Natalie Armstrong (JR)** | **Nov 05, 2022** | **2022 D-3 AIA Girls State Championships (AZ)** |
-| 2 | 1:43.75 | Maggie Colombo (SR), Brianne Foley (SO), Natalie Armstrong (JR) | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
-| 3 | 1:44.10 | Isabelle Sansom (SR), Maggie Colombo (FR), Paisley White (FR), Sarynn Patterson (SR) | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
-| 4 | 1:44.79 | Isabelle Sansom (SR), Maggie Colombo (FR), Paisley White (FR), Sarynn Patterson (SR) | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
-| 5 | 1:44.97 | Grace Davis (FR), Brianne Foley (JR), Natalie Armstrong (SR) | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
-| 6 | 1:45.14 | Maggie Colombo (SR), Paisley White (SR), Brianne Foley (SO), Natalie Armstrong (JR) | Oct 28, 2022 | Southern AZ Regional Qualifier (AZ) |
-| 7 | 1:46.46 | Shaye Sulgar (SR), Maggie Colombo (JR), Paisley White (JR), Natalie Armstrong (SO) | Nov 06, 2021 | AIA  D-III Girls State (AZ) |
-| 8 | 1:46.81 | Adrianna Witte (JR), Grace Davis (SO), Hadley Cusson (SO), Brianne Foley (SR) | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
-| 9 | 1:46.97 | Shaye Sulgar (SR), Maggie Colombo (JR), Paisley White (JR), Natalie Armstrong (SO) | Oct 29, 2021 | Southern AZ Regional Qualifier (Oro Valley Aquatic Center, AZ) |
-| 10 | 1:47.41 | Shaye Sulgar (SR), Maggie Colombo (JR), Paisley White (JR), Natalie Armstrong (SO) | Oct 29, 2021 | Southern AZ Regional Qualifier (Oro Valley Aquatic Center, AZ) |
+| **1** | **01:43.71** | **Maggie Colombo, Paisley White, Natalie Armstrong, Brianne Foley** | **Nov 05, 2022** | **2022 D-3 AIA Girls State Championships (AZ)** |
+| 2 | 01:43.75 | Brianne Foley, Ryann Lightcap, Maggie Colombo, Natalie Armstrong | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
+| 3 | 01:44.10 | Paisley White, Maggie Colombo, Sarynn Patterson, Isabelle Sansom | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
+| 4 | 01:44.97 | Grace Davis, Ryann Lightcap, Brianne Foley, Natalie Armstrong | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
+| 5 | 01:46.46 | Maggie Colombo, Shaye Sulgar, Natalie Armstrong, Paisley White | Nov 06, 2021 | AIA D-III Girls State (AZ) |
+| 6 | 01:46.81 | Brianne Foley, Adrianna Witte, Hadley Cusson, Grace Davis | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
+| 7 | 01:47.67 | Natalie Armstrong, Ryann Lightcap, Paisley White, Maggie Colombo | Sep 24, 2022 | TYR High School Classic (AZ) |
+| 8 | 01:47.69 | Isabelle Sansom, Sarynn Patterson, Hazel Dasse, Lindsey Schoel-Smith | Oct 26, 2018 | Southern Arizona Regional Qualifier (AZ) |
+| 9 | 01:48.11 | Summer Cugini, Ryann Lightcap, Brianne Foley, Natalie Armstrong | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
+| 10 | 01:48.20 | Chloe Weatherwax, Paisley White, Violet Dasse, Natalie Armstrong | Nov 05, 2020 | AIA State Meet - D3 (AZ) |
+| 11 | 01:48.27 | Maggie Colombo, Sydney Hagerman, Shaye Sulgar, Natalie Armstrong | Nov 06, 2021 | AIA D-III Girls State (AZ) |
+| 12 | 01:48.54 | Isla Cerepak, Logan Sulger, Adrianna Witte, Hadley Cusson | Nov 08, 2025 | Division III - State Swim & Dive (AZ) |
+| 13 | 01:48.59 | Hadley Cusson, Grace Davis, Ryann Lightcap, Natalie Armstrong | Sep 16, 2023 | CDO Classic (Oro Valley Aquatic Center, AZ) |
+| 14 | 01:50.57 | Adrianna Witte, Stella Eftekhar, Logan Sulger, Hadley Cusson | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
+| 15 | 01:50.63 | Calla Isenberg, Emma Morris, Ellie Radomsky, Hazel Dasse | Oct 07, 2017 | 2017 TYR High School Classic (Tucson, AZ) |
 
 ---
 
@@ -43,15 +51,20 @@
 
 | Rank | Time | Participants | Date | Meet |
 |-----:|-----:|--------------|------|------|
-| **1** | **3:53.36** | **Maggie Colombo (SR), Paisley White (SR), Brianne Foley (SO), Natalie Armstrong (JR)** | **Oct 22, 2022** | **Pecan Classic (sahuarita, AZ)** |
-| 2 | 3:53.88 | Maggie Colombo (SR), Paisley White (SR), Brianne Foley (SO), Natalie Armstrong (JR) | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
-| 3 | 3:55.11 | Maggie Colombo (SR), Paisley White (SR), Brianne Foley (SO), Natalie Armstrong (JR) | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
-| 4 | 3:55.46 | Grace Davis (FR), Hadley Cusson (FR), Brianne Foley (JR), Natalie Armstrong (SR) | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
-| 5 | 3:55.63 | Isabelle Sansom (JR), Hazel Dasse (SR), Sarynn Patterson (JR) | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
-| 6 | 3:56.02 | Lindsey Sohoel-Smith (SO), Hazel Dasse (SO), Sarynn Patterson (FR) | Nov 04, 2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
-| 7 | 3:57.21 | Isabelle Sansom (JR), Hazel Dasse (SR), Sarynn Patterson (JR) | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
-| 8 | 3:57.46 | Grace Davis (FR), Hadley Cusson (FR), Brianne Foley (JR), Natalie Armstrong (SR) | Sep 16, 2023 | CDO Classic (Oro Valley Aquatic Center, AZ) |
-| 9 | 3:57.61 | Lindsey Sohoel-Smith (SO), Hazel Dasse (SO), Sarynn Patterson (FR) | Nov 04, 2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
-| 10 | 3:58.05 | Grace Davis (FR), Hadley Cusson (FR), Brianne Foley (JR), Natalie Armstrong (SR) | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
+| **1** | **03:53.36** | **Paisley White, Maggie Colombo, Brianne Foley, Natalie Armstrong** | **Oct 22, 2022** | **Pecan Classic (sahuarita, AZ)** |
+| 2 | 03:55.46 | Hadley Cusson, Grace Davis, Brianne Foley, Natalie Armstrong | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
+| 3 | 03:55.63 | Sarynn Patterson, Ellie Radomsky, Hazel Dasse, Isabelle Sansom | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
+| 4 | 03:56.02 | Bridget Spooner, Hazel Dasse, Sarynn Patterson, Lindsey Sohoel-Smith | Nov 04, 2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
+| 5 | 03:58.56 | Maggie Colombo, Paisley White, Kennady Pautler, Natalie Armstrong | Nov 05, 2020 | AIA State Meet - D3 (AZ) |
+| 6 | 03:58.96 | Maggie Colombo, Brianne Foley, Shaye Sulgar, Natalie Armstrong | Nov 06, 2021 | AIA D-III Girls State (AZ) |
+| 7 | 03:59.44 | Hazel Dasse, Ellie Radomsky, Sarynn Patterson, Calla Isenberg | Nov 03, 2017 | 2017 AIA Division III State Championships (Girls) (Mesa, AZ) |
+| 8 | 03:59.59 | Maggie Colombo, Shaye Sulgar, Paisley White, Natalie Armstrong | Nov 06, 2021 | AIA D-III Girls State (AZ) |
+| 9 | 04:00.33 | Isla Cerepak, Rachel Anderson, Stella Eftekhar, Hadley Cusson | Nov 08, 2025 | Division III - State Swim & Dive (AZ) |
+| 10 | 04:00.39 | Hazel Dasse, Emma Morris, Sarynn Patterson, Calla Isenberg | Oct 27, 2017 | Southern Arizona Regional Qualifier (Oro Valley, AZ) |
+| 11 | 04:02.04 | Bridget Spooner, Anna Ellis, Lindsey Sohoel-Smith, Hazel Dasse | Oct 24, 2015 | Small School Championships (Paradise Valley, AZ) |
+| 12 | 04:02.42 | Isla Cerepak, Stella Eftekhar, Adrianna Witte, Hadley Cusson | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
+| 13 | 04:02.50 | Isla Cerepak, Stella Eftekhar, Kadynce Drummond, Hadley Cusson | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
+| 14 | 04:02.93 | Hadley Cusson, Summer Cugini, Adrianna Witte, Brianne Foley | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
+| 15 | 04:03.71 | Brianne Foley, Logan Sulger, Adrianna Witte, Grace Davis | Sep 28, 2024 | 21st Annual TYR HS Classic (Tucson, AZ) |
 
 ---
