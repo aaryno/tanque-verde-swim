@@ -61,6 +61,68 @@ body {
   font-weight: bold;
 }
 
+/* State Championship Highlight Badges */
+.highlight-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.badge-sr {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #000;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid #DAA520;
+}
+
+.badge-class-record {
+  background: linear-gradient(135deg, #C0C0C0 0%, #A8A8A8 100%);
+  color: #000;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid #909090;
+}
+
+.badge-pb {
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: white;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+/* PB gradient: -5s/50y = black, -1s/50y = medium gray */
+.badge-pb.pb-black {
+  background: #000000;
+}
+
+.badge-pb.pb-darkgray {
+  background: #404040;
+}
+
+.badge-pb.pb-gray {
+  background: #666666;
+}
+
+.badge-pb.pb-mediumgray {
+  background: #808080;
+  color: #000;
+}
+
+.badge-pb.pb-lightgray {
+  background: #999999;
+  color: #000;
+}
+
 /* Overall Records Page */
 .overall-records-page {
   max-width: 800px;
