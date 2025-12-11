@@ -29,11 +29,8 @@
 |------|------|
 | Sep 22, 2018 | Red Wolf Relays (Sahuarita, AZ) |
 | Oct 20, 2018 | Mike Ward Invitational (Tucson, AZ) |
-| Oct 20, 2018 | Mike Ward Invitational (TUCSON, AZ) |
 | Oct 26, 2018 | Southern Arizona Regional Qualifier (Oro Valley, AZ) |
-| Oct 26, 2018 | Southern Arizona Regional Qualifier (AZ) |
-| Nov 01, 2018 | AIA D-III Boys State Meet (AZ) |
-| Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
+| Nov 01, 2018 | AIA D-III State Meet (AZ) |
 | Nov 03, 2018 | 2018 D-3 AIA State Championships (AZ) |
 
 ---

@@ -31,7 +31,6 @@
 | Oct 07, 2017 | 2017 TYR High School Classic (Tucson, AZ) |
 | Oct 27, 2017 | Southern Arizona Regional Qualifier (Oro Valley, AZ) |
 | Nov 03, 2017 | 2017 AIA Division III State Championships (Girls) (Mesa, AZ) |
-| Nov 03, 2017 | 2017 AIA Division III State Championships (Boys) (Mesa, AZ) |
 | Nov 04, 2017 | 2017 D-3 AIA State Championships (AZ) |
 
 ---

@@ -27,7 +27,6 @@
 
 | Date | Meet |
 |------|------|
-| Sep 10, 2015 | DC / Amphi / TV (Tucson, AZ) |
 | Sep 10, 2015 | Desert Christian / Tanque Verde / Amphi (Tucson, AZ) |
 | Oct 03, 2015 | 2015 High School Classic (Tucson, AZ) |
 | Oct 24, 2015 | Small School Championships (Paradise Valley, AZ) |

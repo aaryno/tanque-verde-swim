@@ -29,10 +29,9 @@
 |------|------|
 | Sep 25, 2021 | TYR HS Classic (AZ) |
 | Oct 23, 2021 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
-| Oct 23, 2021 | 2021 D-3 AIA State Championships (AZ) |
 | Oct 29, 2021 | Southern AZ Regional Qualifier (Oro Valley Aquatic Center, AZ) |
-| Nov 05, 2021 | AIA  D-III Boys State (AZ) |
-| Nov 06, 2021 | AIA  D-III Girls State (AZ) |
+| Nov 05, 2021 | AIA  D-III State (AZ) |
+| Nov 06, 2021 | AIA  D-III State (AZ) |
 
 ---
 

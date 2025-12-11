@@ -28,12 +28,9 @@
 | Date | Meet |
 |------|------|
 | Sep 24, 2022 | TYR High School Classic (Tucson, AZ) |
-| Sep 24, 2022 | TYR High School Classic (AZ) |
 | Oct 22, 2022 | Pecan Classic (Sahuarita, AZ) |
-| Oct 22, 2022 | Pecan Classic (sahuarita, AZ) |
 | Oct 28, 2022 | Southern AZ Regional Qualifier (AZ) |
-| Nov 05, 2022 | 2022 D-3 AIA Boys State Championships (AZ) |
-| Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
+| Nov 05, 2022 | 2022 D-3 AIA State Championships (AZ) |
 
 ---
 
