@@ -228,7 +228,7 @@ body {
   background: linear-gradient(135deg, var(--tvhs-primary) 0%, var(--tvhs-dark-green) 100%);
   color: white;
   position: sticky !important;
-  top: 88px !important; /* Below nav bars */
+  top: 92px !important; /* main-nav (48px) + quick-nav (44px) */
   z-index: 1020 !important;
   transition: all 0.3s ease;
   margin-bottom: 0 !important;
@@ -356,11 +356,12 @@ body {
 /* Main Navigation */
 #main-nav {
   background-color: var(--tvhs-primary) !important;
-  padding: 0.4rem 0.75rem;
+  padding: 0.5rem 0.75rem;
   position: sticky !important;
   top: 0 !important;
   z-index: 1030 !important;
-  margin-bottom: 0 !important;
+  margin: 0 !important;
+  height: 48px;
 }
 
 .navbar-brand {
@@ -411,13 +412,13 @@ body {
 /* Quick Navigation Bar */
 .quick-nav {
   background-color: var(--tvhs-accent) !important;
-  padding: 0.25rem 0;
+  padding: 0.3rem 0;
   position: sticky !important;
   top: 48px !important;
   z-index: 1025 !important;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  height: 44px;
 }
 
 .quick-nav .nav {
@@ -488,10 +489,10 @@ body {
   background: linear-gradient(135deg, var(--tvhs-primary) 0%, var(--tvhs-accent) 100%);
   color: white;
   padding: 0.75rem 0;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0 !important;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   position: sticky !important;
-  top: 88px !important; /* Height of main-nav + quick-nav */
+  top: 92px !important; /* main-nav (48px) + quick-nav (44px) */
   z-index: 1020 !important;
 }
 
@@ -863,19 +864,25 @@ footer a:hover {
   }
   
   /* Sticky header adjustments for mobile */
-  .page-header {
-    position: sticky !important;
-    top: 80px !important; /* main-nav + quick-nav on mobile */
-    padding: 0.35rem 0;
-  }
-  
   #main-nav {
     padding: 0.3rem 0.5rem;
+    height: 40px;
   }
   
   .quick-nav {
-    top: 40px;
+    top: 40px !important;
     padding: 0.2rem 0;
+    height: 40px;
+  }
+  
+  .page-header {
+    position: sticky !important;
+    top: 80px !important; /* main-nav (40px) + quick-nav (40px) */
+    padding: 0.35rem 0;
+  }
+  
+  .hero-header {
+    top: 80px !important; /* main-nav (40px) + quick-nav (40px) */
   }
   
   .quick-nav .nav-link {
