@@ -108,7 +108,7 @@
         </div>
         <div class="hero-collapsed" id="hero-collapsed">
             <div class="container d-flex align-items-center justify-content-between flex-wrap">
-                <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center hero-expand-trigger" style="cursor: pointer;" title="Click to expand">
                     <span class="hero-title-small">TVHS Swimming</span>
                 </div>
                 <div class="d-flex gap-2">
@@ -125,9 +125,6 @@
                             <li><a class="dropdown-item jump-to-link" href="#records-broken">📈 2025 Records Broken</a></li>
                         </ul>
                     </div>
-                    <button class="hero-expand-btn" id="hero-expand-btn" title="Expand header">
-                        <span>▼</span>
-                    </button>
                 </div>
             </div>
         </div>
@@ -623,9 +620,9 @@
         // Collapsible Hero Header
         const heroHeader = document.getElementById('hero-header');
         const heroCollapseBtn = document.getElementById('hero-collapse-btn');
-        const heroExpandBtn = document.getElementById('hero-expand-btn');
+        const heroExpandTrigger = document.querySelector('.hero-expand-trigger');
         
-        if (heroHeader && heroCollapseBtn && heroExpandBtn) {
+        if (heroHeader && heroCollapseBtn && heroExpandTrigger) {
             // Check if already collapsed (from scroll or localStorage)
             const isCollapsed = localStorage.getItem('hero-collapsed') === 'true';
             if (isCollapsed) {
@@ -638,10 +635,11 @@
                 localStorage.setItem('hero-collapsed', 'true');
             });
             
-            // Expand on button click
-            heroExpandBtn.addEventListener('click', function() {
+            // Expand on title click
+            heroExpandTrigger.addEventListener('click', function() {
                 heroHeader.classList.remove('collapsed');
                 localStorage.setItem('hero-collapsed', 'false');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
             
             // Auto-collapse on scroll (after 100px)
