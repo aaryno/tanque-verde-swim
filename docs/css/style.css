@@ -123,6 +123,117 @@ body {
   color: #000;
 }
 
+/* Relay Record Broken Cards (Index Page) */
+.relay-record-broken {
+  background-color: #E8F5E9; /* Pale green */
+  border-left: 4px solid var(--tvhs-primary);
+}
+
+.relay-record-entry {
+  position: relative;
+}
+
+.record-label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--tvhs-primary);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.record-label-old {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.relay-row-1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.relay-row-1 .rank-badge {
+  font-size: 1.2rem;
+}
+
+.relay-row-1 .time {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--tvhs-primary);
+}
+
+.relay-row-1 .relay-date {
+  font-size: 0.85rem;
+  color: #666;
+  margin-left: auto;
+}
+
+.relay-row-2 {
+  cursor: pointer;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #555;
+  transition: background-color 0.2s;
+}
+
+.relay-row-2:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.relay-names-short {
+  font-weight: 500;
+}
+
+.relay-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.relay-record-entry.expanded .relay-details {
+  max-height: 500px;
+  margin-top: 0.75rem;
+}
+
+.relay-swimmers {
+  margin-bottom: 0.5rem;
+}
+
+.relay-swimmers div {
+  padding: 0.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.relay-meet {
+  font-size: 0.85rem;
+  color: #666;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  border-left: 3px solid var(--tvhs-accent);
+}
+
+/* Mobile adjustments for relay record cards */
+@media (max-width: 768px) {
+  .relay-row-1 {
+    flex-wrap: wrap;
+  }
+  
+  .relay-row-1 .relay-date {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 0.25rem;
+  }
+}
+
 /* Overall Records Page */
 .overall-records-page {
   max-width: 800px;
