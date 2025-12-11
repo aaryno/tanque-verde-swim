@@ -14,6 +14,167 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="apple-touch-icon" href="/images/hawk-logo.png">
+    
+    <style>
+        /* Relay Card Styles */
+        .relay-cards-container {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .relay-card {
+            background: #fff;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .relay-compact-wrapper {
+            padding: 0.75rem 1rem;
+        }
+        
+        .relay-line-1 {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1rem;
+        }
+        
+        .relay-rank {
+            font-weight: bold;
+            min-width: 1.5rem;
+            text-align: center;
+            color: #666;
+        }
+        
+        .relay-rank.rank-1 {
+            color: #d4af37;
+            font-size: 1.2rem;
+        }
+        
+        .relay-rank.rank-2 {
+            color: #a8a8a8;
+        }
+        
+        .relay-rank.rank-3 {
+            color: #cd7f32;
+        }
+        
+        .relay-time {
+            font-family: 'SF Mono', Monaco, monospace;
+            font-weight: 600;
+            color: var(--tvhs-primary, #0a3622);
+            flex-shrink: 0;
+        }
+        
+        .relay-date {
+            margin-left: auto;
+            font-size: 0.85rem;
+            color: #666;
+            white-space: nowrap;
+        }
+        
+        .relay-line-2 {
+            cursor: pointer;
+            padding: 0.5rem 0 0;
+            user-select: none;
+        }
+        
+        .relay-names-short {
+            color: #333;
+            font-size: 0.95rem;
+        }
+        
+        .relay-arrow {
+            font-size: 0.7rem;
+            display: inline-block;
+            transition: transform 0.2s ease;
+            color: #999;
+            margin-left: 0.25rem;
+        }
+        
+        .relay-compact-wrapper.expanded .relay-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .relay-expanded-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .relay-compact-wrapper.expanded .relay-expanded-content {
+            max-height: 400px;
+        }
+        
+        .relay-swimmers {
+            padding: 0.75rem 0 0.5rem 0;
+            border-top: 1px solid #eee;
+            margin-top: 0.5rem;
+        }
+        
+        .relay-swimmer-entry {
+            margin-bottom: 0.5rem;
+        }
+        
+        .relay-swimmer-name-line {
+            font-weight: 500;
+        }
+        
+        .relay-swimmer-name {
+            color: #333;
+        }
+        
+        .relay-swimmer-split-line {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 1rem;
+            font-size: 0.85rem;
+        }
+        
+        .relay-split-time {
+            font-family: 'SF Mono', Monaco, monospace;
+            color: var(--tvhs-primary, #0a3622);
+        }
+        
+        .relay-stroke {
+            color: #888;
+            font-style: italic;
+        }
+        
+        .relay-meet {
+            padding: 0.5rem 0;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            color: #555;
+        }
+        
+        .meet-name {
+            display: block;
+        }
+        
+        .meet-location {
+            display: block;
+            color: #888;
+            font-size: 0.8rem;
+        }
+        
+        /* Desktop: single line for splits */
+        @media (min-width: 576px) {
+            .relay-swimmer-entry {
+                display: flex;
+                align-items: baseline;
+                gap: 1rem;
+            }
+            
+            .relay-swimmer-split-line {
+                flex-direction: row;
+                gap: 1rem;
+                padding-left: 0;
+            }
+        }
+    </style>
 </head>
 <body>
     
@@ -26,8 +187,8 @@
             </a>
             <!-- Gender Toggle -->
             <div class="gender-toggle" id="gender-toggle">
-                <button class="btn btn-gender active" data-gender="boys">Boys</button>
-                <button class="btn btn-gender" data-gender="girls">Girls</button>
+                <button class="btn btn-gender " data-gender="boys">Boys</button>
+                <button class="btn btn-gender active" data-gender="girls">Girls</button>
             </div>
         </div>
     </nav>
@@ -37,42 +198,42 @@
         <div class="container-fluid justify-content-center">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/records/overall.html" id="nav-overall" title="Overall Records">🏆</a>
+                    <a class="nav-link" href="/records/overall.html" title="Overall Records">🏆</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="nav-bygrade" title="Records by Grade">📊</a>
+                    <a class="nav-link" href="/records/girls-bygrade.html" title="Records by Grade">📊</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="nav-top10" title="All-Time Top 10">🔟</a>
+                    <a class="nav-link" href="/top10/girls-alltime.html" title="All-Time Top 10">🔟</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="nav-relays" title="Relay Records">🤝</a>
+                    <a class="nav-link active" href="/records/girls-relays.html" title="Relay Records">🤝</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="Season Top 10">📅</a>
                     <ul class="dropdown-menu dropdown-menu-scroll">
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2024-25</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2023-24</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2022-23</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2021-22</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2020-21</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2019-20</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2018-19</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2017-18</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2016-17</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2015-16</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2014-15</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2013-14</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2012-13</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2011-12</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2010-11</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2009-10</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2008-09</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2007-08</a></li>
+                        <li><a class="dropdown-item" href="/top10/girls-2024-25.html">2024-25</a></li>
+                        <li><a class="dropdown-item" href="/top10/girls-2023-24.html">2023-24</a></li>
+                        <li><a class="dropdown-item" href="/top10/girls-2022-23.html">2022-23</a></li>
+                        <li><a class="dropdown-item" href="/top10/girls-2021-22.html">2021-22</a></li>
+                        <li><a class="dropdown-item" href="/top10/girls-2020-21.html">2020-21</a></li>
+                        <li><a class="dropdown-item" href="/top10/girls-2019-20.html">2019-20</a></li>
+                        <li><a class="dropdown-item" href="/top10/girls-2018-19.html">2018-19</a></li>
+                        <li><a class="dropdown-item" href="/top10/girls-2017-18.html">2017-18</a></li>
+                        <li><a class="dropdown-item" href="/top10/girls-2016-17.html">2016-17</a></li>
+                        <li><a class="dropdown-item" href="/top10/girls-2015-16.html">2015-16</a></li>
+                        <li><a class="dropdown-item" href="/top10/girls-2014-15.html">2014-15</a></li>
+                        <li><a class="dropdown-item" href="/top10/girls-2013-14.html">2013-14</a></li>
+                        <li><a class="dropdown-item" href="/top10/girls-2012-13.html">2012-13</a></li>
+                        <li><a class="dropdown-item" href="/top10/girls-2011-12.html">2011-12</a></li>
+                        <li><a class="dropdown-item" href="/top10/girls-2010-11.html">2010-11</a></li>
+                        <li><a class="dropdown-item" href="/top10/girls-2009-10.html">2009-10</a></li>
+                        <li><a class="dropdown-item" href="/top10/girls-2008-09.html">2008-09</a></li>
+                        <li><a class="dropdown-item" href="/top10/girls-2007-08.html">2007-08</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-summary" title="Season Summary">📈</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="Season Summary">📈</a>
                     <ul class="dropdown-menu dropdown-menu-scroll dropdown-menu-end">
                         <li><a class="dropdown-item" href="/annual/2025-26.html">2025-26</a></li>
                         <li><a class="dropdown-item" href="/annual/2024-25.html">2024-25</a></li>
@@ -94,575 +255,1783 @@
         </div>
     </nav>
     
-    
     <!-- Page Header -->
     <div class="page-header">
         <div class="container d-flex align-items-center justify-content-between flex-wrap">
             <h1 class="mb-0">Girls Relay Records</h1>
-            <div id="jump-to-container"></div>
+            <div id="jump-to-container">
+                <div class="jump-to-dropdown dropdown">
+                    <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">Jump To</button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#200-medley-relay">200 Medley Relay</a></li>
+                        <li><a class="dropdown-item" href="#200-free-relay">200 Free Relay</a></li>
+                        <li><a class="dropdown-item" href="#400-free-relay">400 Free Relay</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
     
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Build Jump To dropdown from event headings (h2 or h3.event-heading)
-        let headings = document.querySelectorAll('h2, h3.event-heading');
-        if (headings.length > 2) {
-            let options = '<div class="jump-to-dropdown dropdown"><button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">Jump To</button><ul class="dropdown-menu dropdown-menu-end dropdown-menu-scroll">';
-            headings.forEach(function(h, i) {
-                const id = 'event-' + i;
-                h.id = id;
-                options += '<li><a class="dropdown-item" href="#' + id + '">' + h.textContent + '</a></li>';
-            });
-            options += '</ul></div>';
-            document.getElementById('jump-to-container').innerHTML = options;
-        }
+    <main class="container py-4">
         
-        // Check if this is a relay records page
-        const isRelayPage = document.title.toLowerCase().includes('relay');
-        if (isRelayPage && window.innerWidth <= 576) {
-            // Transform relay tables for mobile
-            document.querySelectorAll('table tbody tr').forEach(function(row) {
-                const cells = row.querySelectorAll('td');
-                if (cells.length >= 5) {
-                    const participants = cells[2].textContent;
-                    const date = cells[3].textContent;  // Date is column 4 (index 3)
-                    const meet = cells[4].textContent;  // Meet is column 5 (index 4)
-                    
-                    // Extract last names
-                    const names = participants.split(',').map(n => n.trim());
-                    const lastNames = names.map(n => {
-                        const parts = n.split(' ');
-                        return parts[parts.length - 1];
-                    }).join(', ');
-                    
-                    // Create expandable content
-                    const shortNames = document.createElement('div');
-                    shortNames.className = 'relay-names';
-                    shortNames.textContent = lastNames;
-                    
-                    const details = document.createElement('div');
-                    details.className = 'relay-details';
-                    names.forEach(n => {
-                        const member = document.createElement('span');
-                        member.className = 'member';
-                        member.textContent = n;
-                        details.appendChild(member);
-                    });
-                    
-                    // Split meet name from location (typically in parentheses)
-                    const meetMatch = meet.match(/^(.+?)(\s*\([^)]+\))?$/);
-                    const meetName = meetMatch ? meetMatch[1].trim() : meet;
-                    const meetLocation = meetMatch && meetMatch[2] ? meetMatch[2].trim() : '';
-                    
-                    const meetDiv = document.createElement('div');
-                    meetDiv.className = 'meet-full';
-                    const meetNameSpan = document.createElement('span');
-                    meetNameSpan.className = 'meet-name';
-                    meetNameSpan.textContent = meetName;
-                    meetDiv.appendChild(meetNameSpan);
-                    if (meetLocation) {
-                        const meetLocSpan = document.createElement('span');
-                        meetLocSpan.className = 'meet-location';
-                        meetLocSpan.textContent = meetLocation;
-                        meetDiv.appendChild(meetLocSpan);
-                    }
-                    details.appendChild(meetDiv);
-                    
-                    // Replace participants cell content
-                    cells[2].innerHTML = '';
-                    cells[2].appendChild(shortNames);
-                    cells[2].appendChild(details);
-                    
-                    // Put date in the date cell (hide meet cell)
-                    cells[3].textContent = date;
-                    cells[4].style.display = 'none';  // Hide meet column
-                    
-                    // Add click handler
-                    shortNames.addEventListener('click', function() {
-                        this.classList.toggle('expanded');
-                        details.classList.toggle('show');
-                    });
-                }
-            });
-        }
+    <h2 id="200-medley-relay" class="event-heading">200 Medley Relay</h2>
+    <div class="relay-cards-container">
         
-        // Gender toggle and navigation
-        let currentGender = localStorage.getItem('tvhs-gender') || 'boys';
-        
-        // Detect current page gender from URL
-        const currentPath = window.location.pathname;
-        if (currentPath.includes('girls')) {
-            currentGender = 'girls';
-        } else if (currentPath.includes('boys')) {
-            currentGender = 'boys';
-        }
-        localStorage.setItem('tvhs-gender', currentGender);
-        
-        function updateGenderUI() {
-            document.querySelectorAll('.btn-gender').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.gender === currentGender);
-            });
-            updateNavLinks();
-        }
-        
-        function updateNavLinks() {
-            const g = currentGender;
-            // Overall records page shows both genders (no gender in URL)
-            document.getElementById('nav-bygrade').href = '/records/' + g + '-bygrade.html';
-            document.getElementById('nav-top10').href = '/top10/' + g + '-alltime.html';
-            document.getElementById('nav-relays').href = '/records/' + g + '-relays.html';
-            
-            // Update season links
-            document.querySelectorAll('.season-link').forEach(link => {
-                const season = link.textContent;
-                link.href = '/top10/' + g + '-' + season + '.html';
-            });
-            
-            // Reorder sections on Overall Records page based on gender
-            const overallPage = document.querySelector('.overall-records-page');
-            if (overallPage) {
-                const boysSection = document.getElementById('boys-records');
-                const girlsSection = document.getElementById('girls-records');
-                if (boysSection && girlsSection) {
-                    if (g === 'girls') {
-                        overallPage.insertBefore(girlsSection, boysSection);
-                    } else {
-                        overallPage.insertBefore(boysSection, girlsSection);
-                    }
-                }
-            }
-        }
-        
-        // Gender toggle click handlers - navigate to corresponding gender page
-        document.querySelectorAll('.btn-gender').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const newGender = this.dataset.gender;
-                if (newGender === currentGender) return;
-                
-                localStorage.setItem('tvhs-gender', newGender);
-                
-                // Try to navigate to the corresponding gender version of current page
-                const path = window.location.pathname;
-                let newPath = path;
-                
-                if (path.includes('boys')) {
-                    newPath = path.replace('boys', 'girls');
-                } else if (path.includes('girls')) {
-                    newPath = path.replace('girls', 'boys');
-                } else {
-                    // Not a gendered page, just update UI
-                    currentGender = newGender;
-                    updateGenderUI();
-                    return;
-                }
-                
-                // Navigate to the new page
-                window.location.href = newPath;
-            });
-        });
-        
-        // Initialize
-        updateGenderUI();
-    });
-    </script>
-    
-    <!-- Main Content -->
-    <div class="container my-4">
-        <div class="content">
-
-<hr>
-<h2>200 Medley Relay</h2>
-<div class="table-responsive record-table">
-<table class="table table-striped table-hover table-relay">
-<thead>
-<tr>
-<th>Rank</th>
-<th>Time</th>
-<th>Participants</th>
-<th>Date</th>
-<th>Meet</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="record-holder">1</td>
-<td class="record-holder">01:52.15</td>
-<td class="record-holder">Grace Davis, Ella Bissmeyer, Adrianna Witte, Logan Sulger</td>
-<td class="record-holder">Oct 25, 2024</td>
-<td class="record-holder">Southern Arizona Qualifier (Oro Valley, AZ)</td>
-</tr>
-<tr>
-<td>2</td>
-<td>01:52.45</td>
-<td>Amelia Kidd, Logan Sulger, Adrianna Witte, Hadley Cusson</td>
-<td>Oct 18, 2025</td>
-<td>Pecan Classic (Sahuarita, AZ)</td>
-</tr>
-<tr>
-<td>3</td>
-<td>01:53.19</td>
-<td>Logan Sulger, Kadynce Drummond, Madeline Barnard, Isla Cerepak</td>
-<td>Oct 24, 2025</td>
-<td>Southern Arizona Qualifier (Tucson, AZ)</td>
-</tr>
-<tr>
-<td>4</td>
-<td>01:53.50</td>
-<td>Isabelle Sansom, Sarynn Patterson, Kennady Pautler, Lindsey Schoel-Smith</td>
-<td>Oct 26, 2018</td>
-<td>Southern Arizona Regional Qualifier (AZ)</td>
-</tr>
-<tr>
-<td>5</td>
-<td>01:53.58</td>
-<td>Isabelle Sansom, Kennady Pautler, Violet Dasse, Trinity Weatherwax</td>
-<td>Nov 01, 2018</td>
-<td>AIA D-III Girls State Meet (AZ)</td>
-</tr>
-<tr>
-<td>6</td>
-<td>01:54.06</td>
-<td>Hazel Dasse, Sarynn Patterson, Ellie Radomsky, Lindsey Sohoel-Smith</td>
-<td>Oct 01, 2016</td>
-<td>2016 TYR High School Classic (Tucson, AZ)</td>
-</tr>
-<tr>
-<td>7</td>
-<td>01:54.87</td>
-<td>Sarynn Patterson, Lindsey Schoel-Smith, Hazel Dasse, Ellie Radomsky</td>
-<td>Nov 01, 2018</td>
-<td>AIA D-III Girls State Meet (AZ)</td>
-</tr>
-<tr>
-<td>8</td>
-<td>01:55.49</td>
-<td>Ellie Randomsky, Emma Morris, Regan Hughes, Sarynn Patterson</td>
-<td>Nov 04, 2016</td>
-<td>2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ)</td>
-</tr>
-<tr>
-<td>9</td>
-<td>01:56.01</td>
-<td>Summer Cugini, Logan Sulger, Ella Bissmeyer, Adrianna Witte</td>
-<td>Sep 28, 2024</td>
-<td>21st Annual TYR HS Classic (Tucson, AZ)</td>
-</tr>
-<tr>
-<td>10</td>
-<td>01:56.16</td>
-<td>Marisol Rivera, Sierra Roh, Amanda Grimshaw, Meghan Marner</td>
-<td>Oct 06, 2012</td>
-<td>High School Classic (Tucson, AZ)</td>
-</tr>
-<tr>
-<td>11</td>
-<td>01:56.54</td>
-<td>Emma Morris, Hayley Jones, Violet Dasse, Ellie Radomsky</td>
-<td>Oct 27, 2017</td>
-<td>Southern Arizona Regional Qualifier (Oro Valley, AZ)</td>
-</tr>
-<tr>
-<td>12</td>
-<td>01:56.96</td>
-<td>Shaye Sulgar, Lainie Radomsky, Sydney Hagerman, Alexandra Foley</td>
-<td>Sep 25, 2021</td>
-<td>TYR HS Classic (AZ)</td>
-</tr>
-<tr>
-<td>13</td>
-<td>01:58.24</td>
-<td>Emma Morris, Ellie Radomsky, Madison Winkle, Anna Ellis</td>
-<td>Sep 17, 2016</td>
-<td>Canyon Del Oro Classic (Tucson, AZ)</td>
-</tr>
-<tr>
-<td>14</td>
-<td>01:58.70</td>
-<td>Amira Alitiem, Lily Niccum, Madeline Barnard, Summer Cugini</td>
-<td>Oct 21, 2023</td>
-<td>Pecan Classic (Sahuarita Aquatic Center, AZ)</td>
-</tr>
-<tr>
-<td>15</td>
-<td>01:58.80</td>
-<td>Sarynn Patterson, Isabelle Sansom, Paisley White, Maggie Colombo</td>
-<td>Nov 07, 2019</td>
-<td>2019 AIA D-III State Meet (AZ)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr>
-<h2>200 Free Relay</h2>
-<div class="table-responsive record-table">
-<table class="table table-striped table-hover table-relay">
-<thead>
-<tr>
-<th>Rank</th>
-<th>Time</th>
-<th>Participants</th>
-<th>Date</th>
-<th>Meet</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="record-holder">1</td>
-<td class="record-holder">01:43.71</td>
-<td class="record-holder">Maggie Colombo, Paisley White, Natalie Armstrong, Brianne Foley</td>
-<td class="record-holder">Nov 05, 2022</td>
-<td class="record-holder">2022 D-3 AIA Girls State Championships (AZ)</td>
-</tr>
-<tr>
-<td>2</td>
-<td>01:43.75</td>
-<td>Brianne Foley, Ryann Lightcap, Maggie Colombo, Natalie Armstrong</td>
-<td>Nov 05, 2022</td>
-<td>2022 D-3 AIA Girls State Championships (AZ)</td>
-</tr>
-<tr>
-<td>3</td>
-<td>01:44.10</td>
-<td>Paisley White, Maggie Colombo, Sarynn Patterson, Isabelle Sansom</td>
-<td>Nov 07, 2019</td>
-<td>2019 AIA D-III State Meet (AZ)</td>
-</tr>
-<tr>
-<td>4</td>
-<td>01:44.97</td>
-<td>Grace Davis, Ryann Lightcap, Brianne Foley, Natalie Armstrong</td>
-<td>Oct 21, 2023</td>
-<td>Pecan Classic (Sahuarita Aquatic Center, AZ)</td>
-</tr>
-<tr>
-<td>5</td>
-<td>01:46.46</td>
-<td>Maggie Colombo, Shaye Sulgar, Natalie Armstrong, Paisley White</td>
-<td>Nov 06, 2021</td>
-<td>AIA D-III Girls State (AZ)</td>
-</tr>
-<tr>
-<td>6</td>
-<td>01:46.81</td>
-<td>Brianne Foley, Adrianna Witte, Hadley Cusson, Grace Davis</td>
-<td>Nov 09, 2024</td>
-<td>2024 D3 State Championship (Paradise Valley, AZ)</td>
-</tr>
-<tr>
-<td>7</td>
-<td>01:47.67</td>
-<td>Natalie Armstrong, Ryann Lightcap, Paisley White, Maggie Colombo</td>
-<td>Sep 24, 2022</td>
-<td>TYR High School Classic (AZ)</td>
-</tr>
-<tr>
-<td>8</td>
-<td>01:47.69</td>
-<td>Isabelle Sansom, Sarynn Patterson, Hazel Dasse, Lindsey Schoel-Smith</td>
-<td>Oct 26, 2018</td>
-<td>Southern Arizona Regional Qualifier (AZ)</td>
-</tr>
-<tr>
-<td>9</td>
-<td>01:48.11</td>
-<td>Summer Cugini, Ryann Lightcap, Brianne Foley, Natalie Armstrong</td>
-<td>Oct 25, 2023</td>
-<td>Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ)</td>
-</tr>
-<tr>
-<td>10</td>
-<td>01:48.20</td>
-<td>Chloe Weatherwax, Paisley White, Violet Dasse, Natalie Armstrong</td>
-<td>Nov 05, 2020</td>
-<td>AIA State Meet - D3 (AZ)</td>
-</tr>
-<tr>
-<td>11</td>
-<td>01:48.27</td>
-<td>Maggie Colombo, Sydney Hagerman, Shaye Sulgar, Natalie Armstrong</td>
-<td>Nov 06, 2021</td>
-<td>AIA D-III Girls State (AZ)</td>
-</tr>
-<tr>
-<td>12</td>
-<td>01:48.54</td>
-<td>Isla Cerepak, Logan Sulger, Adrianna Witte, Hadley Cusson</td>
-<td>Nov 08, 2025</td>
-<td>Division III - State Swim & Dive (AZ)</td>
-</tr>
-<tr>
-<td>13</td>
-<td>01:48.59</td>
-<td>Hadley Cusson, Grace Davis, Ryann Lightcap, Natalie Armstrong</td>
-<td>Sep 16, 2023</td>
-<td>CDO Classic (Oro Valley Aquatic Center, AZ)</td>
-</tr>
-<tr>
-<td>14</td>
-<td>01:50.57</td>
-<td>Adrianna Witte, Stella Eftekhar, Logan Sulger, Hadley Cusson</td>
-<td>Sep 27, 2025</td>
-<td>Arena High School Classic (Tucson, AZ)</td>
-</tr>
-<tr>
-<td>15</td>
-<td>01:50.63</td>
-<td>Calla Isenberg, Emma Morris, Ellie Radomsky, Hazel Dasse</td>
-<td>Oct 07, 2017</td>
-<td>2017 TYR High School Classic (Tucson, AZ)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr>
-<h2>400 Free Relay</h2>
-<div class="table-responsive record-table">
-<table class="table table-striped table-hover table-relay">
-<thead>
-<tr>
-<th>Rank</th>
-<th>Time</th>
-<th>Participants</th>
-<th>Date</th>
-<th>Meet</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="record-holder">1</td>
-<td class="record-holder">03:53.36</td>
-<td class="record-holder">Paisley White, Maggie Colombo, Brianne Foley, Natalie Armstrong</td>
-<td class="record-holder">Oct 22, 2022</td>
-<td class="record-holder">Pecan Classic (sahuarita, AZ)</td>
-</tr>
-<tr>
-<td>2</td>
-<td>03:55.46</td>
-<td>Hadley Cusson, Grace Davis, Brianne Foley, Natalie Armstrong</td>
-<td>Oct 21, 2023</td>
-<td>Pecan Classic (Sahuarita Aquatic Center, AZ)</td>
-</tr>
-<tr>
-<td>3</td>
-<td>03:55.63</td>
-<td>Sarynn Patterson, Ellie Radomsky, Hazel Dasse, Isabelle Sansom</td>
-<td>Nov 01, 2018</td>
-<td>AIA D-III Girls State Meet (AZ)</td>
-</tr>
-<tr>
-<td>4</td>
-<td>03:56.02</td>
-<td>Bridget Spooner, Hazel Dasse, Sarynn Patterson, Lindsey Sohoel-Smith</td>
-<td>Nov 04, 2016</td>
-<td>2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ)</td>
-</tr>
-<tr>
-<td>5</td>
-<td>03:58.56</td>
-<td>Maggie Colombo, Paisley White, Kennady Pautler, Natalie Armstrong</td>
-<td>Nov 05, 2020</td>
-<td>AIA State Meet - D3 (AZ)</td>
-</tr>
-<tr>
-<td>6</td>
-<td>03:58.96</td>
-<td>Maggie Colombo, Brianne Foley, Shaye Sulgar, Natalie Armstrong</td>
-<td>Nov 06, 2021</td>
-<td>AIA D-III Girls State (AZ)</td>
-</tr>
-<tr>
-<td>7</td>
-<td>03:59.44</td>
-<td>Hazel Dasse, Ellie Radomsky, Sarynn Patterson, Calla Isenberg</td>
-<td>Nov 03, 2017</td>
-<td>2017 AIA Division III State Championships (Girls) (Mesa, AZ)</td>
-</tr>
-<tr>
-<td>8</td>
-<td>03:59.59</td>
-<td>Maggie Colombo, Shaye Sulgar, Paisley White, Natalie Armstrong</td>
-<td>Nov 06, 2021</td>
-<td>AIA D-III Girls State (AZ)</td>
-</tr>
-<tr>
-<td>9</td>
-<td>04:00.33</td>
-<td>Isla Cerepak, Rachel Anderson, Stella Eftekhar, Hadley Cusson</td>
-<td>Nov 08, 2025</td>
-<td>Division III - State Swim & Dive (AZ)</td>
-</tr>
-<tr>
-<td>10</td>
-<td>04:00.39</td>
-<td>Hazel Dasse, Emma Morris, Sarynn Patterson, Calla Isenberg</td>
-<td>Oct 27, 2017</td>
-<td>Southern Arizona Regional Qualifier (Oro Valley, AZ)</td>
-</tr>
-<tr>
-<td>11</td>
-<td>04:02.04</td>
-<td>Bridget Spooner, Anna Ellis, Lindsey Sohoel-Smith, Hazel Dasse</td>
-<td>Oct 24, 2015</td>
-<td>Small School Championships (Paradise Valley, AZ)</td>
-</tr>
-<tr>
-<td>12</td>
-<td>04:02.42</td>
-<td>Isla Cerepak, Stella Eftekhar, Adrianna Witte, Hadley Cusson</td>
-<td>Sep 27, 2025</td>
-<td>Arena High School Classic (Tucson, AZ)</td>
-</tr>
-<tr>
-<td>13</td>
-<td>04:02.50</td>
-<td>Isla Cerepak, Stella Eftekhar, Kadynce Drummond, Hadley Cusson</td>
-<td>Oct 24, 2025</td>
-<td>Southern Arizona Qualifier (Tucson, AZ)</td>
-</tr>
-<tr>
-<td>14</td>
-<td>04:02.93</td>
-<td>Hadley Cusson, Summer Cugini, Adrianna Witte, Brianne Foley</td>
-<td>Nov 09, 2024</td>
-<td>2024 D3 State Championship (Paradise Valley, AZ)</td>
-</tr>
-<tr>
-<td>15</td>
-<td>04:03.71</td>
-<td>Brianne Foley, Logan Sulger, Adrianna Witte, Grace Davis</td>
-<td>Sep 28, 2024</td>
-<td>21st Annual TYR HS Classic (Tucson, AZ)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr>
-</div>
+        <div class="relay-card" data-rank="1">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank rank-1">1</span>
+                    <span class="relay-time">01:52.15</span>
+                    <span class="relay-date">Oct 25, 2024</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Davis, Bissmeyer, Witte, Sulger <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Grace Davis</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">26.70</span>
+                    <span class="relay-stroke">Backstroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Ella Bissmeyer</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.57</span>
+                    <span class="relay-stroke">Breaststroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Adrianna Witte</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.56</span>
+                    <span class="relay-stroke">Butterfly</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Logan Sulger</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.32</span>
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">Southern Arizona Qualifier</span>
+                        <span class="meet-location">(Oro Valley, AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="2">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank rank-2">2</span>
+                    <span class="relay-time">01:52.45</span>
+                    <span class="relay-date">Oct 18, 2025</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Kidd, Sulger, Witte, Cusson <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Amelia Kidd</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.72</span>
+                    <span class="relay-stroke">Backstroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Logan Sulger</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.53</span>
+                    <span class="relay-stroke">Breaststroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Adrianna Witte</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.38</span>
+                    <span class="relay-stroke">Butterfly</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Hadley Cusson</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">26.82</span>
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">Pecan Classic</span>
+                        <span class="meet-location">(Sahuarita, AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="3">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank rank-3">3</span>
+                    <span class="relay-time">01:53.19</span>
+                    <span class="relay-date">Oct 24, 2025</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Sulger, Drummond, Barnard, Cerepak <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Logan Sulger</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.61</span>
+                    <span class="relay-stroke">Backstroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Kadynce Drummond</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.68</span>
+                    <span class="relay-stroke">Breaststroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Madeline Barnard</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.67</span>
+                    <span class="relay-stroke">Butterfly</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Isla Cerepak</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">27.23</span>
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">Southern Arizona Qualifier</span>
+                        <span class="meet-location">(Tucson, AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="4">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">4</span>
+                    <span class="relay-time">01:53.50</span>
+                    <span class="relay-date">Oct 26, 2018</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Sansom, Patterson, Pautler, Schoel-Smith <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Isabelle Sansom</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.66</span>
+                    <span class="relay-stroke">Backstroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Sarynn Patterson</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">27.79</span>
+                    <span class="relay-stroke">Breaststroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Kennady Pautler</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.94</span>
+                    <span class="relay-stroke">Butterfly</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Lindsey Schoel-Smith</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.11</span>
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">Southern Arizona Regional Qualifier</span>
+                        <span class="meet-location">(AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="5">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">5</span>
+                    <span class="relay-time">01:53.58</span>
+                    <span class="relay-date">Nov 01, 2018</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Sansom, Pautler, Dasse, Weatherwax <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Isabelle Sansom</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">26.28</span>
+                    <span class="relay-stroke">Backstroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Kennady Pautler</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.47</span>
+                    <span class="relay-stroke">Breaststroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Violet Dasse</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">29.17</span>
+                    <span class="relay-stroke">Butterfly</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Trinity Weatherwax</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">29.66</span>
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">AIA D-III Girls State Meet</span>
+                        <span class="meet-location">(AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="6">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">6</span>
+                    <span class="relay-time">01:54.06</span>
+                    <span class="relay-date">Oct 01, 2016</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Dasse, Patterson, Radomsky, Sohoel-Smith <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Hazel Dasse</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.21</span>
+                    <span class="relay-stroke">Backstroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Sarynn Patterson</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.68</span>
+                    <span class="relay-stroke">Breaststroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Ellie Radomsky</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.28</span>
+                    <span class="relay-stroke">Butterfly</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Lindsey Sohoel-Smith</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.89</span>
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">2016 TYR High School Classic</span>
+                        <span class="meet-location">(Tucson, AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="7">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">7</span>
+                    <span class="relay-time">01:54.87</span>
+                    <span class="relay-date">Nov 01, 2018</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Patterson, Schoel-Smith, Dasse, Radomsky <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Sarynn Patterson</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">29.78</span>
+                    <span class="relay-stroke">Backstroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Lindsey Schoel-Smith</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">30.08</span>
+                    <span class="relay-stroke">Breaststroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Hazel Dasse</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.46</span>
+                    <span class="relay-stroke">Butterfly</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Ellie Radomsky</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">26.55</span>
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">AIA D-III Girls State Meet</span>
+                        <span class="meet-location">(AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="8">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">8</span>
+                    <span class="relay-time">01:55.49</span>
+                    <span class="relay-date">Nov 04, 2016</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Randomsky, Morris, Hughes, Patterson <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Ellie Randomsky</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.38</span>
+                    <span class="relay-stroke">Backstroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Emma Morris</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.67</span>
+                    <span class="relay-stroke">Breaststroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Regan Hughes</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">30.26</span>
+                    <span class="relay-stroke">Butterfly</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Sarynn Patterson</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.18</span>
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">2016 AIA Division III State Swimming & Diving Championships</span>
+                        <span class="meet-location">(Mesa, AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="9">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">9</span>
+                    <span class="relay-time">01:56.01</span>
+                    <span class="relay-date">Sep 28, 2024</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Cugini, Sulger, Bissmeyer, Witte <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Summer Cugini</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.66</span>
+                    <span class="relay-stroke">Backstroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Logan Sulger</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">30.06</span>
+                    <span class="relay-stroke">Breaststroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Ella Bissmeyer</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">29.13</span>
+                    <span class="relay-stroke">Butterfly</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Adrianna Witte</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">28.16</span>
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">21st Annual TYR HS Classic</span>
+                        <span class="meet-location">(Tucson, AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="10">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">10</span>
+                    <span class="relay-time">01:56.16</span>
+                    <span class="relay-date">Oct 06, 2012</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Rivera, Roh, Grimshaw, Marner <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Marisol Rivera</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">27.73</span>
+                    <span class="relay-stroke">Backstroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Sierra Roh</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">31.44</span>
+                    <span class="relay-stroke">Breaststroke</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Amanda Grimshaw</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">30.79</span>
+                    <span class="relay-stroke">Butterfly</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Meghan Marner</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    <span class="relay-split-time">26.20</span>
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">High School Classic</span>
+                        <span class="meet-location">(Tucson, AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
-    <!-- Footer -->
-    <footer class="mt-5">
-        <div class="container text-center">
-            <div class="disclaimer mb-3">
-                <small class="text-muted">
-                    Results compiled from meets published on <a href="https://azpreps365.com" target="_blank">AZPreps365</a> 
-                    and <a href="https://maxpreps.com" target="_blank">MaxPreps</a> with limited data availability — 
-                    not necessarily a complete compilation of all records. 
-                    Contact <a href="mailto:aaryno@gmail.com">aaryno@gmail.com</a> with additional sources, errors, or corrections.
-                </small>
+    <h2 id="200-free-relay" class="event-heading">200 Free Relay</h2>
+    <div class="relay-cards-container">
+        
+        <div class="relay-card" data-rank="1">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank rank-1">1</span>
+                    <span class="relay-time">01:43.71</span>
+                    <span class="relay-date">Nov 05, 2022</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Colombo, White, Armstrong, Foley <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Maggie Colombo</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
             </div>
-            <p class="mb-2">&copy; 2025 Tanque Verde High School Swimming</p>
-            <p class="mb-0">
-                <small>
-                    Generated on December 11, 2025 | 
-                    <a href="https://github.com/aaryno/tanque-verde-swim">View on GitHub</a>
-                </small>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Paisley White</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Natalie Armstrong</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Brianne Foley</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">2022 D-3 AIA Girls State Championships</span>
+                        <span class="meet-location">(AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="2">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank rank-2">2</span>
+                    <span class="relay-time">01:43.75</span>
+                    <span class="relay-date">Nov 05, 2022</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Foley, Lightcap, Colombo, Armstrong <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Brianne Foley</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Ryann Lightcap</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Maggie Colombo</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Natalie Armstrong</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">2022 D-3 AIA Girls State Championships</span>
+                        <span class="meet-location">(AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="3">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank rank-3">3</span>
+                    <span class="relay-time">01:44.10</span>
+                    <span class="relay-date">Nov 07, 2019</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">White, Colombo, Patterson, Sansom <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Paisley White</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Maggie Colombo</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Sarynn Patterson</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Isabelle Sansom</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">2019 AIA D-III State Meet</span>
+                        <span class="meet-location">(AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="4">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">4</span>
+                    <span class="relay-time">01:44.97</span>
+                    <span class="relay-date">Oct 21, 2023</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Davis, Lightcap, Foley, Armstrong <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Grace Davis</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Ryann Lightcap</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Brianne Foley</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Natalie Armstrong</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">Pecan Classic</span>
+                        <span class="meet-location">(Sahuarita Aquatic Center, AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="5">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">5</span>
+                    <span class="relay-time">01:46.46</span>
+                    <span class="relay-date">Nov 06, 2021</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Colombo, Sulgar, Armstrong, White <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Maggie Colombo</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Shaye Sulgar</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Natalie Armstrong</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Paisley White</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">AIA D-III Girls State</span>
+                        <span class="meet-location">(AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="6">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">6</span>
+                    <span class="relay-time">01:46.81</span>
+                    <span class="relay-date">Nov 09, 2024</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Foley, Witte, Cusson, Davis <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Brianne Foley</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Adrianna Witte</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Hadley Cusson</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Grace Davis</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">2024 D3 State Championship</span>
+                        <span class="meet-location">(Paradise Valley, AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="7">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">7</span>
+                    <span class="relay-time">01:47.67</span>
+                    <span class="relay-date">Sep 24, 2022</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Armstrong, Lightcap, White, Colombo <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Natalie Armstrong</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Ryann Lightcap</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Paisley White</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Maggie Colombo</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">TYR High School Classic</span>
+                        <span class="meet-location">(AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="8">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">8</span>
+                    <span class="relay-time">01:47.69</span>
+                    <span class="relay-date">Oct 26, 2018</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Sansom, Patterson, Dasse, Schoel-Smith <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Isabelle Sansom</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Sarynn Patterson</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Hazel Dasse</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Lindsey Schoel-Smith</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">Southern Arizona Regional Qualifier</span>
+                        <span class="meet-location">(AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="9">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">9</span>
+                    <span class="relay-time">01:48.11</span>
+                    <span class="relay-date">Oct 25, 2023</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Cugini, Lightcap, Foley, Armstrong <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Summer Cugini</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Ryann Lightcap</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Brianne Foley</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Natalie Armstrong</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">Southern Arizona Region Qualifier</span>
+                        <span class="meet-location">(Oro Valley Aquatic Center, AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="10">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">10</span>
+                    <span class="relay-time">01:48.20</span>
+                    <span class="relay-date">Nov 05, 2020</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Weatherwax, White, Dasse, Armstrong <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Chloe Weatherwax</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Paisley White</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Violet Dasse</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Natalie Armstrong</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">AIA State Meet - D3</span>
+                        <span class="meet-location">(AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <h2 id="400-free-relay" class="event-heading">400 Free Relay</h2>
+    <div class="relay-cards-container">
+        
+        <div class="relay-card" data-rank="1">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank rank-1">1</span>
+                    <span class="relay-time">03:53.36</span>
+                    <span class="relay-date">Oct 22, 2022</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">White, Colombo, Foley, Armstrong <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Paisley White</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Maggie Colombo</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Brianne Foley</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Natalie Armstrong</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">Pecan Classic</span>
+                        <span class="meet-location">(sahuarita, AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="2">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank rank-2">2</span>
+                    <span class="relay-time">03:55.46</span>
+                    <span class="relay-date">Oct 21, 2023</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Cusson, Davis, Foley, Armstrong <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Hadley Cusson</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Grace Davis</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Brianne Foley</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Natalie Armstrong</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">Pecan Classic</span>
+                        <span class="meet-location">(Sahuarita Aquatic Center, AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="3">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank rank-3">3</span>
+                    <span class="relay-time">03:55.63</span>
+                    <span class="relay-date">Nov 01, 2018</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Patterson, Radomsky, Dasse, Sansom <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Sarynn Patterson</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Ellie Radomsky</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Hazel Dasse</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Isabelle Sansom</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">AIA D-III Girls State Meet</span>
+                        <span class="meet-location">(AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="4">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">4</span>
+                    <span class="relay-time">03:56.02</span>
+                    <span class="relay-date">Nov 04, 2016</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Spooner, Dasse, Patterson, Sohoel-Smith <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Bridget Spooner</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Hazel Dasse</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Sarynn Patterson</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Lindsey Sohoel-Smith</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">2016 AIA Division III State Swimming & Diving Championships</span>
+                        <span class="meet-location">(Mesa, AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="5">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">5</span>
+                    <span class="relay-time">03:58.56</span>
+                    <span class="relay-date">Nov 05, 2020</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Colombo, White, Pautler, Armstrong <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Maggie Colombo</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Paisley White</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Kennady Pautler</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Natalie Armstrong</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">AIA State Meet - D3</span>
+                        <span class="meet-location">(AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="6">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">6</span>
+                    <span class="relay-time">03:58.96</span>
+                    <span class="relay-date">Nov 06, 2021</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Colombo, Foley, Sulgar, Armstrong <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Maggie Colombo</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Brianne Foley</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Shaye Sulgar</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Natalie Armstrong</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">AIA D-III Girls State</span>
+                        <span class="meet-location">(AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="7">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">7</span>
+                    <span class="relay-time">03:59.44</span>
+                    <span class="relay-date">Nov 03, 2017</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Dasse, Radomsky, Patterson, Isenberg <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Hazel Dasse</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Ellie Radomsky</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Sarynn Patterson</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Calla Isenberg</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">2017 AIA Division III State Championships (Girls)</span>
+                        <span class="meet-location">(Mesa, AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="8">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">8</span>
+                    <span class="relay-time">03:59.59</span>
+                    <span class="relay-date">Nov 06, 2021</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Colombo, Sulgar, White, Armstrong <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Maggie Colombo</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Shaye Sulgar</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Paisley White</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Natalie Armstrong</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">AIA D-III Girls State</span>
+                        <span class="meet-location">(AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="9">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">9</span>
+                    <span class="relay-time">04:00.33</span>
+                    <span class="relay-date">Nov 08, 2025</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Cerepak, Anderson, Eftekhar, Cusson <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Isla Cerepak</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Rachel Anderson</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Stella Eftekhar</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Hadley Cusson</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">Division III - State Swim & Dive</span>
+                        <span class="meet-location">(AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relay-card" data-rank="10">
+            <div class="relay-compact-wrapper">
+                <div class="relay-line-1">
+                    <span class="relay-rank ">10</span>
+                    <span class="relay-time">04:00.39</span>
+                    <span class="relay-date">Oct 27, 2017</span>
+                </div>
+                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
+                    <span class="relay-names-short">Dasse, Morris, Patterson, Isenberg <span class="relay-arrow">▼</span></span>
+                </div>
+                <div class="relay-expanded-content">
+                    <div class="relay-swimmers">
+                        
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Hazel Dasse</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Emma Morris</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Sarynn Patterson</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+            <div class="relay-swimmer-entry">
+                <div class="relay-swimmer-name-line">
+                    <span class="relay-swimmer-name">Calla Isenberg</span>
+                </div>
+                <div class="relay-swimmer-split-line">
+                    
+                    <span class="relay-stroke">Freestyle</span>
+                </div>
+            </div>
+                    </div>
+                    <div class="relay-meet">
+                        <span class="meet-name">Southern Arizona Regional Qualifier</span>
+                        <span class="meet-location">(Oro Valley, AZ)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <p class="text-muted small mb-1">
+                Results compiled from meets published on AZPreps365 and MaxPreps with limited data availability — 
+                not necessarily a complete compilation of all records. Contact aaryno@gmail.com with additional sources, errors, or corrections.
+            </p>
+            <p class="text-muted small mb-0">
+                &copy; 2025 Tanque Verde High School Swimming
             </p>
         </div>
     </footer>
     
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Gender toggle
+        let currentGender = 'girls';
+        
+        document.querySelectorAll('.btn-gender').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const newGender = this.dataset.gender;
+                if (newGender === currentGender) return;
+                
+                localStorage.setItem('tvhs-gender', newGender);
+                window.location.href = '/records/' + newGender + '-relays.html';
+            });
+        });
+    });
+    </script>
 </body>
 </html>
