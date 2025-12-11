@@ -180,10 +180,22 @@ body {
   font-size: 0.9rem;
   color: #555;
   transition: background-color 0.2s;
+  user-select: none; /* Prevent text selection on click */
 }
 
 .relay-row-2:hover {
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+.relay-row-2::after {
+  content: " ▼";
+  font-size: 0.7rem;
+  color: #999;
+  margin-left: 0.5rem;
+}
+
+.relay-record-entry.expanded .relay-row-2::after {
+  content: " ▲";
 }
 
 .relay-names-short {
