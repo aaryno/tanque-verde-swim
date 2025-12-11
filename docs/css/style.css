@@ -67,6 +67,78 @@ body {
   margin: 0 auto;
 }
 
+/* Index Page Sections */
+.jump-to-index {
+  background: #f8f9fa;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.jump-to-index a {
+  color: var(--tvhs-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.jump-to-index a:hover {
+  text-decoration: underline;
+}
+
+.section-header {
+  background: linear-gradient(135deg, var(--tvhs-primary) 0%, var(--tvhs-accent) 100%);
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.section-header h2 {
+  color: white;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.section-toggle {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.section-toggle:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.toggle-icon {
+  font-size: 0.8rem;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.section-header.collapsed .toggle-icon {
+  transform: rotate(-90deg);
+}
+
+.section-content {
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 1rem;
+  background: white;
+}
+
+.section-content.collapsed {
+  display: none;
+}
+
 .overall-records-section {
   margin-bottom: 2rem;
 }
