@@ -59,9 +59,10 @@ body {
 }
 
 .grade-open {
-  background: #f3e5f5;
-  color: #7b1fa2;
-  border: 1px solid #ce93d8;
+  background: var(--tvhs-dark-green);
+  color: white;
+  border: 1px solid var(--tvhs-primary);
+  font-weight: bold;
 }
 
 /* Collapsible Hero Header (Index Page) */
@@ -588,8 +589,8 @@ footer a:hover {
     padding-top: 0.1rem;
   }
   
-  /* If first column has a grade badge, don't add circle */
-  .table tbody td:first-child:not(:has(.grade-badge)) {
+  /* 6-column tables have rank as first column - show as green circle */
+  .table-6col tbody td:first-child {
     background: var(--tvhs-primary);
     color: white;
     border-radius: 50%;
@@ -618,9 +619,8 @@ footer a:hover {
     font-weight: 600;
   }
   
-  /* 5-column tables (Records): Grade | Time | Athlete | Date | Meet */
-  /* Date - far right of first row */
-  .table tbody td:nth-child(4) {
+  /* ===== 5-column tables (Records): Grade | Time | Athlete | Date | Meet ===== */
+  .table-5col tbody td:nth-child(4) {
     grid-row: 1;
     grid-column: 3;
     font-size: 0.75rem;
@@ -629,20 +629,19 @@ footer a:hover {
     white-space: nowrap;
   }
   
-  /* Meet - third row */
-  .table tbody td:nth-child(5) {
+  .table-5col tbody td:nth-child(5) {
     grid-row: 3;
     grid-column: 2 / 4;
     font-size: 0.7rem;
     color: #888;
   }
   
-  .table tbody td:nth-child(5):not(:empty)::before {
+  .table-5col tbody td:nth-child(5):not(:empty)::before {
     content: "📍 ";
   }
   
-  /* 6-column tables (Top10): Rank | Time | Athlete | Year | Date | Meet */
-  .table tbody tr:has(td:nth-child(6)) td:nth-child(4) {
+  /* ===== 6-column tables (Top10): Rank | Time | Athlete | Year | Date | Meet ===== */
+  .table-6col tbody td:nth-child(4) {
     grid-row: 2;
     grid-column: 3;
     font-size: 0.8rem;
@@ -650,7 +649,7 @@ footer a:hover {
     text-align: right;
   }
   
-  .table tbody tr:has(td:nth-child(6)) td:nth-child(5) {
+  .table-6col tbody td:nth-child(5) {
     grid-row: 1;
     grid-column: 3;
     font-size: 0.75rem;
@@ -659,18 +658,14 @@ footer a:hover {
     white-space: nowrap;
   }
   
-  .table tbody tr:has(td:nth-child(6)) td:nth-child(5)::before {
-    content: none;
-  }
-  
-  .table tbody tr:has(td:nth-child(6)) td:nth-child(6) {
+  .table-6col tbody td:nth-child(6) {
     grid-row: 3;
     grid-column: 2 / 4;
     font-size: 0.7rem;
     color: #888;
   }
   
-  .table tbody tr:has(td:nth-child(6)) td:nth-child(6):not(:empty)::before {
+  .table-6col tbody td:nth-child(6):not(:empty)::before {
     content: "📍 ";
   }
   

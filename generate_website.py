@@ -333,9 +333,13 @@ def markdown_to_html_table(md_text):
                 if cells:
                     rows.append(cells)
         
+        # Determine table type based on column count
+        num_cols = len(headers)
+        table_class = 'table-5col' if num_cols == 5 else 'table-6col' if num_cols == 6 else ''
+        
         # Build HTML table
         html = '<div class="table-responsive record-table">\n'
-        html += '<table class="table table-striped table-hover">\n'
+        html += f'<table class="table table-striped table-hover {table_class}">\n'
         html += '<thead>\n<tr>\n'
         for header in headers:
             html += f'<th>{header}</th>\n'
@@ -347,20 +351,24 @@ def markdown_to_html_table(md_text):
             'Sophomore': 'SO',
             'Junior': 'JR',
             'Senior': 'SR',
-            'Open': 'Open'
+            'Open': 'OPEN'
         }
         
         for row in rows:
             html += '<tr>\n'
             for i, cell in enumerate(row):
+                # Strip bold markers for checking
+                cell_clean = cell.replace('**', '').strip()
+                is_bold = '**' in cell
+                
                 # Check if this is a grade column (first column often has grade names)
-                if cell in grade_abbrev:
-                    abbrev = grade_abbrev[cell]
-                    html += f'<td><span class="grade-badge grade-{abbrev.lower()}">{abbrev}</span></td>\n'
+                if cell_clean in grade_abbrev:
+                    abbrev = grade_abbrev[cell_clean]
+                    css_class = abbrev.lower()
+                    html += f'<td><span class="grade-badge grade-{css_class}">{abbrev}</span></td>\n'
                 # Check if this is a record holder (bold text)
-                elif '**' in cell:
-                    cell = cell.replace('**', '')
-                    html += f'<td class="record-holder">{cell}</td>\n'
+                elif is_bold:
+                    html += f'<td class="record-holder">{cell_clean}</td>\n'
                 else:
                     html += f'<td>{cell}</td>\n'
             html += '</tr>\n'
