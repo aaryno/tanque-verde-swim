@@ -14,7 +14,7 @@ body {
   color: var(--text-dark);
   line-height: 1.6;
   max-width: 100vw;
-  overflow-x: clip; /* Use clip instead of hidden - doesn't break sticky */
+  /* NO overflow-x - it breaks sticky positioning on Safari */
 }
 
 /* Grade Badges */
@@ -227,12 +227,15 @@ body {
 .hero-header {
   background: linear-gradient(135deg, var(--tvhs-primary) 0%, var(--tvhs-dark-green) 100%);
   color: white;
-  position: sticky !important;
-  top: 92px !important; /* main-nav (48px) + quick-nav (44px) */
-  z-index: 1020 !important;
-  transition: all 0.3s ease;
-  margin-bottom: 0 !important;
-  margin-top: 0 !important;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 88px;  /* main-nav (48px) + quick-nav (40px) */
+  z-index: 1015;
+  /* CRITICAL: Only transition specific properties, NOT 'all' */
+  transition: padding 0.3s ease, opacity 0.3s ease;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  margin: 0;
 }
 
 .hero-expanded {
@@ -355,13 +358,15 @@ body {
 
 /* Main Navigation */
 #main-nav {
-  background-color: var(--tvhs-primary) !important;
-  padding: 0.5rem 0.75rem;
-  position: sticky !important;
-  top: 0 !important;
-  z-index: 1030 !important;
-  margin: 0 !important;
-  height: 48px;
+  background-color: var(--tvhs-primary);
+  padding: 0.4rem 0.75rem;
+  position: -webkit-sticky;  /* Safari prefix */
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  /* Force GPU layer to help Safari */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .navbar-brand {
@@ -411,14 +416,15 @@ body {
 
 /* Quick Navigation Bar */
 .quick-nav {
-  background-color: var(--tvhs-accent) !important;
-  padding: 0.3rem 0;
-  position: sticky !important;
-  top: 48px !important;
-  z-index: 1025 !important;
-  box-shadow: none !important;
-  margin: 0 !important;
-  height: 44px;
+  background-color: var(--tvhs-accent);
+  padding: 0.25rem 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 48px;  /* Height of main-nav */
+  z-index: 1025;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .quick-nav .nav {
@@ -489,11 +495,14 @@ body {
   background: linear-gradient(135deg, var(--tvhs-primary) 0%, var(--tvhs-accent) 100%);
   color: white;
   padding: 0.75rem 0;
-  margin: 0 0 1rem 0 !important;
+  margin-bottom: 1rem;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  position: sticky !important;
-  top: 92px !important; /* main-nav (48px) + quick-nav (44px) */
-  z-index: 1020 !important;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 88px;  /* main-nav (48px) + quick-nav (40px) */
+  z-index: 1015;  /* LOWER than quick-nav */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 /* Jump To dropdown */
@@ -866,23 +875,18 @@ footer a:hover {
   /* Sticky header adjustments for mobile */
   #main-nav {
     padding: 0.3rem 0.5rem;
-    height: 40px;
+    /* Let height be natural, don't force it */
   }
   
   .quick-nav {
-    top: 40px !important;
+    top: 40px;  /* Approximate height of mobile main-nav */
     padding: 0.2rem 0;
-    height: 40px;
   }
   
-  .page-header {
-    position: sticky !important;
-    top: 80px !important; /* main-nav (40px) + quick-nav (40px) */
-    padding: 0.35rem 0;
-  }
-  
+  .page-header,
   .hero-header {
-    top: 80px !important; /* main-nav (40px) + quick-nav (40px) */
+    top: 76px;  /* 40px + 36px approximate */
+    padding: 0.35rem 0;
   }
   
   .quick-nav .nav-link {
