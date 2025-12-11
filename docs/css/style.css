@@ -453,6 +453,28 @@ body {
   color: #888;
 }
 
+/* Relay section header */
+.relay-header {
+  background: var(--tvhs-primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0 0 0;
+  font-size: 1rem;
+  border-radius: 8px 8px 0 0;
+}
+
+.relay-record-card {
+  border-top: 1px solid #ddd;
+}
+
+.relay-record-card:first-of-type {
+  border-top: none;
+}
+
+.relay-names {
+  font-size: 0.95rem;
+}
+
 /* Mobile adjustments for overall records */
 @media (max-width: 576px) {
   .overall-record-card {

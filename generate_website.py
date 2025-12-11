@@ -519,6 +519,42 @@ def extract_open_records(md_file):
     return records
 
 
+def extract_top_relay_records(md_file):
+    """Extract the #1 relay for each event from a relay records markdown file"""
+    with open(md_file, 'r') as f:
+        content = f.read()
+    
+    records = []
+    current_event = None
+    
+    for line in content.split('\n'):
+        # Match event headings (## 200 Medley Relay, etc.)
+        event_match = re.match(r'^## (.+ Relay)$', line)
+        if event_match:
+            current_event = event_match.group(1)
+            continue
+        
+        # Match #1 record rows (bold with rank 1)
+        if current_event and line.startswith('| **1**'):
+            # Parse: | **1** | **Time** | **Participants** | **Date** | **Meet** |
+            parts = [p.strip().replace('**', '') for p in line.split('|') if p.strip()]
+            if len(parts) >= 5:
+                # Strip leading zero from time
+                time = parts[1]
+                if time.startswith('0'):
+                    time = time[1:]
+                records.append({
+                    'event': current_event,
+                    'time': time,
+                    'participants': parts[2],
+                    'date': parts[3],
+                    'meet': parts[4]
+                })
+                current_event = None  # Only get #1 for each event
+    
+    return records
+
+
 def generate_overall_records_page(records_dir, docs_dir):
     """Generate the Overall Records page with both boys and girls OPEN records"""
     print("🏆 Generating Overall Records page...")
@@ -527,11 +563,21 @@ def generate_overall_records_page(records_dir, docs_dir):
     boys_records = extract_open_records(records_dir / 'records-boys.md')
     girls_records = extract_open_records(records_dir / 'records-girls.md')
     
+    # Extract top relay records
+    boys_relays = extract_top_relay_records(records_dir / 'relay-records-boys.md')
+    girls_relays = extract_top_relay_records(records_dir / 'relay-records-girls.md')
+    
+    def get_last_names(participants):
+        """Extract last names from participants string"""
+        names = [n.strip() for n in participants.split(',')]
+        return ', '.join(n.split()[-1] for n in names)
+    
     # Build HTML content for overall records with special layout
-    def build_records_html(records, gender):
+    def build_records_html(records, relays, gender):
         html = f'<div class="overall-records-section" id="{gender}-records">\n'
         html += f'<h2 class="gender-header">{gender.title()} Team Records</h2>\n'
         
+        # Individual records
         for record in records:
             html += f'''<div class="overall-record-card">
     <div class="record-header">
@@ -545,11 +591,28 @@ def generate_overall_records_page(records_dir, docs_dir):
     <div class="record-meet">📍 {record['meet']}</div>
 </div>\n'''
         
+        # Relay records section
+        if relays:
+            html += f'<h3 class="relay-header">Relay Records</h3>\n'
+            for relay in relays:
+                last_names = get_last_names(relay['participants'])
+                html += f'''<div class="overall-record-card relay-record-card">
+    <div class="record-header">
+        <span class="event-name">{relay['event']}</span>
+        <span class="record-date">{relay['date']}</span>
+    </div>
+    <div class="record-main">
+        <span class="record-time">{relay['time']}</span>
+        <span class="record-athlete relay-names">{last_names}</span>
+    </div>
+    <div class="record-meet">📍 {relay['meet']}</div>
+</div>\n'''
+        
         html += '</div>\n'
         return html
     
-    boys_html = build_records_html(boys_records, 'boys')
-    girls_html = build_records_html(girls_records, 'girls')
+    boys_html = build_records_html(boys_records, boys_relays, 'boys')
+    girls_html = build_records_html(girls_records, girls_relays, 'girls')
     
     # Combine with boys first (JavaScript will reorder based on gender toggle)
     content = f'''<div class="content overall-records-page">
