@@ -1300,6 +1300,45 @@ h2[id], h3[id], .event-heading[id] {
 }
 
 /* ==========================================
+   Senior Card Styling
+   ========================================== */
+.senior-card {
+  border-left: 4px solid var(--tvhs-primary);
+}
+
+.senior-card .card-title {
+  font-weight: 600;
+  color: var(--tvhs-dark-green);
+  margin-bottom: 0.5rem;
+}
+
+.senior-card .records-section {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  border-radius: 6px;
+  padding: 0.75rem;
+  border: 1px solid #d1fae5;
+}
+
+.senior-card .records-header {
+  color: var(--tvhs-dark-green);
+  font-size: 0.8rem !important;
+}
+
+.senior-card .records-section .time {
+  color: var(--tvhs-primary);
+}
+
+.senior-card .events-section {
+  border-top: 1px dashed #e5e7eb;
+  padding-top: 0.5rem;
+}
+
+.senior-card .records-section + .events-section {
+  border-top: none;
+  padding-top: 0;
+}
+
+/* ==========================================
    Relay Splits Styling
    ========================================== */
 .relay-splits {
