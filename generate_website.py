@@ -341,11 +341,24 @@ def markdown_to_html_table(md_text):
             html += f'<th>{header}</th>\n'
         html += '</tr>\n</thead>\n<tbody>\n'
         
+        # Grade abbreviation mapping
+        grade_abbrev = {
+            'Freshman': 'FR',
+            'Sophomore': 'SO',
+            'Junior': 'JR',
+            'Senior': 'SR',
+            'Open': 'Open'
+        }
+        
         for row in rows:
             html += '<tr>\n'
             for i, cell in enumerate(row):
+                # Check if this is a grade column (first column often has grade names)
+                if cell in grade_abbrev:
+                    abbrev = grade_abbrev[cell]
+                    html += f'<td><span class="grade-badge grade-{abbrev.lower()}">{abbrev}</span></td>\n'
                 # Check if this is a record holder (bold text)
-                if '**' in cell:
+                elif '**' in cell:
                     cell = cell.replace('**', '')
                     html += f'<td class="record-holder">{cell}</td>\n'
                 else:
