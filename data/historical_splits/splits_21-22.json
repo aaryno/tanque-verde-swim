@@ -1,0 +1,1302 @@
+{
+  "boys": [
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Samuel Stott - Jr.",
+        "Alejandro Alvarez - Jr.",
+        "Nolan Radomsky - So.",
+        "Nicholas Cusson - So."
+      ],
+      "splits": [
+        "00:22.29",
+        "00:24.85",
+        "00:25.01",
+        "00:21.78"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Samuel Stott - Jr.",
+        "Alejandro Alvarez - Jr.",
+        "Nolan Radomsky - So.",
+        "Nicholas Cusson - So."
+      ],
+      "splits": [
+        "00:22.62",
+        "00:24.94",
+        "00:25.31",
+        "00:22.29"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Samuel Stott - Jr.",
+        "Nolan Radomsky - So.",
+        "Alejandro Alvarez - Jr.",
+        "Nicholas Cusson - So."
+      ],
+      "splits": [
+        "00:23.38",
+        "00:25.69",
+        "00:25.48",
+        "00:22.14"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Samuel Stott - Jr.",
+        "Nolan Radomsky - So.",
+        "Alejandro Alvarez - Jr.",
+        "Nicholas Cusson - So."
+      ],
+      "splits": [
+        "00:22.97",
+        "00:26.39",
+        "00:26.25",
+        "00:21.80"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Nicholas Cusson - So.",
+        "Nolan Radomsky - So.",
+        "Tannor Soedor - Jr.",
+        "Alejandro Alvarez - Jr."
+      ],
+      "splits": [
+        "00:22.10",
+        "00:26.17",
+        "00:26.62",
+        "00:25.70"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Stephen Moreland - Fr.",
+        "Nick Spilotro - Sr.",
+        "Alejandro Alvarez - Jr.",
+        "Nolan Radomsky - So."
+      ],
+      "splits": [
+        "00:27.33",
+        "00:27.00",
+        "00:25.38",
+        "00:26.98"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Oren Zadorozny - Fr.",
+        "Noah Puzio-Dunne - So.",
+        "Ethan Chumbler - Fr.",
+        "Stephen Moreland - Fr."
+      ],
+      "splits": [
+        "00:26.59",
+        "00:27.98",
+        "00:30.00",
+        "00:25.79"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Noah Puzio-Dunne - So.",
+        "Lucas Soeder - Fr.",
+        "James Spilotro - ",
+        "Tannor Soeder - "
+      ],
+      "splits": [
+        "00:28.26",
+        "00:31.01",
+        "00:28.98",
+        "00:27.92"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Nick Spilotro - Sr.",
+        "Oren Zadorozny - Fr.",
+        "Samuel Stott - Jr.",
+        "Nicholas Cusson - So."
+      ],
+      "splits": [
+        "00:29.65",
+        "00:31.22",
+        "00:24.90",
+        "00:21.89"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Nick Spilotro - Sr.",
+        "Samuel Stott - Jr.",
+        "Beck Caballero - So.",
+        "Alejandro Alvarez - Jr."
+      ],
+      "splits": [
+        "00:29.89",
+        "00:30.44",
+        "00:28.42",
+        "00:25.64"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Nick Spilotro - Sr.",
+        "Oren Zadorozny - Fr.",
+        "Beck Caballero - ",
+        "Tannor Soeder - "
+      ],
+      "splits": [
+        "00:29.87",
+        "00:32.56",
+        "00:29.04",
+        "00:25.95"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Nick Spilotro - Sr.",
+        "Oren Zadorozny - Fr.",
+        "Beck Caballero - ",
+        "Alejandro Alvarez - Jr."
+      ],
+      "splits": [
+        "00:30.54",
+        "00:35.73",
+        "00:28.95",
+        "00:25.71"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Nick Spilotro - Sr.",
+        "Oren Zadorozny - Fr.",
+        "Beck Caballero - ",
+        "Stephen Moreland - Fr."
+      ],
+      "splits": [
+        "00:31.33",
+        "00:34.01",
+        "00:29.05",
+        "00:26.58"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "JP Spilotro - So.",
+        "Tannor Soedor - Jr.",
+        "Elijah Keena - Jr.",
+        "Ethan Chumbler - Fr."
+      ],
+      "splits": [
+        "00:35.87",
+        "00:34.95",
+        "00:45.49",
+        "00:28.80"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Nicholas Cusson - So.",
+        "Nicholas Cusson - So.",
+        "Alejandro Alvarez - Jr.",
+        "Alejandro Alvarez - Jr.",
+        "Nolan Radomsky - So.",
+        "Nolan Radomsky - So.",
+        "Samuel Stott - Jr.",
+        "Samuel Stott - Jr."
+      ],
+      "splits": [
+        "00:23.45",
+        "00:25.23",
+        "00:26.06",
+        "00:28.47",
+        "00:26.02",
+        "00:29.67",
+        "00:22.70",
+        "00:25.04"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Nicholas Cusson - So.",
+        "Nicholas Cusson - So.",
+        "Alejandro Alvarez - Jr.",
+        "Alejandro Alvarez - Jr.",
+        "Nolan Radomsky - So.",
+        "Nolan Radomsky - So.",
+        "Samuel Stott - Jr.",
+        "Samuel Stott - Jr."
+      ],
+      "splits": [
+        "00:23.69",
+        "00:25.32",
+        "00:16.36",
+        "00:40.02",
+        "00:27.16",
+        "00:30.37",
+        "00:23.04",
+        "00:25.27"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Nicholas Cusson - So.",
+        "Nicholas Cusson - So.",
+        "Nolan Radomsky - So.",
+        "Nolan Radomsky - So.",
+        "Nick Spilotro - Sr.",
+        "Nick Spilotro - Sr.",
+        "Samuel Stott - Jr.",
+        "Samuel Stott - Jr."
+      ],
+      "splits": [
+        "00:23.94",
+        "00:25.51",
+        "00:16.07",
+        "00:41.25",
+        "00:27.51",
+        "00:32.44",
+        "00:23.73",
+        "00:26.51"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Nicholas Cusson - So.",
+        "Nicholas Cusson - So.",
+        "Beck Caballero - ",
+        "Beck Caballero - ",
+        "Stephen Moreland - Fr.",
+        "Stephen Moreland - Fr.",
+        "Samuel Stott - Jr.",
+        "Samuel Stott - Jr."
+      ],
+      "splits": [
+        "00:23.86",
+        "00:25.97",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Nicholas Cusson - So.",
+        "Nicholas Cusson - So.",
+        "Nolan Radomsky - So.",
+        "Nolan Radomsky - So.",
+        "Nick Spilotro - Sr.",
+        "Nick Spilotro - Sr.",
+        "Samuel Stott - Jr.",
+        "Samuel Stott - Jr."
+      ],
+      "splits": [
+        "",
+        "",
+        "00:52.82",
+        "00:31.12",
+        "00:28.33",
+        "00:31.50",
+        "00:23.89",
+        "00:27.00"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Samuel Stott - Jr.",
+        "Samuel Stott - Jr.",
+        "Nolan Radomsky - So.",
+        "Nolan Radomsky - So.",
+        "Beck Caballero - So.",
+        "Beck Caballero - So.",
+        "Nicholas Cusson - So.",
+        "Nicholas Cusson - So."
+      ],
+      "splits": [
+        "00:23.89",
+        "00:25.69",
+        "00:26.93",
+        "00:31.54",
+        "00:28.18",
+        "00:32.97",
+        "00:23.93",
+        "00:26.13"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Oren Zadorozny - Fr.",
+        "Oren Zadorozny - Fr.",
+        "Ethan Chumbler - Fr.",
+        "Ethan Chumbler - Fr.",
+        "Grayson Green - So.",
+        "Grayson Green - So.",
+        "Alejandro Alvarez - Jr.",
+        "Alejandro Alvarez - Jr."
+      ],
+      "splits": [
+        "00:28.58",
+        "00:31.37",
+        "00:32.87",
+        "00:35.82",
+        "00:34.46",
+        "00:37.33",
+        "00:28.08",
+        "00:30.17"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Grayson Green - So.",
+        "Grayson Green - So.",
+        "Lucas Soeder - Fr.",
+        "Lucas Soeder - Fr.",
+        "Ethan Chumbler - Fr.",
+        "Ethan Chumbler - Fr.",
+        "JP Spilotro - So.",
+        "JP Spilotro - So."
+      ],
+      "splits": [
+        "00:34.95",
+        "00:37.69",
+        "00:33.91",
+        "00:38.45",
+        "00:32.69",
+        "00:35.81",
+        "00:30.90",
+        "00:36.54"
+      ],
+      "team": "Relay Team"
+    }
+  ],
+  "girls": [
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Maggie Colombo - Jr.",
+        "Shaye Sulgar - Sr.",
+        "Natalie Armstrong - So.",
+        "Paisley White - Jr."
+      ],
+      "splits": [
+        "00:26.69",
+        "00:27.73",
+        "00:25.96",
+        "00:26.08"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Natalie Armstrong - So.",
+        "Shaye Sulgar - Sr.",
+        "Maggie Colombo - Jr.",
+        "Paisley White - Jr."
+      ],
+      "splits": [
+        "00:26.57",
+        "00:28.31",
+        "00:26.33",
+        "00:25.76"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Paisley White - Jr.",
+        "Shaye Sulgar - Sr.",
+        "Maggie Colombo - Jr.",
+        "Natalie Armstrong - So."
+      ],
+      "splits": [
+        "00:27.08",
+        "00:27.90",
+        "00:26.05",
+        "00:26.38"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Maggie Colombo - Jr.",
+        "Sydney Hagerman - Jr.",
+        "Shaye Sulgar - Sr.",
+        "Natalie Armstrong - So."
+      ],
+      "splits": [
+        "00:26.40",
+        "00:28.58",
+        "00:27.13",
+        "00:26.16"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Paisley White - Jr.",
+        "Ryann Lightcap - So.",
+        "Maggie Colombo - Jr.",
+        "Natalie Armstrong - So."
+      ],
+      "splits": [
+        "00:26.66",
+        "00:29.04",
+        "00:25.98",
+        "00:26.64"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Shaye Sulgar - Sr.",
+        "Lainie Radomsky - Sr.",
+        "Sydney Hagerman - Jr.",
+        "Alexandra Foley - Jr."
+      ],
+      "splits": [
+        "00:27.98",
+        "00:31.30",
+        "00:28.99",
+        "00:28.69"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Ryann Lightcap - So.",
+        "Jessica Weiner - ",
+        "Jessica  Erickson - Jr.",
+        "Summer Cugini - Fr."
+      ],
+      "splits": [
+        "00:30.66",
+        "00:34.51",
+        "00:31.83",
+        "00:30.35"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Summer Cugini - Fr.",
+        "Jessica  Erickson - Jr.",
+        "Molly Guyman - Fr.",
+        "Ryann Lightcap - So."
+      ],
+      "splits": [
+        "00:30.73",
+        "00:32.92",
+        "00:35.03",
+        "00:30.48"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Breanna Prince - Jr.",
+        "Emma Kalway - Sr.",
+        "Clementine  Dasse - Fr.",
+        "JIllian Lightcap - Jr."
+      ],
+      "splits": [
+        "00:37.56",
+        "00:34.68",
+        "00:31.56",
+        "00:31.63"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Brianne Foley - Fr.",
+        "Maggie Colombo - Jr.",
+        "Paisley White - Jr.",
+        "Natalie Armstrong - So."
+      ],
+      "splits": [
+        "00:32.78",
+        "00:36.65",
+        "00:29.01",
+        "00:27.57"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Shaye Sulgar - Sr.",
+        "Lainie Radomsky - Sr.",
+        "Brianne Foley - Fr.",
+        "Ryann Lightcap - So."
+      ],
+      "splits": [
+        "00:31.86",
+        "00:38.05",
+        "00:30.53",
+        "00:29.77"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Shaye Sulgar - Sr.",
+        "Lainie Radomsky - Sr.",
+        "Brianne Foley - Fr.",
+        "Ryann Lightcap - So."
+      ],
+      "splits": [
+        "00:32.15",
+        "00:37.72",
+        "00:31.19",
+        "00:29.68"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Lainie Radomsky - Sr.",
+        "Sydney Hagerman - Jr.",
+        "Brianne Foley - Fr.",
+        "Emma Kalway - Sr."
+      ],
+      "splits": [
+        "00:34.93",
+        "00:40.15",
+        "00:31.17",
+        "00:30.59"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Summer Cugini - Fr.",
+        "Lainie Radomsky - Sr.",
+        "Alexandra Foley - Jr.",
+        "Ryann Lightcap - So."
+      ],
+      "splits": [
+        "00:34.97",
+        "00:39.13",
+        "00:33.59",
+        "00:30.54"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Summer Cugini - Fr.",
+        "Sydney Hagerman - Jr.",
+        "Alexandra Foley - Jr.",
+        "Clementine  Dasse - Fr."
+      ],
+      "splits": [
+        "00:36.15",
+        "00:41.06",
+        "00:33.04",
+        "00:31.06"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Alexandra Foley - Jr.",
+        "Emma Kalway - Sr.",
+        "Jessica  Erickson - Jr.",
+        "Molly Guyman - Fr."
+      ],
+      "splits": [
+        "00:34.02",
+        "00:40.16",
+        "00:35.59",
+        "00:33.76"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Maggie Colombo - Jr.",
+        "Maggie Colombo - Jr.",
+        "Brianne Foley - Fr.",
+        "Brianne Foley - Fr.",
+        "Shaye Sulgar - Sr.",
+        "Shaye Sulgar - Sr.",
+        "Natalie Armstrong - So.",
+        "Natalie Armstrong - So."
+      ],
+      "splits": [
+        "00:27.76",
+        "00:30.85",
+        "00:29.04",
+        "00:32.42",
+        "00:29.04",
+        "00:32.25",
+        "00:26.96",
+        "00:30.64"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Natalie Armstrong - So.",
+        "Natalie Armstrong - So.",
+        "Paisley White - Jr.",
+        "Paisley White - Jr.",
+        "Brianne Foley - Fr.",
+        "Brianne Foley - Fr.",
+        "Maggie Colombo - Jr.",
+        "Maggie Colombo - Jr."
+      ],
+      "splits": [
+        "00:27.83",
+        "00:30.49",
+        "00:27.41",
+        "00:31.93",
+        "00:30.79",
+        "00:32.83",
+        "00:27.31",
+        "00:31.00"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Maggie Colombo - Jr.",
+        "Maggie Colombo - Jr.",
+        "Shaye Sulgar - Sr.",
+        "Shaye Sulgar - Sr.",
+        "Paisley White - Jr.",
+        "Paisley White - Jr.",
+        "Natalie Armstrong - So.",
+        "Natalie Armstrong - So."
+      ],
+      "splits": [
+        "00:28.01",
+        "00:31.05",
+        "00:30.10",
+        "00:32.82",
+        "00:27.94",
+        "00:31.34",
+        "00:27.42",
+        "00:30.91"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Natalie Armstrong - So.",
+        "Natalie Armstrong - So.",
+        "Brianne Foley - Fr.",
+        "Brianne Foley - Fr.",
+        "Maggie Colombo - Jr.",
+        "Maggie Colombo - Jr.",
+        "Paisley White - Jr.",
+        "Paisley White - Jr."
+      ],
+      "splits": [
+        "00:27.62",
+        "00:30.66",
+        "00:32.05",
+        "00:35.75",
+        "00:25.90",
+        "00:32.27",
+        "00:26.59",
+        "00:33.10"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Shaye Sulgar - Sr.",
+        "Shaye Sulgar - Sr.",
+        "Maggie Colombo - Jr.",
+        "Maggie Colombo - Jr.",
+        "Brianne Foley - Fr.",
+        "Brianne Foley - Fr.",
+        "Natalie Armstrong - So.",
+        "Natalie Armstrong - So."
+      ],
+      "splits": [
+        "00:30.32",
+        "00:33.13",
+        "00:27.68",
+        "00:31.30",
+        "00:30.20",
+        "00:32.80",
+        "00:27.78",
+        "00:30.82"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Maggie Colombo - Jr.",
+        "Maggie Colombo - Jr.",
+        "Paisley White - Jr.",
+        "Paisley White - Jr.",
+        "Brianne Foley - Fr.",
+        "Brianne Foley - Fr.",
+        "Natalie Armstrong - So.",
+        "Natalie Armstrong - So."
+      ],
+      "splits": [
+        "00:28.76",
+        "00:31.76",
+        "00:27.58",
+        "00:32.59",
+        "00:30.17",
+        "00:33.15",
+        "00:28.50",
+        "00:31.61"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Alexandra Foley - Jr.",
+        "Alexandra Foley - Jr.",
+        "Sydney Hagerman - Jr.",
+        "Sydney Hagerman - Jr.",
+        "Felicity Holbrook - Jr.",
+        "Felicity Holbrook - Jr.",
+        "Jessica  Erickson - Jr.",
+        "Jessica  Erickson - Jr."
+      ],
+      "splits": [
+        "00:33.33",
+        "00:37.82",
+        "00:30.05",
+        "00:34.11",
+        "00:38.99",
+        "00:43.03",
+        "00:33.41",
+        "00:37.33"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "21-22",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Summer Cugini - Fr.",
+        "Summer Cugini - Fr.",
+        "Emma Kalway - Sr.",
+        "Emma Kalway - Sr.",
+        "JIllian Lightcap - Jr.",
+        "JIllian Lightcap - Jr.",
+        "Molly Guyman - Fr.",
+        "Molly Guyman - Fr."
+      ],
+      "splits": [
+        "00:32.31",
+        "01:10.05",
+        "00:38.66",
+        "00:37.54",
+        "00:42.75",
+        "00:36.49",
+        "",
+        ""
+      ],
+      "team": "Relay Team"
+    }
+  ]
+}

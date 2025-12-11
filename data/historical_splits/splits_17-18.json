@@ -1,0 +1,1002 @@
+{
+  "boys": [
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Will Isenberg - Jr.",
+        "Titan Flint - Jr.",
+        "Paul Morrison - Jr.",
+        "Logan Radomsky - So."
+      ],
+      "splits": [
+        "00:29.17",
+        "00:28.19",
+        "00:30.16",
+        "00:26.38"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Will Isenberg - Jr.",
+        "Ethan Beishuizen - Fr.",
+        "Dominic Colombo - Fr.",
+        "Eli Stott - So."
+      ],
+      "splits": [
+        "00:29.28",
+        "01:01.63",
+        "00:29.13",
+        "00:00.-2"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Paul Morrison - Jr.",
+        "Will Isenberg - Jr.",
+        "Ethan Beishuizen - Fr.",
+        "Dominic Colombo - Fr."
+      ],
+      "splits": [
+        "00:28.84",
+        "00:29.73",
+        "00:34.58",
+        "00:26.90"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Dominic Colombo - Fr.",
+        "Jake Pacheco - Fr.",
+        "Ethan Beishuizen - Fr.",
+        "Eli Stott - So."
+      ],
+      "splits": [
+        "00:29.97",
+        "00:29.92",
+        "00:35.67",
+        "00:27.36"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Will Isenberg - Jr.",
+        "Titan Flint - Jr.",
+        "Paul Morrison - Jr.",
+        "Logan Radomsky - So."
+      ],
+      "splits": [
+        "00:32.17",
+        "00:35.18",
+        "00:31.15",
+        "00:26.15"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Will Isenberg - Jr.",
+        "Titan Flint - Jr.",
+        "Paul Morrison - Jr.",
+        "Logan Radomsky - So."
+      ],
+      "splits": [
+        "00:32.37",
+        "00:35.11",
+        "00:31.14",
+        "00:27.00"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Will Isenberg - Jr.",
+        "Titan Flint - Jr.",
+        "Paul Morrison - Jr.",
+        "Logan Radomsky - So."
+      ],
+      "splits": [
+        "00:32.61",
+        "00:36.52",
+        "00:31.96",
+        "00:26.02"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Eli Stott - So.",
+        "Niall Thorns - Jr.",
+        "Dominic Colombo - Fr.",
+        "Ethan Beishuizen - Fr."
+      ],
+      "splits": [
+        "00:37.03",
+        "00:41.66",
+        "00:42.98",
+        "00:25.19"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Jake Pacheco - Fr.",
+        "Niall Thorns - Jr.",
+        "Dominic Colombo - Fr.",
+        "Joseph Jacobs - Fr."
+      ],
+      "splits": [
+        "00:36.18",
+        "00:42.24",
+        "00:38.09",
+        "00:30.51"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Logan Radomsky - So.",
+        "Logan Radomsky - So.",
+        "Eli Stott - So.",
+        "Eli Stott - So.",
+        "Joseph Jacobs - Fr.",
+        "Joseph Jacobs - Fr.",
+        "Titan Flint - Jr.",
+        "Titan Flint - Jr."
+      ],
+      "splits": [
+        "00:28.59",
+        "00:32.09",
+        "00:29.52",
+        "00:32.86",
+        "00:29.39",
+        "00:34.27",
+        "00:29.25",
+        "00:31.34"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Logan Radomsky - So.",
+        "Logan Radomsky - So.",
+        "Eli Stott - So.",
+        "Eli Stott - So.",
+        "Joseph Jacobs - Fr.",
+        "Joseph Jacobs - Fr.",
+        "Titan Flint - Jr.",
+        "Titan Flint - Jr."
+      ],
+      "splits": [
+        "00:27.98",
+        "00:30.82",
+        "00:29.10",
+        "00:32.64",
+        "00:31.74",
+        "00:33.48",
+        "00:30.27",
+        "00:32.78"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Logan Radomsky - So.",
+        "Logan Radomsky - So.",
+        "Will Isenberg - Jr.",
+        "Will Isenberg - Jr.",
+        "Paul Morrison - Jr.",
+        "Paul Morrison - Jr.",
+        "Titan Flint - Jr.",
+        "Titan Flint - Jr."
+      ],
+      "splits": [
+        "00:28.02",
+        "00:31.39",
+        "00:30.88",
+        "00:33.90",
+        "00:31.50",
+        "00:36.64",
+        "00:30.07",
+        "00:31.79"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Titan Flint - Jr.",
+        "Titan Flint - Jr.",
+        "Will Isenberg - Jr.",
+        "Will Isenberg - Jr.",
+        "Paul Morrison - Jr.",
+        "Paul Morrison - Jr.",
+        "Logan Radomsky - So.",
+        "Logan Radomsky - So."
+      ],
+      "splits": [
+        "01:04.28",
+        "00:30.68",
+        "00:34.77",
+        "00:31.07",
+        "00:36.63",
+        "00:28.25",
+        "00:31.12",
+        "00:00.-0"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Jake Pacheco - Fr.",
+        "Jake Pacheco - Fr.",
+        "Dominic Colombo - Fr.",
+        "Dominic Colombo - Fr.",
+        "Ethan Beishuizen - Fr.",
+        "Ethan Beishuizen - Fr.",
+        "Eli Stott - So.",
+        "Eli Stott - So."
+      ],
+      "splits": [
+        "00:32.69",
+        "00:35.55",
+        "00:33.37",
+        "00:35.59",
+        "00:33.98",
+        "00:37.07",
+        "00:31.54",
+        "00:32.81"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Ethan Beishuizen - Fr.",
+        "Ethan Beishuizen - Fr.",
+        "Jake Pacheco - Fr.",
+        "Jake Pacheco - Fr.",
+        "Niall Thorns - Jr.",
+        "Niall Thorns - Jr.",
+        "Eli Stott - So.",
+        "Eli Stott - So."
+      ],
+      "splits": [
+        "00:35.79",
+        "00:41.29",
+        "01:08.46",
+        "00:37.98",
+        "00:45.79",
+        "00:30.24",
+        "00:35.15",
+        "00:00.-0"
+      ],
+      "team": "Relay Team"
+    }
+  ],
+  "girls": [
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Calla Isenberg - Sr.",
+        "Emma Morris - So.",
+        "Ellie Radomsky - Jr.",
+        "Hazel Dasse - Jr."
+      ],
+      "splits": [
+        "00:26.48",
+        "00:28.20",
+        "00:28.49",
+        "00:27.46"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Emma Morris - So.",
+        "Hayley Jones - So.",
+        "Violet Dasse - Fr.",
+        "Ellie Radomsky - Jr."
+      ],
+      "splits": [
+        "00:28.18",
+        "00:29.85",
+        "00:29.75",
+        "00:28.76"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Violet Dasse - Fr.",
+        "Kennady Pautler - Fr.",
+        "Hayley Jones - So.",
+        "Emma Morris - So."
+      ],
+      "splits": [
+        "00:29.19",
+        "00:29.99",
+        "00:31.25",
+        "00:28.48"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Emma Morris - So.",
+        "Hayley Jones - So.",
+        "Violet Dasse - Fr.",
+        "Ellie Radomsky - Jr."
+      ],
+      "splits": [
+        "00:29.15",
+        "00:30.77",
+        "00:29.76",
+        "00:29.73"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Sarynn Patterson - So.",
+        "Brooke Larson - Jr.",
+        "Kennady Pautler - Fr.",
+        "Violet Dasse - Fr."
+      ],
+      "splits": [
+        "00:28.04",
+        "00:36.36",
+        "00:32.64",
+        ""
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Brooke Larson - Jr.",
+        "Hannah Witter - Jr.",
+        "Elaine Hapa - So.",
+        "Natalie Wheeler - So."
+      ],
+      "splits": [
+        "00:36.73",
+        "00:39.63",
+        "00:44.85",
+        "00:36.34"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Calla Isenberg - Sr.",
+        "Sarynn Patterson - So.",
+        "Hazel Dasse - Jr.",
+        "Ellie Radomsky - Jr."
+      ],
+      "splits": [
+        "00:29.45",
+        "00:35.29",
+        "00:28.94",
+        "00:28.35"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Calla Isenberg - Sr.",
+        "Sarynn Patterson - So.",
+        "Hazel Dasse - Jr.",
+        "Ellie Radomsky - Jr."
+      ],
+      "splits": [
+        "00:29.53",
+        "00:34.78",
+        "00:30.28",
+        "00:28.18"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Calla Isenberg - Sr.",
+        "Sarynn Patterson - So.",
+        "Hazel Dasse - Jr.",
+        "Ellie Radomsky - Jr."
+      ],
+      "splits": [
+        "00:29.45",
+        "00:35.22",
+        "00:30.10",
+        "00:28.47"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Calla Isenberg - Sr.",
+        "Sarynn Patterson - So.",
+        "Hazel Dasse - Jr.",
+        "Anna Ellis - Jr."
+      ],
+      "splits": [
+        "00:29.48",
+        "00:34.99",
+        "00:30.01",
+        "00:30.18"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Hazel Dasse - Jr.",
+        "Sarynn Patterson - So.",
+        "Calla Isenberg - Sr.",
+        "Ellie Radomsky - Jr."
+      ],
+      "splits": [
+        "00:32.14",
+        "00:37.29",
+        "00:28.35",
+        "00:28.03"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Emma Morris - So.",
+        "Hayley Jones - So.",
+        "Kennady Pautler - Fr.",
+        "Natalie Wheeler - So."
+      ],
+      "splits": [
+        "00:33.62",
+        "00:39.34",
+        "00:35.09",
+        "00:35.87"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Violet Dasse - Fr.",
+        "Hayley Jones - So.",
+        "Kennady Pautler - Fr.",
+        "Hannah Witter - Jr."
+      ],
+      "splits": [
+        "01:14.62",
+        "00:36.66",
+        "00:37.07",
+        "00:00.-1"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Hazel Dasse - Jr.",
+        "Hazel Dasse - Jr.",
+        "Ellie Radomsky - Jr.",
+        "Ellie Radomsky - Jr.",
+        "Sarynn Patterson - So.",
+        "Sarynn Patterson - So.",
+        "Calla Isenberg - Sr.",
+        "Calla Isenberg - Sr."
+      ],
+      "splits": [
+        "00:28.20",
+        "00:30.76",
+        "00:29.47",
+        "00:32.69",
+        "00:28.61",
+        "00:32.20",
+        "00:27.44",
+        "00:30.07"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Hazel Dasse - Jr.",
+        "Hazel Dasse - Jr.",
+        "Emma Morris - So.",
+        "Emma Morris - So.",
+        "Sarynn Patterson - So.",
+        "Sarynn Patterson - So.",
+        "Calla Isenberg - Sr.",
+        "Calla Isenberg - Sr."
+      ],
+      "splits": [
+        "00:27.83",
+        "00:30.58",
+        "00:29.24",
+        "00:32.23",
+        "00:29.06",
+        "00:32.43",
+        "00:28.03",
+        "00:30.99"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Hazel Dasse - Jr.",
+        "Hazel Dasse - Jr.",
+        "Emma Morris - So.",
+        "Emma Morris - So.",
+        "Sarynn Patterson - So.",
+        "Sarynn Patterson - So.",
+        "Calla Isenberg - Sr.",
+        "Calla Isenberg - Sr."
+      ],
+      "splits": [
+        "00:28.98",
+        "00:30.41",
+        "00:29.87",
+        "00:32.69",
+        "00:28.86",
+        "00:33.49",
+        "00:27.58",
+        "00:30.22"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Calla Isenberg - Sr.",
+        "Calla Isenberg - Sr.",
+        "Emma Morris - So.",
+        "Emma Morris - So.",
+        "Sarynn Patterson - So.",
+        "Sarynn Patterson - So.",
+        "Hazel Dasse - Jr.",
+        "Hazel Dasse - Jr."
+      ],
+      "splits": [
+        "00:27.34",
+        "00:30.69",
+        "00:30.69",
+        "00:33.64",
+        "00:29.13",
+        "00:32.61",
+        "00:28.52",
+        "00:30.04"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Hazel Dasse - Jr.",
+        "Hazel Dasse - Jr.",
+        "Emma Morris - So.",
+        "Emma Morris - So.",
+        "Ellie Radomsky - Jr.",
+        "Ellie Radomsky - Jr.",
+        "Calla Isenberg - Sr.",
+        "Calla Isenberg - Sr."
+      ],
+      "splits": [
+        "00:29.31",
+        "00:31.03",
+        "00:29.46",
+        "00:32.67",
+        "00:30.59",
+        "00:32.90",
+        "00:27.68",
+        "00:30.97"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Hazel Dasse - Jr.",
+        "Hazel Dasse - Jr.",
+        "Ellie Radomsky - Jr.",
+        "Ellie Radomsky - Jr.",
+        "Emma Morris - So.",
+        "Emma Morris - So.",
+        "Calla Isenberg - Sr.",
+        "Calla Isenberg - Sr."
+      ],
+      "splits": [
+        "00:28.67",
+        "00:31.13",
+        "00:30.70",
+        "00:32.84",
+        "00:30.82",
+        "00:33.83",
+        "00:28.30",
+        "00:00.00"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "17-18",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Anna Ellis - Jr.",
+        "Anna Ellis - Jr.",
+        "Violet Dasse - Fr.",
+        "Violet Dasse - Fr.",
+        "Kennady Pautler - Fr.",
+        "Kennady Pautler - Fr.",
+        "Sarynn Patterson - So.",
+        "Sarynn Patterson - So."
+      ],
+      "splits": [
+        "00:30.68",
+        "00:33.86",
+        "00:33.73",
+        "00:37.15",
+        "00:34.36",
+        "00:38.51",
+        "00:30.93",
+        "00:34.91"
+      ],
+      "team": "Relay Team"
+    }
+  ]
+}

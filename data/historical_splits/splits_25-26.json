@@ -1,0 +1,822 @@
+{
+  "boys": [
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Jackson Eftekhar - Jr.",
+        "Grayson The - Sr.",
+        "Wade Olsson - Jr.",
+        "Zachary Duerkop - Sr."
+      ],
+      "splits": [
+        "00:23.21",
+        "00:23.25",
+        "00:22.31",
+        "00:21.68"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Grayson The - Sr.",
+        "Wade Olsson - Jr.",
+        "Jackson Eftekhar - Jr.",
+        "Zachary Duerkop - Sr."
+      ],
+      "splits": [
+        "00:24.07",
+        "00:22.81",
+        "00:23.15",
+        "00:21.78"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Jackson Eftekhar - Jr.",
+        "Kent Olsson - Fr.",
+        "Jackson Machamer - Jr.",
+        "Zachary Duerkop - Sr."
+      ],
+      "splits": [
+        "00:22.01",
+        "00:25.79",
+        "00:24.96",
+        "00:22.85"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Jackson Eftekhar - Jr.",
+        "Bennett Johnston - So.",
+        "Grayson The - Sr.",
+        "Jackson Machamer - Jr."
+      ],
+      "splits": [
+        "00:23.38",
+        "00:26.65",
+        "00:23.20",
+        "00:25.64"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Jackson Eftekhar - Jr.",
+        "Kent Olsson - Fr.",
+        "Bennett Johnston - So.",
+        "Grayson The - Sr."
+      ],
+      "splits": [
+        "00:23.43",
+        "00:26.01",
+        "00:25.74",
+        "00:24.14"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Kent Olsson - Fr.",
+        "Wade Olsson - Jr.",
+        "Jackson Eftekhar - Jr.",
+        "Zachary Duerkop - Sr."
+      ],
+      "splits": [
+        "00:28.12",
+        "00:27.30",
+        "00:24.56",
+        "00:21.82"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Kent Olsson - Fr.",
+        "Wade Olsson - Jr.",
+        "Jackson Eftekhar - Jr.",
+        "Grayson The - Sr."
+      ],
+      "splits": [
+        "00:27.69",
+        "00:27.68",
+        "00:24.08",
+        "00:23.25"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Kent Olsson - Fr.",
+        "Wade Olsson - Jr.",
+        "Zachary Duerkop - Sr.",
+        "Jackson Machamer - Jr."
+      ],
+      "splits": [
+        "00:28.92",
+        "00:28.28",
+        "00:23.99",
+        "00:25.19"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Kent Olsson - Fr.",
+        "Jackson Machamer - Jr.",
+        "Jackson Eftekhar - Jr.",
+        "Grayson The - Sr."
+      ],
+      "splits": [
+        "00:27.76",
+        "00:33.45",
+        "00:24.62",
+        "00:23.52"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Kent Olsson - Fr.",
+        "Wade Olsson - Jr.",
+        "Jackson Machamer - Jr.",
+        "Grayson The - Sr."
+      ],
+      "splits": [
+        "00:30.14",
+        "00:28.45",
+        "00:28.39",
+        "00:23.38"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Wade Olsson - Jr.",
+        "Wade Olsson - Jr.",
+        "Grayson The - Sr.",
+        "Grayson The - Sr.",
+        "Jackson Eftekhar - Jr.",
+        "Jackson Eftekhar - Jr.",
+        "Zachary Duerkop - Sr.",
+        "Zachary Duerkop - Sr."
+      ],
+      "splits": [
+        "00:24.15",
+        "00:25.94",
+        "00:24.33",
+        "00:28.08",
+        "00:23.77",
+        "00:27.06",
+        "00:22.63",
+        "00:24.64"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Zachary Duerkop - Sr.",
+        "Zachary Duerkop - Sr.",
+        "Grayson The - Sr.",
+        "Grayson The - Sr.",
+        "Wade Olsson - Jr.",
+        "Wade Olsson - Jr.",
+        "Jackson Eftekhar - Jr.",
+        "Jackson Eftekhar - Jr."
+      ],
+      "splits": [
+        "00:23.08",
+        "00:24.84",
+        "00:24.78",
+        "00:28.68",
+        "00:23.70",
+        "00:26.04",
+        "00:24.05",
+        "00:27.02"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Jackson Eftekhar - Jr.",
+        "Jackson Eftekhar - Jr.",
+        "Grayson The - Sr.",
+        "Grayson The - Sr.",
+        "Jackson Machamer - Jr.",
+        "Jackson Machamer - Jr.",
+        "Zachary Duerkop - Sr.",
+        "Zachary Duerkop - Sr."
+      ],
+      "splits": [
+        "00:24.46",
+        "00:27.25",
+        "00:25.50",
+        "00:28.41",
+        "00:24.41",
+        "00:27.45",
+        "00:22.67",
+        "00:25.82"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Wade Olsson - Jr.",
+        "Wade Olsson - Jr.",
+        "Jackson Machamer - Jr.",
+        "Jackson Machamer - Jr.",
+        "Kent Olsson - Fr.",
+        "Kent Olsson - Fr.",
+        "Zachary Duerkop - Sr.",
+        "Zachary Duerkop - Sr."
+      ],
+      "splits": [
+        "00:24.60",
+        "00:26.69",
+        "00:25.85",
+        "00:29.27",
+        "00:16.34",
+        "00:39.23",
+        "00:22.92",
+        "00:25.28"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Zachary Duerkop - Sr.",
+        "Zachary Duerkop - Sr.",
+        "Bennett Johnston - So.",
+        "Bennett Johnston - So.",
+        "Grayson The - Sr.",
+        "Grayson The - Sr.",
+        "Wade Olsson - Jr.",
+        "Wade Olsson - Jr."
+      ],
+      "splits": [
+        "00:23.56",
+        "00:25.65",
+        "00:27.39",
+        "00:30.57",
+        "00:25.26",
+        "00:28.83",
+        "00:23.50",
+        "00:25.67"
+      ],
+      "team": "Relay Team"
+    }
+  ],
+  "girls": [
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Isla Cerepak - Fr.",
+        "Logan Sulger - Sr.",
+        "Adrianna Witte - Sr.",
+        "Hadley Cusson - Jr."
+      ],
+      "splits": [
+        "00:27.19",
+        "00:27.47",
+        "00:28.00",
+        "00:25.88"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Adrianna Witte - Sr.",
+        "Stella Eftekhar - Fr.",
+        "Logan Sulger - Sr.",
+        "Hadley Cusson - Jr."
+      ],
+      "splits": [
+        "00:27.84",
+        "00:27.68",
+        "00:28.32",
+        "00:26.73"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Amelia Kidd - Jr.",
+        "Logan Sulger - Sr.",
+        "Adrianna Witte - Sr.",
+        "Hadley Cusson - Jr."
+      ],
+      "splits": [
+        "00:28.72",
+        "00:28.53",
+        "00:28.38",
+        "00:26.82"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Logan Sulger - Sr.",
+        "Kadynce Drummond - Jr.",
+        "Madeline Barnard - Sr.",
+        "Isla Cerepak - Fr."
+      ],
+      "splits": [
+        "00:28.61",
+        "00:28.68",
+        "00:28.67",
+        "00:27.23"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Logan Sulger - Sr.",
+        "Adrianna Witte - Sr.",
+        "Stella Eftekhar - Fr.",
+        "Isla Cerepak - Fr."
+      ],
+      "splits": [
+        "00:30.03",
+        "00:34.10",
+        "00:29.66",
+        "00:26.78"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Logan Sulger - Sr.",
+        "Adrianna Witte - Sr.",
+        "Stella Eftekhar - Fr.",
+        "Hadley Cusson - Jr."
+      ],
+      "splits": [
+        "00:30.98",
+        "00:34.18",
+        "00:29.95",
+        "00:26.83"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Logan Sulger - Sr.",
+        "Rachel Anderson - Fr.",
+        "Stella Eftekhar - Fr.",
+        "Hadley Cusson - Jr."
+      ],
+      "splits": [
+        "00:31.03",
+        "00:36.16",
+        "00:29.51",
+        "00:26.86"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Logan Sulger - Sr.",
+        "Madeline Barnard - Sr.",
+        "Isla Cerepak - Fr.",
+        "Ella Bissmeyer - So."
+      ],
+      "splits": [
+        "00:31.64",
+        "00:36.77",
+        "00:31.87",
+        "00:27.66"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Logan Sulger - Sr.",
+        "Madeline Barnard - Sr.",
+        "Adrianna Witte - Sr.",
+        "Amelia Kidd - Jr."
+      ],
+      "splits": [
+        "00:31.03",
+        "00:36.51",
+        "00:32.15",
+        "00:28.35"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Isla Cerepak - Fr.",
+        "Isla Cerepak - Fr.",
+        "Rachel Anderson - Fr.",
+        "Rachel Anderson - Fr.",
+        "Stella Eftekhar - Fr.",
+        "Stella Eftekhar - Fr.",
+        "Hadley Cusson - Jr.",
+        "Hadley Cusson - Jr."
+      ],
+      "splits": [
+        "00:28.18",
+        "00:31.57",
+        "00:29.02",
+        "00:35.88",
+        "00:24.84",
+        "00:33.16",
+        "00:27.16",
+        "00:30.52"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Isla Cerepak - Fr.",
+        "Isla Cerepak - Fr.",
+        "Stella Eftekhar - Fr.",
+        "Stella Eftekhar - Fr.",
+        "Adrianna Witte - Sr.",
+        "Adrianna Witte - Sr.",
+        "Hadley Cusson - Jr.",
+        "Hadley Cusson - Jr."
+      ],
+      "splits": [
+        "00:29.36",
+        "00:32.33",
+        "00:28.53",
+        "00:32.76",
+        "00:28.90",
+        "00:32.68",
+        "00:27.00",
+        "00:30.86"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Isla Cerepak - Fr.",
+        "Isla Cerepak - Fr.",
+        "Stella Eftekhar - Fr.",
+        "Stella Eftekhar - Fr.",
+        "Kadynce Drummond - Jr.",
+        "Kadynce Drummond - Jr.",
+        "Hadley Cusson - Jr.",
+        "Hadley Cusson - Jr."
+      ],
+      "splits": [
+        "00:28.14",
+        "00:30.86",
+        "00:28.23",
+        "00:33.47",
+        "00:29.73",
+        "00:33.81",
+        "00:27.94",
+        "00:30.32"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Isla Cerepak - Fr.",
+        "Isla Cerepak - Fr.",
+        "Amira Alitiem - Jr.",
+        "Amira Alitiem - Jr.",
+        "Stella Eftekhar - Fr.",
+        "Stella Eftekhar - Fr.",
+        "Hadley Cusson - Jr.",
+        "Hadley Cusson - Jr."
+      ],
+      "splits": [
+        "00:29.34",
+        "00:33.30",
+        "00:30.99",
+        "00:34.20",
+        "00:29.14",
+        "00:32.84",
+        "00:28.59",
+        "00:31.43"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "25-26",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Kadynce Drummond - Jr.",
+        "Kadynce Drummond - Jr.",
+        "Isla Cerepak - Fr.",
+        "Isla Cerepak - Fr.",
+        "Ella Bissmeyer - So.",
+        "Ella Bissmeyer - So.",
+        "Hadley Cusson - Jr.",
+        "Hadley Cusson - Jr."
+      ],
+      "splits": [
+        "00:30.03",
+        "00:33.89",
+        "00:30.03",
+        "00:33.20",
+        "00:31.24",
+        "00:33.22",
+        "00:28.13",
+        "00:31.19"
+      ],
+      "team": "Relay Team"
+    }
+  ]
+}
