@@ -38,7 +38,7 @@ def create_nav_html():
                     <a class="nav-link" href="#" id="nav-top10" title="All-Time Top 10">🔟</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="nav-relays" title="Relay Records">🏃</a>
+                    <a class="nav-link" href="#" id="nav-relays" title="Relay Records">🤝</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅</a>
