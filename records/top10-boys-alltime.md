@@ -9,31 +9,31 @@
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| 1 | 21.99 | Nicholas Cusson | SO | Oct 23, 2021 | 2021 D-3 AIA State Championships (AZ) |
-| 2 | 22.13 | Samuel Stott | SR | Nov 05, 2022 | 2022 D-3 AIA Boys State Championships (AZ) |
-| 3 | 22.76 | Joseph Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
-| 4 | 22.96 | Zachary Duerkop | SR | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
-| 5 | 23.25 | Jackson Eftekhar | JR | Oct 18, 2025 | Pecan Classic (Sahuarita, AZ) |
-| 6 | 23.34 | Trevor Clausen | SO | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
-| 7 | 23.54 | Grayson The | SR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 8 | 24.21 | Tanner Morris | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
-| 9 | 25.03 | Jackson Machamer | FR | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
-| 10 | 25.09 | Peyton Kowalski | SR | Sep 14, 2024 | Canyon del Oro Classic (Oro Valley, AZ) |
+| **1** | **21.64 (r)** | **Nicholas Cusson** | **JR** | **(22-23)** | **Relay Leadoff (200FR)** |
+| 2 | 22.01 (r) | Jackson Eftekhar | JR | (25-26) | Relay Leadoff (200FR) |
+| 3 | 22.13 | Samuel Stott | SR | Nov 05, 2022 | 2022 D-3 AIA Boys State Championships (AZ) |
+| 4 | 22.43 (r) | Joe Breinholt | SR | (16-17) | Relay Leadoff (200FR) |
+| 5 | 22.76 | Joseph Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
+| 6 | 22.96 | Zachary Duerkop | SR | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
+| 7 | 23.26 (r) | Trevor Clausen | SO | (19-20) | Relay Leadoff (200FR) |
+| 8 | 23.54 | Grayson The | SR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
+| 9 | 23.55 (r) | Sam Stott | FR | (19-20) | Relay Leadoff (200FR) |
+| 10 | 23.73 (r) | Nick Cusson | FR | (20-21) | Relay Leadoff (200FR) |
 
 ### 100 Freestyle
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| 1 | 46.44 | Nicholas Cusson | SR | Nov 04, 2023 | 2023 D-3 AIA State Championships (AZ) |
+| **1** | **46.44** | **Nicholas Cusson** | **SR** | **Nov 04, 2023** | **2023 D-3 AIA State Championships (AZ)** |
 | 2 | 47.71 | Samuel Stott | SO | Nov 05, 2020 | AIA State Meet - D3 (AZ) |
-| 3 | 47.98 | Joseph Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
-| 4 | 49.71 | John Deninghoff | SR | Nov 01, 2018 | AIA D-III Boys State Meet (AZ) |
-| 5 | 50.64 | Zachary Duerkop | JR | Oct 19, 2024 | Pecan Classic (Sahuarita, AZ) |
-| 6 | 51.43 | Jackson Eftekhar | JR | Oct 18, 2025 | Pecan Classic (Sahuarita, AZ) |
-| 7 | 52.36 | Austin Morris | SR | Oct 24, 2015 | Small School Championships (Paradise Valley, AZ) |
-| 8 | 53.14 | Trevor Clausen | SO | Oct 05, 2019 | High School Classic (Tucson, AZ) |
-| 9 | 53.58 | Jackson Machamer | SO | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
-| 10 | 53.91 | Andrew Lam | SR | Oct 05, 2013 | High School Classic (Tucson, AZ) |
+| 3 | 47.92 (r) | Zachary Duerkop | SR | (25-26) | Relay Leadoff (400FR) |
+| 4 | 47.98 | Joseph Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
+| 5 | 48.47 (r) | Joe Breinholt | SR | (16-17) | Relay Leadoff (400FR) |
+| 6 | 49.71 | John Deninghoff | SR | Nov 01, 2018 | AIA D-III Boys State Meet (AZ) |
+| 7 | 50.09 (r) | Wade Olsson | JR | (25-26) | Relay Leadoff (400FR) |
+| 8 | 51.43 | Jackson Eftekhar | JR | Oct 18, 2025 | Pecan Classic (Sahuarita, AZ) |
+| 9 | 51.78 (r) | Nick Cusson | FR | (20-21) | Relay Leadoff (400FR) |
+| 10 | 52.04 (r) | Trevor Clausen | SO | (19-20) | Relay Leadoff (400FR) |
 
 ### 200 Freestyle
 

@@ -1,0 +1,1358 @@
+{
+  "boys": {
+    "50_free": [
+      {
+        "name": "Nicholas Cusson",
+        "grade": "JR",
+        "time": 21.64,
+        "time_str": "21.64",
+        "year": "22-23",
+        "from_relay": "200FR",
+        "raw_split": "00:21.64"
+      },
+      {
+        "name": "Jackson Eftekhar",
+        "grade": "JR",
+        "time": 22.01,
+        "time_str": "22.01",
+        "year": "25-26",
+        "from_relay": "200FR",
+        "raw_split": "00:22.01"
+      },
+      {
+        "name": "Samuel Stott",
+        "grade": "JR",
+        "time": 22.29,
+        "time_str": "22.29",
+        "year": "21-22",
+        "from_relay": "200FR",
+        "raw_split": "00:22.29"
+      },
+      {
+        "name": "Joe Breinholt",
+        "grade": "SR",
+        "time": 22.43,
+        "time_str": "22.43",
+        "year": "16-17",
+        "from_relay": "200FR",
+        "raw_split": "00:22.43"
+      },
+      {
+        "name": "Trevor Clausen",
+        "grade": "SO",
+        "time": 23.26,
+        "time_str": "23.26",
+        "year": "19-20",
+        "from_relay": "200FR",
+        "raw_split": "00:23.26"
+      },
+      {
+        "name": "Sam Stott",
+        "grade": "FR",
+        "time": 23.55,
+        "time_str": "23.55",
+        "year": "19-20",
+        "from_relay": "200FR",
+        "raw_split": "00:23.55"
+      },
+      {
+        "name": "Nick Cusson",
+        "grade": "FR",
+        "time": 23.73,
+        "time_str": "23.73",
+        "year": "20-21",
+        "from_relay": "200FR",
+        "raw_split": "00:23.73"
+      },
+      {
+        "name": "Grayson The",
+        "grade": "SR",
+        "time": 24.07,
+        "time_str": "24.07",
+        "year": "25-26",
+        "from_relay": "200FR",
+        "raw_split": "00:24.07"
+      },
+      {
+        "name": "Zachary Duerkop",
+        "grade": "SO",
+        "time": 24.19,
+        "time_str": "24.19",
+        "year": "23-24",
+        "from_relay": "200FR",
+        "raw_split": "00:24.19"
+      },
+      {
+        "name": "Wade Olsson",
+        "grade": "SO",
+        "time": 24.81,
+        "time_str": "24.81",
+        "year": "24-25",
+        "from_relay": "200FR",
+        "raw_split": "00:24.81"
+      },
+      {
+        "name": "Xander Flores",
+        "grade": "SR",
+        "time": 24.85,
+        "time_str": "24.85",
+        "year": "16-17",
+        "from_relay": "200FR",
+        "raw_split": "00:24.85"
+      },
+      {
+        "name": "Jackson Machamer",
+        "grade": "FR",
+        "time": 25.04,
+        "time_str": "25.04",
+        "year": "23-24",
+        "from_relay": "200FR",
+        "raw_split": "00:25.04"
+      },
+      {
+        "name": "Nolan Radomsky",
+        "grade": "SR",
+        "time": 25.17,
+        "time_str": "25.17",
+        "year": "23-24",
+        "from_relay": "200FR",
+        "raw_split": "00:25.17"
+      },
+      {
+        "name": "Stephen Moreland",
+        "grade": "JR",
+        "time": 25.35,
+        "time_str": "25.35",
+        "year": "23-24",
+        "from_relay": "200FR",
+        "raw_split": "00:25.35"
+      },
+      {
+        "name": "Logan Radomsky",
+        "grade": "JR",
+        "time": 25.35,
+        "time_str": "25.35",
+        "year": "18-19",
+        "from_relay": "200FR",
+        "raw_split": "00:25.35"
+      },
+      {
+        "name": "Alejandro Alvarez",
+        "grade": "SR",
+        "time": 25.45,
+        "time_str": "25.45",
+        "year": "22-23",
+        "from_relay": "200FR",
+        "raw_split": "00:25.45"
+      },
+      {
+        "name": "Peyton Kowalski",
+        "grade": "SR",
+        "time": 25.59,
+        "time_str": "25.59",
+        "year": "24-25",
+        "from_relay": "200FR",
+        "raw_split": "00:25.59"
+      },
+      {
+        "name": "Andrew Lam",
+        "grade": "JR",
+        "time": 25.69,
+        "time_str": "25.69",
+        "year": "12-13",
+        "from_relay": "200FR",
+        "raw_split": "00:25.69"
+      },
+      {
+        "name": "Julian Pacheco",
+        "grade": "JR",
+        "time": 25.84,
+        "time_str": "25.84",
+        "year": "19-20",
+        "from_relay": "200FR",
+        "raw_split": "00:25.84"
+      },
+      {
+        "name": "Lukas Baker",
+        "grade": "SR",
+        "time": 26.38,
+        "time_str": "26.38",
+        "year": "18-19",
+        "from_relay": "200FR",
+        "raw_split": "00:26.38"
+      },
+      {
+        "name": "Oren Zadorozny",
+        "grade": "FR",
+        "time": 26.59,
+        "time_str": "26.59",
+        "year": "21-22",
+        "from_relay": "200FR",
+        "raw_split": "00:26.59"
+      },
+      {
+        "name": "Dominic Colombo",
+        "grade": "JR",
+        "time": 26.66,
+        "time_str": "26.66",
+        "year": "19-20",
+        "from_relay": "200FR",
+        "raw_split": "00:26.66"
+      },
+      {
+        "name": "Lucas Soeder",
+        "grade": "SR",
+        "time": 27.44,
+        "time_str": "27.44",
+        "year": "24-25",
+        "from_relay": "200FR",
+        "raw_split": "00:27.44"
+      },
+      {
+        "name": "Eli Stott",
+        "grade": "SR",
+        "time": 27.68,
+        "time_str": "27.68",
+        "year": "19-20",
+        "from_relay": "200FR",
+        "raw_split": "00:27.68"
+      },
+      {
+        "name": "Nicholas Spilotro",
+        "grade": "FR",
+        "time": 27.78,
+        "time_str": "27.78",
+        "year": "18-19",
+        "from_relay": "200FR",
+        "raw_split": "00:27.78"
+      },
+      {
+        "name": "James Spilotro",
+        "grade": "",
+        "time": 27.8,
+        "time_str": "27.80",
+        "year": "22-23",
+        "from_relay": "200FR",
+        "raw_split": "00:27.80"
+      },
+      {
+        "name": "Greg Wheeler",
+        "grade": "SR",
+        "time": 28.0,
+        "time_str": "28.00",
+        "year": "13-14",
+        "from_relay": "200FR",
+        "raw_split": "00:28.00"
+      },
+      {
+        "name": "Noah Puzio-Dunne",
+        "grade": "JR",
+        "time": 28.16,
+        "time_str": "28.16",
+        "year": "22-23",
+        "from_relay": "200FR",
+        "raw_split": "00:28.16"
+      },
+      {
+        "name": "James Knight",
+        "grade": "SR",
+        "time": 28.24,
+        "time_str": "28.24",
+        "year": "15-16",
+        "from_relay": "200FR",
+        "raw_split": "00:28.24"
+      },
+      {
+        "name": "Paul Morrison",
+        "grade": "JR",
+        "time": 28.84,
+        "time_str": "28.84",
+        "year": "17-18",
+        "from_relay": "200FR",
+        "raw_split": "00:28.84"
+      },
+      {
+        "name": "Will Isenberg",
+        "grade": "JR",
+        "time": 29.17,
+        "time_str": "29.17",
+        "year": "17-18",
+        "from_relay": "200FR",
+        "raw_split": "00:29.17"
+      },
+      {
+        "name": "Kyle Ramsden",
+        "grade": "JR",
+        "time": 30.44,
+        "time_str": "30.44",
+        "year": "15-16",
+        "from_relay": "200FR",
+        "raw_split": "00:30.44"
+      },
+      {
+        "name": "Jack Locke",
+        "grade": "FR",
+        "time": 33.72,
+        "time_str": "33.72",
+        "year": "19-20",
+        "from_relay": "200FR",
+        "raw_split": "00:33.72"
+      }
+    ],
+    "100_free": [
+      {
+        "name": "Nicholas Cusson",
+        "grade": "JR",
+        "time": 47.36,
+        "time_str": "47.36",
+        "year": "22-23",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:22.99",
+          "00:24.37"
+        ]
+      },
+      {
+        "name": "Zachary Duerkop",
+        "grade": "SR",
+        "time": 47.92,
+        "time_str": "47.92",
+        "year": "25-26",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:23.08",
+          "00:24.84"
+        ]
+      },
+      {
+        "name": "Joe Breinholt",
+        "grade": "SR",
+        "time": 48.47,
+        "time_str": "48.47",
+        "year": "16-17",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:23.42",
+          "00:25.05"
+        ]
+      },
+      {
+        "name": "Joseph Breinholt",
+        "grade": "JR",
+        "time": 49.2,
+        "time_str": "49.20",
+        "year": "15-16",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:23.80",
+          "00:25.40"
+        ]
+      },
+      {
+        "name": "Samuel Stott",
+        "grade": "JR",
+        "time": 49.58,
+        "time_str": "49.58",
+        "year": "21-22",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:23.89",
+          "00:25.69"
+        ]
+      },
+      {
+        "name": "Wade Olsson",
+        "grade": "JR",
+        "time": 50.09,
+        "time_str": "50.09",
+        "year": "25-26",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:24.15",
+          "00:25.94"
+        ]
+      },
+      {
+        "name": "Jackson Eftekhar",
+        "grade": "JR",
+        "time": 51.71,
+        "time_str": "51.71",
+        "year": "25-26",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:24.46",
+          "00:27.25"
+        ]
+      },
+      {
+        "name": "Nick Cusson",
+        "grade": "FR",
+        "time": 51.78,
+        "time_str": "51.78",
+        "year": "20-21",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:24.85",
+          "00:26.93"
+        ]
+      },
+      {
+        "name": "Trevor Clausen",
+        "grade": "SO",
+        "time": 52.04,
+        "time_str": "52.04",
+        "year": "19-20",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:24.54",
+          "00:27.50"
+        ]
+      },
+      {
+        "name": "Austin Morris",
+        "grade": "JR",
+        "time": 53.46,
+        "time_str": "53.46",
+        "year": "14-15",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:25.59",
+          "00:27.87"
+        ]
+      },
+      {
+        "name": "Nolan Radomsky",
+        "grade": "SR",
+        "time": 54.599999999999994,
+        "time_str": "54.60",
+        "year": "23-24",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:25.99",
+          "00:28.61"
+        ]
+      },
+      {
+        "name": "Xander Flores",
+        "grade": "SR",
+        "time": 54.9,
+        "time_str": "54.90",
+        "year": "16-17",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:26.65",
+          "00:28.25"
+        ]
+      },
+      {
+        "name": "Jackson Machamer",
+        "grade": "SO",
+        "time": 55.22,
+        "time_str": "55.22",
+        "year": "24-25",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:26.24",
+          "00:28.98"
+        ]
+      },
+      {
+        "name": "Logan Radomsky",
+        "grade": "JR",
+        "time": 55.480000000000004,
+        "time_str": "55.48",
+        "year": "18-19",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:26.37",
+          "00:29.11"
+        ]
+      },
+      {
+        "name": "Stephen Moreland",
+        "grade": "JR",
+        "time": 55.85,
+        "time_str": "55.85",
+        "year": "23-24",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:26.80",
+          "00:29.05"
+        ]
+      },
+      {
+        "name": "Andrew Lam",
+        "grade": "SR",
+        "time": 55.989999999999995,
+        "time_str": "55.99",
+        "year": "13-14",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:26.65",
+          "00:29.34"
+        ]
+      },
+      {
+        "name": "Grayson The",
+        "grade": "JR",
+        "time": 56.32,
+        "time_str": "56.32",
+        "year": "24-25",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:26.45",
+          "00:29.87"
+        ]
+      },
+      {
+        "name": "Tannor Soedor",
+        "grade": "SR",
+        "time": 58.16,
+        "time_str": "58.16",
+        "year": "22-23",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:27.32",
+          "00:30.84"
+        ]
+      },
+      {
+        "name": "Alexander Flores",
+        "grade": "SO",
+        "time": 58.43,
+        "time_str": "58.43",
+        "year": "14-15",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:27.45",
+          "00:30.98"
+        ]
+      },
+      {
+        "name": "Peyton Kowalski",
+        "grade": "JR",
+        "time": 58.64,
+        "time_str": "58.64",
+        "year": "23-24",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:27.95",
+          "00:30.69"
+        ]
+      },
+      {
+        "name": "Noah Puzio-Dunne",
+        "grade": "SR",
+        "time": 59.92,
+        "time_str": "59.92",
+        "year": "23-24",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:27.66",
+          "00:32.26"
+        ]
+      },
+      {
+        "name": "Oren Zadorozny",
+        "grade": "FR",
+        "time": 59.95,
+        "time_str": "59.95",
+        "year": "21-22",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:28.58",
+          "00:31.37"
+        ]
+      },
+      {
+        "name": "Eli Stott",
+        "grade": "SR",
+        "time": 62.129999999999995,
+        "time_str": "1:02.13",
+        "year": "19-20",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:29.49",
+          "00:32.64"
+        ]
+      },
+      {
+        "name": "Julian Pacheco",
+        "grade": "JR",
+        "time": 62.41,
+        "time_str": "1:02.41",
+        "year": "19-20",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:29.30",
+          "00:33.11"
+        ]
+      },
+      {
+        "name": "Forrest Carlton",
+        "grade": "SR",
+        "time": 65.50999999999999,
+        "time_str": "1:05.51",
+        "year": "13-14",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:31.04",
+          "00:34.47"
+        ]
+      },
+      {
+        "name": "Ethan Chumbler",
+        "grade": "SO",
+        "time": 66.36,
+        "time_str": "1:06.36",
+        "year": "22-23",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:31.96",
+          "00:34.40"
+        ]
+      },
+      {
+        "name": "Malachi Poulsen",
+        "grade": "JR",
+        "time": 67.11,
+        "time_str": "1:07.11",
+        "year": "16-17",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:31.79",
+          "00:35.32"
+        ]
+      },
+      {
+        "name": "Edgar Marsh",
+        "grade": "FR",
+        "time": 67.79,
+        "time_str": "1:07.79",
+        "year": "18-19",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:31.09",
+          "00:36.70"
+        ]
+      },
+      {
+        "name": "Jake Pacheco",
+        "grade": "FR",
+        "time": 68.24,
+        "time_str": "1:08.24",
+        "year": "17-18",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:32.69",
+          "00:35.55"
+        ]
+      },
+      {
+        "name": "Paul Morrison",
+        "grade": "FR",
+        "time": 68.55,
+        "time_str": "1:08.55",
+        "year": "15-16",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:31.01",
+          "00:37.54"
+        ]
+      },
+      {
+        "name": "Brian Lopez",
+        "grade": "FR",
+        "time": 71.25999999999999,
+        "time_str": "1:11.26",
+        "year": "16-17",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:34.83",
+          "00:36.43"
+        ]
+      },
+      {
+        "name": "Grayson Green",
+        "grade": "SO",
+        "time": 72.64,
+        "time_str": "1:12.64",
+        "year": "21-22",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:34.95",
+          "00:37.69"
+        ]
+      },
+      {
+        "name": "Ethan Beishuizen",
+        "grade": "FR",
+        "time": 77.08,
+        "time_str": "1:17.08",
+        "year": "17-18",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:35.79",
+          "00:41.29"
+        ]
+      }
+    ]
+  },
+  "girls": {
+    "50_free": [
+      {
+        "name": "Brianne Foley",
+        "grade": "SR",
+        "time": 26.1,
+        "time_str": "26.10",
+        "year": "24-25",
+        "from_relay": "200FR",
+        "raw_split": "00:26.10"
+      },
+      {
+        "name": "Isabelle Sansom",
+        "grade": "JR",
+        "time": 26.28,
+        "time_str": "26.28",
+        "year": "18-19",
+        "from_relay": "200FR",
+        "raw_split": "00:26.28"
+      },
+      {
+        "name": "Maggie Colombo",
+        "grade": "SR",
+        "time": 26.32,
+        "time_str": "26.32",
+        "year": "22-23",
+        "from_relay": "200FR",
+        "raw_split": "00:26.32"
+      },
+      {
+        "name": "Calla Isenberg",
+        "grade": "SR",
+        "time": 26.48,
+        "time_str": "26.48",
+        "year": "17-18",
+        "from_relay": "200FR",
+        "raw_split": "00:26.48"
+      },
+      {
+        "name": "Grace Davis",
+        "grade": "FR",
+        "time": 26.57,
+        "time_str": "26.57",
+        "year": "23-24",
+        "from_relay": "200FR",
+        "raw_split": "00:26.57"
+      },
+      {
+        "name": "Natalie Armstrong",
+        "grade": "SO",
+        "time": 26.57,
+        "time_str": "26.57",
+        "year": "21-22",
+        "from_relay": "200FR",
+        "raw_split": "00:26.57"
+      },
+      {
+        "name": "Paisley White",
+        "grade": "JR",
+        "time": 26.66,
+        "time_str": "26.66",
+        "year": "21-22",
+        "from_relay": "200FR",
+        "raw_split": "00:26.66"
+      },
+      {
+        "name": "Bridget Spooner",
+        "grade": "SR",
+        "time": 26.82,
+        "time_str": "26.82",
+        "year": "16-17",
+        "from_relay": "200FR",
+        "raw_split": "00:26.82"
+      },
+      {
+        "name": "Chloe Weatherwax",
+        "grade": "",
+        "time": 27.03,
+        "time_str": "27.03",
+        "year": "20-21",
+        "from_relay": "200FR",
+        "raw_split": "00:27.03"
+      },
+      {
+        "name": "Isla Cerepak",
+        "grade": "FR",
+        "time": 27.19,
+        "time_str": "27.19",
+        "year": "25-26",
+        "from_relay": "200FR",
+        "raw_split": "00:27.19"
+      },
+      {
+        "name": "Hazel Dasse",
+        "grade": "SO",
+        "time": 27.57,
+        "time_str": "27.57",
+        "year": "16-17",
+        "from_relay": "200FR",
+        "raw_split": "00:27.57"
+      },
+      {
+        "name": "Marisol Rivera",
+        "grade": "JR",
+        "time": 27.73,
+        "time_str": "27.73",
+        "year": "12-13",
+        "from_relay": "200FR",
+        "raw_split": "00:27.73"
+      },
+      {
+        "name": "Adrianna Witte",
+        "grade": "SR",
+        "time": 27.84,
+        "time_str": "27.84",
+        "year": "25-26",
+        "from_relay": "200FR",
+        "raw_split": "00:27.84"
+      },
+      {
+        "name": "Shaye Sulgar",
+        "grade": "SR",
+        "time": 27.98,
+        "time_str": "27.98",
+        "year": "21-22",
+        "from_relay": "200FR",
+        "raw_split": "00:27.98"
+      },
+      {
+        "name": "Sarynn Patterson",
+        "grade": "SO",
+        "time": 28.04,
+        "time_str": "28.04",
+        "year": "17-18",
+        "from_relay": "200FR",
+        "raw_split": "00:28.04"
+      },
+      {
+        "name": "Hadley Cusson",
+        "grade": "FR",
+        "time": 28.09,
+        "time_str": "28.09",
+        "year": "23-24",
+        "from_relay": "200FR",
+        "raw_split": "00:28.09"
+      },
+      {
+        "name": "Summer Cugini",
+        "grade": "JR",
+        "time": 28.13,
+        "time_str": "28.13",
+        "year": "23-24",
+        "from_relay": "200FR",
+        "raw_split": "00:28.13"
+      },
+      {
+        "name": "Emma Morris",
+        "grade": "SO",
+        "time": 28.18,
+        "time_str": "28.18",
+        "year": "17-18",
+        "from_relay": "200FR",
+        "raw_split": "00:28.18"
+      },
+      {
+        "name": "Ellie Randomsky",
+        "grade": "SO",
+        "time": 28.38,
+        "time_str": "28.38",
+        "year": "16-17",
+        "from_relay": "200FR",
+        "raw_split": "00:28.38"
+      },
+      {
+        "name": "Logan Sulger",
+        "grade": "SR",
+        "time": 28.61,
+        "time_str": "28.61",
+        "year": "25-26",
+        "from_relay": "200FR",
+        "raw_split": "00:28.61"
+      },
+      {
+        "name": "Amelia Kidd",
+        "grade": "JR",
+        "time": 28.72,
+        "time_str": "28.72",
+        "year": "25-26",
+        "from_relay": "200FR",
+        "raw_split": "00:28.72"
+      },
+      {
+        "name": "Violet Dasse",
+        "grade": "FR",
+        "time": 29.19,
+        "time_str": "29.19",
+        "year": "17-18",
+        "from_relay": "200FR",
+        "raw_split": "00:29.19"
+      },
+      {
+        "name": "Ryann Lightcap",
+        "grade": "JR",
+        "time": 29.65,
+        "time_str": "29.65",
+        "year": "22-23",
+        "from_relay": "200FR",
+        "raw_split": "00:29.65"
+      },
+      {
+        "name": "Madison Garcia",
+        "grade": "SO",
+        "time": 29.74,
+        "time_str": "29.74",
+        "year": "19-20",
+        "from_relay": "200FR",
+        "raw_split": "00:29.74"
+      },
+      {
+        "name": "Amira Alitiem",
+        "grade": "FR",
+        "time": 29.84,
+        "time_str": "29.84",
+        "year": "23-24",
+        "from_relay": "200FR",
+        "raw_split": "00:29.84"
+      },
+      {
+        "name": "Madeline Barnard",
+        "grade": "SO",
+        "time": 30.72,
+        "time_str": "30.72",
+        "year": "23-24",
+        "from_relay": "200FR",
+        "raw_split": "00:30.72"
+      },
+      {
+        "name": "Clementine  Dasse",
+        "grade": "JR",
+        "time": 31.17,
+        "time_str": "31.17",
+        "year": "23-24",
+        "from_relay": "200FR",
+        "raw_split": "00:31.17"
+      },
+      {
+        "name": "Amanda Grimshaw",
+        "grade": "SR",
+        "time": 31.56,
+        "time_str": "31.56",
+        "year": "13-14",
+        "from_relay": "200FR",
+        "raw_split": "00:31.56"
+      },
+      {
+        "name": "Kenedy Jackson",
+        "grade": "SR",
+        "time": 31.77,
+        "time_str": "31.77",
+        "year": "19-20",
+        "from_relay": "200FR",
+        "raw_split": "00:31.77"
+      },
+      {
+        "name": "Bonnie Wall",
+        "grade": "SO",
+        "time": 31.95,
+        "time_str": "31.95",
+        "year": "16-17",
+        "from_relay": "200FR",
+        "raw_split": "00:31.95"
+      },
+      {
+        "name": "Cassandra Rhind",
+        "grade": "JR",
+        "time": 31.99,
+        "time_str": "31.99",
+        "year": "16-17",
+        "from_relay": "200FR",
+        "raw_split": "00:31.99"
+      },
+      {
+        "name": "Lainie Radomsky",
+        "grade": "FR",
+        "time": 32.04,
+        "time_str": "32.04",
+        "year": "18-19",
+        "from_relay": "200FR",
+        "raw_split": "00:32.04"
+      },
+      {
+        "name": "Delaney Dikeman",
+        "grade": "FR",
+        "time": 33.58,
+        "time_str": "33.58",
+        "year": "18-19",
+        "from_relay": "200FR",
+        "raw_split": "00:33.58"
+      },
+      {
+        "name": "Jenna Elliott",
+        "grade": "SO",
+        "time": 33.65,
+        "time_str": "33.65",
+        "year": "15-16",
+        "from_relay": "200FR",
+        "raw_split": "00:33.65"
+      },
+      {
+        "name": "Bryce Altenbernd",
+        "grade": "FR",
+        "time": 34.4,
+        "time_str": "34.40",
+        "year": "16-17",
+        "from_relay": "200FR",
+        "raw_split": "00:34.40"
+      }
+    ],
+    "100_free": [
+      {
+        "name": "Natalie Armstrong",
+        "grade": "JR",
+        "time": 57.47,
+        "time_str": "57.47",
+        "year": "22-23",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:27.42",
+          "00:30.05"
+        ]
+      },
+      {
+        "name": "Marisol Rivera",
+        "grade": "SR",
+        "time": 57.86,
+        "time_str": "57.86",
+        "year": "13-14",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:27.97",
+          "00:29.89"
+        ]
+      },
+      {
+        "name": "Paisley White",
+        "grade": "SR",
+        "time": 57.96,
+        "time_str": "57.96",
+        "year": "22-23",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:27.46",
+          "00:30.50"
+        ]
+      },
+      {
+        "name": "Calla Isenberg",
+        "grade": "SR",
+        "time": 58.03,
+        "time_str": "58.03",
+        "year": "17-18",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:27.34",
+          "00:30.69"
+        ]
+      },
+      {
+        "name": "Bridget Spooner",
+        "grade": "SR",
+        "time": 58.32,
+        "time_str": "58.32",
+        "year": "16-17",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:27.70",
+          "00:30.62"
+        ]
+      },
+      {
+        "name": "Hazel Dasse",
+        "grade": "JR",
+        "time": 58.41,
+        "time_str": "58.41",
+        "year": "17-18",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:27.83",
+          "00:30.58"
+        ]
+      },
+      {
+        "name": "Maggie Colombo",
+        "grade": "JR",
+        "time": 58.61,
+        "time_str": "58.61",
+        "year": "21-22",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:27.76",
+          "00:30.85"
+        ]
+      },
+      {
+        "name": "Brianne Foley",
+        "grade": "SR",
+        "time": 58.64,
+        "time_str": "58.64",
+        "year": "24-25",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:27.94",
+          "00:30.70"
+        ]
+      },
+      {
+        "name": "Grace Davis",
+        "grade": "SO",
+        "time": 58.75,
+        "time_str": "58.75",
+        "year": "24-25",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:27.88",
+          "00:30.87"
+        ]
+      },
+      {
+        "name": "Isla Cerepak",
+        "grade": "FR",
+        "time": 59.0,
+        "time_str": "59.00",
+        "year": "25-26",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:28.14",
+          "00:30.86"
+        ]
+      },
+      {
+        "name": "Sarynn Patterson",
+        "grade": "JR",
+        "time": 59.900000000000006,
+        "time_str": "59.90",
+        "year": "18-19",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:28.26",
+          "00:31.64"
+        ]
+      },
+      {
+        "name": "Hadley Cusson",
+        "grade": "SO",
+        "time": 60.11,
+        "time_str": "1:00.11",
+        "year": "24-25",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:28.51",
+          "00:31.60"
+        ]
+      },
+      {
+        "name": "Madisyn Clausen",
+        "grade": "JR",
+        "time": 60.61,
+        "time_str": "1:00.61",
+        "year": "13-14",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:28.83",
+          "00:31.78"
+        ]
+      },
+      {
+        "name": "Summer Cugini",
+        "grade": "SR",
+        "time": 62.33,
+        "time_str": "1:02.33",
+        "year": "24-25",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:29.42",
+          "00:32.91"
+        ]
+      },
+      {
+        "name": "Shaye Sulgar",
+        "grade": "SR",
+        "time": 63.45,
+        "time_str": "1:03.45",
+        "year": "21-22",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:30.32",
+          "00:33.13"
+        ]
+      },
+      {
+        "name": "Kadynce Drummond",
+        "grade": "JR",
+        "time": 63.92,
+        "time_str": "1:03.92",
+        "year": "25-26",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:30.03",
+          "00:33.89"
+        ]
+      },
+      {
+        "name": "Ella Bissmeyer",
+        "grade": "FR",
+        "time": 64.18,
+        "time_str": "1:04.18",
+        "year": "24-25",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:31.58",
+          "00:32.60"
+        ]
+      },
+      {
+        "name": "Ryann Lightcap",
+        "grade": "SR",
+        "time": 64.42,
+        "time_str": "1:04.42",
+        "year": "23-24",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:30.65",
+          "00:33.77"
+        ]
+      },
+      {
+        "name": "Anna Ellis",
+        "grade": "JR",
+        "time": 64.53999999999999,
+        "time_str": "1:04.54",
+        "year": "17-18",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:30.68",
+          "00:33.86"
+        ]
+      },
+      {
+        "name": "Ellie Randomsky",
+        "grade": "FR",
+        "time": 65.34,
+        "time_str": "1:05.34",
+        "year": "15-16",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:32.16",
+          "00:33.18"
+        ]
+      },
+      {
+        "name": "Ellie Radomsky",
+        "grade": "SO",
+        "time": 66.13,
+        "time_str": "1:06.13",
+        "year": "16-17",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:31.22",
+          "00:34.91"
+        ]
+      },
+      {
+        "name": "Violet Dasse",
+        "grade": "SO",
+        "time": 67.06,
+        "time_str": "1:07.06",
+        "year": "18-19",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:31.42",
+          "00:35.64"
+        ]
+      },
+      {
+        "name": "Trinity Weatherwax",
+        "grade": "SR",
+        "time": 67.45,
+        "time_str": "1:07.45",
+        "year": "19-20",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:30.68",
+          "00:36.77"
+        ]
+      },
+      {
+        "name": "Madison Garcia",
+        "grade": "SO",
+        "time": 68.28,
+        "time_str": "1:08.28",
+        "year": "19-20",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:32.00",
+          "00:36.28"
+        ]
+      },
+      {
+        "name": "Alexandra Foley",
+        "grade": "JR",
+        "time": 71.15,
+        "time_str": "1:11.15",
+        "year": "21-22",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:33.33",
+          "00:37.82"
+        ]
+      },
+      {
+        "name": "Madeline Barnard",
+        "grade": "FR",
+        "time": 73.99000000000001,
+        "time_str": "1:13.99",
+        "year": "22-23",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:34.27",
+          "00:39.72"
+        ]
+      },
+      {
+        "name": "Molly Guyman",
+        "grade": "SO",
+        "time": 74.18,
+        "time_str": "1:14.18",
+        "year": "22-23",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:35.39",
+          "00:38.79"
+        ]
+      },
+      {
+        "name": "Hannah Witter",
+        "grade": "SO",
+        "time": 82.28,
+        "time_str": "1:22.28",
+        "year": "16-17",
+        "from_relay": "400FR",
+        "raw_splits": [
+          "00:37.43",
+          "00:44.85"
+        ]
+      }
+    ]
+  }
+}
