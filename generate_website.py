@@ -207,6 +207,15 @@ def create_html_page(title, content, page_type="default"):
         // Gender toggle and navigation
         let currentGender = localStorage.getItem('tvhs-gender') || 'boys';
         
+        // Detect current page gender from URL
+        const currentPath = window.location.pathname;
+        if (currentPath.includes('girls')) {{
+            currentGender = 'girls';
+        }} else if (currentPath.includes('boys')) {{
+            currentGender = 'boys';
+        }}
+        localStorage.setItem('tvhs-gender', currentGender);
+        
         function updateGenderUI() {{
             document.querySelectorAll('.btn-gender').forEach(btn => {{
                 btn.classList.toggle('active', btn.dataset.gender === currentGender);
@@ -227,17 +236,72 @@ def create_html_page(title, content, page_type="default"):
             }});
         }}
         
-        // Gender toggle click handlers
+        // Gender toggle click handlers - navigate to corresponding gender page
         document.querySelectorAll('.btn-gender').forEach(btn => {{
             btn.addEventListener('click', function() {{
-                currentGender = this.dataset.gender;
-                localStorage.setItem('tvhs-gender', currentGender);
-                updateGenderUI();
+                const newGender = this.dataset.gender;
+                if (newGender === currentGender) return;
+                
+                localStorage.setItem('tvhs-gender', newGender);
+                
+                // Try to navigate to the corresponding gender version of current page
+                const path = window.location.pathname;
+                let newPath = path;
+                
+                if (path.includes('boys')) {{
+                    newPath = path.replace('boys', 'girls');
+                }} else if (path.includes('girls')) {{
+                    newPath = path.replace('girls', 'boys');
+                }} else {{
+                    // Not a gendered page, just update UI
+                    currentGender = newGender;
+                    updateGenderUI();
+                    return;
+                }}
+                
+                // Navigate to the new page
+                window.location.href = newPath;
             }});
         }});
         
         // Initialize
         updateGenderUI();
+        
+        // Jump To dropdown - works on all pages with h2 or h3 headings
+        const jumpContainer = document.getElementById('jump-to-container');
+        const headings = document.querySelectorAll('.content h2, .content h3');
+        
+        if (jumpContainer && headings.length > 3) {{
+            // Create dropdown
+            const dropdown = document.createElement('div');
+            dropdown.className = 'dropdown';
+            dropdown.innerHTML = `
+                <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Jump To
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-scroll" id="jumpToMenu"></ul>
+            `;
+            jumpContainer.appendChild(dropdown);
+            
+            const menu = dropdown.querySelector('#jumpToMenu');
+            headings.forEach((heading, idx) => {{
+                // Create ID if not exists
+                if (!heading.id) {{
+                    heading.id = 'section-' + idx;
+                }}
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.className = 'dropdown-item';
+                a.href = '#' + heading.id;
+                a.textContent = heading.textContent;
+                if (heading.tagName === 'H3') {{
+                    a.style.paddingLeft = '1.5rem';
+                    a.style.fontSize = '0.85rem';
+                }}
+                li.appendChild(a);
+                menu.appendChild(li);
+            }});
+        }}
     }});
     </script>
     
@@ -356,6 +420,9 @@ def convert_markdown_file(md_file, output_file, title=None):
     
     # Remove h1 title from content (it's already in the page header)
     html_content = re.sub(r'^# .+$', '', html_content, flags=re.MULTILINE)
+    
+    # Remove redundant "Team Records - Short Course Yards" subtitle
+    html_content = re.sub(r'^## Team Records - Short Course Yards.*$', '', html_content, flags=re.MULTILINE)
     
     # Convert remaining markdown elements
     # Headings
