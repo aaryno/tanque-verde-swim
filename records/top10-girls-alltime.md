@@ -1,7 +1,7 @@
 # All-Time Top 10 - Girls
 ## Tanque Verde High School Swimming
 
-**Generated:** December 11, 2025 at 08:25 AM
+**Generated:** December 11, 2025 at 08:54 AM
 
 ---
 
@@ -39,46 +39,46 @@
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| 1 | 2:04.70 | Isabelle Sansom | SR | Nov 01, 2019 | Canyon Del Oro Invite (AZ) |
-| 2 | 2:05.30 | Hazel Dasse | SR | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
-| 3 | 2:07.61 | Natalie Armstrong | SO | Oct 23, 2021 | 2021 D-3 AIA State Championships (AZ) |
-| 4 | 2:07.85 | Maggie Colombo | SR | Oct 22, 2022 | Pecan Classic (sahuarita, AZ) |
-| 5 | 2:09.78 | Grace Davis | FR | Sep 23, 2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
-| 6 | 2:10.40 | Brianne Foley | JR | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
-| 7 | 2:15.91 | Summer Cugini | SR | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
-| 8 | 2:16.83 | Ella Bissmeyer | SO | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 9 | 2:17.29 | Kadynce Drummond | JR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 10 | 2:17.38 | Hadley Cusson | JR | Oct 18, 2025 | Pecan Classic (Sahuarita, AZ) |
+| 1 | 2:02.06 | Carly Wilson | SR | Oct 18, 2011 | Pecan Classic |
+| 2 | 2:04.70 | Isabelle Sansom | SR | Nov 01, 2019 | Canyon Del Oro Invite (AZ) |
+| 3 | 2:05.30 | Hazel Dasse | SR | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
+| 4 | 2:07.61 | Natalie Armstrong | SO | Oct 23, 2021 | 2021 D-3 AIA State Championships (AZ) |
+| 5 | 2:07.85 | Maggie Colombo | SR | Oct 22, 2022 | Pecan Classic (sahuarita, AZ) |
+| 6 | 2:09.78 | Grace Davis | FR | Sep 23, 2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
+| 7 | 2:10.40 | Brianne Foley | JR | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
+| 8 | 2:15.91 | Summer Cugini | SR | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
+| 9 | 2:16.83 | Ella Bissmeyer | SO | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
+| 10 | 2:17.29 | Kadynce Drummond | JR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
 
 ### 500 Freestyle
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| 1 | 5:32.67 | Anna Ellis | SO | Nov 04, 2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
-| 2 | 5:45.11 | Hazel Dasse | SO | Sep 17, 2016 | Canyon Del Oro Classic (Tucson, AZ) |
-| 3 | 6:01.25 | Talia Schwab | FR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 4 | 6:02.49 | Rachel Anderson | FR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 5 | 6:13.72 | Sarynn Patterson | SR | Oct 19, 2019 | Mike Ward Invitational (Tucson, AZ) |
-| 6 | 6:14.62 | Kadynce Drummond | JR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 7 | 6:22.94 | Summer Cugini | JR | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
-| 8 | 6:23.20 | Sage Weatherwax | JR | Nov 05, 2020 | AIA State Meet - D3 (AZ) |
-| 9 | 6:25.55 | Sydney Hagerman | JR | Oct 29, 2021 | Southern AZ Regional Qualifier (Oro Valley Aquatic Center, AZ) |
-| 10 | 6:25.65 | Janessa Grabe | SR | Nov 2007 | 2007 AIA 1A-5A State Championships |
+| 1 | 5:27.18 | Carly Wilson | JR | Oct 21, 2010 | Pecan Classic |
+| 2 | 5:32.67 | Anna Ellis | SO | Nov 04, 2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
+| 3 | 5:45.11 | Hazel Dasse | SO | Sep 17, 2016 | Canyon Del Oro Classic (Tucson, AZ) |
+| 4 | 6:01.25 | Talia Schwab | FR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
+| 5 | 6:02.49 | Rachel Anderson | FR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
+| 6 | 6:13.72 | Sarynn Patterson | SR | Oct 19, 2019 | Mike Ward Invitational (Tucson, AZ) |
+| 7 | 6:14.62 | Kadynce Drummond | JR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
+| 8 | 6:22.94 | Summer Cugini | JR | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
+| 9 | 6:23.20 | Sage Weatherwax | JR | Nov 05, 2020 | AIA State Meet - D3 (AZ) |
+| 10 | 6:25.55 | Sydney Hagerman | JR | Oct 29, 2021 | Southern AZ Regional Qualifier (Oro Valley Aquatic Center, AZ) |
 
 ### 100 Backstroke
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| 1 | 1:02.29 | Logan Sulger | SR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 2 | 1:02.65 | Calla Isenberg | SR | Oct 27, 2017 | Southern Arizona Regional Qualifier (Oro Valley, AZ) |
-| 3 | 1:03.12 | Lindsey Schoel-Smith |  | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
-| 4 | 1:03.34 | Sarynn Patterson | SR | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
-| 5 | 1:04.81 | Paisley White | SR | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
-| 6 | 1:05.85 | Hazel Dasse | SO | Nov 04, 2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
-| 7 | 1:06.23 | Brianne Foley | SR | Oct 25, 2024 | Southern Arizona Qualifier (Oro Valley, AZ) |
-| 8 | 1:07.64 | Shaye Sulgar | SR | Sep 25, 2021 | TYR HS Classic (AZ) |
-| 9 | 1:08.24 | Summer Cugini | SR | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
-| 10 | 1:11.04 | Madisyn Clausen | JR | Oct 26, 2013 | Mike Ward Memorial Invitational (Tucson, AZ) |
+| 1 | 1:00.33 | Carly Wilson | JR | Sep 23, 2010 | CDO Classic |
+| 2 | 1:02.29 | Logan Sulger | SR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
+| 3 | 1:02.65 | Calla Isenberg | SR | Oct 27, 2017 | Southern Arizona Regional Qualifier (Oro Valley, AZ) |
+| 4 | 1:03.12 | Lindsey Schoel-Smith |  | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
+| 5 | 1:03.34 | Sarynn Patterson | SR | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
+| 6 | 1:04.81 | Paisley White | SR | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
+| 7 | 1:05.85 | Hazel Dasse | SO | Nov 04, 2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
+| 8 | 1:06.23 | Brianne Foley | SR | Oct 25, 2024 | Southern Arizona Qualifier (Oro Valley, AZ) |
+| 9 | 1:07.64 | Shaye Sulgar | SR | Sep 25, 2021 | TYR HS Classic (AZ) |
+| 10 | 1:08.24 | Summer Cugini | SR | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
 
 ### 100 Breaststroke
 
