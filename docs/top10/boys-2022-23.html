@@ -102,10 +102,10 @@
     
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Build Jump To dropdown from h2 headings
-        const headings = document.querySelectorAll('h2');
+        // Build Jump To dropdown from event headings (h2 or h3.event-heading)
+        let headings = document.querySelectorAll('h2, h3.event-heading');
         if (headings.length > 2) {
-            let options = '<div class="jump-to-dropdown dropdown"><button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">Jump To</button><ul class="dropdown-menu dropdown-menu-end">';
+            let options = '<div class="jump-to-dropdown dropdown"><button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">Jump To</button><ul class="dropdown-menu dropdown-menu-end dropdown-menu-scroll">';
             headings.forEach(function(h, i) {
                 const id = 'event-' + i;
                 h.id = id;
@@ -246,42 +246,6 @@
         
         // Initialize
         updateGenderUI();
-        
-        // Jump To dropdown - works on all pages with h2 or h3 headings
-        const jumpContainer = document.getElementById('jump-to-container');
-        const headings = document.querySelectorAll('.content h2, .content h3');
-        
-        if (jumpContainer && headings.length > 3) {
-            // Create dropdown
-            const dropdown = document.createElement('div');
-            dropdown.className = 'dropdown';
-            dropdown.innerHTML = `
-                <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                    Jump To
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-scroll" id="jumpToMenu"></ul>
-            `;
-            jumpContainer.appendChild(dropdown);
-            
-            const menu = dropdown.querySelector('#jumpToMenu');
-            headings.forEach((heading, idx) => {
-                // Create ID if not exists
-                if (!heading.id) {
-                    heading.id = 'section-' + idx;
-                }
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                a.className = 'dropdown-item';
-                a.href = '#' + heading.id;
-                a.textContent = heading.textContent;
-                if (heading.tagName === 'H3') {
-                    a.style.paddingLeft = '1.5rem';
-                    a.style.fontSize = '0.85rem';
-                }
-                li.appendChild(a);
-                menu.appendChild(li);
-            });
-        }
     });
     </script>
     
