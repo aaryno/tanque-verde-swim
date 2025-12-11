@@ -22,7 +22,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.html">
                 <img src="/images/hawk-logo.svg" alt="Tanque Verde Hawks" class="navbar-logo">
-                <span class="navbar-brand-text">TV Swim</span>
+                <span class="navbar-brand-text">TVHS Swim</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -115,10 +115,28 @@
     
     <!-- Page Header -->
     <div class="page-header">
-        <div class="container">
-            <h1>Boys Top 10 - 2020-21</h1>
+        <div class="container d-flex align-items-center justify-content-between flex-wrap">
+            <h1 class="mb-0">Boys Top 10 - 2020-21</h1>
+            <div id="jump-to-container"></div>
         </div>
     </div>
+    
+    <script>
+    // Build Jump To dropdown from h2 headings
+    document.addEventListener('DOMContentLoaded', function() {
+        const headings = document.querySelectorAll('h2');
+        if (headings.length > 2) {
+            let options = '<div class="jump-to-dropdown dropdown"><button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">Jump To</button><ul class="dropdown-menu dropdown-menu-end">';
+            headings.forEach(function(h, i) {
+                const id = 'event-' + i;
+                h.id = id;
+                options += '<li><a class="dropdown-item" href="#' + id + '">' + h.textContent + '</a></li>';
+            });
+            options += '</ul></div>';
+            document.getElementById('jump-to-container').innerHTML = options;
+        }
+    });
+    </script>
     
     <!-- Main Content -->
     <div class="container my-4">
