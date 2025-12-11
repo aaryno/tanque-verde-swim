@@ -669,6 +669,31 @@ footer a:hover {
     content: "📍 ";
   }
   
+  /* ===== Relay tables: Rank | Time | Participants | Date | Meet ===== */
+  .table-relay tbody td:first-child {
+    background: var(--tvhs-primary);
+    color: white;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: bold;
+  }
+  
+  .table-relay tbody td:nth-child(4) {
+    grid-row: 1;
+    grid-column: 3;
+    font-size: 0.75rem;
+    color: #666;
+    text-align: right;
+    white-space: nowrap;
+  }
+  
+  .table-relay tbody td:nth-child(5) {
+    display: none; /* Hidden - shown in expandable details */
+  }
+  
   /* Sticky header adjustments for mobile */
   .page-header {
     top: 80px; /* main-nav + quick-nav on mobile */

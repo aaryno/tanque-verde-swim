@@ -333,9 +333,18 @@ def markdown_to_html_table(md_text):
                 if cells:
                     rows.append(cells)
         
-        # Determine table type based on column count
+        # Determine table type based on column count and content
         num_cols = len(headers)
-        table_class = 'table-5col' if num_cols == 5 else 'table-6col' if num_cols == 6 else ''
+        # Check if this is a relay table (has "Participants" header)
+        is_relay = any('participant' in h.lower() for h in headers)
+        if is_relay:
+            table_class = 'table-relay'
+        elif num_cols == 5:
+            table_class = 'table-5col'
+        elif num_cols == 6:
+            table_class = 'table-6col'
+        else:
+            table_class = ''
         
         # Build HTML table
         html = '<div class="table-responsive record-table">\n'
