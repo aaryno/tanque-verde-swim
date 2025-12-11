@@ -32,7 +32,6 @@
 | Oct 24, 2015 | Small School Championships (Paradise Valley, AZ) |
 | Oct 30, 2015 | Southern Arizona Regional Qualifier (Tucson, AZ) |
 | Nov 06, 2015 | 2015 AIA Division II State Swimming & Diving Championships (Mesa, AZ) |
-| Nov 07, 2015 | 2015 D-3 AIA State Championships (AZ) |
 
 ---
 
