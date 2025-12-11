@@ -32,7 +32,10 @@ def create_nav_html():
         <div class="container-fluid justify-content-center">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="nav-records" title="Overall Records">📊</a>
+                    <a class="nav-link" href="/records/overall.html" id="nav-overall" title="Overall Records">🏆</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nav-bygrade" title="Records by Grade">📊</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" id="nav-top10" title="All-Time Top 10">🔟</a>
@@ -225,7 +228,8 @@ def create_html_page(title, content, page_type="default"):
         
         function updateNavLinks() {{
             const g = currentGender;
-            document.getElementById('nav-records').href = '/records/' + g + '-overall.html';
+            // Overall records page shows both genders (no gender in URL)
+            document.getElementById('nav-bygrade').href = '/records/' + g + '-bygrade.html';
             document.getElementById('nav-top10').href = '/top10/' + g + '-alltime.html';
             document.getElementById('nav-relays').href = '/records/' + g + '-relays.html';
             
@@ -234,6 +238,20 @@ def create_html_page(title, content, page_type="default"):
                 const season = link.textContent;
                 link.href = '/top10/' + g + '-' + season + '.html';
             }});
+            
+            // Reorder sections on Overall Records page based on gender
+            const overallPage = document.querySelector('.overall-records-page');
+            if (overallPage) {{
+                const boysSection = document.getElementById('boys-records');
+                const girlsSection = document.getElementById('girls-records');
+                if (boysSection && girlsSection) {{
+                    if (g === 'girls') {{
+                        overallPage.insertBefore(girlsSection, boysSection);
+                    }} else {{
+                        overallPage.insertBefore(boysSection, girlsSection);
+                    }}
+                }}
+            }}
         }}
         
         // Gender toggle click handlers - navigate to corresponding gender page
@@ -418,6 +436,9 @@ def convert_markdown_file(md_file, output_file, title=None):
     # Remove redundant "Team Records - Short Course Yards" subtitle
     html_content = re.sub(r'^## Team Records - Short Course Yards.*$', '', html_content, flags=re.MULTILINE)
     
+    # Remove "Generated:" lines
+    html_content = re.sub(r'^\*?\*?Generated:\*?\*?.*$', '', html_content, flags=re.MULTILINE)
+    
     # Convert remaining markdown elements
     # Headings
     html_content = re.sub(r'^### (.+)$', r'<h3 class="event-heading">\1</h3>', html_content, flags=re.MULTILINE)
@@ -467,6 +488,98 @@ def convert_markdown_file(md_file, output_file, title=None):
         f.write(full_html)
 
 
+def extract_open_records(md_file):
+    """Extract only OPEN records from a records markdown file"""
+    with open(md_file, 'r') as f:
+        content = f.read()
+    
+    records = []
+    current_event = None
+    
+    for line in content.split('\n'):
+        # Match event headings
+        event_match = re.match(r'^### (.+)$', line)
+        if event_match:
+            current_event = event_match.group(1)
+            continue
+        
+        # Match OPEN record rows (bold)
+        if current_event and '**Open**' in line:
+            # Parse the table row: | **Open** | **Time** | **Name** | **Date** | **Meet** |
+            parts = [p.strip().replace('**', '') for p in line.split('|') if p.strip()]
+            if len(parts) >= 5:
+                records.append({
+                    'event': current_event,
+                    'time': parts[1],
+                    'name': parts[2],
+                    'date': parts[3],
+                    'meet': parts[4]
+                })
+    
+    return records
+
+
+def generate_overall_records_page(records_dir, docs_dir):
+    """Generate the Overall Records page with both boys and girls OPEN records"""
+    print("🏆 Generating Overall Records page...")
+    
+    # Extract OPEN records from both boys and girls
+    boys_records = extract_open_records(records_dir / 'records-boys.md')
+    girls_records = extract_open_records(records_dir / 'records-girls.md')
+    
+    # Build HTML content for overall records with special layout
+    def build_records_html(records, gender):
+        html = f'<div class="overall-records-section" id="{gender}-records">\n'
+        html += f'<h2 class="gender-header">{gender.title()} Team Records</h2>\n'
+        
+        for record in records:
+            html += f'''<div class="overall-record-card">
+    <div class="record-header">
+        <span class="event-name">{record['event']}</span>
+        <span class="record-date">{record['date']}</span>
+    </div>
+    <div class="record-main">
+        <span class="record-time">{record['time']}</span>
+        <span class="record-athlete">{record['name']}</span>
+    </div>
+    <div class="record-meet">📍 {record['meet']}</div>
+</div>\n'''
+        
+        html += '</div>\n'
+        return html
+    
+    boys_html = build_records_html(boys_records, 'boys')
+    girls_html = build_records_html(girls_records, 'girls')
+    
+    # Combine with boys first (JavaScript will reorder based on gender toggle)
+    content = f'''<div class="content overall-records-page">
+{boys_html}
+{girls_html}
+</div>'''
+    
+    # Create full HTML page
+    full_html = create_html_page("Overall Team Records", content)
+    
+    # Write output
+    output_file = docs_dir / 'records' / 'overall.html'
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_file, 'w') as f:
+        f.write(full_html)
+    
+    print(f"  Created: {output_file}")
+
+
+def filter_out_open_records(md_content):
+    """Remove OPEN records from markdown content for By Grade page"""
+    lines = md_content.split('\n')
+    filtered_lines = []
+    for line in lines:
+        # Skip lines that contain **Open**
+        if '**Open**' not in line and '| Open |' not in line:
+            filtered_lines.append(line)
+    return '\n'.join(filtered_lines)
+
+
 def main():
     print("=" * 80)
     print("GENERATING TANQUE VERDE SWIM WEBSITE")
@@ -476,18 +589,33 @@ def main():
     records_dir = Path('records')
     docs_dir = Path('docs')
     
-    # Convert team records
-    print("📊 Converting Team Records...")
+    # Generate Overall Records page (OPEN records only)
+    generate_overall_records_page(records_dir, docs_dir)
+    
+    # Convert team records (By Grade - excludes OPEN)
+    print("\n📊 Converting By Grade Records...")
     for record_file in records_dir.glob('records-*.md'):
         if 'boys' in record_file.name:
-            output = docs_dir / 'records' / 'boys-overall.html'
-            title = "Boys Team Records"
+            output = docs_dir / 'records' / 'boys-bygrade.html'
+            title = "Boys Records by Grade"
         elif 'girls' in record_file.name:
-            output = docs_dir / 'records' / 'girls-overall.html'
-            title = "Girls Team Records"
+            output = docs_dir / 'records' / 'girls-bygrade.html'
+            title = "Girls Records by Grade"
         else:
             continue
-        convert_markdown_file(record_file, output, title)
+        
+        # Read and filter out OPEN records
+        with open(record_file, 'r') as f:
+            md_content = f.read()
+        filtered_content = filter_out_open_records(md_content)
+        
+        # Write to temp file and convert
+        temp_file = record_file.with_suffix('.filtered.md')
+        with open(temp_file, 'w') as f:
+            f.write(filtered_content)
+        
+        convert_markdown_file(temp_file, output, title)
+        temp_file.unlink()  # Clean up temp file
     
     # Convert relay records
     print("\n🏃 Converting Relay Records...")

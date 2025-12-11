@@ -65,6 +65,109 @@ body {
   font-weight: bold;
 }
 
+/* Overall Records Page */
+.overall-records-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.overall-records-section {
+  margin-bottom: 2rem;
+}
+
+.gender-header {
+  background: var(--tvhs-primary);
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 0;
+  font-size: 1.3rem;
+}
+
+.overall-record-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-top: none;
+  padding: 0.75rem 1rem;
+}
+
+.overall-record-card:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+.overall-record-card:nth-child(odd) {
+  background: #f8f9fa;
+}
+
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.event-name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--tvhs-dark-green);
+}
+
+.record-date {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.record-main {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+}
+
+.record-time {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--tvhs-primary);
+  font-family: 'Courier New', monospace;
+}
+
+.record-athlete {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.record-meet {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Mobile adjustments for overall records */
+@media (max-width: 576px) {
+  .overall-record-card {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .event-name {
+    font-size: 0.9rem;
+  }
+  
+  .record-date {
+    font-size: 0.75rem;
+  }
+  
+  .record-time {
+    font-size: 1.1rem;
+  }
+  
+  .record-athlete {
+    font-size: 0.9rem;
+  }
+  
+  .record-meet {
+    font-size: 0.7rem;
+  }
+}
+
 /* Collapsible Hero Header (Index Page) */
 .hero-header {
   background: linear-gradient(135deg, var(--tvhs-primary) 0%, var(--tvhs-dark-green) 100%);

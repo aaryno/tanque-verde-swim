@@ -37,7 +37,10 @@
         <div class="container-fluid justify-content-center">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="nav-records" title="Overall Records">📊</a>
+                    <a class="nav-link" href="/records/overall.html" id="nav-overall" title="Overall Records">🏆</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nav-bygrade" title="Records by Grade">📊</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" id="nav-top10" title="All-Time Top 10">🔟</a>
@@ -205,7 +208,8 @@
         
         function updateNavLinks() {
             const g = currentGender;
-            document.getElementById('nav-records').href = '/records/' + g + '-overall.html';
+            // Overall records page shows both genders (no gender in URL)
+            document.getElementById('nav-bygrade').href = '/records/' + g + '-bygrade.html';
             document.getElementById('nav-top10').href = '/top10/' + g + '-alltime.html';
             document.getElementById('nav-relays').href = '/records/' + g + '-relays.html';
             
@@ -214,6 +218,20 @@
                 const season = link.textContent;
                 link.href = '/top10/' + g + '-' + season + '.html';
             });
+            
+            // Reorder sections on Overall Records page based on gender
+            const overallPage = document.querySelector('.overall-records-page');
+            if (overallPage) {
+                const boysSection = document.getElementById('boys-records');
+                const girlsSection = document.getElementById('girls-records');
+                if (boysSection && girlsSection) {
+                    if (g === 'girls') {
+                        overallPage.insertBefore(girlsSection, boysSection);
+                    } else {
+                        overallPage.insertBefore(boysSection, girlsSection);
+                    }
+                }
+            }
         }
         
         // Gender toggle click handlers - navigate to corresponding gender page
@@ -253,7 +271,7 @@
     <div class="container my-4">
         <div class="content">
 
-<strong>Generated:</strong> November 14, 2025
+
 <hr>
 <h2>Season Overview</h2>
 <strong>Total Swims:</strong> 75
@@ -431,7 +449,7 @@
 </table>
 </div>
 <hr>
-<em>Generated: November 14, 2025</em>
+
 </div>
     </div>
     
