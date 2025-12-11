@@ -167,14 +167,26 @@ def markdown_to_html_table(md_text):
         header_row = match.group(1)
         data_rows = match.group(2)
         
-        # Parse header
-        headers = [h.strip() for h in header_row.split('|') if h.strip()]
+        # Parse header - split by | and remove leading/trailing empty parts
+        header_parts = header_row.split('|')
+        if header_parts and header_parts[0].strip() == '':
+            header_parts = header_parts[1:]
+        if header_parts and header_parts[-1].strip() == '':
+            header_parts = header_parts[:-1]
+        headers = [h.strip() for h in header_parts]
         
         # Parse data rows
         rows = []
         for row in data_rows.strip().split('\n'):
             if row.strip():
-                cells = [c.strip() for c in row.split('|') if c.strip()]
+                # Split by | but keep empty cells (don't filter them out)
+                parts = row.split('|')
+                # Remove first and last empty parts (from leading/trailing |)
+                if parts and parts[0].strip() == '':
+                    parts = parts[1:]
+                if parts and parts[-1].strip() == '':
+                    parts = parts[:-1]
+                cells = [c.strip() for c in parts]
                 if cells:
                     rows.append(cells)
         

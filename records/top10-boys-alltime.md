@@ -1,7 +1,7 @@
 # All-Time Top 10 - Boys
 ## Tanque Verde High School Swimming
 
-**Generated:** December 11, 2025 at 07:55 AM
+**Generated:** December 11, 2025 at 08:25 AM
 
 ---
 
@@ -74,11 +74,11 @@
 | 3 | 59.61 | Austin Morris | SR | Oct 24, 2015 | Small School Championships (Paradise Valley, AZ) |
 | 4 | 59.71 | Kent Olsson | FR | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
 | 5 | 1:00.82 | Samuel Merrill | JR | Sep 17, 2016 | Canyon Del Oro Classic (Tucson, AZ) |
-| 6 | 1:02.03 | Stephen Moreland | JR | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
-| 7 | 1:02.75 | Nicholas Spilotro | SO | Nov 01, 2019 | Canyon Del Oro Invite (AZ) |
-| 8 | 1:04.34 | Will Isenberg | SR | Oct 26, 2018 | Southern Arizona Regional Qualifier (Oro Valley, AZ) |
-| 9 | 1:05.35 | Nolan Radomsky | SR | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
-| 10 | 1:05.48 | Jackson Eftekhar | FR | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
+| 6 | 1:01.91 | Xavier Rivera | SO | Nov 2009 | 2009 AIA 1A-5A State Championships |
+| 7 | 1:02.03 | Stephen Moreland | JR | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
+| 8 | 1:02.75 | Nicholas Spilotro | SO | Nov 01, 2019 | Canyon Del Oro Invite (AZ) |
+| 9 | 1:04.34 | Will Isenberg | SR | Oct 26, 2018 | Southern Arizona Regional Qualifier (Oro Valley, AZ) |
+| 10 | 1:05.35 | Nolan Radomsky | SR | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
 
 ### 100 Breaststroke
 
@@ -103,12 +103,12 @@
 | 2 | 53.45 | Nicholas Cusson | SR | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
 | 3 | 54.41 | Jackson Eftekhar | JR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
 | 4 | 55.61 | Samuel Stott | JR | Sep 25, 2021 | TYR HS Classic (AZ) |
-| 5 | 59.28 | Trevor Clausen | SO | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
-| 6 | 59.89 | Alexander Flores | SR | Nov 05, 2016 | 2016 D-3 AIA State Championships (AZ) |
-| 7 | 1:02.99 | Stephen Moreland | JR | Sep 23, 2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
-| 8 | 1:03.07 | Nolan Radomsky | SR | Sep 23, 2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
-| 9 | 1:05.55 | Jackson Machamer | SO | Sep 14, 2024 | Canyon del Oro Classic (Oro Valley, AZ) |
-| 10 | 1:06.30 | Nicholas Spilotro | SO | Oct 05, 2019 | High School Classic (Tucson, AZ) |
+| 5 | 57.54 | Xavier Rivera | JR | Nov 2010 | 2010 AIA Division I-II State Championships |
+| 6 | 59.28 | Trevor Clausen | SO | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
+| 7 | 59.89 | Alexander Flores | SR | Nov 05, 2016 | 2016 D-3 AIA State Championships (AZ) |
+| 8 | 1:02.99 | Stephen Moreland | JR | Sep 23, 2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
+| 9 | 1:03.07 | Nolan Radomsky | SR | Sep 23, 2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
+| 10 | 1:05.55 | Jackson Machamer | SO | Sep 14, 2024 | Canyon del Oro Classic (Oro Valley, AZ) |
 
 ### 200 Individual Medley
 
@@ -123,4 +123,4 @@
 | 7 | 2:19.81 | Logan Radomsky | SR | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
 | 8 | 2:21.41 | Andrew Lam | SR | Oct 26, 2013 | Mike Ward Memorial Invitational (Tucson, AZ) |
 | 9 | 2:21.61 | Nolan Radomsky | SR | Sep 23, 2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
-| 10 | 2:26.49 | Jerah Francone | FR | Oct 31, 2014 | Southern Arizona Region Qualifier (Tucson, AZ) |
+| 10 | 2:23.23 | Matthew Nanni | SO | Nov 2008 | 2008 AIA 1A-5A State Championships |

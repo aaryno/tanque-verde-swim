@@ -1,7 +1,7 @@
 # All-Time Top 10 - Girls
 ## Tanque Verde High School Swimming
 
-**Generated:** December 11, 2025 at 07:55 AM
+**Generated:** December 11, 2025 at 08:25 AM
 
 ---
 
@@ -9,31 +9,31 @@
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| 1 | 24.91 | Isabelle Sansom | SR | Oct 05, 2019 | High School Classic (Tucson, AZ) |
-| 2 | 25.83 | Brianne Foley | SR | Sep 14, 2024 | Canyon del Oro Classic (Oro Valley, AZ) |
-| 3 | 25.89 | Calla Isenberg | SR | Oct 27, 2017 | Southern Arizona Regional Qualifier (Oro Valley, AZ) |
-| 4 | 25.95 | Grace Davis | SO | Sep 28, 2024 | 21st Annual TYR HS Classic (Tucson, AZ) |
-| 5 | 26.05 | Maggie Colombo | SR | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
-| 6 | 26.31 | Chloe Weatherwax |  | Oct 30, 2020 | SQ  @ CDO (Oro Valley, AZ) |
-| 7 | 26.36 | Paisley White | JR | Oct 23, 2021 | 2021 D-3 AIA State Championships (AZ) |
-| 8 | 26.61 | Hadley Cusson | JR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 9 | 26.77 | Natalie Armstrong | SR | Sep 23, 2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
-| 10 | 27.05 | Hazel Dasse | FR | Oct 30, 2015 | Southern Arizona Regional Qualifier (Tucson, AZ) |
+| 1 | 23.84 | Carly Wilson | JR | Nov 2010 | 2010 AIA Division I-II State Championships |
+| 2 | 24.91 | Isabelle Sansom | SR | Oct 05, 2019 | High School Classic (Tucson, AZ) |
+| 3 | 25.83 | Brianne Foley | SR | Sep 14, 2024 | Canyon del Oro Classic (Oro Valley, AZ) |
+| 4 | 25.89 | Calla Isenberg | SR | Oct 27, 2017 | Southern Arizona Regional Qualifier (Oro Valley, AZ) |
+| 5 | 25.95 | Grace Davis | SO | Sep 28, 2024 | 21st Annual TYR HS Classic (Tucson, AZ) |
+| 6 | 26.05 | Maggie Colombo | SR | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
+| 7 | 26.31 | Chloe Weatherwax |  | Oct 30, 2020 | SQ  @ CDO (Oro Valley, AZ) |
+| 8 | 26.36 | Paisley White | JR | Oct 23, 2021 | 2021 D-3 AIA State Championships (AZ) |
+| 9 | 26.61 | Hadley Cusson | JR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
+| 10 | 26.77 | Natalie Armstrong | SR | Sep 23, 2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
 
 ### 100 Freestyle
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| 1 | 54.11 | Isabelle Sansom | SR | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
-| 2 | 57.21 | Natalie Armstrong | SR | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
-| 3 | 57.32 | Maggie Colombo | SR | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
-| 4 | 57.37 | Brianne Foley | JR | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
-| 5 | 58.02 | Isla Cerepak | FR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 6 | 58.11 | Grace Davis | SO | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
-| 7 | 58.11 | Hadley Cusson | JR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 8 | 58.30 | Calla Isenberg | SR | Oct 07, 2017 | 2017 TYR High School Classic (Tucson, AZ) |
-| 9 | 1:00.36 | Ella Bissmeyer | SO | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
-| 10 | 1:00.66 | Madisyn Clausen | JR | Oct 05, 2013 | High School Classic (Tucson, AZ) |
+| 1 | 52.12 | Carly Wilson | JR | Nov 2010 | 2010 AIA Division I-II State Championships |
+| 2 | 54.11 | Isabelle Sansom | SR | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
+| 3 | 57.21 | Natalie Armstrong | SR | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
+| 4 | 57.32 | Maggie Colombo | SR | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
+| 5 | 57.37 | Brianne Foley | JR | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
+| 6 | 58.02 | Isla Cerepak | FR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
+| 7 | 58.11 | Grace Davis | SO | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
+| 8 | 58.11 | Hadley Cusson | JR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
+| 9 | 58.30 | Calla Isenberg | SR | Oct 07, 2017 | 2017 TYR High School Classic (Tucson, AZ) |
+| 10 | 1:00.36 | Ella Bissmeyer | SO | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
 
 ### 200 Freestyle
 
@@ -63,7 +63,7 @@
 | 7 | 6:22.94 | Summer Cugini | JR | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
 | 8 | 6:23.20 | Sage Weatherwax | JR | Nov 05, 2020 | AIA State Meet - D3 (AZ) |
 | 9 | 6:25.55 | Sydney Hagerman | JR | Oct 29, 2021 | Southern AZ Regional Qualifier (Oro Valley Aquatic Center, AZ) |
-| 10 | 6:31.69 | Hadley Cusson | JR | Sep 20, 2025 | Canyon del Oro Classic (Tucson, AZ) |
+| 10 | 6:25.65 | Janessa Grabe | SR | Nov 2007 | 2007 AIA 1A-5A State Championships |
 
 ### 100 Backstroke
 
@@ -93,22 +93,22 @@
 | 7 | 1:17.02 | Sarynn Patterson | SR | Oct 19, 2019 | Mike Ward Invitational (Tucson, AZ) |
 | 8 | 1:17.49 | Isabelle Sansom | SR | Oct 19, 2019 | Mike Ward Invitational (Tucson, AZ) |
 | 9 | 1:18.30 | Alexa Barrera |  | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
-| 10 | 1:20.17 | Lily Niccum | SO | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
+| 10 | 1:20.06 | Janessa Grabe | SR | Nov 2007 | 2007 AIA 1A-5A State Championships |
 
 ### 100 Butterfly
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| 1 | 1:01.84 | Brianne Foley | SR | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
-| 2 | 1:04.32 | Paisley White | SR | Oct 22, 2022 | Pecan Classic (sahuarita, AZ) |
-| 3 | 1:05.95 | Chloe Weatherwax |  | Nov 05, 2020 | AIA State Meet - D3 (AZ) |
-| 4 | 1:06.15 | Grace Davis | SO | Oct 25, 2024 | Southern Arizona Qualifier (Oro Valley, AZ) |
-| 5 | 1:07.42 | Stella Eftekhar | FR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 6 | 1:08.62 | Lindsey Sohoel-Smith | FR | Oct 03, 2015 | 2015 High School Classic (Tucson, AZ) |
-| 7 | 1:10.15 | Amira Alitiem | JR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 8 | 1:12.50 | Adrianna Witte | SR | Sep 20, 2025 | Canyon del Oro Classic (Tucson, AZ) |
-| 9 | 1:13.51 | Isla Cerepak | FR | Oct 18, 2025 | Pecan Classic (Sahuarita, AZ) |
-| 10 | 1:13.52 | Madison Winkle | FR | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
+| 1 | 1:00.93 | Carly Wilson | SO | Nov 2009 | 2009 AIA 1A-5A State Championships |
+| 2 | 1:01.84 | Brianne Foley | SR | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
+| 3 | 1:04.32 | Paisley White | SR | Oct 22, 2022 | Pecan Classic (sahuarita, AZ) |
+| 4 | 1:05.95 | Chloe Weatherwax |  | Nov 05, 2020 | AIA State Meet - D3 (AZ) |
+| 5 | 1:06.15 | Grace Davis | SO | Oct 25, 2024 | Southern Arizona Qualifier (Oro Valley, AZ) |
+| 6 | 1:07.42 | Stella Eftekhar | FR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
+| 7 | 1:08.62 | Lindsey Sohoel-Smith | FR | Oct 03, 2015 | 2015 High School Classic (Tucson, AZ) |
+| 8 | 1:10.15 | Amira Alitiem | JR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
+| 9 | 1:11.40 | Rachel Decesari | JR | Nov 2008 | 2008 AIA 1A-5A State Championships |
+| 10 | 1:12.50 | Adrianna Witte | SR | Sep 20, 2025 | Canyon del Oro Classic (Tucson, AZ) |
 
 ### 200 Individual Medley
 
