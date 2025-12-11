@@ -29,8 +29,8 @@
 | 3 | 57.32 | Maggie Colombo | SR | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
 | 4 | 57.37 | Brianne Foley | JR | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
 | 5 | 58.02 | Isla Cerepak | FR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 6 | 58.11 | Hadley Cusson | JR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 7 | 58.11 | Grace Davis | SO | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
+| 6 | 58.11 | Grace Davis | SO | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
+| 7 | 58.11 | Hadley Cusson | JR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
 | 8 | 58.30 | Calla Isenberg | SR | Oct 07, 2017 | 2017 TYR High School Classic (Tucson, AZ) |
 | 9 | 1:00.36 | Ella Bissmeyer | SO | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
 | 10 | 1:00.66 | Madisyn Clausen | JR | Oct 05, 2013 | High School Classic (Tucson, AZ) |

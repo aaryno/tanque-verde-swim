@@ -11,7 +11,7 @@
 |-----:|-----:|---------|------|------|------|
 | 1 | 21.99 | Nicholas Cusson | SO | Oct 23, 2021 | 2021 D-3 AIA State Championships (AZ) |
 | 2 | 22.13 | Samuel Stott | SR | Nov 05, 2022 | 2022 D-3 AIA Boys State Championships (AZ) |
-| 3 | 22.76 | Joe Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
+| 3 | 22.76 | Joseph Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
 | 4 | 22.96 | Zachary Duerkop | SR | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
 | 5 | 23.25 | Jackson Eftekhar | JR | Oct 18, 2025 | Pecan Classic (Sahuarita, AZ) |
 | 6 | 23.34 | Trevor Clausen | SO | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
@@ -25,26 +25,24 @@
 |-----:|-----:|---------|------|------|------|
 | 1 | 46.44 | Nicholas Cusson | SR | Nov 04, 2023 | 2023 D-3 AIA State Championships (AZ) |
 | 2 | 47.71 | Samuel Stott | — | Nov 05, 2020 | AIA State Meet - D3 (AZ) |
-| 3 | 47.98 | Joe Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
-| 4 | 49.10 | Joseph Breinholt | JR | Nov 06, 2015 | 2015 AIA Division II State Swimming & Diving Championships (Mesa, AZ) |
-| 5 | 49.71 | John Deninghoff | — | Nov 01, 2018 | AIA D-III Boys State Meet (AZ) |
-| 6 | 50.64 | Zachary Duerkop | JR | Oct 19, 2024 | Pecan Classic (Sahuarita, AZ) |
-| 7 | 51.43 | Jackson Eftekhar | JR | Oct 18, 2025 | Pecan Classic (Sahuarita, AZ) |
-| 8 | 52.36 | Austin Morris | SR | Oct 24, 2015 | Small School Championships (Paradise Valley, AZ) |
+| 3 | 47.98 | Joseph Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
+| 4 | 49.71 | John Deninghoff | — | Nov 01, 2018 | AIA D-III Boys State Meet (AZ) |
+| 5 | 50.64 | Zachary Duerkop | JR | Oct 19, 2024 | Pecan Classic (Sahuarita, AZ) |
+| 6 | 51.43 | Jackson Eftekhar | JR | Oct 18, 2025 | Pecan Classic (Sahuarita, AZ) |
+| 7 | 52.36 | Austin Morris | SR | Oct 24, 2015 | Small School Championships (Paradise Valley, AZ) |
 
 ### 200 Freestyle
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
 | 1 | 1:43.60 | Nicholas Cusson | JR | Nov 05, 2022 | 2022 D-3 AIA Boys State Championships (AZ) |
-| 2 | 1:44.73 | Samuel Stott | JR | Nov 05, 2021 | AIA  D-III Boys State (AZ) |
+| 2 | 1:44.73 | Samuel Stott | JR | Oct 23, 2021 | 2021 D-3 AIA State Championships (AZ) |
 | 3 | 1:48.07 | Zachary Duerkop | SR | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
 | 4 | 1:48.60 | John Deninghoff | — | Nov 01, 2018 | AIA D-III Boys State Meet (AZ) |
 | 5 | 1:48.76 | Joseph Breinholt | JR | Nov 06, 2015 | 2015 AIA Division II State Swimming & Diving Championships (Mesa, AZ) |
 | 6 | 1:49.66 | Wade Olsson | JR | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
-| 7 | 1:49.68 | Joe Breinholt | SR | Oct 01, 2016 | 2016 TYR High School Classic (Tucson, AZ) |
-| 8 | 1:54.76 | Austin Morris | SR | Nov 06, 2015 | 2015 AIA Division II State Swimming & Diving Championships (Mesa, AZ) |
-| 9 | 2:00.16 | Jackson Machamer | SO | Sep 14, 2024 | Canyon del Oro Classic (Oro Valley, AZ) |
+| 7 | 1:54.76 | Austin Morris | SR | Nov 06, 2015 | 2015 AIA Division II State Swimming & Diving Championships (Mesa, AZ) |
+| 8 | 2:00.16 | Jackson Machamer | SO | Sep 14, 2024 | Canyon del Oro Classic (Oro Valley, AZ) |
 
 ### 500 Freestyle
 
