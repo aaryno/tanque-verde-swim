@@ -1,7 +1,7 @@
 # All-Time Top 10 - Boys
 ## Tanque Verde High School Swimming
 
-**Generated:** November 14, 2025 at 12:26 AM
+**Generated:** December 11, 2025 at 07:55 AM
 
 ---
 
@@ -18,18 +18,22 @@
 | 7 | 23.54 | Grayson The | SR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
 | 8 | 24.21 | Tanner Morris | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
 | 9 | 25.03 | Jackson Machamer | FR | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
+| 10 | 25.09 | Peyton Kowalski | SR | Sep 14, 2024 | Canyon del Oro Classic (Oro Valley, AZ) |
 
 ### 100 Freestyle
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
 | 1 | 46.44 | Nicholas Cusson | SR | Nov 04, 2023 | 2023 D-3 AIA State Championships (AZ) |
-| 2 | 47.71 | Samuel Stott | — | Nov 05, 2020 | AIA State Meet - D3 (AZ) |
+| 2 | 47.71 | Samuel Stott |  | Nov 05, 2020 | AIA State Meet - D3 (AZ) |
 | 3 | 47.98 | Joseph Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
-| 4 | 49.71 | John Deninghoff | — | Nov 01, 2018 | AIA D-III Boys State Meet (AZ) |
+| 4 | 49.71 | John Deninghoff |  | Nov 01, 2018 | AIA D-III Boys State Meet (AZ) |
 | 5 | 50.64 | Zachary Duerkop | JR | Oct 19, 2024 | Pecan Classic (Sahuarita, AZ) |
 | 6 | 51.43 | Jackson Eftekhar | JR | Oct 18, 2025 | Pecan Classic (Sahuarita, AZ) |
 | 7 | 52.36 | Austin Morris | SR | Oct 24, 2015 | Small School Championships (Paradise Valley, AZ) |
+| 8 | 53.14 | Trevor Clausen | SO | Oct 05, 2019 | High School Classic (Tucson, AZ) |
+| 9 | 53.58 | Jackson Machamer | SO | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
+| 10 | 53.91 | Andrew Lam | SR | Oct 05, 2013 | High School Classic (Tucson, AZ) |
 
 ### 200 Freestyle
 
@@ -38,11 +42,13 @@
 | 1 | 1:43.60 | Nicholas Cusson | JR | Nov 05, 2022 | 2022 D-3 AIA Boys State Championships (AZ) |
 | 2 | 1:44.73 | Samuel Stott | JR | Oct 23, 2021 | 2021 D-3 AIA State Championships (AZ) |
 | 3 | 1:48.07 | Zachary Duerkop | SR | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
-| 4 | 1:48.60 | John Deninghoff | — | Nov 01, 2018 | AIA D-III Boys State Meet (AZ) |
+| 4 | 1:48.60 | John Deninghoff |  | Nov 01, 2018 | AIA D-III Boys State Meet (AZ) |
 | 5 | 1:48.76 | Joseph Breinholt | JR | Nov 06, 2015 | 2015 AIA Division II State Swimming & Diving Championships (Mesa, AZ) |
 | 6 | 1:49.66 | Wade Olsson | JR | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
 | 7 | 1:54.76 | Austin Morris | SR | Nov 06, 2015 | 2015 AIA Division II State Swimming & Diving Championships (Mesa, AZ) |
 | 8 | 2:00.16 | Jackson Machamer | SO | Sep 14, 2024 | Canyon del Oro Classic (Oro Valley, AZ) |
+| 9 | 2:00.98 | Jackson Eftekhar | SO | Oct 19, 2024 | Pecan Classic (Sahuarita, AZ) |
+| 10 | 2:01.41 | Peyton Kowalski | SR | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
 
 ### 500 Freestyle
 
@@ -70,6 +76,9 @@
 | 5 | 1:00.82 | Samuel Merrill | JR | Sep 17, 2016 | Canyon Del Oro Classic (Tucson, AZ) |
 | 6 | 1:02.03 | Stephen Moreland | JR | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
 | 7 | 1:02.75 | Nicholas Spilotro | SO | Nov 01, 2019 | Canyon Del Oro Invite (AZ) |
+| 8 | 1:04.34 | Will Isenberg | SR | Oct 26, 2018 | Southern Arizona Regional Qualifier (Oro Valley, AZ) |
+| 9 | 1:05.35 | Nolan Radomsky | SR | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
+| 10 | 1:05.48 | Jackson Eftekhar | FR | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
 
 ### 100 Breaststroke
 
@@ -84,7 +93,7 @@
 | 7 | 1:11.18 | Bennett Johnston | SO | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
 | 8 | 1:11.69 | Samuel Merrill | JR | Oct 01, 2016 | 2016 TYR High School Classic (Tucson, AZ) |
 | 9 | 1:12.88 | Alexander Flores | SR | Oct 01, 2016 | 2016 TYR High School Classic (Tucson, AZ) |
-| 10 | 1:12.89 | Dominic Colombo | — | Oct 30, 2020 | SQ  @ CDO (Oro Valley, AZ) |
+| 10 | 1:12.89 | Dominic Colombo |  | Oct 30, 2020 | SQ  @ CDO (Oro Valley, AZ) |
 
 ### 100 Butterfly
 
@@ -99,6 +108,7 @@
 | 7 | 1:02.99 | Stephen Moreland | JR | Sep 23, 2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
 | 8 | 1:03.07 | Nolan Radomsky | SR | Sep 23, 2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
 | 9 | 1:05.55 | Jackson Machamer | SO | Sep 14, 2024 | Canyon del Oro Classic (Oro Valley, AZ) |
+| 10 | 1:06.30 | Nicholas Spilotro | SO | Oct 05, 2019 | High School Classic (Tucson, AZ) |
 
 ### 200 Individual Medley
 
@@ -113,7 +123,4 @@
 | 7 | 2:19.81 | Logan Radomsky | SR | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
 | 8 | 2:21.41 | Andrew Lam | SR | Oct 26, 2013 | Mike Ward Memorial Invitational (Tucson, AZ) |
 | 9 | 2:21.61 | Nolan Radomsky | SR | Sep 23, 2023 | TYR High School Classic (Hillenbrand Aquatic Center, AZ) |
-
----
-
-*Generated: November 14, 2025 at 12:26 AM*
+| 10 | 2:26.49 | Jerah Francone | FR | Oct 31, 2014 | Southern Arizona Region Qualifier (Tucson, AZ) |
