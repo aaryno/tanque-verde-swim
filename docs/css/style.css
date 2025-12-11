@@ -245,12 +245,12 @@ footer a:hover {
   }
   
   .page-header {
-    padding: 0.75rem 0;
-    margin-bottom: 0.75rem;
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
   }
   
   .page-header h1 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
   
   .navbar {
@@ -258,11 +258,30 @@ footer a:hover {
   }
   
   .navbar-brand {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
   
   .navbar-logo {
-    height: 28px;
+    height: 24px;
+  }
+  
+  .navbar-brand-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+  .page-header h1 {
+    font-size: 1rem;
+  }
+  
+  .navbar-brand {
+    font-size: 0.75rem;
+  }
+  
+  .navbar-logo {
+    height: 22px;
   }
   
   .container {

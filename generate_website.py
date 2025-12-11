@@ -17,7 +17,7 @@ def create_nav_html():
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.html">
                 <img src="/images/hawk-logo.svg" alt="Tanque Verde Hawks" class="navbar-logo">
-                Tanque Verde Swimming
+                <span class="navbar-brand-text">TV Swim</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
