@@ -572,18 +572,24 @@ footer a:hover {
     padding: 0;
   }
   
-  /* Rank - badge on far left */
+  /* First column - Grade badge or Rank */
   .table tbody td:first-child {
     grid-row: 1 / 3;
     grid-column: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 0.1rem;
+  }
+  
+  /* If first column has a grade badge, don't add circle */
+  .table tbody td:first-child:not(:has(.grade-badge)) {
     background: var(--tvhs-primary);
     color: white;
     border-radius: 50%;
     width: 28px;
     height: 28px;
-    display: flex;
     align-items: center;
-    justify-content: center;
     font-size: 0.85rem;
     font-weight: bold;
   }
@@ -606,15 +612,9 @@ footer a:hover {
     font-weight: 600;
   }
   
-  /* Year - inline after name */
-  .table tbody td:nth-child(4) {
-    grid-row: 2;
-    grid-column: 2 / 4;
-    display: none; /* Hidden, we'll show via ::after on name */
-  }
-  
+  /* 5-column tables (Records): Grade | Time | Athlete | Date | Meet */
   /* Date - far right of first row */
-  .table tbody td:nth-child(5) {
+  .table tbody td:nth-child(4) {
     grid-row: 1;
     grid-column: 3;
     font-size: 0.75rem;
@@ -623,15 +623,48 @@ footer a:hover {
     white-space: nowrap;
   }
   
-  /* Meet - third row, spans across */
-  .table tbody td:nth-child(6) {
+  /* Meet - third row */
+  .table tbody td:nth-child(5) {
     grid-row: 3;
     grid-column: 2 / 4;
     font-size: 0.7rem;
     color: #888;
   }
   
-  .table tbody td:nth-child(6):not(:empty)::before {
+  .table tbody td:nth-child(5):not(:empty)::before {
+    content: "📍 ";
+  }
+  
+  /* 6-column tables (Top10): Rank | Time | Athlete | Year | Date | Meet */
+  .table tbody tr:has(td:nth-child(6)) td:nth-child(4) {
+    grid-row: 2;
+    grid-column: 3;
+    font-size: 0.8rem;
+    color: #666;
+    text-align: right;
+  }
+  
+  .table tbody tr:has(td:nth-child(6)) td:nth-child(5) {
+    grid-row: 1;
+    grid-column: 3;
+    font-size: 0.75rem;
+    color: #666;
+    text-align: right;
+    white-space: nowrap;
+  }
+  
+  .table tbody tr:has(td:nth-child(6)) td:nth-child(5)::before {
+    content: none;
+  }
+  
+  .table tbody tr:has(td:nth-child(6)) td:nth-child(6) {
+    grid-row: 3;
+    grid-column: 2 / 4;
+    font-size: 0.7rem;
+    color: #888;
+  }
+  
+  .table tbody tr:has(td:nth-child(6)) td:nth-child(6):not(:empty)::before {
     content: "📍 ";
   }
   
