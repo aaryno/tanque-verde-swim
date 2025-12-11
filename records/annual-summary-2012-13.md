@@ -29,6 +29,7 @@
 |------|------|
 | Oct 06, 2012 | High School Classic (Tucson, AZ) |
 | Oct 13, 2012 | Tiger Last Chance Invitational (Tucson, AZ) |
+| Nov 03, 2012 | 2012 AIA Division II State Championships |
 
 ---
 

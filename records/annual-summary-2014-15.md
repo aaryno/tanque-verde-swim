@@ -31,6 +31,7 @@
 | Oct 25, 2014 | Mike Ward Memorial (Tucson, AZ) |
 | Oct 31, 2014 | Southern Arizona Region Qualifier (Tucson, AZ) |
 | Nov 08, 2014 | 2014 AIA Division II State Meet - Finals (Mesa, AZ) |
+| Nov 08, 2014 | 2014 AIA Division II State Championships |
 
 ---
 

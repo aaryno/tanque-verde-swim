@@ -30,6 +30,7 @@
 | Oct 05, 2013 | High School Classic (Tucson, AZ) |
 | Oct 26, 2013 | Mike Ward Memorial Invitational (Tucson, AZ) |
 | Nov 02, 2013 | Southern Arizona Regional Qualifier (Tucson, AZ) |
+| Nov 02, 2013 | 2013 AIA Division II State Championships |
 
 ---
 
