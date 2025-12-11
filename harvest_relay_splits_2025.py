@@ -9,15 +9,17 @@ import json
 from urllib.request import urlopen
 from pathlib import Path
 
-def extract_relay_splits_from_stats_page():
+def extract_relay_splits_from_stats_page(gender="boys"):
     """
     Extract relay split data from MaxPreps stats page
-    URL: https://www.maxpreps.com/az/tucson/tanque-verde-hawks/swimming/fall/stats/
     """
     
-    url = "https://www.maxpreps.com/az/tucson/tanque-verde-hawks/swimming/fall/stats/"
+    if gender == "boys":
+        url = "https://www.maxpreps.com/az/tucson/tanque-verde-hawks/swimming/fall/stats/"
+    else:
+        url = "https://www.maxpreps.com/az/tucson/tanque-verde-hawks/swimming/fall/girls-stats/"
     
-    print(f"Fetching {url}")
+    print(f"Fetching {gender} {url}")
     with urlopen(url) as response:
         html = response.read().decode('utf-8')
     
@@ -80,7 +82,7 @@ def extract_relay_splits_from_stats_page():
             print(f"  {i}. {name}: {time}")
     
     # Save to file
-    output_file = Path("data/relay_splits_2025-26.json")
+    output_file = Path(f"data/relay_splits_2025-26_{gender}.json")
     output_file.parent.mkdir(exist_ok=True)
     
     with open(output_file, 'w') as f:
@@ -90,5 +92,18 @@ def extract_relay_splits_from_stats_page():
     return relays
 
 if __name__ == "__main__":
-    extract_relay_splits_from_stats_page()
+    boys_relays = extract_relay_splits_from_stats_page("boys")
+    girls_relays = extract_relay_splits_from_stats_page("girls")
+    
+    # Combine and save all
+    all_relays = {
+        "boys": boys_relays,
+        "girls": girls_relays
+    }
+    
+    output_file = Path("data/relay_splits_2025-26_all.json")
+    with open(output_file, 'w') as f:
+        json.dump(all_relays, f, indent=2)
+    
+    print(f"\nSaved combined splits to {output_file}")
 

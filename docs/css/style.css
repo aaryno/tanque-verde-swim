@@ -216,38 +216,69 @@ body {
 .relay-swimmers {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.5rem;
   margin-bottom: 0.75rem;
 }
 
-.relay-swimmers > div {
+.relay-swimmers .swimmer-entry {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.25rem 0;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.relay-swimmers .swimmer-entry:last-child {
+  border-bottom: none;
 }
 
 .relay-swimmers .swimmer-name {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  min-width: 180px;
-  flex-shrink: 0;
+  font-weight: 500;
 }
 
-.relay-swimmers .swimmer-leg {
+.relay-swimmers .swimmer-stroke {
   font-size: 0.85rem;
-  color: #888;
+  color: #666;
   font-style: italic;
-  min-width: 90px;
 }
 
-.relay-swimmers .swimmer-split {
+.relay-swimmers .swimmer-time {
   font-family: 'Courier New', monospace;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--tvhs-primary);
   margin-left: auto;
+}
+
+/* Mobile: 2-line layout */
+@media (max-width: 768px) {
+  .relay-swimmers .swimmer-entry {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 
+      "name name"
+      "stroke time";
+    gap: 0.25rem 0.5rem;
+    align-items: start;
+  }
+  
+  .relay-swimmers .swimmer-name {
+    grid-area: name;
+  }
+  
+  .relay-swimmers .swimmer-stroke {
+    grid-area: stroke;
+    font-size: 0.8rem;
+  }
+  
+  .relay-swimmers .swimmer-time {
+    grid-area: time;
+    margin-left: 0;
+    justify-self: end;
+  }
 }
 
 .relay-meet {
