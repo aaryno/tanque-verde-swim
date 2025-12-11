@@ -58,6 +58,129 @@ body {
   border: 1px solid #ce93d8;
 }
 
+/* Collapsible Hero Header (Index Page) */
+.hero-header {
+  background: linear-gradient(135deg, var(--tvhs-primary) 0%, var(--tvhs-dark-green) 100%);
+  color: white;
+  position: sticky;
+  top: 88px; /* Below nav bars */
+  z-index: 1010;
+  transition: all 0.3s ease;
+}
+
+.hero-expanded {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.hero-expanded .hero-logo {
+  height: 80px;
+  margin-bottom: 0.75rem;
+}
+
+.hero-expanded h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.hero-expanded h2 {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.hero-expanded .subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.hero-collapse-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 0 0 8px 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.2s;
+}
+
+.hero-collapse-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.hero-collapsed {
+  display: none;
+  padding: 0.5rem 0;
+}
+
+.hero-collapsed .hero-logo-small {
+  height: 28px;
+  margin-right: 0.5rem;
+}
+
+.hero-collapsed .hero-title-small {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.hero-expand-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  margin-left: 0.75rem;
+  transition: background 0.2s;
+}
+
+.hero-expand-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* Collapsed state */
+.hero-header.collapsed .hero-expanded {
+  display: none;
+}
+
+.hero-header.collapsed .hero-collapsed {
+  display: block;
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  .hero-header {
+    top: 80px;
+  }
+  
+  .hero-expanded {
+    padding: 1.5rem 0;
+  }
+  
+  .hero-expanded .hero-logo {
+    height: 60px;
+  }
+  
+  .hero-expanded h1 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-expanded h2 {
+    font-size: 1.1rem;
+  }
+  
+  .hero-expanded .subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .hero-collapsed .hero-title-small {
+    font-size: 0.95rem;
+  }
+}
+
 /* Main Navigation */
 #main-nav {
   background-color: var(--tvhs-primary) !important;

@@ -90,13 +90,27 @@
         </div>
     </nav>
     
-    <!-- Hero Section -->
-    <div class="page-header" style="background: linear-gradient(135deg, #2C5F2D 0%, #1B4332 100%); padding: 3rem 0;">
-        <div class="container text-center">
-            <img src="/images/hawk-logo.svg" alt="Tanque Verde Hawks" class="hero-logo" style="height: 100px; margin-bottom: 1rem;">
-            <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Tanque Verde High School</h1>
-            <h2 style="font-size: 1.8rem; font-weight: 300;">Swimming & Diving Records</h2>
-            <p class="subtitle" style="font-size: 1.2rem; margin-top: 1rem;">Tucson, Arizona | AIA Division III</p>
+    <!-- Hero Section (Collapsible) -->
+    <div class="hero-header" id="hero-header">
+        <div class="hero-expanded" id="hero-expanded">
+            <div class="container text-center">
+                <img src="/images/hawk-logo.svg" alt="Tanque Verde Hawks" class="hero-logo">
+                <h1>Tanque Verde High School</h1>
+                <h2>Swimming & Diving Records</h2>
+                <p class="subtitle">Tucson, Arizona | AIA Division III</p>
+                <button class="hero-collapse-btn" id="hero-collapse-btn" title="Collapse header">
+                    <span>▲</span>
+                </button>
+            </div>
+        </div>
+        <div class="hero-collapsed" id="hero-collapsed">
+            <div class="container d-flex align-items-center justify-content-center">
+                <img src="/images/hawk-logo.svg" alt="Tanque Verde Hawks" class="hero-logo-small">
+                <span class="hero-title-small">TVHS Swimming Records</span>
+                <button class="hero-expand-btn" id="hero-expand-btn" title="Expand header">
+                    <span>▼</span>
+                </button>
+            </div>
         </div>
     </div>
     
@@ -557,6 +571,42 @@
         
         // Initialize
         updateGenderUI();
+        
+        // Collapsible Hero Header
+        const heroHeader = document.getElementById('hero-header');
+        const heroCollapseBtn = document.getElementById('hero-collapse-btn');
+        const heroExpandBtn = document.getElementById('hero-expand-btn');
+        
+        if (heroHeader && heroCollapseBtn && heroExpandBtn) {
+            // Check if already collapsed (from scroll or localStorage)
+            const isCollapsed = localStorage.getItem('hero-collapsed') === 'true';
+            if (isCollapsed) {
+                heroHeader.classList.add('collapsed');
+            }
+            
+            // Collapse on button click
+            heroCollapseBtn.addEventListener('click', function() {
+                heroHeader.classList.add('collapsed');
+                localStorage.setItem('hero-collapsed', 'true');
+            });
+            
+            // Expand on button click
+            heroExpandBtn.addEventListener('click', function() {
+                heroHeader.classList.remove('collapsed');
+                localStorage.setItem('hero-collapsed', 'false');
+            });
+            
+            // Auto-collapse on scroll (after 100px)
+            let lastScroll = 0;
+            window.addEventListener('scroll', function() {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll > 100 && !heroHeader.classList.contains('collapsed')) {
+                    heroHeader.classList.add('collapsed');
+                    localStorage.setItem('hero-collapsed', 'true');
+                }
+                lastScroll = currentScroll;
+            });
+        }
     });
     </script>
 </body>
