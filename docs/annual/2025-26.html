@@ -17,98 +17,77 @@
 </head>
 <body>
     
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-dark" id="main-nav">
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.html">
                 <img src="/images/hawk-logo.svg" alt="Tanque Verde Hawks" class="navbar-logo">
-                <span class="navbar-brand-text">TVHS Swim</span>
+                <span class="navbar-brand-text">TVHS</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <!-- Overall Records Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                            Overall Records
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/records/girls-overall.html">Girls</a></li>
-                            <li><a class="dropdown-item" href="/records/boys-overall.html">Boys</a></li>
-                        </ul>
-                    </li>
-                    <!-- Relay Records Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                            Relay Records
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/records/girls-relays.html">Girls</a></li>
-                            <li><a class="dropdown-item" href="/records/boys-relays.html">Boys</a></li>
-                        </ul>
-                    </li>
-                    <!-- Top 10 Overall Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                            Top 10 Overall
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/top10/girls-alltime.html">Girls All-Time</a></li>
-                            <li><a class="dropdown-item" href="/top10/boys-alltime.html">Boys All-Time</a></li>
-                        </ul>
-                    </li>
-                    <!-- Top 10 By Season Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                            Top 10 By Season
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-scroll">
-                            <li class="dropdown-item d-flex justify-content-between"><span class="fw-bold">2024-25:</span> <span><a href="/top10/girls-2024-25.html">Girls</a> | <a href="/top10/boys-2024-25.html">Boys</a></span></li>
-                            <li class="dropdown-item d-flex justify-content-between"><span class="fw-bold">2023-24:</span> <span><a href="/top10/girls-2023-24.html">Girls</a> | <a href="/top10/boys-2023-24.html">Boys</a></span></li>
-                            <li class="dropdown-item d-flex justify-content-between"><span class="fw-bold">2022-23:</span> <span><a href="/top10/girls-2022-23.html">Girls</a> | <a href="/top10/boys-2022-23.html">Boys</a></span></li>
-                            <li class="dropdown-item d-flex justify-content-between"><span class="fw-bold">2021-22:</span> <span><a href="/top10/girls-2021-22.html">Girls</a> | <a href="/top10/boys-2021-22.html">Boys</a></span></li>
-                            <li class="dropdown-item d-flex justify-content-between"><span class="fw-bold">2020-21:</span> <span><a href="/top10/girls-2020-21.html">Girls</a> | <a href="/top10/boys-2020-21.html">Boys</a></span></li>
-                            <li class="dropdown-item d-flex justify-content-between"><span class="fw-bold">2019-20:</span> <span><a href="/top10/girls-2019-20.html">Girls</a> | <a href="/top10/boys-2019-20.html">Boys</a></span></li>
-                            <li class="dropdown-item d-flex justify-content-between"><span class="fw-bold">2018-19:</span> <span><a href="/top10/girls-2018-19.html">Girls</a> | <a href="/top10/boys-2018-19.html">Boys</a></span></li>
-                            <li class="dropdown-item d-flex justify-content-between"><span class="fw-bold">2017-18:</span> <span><a href="/top10/girls-2017-18.html">Girls</a> | <a href="/top10/boys-2017-18.html">Boys</a></span></li>
-                            <li class="dropdown-item d-flex justify-content-between"><span class="fw-bold">2016-17:</span> <span><a href="/top10/girls-2016-17.html">Girls</a> | <a href="/top10/boys-2016-17.html">Boys</a></span></li>
-                            <li class="dropdown-item d-flex justify-content-between"><span class="fw-bold">2015-16:</span> <span><a href="/top10/girls-2015-16.html">Girls</a> | <a href="/top10/boys-2015-16.html">Boys</a></span></li>
-                            <li class="dropdown-item d-flex justify-content-between"><span class="fw-bold">2014-15:</span> <span><a href="/top10/girls-2014-15.html">Girls</a> | <a href="/top10/boys-2014-15.html">Boys</a></span></li>
-                            <li class="dropdown-item d-flex justify-content-between"><span class="fw-bold">2013-14:</span> <span><a href="/top10/girls-2013-14.html">Girls</a> | <a href="/top10/boys-2013-14.html">Boys</a></span></li>
-                            <li class="dropdown-item d-flex justify-content-between"><span class="fw-bold">2012-13:</span> <span><a href="/top10/girls-2012-13.html">Girls</a> | <a href="/top10/boys-2012-13.html">Boys</a></span></li>
-                            <li class="dropdown-item d-flex justify-content-between"><span class="fw-bold">2011-12:</span> <span><a href="/top10/girls-2011-12.html">Girls</a> | <a href="/top10/boys-2011-12.html">Boys</a></span></li>
-                            <li class="dropdown-item d-flex justify-content-between"><span class="fw-bold">2010-11:</span> <span><a href="/top10/girls-2010-11.html">Girls</a> | <a href="/top10/boys-2010-11.html">Boys</a></span></li>
-                            <li class="dropdown-item d-flex justify-content-between"><span class="fw-bold">2009-10:</span> <span><a href="/top10/girls-2009-10.html">Girls</a> | <a href="/top10/boys-2009-10.html">Boys</a></span></li>
-                            <li class="dropdown-item d-flex justify-content-between"><span class="fw-bold">2008-09:</span> <span><a href="/top10/girls-2008-09.html">Girls</a> | <a href="/top10/boys-2008-09.html">Boys</a></span></li>
-                            <li class="dropdown-item d-flex justify-content-between"><span class="fw-bold">2007-08:</span> <span><a href="/top10/girls-2007-08.html">Girls</a> | <a href="/top10/boys-2007-08.html">Boys</a></span></li>
-                        </ul>
-                    </li>
-                    <!-- Annual Summaries Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                            Annual Summaries
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-scroll dropdown-menu-end">
-                            <li><a class="dropdown-item" href="/annual/2025-26.html">2025-26</a></li>
-                            <li><a class="dropdown-item" href="/annual/2024-25.html">2024-25</a></li>
-                            <li><a class="dropdown-item" href="/annual/2023-24.html">2023-24</a></li>
-                            <li><a class="dropdown-item" href="/annual/2022-23.html">2022-23</a></li>
-                            <li><a class="dropdown-item" href="/annual/2021-22.html">2021-22</a></li>
-                            <li><a class="dropdown-item" href="/annual/2020-21.html">2020-21</a></li>
-                            <li><a class="dropdown-item" href="/annual/2019-20.html">2019-20</a></li>
-                            <li><a class="dropdown-item" href="/annual/2018-19.html">2018-19</a></li>
-                            <li><a class="dropdown-item" href="/annual/2017-18.html">2017-18</a></li>
-                            <li><a class="dropdown-item" href="/annual/2016-17.html">2016-17</a></li>
-                            <li><a class="dropdown-item" href="/annual/2015-16.html">2015-16</a></li>
-                            <li><a class="dropdown-item" href="/annual/2014-15.html">2014-15</a></li>
-                            <li><a class="dropdown-item" href="/annual/2013-14.html">2013-14</a></li>
-                            <li><a class="dropdown-item" href="/annual/2012-13.html">2012-13</a></li>
-                        </ul>
-                    </li>
-                </ul>
+            <!-- Gender Toggle -->
+            <div class="gender-toggle" id="gender-toggle">
+                <button class="btn btn-gender active" data-gender="boys">Boys</button>
+                <button class="btn btn-gender" data-gender="girls">Girls</button>
             </div>
+        </div>
+    </nav>
+    
+    <!-- Quick Nav Bar -->
+    <nav class="navbar navbar-dark quick-nav" id="quick-nav">
+        <div class="container-fluid justify-content-center">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nav-records" title="Overall Records">📊</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nav-top10" title="All-Time Top 10">🔟</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nav-relays" title="Relay Records">🏃</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅</a>
+                    <ul class="dropdown-menu dropdown-menu-scroll">
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2024-25</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2023-24</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2022-23</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2021-22</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2020-21</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2019-20</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2018-19</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2017-18</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2016-17</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2015-16</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2014-15</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2013-14</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2012-13</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2011-12</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2010-11</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2009-10</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2008-09</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2007-08</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-summary" title="Season Summary">📈</a>
+                    <ul class="dropdown-menu dropdown-menu-scroll dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/annual/2025-26.html">2025-26</a></li>
+                        <li><a class="dropdown-item" href="/annual/2024-25.html">2024-25</a></li>
+                        <li><a class="dropdown-item" href="/annual/2023-24.html">2023-24</a></li>
+                        <li><a class="dropdown-item" href="/annual/2022-23.html">2022-23</a></li>
+                        <li><a class="dropdown-item" href="/annual/2021-22.html">2021-22</a></li>
+                        <li><a class="dropdown-item" href="/annual/2020-21.html">2020-21</a></li>
+                        <li><a class="dropdown-item" href="/annual/2019-20.html">2019-20</a></li>
+                        <li><a class="dropdown-item" href="/annual/2018-19.html">2018-19</a></li>
+                        <li><a class="dropdown-item" href="/annual/2017-18.html">2017-18</a></li>
+                        <li><a class="dropdown-item" href="/annual/2016-17.html">2016-17</a></li>
+                        <li><a class="dropdown-item" href="/annual/2015-16.html">2015-16</a></li>
+                        <li><a class="dropdown-item" href="/annual/2014-15.html">2014-15</a></li>
+                        <li><a class="dropdown-item" href="/annual/2013-14.html">2013-14</a></li>
+                        <li><a class="dropdown-item" href="/annual/2012-13.html">2012-13</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </nav>
     
@@ -184,6 +163,41 @@
                 }
             });
         }
+        
+        // Gender toggle and navigation
+        let currentGender = localStorage.getItem('tvhs-gender') || 'boys';
+        
+        function updateGenderUI() {
+            document.querySelectorAll('.btn-gender').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.gender === currentGender);
+            });
+            updateNavLinks();
+        }
+        
+        function updateNavLinks() {
+            const g = currentGender;
+            document.getElementById('nav-records').href = '/records/' + g + '-overall.html';
+            document.getElementById('nav-top10').href = '/top10/' + g + '-alltime.html';
+            document.getElementById('nav-relays').href = '/records/' + g + '-relays.html';
+            
+            // Update season links
+            document.querySelectorAll('.season-link').forEach(link => {
+                const season = link.textContent;
+                link.href = '/top10/' + g + '-' + season + '.html';
+            });
+        }
+        
+        // Gender toggle click handlers
+        document.querySelectorAll('.btn-gender').forEach(btn => {
+            btn.addEventListener('click', function() {
+                currentGender = this.dataset.gender;
+                localStorage.setItem('tvhs-gender', currentGender);
+                updateGenderUI();
+            });
+        });
+        
+        // Initialize
+        updateGenderUI();
     });
     </script>
     
