@@ -203,14 +203,96 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Responsive tables */
+/* Responsive - Tablets */
 @media (max-width: 768px) {
   .table-responsive {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+  }
+  
+  .page-header {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
   }
   
   .page-header h1 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+  
+  .navbar-logo {
+    height: 32px;
+  }
+  
+  footer {
+    padding: 1rem 0;
+    margin-top: 2rem;
+  }
+  
+  .event-heading {
+    font-size: 1.1rem;
+    padding: 0.5rem 0.75rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/* Responsive - Mobile phones */
+@media (max-width: 576px) {
+  .table-responsive {
+    font-size: 0.75rem;
+  }
+  
+  .page-header {
+    padding: 0.75rem 0;
+    margin-bottom: 0.75rem;
+  }
+  
+  .page-header h1 {
+    font-size: 1.25rem;
+  }
+  
+  .navbar {
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  
+  .navbar-logo {
+    height: 28px;
+  }
+  
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  footer {
+    padding: 0.75rem 0;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .disclaimer {
+    font-size: 0.7rem;
+  }
+  
+  .event-heading {
+    font-size: 1rem;
+    padding: 0.4rem 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .table th, .table td {
+    padding: 0.35rem 0.25rem;
+  }
+  
+  /* Hide less important columns on mobile */
+  .hide-mobile {
+    display: none;
   }
 }
 

@@ -137,7 +137,6 @@ def create_html_page(title, content, page_type="default"):
     <div class="page-header">
         <div class="container">
             <h1>{title}</h1>
-            <div class="subtitle">Tanque Verde High School Swimming & Diving</div>
         </div>
     </div>
     
