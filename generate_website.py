@@ -287,6 +287,18 @@ def convert_markdown_file(md_file, output_file, title=None):
     # Horizontal rules
     html_content = re.sub(r'^---$', '<hr>', html_content, flags=re.MULTILINE)
     
+    # Convert unordered lists
+    def convert_list_block(match):
+        list_block = match.group(0)
+        items = re.findall(r'^- (.+)$', list_block, re.MULTILINE)
+        if items:
+            html_items = '\n'.join([f'<li>{item}</li>' for item in items])
+            return f'<ul>\n{html_items}\n</ul>'
+        return list_block
+    
+    # Find consecutive lines starting with "- " and convert to <ul>
+    html_content = re.sub(r'(^- .+$\n?)+', convert_list_block, html_content, flags=re.MULTILINE)
+    
     # Paragraphs (lines separated by blank lines)
     paragraphs = html_content.split('\n\n')
     formatted_paragraphs = []
