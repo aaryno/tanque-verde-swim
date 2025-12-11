@@ -1,0 +1,889 @@
+{
+  "Zachary Duerkop": {
+    "gender": "boys",
+    "history": {
+      "Tanque Verde High School Swimming": {
+        "first_swim": {
+          "time": "5:19.88",
+          "time_seconds": 319.88,
+          "year": "SO",
+          "date": "Oct 25, 2023",
+          "date_parsed": "2023-10-25T00:00:00",
+          "meet": "Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ)",
+          "season": "alltime"
+        },
+        "last_swim": {
+          "time": "52.48",
+          "time_seconds": 52.48,
+          "year": "SR",
+          "date": "Nov 08, 2025",
+          "date_parsed": "2025-11-08T00:00:00",
+          "meet": "2025 D-3 AIA State Championships (AZ)",
+          "season": "alltime"
+        },
+        "total_swims": 7,
+        "time_drop": 267.4,
+        "improvement_text": "267.40s"
+      },
+      "100 Freestyle": {
+        "first_swim": {
+          "time": "50.64",
+          "time_seconds": 50.64,
+          "year": "JR",
+          "date": "Oct 19, 2024",
+          "date_parsed": "2024-10-19T00:00:00",
+          "meet": "Pecan Classic (Sahuarita, AZ)",
+          "season": "2024-25"
+        },
+        "last_swim": {
+          "time": "50.64",
+          "time_seconds": 50.64,
+          "year": "JR",
+          "date": "Oct 19, 2024",
+          "date_parsed": "2024-10-19T00:00:00",
+          "meet": "Pecan Classic (Sahuarita, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 1,
+        "time_drop": 0,
+        "improvement_text": "Only 1 recorded swim"
+      },
+      "200 Freestyle": {
+        "first_swim": {
+          "time": "1:54.85",
+          "time_seconds": 114.85,
+          "year": "SO",
+          "date": "Nov 04, 2023",
+          "date_parsed": "2023-11-04T00:00:00",
+          "meet": "2023 D-3 AIA State Championships (AZ)",
+          "season": "2023-24"
+        },
+        "last_swim": {
+          "time": "1:51.39",
+          "time_seconds": 111.39,
+          "year": "JR",
+          "date": "Sep 28, 2024",
+          "date_parsed": "2024-09-28T00:00:00",
+          "meet": "21st Annual TYR HS Classic (Tucson, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 2,
+        "time_drop": 3.4599999999999937,
+        "improvement_text": "3.46s"
+      },
+      "100 Breaststroke": {
+        "first_swim": {
+          "time": "1:04.17",
+          "time_seconds": 64.17,
+          "year": "SO",
+          "date": "Oct 21, 2023",
+          "date_parsed": "2023-10-21T00:00:00",
+          "meet": "Pecan Classic (Sahuarita Aquatic Center, AZ)",
+          "season": "2023-24"
+        },
+        "last_swim": {
+          "time": "59.51",
+          "time_seconds": 59.51,
+          "year": "JR",
+          "date": "Sep 14, 2024",
+          "date_parsed": "2024-09-14T00:00:00",
+          "meet": "Canyon del Oro Classic (Oro Valley, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 2,
+        "time_drop": 4.660000000000004,
+        "improvement_text": "4.66s"
+      },
+      "100 Butterfly": {
+        "first_swim": {
+          "time": "54.45",
+          "time_seconds": 54.45,
+          "year": "JR",
+          "date": "Nov 09, 2024",
+          "date_parsed": "2024-11-09T00:00:00",
+          "meet": "2024 D3 State Championship (Paradise Valley, AZ)",
+          "season": "2024-25"
+        },
+        "last_swim": {
+          "time": "54.45",
+          "time_seconds": 54.45,
+          "year": "JR",
+          "date": "Nov 09, 2024",
+          "date_parsed": "2024-11-09T00:00:00",
+          "meet": "2024 D3 State Championship (Paradise Valley, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 1,
+        "time_drop": 0,
+        "improvement_text": "Only 1 recorded swim"
+      },
+      "200 Individual Medley": {
+        "first_swim": {
+          "time": "2:10.89",
+          "time_seconds": 130.89,
+          "year": "SO",
+          "date": "Oct 25, 2023",
+          "date_parsed": "2023-10-25T00:00:00",
+          "meet": "Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ)",
+          "season": "2023-24"
+        },
+        "last_swim": {
+          "time": "2:04.11",
+          "time_seconds": 124.11,
+          "year": "JR",
+          "date": "Sep 14, 2024",
+          "date_parsed": "2024-09-14T00:00:00",
+          "meet": "Canyon del Oro Classic (Oro Valley, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 2,
+        "time_drop": 6.779999999999987,
+        "improvement_text": "6.78s"
+      },
+      "500 Freestyle": {
+        "first_swim": {
+          "time": "5:19.88",
+          "time_seconds": 319.88,
+          "year": "SO",
+          "date": "Oct 25, 2023",
+          "date_parsed": "2023-10-25T00:00:00",
+          "meet": "Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ)",
+          "season": "2023-24"
+        },
+        "last_swim": {
+          "time": "5:19.88",
+          "time_seconds": 319.88,
+          "year": "SO",
+          "date": "Oct 25, 2023",
+          "date_parsed": "2023-10-25T00:00:00",
+          "meet": "Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ)",
+          "season": "2023-24"
+        },
+        "total_swims": 1,
+        "time_drop": 0,
+        "improvement_text": "Only 1 recorded swim"
+      }
+    },
+    "records": [
+      {
+        "event": "Team Records - Short Course Yards (SCY)",
+        "grade": "Open",
+        "time": "59.51"
+      },
+      {
+        "event": "Team Records - Short Course Yards (SCY)",
+        "grade": "Open",
+        "time": "52.48"
+      }
+    ]
+  },
+  "Logan Sulger": {
+    "gender": "girls",
+    "history": {
+      "Tanque Verde High School Swimming": {
+        "first_swim": {
+          "time": "1:02.29",
+          "time_seconds": 62.29,
+          "year": "SR",
+          "date": "Nov 08, 2025",
+          "date_parsed": "2025-11-08T00:00:00",
+          "meet": "2025 D-3 AIA State Championships (AZ)",
+          "season": "alltime"
+        },
+        "last_swim": {
+          "time": "1:02.29",
+          "time_seconds": 62.29,
+          "year": "SR",
+          "date": "Nov 08, 2025",
+          "date_parsed": "2025-11-08T00:00:00",
+          "meet": "2025 D-3 AIA State Championships (AZ)",
+          "season": "alltime"
+        },
+        "total_swims": 1,
+        "time_drop": 0,
+        "improvement_text": "Only 1 recorded swim"
+      },
+      "100 Backstroke": {
+        "first_swim": {
+          "time": "1:16.39",
+          "time_seconds": 76.39,
+          "year": "FR",
+          "date": "Sep 24, 2022",
+          "date_parsed": "2022-09-24T00:00:00",
+          "meet": "TYR High School Classic (AZ)",
+          "season": "2022-23"
+        },
+        "last_swim": {
+          "time": "1:05.38",
+          "time_seconds": 65.38,
+          "year": "JR",
+          "date": "Nov 09, 2024",
+          "date_parsed": "2024-11-09T00:00:00",
+          "meet": "2024 D3 State Championship (Paradise Valley, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 3,
+        "time_drop": 11.010000000000005,
+        "improvement_text": "11.01s"
+      },
+      "100 Butterfly": {
+        "first_swim": {
+          "time": "1:20.10",
+          "time_seconds": 80.1,
+          "year": "FR",
+          "date": "Oct 28, 2022",
+          "date_parsed": "2022-10-28T00:00:00",
+          "meet": "Southern AZ Regional Qualifier (AZ)",
+          "season": "2022-23"
+        },
+        "last_swim": {
+          "time": "1:20.10",
+          "time_seconds": 80.1,
+          "year": "FR",
+          "date": "Oct 28, 2022",
+          "date_parsed": "2022-10-28T00:00:00",
+          "meet": "Southern AZ Regional Qualifier (AZ)",
+          "season": "2022-23"
+        },
+        "total_swims": 1,
+        "time_drop": 0,
+        "improvement_text": "Only 1 recorded swim"
+      },
+      "200 Individual Medley": {
+        "first_swim": {
+          "time": "2:46.85",
+          "time_seconds": 166.85,
+          "year": "FR",
+          "date": "Oct 22, 2022",
+          "date_parsed": "2022-10-22T00:00:00",
+          "meet": "Pecan Classic (sahuarita, AZ)",
+          "season": "2022-23"
+        },
+        "last_swim": {
+          "time": "2:49.25",
+          "time_seconds": 169.25,
+          "year": "SO",
+          "date": "Sep 23, 2023",
+          "date_parsed": "2023-09-23T00:00:00",
+          "meet": "TYR High School Classic (Hillenbrand Aquatic Center, AZ)",
+          "season": "2023-24"
+        },
+        "total_swims": 2,
+        "time_drop": -2.4000000000000057,
+        "improvement_text": "2.40s slower"
+      },
+      "50 Freestyle": {
+        "first_swim": {
+          "time": "28.56",
+          "time_seconds": 28.56,
+          "year": "JR",
+          "date": "Nov 09, 2024",
+          "date_parsed": "2024-11-09T00:00:00",
+          "meet": "2024 D3 State Championship (Paradise Valley, AZ)",
+          "season": "2024-25"
+        },
+        "last_swim": {
+          "time": "28.56",
+          "time_seconds": 28.56,
+          "year": "JR",
+          "date": "Nov 09, 2024",
+          "date_parsed": "2024-11-09T00:00:00",
+          "meet": "2024 D3 State Championship (Paradise Valley, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 1,
+        "time_drop": 0,
+        "improvement_text": "Only 1 recorded swim"
+      },
+      "100 Freestyle": {
+        "first_swim": {
+          "time": "1:05.96",
+          "time_seconds": 65.96,
+          "year": "JR",
+          "date": "Sep 14, 2024",
+          "date_parsed": "2024-09-14T00:00:00",
+          "meet": "Canyon del Oro Classic (Oro Valley, AZ)",
+          "season": "2024-25"
+        },
+        "last_swim": {
+          "time": "1:05.96",
+          "time_seconds": 65.96,
+          "year": "JR",
+          "date": "Sep 14, 2024",
+          "date_parsed": "2024-09-14T00:00:00",
+          "meet": "Canyon del Oro Classic (Oro Valley, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 1,
+        "time_drop": 0,
+        "improvement_text": "Only 1 recorded swim"
+      },
+      "200 Freestyle": {
+        "first_swim": {
+          "time": "2:26.04",
+          "time_seconds": 146.04,
+          "year": "JR",
+          "date": "Oct 19, 2024",
+          "date_parsed": "2024-10-19T00:00:00",
+          "meet": "Pecan Classic (Sahuarita, AZ)",
+          "season": "2024-25"
+        },
+        "last_swim": {
+          "time": "2:26.04",
+          "time_seconds": 146.04,
+          "year": "JR",
+          "date": "Oct 19, 2024",
+          "date_parsed": "2024-10-19T00:00:00",
+          "meet": "Pecan Classic (Sahuarita, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 1,
+        "time_drop": 0,
+        "improvement_text": "Only 1 recorded swim"
+      }
+    },
+    "records": [
+      {
+        "event": "Team Records - Short Course Yards (SCY)",
+        "grade": "Open",
+        "time": "1:02.29"
+      }
+    ]
+  },
+  "Madeline Barnard": {
+    "gender": "girls",
+    "history": {
+      "Tanque Verde High School Swimming": {
+        "first_swim": {
+          "time": "1:15.32",
+          "time_seconds": 75.32,
+          "year": "SR",
+          "date": "Nov 08, 2025",
+          "date_parsed": "2025-11-08T00:00:00",
+          "meet": "2025 D-3 AIA State Championships (AZ)",
+          "season": "alltime"
+        },
+        "last_swim": {
+          "time": "2:30.38",
+          "time_seconds": 150.38,
+          "year": "SR",
+          "date": "Nov 08, 2025",
+          "date_parsed": "2025-11-08T00:00:00",
+          "meet": "2025 D-3 AIA State Championships (AZ)",
+          "season": "alltime"
+        },
+        "total_swims": 2,
+        "time_drop": -75.06,
+        "improvement_text": "75.06s slower"
+      },
+      "100 Freestyle": {
+        "first_swim": {
+          "time": "1:13.50",
+          "time_seconds": 73.5,
+          "year": "FR",
+          "date": "Oct 22, 2022",
+          "date_parsed": "2022-10-22T00:00:00",
+          "meet": "Pecan Classic (sahuarita, AZ)",
+          "season": "2022-23"
+        },
+        "last_swim": {
+          "time": "1:13.50",
+          "time_seconds": 73.5,
+          "year": "FR",
+          "date": "Oct 22, 2022",
+          "date_parsed": "2022-10-22T00:00:00",
+          "meet": "Pecan Classic (sahuarita, AZ)",
+          "season": "2022-23"
+        },
+        "total_swims": 1,
+        "time_drop": 0,
+        "improvement_text": "Only 1 recorded swim"
+      },
+      "100 Breaststroke": {
+        "first_swim": {
+          "time": "1:25.22",
+          "time_seconds": 85.22,
+          "year": "FR",
+          "date": "Oct 28, 2022",
+          "date_parsed": "2022-10-28T00:00:00",
+          "meet": "Southern AZ Regional Qualifier (AZ)",
+          "season": "2022-23"
+        },
+        "last_swim": {
+          "time": "1:16.84",
+          "time_seconds": 76.84,
+          "year": "JR",
+          "date": "Oct 25, 2024",
+          "date_parsed": "2024-10-25T00:00:00",
+          "meet": "Southern Arizona Qualifier (Oro Valley, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 3,
+        "time_drop": 8.379999999999995,
+        "improvement_text": "8.38s"
+      },
+      "200 Freestyle": {
+        "first_swim": {
+          "time": "2:30.62",
+          "time_seconds": 150.62,
+          "year": "JR",
+          "date": "Sep 14, 2024",
+          "date_parsed": "2024-09-14T00:00:00",
+          "meet": "Canyon del Oro Classic (Oro Valley, AZ)",
+          "season": "2024-25"
+        },
+        "last_swim": {
+          "time": "2:30.62",
+          "time_seconds": 150.62,
+          "year": "JR",
+          "date": "Sep 14, 2024",
+          "date_parsed": "2024-09-14T00:00:00",
+          "meet": "Canyon del Oro Classic (Oro Valley, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 1,
+        "time_drop": 0,
+        "improvement_text": "Only 1 recorded swim"
+      },
+      "200 Individual Medley": {
+        "first_swim": {
+          "time": "2:44.06",
+          "time_seconds": 164.06,
+          "year": "SO",
+          "date": "Oct 25, 2023",
+          "date_parsed": "2023-10-25T00:00:00",
+          "meet": "Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ)",
+          "season": "2023-24"
+        },
+        "last_swim": {
+          "time": "2:41.25",
+          "time_seconds": 161.25,
+          "year": "JR",
+          "date": "Sep 28, 2024",
+          "date_parsed": "2024-09-28T00:00:00",
+          "meet": "21st Annual TYR HS Classic (Tucson, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 2,
+        "time_drop": 2.8100000000000023,
+        "improvement_text": "2.81s"
+      }
+    },
+    "records": []
+  },
+  "Grayson The": {
+    "gender": "boys",
+    "history": {
+      "Tanque Verde High School Swimming": {
+        "first_swim": {
+          "time": "23.54",
+          "time_seconds": 23.54,
+          "year": "SR",
+          "date": "Nov 08, 2025",
+          "date_parsed": "2025-11-08T00:00:00",
+          "meet": "2025 D-3 AIA State Championships (AZ)",
+          "season": "alltime"
+        },
+        "last_swim": {
+          "time": "23.54",
+          "time_seconds": 23.54,
+          "year": "SR",
+          "date": "Nov 08, 2025",
+          "date_parsed": "2025-11-08T00:00:00",
+          "meet": "2025 D-3 AIA State Championships (AZ)",
+          "season": "alltime"
+        },
+        "total_swims": 1,
+        "time_drop": 0,
+        "improvement_text": "Only 1 recorded swim"
+      },
+      "50 Freestyle": {
+        "first_swim": {
+          "time": "26.14",
+          "time_seconds": 26.14,
+          "year": "SO",
+          "date": "Sep 16, 2023",
+          "date_parsed": "2023-09-16T00:00:00",
+          "meet": "CDO Classic (Oro Valley Aquatic Center, AZ)",
+          "season": "2023-24"
+        },
+        "last_swim": {
+          "time": "25.37",
+          "time_seconds": 25.37,
+          "year": "JR",
+          "date": "Oct 19, 2024",
+          "date_parsed": "2024-10-19T00:00:00",
+          "meet": "Pecan Classic (Sahuarita, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 2,
+        "time_drop": 0.7699999999999996,
+        "improvement_text": "0.77s"
+      },
+      "100 Freestyle": {
+        "first_swim": {
+          "time": "57.74",
+          "time_seconds": 57.74,
+          "year": "SO",
+          "date": "Sep 23, 2023",
+          "date_parsed": "2023-09-23T00:00:00",
+          "meet": "TYR High School Classic (Hillenbrand Aquatic Center, AZ)",
+          "season": "2023-24"
+        },
+        "last_swim": {
+          "time": "55.17",
+          "time_seconds": 55.17,
+          "year": "JR",
+          "date": "Nov 09, 2024",
+          "date_parsed": "2024-11-09T00:00:00",
+          "meet": "2024 D3 State Championship (Paradise Valley, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 2,
+        "time_drop": 2.5700000000000003,
+        "improvement_text": "2.57s"
+      },
+      "200 Freestyle": {
+        "first_swim": {
+          "time": "2:21.10",
+          "time_seconds": 141.1,
+          "year": "JR",
+          "date": "Sep 14, 2024",
+          "date_parsed": "2024-09-14T00:00:00",
+          "meet": "Canyon del Oro Classic (Oro Valley, AZ)",
+          "season": "2024-25"
+        },
+        "last_swim": {
+          "time": "2:21.10",
+          "time_seconds": 141.1,
+          "year": "JR",
+          "date": "Sep 14, 2024",
+          "date_parsed": "2024-09-14T00:00:00",
+          "meet": "Canyon del Oro Classic (Oro Valley, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 1,
+        "time_drop": 0,
+        "improvement_text": "Only 1 recorded swim"
+      },
+      "100 Breaststroke": {
+        "first_swim": {
+          "time": "1:22.62",
+          "time_seconds": 82.62,
+          "year": "SO",
+          "date": "Sep 16, 2023",
+          "date_parsed": "2023-09-16T00:00:00",
+          "meet": "CDO Classic (Oro Valley Aquatic Center, AZ)",
+          "season": "2023-24"
+        },
+        "last_swim": {
+          "time": "1:22.62",
+          "time_seconds": 82.62,
+          "year": "SO",
+          "date": "Sep 16, 2023",
+          "date_parsed": "2023-09-16T00:00:00",
+          "meet": "CDO Classic (Oro Valley Aquatic Center, AZ)",
+          "season": "2023-24"
+        },
+        "total_swims": 1,
+        "time_drop": 0,
+        "improvement_text": "Only 1 recorded swim"
+      },
+      "200 Individual Medley": {
+        "first_swim": {
+          "time": "2:42.11",
+          "time_seconds": 162.11,
+          "year": "SO",
+          "date": "Oct 25, 2023",
+          "date_parsed": "2023-10-25T00:00:00",
+          "meet": "Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ)",
+          "season": "2023-24"
+        },
+        "last_swim": {
+          "time": "2:42.11",
+          "time_seconds": 162.11,
+          "year": "SO",
+          "date": "Oct 25, 2023",
+          "date_parsed": "2023-10-25T00:00:00",
+          "meet": "Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ)",
+          "season": "2023-24"
+        },
+        "total_swims": 1,
+        "time_drop": 0,
+        "improvement_text": "Only 1 recorded swim"
+      }
+    },
+    "records": []
+  },
+  "Adrianna Witte": {
+    "gender": "girls",
+    "history": {
+      "Tanque Verde High School Swimming": {
+        "first_swim": {
+          "time": "1:13.71",
+          "time_seconds": 73.71000000000001,
+          "year": "SR",
+          "date": "Sep 20, 2025",
+          "date_parsed": "2025-09-20T00:00:00",
+          "meet": "Canyon del Oro Classic (Tucson, AZ)",
+          "season": "alltime"
+        },
+        "last_swim": {
+          "time": "2:35.54",
+          "time_seconds": 155.54,
+          "year": "SR",
+          "date": "Sep 27, 2025",
+          "date_parsed": "2025-09-27T00:00:00",
+          "meet": "Arena High School Classic (Tucson, AZ)",
+          "season": "alltime"
+        },
+        "total_swims": 3,
+        "time_drop": -81.82999999999998,
+        "improvement_text": "81.83s slower"
+      },
+      "50 Freestyle": {
+        "first_swim": {
+          "time": "28.27",
+          "time_seconds": 28.27,
+          "year": "JR",
+          "date": "Sep 14, 2024",
+          "date_parsed": "2024-09-14T00:00:00",
+          "meet": "Canyon del Oro Classic (Oro Valley, AZ)",
+          "season": "2024-25"
+        },
+        "last_swim": {
+          "time": "28.27",
+          "time_seconds": 28.27,
+          "year": "JR",
+          "date": "Sep 14, 2024",
+          "date_parsed": "2024-09-14T00:00:00",
+          "meet": "Canyon del Oro Classic (Oro Valley, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 1,
+        "time_drop": 0,
+        "improvement_text": "Only 1 recorded swim"
+      },
+      "100 Freestyle": {
+        "first_swim": {
+          "time": "1:01.87",
+          "time_seconds": 61.87,
+          "year": "JR",
+          "date": "Sep 28, 2024",
+          "date_parsed": "2024-09-28T00:00:00",
+          "meet": "21st Annual TYR HS Classic (Tucson, AZ)",
+          "season": "2024-25"
+        },
+        "last_swim": {
+          "time": "1:01.87",
+          "time_seconds": 61.87,
+          "year": "JR",
+          "date": "Sep 28, 2024",
+          "date_parsed": "2024-09-28T00:00:00",
+          "meet": "21st Annual TYR HS Classic (Tucson, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 1,
+        "time_drop": 0,
+        "improvement_text": "Only 1 recorded swim"
+      },
+      "200 Freestyle": {
+        "first_swim": {
+          "time": "2:20.34",
+          "time_seconds": 140.34,
+          "year": "JR",
+          "date": "Sep 28, 2024",
+          "date_parsed": "2024-09-28T00:00:00",
+          "meet": "21st Annual TYR HS Classic (Tucson, AZ)",
+          "season": "2024-25"
+        },
+        "last_swim": {
+          "time": "2:20.34",
+          "time_seconds": 140.34,
+          "year": "JR",
+          "date": "Sep 28, 2024",
+          "date_parsed": "2024-09-28T00:00:00",
+          "meet": "21st Annual TYR HS Classic (Tucson, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 1,
+        "time_drop": 0,
+        "improvement_text": "Only 1 recorded swim"
+      },
+      "100 Breaststroke": {
+        "first_swim": {
+          "time": "1:16.16",
+          "time_seconds": 76.16,
+          "year": "JR",
+          "date": "Nov 09, 2024",
+          "date_parsed": "2024-11-09T00:00:00",
+          "meet": "2024 D3 State Championship (Paradise Valley, AZ)",
+          "season": "2024-25"
+        },
+        "last_swim": {
+          "time": "1:16.16",
+          "time_seconds": 76.16,
+          "year": "JR",
+          "date": "Nov 09, 2024",
+          "date_parsed": "2024-11-09T00:00:00",
+          "meet": "2024 D3 State Championship (Paradise Valley, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 1,
+        "time_drop": 0,
+        "improvement_text": "Only 1 recorded swim"
+      }
+    },
+    "records": []
+  },
+  "Carter Caballero": {
+    "gender": "boys",
+    "history": {
+      "50 Freestyle": {
+        "first_swim": {
+          "time": "33.81",
+          "time_seconds": 33.81,
+          "year": "FR",
+          "date": "Oct 22, 2022",
+          "date_parsed": "2022-10-22T00:00:00",
+          "meet": "Pecan Classic (Sahuarita, AZ)",
+          "season": "2022-23"
+        },
+        "last_swim": {
+          "time": "28.34",
+          "time_seconds": 28.34,
+          "year": "JR",
+          "date": "Oct 19, 2024",
+          "date_parsed": "2024-10-19T00:00:00",
+          "meet": "Pecan Classic (Sahuarita, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 2,
+        "time_drop": 5.470000000000002,
+        "improvement_text": "5.47s"
+      },
+      "100 Freestyle": {
+        "first_swim": {
+          "time": "1:19.35",
+          "time_seconds": 79.35,
+          "year": "FR",
+          "date": "Oct 28, 2022",
+          "date_parsed": "2022-10-28T00:00:00",
+          "meet": "Southern AZ Regional Qualifier (AZ)",
+          "season": "2022-23"
+        },
+        "last_swim": {
+          "time": "1:07.34",
+          "time_seconds": 67.34,
+          "year": "JR",
+          "date": "Sep 14, 2024",
+          "date_parsed": "2024-09-14T00:00:00",
+          "meet": "Canyon del Oro Classic (Oro Valley, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 3,
+        "time_drop": 12.009999999999991,
+        "improvement_text": "12.01s"
+      },
+      "100 Breaststroke": {
+        "first_swim": {
+          "time": "1:45.12",
+          "time_seconds": 105.12,
+          "year": "FR",
+          "date": "Oct 22, 2022",
+          "date_parsed": "2022-10-22T00:00:00",
+          "meet": "Pecan Classic (Sahuarita, AZ)",
+          "season": "2022-23"
+        },
+        "last_swim": {
+          "time": "1:22.48",
+          "time_seconds": 82.48,
+          "year": "JR",
+          "date": "Sep 28, 2024",
+          "date_parsed": "2024-09-28T00:00:00",
+          "meet": "21st Annual TYR HS Classic (Tucson, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 2,
+        "time_drop": 22.64,
+        "improvement_text": "22.64s"
+      },
+      "200 Freestyle": {
+        "first_swim": {
+          "time": "2:30.43",
+          "time_seconds": 150.43,
+          "year": "JR",
+          "date": "Oct 25, 2024",
+          "date_parsed": "2024-10-25T00:00:00",
+          "meet": "Southern Arizona Qualifier (Oro Valley, AZ)",
+          "season": "2024-25"
+        },
+        "last_swim": {
+          "time": "2:30.43",
+          "time_seconds": 150.43,
+          "year": "JR",
+          "date": "Oct 25, 2024",
+          "date_parsed": "2024-10-25T00:00:00",
+          "meet": "Southern Arizona Qualifier (Oro Valley, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 1,
+        "time_drop": 0,
+        "improvement_text": "Only 1 recorded swim"
+      }
+    },
+    "records": []
+  },
+  "Brooklyn Johnson": {
+    "gender": "girls",
+    "history": {
+      "100 Freestyle": {
+        "first_swim": {
+          "time": "1:19.55",
+          "time_seconds": 79.55,
+          "year": "FR",
+          "date": "Oct 22, 2022",
+          "date_parsed": "2022-10-22T00:00:00",
+          "meet": "Pecan Classic (sahuarita, AZ)",
+          "season": "2022-23"
+        },
+        "last_swim": {
+          "time": "1:15.72",
+          "time_seconds": 75.72,
+          "year": "JR",
+          "date": "Oct 25, 2024",
+          "date_parsed": "2024-10-25T00:00:00",
+          "meet": "Southern Arizona Qualifier (Oro Valley, AZ)",
+          "season": "2024-25"
+        },
+        "total_swims": 2,
+        "time_drop": 3.8299999999999983,
+        "improvement_text": "3.83s"
+      },
+      "100 Breaststroke": {
+        "first_swim": {
+          "time": "1:36.66",
+          "time_seconds": 96.66,
+          "year": "FR",
+          "date": "Oct 28, 2022",
+          "date_parsed": "2022-10-28T00:00:00",
+          "meet": "Southern AZ Regional Qualifier (AZ)",
+          "season": "2022-23"
+        },
+        "last_swim": {
+          "time": "1:37.59",
+          "time_seconds": 97.59,
+          "year": "SO",
+          "date": "Sep 23, 2023",
+          "date_parsed": "2023-09-23T00:00:00",
+          "meet": "TYR High School Classic (Hillenbrand Aquatic Center, AZ)",
+          "season": "2023-24"
+        },
+        "total_swims": 2,
+        "time_drop": -0.9300000000000068,
+        "improvement_text": "0.93s slower"
+      }
+    },
+    "records": []
+  }
+}
