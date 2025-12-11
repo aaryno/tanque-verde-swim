@@ -1,5 +1,18 @@
 # Historical State Championship Data Import Plan
 
+## Data Sources on AZPreps365
+
+### 1. Championship Results PDFs (2001-2025)
+Full meet results with all swimmers from state meets.
+- URL pattern: `https://aiaonline.org/files/[meet_id]/[filename].pdf`
+- Contains: All finishers, prelim/final times, school names, grades
+
+### 2. State Record Books (NOT useful for TV)
+- Boys: `https://www.aiaonline.org/files/10102/boys-swimming-diving-records.pdf`
+- Girls: `https://www.aiaonline.org/files/16643/girls-swimming-diving-records.pdf`
+- Contains: Top 20 all-time performances in Arizona (state-wide)
+- **Note**: Tanque Verde is NOT on these lists - dominated by D-I powerhouses
+
 ## Data Availability
 
 ### Current Data
