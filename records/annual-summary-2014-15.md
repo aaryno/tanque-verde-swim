@@ -73,13 +73,13 @@
 
 | Event | Boys Time | Boys Swimmer | Girls Time | Girls Swimmer |
 |-------|----------:|--------------|-----------:|---------------|
-| 50 Free | 26.89 | Alex Flores (SO) | 28.41 | Alix Morris (JR) |
+| 50 Free | 26.89 | Alexander Flores (SO) | 28.41 | Alix Morris (JR) |
 | 100 Free | 54.09 | Austin Morris (JR) | 1:02.38 | Alix Morris (JR) |
 | 200 Free | 2:00.05 | Austin Morris (JR) | — | — |
 | 500 Free | 5:27.34 | Austin Morris (JR) | — | — |
 | 100 Back | 1:00.88 | Austin Morris (JR) | 1:47.02 | Nicole Ortega (SR) |
 | 100 Breast | 1:20.46 | Jerah Francone (FR) | 1:16.11 | Madisyn Clausen (SR) |
-| 100 Fly | 1:10.00 | Alex Flores (SO) | — | — |
+| 100 Fly | 1:10.00 | Alexander Flores (SO) | — | — |
 | 200 IM | 2:26.49 | Jerah Francone (FR) | 2:43.00 | Alix Morris (JR) |
 
 ---

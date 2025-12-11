@@ -60,7 +60,7 @@
 - *Date:* Oct 24, 2015 at Small School Championships (Paradise Valley, AZ)
 
 **Boys 100 FL SCY**
-- **NEW:** 1:02.80 - Alex Flores (JR)
+- **NEW:** 1:02.80 - Alexander Flores (JR)
 - *Previous:* 1:07.95 - Andrew Lam
 - *Date:* Oct 24, 2015 at Small School Championships (Paradise Valley, AZ)
 
@@ -112,8 +112,8 @@
 | 500 Free | 5:04.10 | Joseph Breinholt (JR) | 5:35.08 | Anna Ellis (FR) |
 | 100 Back | 59.61 | Austin Morris (SR) | 1:06.58 | Hazel Dasse (FR) |
 | 100 Breast | 1:27.72 | Justin Marcus (FR) | 1:08.97 | Lindsey Sohoel-Smith (FR) |
-| 100 Fly | 1:02.80 | Alex Flores (JR) | 1:08.62 | Lindsey Sohoel-Smith (FR) |
-| 200 IM | 2:22.43 | Alex Flores (JR) | 2:21.44 | Lindsey Sohoel-Smith (FR) |
+| 100 Fly | 1:02.80 | Alexander Flores (JR) | 1:08.62 | Lindsey Sohoel-Smith (FR) |
+| 200 IM | 2:22.43 | Alexander Flores (JR) | 2:21.44 | Lindsey Sohoel-Smith (FR) |
 
 ---
 

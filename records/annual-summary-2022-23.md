@@ -40,17 +40,17 @@
 ## 🏆 Records Broken
 
 **Boys 200 FR SCY**
-- **NEW:** 1:43.60 - Nick Cusson (JR)
-- *Previous:* 1:44.73 - Sam Stott
+- **NEW:** 1:43.60 - Nicholas Cusson (JR)
+- *Previous:* 1:44.73 - Samuel Stott
 - *Date:* Nov 05, 2022 at 2022 D-3 AIA Boys State Championships (AZ)
 
 **Boys 100 BK SCY**
-- **NEW:** 52.83 - Nick Cusson (JR)
-- *Previous:* 56.59 - Nick Cusson
+- **NEW:** 52.83 - Nicholas Cusson (JR)
+- *Previous:* 56.59 - Nicholas Cusson
 - *Date:* Nov 05, 2022 at 2022 D-3 AIA Boys State Championships (AZ)
 
 **Boys 100 BR SCY**
-- **NEW:** 1:08.06 - Sam Stott (SR)
+- **NEW:** 1:08.06 - Samuel Stott (SR)
 - *Previous:* 1:09.05 - Tanner Morris
 - *Date:* Oct 28, 2022 at Southern AZ Regional Qualifier (AZ)
 
@@ -66,12 +66,12 @@
 
 | Event | Boys Time | Boys Swimmer | Girls Time | Girls Swimmer |
 |-------|----------:|--------------|-----------:|---------------|
-| 50 Free | 22.13 | Nick Cusson (JR) | 26.05 | Maggie Colombo (SR) |
-| 100 Free | 48.20 | Sam Stott (SR) | 57.32 | Maggie Colombo (SR) |
-| 200 Free | 1:43.60 | Nick Cusson (JR) | 2:07.85 | Maggie Colombo (SR) |
+| 50 Free | 22.13 | Nicholas Cusson (JR) | 26.05 | Maggie Colombo (SR) |
+| 100 Free | 48.20 | Samuel Stott (SR) | 57.32 | Maggie Colombo (SR) |
+| 200 Free | 1:43.60 | Nicholas Cusson (JR) | 2:07.85 | Maggie Colombo (SR) |
 | 500 Free | 6:02.17 | Nolan Radomsky (JR) | 6:41.81 | Summer Cugini (SO) |
-| 100 Back | 52.83 | Nick Cusson (JR) | 1:04.81 | Paisley White (SR) |
-| 100 Breast | 1:08.06 | Sam Stott (SR) | 1:25.22 | Madeline Barnard (FR) |
+| 100 Back | 52.83 | Nicholas Cusson (JR) | 1:04.81 | Paisley White (SR) |
+| 100 Breast | 1:08.06 | Samuel Stott (SR) | 1:25.22 | Madeline Barnard (FR) |
 | 100 Fly | 1:06.41 | Nolan Radomsky (JR) | 1:04.32 | Paisley White (SR) |
 | 200 IM | 2:25.45 | Nolan Radomsky (JR) | 2:46.85 | Logan Sulger (FR) |
 

@@ -53,12 +53,12 @@
 - *Date:* Nov 05, 2016 at 2016 D-3 AIA State Championships (AZ)
 
 **Boys 100 FL SCY**
-- **NEW:** 59.89 - Xander Flores (SR)
-- *Previous:* 1:02.80 - Alex Flores
+- **NEW:** 59.89 - Alexander Flores (SR)
+- *Previous:* 1:02.80 - Alexander Flores
 - *Date:* Nov 05, 2016 at 2016 D-3 AIA State Championships (AZ)
 
 **Boys 200 IM SCY**
-- **NEW:** 2:13.67 - Xander Flores (SR)
+- **NEW:** 2:13.67 - Alexander Flores (SR)
 - *Previous:* 2:21.41 - Andrew Lam
 - *Date:* Nov 05, 2016 at 2016 D-3 AIA State Championships (AZ)
 
@@ -98,10 +98,10 @@
 | 100 Free | 47.98 | Joe Breinholt (SR) | 1:00.95 | Hazel Dasse (SO) |
 | 200 Free | 1:49.68 | Joe Breinholt (SR) | 2:05.33 | Hazel Dasse (SO) |
 | 500 Free | 6:03.77 | Malachi Poulsen (JR) | 5:32.67 | Anna Ellis (SO) |
-| 100 Back | 1:00.82 | Sam Merrill (JR) | 1:05.85 | Hazel Dasse (SO) |
+| 100 Back | 1:00.82 | Samuel Merrill (JR) | 1:05.85 | Hazel Dasse (SO) |
 | 100 Breast | 1:09.05 | Tanner Morris (SR) | 1:07.01 | Lindsey Sohoel-Smith (SO) |
-| 100 Fly | 59.89 | Xander Flores (SR) | 1:13.52 | Madison Winkle (FR) |
-| 200 IM | 2:13.67 | Xander Flores (SR) | 2:15.55 | Lindsey Sohoel-Smith (SO) |
+| 100 Fly | 59.89 | Alexander Flores (SR) | 1:13.52 | Madison Winkle (FR) |
+| 200 IM | 2:13.67 | Alexander Flores (SR) | 2:15.55 | Lindsey Sohoel-Smith (SO) |
 
 ---
 
