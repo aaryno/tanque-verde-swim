@@ -569,8 +569,19 @@ h2[id] {
     margin-top: 0.25rem;
   }
   
-  .relay-details .meet-full::before {
+  .relay-details .meet-name::before {
     content: "📍 ";
+  }
+  
+  .relay-details .meet-name {
+    display: block;
+  }
+  
+  .relay-details .meet-location {
+    display: block;
+    font-size: 0.7rem;
+    color: #888;
+    padding-left: 1.2rem;
   }
 }
 

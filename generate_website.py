@@ -143,7 +143,8 @@ def create_html_page(title, content, page_type="default"):
                 const cells = row.querySelectorAll('td');
                 if (cells.length >= 5) {{
                     const participants = cells[2].textContent;
-                    const meet = cells[4].textContent;
+                    const date = cells[3].textContent;  // Date is column 4 (index 3)
+                    const meet = cells[4].textContent;  // Meet is column 5 (index 4)
                     
                     // Extract last names
                     const names = participants.split(',').map(n => n.trim());
@@ -165,15 +166,34 @@ def create_html_page(title, content, page_type="default"):
                         member.textContent = n;
                         details.appendChild(member);
                     }});
-                    const meetFull = document.createElement('span');
-                    meetFull.className = 'meet-full';
-                    meetFull.textContent = meet;
-                    details.appendChild(meetFull);
+                    
+                    // Split meet name from location (typically in parentheses)
+                    const meetMatch = meet.match(/^(.+?)(\s*\([^)]+\))?$/);
+                    const meetName = meetMatch ? meetMatch[1].trim() : meet;
+                    const meetLocation = meetMatch && meetMatch[2] ? meetMatch[2].trim() : '';
+                    
+                    const meetDiv = document.createElement('div');
+                    meetDiv.className = 'meet-full';
+                    const meetNameSpan = document.createElement('span');
+                    meetNameSpan.className = 'meet-name';
+                    meetNameSpan.textContent = meetName;
+                    meetDiv.appendChild(meetNameSpan);
+                    if (meetLocation) {{
+                        const meetLocSpan = document.createElement('span');
+                        meetLocSpan.className = 'meet-location';
+                        meetLocSpan.textContent = meetLocation;
+                        meetDiv.appendChild(meetLocSpan);
+                    }}
+                    details.appendChild(meetDiv);
                     
                     // Replace participants cell content
                     cells[2].innerHTML = '';
                     cells[2].appendChild(shortNames);
                     cells[2].appendChild(details);
+                    
+                    // Put date in the date cell (hide meet cell)
+                    cells[3].textContent = date;
+                    cells[4].style.display = 'none';  // Hide meet column
                     
                     // Add click handler
                     shortNames.addEventListener('click', function() {{
@@ -333,6 +353,9 @@ def convert_markdown_file(md_file, output_file, title=None):
     
     # Remove duplicate subtitle (already shown in sticky header)
     html_content = re.sub(r'^## Tanque Verde High School Swimming\s*$', '', html_content, flags=re.MULTILINE)
+    
+    # Remove h1 title from content (it's already in the page header)
+    html_content = re.sub(r'^# .+$', '', html_content, flags=re.MULTILINE)
     
     # Convert remaining markdown elements
     # Headings
