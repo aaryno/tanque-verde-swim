@@ -18,7 +18,7 @@
     <style>
         /* Relay Card Styles - matching splash page */
         .relay-cards-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto 2rem;
         }
         
@@ -33,13 +33,17 @@
         
         .relay-compact-wrapper {
             padding: 0.75rem 1rem;
+            cursor: pointer;
+            user-select: none;
         }
         
-        .relay-line-1 {
+        /* Desktop: Single line header */
+        .relay-header {
             display: flex;
             align-items: center;
             gap: 0.75rem;
             font-size: 1rem;
+            flex-wrap: wrap;
         }
         
         .relay-rank {
@@ -47,6 +51,7 @@
             min-width: 1.5rem;
             text-align: center;
             color: #666;
+            flex-shrink: 0;
         }
         
         .relay-rank.rank-1 {
@@ -69,22 +74,17 @@
             flex-shrink: 0;
         }
         
-        .relay-date {
-            margin-left: auto;
-            font-size: 0.85rem;
-            color: #666;
-            white-space: nowrap;
-        }
-        
-        .relay-line-2 {
-            cursor: pointer;
-            padding: 0.5rem 0 0;
-            user-select: none;
-        }
-        
         .relay-names-short {
             color: #333;
             font-size: 0.95rem;
+            flex: 1;
+        }
+        
+        .relay-date {
+            font-size: 0.85rem;
+            color: #666;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
         
         .relay-arrow {
@@ -92,7 +92,7 @@
             display: inline-block;
             transition: transform 0.2s ease;
             color: #999;
-            margin-left: 0.25rem;
+            flex-shrink: 0;
         }
         
         .relay-compact-wrapper.expanded .relay-arrow {
@@ -112,7 +112,7 @@
         .relay-swimmers {
             padding: 0.75rem 0 0.5rem 0;
             border-top: 1px solid rgba(0,0,0,0.1);
-            margin-top: 0.5rem;
+            margin-top: 0.75rem;
         }
         
         /* Swimmer entry - matching splash page style */
@@ -166,8 +166,41 @@
             font-size: 0.8rem;
         }
         
-        /* Mobile: stack name/stroke on one line, time on right */
-        @media (max-width: 575px) {
+        /* Mobile: Two lines - names wrap to second line */
+        @media (max-width: 650px) {
+            .relay-header {
+                display: grid;
+                grid-template-columns: auto auto 1fr auto;
+                grid-template-rows: auto auto;
+                grid-template-areas:
+                    "rank time date arrow"
+                    "names names names names";
+                gap: 0.25rem 0.5rem;
+            }
+            
+            .relay-rank {
+                grid-area: rank;
+            }
+            
+            .relay-time {
+                grid-area: time;
+            }
+            
+            .relay-date {
+                grid-area: date;
+                text-align: right;
+            }
+            
+            .relay-arrow {
+                grid-area: arrow;
+            }
+            
+            .relay-names-short {
+                grid-area: names;
+                padding-top: 0.25rem;
+            }
+            
+            /* Swimmer entry on mobile */
             .relay-swimmers .swimmer-entry {
                 display: grid;
                 grid-template-columns: 1fr auto;
@@ -294,14 +327,13 @@
     <div class="relay-cards-container">
         
         <div class="relay-card" data-rank="1">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank rank-1">1</span>
                     <span class="relay-time">1:52.15</span>
+                    <span class="relay-names-short">Davis, Bissmeyer, Witte, Sulger</span>
                     <span class="relay-date">Oct 25, 2024</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Davis, Bissmeyer, Witte, Sulger <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -334,14 +366,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="2">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank rank-2">2</span>
                     <span class="relay-time">1:52.45</span>
+                    <span class="relay-names-short">Kidd, Sulger, Witte, Cusson</span>
                     <span class="relay-date">Oct 18, 2025</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Kidd, Sulger, Witte, Cusson <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -374,14 +405,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="3">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank rank-3">3</span>
                     <span class="relay-time">1:53.19</span>
+                    <span class="relay-names-short">Sulger, Drummond, Barnard, Cerepak</span>
                     <span class="relay-date">Oct 24, 2025</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Sulger, Drummond, Barnard, Cerepak <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -414,14 +444,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="4">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">4</span>
                     <span class="relay-time">1:53.50</span>
+                    <span class="relay-names-short">Sansom, Patterson, Pautler, Schoel-Smith</span>
                     <span class="relay-date">Oct 26, 2018</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Sansom, Patterson, Pautler, Schoel-Smith <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -454,14 +483,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="5">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">5</span>
                     <span class="relay-time">1:53.58</span>
+                    <span class="relay-names-short">Sansom, Pautler, Dasse, Weatherwax</span>
                     <span class="relay-date">Nov 01, 2018</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Sansom, Pautler, Dasse, Weatherwax <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -494,14 +522,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="6">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">6</span>
                     <span class="relay-time">1:54.06</span>
+                    <span class="relay-names-short">Dasse, Patterson, Radomsky, Sohoel-Smith</span>
                     <span class="relay-date">Oct 01, 2016</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Dasse, Patterson, Radomsky, Sohoel-Smith <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -534,14 +561,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="7">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">7</span>
                     <span class="relay-time">1:54.87</span>
+                    <span class="relay-names-short">Patterson, Schoel-Smith, Dasse, Radomsky</span>
                     <span class="relay-date">Nov 01, 2018</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Patterson, Schoel-Smith, Dasse, Radomsky <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -574,14 +600,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="8">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">8</span>
                     <span class="relay-time">1:55.49</span>
+                    <span class="relay-names-short">Randomsky, Morris, Hughes, Patterson</span>
                     <span class="relay-date">Nov 04, 2016</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Randomsky, Morris, Hughes, Patterson <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -614,14 +639,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="9">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">9</span>
                     <span class="relay-time">1:56.01</span>
+                    <span class="relay-names-short">Cugini, Sulger, Bissmeyer, Witte</span>
                     <span class="relay-date">Sep 28, 2024</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Cugini, Sulger, Bissmeyer, Witte <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -654,14 +678,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="10">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">10</span>
                     <span class="relay-time">1:56.16</span>
+                    <span class="relay-names-short">Rivera, Roh, Grimshaw, Marner</span>
                     <span class="relay-date">Oct 06, 2012</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Rivera, Roh, Grimshaw, Marner <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -699,14 +722,13 @@
     <div class="relay-cards-container">
         
         <div class="relay-card" data-rank="1">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank rank-1">1</span>
                     <span class="relay-time">1:43.71</span>
+                    <span class="relay-names-short">Colombo, White, Armstrong, Foley</span>
                     <span class="relay-date">Nov 05, 2022</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Colombo, White, Armstrong, Foley <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -739,14 +761,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="2">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank rank-2">2</span>
                     <span class="relay-time">1:43.75</span>
+                    <span class="relay-names-short">Foley, Lightcap, Colombo, Armstrong</span>
                     <span class="relay-date">Nov 05, 2022</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Foley, Lightcap, Colombo, Armstrong <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -779,14 +800,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="3">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank rank-3">3</span>
                     <span class="relay-time">1:44.10</span>
+                    <span class="relay-names-short">White, Colombo, Patterson, Sansom</span>
                     <span class="relay-date">Nov 07, 2019</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">White, Colombo, Patterson, Sansom <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -819,14 +839,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="4">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">4</span>
                     <span class="relay-time">1:44.97</span>
+                    <span class="relay-names-short">Davis, Lightcap, Foley, Armstrong</span>
                     <span class="relay-date">Oct 21, 2023</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Davis, Lightcap, Foley, Armstrong <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -859,14 +878,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="5">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">5</span>
                     <span class="relay-time">1:46.46</span>
+                    <span class="relay-names-short">Colombo, Sulgar, Armstrong, White</span>
                     <span class="relay-date">Nov 06, 2021</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Colombo, Sulgar, Armstrong, White <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -899,14 +917,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="6">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">6</span>
                     <span class="relay-time">1:46.81</span>
+                    <span class="relay-names-short">Foley, Witte, Cusson, Davis</span>
                     <span class="relay-date">Nov 09, 2024</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Foley, Witte, Cusson, Davis <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -939,14 +956,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="7">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">7</span>
                     <span class="relay-time">1:47.67</span>
+                    <span class="relay-names-short">Armstrong, Lightcap, White, Colombo</span>
                     <span class="relay-date">Sep 24, 2022</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Armstrong, Lightcap, White, Colombo <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -979,14 +995,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="8">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">8</span>
                     <span class="relay-time">1:47.69</span>
+                    <span class="relay-names-short">Sansom, Patterson, Dasse, Schoel-Smith</span>
                     <span class="relay-date">Oct 26, 2018</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Sansom, Patterson, Dasse, Schoel-Smith <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -1019,14 +1034,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="9">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">9</span>
                     <span class="relay-time">1:48.11</span>
+                    <span class="relay-names-short">Cugini, Lightcap, Foley, Armstrong</span>
                     <span class="relay-date">Oct 25, 2023</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Cugini, Lightcap, Foley, Armstrong <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -1059,14 +1073,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="10">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">10</span>
                     <span class="relay-time">1:48.20</span>
+                    <span class="relay-names-short">Weatherwax, White, Dasse, Armstrong</span>
                     <span class="relay-date">Nov 05, 2020</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Weatherwax, White, Dasse, Armstrong <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -1104,14 +1117,13 @@
     <div class="relay-cards-container">
         
         <div class="relay-card" data-rank="1">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank rank-1">1</span>
                     <span class="relay-time">3:53.36</span>
+                    <span class="relay-names-short">White, Colombo, Foley, Armstrong</span>
                     <span class="relay-date">Oct 22, 2022</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">White, Colombo, Foley, Armstrong <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -1144,14 +1156,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="2">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank rank-2">2</span>
                     <span class="relay-time">3:55.46</span>
+                    <span class="relay-names-short">Cusson, Davis, Foley, Armstrong</span>
                     <span class="relay-date">Oct 21, 2023</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Cusson, Davis, Foley, Armstrong <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -1184,14 +1195,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="3">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank rank-3">3</span>
                     <span class="relay-time">3:55.63</span>
+                    <span class="relay-names-short">Patterson, Radomsky, Dasse, Sansom</span>
                     <span class="relay-date">Nov 01, 2018</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Patterson, Radomsky, Dasse, Sansom <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -1224,14 +1234,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="4">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">4</span>
                     <span class="relay-time">3:56.02</span>
+                    <span class="relay-names-short">Spooner, Dasse, Patterson, Sohoel-Smith</span>
                     <span class="relay-date">Nov 04, 2016</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Spooner, Dasse, Patterson, Sohoel-Smith <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -1264,14 +1273,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="5">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">5</span>
                     <span class="relay-time">3:58.56</span>
+                    <span class="relay-names-short">Colombo, White, Pautler, Armstrong</span>
                     <span class="relay-date">Nov 05, 2020</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Colombo, White, Pautler, Armstrong <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -1304,14 +1312,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="6">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">6</span>
                     <span class="relay-time">3:58.96</span>
+                    <span class="relay-names-short">Colombo, Foley, Sulgar, Armstrong</span>
                     <span class="relay-date">Nov 06, 2021</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Colombo, Foley, Sulgar, Armstrong <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -1344,14 +1351,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="7">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">7</span>
                     <span class="relay-time">3:59.44</span>
+                    <span class="relay-names-short">Dasse, Radomsky, Patterson, Isenberg</span>
                     <span class="relay-date">Nov 03, 2017</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Dasse, Radomsky, Patterson, Isenberg <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -1384,14 +1390,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="8">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">8</span>
                     <span class="relay-time">3:59.59</span>
+                    <span class="relay-names-short">Colombo, Sulgar, White, Armstrong</span>
                     <span class="relay-date">Nov 06, 2021</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Colombo, Sulgar, White, Armstrong <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -1424,14 +1429,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="9">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">9</span>
                     <span class="relay-time">4:00.33</span>
+                    <span class="relay-names-short">Cerepak, Anderson, Eftekhar, Cusson</span>
                     <span class="relay-date">Nov 08, 2025</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Cerepak, Anderson, Eftekhar, Cusson <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
@@ -1464,14 +1468,13 @@
             </div>
         </div>
         <div class="relay-card" data-rank="10">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank ">10</span>
                     <span class="relay-time">4:00.39</span>
+                    <span class="relay-names-short">Dasse, Morris, Patterson, Isenberg</span>
                     <span class="relay-date">Oct 27, 2017</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">Dasse, Morris, Patterson, Isenberg <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">

@@ -179,16 +179,16 @@ def generate_relay_card_html(relay, gender, splits_data, event_type):
     # Rank badge class
     rank_class = 'rank-1' if rank == 1 else ('rank-2' if rank == 2 else ('rank-3' if rank == 3 else ''))
     
+    # Desktop: single line; Mobile: two lines
     html = f'''
         <div class="relay-card" data-rank="{rank}">
-            <div class="relay-compact-wrapper">
-                <div class="relay-line-1">
+            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
+                <div class="relay-header">
                     <span class="relay-rank {rank_class}">{rank}</span>
                     <span class="relay-time">{time}</span>
+                    <span class="relay-names-short">{last_names}</span>
                     <span class="relay-date">{date}</span>
-                </div>
-                <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
-                    <span class="relay-names-short">{last_names} <span class="relay-arrow">▼</span></span>
+                    <span class="relay-arrow">▼</span>
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">{swimmer_html}
@@ -249,7 +249,7 @@ def generate_full_page_html(gender, events, splits_data):
     <style>
         /* Relay Card Styles - matching splash page */
         .relay-cards-container {{
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto 2rem;
         }}
         
@@ -264,13 +264,17 @@ def generate_full_page_html(gender, events, splits_data):
         
         .relay-compact-wrapper {{
             padding: 0.75rem 1rem;
+            cursor: pointer;
+            user-select: none;
         }}
         
-        .relay-line-1 {{
+        /* Desktop: Single line header */
+        .relay-header {{
             display: flex;
             align-items: center;
             gap: 0.75rem;
             font-size: 1rem;
+            flex-wrap: wrap;
         }}
         
         .relay-rank {{
@@ -278,6 +282,7 @@ def generate_full_page_html(gender, events, splits_data):
             min-width: 1.5rem;
             text-align: center;
             color: #666;
+            flex-shrink: 0;
         }}
         
         .relay-rank.rank-1 {{
@@ -300,22 +305,17 @@ def generate_full_page_html(gender, events, splits_data):
             flex-shrink: 0;
         }}
         
-        .relay-date {{
-            margin-left: auto;
-            font-size: 0.85rem;
-            color: #666;
-            white-space: nowrap;
-        }}
-        
-        .relay-line-2 {{
-            cursor: pointer;
-            padding: 0.5rem 0 0;
-            user-select: none;
-        }}
-        
         .relay-names-short {{
             color: #333;
             font-size: 0.95rem;
+            flex: 1;
+        }}
+        
+        .relay-date {{
+            font-size: 0.85rem;
+            color: #666;
+            white-space: nowrap;
+            flex-shrink: 0;
         }}
         
         .relay-arrow {{
@@ -323,7 +323,7 @@ def generate_full_page_html(gender, events, splits_data):
             display: inline-block;
             transition: transform 0.2s ease;
             color: #999;
-            margin-left: 0.25rem;
+            flex-shrink: 0;
         }}
         
         .relay-compact-wrapper.expanded .relay-arrow {{
@@ -343,7 +343,7 @@ def generate_full_page_html(gender, events, splits_data):
         .relay-swimmers {{
             padding: 0.75rem 0 0.5rem 0;
             border-top: 1px solid rgba(0,0,0,0.1);
-            margin-top: 0.5rem;
+            margin-top: 0.75rem;
         }}
         
         /* Swimmer entry - matching splash page style */
@@ -397,8 +397,41 @@ def generate_full_page_html(gender, events, splits_data):
             font-size: 0.8rem;
         }}
         
-        /* Mobile: stack name/stroke on one line, time on right */
-        @media (max-width: 575px) {{
+        /* Mobile: Two lines - names wrap to second line */
+        @media (max-width: 650px) {{
+            .relay-header {{
+                display: grid;
+                grid-template-columns: auto auto 1fr auto;
+                grid-template-rows: auto auto;
+                grid-template-areas:
+                    "rank time date arrow"
+                    "names names names names";
+                gap: 0.25rem 0.5rem;
+            }}
+            
+            .relay-rank {{
+                grid-area: rank;
+            }}
+            
+            .relay-time {{
+                grid-area: time;
+            }}
+            
+            .relay-date {{
+                grid-area: date;
+                text-align: right;
+            }}
+            
+            .relay-arrow {{
+                grid-area: arrow;
+            }}
+            
+            .relay-names-short {{
+                grid-area: names;
+                padding-top: 0.25rem;
+            }}
+            
+            /* Swimmer entry on mobile */
             .relay-swimmers .swimmer-entry {{
                 display: grid;
                 grid-template-columns: 1fr auto;
