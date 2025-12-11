@@ -94,24 +94,22 @@ def merge_records(existing, leadoffs, event_type):
     
     # Convert leadoffs to record format
     for leadoff in leadoffs:
-        # Map year codes to season
-        year = leadoff.get('year', '')
         grade = leadoff.get('grade', '')
-        from_relay = leadoff.get('from_relay', '')
         
-        # Format season year nicely (e.g., "22-23" -> "2022-23")
-        if year and len(year) == 5:  # Format: "22-23"
-            season_display = f"20{year[:2]}-{year[3:]}"
-        else:
-            season_display = year
+        # Use enriched date/meet if available, fallback to season
+        date = leadoff.get('date', '')
+        meet = leadoff.get('meet', '')
+        
+        # If date looks like a season (e.g., "2022-23"), keep as is
+        # Otherwise it's an actual date
         
         existing.append({
             'time': leadoff['time'],
             'time_str': leadoff['time_str'],
             'name': leadoff['name'],
             'year': grade,
-            'date': season_display,
-            'meet': f"{from_relay} Relay Leadoff",
+            'date': date,
+            'meet': meet,
             'is_relay': True
         })
     
