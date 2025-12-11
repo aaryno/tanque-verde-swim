@@ -31,6 +31,15 @@ YEAR_MAP = {
     # GIRLS - from 2021-22 data (subtract 1 year)
     "Shaye Sulger": "JR",        # SR in 2021-22 (also spelled Sulgar)
     "Shaye Sulgar": "JR",        # SR in 2021-22 (alternate spelling)
+    
+    # From Coach Porter Olstad + data verification
+    "Beck Caballero": "FR",      # Per coach, also appears in 2021-22
+    "Zach Head": "FR",           # Per coach, only appears in 2020-21
+    "Finbar Whitfield": "SO",    # Per coach
+    "Rosalyn Jacobs": "FR",      # Per coach
+    "Emma Kalway": "JR",         # FR(2018-19), SO(2019-20), SR(2021-22) = JR in 2020-21
+    "Kylie England": "JR",       # FR(2018-19), SO(2019-20) = JR in 2020-21
+    "Samantha Oligmuller": "SO", # Per coach - swam SO year only
 }
 
 # Swimmers still unknown after cross-reference
