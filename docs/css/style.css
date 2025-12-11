@@ -239,14 +239,19 @@ body {
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .relay-line-1 {
-    flex-wrap: wrap;
     gap: 0.5rem;
   }
   
+  .relay-line-1 .rank-badge {
+    font-size: 1rem;
+  }
+  
+  .relay-line-1 .time-value {
+    font-size: 1rem;
+  }
+  
   .relay-line-1 .date-value {
-    margin-left: 0;
-    flex-basis: 100%;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
   
   .relay-line-2 {
