@@ -93,7 +93,7 @@
 | 500 Free | — | — | — | — |
 | 100 Back | 1:15.51 | Greg Wheeler (SR) | 1:11.04 | Madisyn Clausen (JR) |
 | 100 Breast | 1:25.84 | Forrest Carlton (SR) | 1:26.33 | Amanda Grimshaw (SR) |
-| 100 Fly | 1:29.63 | Alex Flores (FR) | — | — |
+| 100 Fly | 1:29.63 | Alexander Flores (FR) | — | — |
 | 200 IM | 2:21.41 | Andrew Lam (SR) | 2:35.04 | Madisyn Clausen (JR) |
 
 ---

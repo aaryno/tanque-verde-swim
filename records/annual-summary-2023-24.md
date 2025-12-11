@@ -79,7 +79,7 @@
 | 200 Free | 1:47.33 | Nicholas Cusson (SR) | 2:07.92 | Natalie Armstrong (SR) |
 | 500 Free | 5:17.84 | Wade Olsson (FR) | 6:17.63 | Kadynce Drummond (FR) |
 | 100 Back | 52.68 | Nicholas Cusson (SR) | 1:07.29 | Brianne Foley (JR) |
-| 100 Breast | 1:04.17 | Zachary Duerkop (SO) | 1:18.30 | Alexa Barrera |
+| 100 Breast | 1:04.17 | Zachary Duerkop (SO) | 1:18.30 | Alexa Barrera (SR) |
 | 100 Fly | 53.45 | Nicholas Cusson (SR) | 1:03.68 | Brianne Foley (JR) |
 | 200 IM | 2:02.29 | Nicholas Cusson (SR) | 2:43.18 | Hadley Cusson (FR) |
 

@@ -56,7 +56,7 @@
 
 | Event | Boys Time | Boys Swimmer | Girls Time | Girls Swimmer |
 |-------|----------:|--------------|-----------:|---------------|
-| 50 Free | 22.24 | Samuel Stott | 26.31 | Chloe Weatherwax |
+| 50 Free | 22.24 | Samuel Stott | 26.31 | Chloe Weatherwax (FR) |
 | 100 Free | 47.71 | Samuel Stott | 58.58 | Natalie Armstrong (FR) |
 | 200 Free | 1:54.31 | Nicholas Cusson (FR) | 2:08.36 | Natalie Armstrong (FR) |
 | 500 Free | 5:57.26 | Julian Pacheco | 6:23.20 | Sage Weatherwax (JR) |

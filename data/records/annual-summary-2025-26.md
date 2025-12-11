@@ -44,12 +44,12 @@
 
 **Boys 100 FL SCY**
 - **NEW:** 52.48 - Zachary Duerkop (SR)
-- *Previous:* 53.45 - Nick Cusson
+- *Previous:* 53.45 - Nicholas Cusson
 - *Date:* Nov 08, 2025 at 2025 D-3 AIA State Championships (AZ)
 
 **Boys 200 IM SCY**
 - **NEW:** 1:57.78 - Wade Olsson (JR)
-- *Previous:* 2:02.29 - Nick Cusson
+- *Previous:* 2:02.29 - Nicholas Cusson
 - *Date:* Nov 08, 2025 at 2025 D-3 AIA State Championships (AZ)
 
 **Girls 100 BK SCY**
