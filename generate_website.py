@@ -142,8 +142,8 @@ def create_html_page(title, content, page_type="default"):
     </div>
     
     <script>
-    // Build Jump To dropdown from h2 headings
     document.addEventListener('DOMContentLoaded', function() {{
+        // Build Jump To dropdown from h2 headings
         const headings = document.querySelectorAll('h2');
         if (headings.length > 2) {{
             let options = '<div class="jump-to-dropdown dropdown"><button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">Jump To</button><ul class="dropdown-menu dropdown-menu-end">';
@@ -154,6 +154,55 @@ def create_html_page(title, content, page_type="default"):
             }});
             options += '</ul></div>';
             document.getElementById('jump-to-container').innerHTML = options;
+        }}
+        
+        // Check if this is a relay records page
+        const isRelayPage = document.title.toLowerCase().includes('relay');
+        if (isRelayPage && window.innerWidth <= 576) {{
+            // Transform relay tables for mobile
+            document.querySelectorAll('table tbody tr').forEach(function(row) {{
+                const cells = row.querySelectorAll('td');
+                if (cells.length >= 5) {{
+                    const participants = cells[2].textContent;
+                    const meet = cells[4].textContent;
+                    
+                    // Extract last names
+                    const names = participants.split(',').map(n => n.trim());
+                    const lastNames = names.map(n => {{
+                        const parts = n.split(' ');
+                        return parts[parts.length - 1];
+                    }}).join(', ');
+                    
+                    // Create expandable content
+                    const shortNames = document.createElement('div');
+                    shortNames.className = 'relay-names';
+                    shortNames.textContent = lastNames;
+                    
+                    const details = document.createElement('div');
+                    details.className = 'relay-details';
+                    names.forEach(n => {{
+                        const member = document.createElement('span');
+                        member.className = 'member';
+                        member.textContent = n;
+                        details.appendChild(member);
+                    }});
+                    const meetFull = document.createElement('span');
+                    meetFull.className = 'meet-full';
+                    meetFull.textContent = meet;
+                    details.appendChild(meetFull);
+                    
+                    // Replace participants cell content
+                    cells[2].innerHTML = '';
+                    cells[2].appendChild(shortNames);
+                    cells[2].appendChild(details);
+                    
+                    // Add click handler
+                    shortNames.addEventListener('click', function() {{
+                        this.classList.toggle('expanded');
+                        details.classList.toggle('show');
+                    }});
+                }}
+            }});
         }}
     }});
     </script>
@@ -267,6 +316,9 @@ def convert_markdown_file(md_file, output_file, title=None):
     
     # Convert tables first
     html_content = markdown_to_html_table(md_content)
+    
+    # Remove duplicate subtitle (already shown in sticky header)
+    html_content = re.sub(r'^## Tanque Verde High School Swimming\s*$', '', html_content, flags=re.MULTILINE)
     
     # Convert remaining markdown elements
     # Headings

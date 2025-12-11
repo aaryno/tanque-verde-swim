@@ -122,8 +122,8 @@
     </div>
     
     <script>
-    // Build Jump To dropdown from h2 headings
     document.addEventListener('DOMContentLoaded', function() {
+        // Build Jump To dropdown from h2 headings
         const headings = document.querySelectorAll('h2');
         if (headings.length > 2) {
             let options = '<div class="jump-to-dropdown dropdown"><button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">Jump To</button><ul class="dropdown-menu dropdown-menu-end">';
@@ -135,6 +135,55 @@
             options += '</ul></div>';
             document.getElementById('jump-to-container').innerHTML = options;
         }
+        
+        // Check if this is a relay records page
+        const isRelayPage = document.title.toLowerCase().includes('relay');
+        if (isRelayPage && window.innerWidth <= 576) {
+            // Transform relay tables for mobile
+            document.querySelectorAll('table tbody tr').forEach(function(row) {
+                const cells = row.querySelectorAll('td');
+                if (cells.length >= 5) {
+                    const participants = cells[2].textContent;
+                    const meet = cells[4].textContent;
+                    
+                    // Extract last names
+                    const names = participants.split(',').map(n => n.trim());
+                    const lastNames = names.map(n => {
+                        const parts = n.split(' ');
+                        return parts[parts.length - 1];
+                    }).join(', ');
+                    
+                    // Create expandable content
+                    const shortNames = document.createElement('div');
+                    shortNames.className = 'relay-names';
+                    shortNames.textContent = lastNames;
+                    
+                    const details = document.createElement('div');
+                    details.className = 'relay-details';
+                    names.forEach(n => {
+                        const member = document.createElement('span');
+                        member.className = 'member';
+                        member.textContent = n;
+                        details.appendChild(member);
+                    });
+                    const meetFull = document.createElement('span');
+                    meetFull.className = 'meet-full';
+                    meetFull.textContent = meet;
+                    details.appendChild(meetFull);
+                    
+                    // Replace participants cell content
+                    cells[2].innerHTML = '';
+                    cells[2].appendChild(shortNames);
+                    cells[2].appendChild(details);
+                    
+                    // Add click handler
+                    shortNames.addEventListener('click', function() {
+                        this.classList.toggle('expanded');
+                        details.classList.toggle('show');
+                    });
+                }
+            });
+        }
     });
     </script>
     
@@ -142,7 +191,6 @@
     <div class="container my-4">
         <div class="content">
 <h1>Girls Top 10 - 2015-16 Season</h1>
-<h2>Tanque Verde High School Swimming</h2>
 <strong>Generated:</strong> November 14, 2025
 <hr>
 <h2>50 Freestyle</h2>
