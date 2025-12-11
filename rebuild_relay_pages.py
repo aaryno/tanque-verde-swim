@@ -121,10 +121,16 @@ def get_stroke_for_position(event_type, position):
     else:
         return 'Freestyle'
 
+def strip_leading_zero(time_str):
+    """Remove leading zero from time (01:42.54 -> 1:42.54)"""
+    if time_str.startswith('0'):
+        return time_str[1:]
+    return time_str
+
 def generate_relay_card_html(relay, gender, splits_data, event_type):
     """Generate HTML for a single relay card"""
     rank = relay['rank']
-    time = relay['time']
+    time = strip_leading_zero(relay['time'])  # Remove leading zero
     participants = relay['participants']
     date = relay['date']
     meet = relay['meet']
@@ -136,7 +142,7 @@ def generate_relay_card_html(relay, gender, splits_data, event_type):
     # Find splits
     splits_match = find_splits_for_relay(splits_data, gender, event_type, participants, time)
     
-    # Build swimmer lines with splits
+    # Build swimmer lines with splits (matching splash page style)
     swimmer_html = ''
     for i, swimmer in enumerate(swimmers):
         split_time = ''
@@ -157,19 +163,13 @@ def generate_relay_card_html(relay, gender, splits_data, event_type):
             elif i < len(splits):
                 split_time = format_split_time(splits[i])
         
-        split_display = f'<span class="relay-split-time">{split_time}</span>' if split_time else ''
-        stroke_display = f'<span class="relay-stroke">{stroke}</span>' if stroke else ''
-        
+        # Match splash page format: name | stroke (italic) | time (bold, right)
         swimmer_html += f'''
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">{swimmer}</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    {split_display}
-                    {stroke_display}
-                </div>
-            </div>'''
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">{swimmer}</span>
+                                            <span class="swimmer-stroke">{stroke}</span>
+                                            <span class="swimmer-time">{split_time}</span>
+                                        </div>'''
     
     # Parse meet name and location
     meet_match = re.match(r'^(.+?)(\s*\([^)]+\))?$', meet)
@@ -191,8 +191,7 @@ def generate_relay_card_html(relay, gender, splits_data, event_type):
                     <span class="relay-names-short">{last_names} <span class="relay-arrow">▼</span></span>
                 </div>
                 <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                        {swimmer_html}
+                    <div class="relay-swimmers">{swimmer_html}
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">{meet_name}</span>
@@ -248,14 +247,15 @@ def generate_full_page_html(gender, events, splits_data):
     <link rel="apple-touch-icon" href="/images/hawk-logo.png">
     
     <style>
-        /* Relay Card Styles */
+        /* Relay Card Styles - matching splash page */
         .relay-cards-container {{
             max-width: 800px;
             margin: 0 auto 2rem;
         }}
         
         .relay-card {{
-            background: #fff;
+            background-color: #E8F5E9; /* Pale green like splash page */
+            border-left: 4px solid var(--tvhs-primary, #0a3622);
             border-radius: 8px;
             margin-bottom: 0.5rem;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -294,8 +294,8 @@ def generate_full_page_html(gender, events, splits_data):
         }}
         
         .relay-time {{
-            font-family: 'SF Mono', Monaco, monospace;
-            font-weight: 600;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
             color: var(--tvhs-primary, #0a3622);
             flex-shrink: 0;
         }}
@@ -342,42 +342,47 @@ def generate_full_page_html(gender, events, splits_data):
         
         .relay-swimmers {{
             padding: 0.75rem 0 0.5rem 0;
-            border-top: 1px solid #eee;
+            border-top: 1px solid rgba(0,0,0,0.1);
             margin-top: 0.5rem;
         }}
         
-        .relay-swimmer-entry {{
-            margin-bottom: 0.5rem;
+        /* Swimmer entry - matching splash page style */
+        .relay-swimmers .swimmer-entry {{
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }}
         
-        .relay-swimmer-name-line {{
+        .relay-swimmers .swimmer-entry:last-child {{
+            border-bottom: none;
+        }}
+        
+        .relay-swimmers .swimmer-name {{
+            flex: 1;
             font-weight: 500;
-        }}
-        
-        .relay-swimmer-name {{
             color: #333;
         }}
         
-        .relay-swimmer-split-line {{
-            display: flex;
-            justify-content: space-between;
-            padding-left: 1rem;
+        .relay-swimmers .swimmer-stroke {{
             font-size: 0.85rem;
-        }}
-        
-        .relay-split-time {{
-            font-family: 'SF Mono', Monaco, monospace;
-            color: var(--tvhs-primary, #0a3622);
-        }}
-        
-        .relay-stroke {{
-            color: #888;
+            color: #666;
             font-style: italic;
+        }}
+        
+        .relay-swimmers .swimmer-time {{
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 1rem;
+            color: var(--tvhs-primary, #0a3622);
+            min-width: 3.5rem;
+            text-align: right;
         }}
         
         .relay-meet {{
             padding: 0.5rem 0;
-            border-top: 1px solid #eee;
+            border-top: 1px solid rgba(0,0,0,0.1);
             font-size: 0.85rem;
             color: #555;
         }}
@@ -392,18 +397,28 @@ def generate_full_page_html(gender, events, splits_data):
             font-size: 0.8rem;
         }}
         
-        /* Desktop: single line for splits */
-        @media (min-width: 576px) {{
-            .relay-swimmer-entry {{
-                display: flex;
-                align-items: baseline;
-                gap: 1rem;
+        /* Mobile: stack name/stroke on one line, time on right */
+        @media (max-width: 575px) {{
+            .relay-swimmers .swimmer-entry {{
+                display: grid;
+                grid-template-columns: 1fr auto;
+                grid-template-areas: 
+                    "name time"
+                    "stroke stroke";
+                gap: 0.25rem;
             }}
             
-            .relay-swimmer-split-line {{
-                flex-direction: row;
-                gap: 1rem;
-                padding-left: 0;
+            .relay-swimmers .swimmer-name {{
+                grid-area: name;
+            }}
+            
+            .relay-swimmers .swimmer-stroke {{
+                grid-area: stroke;
+                font-size: 0.8rem;
+            }}
+            
+            .relay-swimmers .swimmer-time {{
+                grid-area: time;
             }}
         }}
     </style>

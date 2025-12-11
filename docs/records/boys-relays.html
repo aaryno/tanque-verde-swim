@@ -16,14 +16,15 @@
     <link rel="apple-touch-icon" href="/images/hawk-logo.png">
     
     <style>
-        /* Relay Card Styles */
+        /* Relay Card Styles - matching splash page */
         .relay-cards-container {
             max-width: 800px;
             margin: 0 auto 2rem;
         }
         
         .relay-card {
-            background: #fff;
+            background-color: #E8F5E9; /* Pale green like splash page */
+            border-left: 4px solid var(--tvhs-primary, #0a3622);
             border-radius: 8px;
             margin-bottom: 0.5rem;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -62,8 +63,8 @@
         }
         
         .relay-time {
-            font-family: 'SF Mono', Monaco, monospace;
-            font-weight: 600;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
             color: var(--tvhs-primary, #0a3622);
             flex-shrink: 0;
         }
@@ -110,42 +111,47 @@
         
         .relay-swimmers {
             padding: 0.75rem 0 0.5rem 0;
-            border-top: 1px solid #eee;
+            border-top: 1px solid rgba(0,0,0,0.1);
             margin-top: 0.5rem;
         }
         
-        .relay-swimmer-entry {
-            margin-bottom: 0.5rem;
+        /* Swimmer entry - matching splash page style */
+        .relay-swimmers .swimmer-entry {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         
-        .relay-swimmer-name-line {
+        .relay-swimmers .swimmer-entry:last-child {
+            border-bottom: none;
+        }
+        
+        .relay-swimmers .swimmer-name {
+            flex: 1;
             font-weight: 500;
-        }
-        
-        .relay-swimmer-name {
             color: #333;
         }
         
-        .relay-swimmer-split-line {
-            display: flex;
-            justify-content: space-between;
-            padding-left: 1rem;
+        .relay-swimmers .swimmer-stroke {
             font-size: 0.85rem;
-        }
-        
-        .relay-split-time {
-            font-family: 'SF Mono', Monaco, monospace;
-            color: var(--tvhs-primary, #0a3622);
-        }
-        
-        .relay-stroke {
-            color: #888;
+            color: #666;
             font-style: italic;
+        }
+        
+        .relay-swimmers .swimmer-time {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 1rem;
+            color: var(--tvhs-primary, #0a3622);
+            min-width: 3.5rem;
+            text-align: right;
         }
         
         .relay-meet {
             padding: 0.5rem 0;
-            border-top: 1px solid #eee;
+            border-top: 1px solid rgba(0,0,0,0.1);
             font-size: 0.85rem;
             color: #555;
         }
@@ -160,18 +166,28 @@
             font-size: 0.8rem;
         }
         
-        /* Desktop: single line for splits */
-        @media (min-width: 576px) {
-            .relay-swimmer-entry {
-                display: flex;
-                align-items: baseline;
-                gap: 1rem;
+        /* Mobile: stack name/stroke on one line, time on right */
+        @media (max-width: 575px) {
+            .relay-swimmers .swimmer-entry {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                grid-template-areas: 
+                    "name time"
+                    "stroke stroke";
+                gap: 0.25rem;
             }
             
-            .relay-swimmer-split-line {
-                flex-direction: row;
-                gap: 1rem;
-                padding-left: 0;
+            .relay-swimmers .swimmer-name {
+                grid-area: name;
+            }
+            
+            .relay-swimmers .swimmer-stroke {
+                grid-area: stroke;
+                font-size: 0.8rem;
+            }
+            
+            .relay-swimmers .swimmer-time {
+                grid-area: time;
             }
         }
     </style>
@@ -281,7 +297,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank rank-1">1</span>
-                    <span class="relay-time">01:42.54</span>
+                    <span class="relay-time">1:42.54</span>
                     <span class="relay-date">Oct 26, 2018</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -289,43 +305,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Logan Radomsky</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">25.42</span>
-                    <span class="relay-stroke">Backstroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Titan Flint</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">28.07</span>
-                    <span class="relay-stroke">Breaststroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Lukas Baker</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">25.68</span>
-                    <span class="relay-stroke">Butterfly</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">John Deninghoff</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">23.37</span>
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Logan Radomsky</span>
+                                            <span class="swimmer-stroke">Backstroke</span>
+                                            <span class="swimmer-time">25.42</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Titan Flint</span>
+                                            <span class="swimmer-stroke">Breaststroke</span>
+                                            <span class="swimmer-time">28.07</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Lukas Baker</span>
+                                            <span class="swimmer-stroke">Butterfly</span>
+                                            <span class="swimmer-time">25.68</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">John Deninghoff</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time">23.37</span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">Southern Arizona Regional Qualifier</span>
@@ -338,7 +337,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank rank-2">2</span>
-                    <span class="relay-time">01:42.70</span>
+                    <span class="relay-time">1:42.70</span>
                     <span class="relay-date">Nov 08, 2025</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -346,43 +345,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Kent Olsson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">27.69</span>
-                    <span class="relay-stroke">Backstroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Wade Olsson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">27.68</span>
-                    <span class="relay-stroke">Breaststroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Eftekhar</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">24.08</span>
-                    <span class="relay-stroke">Butterfly</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Grayson The</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">23.25</span>
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Kent Olsson</span>
+                                            <span class="swimmer-stroke">Backstroke</span>
+                                            <span class="swimmer-time">27.69</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Wade Olsson</span>
+                                            <span class="swimmer-stroke">Breaststroke</span>
+                                            <span class="swimmer-time">27.68</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Eftekhar</span>
+                                            <span class="swimmer-stroke">Butterfly</span>
+                                            <span class="swimmer-time">24.08</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Grayson The</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time">23.25</span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">Division III - State Swim & Dive</span>
@@ -395,7 +377,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank rank-3">3</span>
-                    <span class="relay-time">01:42.98</span>
+                    <span class="relay-time">1:42.98</span>
                     <span class="relay-date">Oct 28, 2022</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -403,43 +385,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Alejandro Alvarez</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">25.45</span>
-                    <span class="relay-stroke">Backstroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nolan Radomsky</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">25.12</span>
-                    <span class="relay-stroke">Breaststroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Tannor Soedor</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">26.16</span>
-                    <span class="relay-stroke">Butterfly</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Stephen Moreland</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">26.25</span>
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Alejandro Alvarez</span>
+                                            <span class="swimmer-stroke">Backstroke</span>
+                                            <span class="swimmer-time">25.45</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nolan Radomsky</span>
+                                            <span class="swimmer-stroke">Breaststroke</span>
+                                            <span class="swimmer-time">25.12</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Tannor Soedor</span>
+                                            <span class="swimmer-stroke">Butterfly</span>
+                                            <span class="swimmer-time">26.16</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Stephen Moreland</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time">26.25</span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">Southern AZ Regional Qualifier</span>
@@ -452,7 +417,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">4</span>
-                    <span class="relay-time">01:43.02</span>
+                    <span class="relay-time">1:43.02</span>
                     <span class="relay-date">Nov 01, 2019</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -460,43 +425,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Dominic Colombo</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">26.66</span>
-                    <span class="relay-stroke">Backstroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nate Grimshaw</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">26.68</span>
-                    <span class="relay-stroke">Breaststroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Julian Pacheco</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">25.77</span>
-                    <span class="relay-stroke">Butterfly</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Logan Radomsky</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">23.91</span>
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Dominic Colombo</span>
+                                            <span class="swimmer-stroke">Backstroke</span>
+                                            <span class="swimmer-time">26.66</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nate Grimshaw</span>
+                                            <span class="swimmer-stroke">Breaststroke</span>
+                                            <span class="swimmer-time">26.68</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Julian Pacheco</span>
+                                            <span class="swimmer-stroke">Butterfly</span>
+                                            <span class="swimmer-time">25.77</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Logan Radomsky</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time">23.91</span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">Canyon Del Oro Invite</span>
@@ -509,7 +457,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">5</span>
-                    <span class="relay-time">01:44.98</span>
+                    <span class="relay-time">1:44.98</span>
                     <span class="relay-date">Oct 25, 2024</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -517,43 +465,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Grayson The</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">25.63</span>
-                    <span class="relay-stroke">Backstroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Lucas Soeder</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">26.43</span>
-                    <span class="relay-stroke">Breaststroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Carter Caballero</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">28.25</span>
-                    <span class="relay-stroke">Butterfly</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Peyton Kowalski</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">24.67</span>
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Grayson The</span>
+                                            <span class="swimmer-stroke">Backstroke</span>
+                                            <span class="swimmer-time">25.63</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Lucas Soeder</span>
+                                            <span class="swimmer-stroke">Breaststroke</span>
+                                            <span class="swimmer-time">26.43</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Carter Caballero</span>
+                                            <span class="swimmer-stroke">Butterfly</span>
+                                            <span class="swimmer-time">28.25</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Peyton Kowalski</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time">24.67</span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">Southern Arizona Qualifier</span>
@@ -566,7 +497,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">6</span>
-                    <span class="relay-time">01:45.73</span>
+                    <span class="relay-time">1:45.73</span>
                     <span class="relay-date">Oct 25, 2024</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -574,43 +505,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Wade Olsson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">24.81</span>
-                    <span class="relay-stroke">Backstroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Zachary Duerkop</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">23.94</span>
-                    <span class="relay-stroke">Breaststroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Eftekhar</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">24.75</span>
-                    <span class="relay-stroke">Butterfly</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Machamer</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">23.03</span>
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Wade Olsson</span>
+                                            <span class="swimmer-stroke">Backstroke</span>
+                                            <span class="swimmer-time">24.81</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Zachary Duerkop</span>
+                                            <span class="swimmer-stroke">Breaststroke</span>
+                                            <span class="swimmer-time">23.94</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Eftekhar</span>
+                                            <span class="swimmer-stroke">Butterfly</span>
+                                            <span class="swimmer-time">24.75</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Machamer</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time">23.03</span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">Southern Arizona Qualifier</span>
@@ -623,7 +537,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">7</span>
-                    <span class="relay-time">01:46.38</span>
+                    <span class="relay-time">1:46.38</span>
                     <span class="relay-date">Sep 20, 2025</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -631,43 +545,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Kent Olsson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">28.92</span>
-                    <span class="relay-stroke">Backstroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Wade Olsson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">28.28</span>
-                    <span class="relay-stroke">Breaststroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Zachary Duerkop</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">23.99</span>
-                    <span class="relay-stroke">Butterfly</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Machamer</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">25.19</span>
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Kent Olsson</span>
+                                            <span class="swimmer-stroke">Backstroke</span>
+                                            <span class="swimmer-time">28.92</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Wade Olsson</span>
+                                            <span class="swimmer-stroke">Breaststroke</span>
+                                            <span class="swimmer-time">28.28</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Zachary Duerkop</span>
+                                            <span class="swimmer-stroke">Butterfly</span>
+                                            <span class="swimmer-time">23.99</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Machamer</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time">25.19</span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">Canyon del Oro Classic</span>
@@ -680,7 +577,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">8</span>
-                    <span class="relay-time">01:46.69</span>
+                    <span class="relay-time">1:46.69</span>
                     <span class="relay-date">Oct 23, 2021</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -688,43 +585,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Stephen Moreland</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">25.45</span>
-                    <span class="relay-stroke">Backstroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nicholas Spilotro</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">25.12</span>
-                    <span class="relay-stroke">Breaststroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Alejandro Alvarez</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">26.16</span>
-                    <span class="relay-stroke">Butterfly</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nolan Radomsky</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">26.25</span>
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Stephen Moreland</span>
+                                            <span class="swimmer-stroke">Backstroke</span>
+                                            <span class="swimmer-time">25.45</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nicholas Spilotro</span>
+                                            <span class="swimmer-stroke">Breaststroke</span>
+                                            <span class="swimmer-time">25.12</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Alejandro Alvarez</span>
+                                            <span class="swimmer-stroke">Butterfly</span>
+                                            <span class="swimmer-time">26.16</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nolan Radomsky</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time">26.25</span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">Pecan Classic</span>
@@ -737,7 +617,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">9</span>
-                    <span class="relay-time">01:47.12</span>
+                    <span class="relay-time">1:47.12</span>
                     <span class="relay-date">Sep 22, 2018</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -745,43 +625,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nicholas Spilotro</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">27.78</span>
-                    <span class="relay-stroke">Backstroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Titan Flint</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">26.96</span>
-                    <span class="relay-stroke">Breaststroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">John Denninghoff</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">25.17</span>
-                    <span class="relay-stroke">Butterfly</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Eli Stott</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">27.21</span>
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nicholas Spilotro</span>
+                                            <span class="swimmer-stroke">Backstroke</span>
+                                            <span class="swimmer-time">27.78</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Titan Flint</span>
+                                            <span class="swimmer-stroke">Breaststroke</span>
+                                            <span class="swimmer-time">26.96</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">John Denninghoff</span>
+                                            <span class="swimmer-stroke">Butterfly</span>
+                                            <span class="swimmer-time">25.17</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Eli Stott</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time">27.21</span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">Red Wolf Relays</span>
@@ -794,7 +657,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">10</span>
-                    <span class="relay-time">01:47.46</span>
+                    <span class="relay-time">1:47.46</span>
                     <span class="relay-date">Oct 05, 2019</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -802,43 +665,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Julian Pacheco</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">25.84</span>
-                    <span class="relay-stroke">Backstroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Joseph Jacobs</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">28.09</span>
-                    <span class="relay-stroke">Breaststroke</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nate Grimshaw</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">26.85</span>
-                    <span class="relay-stroke">Butterfly</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Eli Stott</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    <span class="relay-split-time">26.68</span>
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Julian Pacheco</span>
+                                            <span class="swimmer-stroke">Backstroke</span>
+                                            <span class="swimmer-time">25.84</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Joseph Jacobs</span>
+                                            <span class="swimmer-stroke">Breaststroke</span>
+                                            <span class="swimmer-time">28.09</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nate Grimshaw</span>
+                                            <span class="swimmer-stroke">Butterfly</span>
+                                            <span class="swimmer-time">26.85</span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Eli Stott</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time">26.68</span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">High School Classic</span>
@@ -856,7 +702,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank rank-1">1</span>
-                    <span class="relay-time">01:30.45</span>
+                    <span class="relay-time">1:30.45</span>
                     <span class="relay-date">Nov 08, 2025</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -864,43 +710,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Eftekhar</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Grayson The</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Wade Olsson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Zachary Duerkop</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Eftekhar</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Grayson The</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Wade Olsson</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Zachary Duerkop</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">Division III - State Swim & Dive</span>
@@ -913,7 +742,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank rank-2">2</span>
-                    <span class="relay-time">01:32.46</span>
+                    <span class="relay-time">1:32.46</span>
                     <span class="relay-date">Nov 07, 2019</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -921,43 +750,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Trevor Clausen</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Logan Radomsky</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nicholas Spilotro</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Samuel Stott</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Trevor Clausen</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Logan Radomsky</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nicholas Spilotro</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Samuel Stott</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">2019 AIA D-III State Meet</span>
@@ -970,7 +782,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank rank-3">3</span>
-                    <span class="relay-time">01:33.90</span>
+                    <span class="relay-time">1:33.90</span>
                     <span class="relay-date">Nov 05, 2022</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -978,43 +790,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nicholas Cusson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Alejandro Alvarez</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Stephen Moreland</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Samuel Stott</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nicholas Cusson</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Alejandro Alvarez</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Stephen Moreland</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Samuel Stott</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">2022 D-3 AIA Boys State Championships</span>
@@ -1027,7 +822,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">4</span>
-                    <span class="relay-time">01:33.93</span>
+                    <span class="relay-time">1:33.93</span>
                     <span class="relay-date">Nov 05, 2021</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -1035,43 +830,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Samuel Stott</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Alejandro Alvarez</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nolan Radomsky</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nicholas Cusson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Samuel Stott</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Alejandro Alvarez</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nolan Radomsky</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nicholas Cusson</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">AIA D-III Boys State</span>
@@ -1084,7 +862,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">5</span>
-                    <span class="relay-time">01:34.88</span>
+                    <span class="relay-time">1:34.88</span>
                     <span class="relay-date">Nov 05, 2022</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -1092,43 +870,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nicholas Cusson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Tannor Soedor</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nolan Radomsky</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Samuel Stott</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nicholas Cusson</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Tannor Soedor</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nolan Radomsky</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Samuel Stott</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">2022 D-3 AIA Boys State Championships</span>
@@ -1141,7 +902,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">6</span>
-                    <span class="relay-time">01:35.01</span>
+                    <span class="relay-time">1:35.01</span>
                     <span class="relay-date">Nov 09, 2024</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -1149,43 +910,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Grayson The</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Wade Olsson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Peyton Kowalski</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Zachary Duerkop</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Grayson The</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Wade Olsson</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Peyton Kowalski</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Zachary Duerkop</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">2024 D3 State Championship</span>
@@ -1198,7 +942,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">7</span>
-                    <span class="relay-time">01:35.27</span>
+                    <span class="relay-time">1:35.27</span>
                     <span class="relay-date">Oct 21, 2023</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -1206,43 +950,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nolan Radomsky</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Machamer</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Zachary Duerkop</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nicholas Cusson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nolan Radomsky</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Machamer</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Zachary Duerkop</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nicholas Cusson</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">Pecan Classic</span>
@@ -1255,7 +982,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">8</span>
-                    <span class="relay-time">01:35.61</span>
+                    <span class="relay-time">1:35.61</span>
                     <span class="relay-date">Oct 18, 2025</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -1263,43 +990,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Eftekhar</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Kent Olsson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Machamer</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Zachary Duerkop</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Eftekhar</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Kent Olsson</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Machamer</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Zachary Duerkop</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">Pecan Classic</span>
@@ -1312,7 +1022,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">9</span>
-                    <span class="relay-time">01:35.90</span>
+                    <span class="relay-time">1:35.90</span>
                     <span class="relay-date">Sep 28, 2024</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -1320,43 +1030,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Eftekhar</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Machamer</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Grayson The</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Zachary Duerkop</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Eftekhar</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Machamer</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Grayson The</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Zachary Duerkop</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">21st Annual TYR HS Classic</span>
@@ -1369,7 +1062,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">10</span>
-                    <span class="relay-time">01:36.07</span>
+                    <span class="relay-time">1:36.07</span>
                     <span class="relay-date">Oct 25, 2023</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -1377,43 +1070,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Zachary Duerkop</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Wade Olsson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Machamer</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nicholas Cusson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Zachary Duerkop</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Wade Olsson</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Machamer</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nicholas Cusson</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">Southern Arizona Region Qualifier</span>
@@ -1431,7 +1107,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank rank-1">1</span>
-                    <span class="relay-time">03:20.60</span>
+                    <span class="relay-time">3:20.60</span>
                     <span class="relay-date">Oct 18, 2025</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -1439,43 +1115,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Wade Olsson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Grayson The</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Eftekhar</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Zachary Duerkop</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Wade Olsson</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Grayson The</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Eftekhar</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Zachary Duerkop</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">Pecan Classic</span>
@@ -1488,7 +1147,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank rank-2">2</span>
-                    <span class="relay-time">03:25.97</span>
+                    <span class="relay-time">3:25.97</span>
                     <span class="relay-date">Nov 08, 2025</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -1496,43 +1155,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Eftekhar</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Grayson The</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Machamer</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Zachary Duerkop</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Eftekhar</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Grayson The</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Machamer</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Zachary Duerkop</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">Division III - State Swim & Dive</span>
@@ -1545,7 +1187,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank rank-3">3</span>
-                    <span class="relay-time">03:26.64</span>
+                    <span class="relay-time">3:26.64</span>
                     <span class="relay-date">Nov 05, 2021</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -1553,43 +1195,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nicholas Cusson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Alejandro Alvarez</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nolan Radomsky</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Samuel Stott</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nicholas Cusson</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Alejandro Alvarez</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nolan Radomsky</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Samuel Stott</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">AIA D-III Boys State</span>
@@ -1602,7 +1227,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">4</span>
-                    <span class="relay-time">03:27.09</span>
+                    <span class="relay-time">3:27.09</span>
                     <span class="relay-date">Nov 05, 2022</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -1610,43 +1235,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nicholas Cusson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Tannor Soedor</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nolan Radomsky</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Samuel Stott</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nicholas Cusson</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Tannor Soedor</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nolan Radomsky</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Samuel Stott</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">2022 D-3 AIA Boys State Championships</span>
@@ -1659,7 +1267,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">5</span>
-                    <span class="relay-time">03:27.87</span>
+                    <span class="relay-time">3:27.87</span>
                     <span class="relay-date">Nov 07, 2019</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -1667,43 +1275,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Trevor Clausen</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nicholas Spilotro</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Logan Radomsky</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Samuel Stott</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Trevor Clausen</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nicholas Spilotro</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Logan Radomsky</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Samuel Stott</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">2019 AIA D-III State Meet</span>
@@ -1716,7 +1307,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">6</span>
-                    <span class="relay-time">03:29.49</span>
+                    <span class="relay-time">3:29.49</span>
                     <span class="relay-date">Sep 28, 2024</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -1724,43 +1315,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Wade Olsson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Eftekhar</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Machamer</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Zachary Duerkop</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Wade Olsson</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Eftekhar</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Machamer</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Zachary Duerkop</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">21st Annual TYR HS Classic</span>
@@ -1773,7 +1347,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">7</span>
-                    <span class="relay-time">03:29.96</span>
+                    <span class="relay-time">3:29.96</span>
                     <span class="relay-date">Sep 23, 2023</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -1781,43 +1355,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Nicholas Cusson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Wade Olsson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Machamer</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Zachary Duerkop</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Nicholas Cusson</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Wade Olsson</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Machamer</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Zachary Duerkop</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">TYR High School Classic</span>
@@ -1830,7 +1387,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">8</span>
-                    <span class="relay-time">03:30.05</span>
+                    <span class="relay-time">3:30.05</span>
                     <span class="relay-date">Nov 09, 2024</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -1838,43 +1395,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Eftekhar</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Machamer</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Peyton Kowalski</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Zachary Duerkop</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Eftekhar</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Machamer</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Peyton Kowalski</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Zachary Duerkop</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">2024 D3 State Championship</span>
@@ -1887,7 +1427,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">9</span>
-                    <span class="relay-time">03:30.18</span>
+                    <span class="relay-time">3:30.18</span>
                     <span class="relay-date">Sep 27, 2025</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -1895,43 +1435,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Wade Olsson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Jackson Machamer</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Kent Olsson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Zachary Duerkop</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Wade Olsson</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Jackson Machamer</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Kent Olsson</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Zachary Duerkop</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">Arena High School Classic</span>
@@ -1944,7 +1467,7 @@
             <div class="relay-compact-wrapper">
                 <div class="relay-line-1">
                     <span class="relay-rank ">10</span>
-                    <span class="relay-time">03:30.43</span>
+                    <span class="relay-time">3:30.43</span>
                     <span class="relay-date">Oct 24, 2025</span>
                 </div>
                 <div class="relay-line-2" onclick="this.closest('.relay-compact-wrapper').classList.toggle('expanded')">
@@ -1952,43 +1475,26 @@
                 </div>
                 <div class="relay-expanded-content">
                     <div class="relay-swimmers">
-                        
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Zachary Duerkop</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Bennett Johnston</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Grayson The</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
-            <div class="relay-swimmer-entry">
-                <div class="relay-swimmer-name-line">
-                    <span class="relay-swimmer-name">Wade Olsson</span>
-                </div>
-                <div class="relay-swimmer-split-line">
-                    
-                    <span class="relay-stroke">Freestyle</span>
-                </div>
-            </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Zachary Duerkop</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Bennett Johnston</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Grayson The</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
+                                        <div class="swimmer-entry">
+                                            <span class="swimmer-name">Wade Olsson</span>
+                                            <span class="swimmer-stroke">Freestyle</span>
+                                            <span class="swimmer-time"></span>
+                                        </div>
                     </div>
                     <div class="relay-meet">
                         <span class="meet-name">Southern Arizona Qualifier</span>
