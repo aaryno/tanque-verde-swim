@@ -1,0 +1,86 @@
+{
+  "boys_200_medley_new": {
+    "swimmers": [
+      {
+        "name": "Kent Olsson",
+        "grade": "FR",
+        "stroke": "Backstroke",
+        "split": "28.12"
+      },
+      {
+        "name": "Wade Olsson",
+        "grade": "JR",
+        "stroke": "Breaststroke",
+        "split": "27.30"
+      },
+      {
+        "name": "Jackson Eftekhar",
+        "grade": "JR",
+        "stroke": "Butterfly",
+        "split": "24.56"
+      },
+      {
+        "name": "Zachary Duerkop",
+        "grade": "SR",
+        "stroke": "Freestyle",
+        "split": "21.82"
+      }
+    ]
+  },
+  "boys_200_free_new": {
+    "swimmers": [
+      {
+        "name": "Jackson Eftekhar",
+        "grade": "JR",
+        "stroke": "Freestyle",
+        "split": "23.21"
+      },
+      {
+        "name": "Grayson The",
+        "grade": "SR",
+        "stroke": "Freestyle",
+        "split": "23.25"
+      },
+      {
+        "name": "Wade Olsson",
+        "grade": "JR",
+        "stroke": "Freestyle",
+        "split": "22.31"
+      },
+      {
+        "name": "Zachary Duerkop",
+        "grade": "SR",
+        "stroke": "Freestyle",
+        "split": "21.68"
+      }
+    ]
+  },
+  "boys_400_free_new": {
+    "swimmers": [
+      {
+        "name": "Wade Olsson",
+        "grade": "JR",
+        "stroke": "Freestyle",
+        "split": "50.09"
+      },
+      {
+        "name": "Grayson The",
+        "grade": "SR",
+        "stroke": "Freestyle",
+        "split": "52.41"
+      },
+      {
+        "name": "Jackson Eftekhar",
+        "grade": "JR",
+        "stroke": "Freestyle",
+        "split": "50.83"
+      },
+      {
+        "name": "Zachary Duerkop",
+        "grade": "SR",
+        "stroke": "Freestyle",
+        "split": "47.27"
+      }
+    ]
+  }
+}

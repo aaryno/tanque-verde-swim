@@ -1,0 +1,82 @@
+{
+  "boys_200_medley_new": {
+    "target": {
+      "swimmers": [
+        "Kent Olsson",
+        "Wade Olsson",
+        "Jackson Eftekhar",
+        "Zachary Duerkop"
+      ],
+      "strokes": [
+        "Backstroke",
+        "Breaststroke",
+        "Butterfly",
+        "Freestyle"
+      ],
+      "type": "medley",
+      "time": "1:41.80"
+    },
+    "splits": [
+      {
+        "name": "Kent Olsson",
+        "stroke": "Backstroke",
+        "split": "28.12"
+      },
+      {
+        "name": "Wade Olsson",
+        "stroke": "Breaststroke",
+        "split": "27.30"
+      },
+      {
+        "name": "Jackson Eftekhar",
+        "stroke": "Butterfly",
+        "split": "24.56"
+      },
+      {
+        "name": "Zachary Duerkop",
+        "stroke": "Freestyle",
+        "split": "21.82"
+      }
+    ]
+  },
+  "boys_200_medley_old": {
+    "target": {
+      "swimmers": [
+        "Wade Olsson",
+        "Zachary Duerkop",
+        "Jackson Eftekhar",
+        "Jackson Machamer"
+      ],
+      "strokes": [
+        "Backstroke",
+        "Breaststroke",
+        "Butterfly",
+        "Freestyle"
+      ],
+      "type": "medley",
+      "time": "1:45.73"
+    },
+    "splits": [
+      {
+        "name": "Jackson Eftekhar",
+        "stroke": "Backstroke",
+        "split": "22.01"
+      },
+      {
+        "name": "Kent Olsson",
+        "stroke": "Breaststroke",
+        "split": "25.79"
+      },
+      {
+        "name": "Jackson Machamer",
+        "stroke": "Butterfly",
+        "split": "24.96"
+      },
+      {
+        "name": "Zachary Duerkop",
+        "stroke": "Freestyle",
+        "split": "22.85"
+      }
+    ]
+  }
+}
