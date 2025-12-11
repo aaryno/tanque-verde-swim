@@ -294,6 +294,12 @@ body {
   padding: 0.5rem 0;
 }
 
+.hero-collapsed .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .hero-collapsed .hero-logo-small {
   height: 28px;
   margin-right: 0.5rem;
@@ -308,11 +314,10 @@ body {
   background: rgba(255,255,255,0.2);
   border: none;
   color: white;
-  padding: 0.15rem 0.5rem;
+  padding: 0.25rem 0.5rem;
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.7rem;
-  margin-left: 0.75rem;
   transition: background 0.2s;
 }
 
