@@ -1,0 +1,78 @@
+{
+  "boys": [
+    {
+      "type": "medley",
+      "year": "12-13",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Andrew Lam - Jr.",
+        "Wyatt Wimberly - Sr.",
+        "Greg Wheeler - Jr.",
+        "Keith Kristofitz - Sr."
+      ],
+      "splits": [
+        "00:25.69",
+        "00:27.72",
+        "00:29.32",
+        "00:28.98"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "12-13",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Andrew Lam - Jr.",
+        "Greg Wheeler - Jr.",
+        "Keith Kristofitz - Sr.",
+        "Wyatt Wimberly - Sr."
+      ],
+      "splits": [
+        "00:31.96",
+        "00:37.92",
+        "00:31.70",
+        "00:29.14"
+      ],
+      "team": "Relay Team"
+    }
+  ],
+  "girls": [
+    {
+      "type": "medley",
+      "year": "12-13",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Marisol Rivera - Jr.",
+        "Sierra Roh - Fr.",
+        "Amanda Grimshaw - Jr.",
+        "Meghan Marner - Jr."
+      ],
+      "splits": [
+        "00:27.73",
+        "00:31.44",
+        "00:30.79",
+        "00:26.20"
+      ],
+      "team": "Relay Team"
+    }
+  ]
+}

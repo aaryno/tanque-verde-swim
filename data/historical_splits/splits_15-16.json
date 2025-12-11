@@ -1,0 +1,1182 @@
+{
+  "boys": [
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Austin Morris - Sr.",
+        "Joseph Breinholt - Jr.",
+        "Alex Flores - Jr.",
+        "James Knight - Sr."
+      ],
+      "splits": [
+        "00:28.77",
+        "00:31.83",
+        "00:27.63",
+        "00:25.94"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Austin Morris - Sr.",
+        "Joseph Breinholt - Jr.",
+        "Alex Flores - Jr.",
+        "James Knight - Sr."
+      ],
+      "splits": [
+        "00:28.19",
+        "00:31.55",
+        "00:28.28",
+        "00:26.21"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Austin Morris - Sr.",
+        "Joseph Breinholt - Jr.",
+        "Alex Flores - Jr.",
+        "James Knight - Sr."
+      ],
+      "splits": [
+        "00:28.20",
+        "00:32.58",
+        "00:28.52",
+        "00:25.87"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Austin Morris - Sr.",
+        "Joseph Breinholt - Jr.",
+        "Alex Flores - Jr.",
+        "James Knight - Sr."
+      ],
+      "splits": [
+        "00:28.55",
+        "00:32.13",
+        "00:28.44",
+        "00:26.50"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Paul Morrison - Fr.",
+        "Justin Marcus - Fr.",
+        "Kyle Ramsden - Jr.",
+        "Canyon Morlan - Fr."
+      ],
+      "splits": [
+        "00:37.83",
+        "00:38.96",
+        "00:39.58",
+        "00:31.74"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Paul Morrison - Fr.",
+        "Canyon Morlan - Fr.",
+        "Kyle Ramsden - Jr.",
+        "Titan Flint - Fr."
+      ],
+      "splits": [
+        "00:39.33",
+        "00:41.19",
+        "00:37.64",
+        "00:34.86"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Paul Morrison - Fr.",
+        "Justin Marcus - Fr.",
+        "Kyle Ramsden - Jr.",
+        "Titan Flint - Fr."
+      ],
+      "splits": [
+        "00:39.38",
+        "00:44.12",
+        "00:46.99",
+        "00:47.61"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Kyle Ramsden - Jr.",
+        "Titan Flint - Fr.",
+        "Canyon Morlan - Fr.",
+        "James Knight - Sr."
+      ],
+      "splits": [
+        "00:30.44",
+        "01:08.03",
+        "00:26.00",
+        "00:00.04"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "James Knight - Sr.",
+        "Canyon Morlan - Fr.",
+        "Kyle Ramsden - Jr.",
+        "Andrew Savage - So."
+      ],
+      "splits": [
+        "00:28.24",
+        "00:31.95",
+        "00:36.32",
+        "00:30.44"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "James Knight - Sr.",
+        "Kyle Ramsden - Jr.",
+        "Titan Flint - Fr.",
+        "Andrew Savage - So."
+      ],
+      "splits": [
+        "00:29.66",
+        "00:30.05",
+        "00:37.83",
+        "00:29.59"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Joseph Breinholt - Jr.",
+        "Joseph Breinholt - Jr.",
+        "James Knight - Sr.",
+        "James Knight - Sr.",
+        "Alex Flores - Jr.",
+        "Alex Flores - Jr.",
+        "Austin Morris - Sr.",
+        "Austin Morris - Sr."
+      ],
+      "splits": [
+        "00:24.31",
+        "00:26.11",
+        "00:26.74",
+        "00:33.12",
+        "00:26.05",
+        "00:30.85",
+        "00:24.89",
+        "00:27.73"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Joseph Breinholt - Jr.",
+        "Joseph Breinholt - Jr.",
+        "James Knight - Sr.",
+        "James Knight - Sr.",
+        "Alex Flores - Jr.",
+        "Alex Flores - Jr.",
+        "Austin Morris - Sr.",
+        "Austin Morris - Sr."
+      ],
+      "splits": [
+        "00:23.90",
+        "00:26.27",
+        "00:28.83",
+        "00:32.41",
+        "00:26.48",
+        "00:30.47",
+        "00:24.89",
+        "00:27.29"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Austin Morris - Sr.",
+        "Austin Morris - Sr.",
+        "Alex Flores - Jr.",
+        "Alex Flores - Jr.",
+        "James Knight - Sr.",
+        "James Knight - Sr.",
+        "Joseph Breinholt - Jr.",
+        "Joseph Breinholt - Jr."
+      ],
+      "splits": [
+        "00:25.78",
+        "00:28.34",
+        "00:27.33",
+        "00:29.99",
+        "00:28.18",
+        "00:31.80",
+        "00:23.81",
+        "00:26.13"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Joseph Breinholt - Jr.",
+        "Joseph Breinholt - Jr.",
+        "Alex Flores - Jr.",
+        "Alex Flores - Jr.",
+        "James Knight - Sr.",
+        "James Knight - Sr.",
+        "Austin Morris - Sr.",
+        "Austin Morris - Sr."
+      ],
+      "splits": [
+        "00:24.37",
+        "00:26.26",
+        "00:26.62",
+        "00:30.15",
+        "00:28.15",
+        "00:31.20",
+        "00:25.72",
+        "00:29.55"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Joseph Breinholt - Jr.",
+        "Joseph Breinholt - Jr.",
+        "James Knight - Sr.",
+        "James Knight - Sr.",
+        "Paul Morrison - Fr.",
+        "Paul Morrison - Fr.",
+        "Alex Flores - Jr.",
+        "Alex Flores - Jr."
+      ],
+      "splits": [
+        "00:23.80",
+        "00:25.40",
+        "00:28.08",
+        "00:31.69",
+        "00:29.55",
+        "00:34.35",
+        "00:25.97",
+        "00:30.49"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Paul Morrison - Fr.",
+        "Paul Morrison - Fr.",
+        "Canyon Morlan - Fr.",
+        "Canyon Morlan - Fr.",
+        "Titan Flint - Fr.",
+        "Titan Flint - Fr.",
+        "Kyle Ramsden - Jr.",
+        "Kyle Ramsden - Jr."
+      ],
+      "splits": [
+        "00:31.01",
+        "00:37.54",
+        "00:33.78",
+        "00:39.84",
+        "-01:-45.",
+        "00:41.99",
+        "02:53.91",
+        "00:36.44"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Paul Morrison - Fr.",
+        "Paul Morrison - Fr.",
+        "Titan Flint - Fr.",
+        "Titan Flint - Fr.",
+        "Kyle Ramsden - Jr.",
+        "Kyle Ramsden - Jr.",
+        "Canyon Morlan - Fr.",
+        "Canyon Morlan - Fr."
+      ],
+      "splits": [
+        "00:31.91",
+        "00:37.15",
+        "00:39.55",
+        "00:43.02",
+        "00:29.95",
+        "00:38.19",
+        "00:34.35",
+        "00:37.71"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Paul Morrison - Fr.",
+        "Paul Morrison - Fr.",
+        "Kyle Ramsden - Jr.",
+        "Kyle Ramsden - Jr.",
+        "Justin Marcus - Fr.",
+        "Justin Marcus - Fr.",
+        "Canyon Morlan - Fr.",
+        "Canyon Morlan - Fr."
+      ],
+      "splits": [
+        "00:31.70",
+        "00:37.26",
+        "00:32.99",
+        "00:38.48",
+        "00:37.01",
+        "00:41.99",
+        "00:16.61",
+        "00:56.40"
+      ],
+      "team": "Relay Team"
+    }
+  ],
+  "girls": [
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Tiffany Kelley - Fr.",
+        "Monet Pokrant - Fr.",
+        "Teresa Rodriguez - Fr.",
+        "Megan Curtis - Fr."
+      ],
+      "splits": [
+        "00:37.58",
+        "00:40.58",
+        "00:16.80",
+        "00:25.44"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Stephanie Svob - Sr.",
+        "Hannah Witter - Fr.",
+        "Jenna Elliott - So.",
+        "Ellie Randomsky - Fr."
+      ],
+      "splits": [
+        "00:39.53",
+        "00:29.42",
+        "00:33.06",
+        "00:29.45"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Bonnie Wall - Fr.",
+        "Hannah Witter - Fr.",
+        "Jenna Elliott - So.",
+        "Ellie Randomsky - Fr."
+      ],
+      "splits": [
+        "00:32.97",
+        "00:36.95",
+        "00:33.78",
+        "00:29.33"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Jenna Elliott - So.",
+        "Tiffany Kelley - Fr.",
+        "Monet Pokrant - Fr.",
+        "Hannah Witter - Fr."
+      ],
+      "splits": [
+        "00:33.65",
+        "00:35.60",
+        "00:39.18",
+        "00:35.39"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Hazel Dasse - Fr.",
+        "Lindsey Sohoel-Smith - Fr.",
+        "Bridget Spooner - Jr.",
+        "Anna Ellis - Fr."
+      ],
+      "splits": [
+        "00:31.50",
+        "00:31.82",
+        "00:30.78",
+        "00:28.33"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Hazel Dasse - Fr.",
+        "Lindsey Sohoel-Smith - Fr.",
+        "Bridget Spooner - Jr.",
+        "Anna Ellis - Fr."
+      ],
+      "splits": [
+        "00:31.39",
+        "00:31.57",
+        "00:31.30",
+        "00:28.35"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Hazel Dasse - Fr.",
+        "Lindsey Sohoel-Smith - Fr.",
+        "Bridget Spooner - Jr.",
+        "Alix Morris - Sr."
+      ],
+      "splits": [
+        "00:20.12",
+        "00:16.86",
+        "00:25.90",
+        "00:59.94"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Hazel Dasse - Fr.",
+        "Lindsey Sohoel-Smith - Fr.",
+        "Bridget Spooner - Jr.",
+        "Alix Morris - Sr."
+      ],
+      "splits": [
+        "00:32.53",
+        "00:31.47",
+        "00:31.20",
+        "00:28.66"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Hazel Dasse - Fr.",
+        "Bridget Spooner - Jr.",
+        "Anna Ellis - Fr.",
+        "Alix Morris - Sr."
+      ],
+      "splits": [
+        "00:32.26",
+        "00:37.20",
+        "00:35.35",
+        "00:29.24"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Stephanie Svob - Sr.",
+        "Bonnie Wall - Fr.",
+        "Alix Morris - Sr.",
+        "Ellie Randomsky - Fr."
+      ],
+      "splits": [
+        "00:41.88",
+        "00:35.98",
+        "00:35.23",
+        "00:29.18"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Stephanie Svob - Sr.",
+        "Bonnie Wall - Fr.",
+        "Anna Ellis - Fr.",
+        "Ellie Randomsky - Fr."
+      ],
+      "splits": [
+        "00:43.09",
+        "00:36.07",
+        "00:34.19",
+        "00:29.03"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Stephanie Svob - Sr.",
+        "Bonnie Wall - Fr.",
+        "Anna Ellis - Fr.",
+        "Ellie Randomsky - Fr."
+      ],
+      "splits": [
+        "00:41.97",
+        "00:38.24",
+        "00:34.17",
+        "00:30.10"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Bridget Spooner - Jr.",
+        "Bridget Spooner - Jr.",
+        "Anna Ellis - Fr.",
+        "Anna Ellis - Fr.",
+        "Lindsey Sohoel-Smith - Fr.",
+        "Lindsey Sohoel-Smith - Fr.",
+        "Hazel Dasse - Fr.",
+        "Hazel Dasse - Fr."
+      ],
+      "splits": [
+        "00:28.84",
+        "00:31.39",
+        "00:29.65",
+        "00:32.72",
+        "00:29.22",
+        "00:31.52",
+        "00:28.23",
+        "00:30.47"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Hazel Dasse - Fr.",
+        "Hazel Dasse - Fr.",
+        "Anna Ellis - Fr.",
+        "Anna Ellis - Fr.",
+        "Lindsey Sohoel-Smith - Fr.",
+        "Lindsey Sohoel-Smith - Fr.",
+        "Bridget Spooner - Jr.",
+        "Bridget Spooner - Jr."
+      ],
+      "splits": [
+        "00:28.89",
+        "00:31.46",
+        "00:30.83",
+        "00:32.62",
+        "00:28.93",
+        "00:30.70",
+        "00:27.63",
+        "00:31.37"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Bridget Spooner - Jr.",
+        "Bridget Spooner - Jr.",
+        "Anna Ellis - Fr.",
+        "Anna Ellis - Fr.",
+        "Lindsey Sohoel-Smith - Fr.",
+        "Lindsey Sohoel-Smith - Fr.",
+        "Hazel Dasse - Fr.",
+        "Hazel Dasse - Fr."
+      ],
+      "splits": [
+        "00:28.39",
+        "00:31.10",
+        "00:31.11",
+        "00:32.32",
+        "00:29.98",
+        "00:31.34",
+        "00:29.40",
+        "00:31.66"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Bridget Spooner - Jr.",
+        "Bridget Spooner - Jr.",
+        "Anna Ellis - Fr.",
+        "Anna Ellis - Fr.",
+        "Alix Morris - Sr.",
+        "Alix Morris - Sr.",
+        "Hazel Dasse - Fr.",
+        "Hazel Dasse - Fr."
+      ],
+      "splits": [
+        "00:28.51",
+        "00:31.36",
+        "00:30.05",
+        "00:31.71",
+        "00:30.02",
+        "00:34.37",
+        "00:28.97",
+        "00:30.84"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Bridget Spooner - Jr.",
+        "Bridget Spooner - Jr.",
+        "Alix Morris - Sr.",
+        "Alix Morris - Sr.",
+        "Lindsey Sohoel-Smith - Fr.",
+        "Lindsey Sohoel-Smith - Fr.",
+        "Hazel Dasse - Fr.",
+        "Hazel Dasse - Fr."
+      ],
+      "splits": [
+        "00:28.46",
+        "00:31.71",
+        "00:29.75",
+        "00:36.47",
+        "00:30.19",
+        "00:32.27",
+        "00:28.90",
+        "00:31.43"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Bridget Spooner - Jr.",
+        "Bridget Spooner - Jr.",
+        "Stephanie Svob - Sr.",
+        "Stephanie Svob - Sr.",
+        "Ellie Randomsky - Fr.",
+        "Ellie Randomsky - Fr.",
+        "Hazel Dasse - Fr.",
+        "Hazel Dasse - Fr."
+      ],
+      "splits": [
+        "00:28.34",
+        "00:31.83",
+        "00:33.06",
+        "00:45.93",
+        "00:22.25",
+        "00:33.14",
+        "00:28.11",
+        "00:31.01"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Ellie Randomsky - Fr.",
+        "Ellie Randomsky - Fr.",
+        "Stephanie Svob - Sr.",
+        "Stephanie Svob - Sr.",
+        "Bonnie Wall - Fr.",
+        "Bonnie Wall - Fr.",
+        "Alix Morris - Sr.",
+        "Alix Morris - Sr."
+      ],
+      "splits": [
+        "00:32.16",
+        "00:33.18",
+        "00:33.69",
+        "00:37.33",
+        "00:33.48",
+        "00:38.47",
+        "-02:-58.",
+        "00:36.48"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Ellie Randomsky - Fr.",
+        "Ellie Randomsky - Fr.",
+        "Stephanie Svob - Sr.",
+        "Stephanie Svob - Sr.",
+        "Bonnie Wall - Fr.",
+        "Bonnie Wall - Fr.",
+        "Alix Morris - Sr.",
+        "Alix Morris - Sr."
+      ],
+      "splits": [
+        "00:32.50",
+        "00:34.52",
+        "00:35.49",
+        "00:39.10",
+        "00:34.52",
+        "00:39.50",
+        "00:29.70",
+        "00:36.48"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Ellie Randomsky - Fr.",
+        "Ellie Randomsky - Fr.",
+        "Stephanie Svob - Sr.",
+        "Stephanie Svob - Sr.",
+        "Teresa Rodriguez - Fr.",
+        "Teresa Rodriguez - Fr.",
+        "Alix Morris - Sr.",
+        "Alix Morris - Sr."
+      ],
+      "splits": [
+        "00:31.91",
+        "00:33.56",
+        "00:34.37",
+        "00:41.15",
+        "00:40.76",
+        "00:56.76",
+        "00:29.87",
+        "00:36.07"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "medley",
+      "year": "15-16",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Hannah Witter - Fr.",
+        "Hannah Witter - Fr.",
+        "Teresa Rodriguez - Fr.",
+        "Teresa Rodriguez - Fr.",
+        "Monet Pokrant - Fr.",
+        "Monet Pokrant - Fr.",
+        "Anna Ellis - Fr.",
+        "Anna Ellis - Fr."
+      ],
+      "splits": [
+        "00:38.78",
+        "00:43.52",
+        "00:42.84",
+        "00:56.41",
+        "00:37.66",
+        "00:53.89",
+        "00:24.70",
+        "00:34.13"
+      ],
+      "team": "Relay Team"
+    }
+  ]
+}
