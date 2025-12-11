@@ -149,100 +149,111 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.relay-row-1 {
-  display: flex;
+/* Inline relay table for record cards */
+.table-relay-inline {
+  margin-bottom: 0 !important;
+}
+
+.table-relay-inline tbody tr.relay-compact {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  grid-template-areas: "rank time participants date";
+  gap: 0.5rem;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
 }
 
-.relay-row-1 .rank-badge {
+.table-relay-inline .rank-cell {
+  grid-area: rank;
   font-size: 1.2rem;
+  border: none;
+  padding: 0;
 }
 
-.relay-row-1 .time {
+.table-relay-inline .time-cell {
+  grid-area: time;
   font-weight: bold;
   font-size: 1.1rem;
   color: var(--tvhs-primary);
+  border: none;
+  padding: 0;
 }
 
-.relay-row-1 .relay-date {
-  font-size: 0.85rem;
-  color: #666;
-  margin-left: auto;
-}
-
-.relay-row-2 {
+.table-relay-inline .participants-cell {
+  grid-area: participants;
   cursor: pointer;
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 4px;
   font-size: 0.9rem;
   color: #555;
-  transition: background-color 0.2s;
-  user-select: none; /* Prevent text selection on click */
+  border: none;
+  padding: 0;
+  user-select: none;
 }
 
-.relay-row-2:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+.table-relay-inline .participants-cell:hover {
+  color: var(--tvhs-primary);
 }
 
-.relay-row-2::after {
-  content: " ▼";
-  font-size: 0.7rem;
-  color: #999;
-  margin-left: 0.5rem;
+.table-relay-inline .date-cell {
+  grid-area: date;
+  font-size: 0.85rem;
+  color: #666;
+  white-space: nowrap;
+  text-align: right;
+  border: none;
+  padding: 0;
 }
 
-.relay-record-entry.expanded .relay-row-2::after {
-  content: " ▲";
+.table-relay-inline tr.relay-expanded-details {
+  display: none;
 }
 
-.relay-names-short {
-  font-weight: 500;
+.table-relay-inline tr.relay-compact.expanded ~ tr.relay-expanded-details {
+  display: table-row;
 }
 
-.relay-details {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-.relay-record-entry.expanded .relay-details {
-  max-height: 500px;
-  margin-top: 0.75rem;
+.table-relay-inline tr.relay-expanded-details td {
+  padding: 0.75rem 0.5rem 0 0.5rem;
+  border: none;
 }
 
 .relay-swimmers {
-  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
-.relay-swimmers div {
-  padding: 0.25rem 0;
+.relay-swimmers > div {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  padding: 0.25rem 0;
 }
 
 .relay-meet {
-  font-size: 0.85rem;
-  color: #666;
+  margin-top: 0.5rem;
   padding: 0.5rem;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 4px;
   border-left: 3px solid var(--tvhs-accent);
+  font-size: 0.85rem;
+  color: #666;
 }
 
-/* Mobile adjustments for relay record cards */
+/* Mobile adjustments */
 @media (max-width: 768px) {
-  .relay-row-1 {
-    flex-wrap: wrap;
+  .table-relay-inline tbody tr.relay-compact {
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 
+      "rank time"
+      "participants date";
+    gap: 0.25rem 0.5rem;
   }
   
-  .relay-row-1 .relay-date {
-    margin-left: 0;
-    width: 100%;
-    margin-top: 0.25rem;
+  .table-relay-inline .date-cell {
+    text-align: left;
+    font-size: 0.75rem;
   }
 }
 

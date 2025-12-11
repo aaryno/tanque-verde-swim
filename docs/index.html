@@ -407,7 +407,7 @@
         </div>
     </div>
     
-    <!-- Records Broken -->
+    <!-- Overall School Records Broken -->
     <div class="container my-5" id="records-broken">
         <div class="section-header" data-section="records">
             <h2 class="mb-0">📈 2025 Records Broken</h2>
@@ -427,45 +427,57 @@
                         <!-- NEW Record -->
                         <div class="relay-record-entry mb-3">
                             <div class="record-label">NEW RECORD</div>
-                            <div class="relay-row-1">
-                                <span class="rank-badge">🥇</span>
-                                <span class="time">1:41.80</span>
-                                <span class="relay-date">Oct 24, 2025</span>
-                            </div>
-                            <div class="relay-row-2" onclick="this.parentElement.classList.toggle('expanded')">
-                                <span class="relay-names-short">Olsson, Olsson, Duerkop, Eftekhar</span>
-                            </div>
-                            <div class="relay-details">
-                                <div class="relay-swimmers">
-                                    <div>Kent Olsson <span class="grade-badge grade-fr">FR</span></div>
-                                    <div>Wade Olsson <span class="grade-badge grade-jr">JR</span></div>
-                                    <div>Zachary Duerkop <span class="grade-badge grade-sr">SR</span></div>
-                                    <div>Jackson Eftekhar <span class="grade-badge grade-jr">JR</span></div>
-                                </div>
-                                <div class="relay-meet">Southern AZ Qualifier (Tucson, AZ)</div>
-                            </div>
+                            <table class="table mb-0 table-relay-inline">
+                                <tbody>
+                                    <tr class="relay-compact">
+                                        <td class="rank-cell">🥇</td>
+                                        <td class="time-cell">1:41.80</td>
+                                        <td class="participants-cell" onclick="this.parentElement.classList.toggle('expanded')">
+                                            <span class="relay-names-short">Olsson, Olsson, Duerkop, Eftekhar ▼</span>
+                                        </td>
+                                        <td class="date-cell">Oct 24, 2025</td>
+                                    </tr>
+                                    <tr class="relay-expanded-details">
+                                        <td colspan="4">
+                                            <div class="relay-swimmers">
+                                                <div>Kent Olsson <span class="grade-badge grade-fr">FR</span></div>
+                                                <div>Wade Olsson <span class="grade-badge grade-jr">JR</span></div>
+                                                <div>Zachary Duerkop <span class="grade-badge grade-sr">SR</span></div>
+                                                <div>Jackson Eftekhar <span class="grade-badge grade-jr">JR</span></div>
+                                                <div class="relay-meet">📍 Southern AZ Qualifier (Tucson, AZ)</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         
                         <!-- OLD Record -->
                         <div class="relay-record-entry">
                             <div class="record-label-old">PREVIOUS RECORD</div>
-                            <div class="relay-row-1">
-                                <span class="rank-badge">🥈</span>
-                                <span class="time">1:45.73</span>
-                                <span class="relay-date">Oct 25, 2024</span>
-                            </div>
-                            <div class="relay-row-2" onclick="this.parentElement.classList.toggle('expanded')">
-                                <span class="relay-names-short">Machamer, Olsson, Duerkop, Eftekhar</span>
-                            </div>
-                            <div class="relay-details">
-                                <div class="relay-swimmers">
-                                    <div>Jackson Machamer <span class="grade-badge grade-jr">JR</span></div>
-                                    <div>Wade Olsson <span class="grade-badge grade-so">SO</span></div>
-                                    <div>Zachary Duerkop <span class="grade-badge grade-jr">JR</span></div>
-                                    <div>Jackson Eftekhar <span class="grade-badge grade-so">SO</span></div>
-                                </div>
-                                <div class="relay-meet">Southern AZ Qualifier (Oro Valley, AZ)</div>
-                            </div>
+                            <table class="table mb-0 table-relay-inline">
+                                <tbody>
+                                    <tr class="relay-compact">
+                                        <td class="rank-cell">🥈</td>
+                                        <td class="time-cell">1:45.73</td>
+                                        <td class="participants-cell" onclick="this.parentElement.classList.toggle('expanded')">
+                                            <span class="relay-names-short">Machamer, Olsson, Duerkop, Eftekhar ▼</span>
+                                        </td>
+                                        <td class="date-cell">Oct 25, 2024</td>
+                                    </tr>
+                                    <tr class="relay-expanded-details">
+                                        <td colspan="4">
+                                            <div class="relay-swimmers">
+                                                <div>Jackson Machamer <span class="grade-badge grade-jr">JR</span></div>
+                                                <div>Wade Olsson <span class="grade-badge grade-so">SO</span></div>
+                                                <div>Zachary Duerkop <span class="grade-badge grade-jr">JR</span></div>
+                                                <div>Jackson Eftekhar <span class="grade-badge grade-so">SO</span></div>
+                                                <div class="relay-meet">📍 Southern AZ Qualifier (Oro Valley, AZ)</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         
                         <p class="mb-0 text-success mt-3"><strong>Improvement: 3.93 seconds</strong></p>
@@ -545,9 +557,20 @@
                 </div>
             </div>
         </div>
-        
+        </div>
+    </div>
+    
+    <!-- Class Records Broken -->
+    <div class="container my-5" id="class-records-broken">
+        <div class="section-header" data-section="class-records">
+            <h2 class="mb-0">🎯 2025 Class Records Broken</h2>
+            <button class="section-toggle" data-target="class-records-content">
+                <span class="toggle-icon">▼</span>
+            </button>
+        </div>
+        <div class="section-content" id="class-records-content">
         <!-- Grade Records -->
-        <h3 class="mt-5 mb-3">🎯 Grade Records</h3>
+        <h3 class="mt-4 mb-3">By Grade Level</h3>
         <div class="row g-4">
             <!-- Boys Grade Records -->
             <div class="col-md-6">
