@@ -1,7 +1,7 @@
 # All-Time Top 10 - Girls
 ## Tanque Verde High School Swimming
 
-**Generated:** December 11, 2025 at 09:21 AM
+**Generated:** December 11, 2025 at 10:05 AM
 
 ---
 
@@ -77,7 +77,7 @@
 | 6 | 1:04.81 | Paisley White | SR | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
 | 7 | 1:05.85 | Hazel Dasse | SO | Nov 04, 2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
 | 8 | 1:06.23 | Brianne Foley | SR | Oct 25, 2024 | Southern Arizona Qualifier (Oro Valley, AZ) |
-| 9 | 1:07.64 | Shaye Sulgar | SR | Sep 25, 2021 | TYR HS Classic (AZ) |
+| 9 | 1:07.64 | Shaye Sulger | SR | Sep 25, 2021 | TYR HS Classic (AZ) |
 | 10 | 1:08.24 | Summer Cugini | SR | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
 
 ### 100 Breaststroke
