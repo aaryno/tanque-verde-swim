@@ -10,10 +10,10 @@
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
 | **1** | **21.64 (r)** | **Nicholas Cusson** | **JR** | **Nov 05, 2022** | **2022 D-3 AIA Boys State Championships (AZ)** |
-| 2 | 22.01 (r) | Jackson Eftekhar | JR | Nov 08, 2025 | Division III - State Swim & Dive (AZ) |
-| 3 | 22.13 | Samuel Stott | SR | Nov 05, 2022 | 2022 D-3 AIA Boys State Championships (AZ) |
-| 4 | 22.43 (r) | Joseph Breinholt | SR | 2016-17 | 200FR Relay Leadoff |
-| 5 | 22.96 | Zachary Duerkop | SR | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
+| 2 | 22.13 | Samuel Stott | SR | Nov 05, 2022 | 2022 D-3 AIA Boys State Championships (AZ) |
+| 3 | 22.43 (r) | Joseph Breinholt | SR | 2016-17 | 200FR Relay Leadoff |
+| 4 | 22.96 | Zachary Duerkop | SR | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
+| 5 | 23.21 (r) | Jackson Eftekhar | JR | Nov 08, 2025 | Division III - State Swim & Dive (AZ) |
 | 6 | 23.26 (r) | Trevor Clausen | SO | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
 | 7 | 23.54 | Grayson The | SR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
 | 8 | 24.21 | Tanner Morris | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |

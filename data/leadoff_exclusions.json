@@ -1,0 +1,12 @@
+{
+  "exclusions": [
+    {
+      "name": "Jackson Eftekhar",
+      "event": "50_free",
+      "time": "22.01",
+      "reason": "Invalid leadoff extraction"
+    }
+  ],
+  "_comment": "Add entries here to exclude specific relay leadoff times from individual records"
+}
+

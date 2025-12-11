@@ -25,7 +25,26 @@ def load_aliases():
     except:
         return {}
 
+# Load exclusions
+def load_exclusions():
+    try:
+        with open('data/leadoff_exclusions.json', 'r') as f:
+            data = json.load(f)
+            return data.get('exclusions', [])
+    except:
+        return []
+
+def is_excluded(name, event, time_str, exclusions):
+    """Check if a leadoff time should be excluded"""
+    for exc in exclusions:
+        if exc['name'] == name and exc['event'] == event:
+            # Check if time matches (allow some flexibility)
+            if exc.get('time') and exc['time'] in time_str:
+                return True
+    return False
+
 ALIASES = load_aliases()
+EXCLUSIONS = load_exclusions()
 
 def normalize_name(name):
     """Apply swimmer aliases to normalize names"""
@@ -122,7 +141,11 @@ def extract_leadoff_times(all_splits):
                 leadoff_time = parse_time_to_seconds(splits[0])
                 
                 # Sanity check: 50 Free should be between 20-40 seconds
+                time_str = format_time(leadoff_time) if leadoff_time else ''
                 if leadoff_time and 20.0 <= leadoff_time <= 40.0:
+                    # Check exclusions
+                    if is_excluded(leadoff_name, '50_free', time_str, EXCLUSIONS):
+                        continue
                     leadoffs[gender]['50_free'].append({
                         'name': leadoff_name,
                         'grade': leadoff_grade,
@@ -144,8 +167,12 @@ def extract_leadoff_times(all_splits):
                 
                 if split1 and split2:
                     leadoff_time = split1 + split2
+                    time_str = format_time(leadoff_time)
                     # Sanity check: 100 Free should be between 45-90 seconds
                     if not (45.0 <= leadoff_time <= 90.0):
+                        continue
+                    # Check exclusions
+                    if is_excluded(leadoff_name, '100_free', time_str, EXCLUSIONS):
                         continue
                     leadoffs[gender]['100_free'].append({
                         'name': leadoff_name,

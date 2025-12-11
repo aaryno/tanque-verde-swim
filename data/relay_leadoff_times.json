@@ -14,18 +14,6 @@
         "relay_time": "01:33.90"
       },
       {
-        "name": "Jackson Eftekhar",
-        "grade": "JR",
-        "time": 22.01,
-        "time_str": "22.01",
-        "year": "25-26",
-        "from_relay": "200FR",
-        "raw_split": "00:22.01",
-        "date": "Nov 08, 2025",
-        "meet": "Division III - State Swim & Dive (AZ)",
-        "relay_time": "01:30.45"
-      },
-      {
         "name": "Samuel Stott",
         "grade": "JR",
         "time": 22.29,
@@ -47,6 +35,18 @@
         "raw_split": "00:22.43",
         "date": "2016-17",
         "meet": "200FR Relay Leadoff"
+      },
+      {
+        "name": "Jackson Eftekhar",
+        "grade": "JR",
+        "time": 23.21,
+        "time_str": "23.21",
+        "year": "25-26",
+        "from_relay": "200FR",
+        "raw_split": "00:23.21",
+        "date": "Nov 08, 2025",
+        "meet": "Division III - State Swim & Dive (AZ)",
+        "relay_time": "01:30.45"
       },
       {
         "name": "Trevor Clausen",
