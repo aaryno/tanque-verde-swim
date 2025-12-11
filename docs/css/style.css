@@ -119,7 +119,12 @@ body {
 }
 
 .badge-pb.pb-lightgray {
-  background: #999999;
+  background: #888888;
+  color: #fff;
+}
+
+.badge-pb.pb-verylightgray {
+  background: #aaaaaa;
   color: #000;
 }
 
