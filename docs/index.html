@@ -659,8 +659,12 @@
         
         // Collapsible sections on index page
         document.querySelectorAll('.section-header').forEach(header => {
-            header.addEventListener('click', function() {
-                const targetId = this.querySelector('.section-toggle').dataset.target;
+            header.addEventListener('click', function(e) {
+                e.preventDefault();
+                const toggleBtn = this.querySelector('.section-toggle');
+                if (!toggleBtn) return;
+                
+                const targetId = toggleBtn.dataset.target;
                 const content = document.getElementById(targetId);
                 
                 if (content) {

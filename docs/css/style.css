@@ -87,7 +87,7 @@ body {
 }
 
 .section-header {
-  background: linear-gradient(135deg, var(--tvhs-primary) 0%, var(--tvhs-accent) 100%);
+  background-color: var(--tvhs-primary);
   color: white;
   padding: 0.75rem 1rem;
   border-radius: 8px 8px 0 0;
@@ -95,36 +95,22 @@ body {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  transition: background 0.2s;
+}
+
+.section-header:hover {
+  background-color: var(--tvhs-dark-green);
 }
 
 .section-header h2 {
   color: white;
   font-size: 1.3rem;
   margin: 0;
+  font-weight: bold;
 }
 
 .section-toggle {
-  background: rgba(255,255,255,0.2);
-  border: none;
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.section-toggle:hover {
-  background: rgba(255,255,255,0.3);
-}
-
-.toggle-icon {
-  font-size: 0.8rem;
-  display: inline-block;
-  transition: transform 0.3s;
-}
-
-.section-header.collapsed .toggle-icon {
-  transform: rotate(-90deg);
+  display: none; /* Hide toggle button, click header instead */
 }
 
 .section-content {
@@ -241,10 +227,11 @@ body {
 .hero-header {
   background: linear-gradient(135deg, var(--tvhs-primary) 0%, var(--tvhs-dark-green) 100%);
   color: white;
-  position: sticky;
-  top: 88px; /* Below nav bars */
-  z-index: 1010;
+  position: sticky !important;
+  top: 88px !important; /* Below nav bars */
+  z-index: 1015 !important;
   transition: all 0.3s ease;
+  margin-bottom: 0 !important;
 }
 
 .hero-expanded {
@@ -426,7 +413,7 @@ body {
   padding: 0.25rem 0;
   position: sticky !important;
   top: 48px !important;
-  z-index: 1025;
+  z-index: 1025 !important;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   margin-top: 0 !important;
   margin-bottom: 0 !important;
