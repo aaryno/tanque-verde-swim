@@ -1299,3 +1299,65 @@ h2[id], h3[id], .event-heading[id] {
   100% { transform: rotate(360deg); }
 }
 
+/* ==========================================
+   Relay Splits Styling
+   ========================================== */
+.relay-splits {
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed #ccc;
+  font-size: 0.9rem;
+}
+
+.split-entry {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.split-entry:last-child {
+  border-bottom: none;
+}
+
+.split-name {
+  flex: 2;
+  font-weight: 500;
+}
+
+.split-stroke {
+  flex: 1;
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  font-size: 0.85em;
+}
+
+.split-time {
+  flex: 1;
+  text-align: right;
+  font-family: 'Courier New', monospace;
+  color: var(--tvhs-primary);
+  font-weight: bold;
+}
+
+/* Mobile adjustments for splits */
+@media (max-width: 768px) {
+  .split-entry {
+    flex-wrap: wrap;
+  }
+  
+  .split-name {
+    flex-basis: 50%;
+  }
+  
+  .split-stroke {
+    flex-basis: 25%;
+    font-size: 0.8em;
+  }
+  
+  .split-time {
+    flex-basis: 25%;
+  }
+}
+
