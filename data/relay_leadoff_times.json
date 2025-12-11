@@ -29,7 +29,7 @@
         "raw_split": "00:22.29"
       },
       {
-        "name": "Joe Breinholt",
+        "name": "Joseph Breinholt",
         "grade": "SR",
         "time": 22.43,
         "time_str": "22.43",
@@ -45,24 +45,6 @@
         "year": "19-20",
         "from_relay": "200FR",
         "raw_split": "00:23.26"
-      },
-      {
-        "name": "Sam Stott",
-        "grade": "FR",
-        "time": 23.55,
-        "time_str": "23.55",
-        "year": "19-20",
-        "from_relay": "200FR",
-        "raw_split": "00:23.55"
-      },
-      {
-        "name": "Nick Cusson",
-        "grade": "FR",
-        "time": 23.73,
-        "time_str": "23.73",
-        "year": "20-21",
-        "from_relay": "200FR",
-        "raw_split": "00:23.73"
       },
       {
         "name": "Grayson The",
@@ -92,7 +74,7 @@
         "raw_split": "00:24.81"
       },
       {
-        "name": "Xander Flores",
+        "name": "Alexander Flores",
         "grade": "SR",
         "time": 24.85,
         "time_str": "24.85",
@@ -325,7 +307,7 @@
         ]
       },
       {
-        "name": "Joe Breinholt",
+        "name": "Joseph Breinholt",
         "grade": "SR",
         "time": 48.47,
         "time_str": "48.47",
@@ -334,18 +316,6 @@
         "raw_splits": [
           "00:23.42",
           "00:25.05"
-        ]
-      },
-      {
-        "name": "Joseph Breinholt",
-        "grade": "JR",
-        "time": 49.2,
-        "time_str": "49.20",
-        "year": "15-16",
-        "from_relay": "400FR",
-        "raw_splits": [
-          "00:23.80",
-          "00:25.40"
         ]
       },
       {
@@ -385,18 +355,6 @@
         ]
       },
       {
-        "name": "Nick Cusson",
-        "grade": "FR",
-        "time": 51.78,
-        "time_str": "51.78",
-        "year": "20-21",
-        "from_relay": "400FR",
-        "raw_splits": [
-          "00:24.85",
-          "00:26.93"
-        ]
-      },
-      {
         "name": "Trevor Clausen",
         "grade": "SO",
         "time": 52.04,
@@ -433,7 +391,7 @@
         ]
       },
       {
-        "name": "Xander Flores",
+        "name": "Alexander Flores",
         "grade": "SR",
         "time": 54.9,
         "time_str": "54.90",
@@ -514,18 +472,6 @@
         "raw_splits": [
           "00:27.32",
           "00:30.84"
-        ]
-      },
-      {
-        "name": "Alexander Flores",
-        "grade": "SO",
-        "time": 58.43,
-        "time_str": "58.43",
-        "year": "14-15",
-        "from_relay": "400FR",
-        "raw_splits": [
-          "00:27.45",
-          "00:30.98"
         ]
       },
       {
@@ -818,7 +764,7 @@
         "raw_split": "00:27.84"
       },
       {
-        "name": "Shaye Sulgar",
+        "name": "Shaye Sulger",
         "grade": "SR",
         "time": 27.98,
         "time_str": "27.98",
@@ -1186,7 +1132,7 @@
         ]
       },
       {
-        "name": "Shaye Sulgar",
+        "name": "Shaye Sulger",
         "grade": "SR",
         "time": 63.45,
         "time_str": "1:03.45",

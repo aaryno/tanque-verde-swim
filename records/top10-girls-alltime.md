@@ -17,7 +17,7 @@
 | 6 | 26.05 | Maggie Colombo | SR | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
 | 7 | 26.31 | Chloe Weatherwax | FR | Oct 30, 2020 | SQ  @ CDO (Oro Valley, AZ) |
 | 8 | 26.36 | Paisley White | JR | Oct 23, 2021 | 2021 D-3 AIA State Championships (AZ) |
-| 9 | 26.57 (r) | Natalie Armstrong | SO | (21-22) | Relay Leadoff (200FR) |
+| 9 | 26.57 (r) | Natalie Armstrong | SO | 2021-22 | 200FR Relay Leadoff |
 | 10 | 26.61 | Hadley Cusson | JR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
 
 ### 100 Freestyle
@@ -29,10 +29,10 @@
 | 3 | 57.21 | Natalie Armstrong | SR | Oct 21, 2023 | Pecan Classic (Sahuarita Aquatic Center, AZ) |
 | 4 | 57.32 | Maggie Colombo | SR | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
 | 5 | 57.37 | Brianne Foley | JR | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
-| 6 | 57.86 (r) | Marisol Rivera | SR | (13-14) | Relay Leadoff (400FR) |
-| 7 | 57.96 (r) | Paisley White | SR | (22-23) | Relay Leadoff (400FR) |
+| 6 | 57.86 (r) | Marisol Rivera | SR | 2013-14 | 400FR Relay Leadoff |
+| 7 | 57.96 (r) | Paisley White | SR | 2022-23 | 400FR Relay Leadoff |
 | 8 | 58.02 | Isla Cerepak | FR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 9 | 58.03 (r) | Calla Isenberg | SR | (17-18) | Relay Leadoff (400FR) |
+| 9 | 58.03 (r) | Calla Isenberg | SR | 2017-18 | 400FR Relay Leadoff |
 | 10 | 58.11 | Grace Davis | SO | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
 
 ### 200 Freestyle

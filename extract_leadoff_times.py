@@ -17,6 +17,20 @@ import re
 from pathlib import Path
 from collections import defaultdict
 
+# Load swimmer aliases
+def load_aliases():
+    try:
+        with open('data/swimmer_aliases.json', 'r') as f:
+            return json.load(f)
+    except:
+        return {}
+
+ALIASES = load_aliases()
+
+def normalize_name(name):
+    """Apply swimmer aliases to normalize names"""
+    return ALIASES.get(name, name)
+
 def clean_name(name):
     """Remove grade suffix from name"""
     if ' - ' in name:
@@ -103,7 +117,7 @@ def extract_leadoff_times(all_splits):
             
             if relay_type == '200_free':
                 # 200 Free Relay: first swimmer's split = 50 Free
-                leadoff_name = clean_name(swimmers[0])
+                leadoff_name = normalize_name(clean_name(swimmers[0]))
                 leadoff_grade = get_grade(swimmers[0])
                 leadoff_time = parse_time_to_seconds(splits[0])
                 
@@ -122,7 +136,7 @@ def extract_leadoff_times(all_splits):
             elif relay_type == '400_free':
                 # 400 Free Relay: first swimmer's two splits = 100 Free
                 # Swimmers list has duplicates: [A, A, B, B, C, C, D, D]
-                leadoff_name = clean_name(swimmers[0])
+                leadoff_name = normalize_name(clean_name(swimmers[0]))
                 leadoff_grade = get_grade(swimmers[0])
                 
                 split1 = parse_time_to_seconds(splits[0])

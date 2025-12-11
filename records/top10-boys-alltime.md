@@ -9,16 +9,16 @@
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| **1** | **21.64 (r)** | **Nicholas Cusson** | **JR** | **(22-23)** | **Relay Leadoff (200FR)** |
-| 2 | 22.01 (r) | Jackson Eftekhar | JR | (25-26) | Relay Leadoff (200FR) |
+| **1** | **21.64 (r)** | **Nicholas Cusson** | **JR** | **2022-23** | **200FR Relay Leadoff** |
+| 2 | 22.01 (r) | Jackson Eftekhar | JR | 2025-26 | 200FR Relay Leadoff |
 | 3 | 22.13 | Samuel Stott | SR | Nov 05, 2022 | 2022 D-3 AIA Boys State Championships (AZ) |
-| 4 | 22.43 (r) | Joe Breinholt | SR | (16-17) | Relay Leadoff (200FR) |
-| 5 | 22.76 | Joseph Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
-| 6 | 22.96 | Zachary Duerkop | SR | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
-| 7 | 23.26 (r) | Trevor Clausen | SO | (19-20) | Relay Leadoff (200FR) |
-| 8 | 23.54 | Grayson The | SR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 9 | 23.55 (r) | Sam Stott | FR | (19-20) | Relay Leadoff (200FR) |
-| 10 | 23.73 (r) | Nick Cusson | FR | (20-21) | Relay Leadoff (200FR) |
+| 4 | 22.43 (r) | Joseph Breinholt | SR | 2016-17 | 200FR Relay Leadoff |
+| 5 | 22.96 | Zachary Duerkop | SR | Sep 27, 2025 | Arena High School Classic (Tucson, AZ) |
+| 6 | 23.26 (r) | Trevor Clausen | SO | 2019-20 | 200FR Relay Leadoff |
+| 7 | 23.54 | Grayson The | SR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
+| 8 | 24.21 | Tanner Morris | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
+| 9 | 24.81 (r) | Wade Olsson | SO | 2024-25 | 200FR Relay Leadoff |
+| 10 | 24.85 (r) | Alexander Flores | SR | 2016-17 | 200FR Relay Leadoff |
 
 ### 100 Freestyle
 
@@ -26,14 +26,14 @@
 |-----:|-----:|---------|------|------|------|
 | **1** | **46.44** | **Nicholas Cusson** | **SR** | **Nov 04, 2023** | **2023 D-3 AIA State Championships (AZ)** |
 | 2 | 47.71 | Samuel Stott | SO | Nov 05, 2020 | AIA State Meet - D3 (AZ) |
-| 3 | 47.92 (r) | Zachary Duerkop | SR | (25-26) | Relay Leadoff (400FR) |
+| 3 | 47.92 (r) | Zachary Duerkop | SR | 2025-26 | 400FR Relay Leadoff |
 | 4 | 47.98 | Joseph Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
-| 5 | 48.47 (r) | Joe Breinholt | SR | (16-17) | Relay Leadoff (400FR) |
-| 6 | 49.71 | John Deninghoff | SR | Nov 01, 2018 | AIA D-III Boys State Meet (AZ) |
-| 7 | 50.09 (r) | Wade Olsson | JR | (25-26) | Relay Leadoff (400FR) |
-| 8 | 51.43 | Jackson Eftekhar | JR | Oct 18, 2025 | Pecan Classic (Sahuarita, AZ) |
-| 9 | 51.78 (r) | Nick Cusson | FR | (20-21) | Relay Leadoff (400FR) |
-| 10 | 52.04 (r) | Trevor Clausen | SO | (19-20) | Relay Leadoff (400FR) |
+| 5 | 49.71 | John Deninghoff | SR | Nov 01, 2018 | AIA D-III Boys State Meet (AZ) |
+| 6 | 50.09 (r) | Wade Olsson | JR | 2025-26 | 400FR Relay Leadoff |
+| 7 | 51.43 | Jackson Eftekhar | JR | Oct 18, 2025 | Pecan Classic (Sahuarita, AZ) |
+| 8 | 52.04 (r) | Trevor Clausen | SO | 2019-20 | 400FR Relay Leadoff |
+| 9 | 52.36 | Austin Morris | SR | Oct 24, 2015 | Small School Championships (Paradise Valley, AZ) |
+| 10 | 53.58 | Jackson Machamer | SO | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
 
 ### 200 Freestyle
 
