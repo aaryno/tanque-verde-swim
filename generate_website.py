@@ -16,7 +16,7 @@ def create_nav_html():
     <nav class="navbar navbar-dark" id="main-nav">
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.html">
-                <img src="/images/hawk-logo.svg" alt="Tanque Verde Hawks" class="navbar-logo">
+                <img src="/images/hawk-logo.png" alt="Tanque Verde Hawks" class="navbar-logo">
                 <span class="navbar-brand-text">TVHS</span>
             </a>
             <!-- Gender Toggle -->
@@ -109,8 +109,8 @@ def create_html_page(title, content, page_type="default"):
     <link rel="stylesheet" href="/css/style.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-    <link rel="apple-touch-icon" href="/images/hawk-logo.svg">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/hawk-logo.png">
 </head>
 <body>
     {nav_html}
