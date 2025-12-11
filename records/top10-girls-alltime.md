@@ -1,7 +1,7 @@
 # All-Time Top 10 - Girls
 ## Tanque Verde High School Swimming
 
-**Generated:** December 11, 2025 at 08:54 AM
+**Generated:** December 11, 2025 at 09:21 AM
 
 ---
 
@@ -72,7 +72,7 @@
 | 1 | 1:00.33 | Carly Wilson | JR | Sep 23, 2010 | CDO Classic |
 | 2 | 1:02.29 | Logan Sulger | SR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
 | 3 | 1:02.65 | Calla Isenberg | SR | Oct 27, 2017 | Southern Arizona Regional Qualifier (Oro Valley, AZ) |
-| 4 | 1:03.12 | Lindsey Schoel-Smith |  | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
+| 4 | 1:03.12 | Lindsey Schoel-Smith | SR | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
 | 5 | 1:03.34 | Sarynn Patterson | SR | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
 | 6 | 1:04.81 | Paisley White | SR | Nov 05, 2022 | 2022 D-3 AIA Girls State Championships (AZ) |
 | 7 | 1:05.85 | Hazel Dasse | SO | Nov 04, 2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
@@ -84,16 +84,16 @@
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| 1 | 1:05.10 | Lindsey Schoel-Smith |  | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
-| 2 | 1:07.01 | Lindsey Sohoel-Smith | SO | Nov 04, 2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
-| 3 | 1:13.71 | Adrianna Witte | SR | Sep 20, 2025 | Canyon del Oro Classic (Tucson, AZ) |
-| 4 | 1:15.32 | Madeline Barnard | SR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 5 | 1:16.11 | Madisyn Clausen | SR | Oct 31, 2014 | Southern Arizona Region Qualifier (Tucson, AZ) |
-| 6 | 1:16.95 | Sage Weatherwax |  | Oct 30, 2020 | SQ  @ CDO (Oro Valley, AZ) |
-| 7 | 1:17.02 | Sarynn Patterson | SR | Oct 19, 2019 | Mike Ward Invitational (Tucson, AZ) |
-| 8 | 1:17.49 | Isabelle Sansom | SR | Oct 19, 2019 | Mike Ward Invitational (Tucson, AZ) |
-| 9 | 1:18.30 | Alexa Barrera |  | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
-| 10 | 1:20.06 | Janessa Grabe | SR | Nov 2007 | 2007 AIA 1A-5A State Championships |
+| 1 | 1:05.10 | Lindsey Schoel-Smith | SR | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
+| 2 | 1:13.71 | Adrianna Witte | SR | Sep 20, 2025 | Canyon del Oro Classic (Tucson, AZ) |
+| 3 | 1:15.32 | Madeline Barnard | SR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
+| 4 | 1:16.11 | Madisyn Clausen | SR | Oct 31, 2014 | Southern Arizona Region Qualifier (Tucson, AZ) |
+| 5 | 1:16.95 | Sage Weatherwax | JR | Oct 30, 2020 | SQ  @ CDO (Oro Valley, AZ) |
+| 6 | 1:17.02 | Sarynn Patterson | SR | Oct 19, 2019 | Mike Ward Invitational (Tucson, AZ) |
+| 7 | 1:17.49 | Isabelle Sansom | SR | Oct 19, 2019 | Mike Ward Invitational (Tucson, AZ) |
+| 8 | 1:18.30 | Alexa Barrera |  | Oct 25, 2023 | Southern Arizona Region Qualifier (Oro Valley Aquatic Center, AZ) |
+| 9 | 1:20.06 | Janessa Grabe | SR | Nov 2007 | 2007 AIA 1A-5A State Championships |
+| 10 | 1:20.17 | Lily Niccum | SO | Nov 09, 2024 | 2024 D3 State Championship (Paradise Valley, AZ) |
 
 ### 100 Butterfly
 
@@ -105,7 +105,7 @@
 | 4 | 1:05.95 | Chloe Weatherwax |  | Nov 05, 2020 | AIA State Meet - D3 (AZ) |
 | 5 | 1:06.15 | Grace Davis | SO | Oct 25, 2024 | Southern Arizona Qualifier (Oro Valley, AZ) |
 | 6 | 1:07.42 | Stella Eftekhar | FR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
-| 7 | 1:08.62 | Lindsey Sohoel-Smith | FR | Oct 03, 2015 | 2015 High School Classic (Tucson, AZ) |
+| 7 | 1:08.62 | Lindsey Schoel-Smith | FR | Oct 03, 2015 | 2015 High School Classic (Tucson, AZ) |
 | 8 | 1:10.15 | Amira Alitiem | JR | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
 | 9 | 1:11.40 | Rachel Decesari | JR | Nov 2008 | 2008 AIA 1A-5A State Championships |
 | 10 | 1:12.50 | Adrianna Witte | SR | Sep 20, 2025 | Canyon del Oro Classic (Tucson, AZ) |
@@ -114,7 +114,7 @@
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| 1 | 2:15.55 | Lindsey Sohoel-Smith | SO | Nov 04, 2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
+| 1 | 2:15.55 | Lindsey Schoel-Smith | SO | Nov 04, 2016 | 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ) |
 | 2 | 2:20.75 | Sarynn Patterson | SR | Nov 07, 2019 | 2019 AIA D-III State Meet (AZ) |
 | 3 | 2:21.97 | Isabelle Sansom | JR | Nov 01, 2018 | AIA D-III Girls State Meet (AZ) |
 | 4 | 2:27.21 | Hazel Dasse | FR | Oct 24, 2015 | Small School Championships (Paradise Valley, AZ) |

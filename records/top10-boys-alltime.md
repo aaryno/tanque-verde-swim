@@ -1,7 +1,7 @@
 # All-Time Top 10 - Boys
 ## Tanque Verde High School Swimming
 
-**Generated:** December 11, 2025 at 08:54 AM
+**Generated:** December 11, 2025 at 09:21 AM
 
 ---
 
@@ -25,9 +25,9 @@
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
 | 1 | 46.44 | Nicholas Cusson | SR | Nov 04, 2023 | 2023 D-3 AIA State Championships (AZ) |
-| 2 | 47.71 | Samuel Stott |  | Nov 05, 2020 | AIA State Meet - D3 (AZ) |
+| 2 | 47.71 | Samuel Stott | SO | Nov 05, 2020 | AIA State Meet - D3 (AZ) |
 | 3 | 47.98 | Joseph Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier (Tucson, AZ) |
-| 4 | 49.71 | John Deninghoff |  | Nov 01, 2018 | AIA D-III Boys State Meet (AZ) |
+| 4 | 49.71 | John Deninghoff | SR | Nov 01, 2018 | AIA D-III Boys State Meet (AZ) |
 | 5 | 50.64 | Zachary Duerkop | JR | Oct 19, 2024 | Pecan Classic (Sahuarita, AZ) |
 | 6 | 51.43 | Jackson Eftekhar | JR | Oct 18, 2025 | Pecan Classic (Sahuarita, AZ) |
 | 7 | 52.36 | Austin Morris | SR | Oct 24, 2015 | Small School Championships (Paradise Valley, AZ) |
@@ -42,7 +42,7 @@
 | 1 | 1:43.60 | Nicholas Cusson | JR | Nov 05, 2022 | 2022 D-3 AIA Boys State Championships (AZ) |
 | 2 | 1:44.73 | Samuel Stott | JR | Oct 23, 2021 | 2021 D-3 AIA State Championships (AZ) |
 | 3 | 1:48.07 | Zachary Duerkop | SR | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
-| 4 | 1:48.60 | John Deninghoff |  | Nov 01, 2018 | AIA D-III Boys State Meet (AZ) |
+| 4 | 1:48.60 | John Deninghoff | SR | Nov 01, 2018 | AIA D-III Boys State Meet (AZ) |
 | 5 | 1:48.76 | Joseph Breinholt | JR | Nov 06, 2015 | 2015 AIA Division II State Swimming & Diving Championships (Mesa, AZ) |
 | 6 | 1:49.66 | Wade Olsson | JR | Oct 24, 2025 | Southern Arizona Qualifier (Tucson, AZ) |
 | 7 | 1:54.76 | Austin Morris | SR | Nov 06, 2015 | 2015 AIA Division II State Swimming & Diving Championships (Mesa, AZ) |
@@ -93,7 +93,7 @@
 | 7 | 1:11.18 | Bennett Johnston | SO | Nov 08, 2025 | 2025 D-3 AIA State Championships (AZ) |
 | 8 | 1:11.69 | Samuel Merrill | JR | Oct 01, 2016 | 2016 TYR High School Classic (Tucson, AZ) |
 | 9 | 1:12.88 | Alexander Flores | SR | Oct 01, 2016 | 2016 TYR High School Classic (Tucson, AZ) |
-| 10 | 1:12.89 | Dominic Colombo |  | Oct 30, 2020 | SQ  @ CDO (Oro Valley, AZ) |
+| 10 | 1:12.89 | Dominic Colombo | SR | Oct 30, 2020 | SQ  @ CDO (Oro Valley, AZ) |
 
 ### 100 Butterfly
 
