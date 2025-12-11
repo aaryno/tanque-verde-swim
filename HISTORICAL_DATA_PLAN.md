@@ -59,20 +59,17 @@ PDFs downloaded and analyzed for Tanque Verde mentions:
 
 | Year | PDF Downloaded | TV Mentions | Notes |
 |------|----------------|-------------|-------|
-| 2001 | ✓ | 0 | TV not competing at state level |
-| 2002 | ✓ | 0 | TV not competing at state level |
-| 2003 | ✓ | 0 | TV not competing at state level |
-| 2004 | ✓ | 0 | TV not competing at state level |
-| 2005 | ✓ | 0 | TV not competing at state level |
-| 2006 | ✓ | 0 | TV not competing at state level |
-| **2007** | ✓ | **50** | **First year at state!** Swimmers: Kappler, Grabe, Montijo, Matsunaga, Chang |
+| 2001-2006 | ✓ | 0 | **PDFs only contain 4A-5A results** (large schools). TV is D-III (small school) - not included in archives. |
+| **2007** | ✓ | **50** | **First year with 1A-5A** (all divisions). Swimmers: Kappler, Grabe, Montijo, Matsunaga, Chang |
 | 2008 | ✓ | 52 | Good data! |
 | 2009 | ✓ | 74 | Peak participation |
 | 2010 | ✓ | 8 | Some swimmers |
 | 2011 | ✓ | 14 | Some swimmers |
 | 2012+ | In MaxPreps | N/A | Already have this data |
 
-**Conclusion**: Tanque Verde started competing at the state championship level in **2007**.
+**Conclusion**: Tanque Verde (Division III) first appears in state archives in **2007** when 
+AIA started archiving results for ALL divisions (1A-5A), not just the larger schools (4A-5A).
+The TV swim program may have existed before 2007, but those results aren't in the online archives.
 
 ## Data Gaps
 
@@ -81,7 +78,7 @@ PDFs downloaded and analyzed for Tanque Verde mentions:
 - **Invitational Meets**: 2012-2025 (from MaxPreps)
 
 ### What we're missing:
-- **State Championships pre-2007**: TV did not compete at state level
+- **State Championships pre-2007**: Archives only have 4A-5A (large schools). TV results from before 2007 would need paper records.
 - **Invitational Meets 2007-2011**: Not available online - would need paper records
 
 ## Import Plan
