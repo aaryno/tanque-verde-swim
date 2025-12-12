@@ -473,8 +473,9 @@ def convert_top10_to_cards(md_file, output_file, title):
     # Parse events and records
     html_content = '<div class="content top10-cards">\n'
     
-    # Find all event sections (### Event Name followed by table)
-    event_pattern = r'### (.+?)\n\n\|.*?\|\n\|[-:\|\s]+\|\n((?:\|.*?\|\n)+)'
+    # Find all event sections (## or ### Event Name followed by table)
+    # Support both h2 (## Event) and h3 (### Event) headers
+    event_pattern = r'#{2,3} (.+?)\n\n\|.*?\|\n\|[-:\|\s]+\|\n((?:\|[^\n]+\n?)+)'
     
     for match in re.finditer(event_pattern, content, re.MULTILINE):
         event_name = match.group(1).strip()
