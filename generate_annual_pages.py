@@ -364,7 +364,7 @@ def generate_records_broken_html(data):
                                 </div>
                                 <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
                                     <span class="swimmer-name">{prev_swimmer_html}</span>
-                                    <span class="expand-hint">▼</span>
+                                    <span class="date-value">—</span>
                                 </div>
                                 <div class="record-location-hidden">📍 —</div>
                             </div>'''
@@ -387,7 +387,6 @@ def generate_records_broken_html(data):
                             <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
                                 <span class="swimmer-name"><strong>{new_swimmer_html}</strong></span>
                                 <span class="date-value">{date}</span>
-                                <span class="expand-hint">▼</span>
                             </div>
                             <div class="record-location-hidden">📍 {meet}</div>
                             {prev_section}
@@ -492,7 +491,6 @@ def generate_class_records_html(class_records, season):
                             <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
                                 <span class="swimmer-name"><strong>{name}</strong></span>
                                 <span class="date-value">{date}</span>
-                                <span class="expand-hint">▼</span>
                             </div>
                             <div class="record-location-hidden">📍 {meet}</div>
                             {prev_section}
