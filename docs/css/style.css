@@ -63,6 +63,8 @@
 .relay-line-1 .time-value {
   font-family: var(--time-font);
   font-weight: var(--time-weight);
+  font-size: var(--time-size-md);  /* Unified time size: 1.05rem */
+  color: var(--tvhs-dark-green);
 }
 
 /* Base date display - all dates share these core properties */
@@ -613,9 +615,7 @@ body {
 }
 
 .record-time {
-  /* Match top10-time styling exactly */
-  font-size: var(--time-size-md);
-  color: var(--tvhs-dark-green);  /* Same as top10-time */
+  /* Inherits font-size and color from base time display */
 }
 
 .record-athlete {
@@ -714,10 +714,8 @@ body {
 }
 
 .top10-time {
-  /* Base properties set in Design System section above */
+  /* Inherits font-size and color from base time display */
   flex: 0 0 100px;
-  font-size: var(--time-size-md);
-  color: var(--tvhs-dark-green);
   white-space: nowrap;
 }
 
@@ -1605,13 +1603,10 @@ footer a:hover {
     padding-top: 0.5rem;
   }
   
-  /* Time cell */
+  /* Time cell - inherits from base, just add layout properties */
   .table-relay .time-cell {
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-    font-size: 0.95rem;
     white-space: nowrap;
-    color: var(--tvhs-primary, #0a3622);
+    font-size: 0.95rem;  /* Match top10-time mobile size */
   }
   
   /* Relay names cell */
@@ -2111,12 +2106,9 @@ h2[id], h3[id], .event-heading[id] {
   margin-bottom: 0;
 }
 
-.table-relay thead th {
-  background: #f8f9fa;  /* Light gray, not green (green is now in event-heading) */
-  color: var(--tvhs-dark-green);
-  font-weight: 600;
-  font-size: 0.85rem;
-  border-bottom: 2px solid #ddd;
+/* Hide relay table header - event name is now in .event-heading */
+.table-relay thead {
+  display: none;
 }
 
 .table-relay .relay-names-cell {
