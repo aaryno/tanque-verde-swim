@@ -356,10 +356,23 @@ def generate_full_page_html(gender, events, splits_data):
             .table-relay,
             .table-relay thead,
             .table-relay tbody,
-            .table-relay tr,
             .table-relay th,
             .table-relay td {{
                 display: revert !important;
+            }}
+            
+            /* Relay rows need explicit table-row display */
+            .table-relay .relay-row {{
+                display: table-row !important;
+            }}
+            
+            /* Details rows stay hidden until toggled */
+            .table-relay .relay-details-row {{
+                display: none !important;
+            }}
+            
+            .table-relay .relay-details-row.show {{
+                display: table-row !important;
             }}
             
             .table-relay {{
