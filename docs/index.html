@@ -444,512 +444,250 @@
         <div class="section-content" id="records-content">
             <!-- Overall Records -->
             <h3 class="mt-4 mb-3">🏆 Overall School Records</h3>
-        <div class="row g-4">
-            <div class="col-md-6">
-                <div class="card relay-record-broken">
-                    <div class="card-body">
-                        <h5 class="card-title">Boys 200 Medley Relay 🥇</h5>
-                        
-                        <!-- NEW Record -->
-                        <div class="relay-record-entry mb-3">
-                            <div class="record-label">NEW RECORD</div>
-                            <div class="relay-compact-wrapper">
-                                <div class="relay-line-1">
-                                    <span class="rank-badge">🥇</span>
-                                    <span class="time-value">1:41.80</span>
-                                    <span class="date-value">Oct 24, 2025</span>
-                                </div>
-                                <div class="relay-line-2" onclick="this.parentElement.classList.toggle('expanded')">
-                                    <span class="relay-names-short">Olsson, Olsson, Eftekhar, Duerkop ▼</span>
-                                </div>
-                                <div class="relay-expanded-content">
-                                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Kent Olsson <span class="grade-badge grade-fr">FR</span></span>
-                                            <span class="swimmer-stroke">Backstroke</span>
-                                            <span class="swimmer-time">28.12</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Wade Olsson <span class="grade-badge grade-jr">JR</span></span>
-                                            <span class="swimmer-stroke">Breaststroke</span>
-                                            <span class="swimmer-time">27.30</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Eftekhar <span class="grade-badge grade-jr">JR</span></span>
-                                            <span class="swimmer-stroke">Butterfly</span>
-                                            <span class="swimmer-time">24.56</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Zachary Duerkop <span class="grade-badge grade-sr">SR</span></span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">21.82</span>
-                                        </div>
-                                    </div>
-                                    <div class="relay-meet">📍 Southern AZ Qualifier (Tucson, AZ)</div>
+            <div class="row g-4">
+                <!-- Boys 200 Medley Relay -->
+                <div class="col-md-6">
+                    <div class="card record-card-compact">
+                        <div class="card-body">
+                            <div class="record-row record-header-row">
+                                <span class="event-name">Boys 200 Medley Relay 🥇</span>
+                                <span class="time-value">1:41.80</span>
+                            </div>
+                            <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                <span class="swimmer-name"><strong>Olsson, Olsson, Eftekhar, Duerkop</strong></span>
+                                <span class="date-value">Oct 24, 2025</span>
+                            </div>
+                            <div class="record-location-hidden">
+                                📍 Southern AZ Qualifier (Tucson, AZ)
+                                <div class="relay-splits mt-2">
+                                    <div class="relay-split-row"><span class="split-stroke">BK</span><span class="split-swimmer">Kent Olsson <span class="grade-badge grade-fr">FR</span></span><span class="split-time">28.12</span></div>
+                                    <div class="relay-split-row"><span class="split-stroke">BR</span><span class="split-swimmer">Wade Olsson <span class="grade-badge grade-jr">JR</span></span><span class="split-time">27.30</span></div>
+                                    <div class="relay-split-row"><span class="split-stroke">FL</span><span class="split-swimmer">Jackson Eftekhar <span class="grade-badge grade-jr">JR</span></span><span class="split-time">24.56</span></div>
+                                    <div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Zachary Duerkop <span class="grade-badge grade-sr">SR</span></span><span class="split-time">21.82</span></div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- OLD Record -->
-                        <div class="relay-record-entry">
-                            <div class="record-label-old">PREVIOUS RECORD</div>
-                            <div class="relay-compact-wrapper">
-                                <div class="relay-line-1">
-                                    <span class="rank-badge">🥈</span>
-                                    <span class="time-value">1:45.73</span>
+                            <div class="record-prev-section">
+                                <div class="record-row">
+                                    <span class="record-label-small">Previous:</span>
+                                    <span class="time-value-small">1:45.73</span>
+                                </div>
+                                <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                    <span class="swimmer-name">Olsson, Duerkop, Eftekhar, Machamer</span>
                                     <span class="date-value">Oct 25, 2024</span>
                                 </div>
-                                <div class="relay-line-2" onclick="this.parentElement.classList.toggle('expanded')">
-                                    <span class="relay-names-short">Machamer, Olsson, Duerkop, Eftekhar ▼</span>
-                                </div>
-                                <div class="relay-expanded-content">
-                                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Wade Olsson <span class="grade-badge grade-so">SO</span></span>
-                                            <span class="swimmer-stroke">Backstroke</span>
-                                            <span class="swimmer-time">28.05</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Zachary Duerkop <span class="grade-badge grade-jr">JR</span></span>
-                                            <span class="swimmer-stroke">Breaststroke</span>
-                                            <span class="swimmer-time">27.24</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Eftekhar <span class="grade-badge grade-so">SO</span></span>
-                                            <span class="swimmer-stroke">Butterfly</span>
-                                            <span class="swimmer-time">25.96</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Machamer <span class="grade-badge grade-jr">JR</span></span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">24.48</span>
-                                        </div>
-                                    </div>
-                                    <div class="relay-meet">📍 Southern AZ Qualifier (Oro Valley, AZ)</div>
-                                </div>
+                                <div class="record-location-hidden">📍 Southern AZ Qualifier (Oro Valley, AZ)</div>
+                            </div>
+                            <div class="record-improvement">
+                                <span class="text-success"><strong>⬆ Improvement: 3.93 seconds</strong></span>
                             </div>
                         </div>
-                        
-                        <p class="mb-0 text-success mt-3"><strong>Improvement: 3.93 seconds</strong></p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card relay-record-broken">
-                    <div class="card-body">
-                        <h5 class="card-title">Boys 200 Free Relay 🥇</h5>
-                        
-                        <!-- NEW Record -->
-                        <div class="relay-record-entry mb-3">
-                            <div class="record-label">NEW RECORD</div>
-                            <div class="relay-compact-wrapper">
-                                <div class="relay-line-1">
-                                    <span class="rank-badge">🥇</span>
-                                    <span class="time-value">1:30.45</span>
-                                    <span class="date-value">Nov 8, 2025</span>
-                                </div>
-                                <div class="relay-line-2" onclick="this.parentElement.classList.toggle('expanded')">
-                                    <span class="relay-names-short">Olsson, Eftekhar, The, Duerkop ▼</span>
-                                </div>
-                                <div class="relay-expanded-content">
-                                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Eftekhar <span class="grade-badge grade-jr">JR</span></span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">23.21</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Grayson The <span class="grade-badge grade-sr">SR</span></span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">23.25</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Wade Olsson <span class="grade-badge grade-jr">JR</span></span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">22.31</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Zachary Duerkop <span class="grade-badge grade-sr">SR</span></span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">21.68</span>
-                                        </div>
-                                    </div>
-                                    <div class="relay-meet">📍 AIA D3 State Championship (Phoenix, AZ)</div>
+                <!-- Boys 200 Free Relay -->
+                <div class="col-md-6">
+                    <div class="card record-card-compact">
+                        <div class="card-body">
+                            <div class="record-row record-header-row">
+                                <span class="event-name">Boys 200 Free Relay 🥇</span>
+                                <span class="time-value">1:30.45</span>
+                            </div>
+                            <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                <span class="swimmer-name"><strong>Eftekhar, The, Olsson, Duerkop</strong></span>
+                                <span class="date-value">Nov 8, 2025</span>
+                            </div>
+                            <div class="record-location-hidden">
+                                📍 AIA D3 State Championship (Phoenix, AZ)
+                                <div class="relay-splits mt-2">
+                                    <div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Jackson Eftekhar <span class="grade-badge grade-jr">JR</span></span><span class="split-time">23.21</span></div>
+                                    <div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Grayson The <span class="grade-badge grade-sr">SR</span></span><span class="split-time">23.25</span></div>
+                                    <div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Wade Olsson <span class="grade-badge grade-jr">JR</span></span><span class="split-time">22.31</span></div>
+                                    <div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Zachary Duerkop <span class="grade-badge grade-sr">SR</span></span><span class="split-time">21.68</span></div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- OLD Record -->
-                        <div class="relay-record-entry">
-                            <div class="record-label-old">PREVIOUS RECORD</div>
-                            <div class="relay-compact-wrapper">
-                                <div class="relay-line-1">
-                                    
-                                    <span class="time-value">1:32.46</span>
+                            <div class="record-prev-section">
+                                <div class="record-row">
+                                    <span class="record-label-small">Previous:</span>
+                                    <span class="time-value-small">1:32.46</span>
+                                </div>
+                                <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                    <span class="swimmer-name">Clausen, Radomsky, Spilotro, Stott</span>
                                     <span class="date-value">Nov 7, 2019</span>
                                 </div>
-                                <div class="relay-line-2" onclick="this.parentElement.classList.toggle('expanded')">
-                                    <span class="relay-names-short">Radomsky, Spilotro, Clausen, Stott ▼</span>
-                                </div>
-                                <div class="relay-expanded-content">
-                                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Trevor Clausen</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">23.29</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Logan Radomsky</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">23.57</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nicholas Spilotro</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">23.41</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Sam Stott</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">22.19</span>
-                                        </div>
-                                    </div>
-                                    <div class="relay-meet">📍 AIA D-III State Meet (Phoenix, AZ)</div>
-                                </div>
+                                <div class="record-location-hidden">📍 AIA D-III State Meet (Phoenix, AZ)</div>
+                            </div>
+                            <div class="record-improvement">
+                                <span class="text-success"><strong>⬆ Improvement: 2.01 seconds</strong></span>
                             </div>
                         </div>
-                        
-                        <p class="mb-0 text-success mt-3"><strong>Improvement: 2.01 seconds</strong></p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card relay-record-broken">
-                    <div class="card-body">
-                        <h5 class="card-title">Boys 400 Free Relay</h5>
-                        
-                        <!-- NEW Record -->
-                        <div class="relay-record-entry mb-3">
-                            <div class="record-label">NEW RECORD</div>
-                            <div class="relay-compact-wrapper">
-                                <div class="relay-line-1">
-                                    
-                                    <span class="time-value">3:20.60</span>
-                                    <span class="date-value">Oct 18, 2025</span>
-                                </div>
-                                <div class="relay-line-2" onclick="this.parentElement.classList.toggle('expanded')">
-                                    <span class="relay-names-short">Olsson, Eftekhar, The, Duerkop ▼</span>
-                                </div>
-                                <div class="relay-expanded-content">
-                                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Wade Olsson <span class="grade-badge grade-jr">JR</span></span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">50.09</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Grayson The <span class="grade-badge grade-sr">SR</span></span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">52.41</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Eftekhar <span class="grade-badge grade-jr">JR</span></span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">50.83</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Zachary Duerkop <span class="grade-badge grade-sr">SR</span></span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">47.27</span>
-                                        </div>
-                                    </div>
-                                    <div class="relay-meet">📍 Pecan Classic (Sahuarita, AZ)</div>
+                <!-- Boys 400 Free Relay -->
+                <div class="col-md-6">
+                    <div class="card record-card-compact">
+                        <div class="card-body">
+                            <div class="record-row record-header-row">
+                                <span class="event-name">Boys 400 Free Relay</span>
+                                <span class="time-value">3:20.60</span>
+                            </div>
+                            <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                <span class="swimmer-name"><strong>Olsson, The, Eftekhar, Duerkop</strong></span>
+                                <span class="date-value">Oct 18, 2025</span>
+                            </div>
+                            <div class="record-location-hidden">
+                                📍 Pecan Classic (Sahuarita, AZ)
+                                <div class="relay-splits mt-2">
+                                    <div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Wade Olsson <span class="grade-badge grade-jr">JR</span></span><span class="split-time">50.09</span></div>
+                                    <div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Grayson The <span class="grade-badge grade-sr">SR</span></span><span class="split-time">52.41</span></div>
+                                    <div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Jackson Eftekhar <span class="grade-badge grade-jr">JR</span></span><span class="split-time">50.83</span></div>
+                                    <div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Zachary Duerkop <span class="grade-badge grade-sr">SR</span></span><span class="split-time">47.27</span></div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- OLD Record -->
-                        <div class="relay-record-entry">
-                            <div class="record-label-old">PREVIOUS RECORD</div>
-                            <div class="relay-compact-wrapper">
-                                <div class="relay-line-1">
-                                    
-                                    <span class="time-value">3:26.64</span>
+                            <div class="record-prev-section">
+                                <div class="record-row">
+                                    <span class="record-label-small">Previous:</span>
+                                    <span class="time-value-small">3:26.64</span>
+                                </div>
+                                <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                    <span class="swimmer-name">Cusson, Alvarez, Radomsky, Stott</span>
                                     <span class="date-value">Nov 5, 2021</span>
                                 </div>
-                                <div class="relay-line-2" onclick="this.parentElement.classList.toggle('expanded')">
-                                    <span class="relay-names-short">Alvarez, Radomsky, Cusson, Stott ▼</span>
-                                </div>
-                                <div class="relay-expanded-content">
-                                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nicholas Cusson</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">48.68</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Alejandro Alvarez</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">54.53</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nolan Radomsky</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">55.69</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Samuel Stott</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">47.74</span>
-                                        </div>
-                                    </div>
-                                    <div class="relay-meet">📍 AIA D-III Boys State (Phoenix, AZ)</div>
-                                </div>
+                                <div class="record-location-hidden">📍 AIA D-III Boys State (Phoenix, AZ)</div>
+                            </div>
+                            <div class="record-improvement">
+                                <span class="text-success"><strong>⬆ Improvement: 6.04 seconds</strong></span>
                             </div>
                         </div>
-                        
-                        <p class="mb-0 text-success mt-3"><strong>Improvement: 6.04 seconds</strong></p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card relay-record-broken">
-                    <div class="card-body">
-                        <h5 class="card-title">Girls 200 Medley Relay</h5>
-                        
-                        <!-- NEW Record -->
-                        <div class="relay-record-entry mb-3">
-                            <div class="record-label">NEW RECORD</div>
-                            <div class="relay-compact-wrapper">
-                                <div class="relay-line-1">
-                                    
-                                    <span class="time-value">2:00.57</span>
-                                    <span class="date-value">Nov 8, 2025</span>
-                                </div>
-                                <div class="relay-line-2" onclick="this.parentElement.classList.toggle('expanded')">
-                                    <span class="relay-names-short">Sulger, Witte, Cusson, Cerepak ▼</span>
-                                </div>
-                                <div class="relay-expanded-content">
-                                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Logan Sulger <span class="grade-badge grade-sr">SR</span></span>
-                                            <span class="swimmer-stroke">Backstroke</span>
-                                            <span class="swimmer-time">30.03</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Adrianna Witte <span class="grade-badge grade-sr">SR</span></span>
-                                            <span class="swimmer-stroke">Breaststroke</span>
-                                            <span class="swimmer-time">34.10</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Hadley Cusson <span class="grade-badge grade-jr">JR</span></span>
-                                            <span class="swimmer-stroke">Butterfly</span>
-                                            <span class="swimmer-time">29.66</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Isla Cerepak <span class="grade-badge grade-fr">FR</span></span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">26.78</span>
-                                        </div>
-                                    </div>
-                                    <div class="relay-meet">📍 AIA D3 State Championship (Phoenix, AZ)</div>
+                <!-- Girls 200 Medley Relay -->
+                <div class="col-md-6">
+                    <div class="card record-card-compact">
+                        <div class="card-body">
+                            <div class="record-row record-header-row">
+                                <span class="event-name">Girls 200 Medley Relay</span>
+                                <span class="time-value">2:00.57</span>
+                            </div>
+                            <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                <span class="swimmer-name"><strong>Sulger, Witte, Cusson, Cerepak</strong></span>
+                                <span class="date-value">Nov 8, 2025</span>
+                            </div>
+                            <div class="record-location-hidden">
+                                📍 AIA D3 State Championship (Phoenix, AZ)
+                                <div class="relay-splits mt-2">
+                                    <div class="relay-split-row"><span class="split-stroke">BK</span><span class="split-swimmer">Logan Sulger <span class="grade-badge grade-sr">SR</span></span><span class="split-time">30.03</span></div>
+                                    <div class="relay-split-row"><span class="split-stroke">BR</span><span class="split-swimmer">Adrianna Witte <span class="grade-badge grade-sr">SR</span></span><span class="split-time">34.10</span></div>
+                                    <div class="relay-split-row"><span class="split-stroke">FL</span><span class="split-swimmer">Hadley Cusson <span class="grade-badge grade-jr">JR</span></span><span class="split-time">29.66</span></div>
+                                    <div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Isla Cerepak <span class="grade-badge grade-fr">FR</span></span><span class="split-time">26.78</span></div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- OLD Record -->
-                        <div class="relay-record-entry">
-                            <div class="record-label-old">PREVIOUS RECORD</div>
-                            <div class="relay-compact-wrapper">
-                                <div class="relay-line-1">
-                                    
-                                    <span class="time-value">2:00.67</span>
+                            <div class="record-prev-section">
+                                <div class="record-row">
+                                    <span class="record-label-small">Previous:</span>
+                                    <span class="time-value-small">2:00.67</span>
+                                </div>
+                                <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                    <span class="swimmer-name">Patterson, Sansom, White, Colombo</span>
                                     <span class="date-value">Nov 1, 2019</span>
                                 </div>
-                                <div class="relay-line-2" onclick="this.parentElement.classList.toggle('expanded')">
-                                    <span class="relay-names-short">Sansom, Colombo, White, Patterson ▼</span>
-                                </div>
-                                <div class="relay-expanded-content">
-                                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Sarynn Patterson</span>
-                                            <span class="swimmer-stroke">Backstroke</span>
-                                            <span class="swimmer-time">30.37</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Isabelle Sansom</span>
-                                            <span class="swimmer-stroke">Breaststroke</span>
-                                            <span class="swimmer-time">34.69</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Paisley White</span>
-                                            <span class="swimmer-stroke">Butterfly</span>
-                                            <span class="swimmer-time">28.52</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Maggie Colombo</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">27.09</span>
-                                        </div>
-                                    </div>
-                                    <div class="relay-meet">📍 Canyon Del Oro Invite (Tucson, AZ)</div>
-                                </div>
+                                <div class="record-location-hidden">📍 Canyon Del Oro Invite (Tucson, AZ)</div>
+                            </div>
+                            <div class="record-improvement">
+                                <span class="text-success"><strong>⬆ Improvement: 0.10 seconds</strong></span>
                             </div>
                         </div>
-                        
-                        <p class="mb-0 text-success mt-3"><strong>Improvement: 0.10 seconds</strong></p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card relay-record-broken">
-                    <div class="card-body">
-                        <h5 class="card-title">Boys 100 Butterfly</h5>
-                        
-                        <!-- NEW Record -->
-                        <div class="relay-record-entry mb-3">
-                            <div class="record-label">NEW RECORD</div>
-                            <div class="relay-compact-wrapper">
-                                <div class="relay-line-1">
-                                    <span class="time-value">52.48</span>
-                                    <span class="date-value">Nov 8, 2025</span>
-                                </div>
-                                <div class="relay-line-2" onclick="this.parentElement.classList.toggle('expanded')">
-                                    <span class="relay-names-short">Duerkop ▼</span>
-                                </div>
-                                <div class="relay-expanded-content">
-                                    <div class="relay-swimmers">
-                                        <div>Zachary Duerkop <span class="grade-badge grade-sr">SR</span></div>
-                                    </div>
-                                    <div class="relay-meet">📍 AIA D3 State Championship (Phoenix, AZ)</div>
-                                </div>
+                <!-- Boys 100 Butterfly -->
+                <div class="col-md-6">
+                    <div class="card record-card-compact">
+                        <div class="card-body">
+                            <div class="record-row record-header-row">
+                                <span class="event-name">Boys 100 Butterfly</span>
+                                <span class="time-value">52.48</span>
                             </div>
-                        </div>
-                        
-                        <!-- OLD Record -->
-                        <div class="relay-record-entry">
-                            <div class="record-label-old">PREVIOUS RECORD</div>
-                            <div class="relay-compact-wrapper">
-                                <div class="relay-line-1">
-                                    <span class="time-value">53.45</span>
+                            <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                <span class="swimmer-name"><strong>Zachary Duerkop <span class="grade-badge grade-sr">SR</span></strong></span>
+                                <span class="date-value">Nov 8, 2025</span>
+                            </div>
+                            <div class="record-location-hidden">📍 AIA D3 State Championship (Phoenix, AZ)</div>
+                            <div class="record-prev-section">
+                                <div class="record-row">
+                                    <span class="record-label-small">Previous:</span>
+                                    <span class="time-value-small">53.45</span>
+                                </div>
+                                <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                    <span class="swimmer-name">Nicholas Cusson <span class="grade-badge grade-sr">SR</span></span>
                                     <span class="date-value">Oct 21, 2023</span>
                                 </div>
-                                <div class="relay-line-2" onclick="this.parentElement.classList.toggle('expanded')">
-                                    <span class="relay-names-short">Cusson ▼</span>
-                                </div>
-                                <div class="relay-expanded-content">
-                                    <div class="relay-swimmers">
-                                        <div>Nick Cusson <span class="grade-badge grade-sr">SR</span></div>
-                                    </div>
-                                    <div class="relay-meet">📍 Pecan Classic (Sahuarita, AZ)</div>
-                                </div>
+                                <div class="record-location-hidden">📍 Pecan Classic (Sahuarita, AZ)</div>
+                            </div>
+                            <div class="record-improvement">
+                                <span class="text-success"><strong>⬆ Improvement: 0.97 seconds</strong></span>
                             </div>
                         </div>
-                        
-                        <p class="mb-0 text-success mt-3"><strong>Improvement: 0.97 seconds</strong></p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card relay-record-broken">
-                    <div class="card-body">
-                        <h5 class="card-title">Boys 200 IM</h5>
-                        
-                        <!-- NEW Record -->
-                        <div class="relay-record-entry mb-3">
-                            <div class="record-label">NEW RECORD</div>
-                            <div class="relay-compact-wrapper">
-                                <div class="relay-line-1">
-                                    <span class="time-value">1:57.78</span>
-                                    <span class="date-value">Nov 8, 2025</span>
-                                </div>
-                                <div class="relay-line-2" onclick="this.parentElement.classList.toggle('expanded')">
-                                    <span class="relay-names-short">Olsson ▼</span>
-                                </div>
-                                <div class="relay-expanded-content">
-                                    <div class="relay-swimmers">
-                                        <div>Wade Olsson <span class="grade-badge grade-jr">JR</span></div>
-                                    </div>
-                                    <div class="relay-meet">📍 AIA D3 State Championship (Phoenix, AZ)</div>
-                                </div>
+                <!-- Boys 200 IM -->
+                <div class="col-md-6">
+                    <div class="card record-card-compact">
+                        <div class="card-body">
+                            <div class="record-row record-header-row">
+                                <span class="event-name">Boys 200 IM</span>
+                                <span class="time-value">1:57.78</span>
                             </div>
-                        </div>
-                        
-                        <!-- OLD Record -->
-                        <div class="relay-record-entry">
-                            <div class="record-label-old">PREVIOUS RECORD</div>
-                            <div class="relay-compact-wrapper">
-                                <div class="relay-line-1">
-                                    <span class="time-value">2:02.29</span>
+                            <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                <span class="swimmer-name"><strong>Wade Olsson <span class="grade-badge grade-jr">JR</span></strong></span>
+                                <span class="date-value">Nov 8, 2025</span>
+                            </div>
+                            <div class="record-location-hidden">📍 AIA D3 State Championship (Phoenix, AZ)</div>
+                            <div class="record-prev-section">
+                                <div class="record-row">
+                                    <span class="record-label-small">Previous:</span>
+                                    <span class="time-value-small">2:02.29</span>
+                                </div>
+                                <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                    <span class="swimmer-name">Nicholas Cusson <span class="grade-badge grade-sr">SR</span></span>
                                     <span class="date-value">Sep 16, 2023</span>
                                 </div>
-                                <div class="relay-line-2" onclick="this.parentElement.classList.toggle('expanded')">
-                                    <span class="relay-names-short">Cusson ▼</span>
-                                </div>
-                                <div class="relay-expanded-content">
-                                    <div class="relay-swimmers">
-                                        <div>Nick Cusson <span class="grade-badge grade-sr">SR</span></div>
-                                    </div>
-                                    <div class="relay-meet">📍 CDO Classic (Tucson, AZ)</div>
-                                </div>
+                                <div class="record-location-hidden">📍 CDO Classic (Tucson, AZ)</div>
+                            </div>
+                            <div class="record-improvement">
+                                <span class="text-success"><strong>⬆ Improvement: 4.51 seconds</strong></span>
                             </div>
                         </div>
-                        
-                        <p class="mb-0 text-success mt-3"><strong>Improvement: 4.51 seconds</strong></p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card relay-record-broken">
-                    <div class="card-body">
-                        <h5 class="card-title">Girls 100 Backstroke</h5>
-                        
-                        <!-- NEW Record -->
-                        <div class="relay-record-entry mb-3">
-                            <div class="record-label">NEW RECORD</div>
-                            <div class="relay-compact-wrapper">
-                                <div class="relay-line-1">
-                                    <span class="time-value">1:02.29</span>
-                                    <span class="date-value">Nov 8, 2025</span>
-                                </div>
-                                <div class="relay-line-2" onclick="this.parentElement.classList.toggle('expanded')">
-                                    <span class="relay-names-short">Sulger ▼</span>
-                                </div>
-                                <div class="relay-expanded-content">
-                                    <div class="relay-swimmers">
-                                        <div>Logan Sulger <span class="grade-badge grade-sr">SR</span></div>
-                                    </div>
-                                    <div class="relay-meet">📍 AIA D3 State Championship (Phoenix, AZ)</div>
-                                </div>
+                <!-- Girls 100 Backstroke -->
+                <div class="col-md-6">
+                    <div class="card record-card-compact">
+                        <div class="card-body">
+                            <div class="record-row record-header-row">
+                                <span class="event-name">Girls 100 Backstroke</span>
+                                <span class="time-value">1:02.29</span>
                             </div>
-                        </div>
-                        
-                        <!-- OLD Record -->
-                        <div class="relay-record-entry">
-                            <div class="record-label-old">PREVIOUS RECORD</div>
-                            <div class="relay-compact-wrapper">
-                                <div class="relay-line-1">
-                                    <span class="time-value">1:02.65</span>
+                            <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                <span class="swimmer-name"><strong>Logan Sulger <span class="grade-badge grade-sr">SR</span></strong></span>
+                                <span class="date-value">Nov 8, 2025</span>
+                            </div>
+                            <div class="record-location-hidden">📍 AIA D3 State Championship (Phoenix, AZ)</div>
+                            <div class="record-prev-section">
+                                <div class="record-row">
+                                    <span class="record-label-small">Previous:</span>
+                                    <span class="time-value-small">1:02.65</span>
+                                </div>
+                                <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                    <span class="swimmer-name">Calla Isenberg <span class="grade-badge grade-sr">SR</span></span>
                                     <span class="date-value">Oct 27, 2017</span>
                                 </div>
-                                <div class="relay-line-2" onclick="this.parentElement.classList.toggle('expanded')">
-                                    <span class="relay-names-short">Isenberg ▼</span>
-                                </div>
-                                <div class="relay-expanded-content">
-                                    <div class="relay-swimmers">
-                                        <div>Calla Isenberg <span class="grade-badge grade-sr">SR</span></div>
-                                    </div>
-                                    <div class="relay-meet">📍 Southern AZ Regional Qualifier (Oro Valley, AZ)</div>
-                                </div>
+                                <div class="record-location-hidden">📍 Southern AZ Regional Qualifier (Oro Valley, AZ)</div>
+                            </div>
+                            <div class="record-improvement">
+                                <span class="text-success"><strong>⬆ Improvement: 0.36 seconds</strong></span>
                             </div>
                         </div>
-                        
-                        <p class="mb-0 text-success mt-3"><strong>Improvement: 0.36 seconds</strong></p>
                     </div>
                 </div>
             </div>
-        </div>
-</div>
         </div>
     </div>
     
