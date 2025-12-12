@@ -437,9 +437,9 @@ body {
 
 .section-header h2 {
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.1rem;  /* Match .top10-event-header and .event-heading */
   margin: 0;
-  font-weight: bold;
+  font-weight: 600;  /* Match other headers (600 instead of bold) */
 }
 
 .section-toggle {
