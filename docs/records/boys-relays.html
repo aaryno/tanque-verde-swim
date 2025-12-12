@@ -127,9 +127,66 @@
             color: #666;
         }
         
-        /* Mobile styles */
-        @media (max-width: 650px) {
+        /* Mobile styles - override main style.css table transformations */
+        @media (max-width: 768px) {
+            /* Prevent table from being converted to block display */
+            .table-relay,
+            .table-relay thead,
+            .table-relay tbody,
+            .table-relay tr,
+            .table-relay th,
             .table-relay td {
+                display: revert !important;
+            }
+            
+            .table-relay {
+                width: 100%;
+                font-size: 0.85rem;
+            }
+            
+            .table-relay th,
+            .table-relay td {
+                padding: 0.5rem 0.3rem;
+            }
+            
+            .rank-cell {
+                width: 35px;
+            }
+            
+            .time-cell {
+                width: 70px;
+            }
+            
+            .relay-names-cell {
+                font-size: 0.8rem;
+            }
+            
+            .date-cell {
+                font-size: 0.75rem;
+                width: 80px;
+            }
+            
+            /* Expanded rows */
+            .relay-details-row td {
+                padding: 0.5rem !important;
+            }
+            
+            .relay-split-row {
+                flex-wrap: wrap;
+                padding: 0.4rem 0;
+            }
+            
+            .split-swimmer {
+                flex: 0 0 100%;
+                margin-bottom: 0.2rem;
+            }
+            
+            .split-stroke {
+                margin: 0;
+                font-size: 0.8rem;
+            }
+            
+            .split-time {
                 font-size: 0.9rem;
             }
         }
