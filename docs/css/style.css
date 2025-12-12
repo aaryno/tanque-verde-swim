@@ -463,6 +463,27 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Season Best Times page (annual summary) */
+.season-best-times-page {
+  padding: 0;
+}
+
+.season-best-section {
+  margin-bottom: 1.5rem;
+}
+
+.season-best-section:last-child {
+  margin-bottom: 0;
+}
+
+.season-best-section .event-heading {
+  margin-top: 1rem;
+}
+
+.season-best-section:first-child .event-heading {
+  margin-top: 0;
+}
+
 .gender-header {
   background: var(--tvhs-primary);
   color: white;

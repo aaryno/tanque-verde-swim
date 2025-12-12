@@ -107,6 +107,7 @@
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item jump-to-link" href="#season-overview">📊 Season Overview</a></li>
+                    <li><a class="dropdown-item jump-to-link" href="#season-best-times">🏊 Season Best Times</a></li>
                     <li><a class="dropdown-item jump-to-link" href="#records-broken">📈 Records Broken</a></li>
                     <li><a class="dropdown-item jump-to-link" href="#class-records">🎯 Class Records</a></li>
                 </ul>
@@ -158,59 +159,206 @@
                 </div>
             </div>
             
-            <h4 class="mt-5 mb-3">Season Best Times</h4>
-            <div class="table-responsive">
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>Event</th>
-                            <th>Boys</th>
-                            <th>Girls</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>50 Free</td>
-                            <td><span class="time">24.02</span> - Jackson Eftekhar <span class="grade-badge grade-so">SO</span></td>
-                            <td><span class="time">25.83</span> - Brianne Foley <span class="grade-badge grade-sr">SR</span></td>
-                        </tr>
-                        <tr>
-                            <td>100 Free</td>
-                            <td><span class="time">50.64</span> - Zachary Duerkop <span class="grade-badge grade-jr">JR</span></td>
-                            <td><span class="time">58.11</span> - Grace Davis <span class="grade-badge grade-so">SO</span></td>
-                        </tr>
-                        <tr>
-                            <td>200 Free</td>
-                            <td><span class="time">1:51.39</span> - Zachary Duerkop <span class="grade-badge grade-jr">JR</span></td>
-                            <td><span class="time">2:11.13</span> - Grace Davis <span class="grade-badge grade-so">SO</span></td>
-                        </tr>
-                        <tr>
-                            <td>500 Free</td>
-                            <td><span class="time">5:26.96</span> - Jackson Machamer <span class="grade-badge grade-so">SO</span></td>
-                            <td><span class="time">6:23.38</span> - Kadynce Drummond <span class="grade-badge grade-so">SO</span></td>
-                        </tr>
-                        <tr>
-                            <td>100 Back</td>
-                            <td><span class="time">1:01.43</span> - Wade Olsson <span class="grade-badge grade-so">SO</span></td>
-                            <td><span class="time">1:05.38</span> - Logan Sulger <span class="grade-badge grade-jr">JR</span></td>
-                        </tr>
-                        <tr>
-                            <td>100 Breast</td>
-                            <td><span class="time">59.51</span> - Zachary Duerkop <span class="grade-badge grade-jr">JR</span></td>
-                            <td><span class="time">1:16.16</span> - Adrianna Witte <span class="grade-badge grade-jr">JR</span></td>
-                        </tr>
-                        <tr>
-                            <td>100 Fly</td>
-                            <td><span class="time">54.45</span> - Zachary Duerkop <span class="grade-badge grade-jr">JR</span></td>
-                            <td><span class="time">1:01.84</span> - Brianne Foley <span class="grade-badge grade-sr">SR</span></td>
-                        </tr>
-                        <tr>
-                            <td>200 IM</td>
-                            <td><span class="time">2:04.11</span> - Zachary Duerkop <span class="grade-badge grade-jr">JR</span></td>
-                            <td><span class="time">2:35.12</span> - Ella Bissmeyer <span class="grade-badge grade-fr">FR</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+        </div>
+    </div>
+
+    <!-- Season Best Times -->
+    <div class="container my-5" id="season-best-times">
+        <div class="section-header" data-section="best-times">
+            <h2 class="mb-0">🏊 Season Best Times</h2>
+            <button class="section-toggle" data-target="best-times-content">
+                <span class="toggle-icon">▼</span>
+            </button>
+        </div>
+        <div class="section-content season-best-times-page" id="best-times-content">
+            <!-- Boys Season Best -->
+            <div class="season-best-section" id="boys-best-times">
+                <h3 class="event-heading">Boys Season Best</h3>
+                <div class="top10-event-cards">
+                    <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                        <div class="top10-line">
+                            <span class="event-name">50 Freestyle</span>
+                            <span class="top10-time">24.02</span>
+                            <span class="top10-athlete">Jackson Eftekhar <span class="grade-badge grade-so">SO</span></span>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="top10-expanded">
+                            <div class="record-meet">📍 21st Annual TYR HS Classic</div>
+                        </div>
+                    </div>
+                    <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                        <div class="top10-line">
+                            <span class="event-name">100 Freestyle</span>
+                            <span class="top10-time">50.64</span>
+                            <span class="top10-athlete">Zachary Duerkop <span class="grade-badge grade-jr">JR</span></span>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="top10-expanded">
+                            <div class="record-meet">📍 2024 D-3 AIA State Championship</div>
+                        </div>
+                    </div>
+                    <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                        <div class="top10-line">
+                            <span class="event-name">200 Freestyle</span>
+                            <span class="top10-time">1:51.39</span>
+                            <span class="top10-athlete">Zachary Duerkop <span class="grade-badge grade-jr">JR</span></span>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="top10-expanded">
+                            <div class="record-meet">📍 2024 D-3 AIA State Championship</div>
+                        </div>
+                    </div>
+                    <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                        <div class="top10-line">
+                            <span class="event-name">500 Freestyle</span>
+                            <span class="top10-time">5:26.96</span>
+                            <span class="top10-athlete">Jackson Machamer <span class="grade-badge grade-so">SO</span></span>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="top10-expanded">
+                            <div class="record-meet">📍 2024 D-3 AIA State Championship</div>
+                        </div>
+                    </div>
+                    <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                        <div class="top10-line">
+                            <span class="event-name">100 Backstroke</span>
+                            <span class="top10-time">1:01.43</span>
+                            <span class="top10-athlete">Wade Olsson <span class="grade-badge grade-so">SO</span></span>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="top10-expanded">
+                            <div class="record-meet">📍 2024 D-3 AIA State Championship</div>
+                        </div>
+                    </div>
+                    <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                        <div class="top10-line">
+                            <span class="event-name">100 Breaststroke</span>
+                            <span class="top10-time">59.51</span>
+                            <span class="top10-athlete">Zachary Duerkop <span class="grade-badge grade-jr">JR</span></span>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="top10-expanded">
+                            <div class="record-meet">📍 Canyon del Oro Classic</div>
+                        </div>
+                    </div>
+                    <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                        <div class="top10-line">
+                            <span class="event-name">100 Butterfly</span>
+                            <span class="top10-time">54.45</span>
+                            <span class="top10-athlete">Zachary Duerkop <span class="grade-badge grade-jr">JR</span></span>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="top10-expanded">
+                            <div class="record-meet">📍 2024 D-3 AIA State Championship</div>
+                        </div>
+                    </div>
+                    <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                        <div class="top10-line">
+                            <span class="event-name">200 Individual Medley</span>
+                            <span class="top10-time">2:04.11</span>
+                            <span class="top10-athlete">Zachary Duerkop <span class="grade-badge grade-jr">JR</span></span>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="top10-expanded">
+                            <div class="record-meet">📍 2024 D-3 AIA State Championship</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Girls Season Best -->
+            <div class="season-best-section" id="girls-best-times">
+                <h3 class="event-heading">Girls Season Best</h3>
+                <div class="top10-event-cards">
+                    <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                        <div class="top10-line">
+                            <span class="event-name">50 Freestyle</span>
+                            <span class="top10-time">25.83</span>
+                            <span class="top10-athlete">Brianne Foley <span class="grade-badge grade-sr">SR</span></span>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="top10-expanded">
+                            <div class="record-meet">📍 2024 D-3 AIA State Championship</div>
+                        </div>
+                    </div>
+                    <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                        <div class="top10-line">
+                            <span class="event-name">100 Freestyle</span>
+                            <span class="top10-time">58.11</span>
+                            <span class="top10-athlete">Grace Davis <span class="grade-badge grade-so">SO</span></span>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="top10-expanded">
+                            <div class="record-meet">📍 2024 D-3 AIA State Championship</div>
+                        </div>
+                    </div>
+                    <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                        <div class="top10-line">
+                            <span class="event-name">200 Freestyle</span>
+                            <span class="top10-time">2:11.13</span>
+                            <span class="top10-athlete">Grace Davis <span class="grade-badge grade-so">SO</span></span>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="top10-expanded">
+                            <div class="record-meet">📍 2024 D-3 AIA State Championship</div>
+                        </div>
+                    </div>
+                    <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                        <div class="top10-line">
+                            <span class="event-name">500 Freestyle</span>
+                            <span class="top10-time">6:23.38</span>
+                            <span class="top10-athlete">Kadynce Drummond <span class="grade-badge grade-so">SO</span></span>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="top10-expanded">
+                            <div class="record-meet">📍 2024 D-3 AIA State Championship</div>
+                        </div>
+                    </div>
+                    <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                        <div class="top10-line">
+                            <span class="event-name">100 Backstroke</span>
+                            <span class="top10-time">1:05.38</span>
+                            <span class="top10-athlete">Logan Sulger <span class="grade-badge grade-jr">JR</span></span>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="top10-expanded">
+                            <div class="record-meet">📍 2024 D-3 AIA State Championship</div>
+                        </div>
+                    </div>
+                    <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                        <div class="top10-line">
+                            <span class="event-name">100 Breaststroke</span>
+                            <span class="top10-time">1:16.16</span>
+                            <span class="top10-athlete">Adrianna Witte <span class="grade-badge grade-jr">JR</span></span>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="top10-expanded">
+                            <div class="record-meet">📍 2024 D-3 AIA State Championship</div>
+                        </div>
+                    </div>
+                    <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                        <div class="top10-line">
+                            <span class="event-name">100 Butterfly</span>
+                            <span class="top10-time">1:01.84</span>
+                            <span class="top10-athlete">Brianne Foley <span class="grade-badge grade-sr">SR</span></span>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="top10-expanded">
+                            <div class="record-meet">📍 2024 D-3 AIA State Championship</div>
+                        </div>
+                    </div>
+                    <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                        <div class="top10-line">
+                            <span class="event-name">200 Individual Medley</span>
+                            <span class="top10-time">2:35.12</span>
+                            <span class="top10-athlete">Ella Bissmeyer <span class="grade-badge grade-fr">FR</span></span>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="top10-expanded">
+                            <div class="record-meet">📍 2024 D-3 AIA State Championship</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -493,6 +641,20 @@
                 const season = link.textContent;
                 link.href = '/top10/' + g + '-' + season + '.html';
             });
+            
+            // Reorder Season Best Times sections based on gender
+            const bestTimesPage = document.querySelector('.season-best-times-page');
+            if (bestTimesPage) {
+                const boysSection = document.getElementById('boys-best-times');
+                const girlsSection = document.getElementById('girls-best-times');
+                if (boysSection && girlsSection) {
+                    if (g === 'girls') {
+                        bestTimesPage.insertBefore(girlsSection, boysSection);
+                    } else {
+                        bestTimesPage.insertBefore(boysSection, girlsSection);
+                    }
+                }
+            }
         }
         
         document.querySelectorAll('.btn-gender').forEach(btn => {
