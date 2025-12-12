@@ -107,7 +107,8 @@
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item jump-to-link" href="#season-overview">📊 Season Overview</a></li>
-                    <li><a class="dropdown-item jump-to-link" href="#season-best-times">🏊 Season Best Times</a></li>
+                    <li><a class="dropdown-item jump-to-link" href="#boys-best-times">🏊 Boys Season Best</a></li>
+                    <li><a class="dropdown-item jump-to-link" href="#girls-best-times">🏊 Girls Season Best</a></li>
                     <li><a class="dropdown-item jump-to-link" href="#records-broken">📈 Records Broken</a></li>
                     <li><a class="dropdown-item jump-to-link" href="#class-records">🎯 Class Records</a></li>
                 </ul>
@@ -162,19 +163,16 @@
         </div>
     </div>
 
-    <!-- Season Best Times -->
-    <div class="container my-5" id="season-best-times">
-        <div class="section-header" data-section="best-times">
-            <h2 class="mb-0">🏊 Season Best Times</h2>
-            <button class="section-toggle" data-target="best-times-content">
+    <!-- Boys Season Best -->
+    <div class="container my-5" id="boys-best-times">
+        <div class="section-header" data-section="boys-best">
+            <h2 class="mb-0">🏊 Boys Season Best</h2>
+            <button class="section-toggle" data-target="boys-best-content">
                 <span class="toggle-icon">▼</span>
             </button>
         </div>
-        <div class="section-content season-best-times-page" id="best-times-content">
-            <!-- Boys Season Best -->
-            <div class="season-best-section" id="boys-best-times">
-                <h3 class="event-heading">Boys Season Best</h3>
-                <div class="top10-event-cards">
+        <div class="section-content" id="boys-best-content">
+            <div class="top10-event-cards">
                     <div class="top10-card" onclick="this.classList.toggle('expanded')">
                         <div class="top10-line">
                             <span class="event-name">50 Freestyle</span>
@@ -263,13 +261,20 @@
                             <div class="record-meet">📍 2024 D-3 AIA State Championship</div>
                         </div>
                     </div>
-                </div>
             </div>
+        </div>
+    </div>
 
-            <!-- Girls Season Best -->
-            <div class="season-best-section" id="girls-best-times">
-                <h3 class="event-heading">Girls Season Best</h3>
-                <div class="top10-event-cards">
+    <!-- Girls Season Best -->
+    <div class="container my-5" id="girls-best-times">
+        <div class="section-header" data-section="girls-best">
+            <h2 class="mb-0">🏊 Girls Season Best</h2>
+            <button class="section-toggle" data-target="girls-best-content">
+                <span class="toggle-icon">▼</span>
+            </button>
+        </div>
+        <div class="section-content" id="girls-best-content">
+            <div class="top10-event-cards">
                     <div class="top10-card" onclick="this.classList.toggle('expanded')">
                         <div class="top10-line">
                             <span class="event-name">50 Freestyle</span>
@@ -357,8 +362,6 @@
                         <div class="top10-expanded">
                             <div class="record-meet">📍 2024 D-3 AIA State Championship</div>
                         </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -642,17 +645,14 @@
                 link.href = '/top10/' + g + '-' + season + '.html';
             });
             
-            // Reorder Season Best Times sections based on gender
-            const bestTimesPage = document.querySelector('.season-best-times-page');
-            if (bestTimesPage) {
-                const boysSection = document.getElementById('boys-best-times');
-                const girlsSection = document.getElementById('girls-best-times');
-                if (boysSection && girlsSection) {
-                    if (g === 'girls') {
-                        bestTimesPage.insertBefore(girlsSection, boysSection);
-                    } else {
-                        bestTimesPage.insertBefore(boysSection, girlsSection);
-                    }
+            // Reorder Season Best sections based on gender
+            const boysSection = document.getElementById('boys-best-times');
+            const girlsSection = document.getElementById('girls-best-times');
+            if (boysSection && girlsSection) {
+                if (g === 'girls') {
+                    girlsSection.parentNode.insertBefore(girlsSection, boysSection);
+                } else {
+                    boysSection.parentNode.insertBefore(boysSection, girlsSection);
                 }
             }
         }
