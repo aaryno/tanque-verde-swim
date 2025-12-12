@@ -21,6 +21,9 @@ SEASONS = [
 # Years with incomplete data (only state meet results available)
 INCOMPLETE_DATA_YEARS = ["2007-08", "2008-09", "2009-10", "2010-11", "2011-12"]
 
+# Seasons that have top10 pages (excludes current season)
+TOP10_SEASONS = [s for s in SEASONS if s != "2025-26"]
+
 
 def grade_to_badge(grade_text):
     """Convert (FR), (SO), etc to badge HTML"""
@@ -194,7 +197,7 @@ def generate_nav_html():
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅<span class="d-none d-md-inline ms-1">Top 10 by Year</span></a>
                     <ul class="dropdown-menu dropdown-menu-scroll">
-''' + '\n'.join([f'                        <li><a class="dropdown-item season-link" data-path="top10" href="/top10/boys-{s}.html">{s}</a></li>' for s in reversed(SEASONS) if s >= "2007-08"]) + '''
+''' + '\n'.join([f'                        <li><a class="dropdown-item season-link" data-path="top10" href="/top10/boys-{s}.html">{s}</a></li>' for s in reversed(TOP10_SEASONS) if s >= "2007-08"]) + '''
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
