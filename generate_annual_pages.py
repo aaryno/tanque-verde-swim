@@ -50,7 +50,7 @@ def lookup_previous_record_meet(prev_time, prev_swimmer, event_hint=''):
         event_hint: Optional hint about the event (e.g., '100 BR' or '100 Breaststroke')
     
     Returns:
-        (meet, date) tuple, or ('', '') if not found
+        (meet, date, grade) tuple, or ('', '', '') if not found
     """
     records = get_class_records_history()
     
@@ -83,9 +83,9 @@ def lookup_previous_record_meet(prev_time, prev_swimmer, event_hint=''):
                 continue
         
         # Found a match
-        return (record.get('meet', ''), record.get('date', ''))
+        return (record.get('meet', ''), record.get('date', ''), record.get('grade', ''))
     
-    return ('', '')
+    return ('', '', '')
 
 
 def grade_to_badge(grade_text):
@@ -422,10 +422,16 @@ def generate_records_broken_html(data):
         # Build previous record section
         prev_section = ''
         if prev_time and prev_time != 'None':
-            # Look up the previous record's meet and date
-            prev_meet, prev_date = lookup_previous_record_meet(prev_time, prev_swimmer, event)
+            # Look up the previous record's meet, date, and grade
+            prev_meet, prev_date, prev_grade = lookup_previous_record_meet(prev_time, prev_swimmer, event)
             prev_date_display = prev_date if prev_date else '—'
             prev_meet_display = prev_meet if prev_meet else '—'
+            
+            # Add grade badge to previous swimmer if we found their grade
+            prev_swimmer_display = prev_swimmer_html
+            if prev_grade:
+                grade_class = f"grade-{prev_grade.lower()}"
+                prev_swimmer_display = f'{prev_swimmer} <span class="grade-badge {grade_class}">{prev_grade}</span>'
             
             # Build previous meet location (expandable)
             prev_meet_html = f'<div class="record-location-hidden">📍 {prev_meet_display}</div>'
@@ -437,7 +443,7 @@ def generate_records_broken_html(data):
                                     <span class="time-value-small">{prev_time}</span>
                                 </div>
                                 <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
-                                    <span class="swimmer-name">{prev_swimmer_html}</span>
+                                    <span class="swimmer-name">{prev_swimmer_display}</span>
                                     <span class="date-value">{prev_date_display}</span>
                                 </div>
                                 {prev_meet_html}
@@ -537,6 +543,10 @@ def generate_class_records_html(class_records, season):
                 prev_season = prev.get('season', '')
                 prev_meet = prev.get('meet', '')
                 
+                # Since this is a class record, the previous holder was in the same grade
+                prev_badge_class = grade_badges.get(grade, '')
+                prev_name_html = f'{prev_name} <span class="grade-badge {prev_badge_class}">{grade}</span>' if prev_badge_class else prev_name
+                
                 # Build previous meet location (expandable)
                 prev_meet_html = ''
                 if prev_meet:
@@ -549,7 +559,7 @@ def generate_class_records_html(class_records, season):
                                     <span class="time-value-small">{prev_time}</span>
                                 </div>
                                 <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
-                                    <span class="swimmer-name text-muted">{prev_name}</span>
+                                    <span class="swimmer-name text-muted">{prev_name_html}</span>
                                     <span class="date-value text-muted small">{prev_season}</span>
                                 </div>
                                 {prev_meet_html}

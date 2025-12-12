@@ -650,11 +650,12 @@ body {
 }
 
 .top10-time {
-  flex: 0 0 85px;
+  flex: 0 0 100px;
   font-family: 'Courier New', monospace;
   font-weight: bold;
   font-size: 1.05rem;
   color: var(--tvhs-dark-green);
+  white-space: nowrap;
 }
 
 .top10-athlete {
