@@ -165,28 +165,31 @@ def generate_nav_html():
     
     <!-- Quick Nav Bar -->
     <nav class="navbar navbar-dark quick-nav" id="quick-nav">
-        <div class="container-fluid justify-content-center">
+        <div class="container-fluid justify-content-start">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/records/overall.html" id="nav-overall" title="Overall Records">🏆</a>
+                    <a class="nav-link nav-home" href="/index.html" title="Home">
+                        <img src="/images/hawk-logo.png" alt="Home" class="nav-logo">
+                        <span class="d-none d-md-inline">Home</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/records/boys-bygrade.html" id="nav-bygrade" title="Records by Grade">📊</a>
+                    <a class="nav-link" href="/records/overall.html" id="nav-overall" title="Overall Records">🏆<span class="d-none d-md-inline ms-1">Records</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/top10/boys-alltime.html" id="nav-top10" title="All-Time Top 10">🔟</a>
+                    <a class="nav-link" href="/top10/boys-alltime.html" id="nav-top10" title="All-Time Top 10">🔟<span class="d-none d-md-inline ms-1">Top 10</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/records/boys-relays.html" id="nav-relays" title="Relay Records">🤝</a>
+                    <a class="nav-link" href="/records/boys-relays.html" id="nav-relays" title="Relay Records">🤝<span class="d-none d-md-inline ms-1">Relays</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅<span class="d-none d-md-inline ms-1">Top 10 by Year</span></a>
                     <ul class="dropdown-menu dropdown-menu-scroll">
 ''' + '\n'.join([f'                        <li><a class="dropdown-item season-link" data-path="top10" href="/top10/boys-{s}.html">{s}</a></li>' for s in reversed(SEASONS) if s >= "2007-08"]) + '''
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-summary" title="Season Summary">📈</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-summary" title="Season Summary">📈<span class="d-none d-md-inline ms-1">Summary by Year</span></a>
                     <ul class="dropdown-menu dropdown-menu-scroll dropdown-menu-end">
 ''' + '\n'.join([f'                        <li><a class="dropdown-item" href="/annual/{s}.html">{s}</a></li>' for s in reversed(SEASONS) if s >= "2012-13"]) + '''
                     </ul>
