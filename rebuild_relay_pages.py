@@ -119,7 +119,7 @@ def format_split_time(split_str):
 def get_stroke_for_position(event_type, position):
     """Get stroke abbreviation for relay position"""
     if 'Medley' in event_type:
-        strokes = ['BA', 'BR', 'BU', 'FR']
+        strokes = ['BK', 'BR', 'FL', 'FR']
         return strokes[position] if position < 4 else ''
     else:
         return 'FR'
@@ -323,8 +323,9 @@ def generate_full_page_html(gender, events, splits_data):
         .split-stroke {{
             font-style: italic;
             color: #666;
-            min-width: 2rem;
+            width: 1.5rem;
             flex-shrink: 0;
+            text-align: left;
         }}
         
         .split-swimmer {{
@@ -423,8 +424,9 @@ def generate_full_page_html(gender, events, splits_data):
             }}
             
             .split-stroke {{
-                min-width: 1.5rem;
+                width: 1.2rem;
                 font-size: 0.75rem;
+                text-align: left;
             }}
             
             .split-swimmer {{
