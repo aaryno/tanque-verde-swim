@@ -581,6 +581,167 @@ body {
   font-size: 0.95rem;
 }
 
+/* Top 10 Cards (matching Overall Records style) */
+.top10-cards {
+  padding: 1rem;
+}
+
+.top10-event-header {
+  background: var(--tvhs-primary);
+  color: white;
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0 0 0;
+  border-radius: 8px 8px 0 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.top10-event-header:first-child {
+  margin-top: 0;
+}
+
+.top10-event-cards {
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+
+.top10-card {
+  background: white;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.top10-card:last-child {
+  border-bottom: none;
+}
+
+.top10-card:nth-child(odd) {
+  background: #f8f9fa;
+}
+
+.top10-card:hover {
+  background: #e8f5e9;
+}
+
+.top10-card.record-holder-row {
+  background: linear-gradient(90deg, rgba(255,215,0,0.15) 0%, rgba(255,255,255,0) 50%);
+}
+
+.top10-card.record-holder-row:hover {
+  background: linear-gradient(90deg, rgba(255,215,0,0.25) 0%, #e8f5e9 50%);
+}
+
+.top10-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.top10-rank {
+  flex: 0 0 28px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: var(--tvhs-primary);
+  text-align: center;
+}
+
+.top10-time {
+  flex: 0 0 85px;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: var(--tvhs-dark-green);
+}
+
+.top10-athlete {
+  flex: 1;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.top10-date {
+  flex: 0 0 100px;
+  font-size: 0.85rem;
+  color: #666;
+  text-align: right;
+}
+
+.top10-card .expand-arrow {
+  font-size: 0.7rem;
+  color: #999;
+  transition: transform 0.2s ease;
+}
+
+.top10-card.expanded .expand-arrow {
+  transform: rotate(180deg);
+}
+
+.top10-expanded {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.top10-card.expanded .top10-expanded {
+  max-height: 100px;
+  padding-top: 0.5rem;
+}
+
+/* Mobile adjustments for Top 10 cards */
+@media (max-width: 768px) {
+  .top10-cards {
+    padding: 0.5rem;
+  }
+  
+  .top10-event-header {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .top10-line {
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+  }
+  
+  .top10-rank {
+    flex: 0 0 24px;
+    font-size: 0.85rem;
+  }
+  
+  .top10-time {
+    flex: 0 0 70px;
+    font-size: 0.95rem;
+  }
+  
+  .top10-athlete {
+    flex: 1 1 60%;
+    font-size: 0.9rem;
+  }
+  
+  .top10-date {
+    flex: 1 1 100%;
+    text-align: left;
+    font-size: 0.8rem;
+    order: 5;
+  }
+  
+  .top10-card .expand-arrow {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+  }
+  
+  .top10-card {
+    position: relative;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
 /* Mobile adjustments for overall records */
 @media (max-width: 768px) {
   .overall-record-card {

@@ -455,6 +455,90 @@ def convert_class_year_to_badges(html_content):
     return result
 
 
+def convert_top10_to_cards(md_file, output_file, title):
+    """Convert a Top 10 markdown file to card-style HTML matching Overall Records format"""
+    print(f"Converting {md_file.name} → {output_file.name} (card format)")
+    
+    with open(md_file, 'r') as f:
+        content = f.read()
+    
+    # Grade badge mapping
+    grade_classes = {
+        'FR': 'grade-fr',
+        'SO': 'grade-so',
+        'JR': 'grade-jr',
+        'SR': 'grade-sr'
+    }
+    
+    # Parse events and records
+    html_content = '<div class="content top10-cards">\n'
+    
+    # Find all event sections (### Event Name followed by table)
+    event_pattern = r'### (.+?)\n\n\|.*?\|\n\|[-:\|\s]+\|\n((?:\|.*?\|\n)+)'
+    
+    for match in re.finditer(event_pattern, content, re.MULTILINE):
+        event_name = match.group(1).strip()
+        table_rows = match.group(2).strip()
+        
+        # Add event header with same styling as Overall Records
+        html_content += f'<h3 class="event-heading top10-event-header">{event_name}</h3>\n'
+        html_content += '<div class="top10-event-cards">\n'
+        
+        # Parse each row
+        for row in table_rows.split('\n'):
+            if not row.strip() or row.startswith('|--'):
+                continue
+            
+            # Parse columns: | Rank | Time | Athlete | Year | Date | Meet |
+            parts = [p.strip() for p in row.split('|')[1:-1]]
+            if len(parts) < 6:
+                continue
+            
+            rank_raw, time_raw, athlete_raw, year_raw, date_raw, meet_raw = parts[:6]
+            
+            # Clean bold markers and get values
+            is_record = '**' in rank_raw
+            rank = rank_raw.replace('**', '').strip()
+            time = time_raw.replace('**', '').strip()
+            athlete = athlete_raw.replace('**', '').strip()
+            year = year_raw.replace('**', '').strip().upper()
+            date = date_raw.replace('**', '').strip()
+            meet = meet_raw.replace('**', '').strip()
+            
+            # Determine record holder class
+            record_class = ' record-holder-row' if is_record else ''
+            
+            # Get grade badge class
+            grade_class = grade_classes.get(year, 'grade-open')
+            
+            # Build card HTML
+            html_content += f'''<div class="top10-card{record_class}" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">{rank}</span>
+        <span class="top10-time">{time}</span>
+        <span class="top10-athlete">{athlete} <span class="grade-badge {grade_class}">{year}</span></span>
+        <span class="top10-date">{date}</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 {meet}</div>
+    </div>
+</div>
+'''
+        
+        html_content += '</div>\n'  # Close top10-event-cards
+    
+    html_content += '</div>\n'  # Close content
+    
+    # Create full HTML page
+    full_html = create_html_page(title, html_content)
+    
+    # Write output
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_file, 'w') as f:
+        f.write(full_html)
+
+
 def convert_markdown_file(md_file, output_file, title=None):
     """Convert a markdown file to HTML"""
     print(f"Converting {md_file.name} → {output_file.name}")
@@ -814,8 +898,8 @@ def main():
     else:
         print("  ✓ Relay pages generated with expandable cards")
     
-    # Convert top 10 lists
-    print("\n🔟 Converting Top 10 Lists...")
+    # Convert top 10 lists (card format matching Overall Records)
+    print("\n🔟 Converting Top 10 Lists (Card Format)...")
     for top10_file in records_dir.glob('top10-*.md'):
         gender = 'boys' if 'boys' in top10_file.name else 'girls'
         season = top10_file.stem.replace(f'top10-{gender}-', '')
@@ -828,7 +912,7 @@ def main():
             output_name = f"{gender}-{season}.html"
         
         output = docs_dir / 'top10' / output_name
-        convert_markdown_file(top10_file, output, title)
+        convert_top10_to_cards(top10_file, output, title)
     
     # Generate annual summaries using dedicated script (maintains styled format)
     print("\n📅 Generating Annual Summaries (via generate_annual_pages.py)...")
