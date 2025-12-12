@@ -130,6 +130,44 @@ def strip_leading_zero(time_str):
         return time_str[1:]
     return time_str
 
+def extract_class_from_splits(splits_match, swimmer_name):
+    """Extract class (FR/SO/JR/SR) from splits data for a swimmer"""
+    if not splits_match:
+        return ''
+    
+    swimmer_lower = swimmer_name.lower().strip()
+    for full_name in splits_match.get('swimmers', []):
+        # Check if this swimmer matches
+        name_part = re.sub(r'\s*-\s*(Fr|So|Jr|Sr)\.?$', '', full_name, flags=re.IGNORECASE)
+        if name_part.lower().strip() == swimmer_lower:
+            # Extract class
+            match = re.search(r'-\s*(Fr|So|Jr|Sr)\.?$', full_name, flags=re.IGNORECASE)
+            if match:
+                class_abbr = match.group(1).upper()
+                if class_abbr == 'FR':
+                    return 'FR'
+                elif class_abbr == 'SO':
+                    return 'SO'
+                elif class_abbr == 'JR':
+                    return 'JR'
+                elif class_abbr == 'SR':
+                    return 'SR'
+    return ''
+
+def get_class_badge_html(class_abbr):
+    """Generate HTML for class badge"""
+    if not class_abbr:
+        return ''
+    
+    class_map = {
+        'FR': 'grade-fr',
+        'SO': 'grade-so',
+        'JR': 'grade-jr',
+        'SR': 'grade-sr'
+    }
+    css_class = class_map.get(class_abbr, '')
+    return f'<span class="grade-badge {css_class}">{class_abbr}</span>'
+
 def generate_relay_row_html(relay, gender, splits_data, event_type, row_num):
     """Generate HTML for a single relay table row"""
     rank = relay['rank']
@@ -164,9 +202,13 @@ def generate_relay_row_html(relay, gender, splits_data, event_type, row_num):
             elif i < len(splits):
                 split_time = format_split_time(splits[i])
         
+        # Get class badge if available
+        swimmer_class = extract_class_from_splits(splits_match, swimmer)
+        class_badge = get_class_badge_html(swimmer_class)
+        
         expanded_html += f'<div class="relay-split-row">'
         expanded_html += f'<span class="split-stroke">{stroke}</span>'
-        expanded_html += f'<span class="split-swimmer">{swimmer}</span>'
+        expanded_html += f'<span class="split-swimmer">{swimmer} {class_badge}</span>'
         expanded_html += f'<span class="split-time">{split_time}</span>'
         expanded_html += '</div>'
     
@@ -332,6 +374,36 @@ def generate_full_page_html(gender, events, splits_data):
             font-weight: 500;
             flex: 1;
             color: #333;
+        }}
+        
+        .grade-badge {{
+            display: inline-block;
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-left: 0.3rem;
+            vertical-align: middle;
+        }}
+        
+        .grade-fr {{
+            background: #28a745;
+            color: white;
+        }}
+        
+        .grade-so {{
+            background: #17a2b8;
+            color: white;
+        }}
+        
+        .grade-jr {{
+            background: #ffc107;
+            color: #333;
+        }}
+        
+        .grade-sr {{
+            background: #dc3545;
+            color: white;
         }}
         
         .split-time {{
