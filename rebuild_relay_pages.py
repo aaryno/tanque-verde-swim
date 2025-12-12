@@ -355,7 +355,7 @@ def generate_full_page_html(gender, events, splits_data):
             padding: 0.25rem 0;
             border-bottom: 1px solid #eee;
             white-space: nowrap;
-            gap: 0.5rem;
+            gap: 0.25rem;
         }}
         
         .relay-split-row:last-of-type {{
@@ -372,8 +372,8 @@ def generate_full_page_html(gender, events, splits_data):
         
         .split-swimmer {{
             font-weight: 500;
-            flex: 1;
             color: #333;
+            margin-right: auto;
         }}
         
         .grade-badge {{
@@ -492,7 +492,7 @@ def generate_full_page_html(gender, events, splits_data):
             .relay-split-row {{
                 flex-wrap: nowrap;
                 padding: 0.3rem 0;
-                gap: 0.3rem;
+                gap: 0.2rem;
             }}
             
             .split-stroke {{
@@ -503,6 +503,7 @@ def generate_full_page_html(gender, events, splits_data):
             
             .split-swimmer {{
                 font-size: 0.85rem;
+                margin-right: auto;
             }}
             
             .split-time {{
