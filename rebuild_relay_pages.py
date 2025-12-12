@@ -356,8 +356,7 @@ def generate_full_page_html(gender, events, splits_data):
             align-items: center;
             padding: 0.25rem 0;
             border-bottom: 1px solid #eee;
-            white-space: nowrap;
-            gap: 0.25rem;
+            gap: 0.75rem;
             text-align: left;
         }}
         
@@ -366,11 +365,10 @@ def generate_full_page_html(gender, events, splits_data):
         }}
         
         .split-stroke {{
+            flex: 0 0 90px;
             font-style: italic;
             color: #666;
-            flex-shrink: 0;
             text-align: left;
-            margin-right: 0.5rem;
         }}
         
         /* Show full stroke name on desktop, abbreviation on mobile */
@@ -383,9 +381,10 @@ def generate_full_page_html(gender, events, splits_data):
         }}
         
         .split-swimmer {{
+            flex: 1;
             font-weight: 500;
             color: #333;
-            margin-right: auto;
+            text-align: left;
         }}
         
         .grade-badge {{
@@ -419,13 +418,11 @@ def generate_full_page_html(gender, events, splits_data):
         }}
         
         .split-time {{
+            flex: 0 0 50px;
             font-family: 'Courier New', monospace;
             font-weight: bold;
             color: var(--tvhs-primary, #0a3622);
-            min-width: 3rem;
             text-align: right;
-            flex-shrink: 0;
-            display: inline !important;
         }}
         
         .relay-meet-row {{
@@ -503,16 +500,15 @@ def generate_full_page_html(gender, events, splits_data):
             }}
             
             .relay-split-row {{
-                flex-wrap: nowrap;
                 padding: 0.3rem 0;
-                gap: 0.2rem;
+                gap: 0.5rem;
                 text-align: left;
             }}
             
             .split-stroke {{
-                font-size: 0.75rem;
+                flex: 0 0 2rem;
+                font-size: 0.8rem;
                 text-align: left;
-                margin-right: 0.3rem;
             }}
             
             /* Show abbreviation on mobile */
@@ -525,13 +521,15 @@ def generate_full_page_html(gender, events, splits_data):
             }}
             
             .split-swimmer {{
+                flex: 1;
                 font-size: 0.85rem;
-                margin-right: auto;
+                text-align: left;
             }}
             
             .split-time {{
+                flex: 0 0 2.5rem;
                 font-size: 0.85rem;
-                min-width: 2.5rem;
+                text-align: right;
             }}
         }}
     </style>

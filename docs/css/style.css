@@ -1383,7 +1383,7 @@ footer a:hover {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.5rem;
     padding: 0.25rem 0;
     border-bottom: 1px solid #eee;
     font-size: 0.85rem;
@@ -1396,9 +1396,8 @@ footer a:hover {
   .table-relay .split-stroke {
     font-style: italic;
     color: #666;
-    flex-shrink: 0;
-    min-width: 1.5rem;
-    margin-right: 0.08rem;  /* Tighter spacing on mobile */
+    flex: 0 0 2rem;
+    text-align: left;
   }
   
   /* Show abbreviation, hide full name on mobile */
@@ -1414,8 +1413,7 @@ footer a:hover {
     font-weight: 500;
     color: #333;
     text-align: left;
-    flex-grow: 1;
-    margin-right: auto;
+    flex: 1;
     font-size: 0.85rem;
   }
   
@@ -1424,8 +1422,7 @@ footer a:hover {
     font-weight: bold;
     color: var(--tvhs-primary, #0a3622);
     text-align: right;
-    flex-shrink: 0;
-    min-width: 2rem;
+    flex: 0 0 2.5rem;
     font-size: 0.8rem;
   }
   
@@ -1697,7 +1694,7 @@ h2[id], h3[id], .event-heading[id] {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  gap: 0.6rem;  /* Increased for desktop readability */
+  gap: 0.75rem;
   padding: 0.25rem 0;
   border-bottom: 1px solid #eee;
 }
@@ -1707,22 +1704,21 @@ h2[id], h3[id], .event-heading[id] {
 }
 
 .table-relay .split-stroke {
-  flex-shrink: 0;
+  flex: 0 0 90px;
   font-style: italic;
   color: #666;
-  min-width: 5rem;
   text-align: left;
 }
 
 .table-relay .split-swimmer {
-  flex-grow: 1;
+  flex: 1;
   font-weight: 500;
   color: #333;
   text-align: left;
 }
 
 .table-relay .split-time {
-  flex-shrink: 0;
+  flex: 0 0 50px;
   font-family: 'Courier New', monospace;
   font-weight: bold;
   color: var(--tvhs-primary, #0a3622);
