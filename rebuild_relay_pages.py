@@ -342,10 +342,12 @@ def generate_full_page_html(gender, events, splits_data):
             border-radius: 0 !important;
             width: auto !important;
             height: auto !important;
+            text-align: left !important;
         }}
         
         .relay-expanded-rows {{
             padding: 0.5rem 0;
+            text-align: left;
         }}
         
         .relay-split-row {{
@@ -356,6 +358,7 @@ def generate_full_page_html(gender, events, splits_data):
             border-bottom: 1px solid #eee;
             white-space: nowrap;
             gap: 0.25rem;
+            text-align: left;
         }}
         
         .relay-split-row:last-of-type {{
@@ -487,12 +490,14 @@ def generate_full_page_html(gender, events, splits_data):
             /* Expanded rows */
             .relay-details-row td {{
                 padding: 0.5rem !important;
+                text-align: left !important;
             }}
             
             .relay-split-row {{
                 flex-wrap: nowrap;
                 padding: 0.3rem 0;
                 gap: 0.2rem;
+                text-align: left;
             }}
             
             .split-stroke {{
