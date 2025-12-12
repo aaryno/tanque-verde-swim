@@ -1,7 +1,7 @@
 {
   "boys": [
     {
-      "type": "medley",
+      "type": "200 Free Relay",
       "year": "13-14",
       "gender": "boys",
       "legs": [
@@ -25,7 +25,7 @@
       "team": "Relay Team"
     },
     {
-      "type": "medley",
+      "type": "200 Medley Relay",
       "year": "13-14",
       "gender": "boys",
       "legs": [
@@ -49,7 +49,7 @@
       "team": "Relay Team"
     },
     {
-      "type": "medley",
+      "type": "200 Medley Relay",
       "year": "13-14",
       "gender": "boys",
       "legs": [
@@ -73,7 +73,7 @@
       "team": "Relay Team"
     },
     {
-      "type": "medley",
+      "type": "200 Medley Relay",
       "year": "13-14",
       "gender": "boys",
       "legs": [
@@ -97,7 +97,7 @@
       "team": "Relay Team"
     },
     {
-      "type": "medley",
+      "type": "200 Medley Relay",
       "year": "13-14",
       "gender": "boys",
       "legs": [
@@ -121,7 +121,7 @@
       "team": "Relay Team"
     },
     {
-      "type": "medley",
+      "type": "400 Free Relay",
       "year": "13-14",
       "gender": "boys",
       "legs": [
@@ -157,7 +157,7 @@
       "team": "Relay Team"
     },
     {
-      "type": "medley",
+      "type": "400 Free Relay",
       "year": "13-14",
       "gender": "boys",
       "legs": [
@@ -195,7 +195,7 @@
   ],
   "girls": [
     {
-      "type": "medley",
+      "type": "200 Medley Relay",
       "year": "13-14",
       "gender": "girls",
       "legs": [
@@ -219,7 +219,7 @@
       "team": "Relay Team"
     },
     {
-      "type": "medley",
+      "type": "200 Medley Relay",
       "year": "13-14",
       "gender": "girls",
       "legs": [
@@ -243,7 +243,7 @@
       "team": "Relay Team"
     },
     {
-      "type": "medley",
+      "type": "200 Medley Relay",
       "year": "13-14",
       "gender": "girls",
       "legs": [
@@ -267,7 +267,7 @@
       "team": "Relay Team"
     },
     {
-      "type": "medley",
+      "type": "200 Free Relay",
       "year": "13-14",
       "gender": "girls",
       "legs": [
@@ -291,7 +291,7 @@
       "team": "Relay Team"
     },
     {
-      "type": "medley",
+      "type": "400 Free Relay",
       "year": "13-14",
       "gender": "girls",
       "legs": [
@@ -327,7 +327,7 @@
       "team": "Relay Team"
     },
     {
-      "type": "medley",
+      "type": "400 Free Relay",
       "year": "13-14",
       "gender": "girls",
       "legs": [
@@ -363,7 +363,7 @@
       "team": "Relay Team"
     },
     {
-      "type": "medley",
+      "type": "400 Free Relay",
       "year": "13-14",
       "gender": "girls",
       "legs": [
@@ -399,7 +399,7 @@
       "team": "Relay Team"
     },
     {
-      "type": "medley",
+      "type": "400 Free Relay",
       "year": "13-14",
       "gender": "girls",
       "legs": [
@@ -435,7 +435,7 @@
       "team": "Relay Team"
     },
     {
-      "type": "medley",
+      "type": "400 Free Relay",
       "year": "13-14",
       "gender": "girls",
       "legs": [

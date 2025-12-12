@@ -56,6 +56,24 @@ def fetch_page(url):
         print(f"  Error: {e}")
         return None
 
+def classify_relay_type(legs, splits):
+    """Classify relay type based on legs and number of splits"""
+    num_splits = len(splits)
+    
+    # Check if it's a medley relay (Back, Breast, Fly, Free)
+    stroke_keywords = ['back', 'breast', 'fly', 'free']
+    legs_lower = [l.lower() for l in legs]
+    is_medley = any(kw in ' '.join(legs_lower) for kw in stroke_keywords[:3])  # Back, Breast, Fly
+    
+    if is_medley and num_splits == 4:
+        return "200 Medley Relay"
+    elif num_splits == 8:
+        return "400 Free Relay"
+    elif num_splits == 4:
+        return "200 Free Relay"
+    else:
+        return "unknown"
+
 def extract_splits_from_html(html, year, gender):
     """Extract relay split data from MaxPreps stats page HTML"""
     
@@ -65,7 +83,7 @@ def extract_splits_from_html(html, year, gender):
     
     relays = []
     
-    # Find medley relay splits
+    # Find medley relay splits (used for ALL relay types on MaxPreps)
     medley_matches = re.findall(medley_pattern, html)
     for match in medley_matches:
         legs_str, names_str, times_str, team = match
@@ -74,8 +92,11 @@ def extract_splits_from_html(html, year, gender):
         names = [name.strip().strip("'\"") for name in names_str.split(',')]
         times = [time.strip().strip("'\"") for time in times_str.split(',')]
         
+        # Classify relay type
+        relay_type = classify_relay_type(legs, times)
+        
         relays.append({
-            "type": "medley",
+            "type": relay_type,
             "year": year,
             "gender": gender,
             "legs": legs,
