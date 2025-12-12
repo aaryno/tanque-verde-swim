@@ -170,6 +170,26 @@
             border-left: 4px solid #ffc107;
         }
         
+        /* Record badges */
+        .badge-sr {
+            background: var(--tvhs-primary, #0a3622);
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.4rem;
+        }
+        
+        .badge-class-record {
+            background: #ffc107;
+            color: #333;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.4rem;
+        }
+        
+        /* State results container */
+        .state-results-container {
+            margin-bottom: 2rem;
+        }
+        
         /* Senior cards */
         .senior-card {
             border-left: 4px solid var(--tvhs-primary, #0a3622);
@@ -323,6 +343,21 @@
 </tbody></table>
 </div>
 <p class="text-muted small mt-2">🏆 = Overall School Record · ⭐ = Class Record</p>
+
+<div class="section-header" data-section="state-champs">
+<h2>🏆 State Championship Results</h2>
+</div>
+<div class="state-results-container">
+<h3 class="event-heading">Girls State Results</h3>
+<div class="table-responsive">
+<table class="table table-striped table-hover table-records">
+<thead><tr><th>Event</th><th>Time</th><th>Swimmer</th></tr></thead>
+<tbody>
+<tr><td>200 Freestyle</td><td class="time-cell"><strong>2:03.27</strong> <span class="badge badge-sr">Record</span></td><td>Marisol Rivera <span class="grade-badge grade-sr">SR</span></td></tr>
+<tr><td>500 Freestyle</td><td class="time-cell"><strong>5:34.97</strong> <span class="badge badge-class-record">SR Record</span></td><td>Marisol Rivera <span class="grade-badge grade-sr">SR</span></td></tr>
+</tbody></table>
+</div>
+</div>
 
 <div class="section-header" data-section="class-records">
 <h2>⭐ Class Records Broken</h2>

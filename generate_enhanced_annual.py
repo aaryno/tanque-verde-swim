@@ -193,6 +193,82 @@ def get_seniors_in_season(entries):
                 seniors[name]['best_times'][entry['event']] = entry
     return seniors
 
+def get_state_meet_results(entries):
+    """Get entries from state meets"""
+    state_keywords = ['state', 'aia', 'championship']
+    results = []
+    
+    for entry in entries:
+        meet = entry.get('meet', '').lower()
+        if any(kw in meet for kw in state_keywords):
+            results.append(entry)
+    
+    return results
+
+def generate_state_championship_html(boys_state, girls_state, overall_records, class_records):
+    """Generate State Championship summary section"""
+    if not boys_state and not girls_state:
+        return ''
+    
+    html = '<div class="section-header" data-section="state-champs">\n'
+    html += '<h2>🏆 State Championship Results</h2>\n'
+    html += '</div>\n'
+    html += '<div class="state-results-container">\n'
+    
+    for gender, results in [('boys', boys_state), ('girls', girls_state)]:
+        if not results:
+            continue
+        
+        # Group by event and get best result per event
+        event_bests = {}
+        for entry in results:
+            event = entry['event']
+            if event not in event_bests or entry['time_seconds'] < event_bests[event]['time_seconds']:
+                event_bests[event] = entry
+        
+        if not event_bests:
+            continue
+        
+        html += f'<h3 class="event-heading">{gender.title()} State Results</h3>\n'
+        html += '<div class="table-responsive">\n'
+        html += '<table class="table table-striped table-hover table-records">\n'
+        html += '<thead><tr><th>Event</th><th>Time</th><th>Swimmer</th></tr></thead>\n'
+        html += '<tbody>\n'
+        
+        events_order = ['50 Freestyle', '100 Freestyle', '200 Freestyle', '500 Freestyle',
+                        '100 Backstroke', '100 Breaststroke', '100 Butterfly', '200 Individual Medley']
+        
+        for event in events_order:
+            if event not in event_bests:
+                continue
+            
+            entry = event_bests[event]
+            time = entry['time']
+            name = entry['name']
+            year = entry['year']
+            
+            # Check for records
+            badges = ''
+            overall = overall_records.get(gender, {}).get(event)
+            if overall and parse_time_to_seconds(time) <= parse_time_to_seconds(overall['time']):
+                badges += ' <span class="badge badge-sr">Record</span>'
+            else:
+                class_rec = class_records.get(gender, {}).get(event, {}).get(year)
+                if class_rec and parse_time_to_seconds(time) <= parse_time_to_seconds(class_rec['time']):
+                    badges += f' <span class="badge badge-class-record">{year} Record</span>'
+            
+            html += f'<tr>'
+            html += f'<td>{event}</td>'
+            html += f'<td class="time-cell"><strong>{time}</strong>{badges}</td>'
+            html += f'<td>{name} {grade_badge(year)}</td>'
+            html += f'</tr>\n'
+        
+        html += '</tbody></table>\n'
+        html += '</div>\n'
+    
+    html += '</div>\n'
+    return html
+
 def grade_badge(year):
     """Generate grade badge HTML"""
     year = year.upper()
@@ -473,6 +549,12 @@ def generate_annual_page(season):
     content_parts.append('</div>')
     content_parts.append(generate_season_bests_html(boys_bests, girls_bests, overall_records, class_records_before, season))
     
+    # State Championship section
+    boys_state = get_state_meet_results(boys_entries)
+    girls_state = get_state_meet_results(girls_entries)
+    if boys_state or girls_state:
+        content_parts.append(generate_state_championship_html(boys_state, girls_state, overall_records, class_records_before))
+    
     # Relays section
     if boys_relays or girls_relays:
         content_parts.append('<div class="section-header" data-section="relays">')
@@ -724,6 +806,26 @@ def create_html_page(title, content, season):
         .class-record-card {
             background: #fff;
             border-left: 4px solid #ffc107;
+        }
+        
+        /* Record badges */
+        .badge-sr {
+            background: var(--tvhs-primary, #0a3622);
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.4rem;
+        }
+        
+        .badge-class-record {
+            background: #ffc107;
+            color: #333;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.4rem;
+        }
+        
+        /* State results container */
+        .state-results-container {
+            margin-bottom: 2rem;
         }
         
         /* Senior cards */
