@@ -105,14 +105,14 @@
                 <h1>Tanque Verde High School</h1>
                 <h2>Swimming & Diving Records</h2>
                 <p class="subtitle">Tucson, Arizona | AIA Division III</p>
-                <button class="hero-collapse-btn" id="hero-collapse-btn" title="Collapse header">
+                <button class="hero-collapse-btn" id="hero-collapse-btn" title="Collapse header" onclick="document.getElementById('hero-header').classList.add('collapsed'); localStorage.setItem('hero-collapsed', 'true'); return false;">
                     <span>▲</span>
                 </button>
             </div>
         </div>
         <div class="hero-collapsed" id="hero-collapsed">
             <div class="container d-flex align-items-center justify-content-between flex-wrap">
-                <div class="d-flex align-items-center hero-expand-trigger" style="cursor: pointer;" title="Click to expand">
+                <div class="d-flex align-items-center hero-expand-trigger" style="cursor: pointer;" title="Click to expand" onclick="document.getElementById('hero-header').classList.remove('collapsed'); localStorage.setItem('hero-collapsed', 'false'); window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
                     <span class="hero-title-small">TVHS Swimming</span>
                 </div>
                 <div class="d-flex gap-2">

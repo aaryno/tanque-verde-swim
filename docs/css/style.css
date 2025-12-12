@@ -743,11 +743,11 @@ body {
 
 /* Collapsed state */
 .hero-header.collapsed .hero-expanded {
-  display: none;
+  display: none !important;
 }
 
 .hero-header.collapsed .hero-collapsed {
-  display: block;
+  display: block !important;
 }
 
 /* Mobile adjustments */
