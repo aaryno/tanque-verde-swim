@@ -29,22 +29,25 @@ def create_nav_html():
     
     <!-- Quick Nav Bar -->
     <nav class="navbar navbar-dark quick-nav" id="quick-nav">
-        <div class="container-fluid justify-content-center">
+        <div class="container-fluid justify-content-start">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/records/overall.html" id="nav-overall" title="Overall Records">🏆</a>
+                    <a class="nav-link nav-home" href="/index.html" title="Home">
+                        <img src="/images/hawk-logo.png" alt="Home" class="nav-logo">
+                        <span class="d-none d-md-inline">Home</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="nav-bygrade" title="Records by Grade">📊</a>
+                    <a class="nav-link" href="/records/overall.html" id="nav-overall" title="Overall Records">🏆<span class="d-none d-md-inline ms-1">Records</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="nav-top10" title="All-Time Top 10">🔟</a>
+                    <a class="nav-link" href="#" id="nav-top10" title="All-Time Top 10">🔟<span class="d-none d-md-inline ms-1">Top 10</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="nav-relays" title="Relay Records">🤝</a>
+                    <a class="nav-link" href="#" id="nav-relays" title="Relay Records">🤝<span class="d-none d-md-inline ms-1">Relays</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅<span class="d-none d-md-inline ms-1">Top 10 by Year</span></a>
                     <ul class="dropdown-menu dropdown-menu-scroll">
                         <li><a class="dropdown-item season-link" data-path="top10" href="#">2024-25</a></li>
                         <li><a class="dropdown-item season-link" data-path="top10" href="#">2023-24</a></li>
@@ -67,7 +70,7 @@ def create_nav_html():
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-summary" title="Season Summary">📈</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-summary" title="Season Summary">📈<span class="d-none d-md-inline ms-1">Summary by Year</span></a>
                     <ul class="dropdown-menu dropdown-menu-scroll dropdown-menu-end">
                         <li><a class="dropdown-item" href="/annual/2025-26.html">2025-26</a></li>
                         <li><a class="dropdown-item" href="/annual/2024-25.html">2024-25</a></li>
@@ -659,7 +662,7 @@ def generate_overall_records_page(records_dir, docs_dir):
         
         # Relay records section with expandable splits
         if relays:
-            html += f'<h3 class="relay-header">Relay Records</h3>\n'
+            html += f'<h3 class="relay-header">{gender.title()} Relay Records</h3>\n'
             for relay in relays:
                 last_names = get_last_names(relay['participants'])
                 swimmers = [s.strip() for s in relay['participants'].split(',')]
