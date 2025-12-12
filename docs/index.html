@@ -947,7 +947,7 @@
         const heroCollapseBtn = document.getElementById('hero-collapse-btn');
         const heroExpandTrigger = document.querySelector('.hero-expand-trigger');
         
-        if (heroHeader && heroCollapseBtn && heroExpandTrigger) {
+        if (heroHeader) {
             // Check if already collapsed (from scroll or localStorage)
             const isCollapsed = localStorage.getItem('hero-collapsed') === 'true';
             if (isCollapsed) {
@@ -955,28 +955,33 @@
             }
             
             // Collapse on button click
-            heroCollapseBtn.addEventListener('click', function() {
-                heroHeader.classList.add('collapsed');
-                localStorage.setItem('hero-collapsed', 'true');
-            });
+            if (heroCollapseBtn) {
+                heroCollapseBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    heroHeader.classList.add('collapsed');
+                    localStorage.setItem('hero-collapsed', 'true');
+                });
+            }
             
             // Expand on title click
-            heroExpandTrigger.addEventListener('click', function() {
-                heroHeader.classList.remove('collapsed');
-                localStorage.setItem('hero-collapsed', 'false');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
+            if (heroExpandTrigger) {
+                heroExpandTrigger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    heroHeader.classList.remove('collapsed');
+                    localStorage.setItem('hero-collapsed', 'false');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
             
             // Auto-collapse on scroll (after 100px)
-            let lastScroll = 0;
             window.addEventListener('scroll', function() {
-                const currentScroll = window.pageYOffset;
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
                 if (currentScroll > 100 && !heroHeader.classList.contains('collapsed')) {
                     heroHeader.classList.add('collapsed');
                     localStorage.setItem('hero-collapsed', 'true');
                 }
-                lastScroll = currentScroll;
-            });
+            }, { passive: true });
         }
         
         // Collapsible sections on index page
