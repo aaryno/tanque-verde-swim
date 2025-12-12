@@ -591,7 +591,6 @@ def generate_page_html(data, class_records):
         
         function updateNavLinks() {{
             const g = currentGender;
-            document.getElementById('nav-bygrade').href = '/records/' + g + '-bygrade.html';
             document.getElementById('nav-top10').href = '/top10/' + g + '-alltime.html';
             document.getElementById('nav-relays').href = '/records/' + g + '-relays.html';
             
