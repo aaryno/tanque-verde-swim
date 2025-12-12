@@ -212,7 +212,7 @@ def generate_relay_row_html(relay, gender, splits_data, event_type, row_num):
         expanded_html += f'<span class="split-time">{split_time}</span>'
         expanded_html += '</div>'
     
-    expanded_html += f'<div class="relay-meet-row">{meet}</div>'
+    expanded_html += f'<div class="relay-meet-row">📍 {meet}</div>'
     expanded_html += '</div>'
     
     row_class = '' if row_num % 2 == 0 else 'table-row-alt'

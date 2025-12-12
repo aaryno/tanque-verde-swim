@@ -671,6 +671,11 @@ def main():
     # Generate pages oldest to newest
     generated = 0
     for season in SEASONS:
+        # Skip 2025-26 - it's a manually maintained prototype with Seniors/State sections
+        if season == "2025-26":
+            print(f"  ⏭️  {season}: Skipping (manually maintained prototype)")
+            continue
+        
         md_file = records_dir / f'annual-summary-{season}.md'
         if not md_file.exists():
             print(f"  ⚠️  {season}: No markdown file found, skipping")

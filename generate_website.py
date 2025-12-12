@@ -829,13 +829,14 @@ def main():
         output = docs_dir / 'top10' / output_name
         convert_markdown_file(top10_file, output, title)
     
-    # Convert annual summaries
-    print("\n📅 Converting Annual Summaries...")
-    for annual_file in records_dir.glob('annual-summary-*.md'):
-        season = annual_file.stem.replace('annual-summary-', '')
-        title = f"{season} Season Summary"
-        output = docs_dir / 'annual' / f"{season}.html"
-        convert_markdown_file(annual_file, output, title)
+    # Generate annual summaries using dedicated script (maintains styled format)
+    print("\n📅 Generating Annual Summaries (via generate_annual_pages.py)...")
+    import subprocess
+    result = subprocess.run(['python3', 'generate_annual_pages.py'], capture_output=True, text=True)
+    if result.returncode != 0:
+        print(f"  ⚠️ Warning: generate_annual_pages.py failed: {result.stderr}")
+    else:
+        print("  ✓ Annual pages generated with styled format")
     
     print("\n" + "=" * 80)
     print("✅ Website generation complete!")
