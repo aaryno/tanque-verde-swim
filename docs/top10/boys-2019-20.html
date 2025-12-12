@@ -267,6 +267,23 @@
         
         // Initialize
         updateGenderUI();
+        
+        // Collapsible sections
+        document.querySelectorAll('.section-header').forEach(header => {
+            header.addEventListener('click', function(e) {
+                e.preventDefault();
+                const toggleBtn = this.querySelector('.section-toggle');
+                if (!toggleBtn) return;
+                
+                const targetId = toggleBtn.dataset.target;
+                const content = document.getElementById(targetId);
+                
+                if (content) {
+                    this.classList.toggle('collapsed');
+                    content.classList.toggle('collapsed');
+                }
+            });
+        });
     });
     </script>
     

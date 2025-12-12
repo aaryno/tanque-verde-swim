@@ -267,6 +267,23 @@
         
         // Initialize
         updateGenderUI();
+        
+        // Collapsible sections
+        document.querySelectorAll('.section-header').forEach(header => {
+            header.addEventListener('click', function(e) {
+                e.preventDefault();
+                const toggleBtn = this.querySelector('.section-toggle');
+                if (!toggleBtn) return;
+                
+                const targetId = toggleBtn.dataset.target;
+                const content = document.getElementById(targetId);
+                
+                if (content) {
+                    this.classList.toggle('collapsed');
+                    content.classList.toggle('collapsed');
+                }
+            });
+        });
     });
     </script>
     
@@ -274,7 +291,13 @@
     <div class="container my-4">
         <div class="content overall-records-page">
 <div class="overall-records-section" id="boys-records">
-<h2 class="gender-header">Boys Team Records</h2>
+<div class="section-header" data-section="boys">
+    <h2 class="mb-0">Boys Team Records</h2>
+    <button class="section-toggle" data-target="boys-content">
+        <span class="toggle-icon">▼</span>
+    </button>
+</div>
+<div class="section-content" id="boys-content">
 <div class="overall-record-card" onclick="this.classList.toggle('expanded')">
     <div class="record-line">
         <span class="event-name">50 Freestyle</span>
@@ -460,9 +483,16 @@
     </div>
 </div>
 </div>
+</div>
 
 <div class="overall-records-section" id="girls-records">
-<h2 class="gender-header">Girls Team Records</h2>
+<div class="section-header" data-section="girls">
+    <h2 class="mb-0">Girls Team Records</h2>
+    <button class="section-toggle" data-target="girls-content">
+        <span class="toggle-icon">▼</span>
+    </button>
+</div>
+<div class="section-content" id="girls-content">
 <div class="overall-record-card" onclick="this.classList.toggle('expanded')">
     <div class="record-line">
         <span class="event-name">50 Freestyle</span>
@@ -646,6 +676,7 @@
 </div></div>
         <div class="record-meet">📍 Pecan Classic</div>
     </div>
+</div>
 </div>
 </div>
 

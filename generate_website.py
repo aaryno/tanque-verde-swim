@@ -287,6 +287,23 @@ def create_html_page(title, content, page_type="default"):
         
         // Initialize
         updateGenderUI();
+        
+        // Collapsible sections
+        document.querySelectorAll('.section-header').forEach(header => {{
+            header.addEventListener('click', function(e) {{
+                e.preventDefault();
+                const toggleBtn = this.querySelector('.section-toggle');
+                if (!toggleBtn) return;
+                
+                const targetId = toggleBtn.dataset.target;
+                const content = document.getElementById(targetId);
+                
+                if (content) {{
+                    this.classList.toggle('collapsed');
+                    content.classList.toggle('collapsed');
+                }}
+            }});
+        }});
     }});
     </script>
     
@@ -642,8 +659,16 @@ def generate_overall_records_page(records_dir, docs_dir):
     
     # Build HTML content for overall records with special layout
     def build_records_html(records, relays, gender):
-        html = f'<div class="overall-records-section" id="{gender}-records">\n'
-        html += f'<h2 class="gender-header">{gender.title()} Team Records</h2>\n'
+        section_id = f"{gender}-content"
+        html = f'''<div class="overall-records-section" id="{gender}-records">
+<div class="section-header" data-section="{gender}">
+    <h2 class="mb-0">{gender.title()} Team Records</h2>
+    <button class="section-toggle" data-target="{section_id}">
+        <span class="toggle-icon">▼</span>
+    </button>
+</div>
+<div class="section-content" id="{section_id}">
+'''
         
         # Individual records - single line with expandable location
         for record in records:
@@ -706,7 +731,8 @@ def generate_overall_records_page(records_dir, docs_dir):
     </div>
 </div>\n'''
         
-        html += '</div>\n'
+        html += '</div>\n'  # Close section-content
+        html += '</div>\n'  # Close overall-records-section
         return html
     
     boys_html = build_records_html(boys_records, boys_relays, 'boys')
