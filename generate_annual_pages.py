@@ -304,7 +304,7 @@ def generate_season_overview_html(data, class_records_count):
 
 
 def generate_records_broken_html(data):
-    """Generate the Records Broken section"""
+    """Generate the Records Broken section with compact expandable format"""
     if not data['records_broken']:
         return ''
     
@@ -321,7 +321,7 @@ def generate_records_broken_html(data):
             <h3 class="mt-4 mb-3">🏆 Overall School Records</h3>
             <div class="row g-4">'''
     
-    for record in data['records_broken']:
+    for idx, record in enumerate(data['records_broken']):
         event = record.get('event', '').replace(' SCY', '')
         new_time = record.get('new_time', '')
         new_swimmer = record.get('new_swimmer', '')
@@ -335,7 +335,7 @@ def generate_records_broken_html(data):
         prev_swimmer_html = re.sub(r'\((\w+)\)', lambda m: grade_to_badge(m.group(1)), prev_swimmer) if prev_swimmer else ''
         
         # Calculate improvement if possible
-        improvement = ''
+        improvement_html = ''
         if prev_time and prev_time != 'None' and new_time:
             try:
                 def time_to_seconds(t):
@@ -345,59 +345,52 @@ def generate_records_broken_html(data):
                     return float(t)
                 diff = time_to_seconds(prev_time) - time_to_seconds(new_time)
                 if diff > 0:
-                    improvement = f'<p class="mb-0 text-success mt-3"><strong>Improvement: {diff:.2f} seconds</strong></p>'
+                    improvement_html = f'''
+                            <div class="record-improvement">
+                                <span class="text-success"><strong>⬆ Improvement: {diff:.2f} seconds</strong></span>
+                            </div>'''
             except:
                 pass
         
-        # Build meet location line
-        meet_line = f'<div class="relay-meet">📍 {meet}</div>' if meet else ''
-        
+        # Build previous record section
         prev_section = ''
         if prev_time and prev_time != 'None':
             prev_section = f'''
-                            <div class="relay-record-entry">
-                                <div class="record-label-old">PREVIOUS RECORD</div>
-                                <div class="relay-compact-wrapper">
-                                    <div class="relay-line-1">
-                                        <span class="time-value">{prev_time}</span>
-                                    </div>
-                                    <div class="relay-line-2">
-                                        <strong>{prev_swimmer_html}</strong>
-                                    </div>
+                            <div class="record-prev-section">
+                                <div class="record-row">
+                                    <span class="record-label-small">Previous:</span>
+                                    <span class="time-value-small">{prev_time}</span>
                                 </div>
+                                <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                    <span class="swimmer-name">{prev_swimmer_html}</span>
+                                    <span class="expand-hint">▼</span>
+                                </div>
+                                <div class="record-location-hidden">📍 —</div>
                             </div>'''
         else:
             prev_section = '''
-                            <div class="relay-record-entry">
-                                <div class="record-label-old">FIRST RECORD</div>
-                                <div class="relay-compact-wrapper">
-                                    <div class="relay-line-2">
-                                        <span class="text-muted">No previous record</span>
-                                    </div>
+                            <div class="record-prev-section">
+                                <div class="record-row">
+                                    <span class="text-muted small">First record in this event</span>
                                 </div>
                             </div>'''
         
         html += f'''
                 <div class="col-md-6">
-                    <div class="card relay-record-broken">
+                    <div class="card record-card-compact">
                         <div class="card-body">
-                            <h5 class="card-title">{event}</h5>
-                            
-                            <div class="relay-record-entry mb-3">
-                                <div class="record-label">NEW RECORD</div>
-                                <div class="relay-compact-wrapper">
-                                    <div class="relay-line-1">
-                                        <span class="time-value">{new_time}</span>
-                                        <span class="date-value">{date}</span>
-                                    </div>
-                                    <div class="relay-line-2">
-                                        <strong>{new_swimmer_html}</strong>
-                                    </div>
-                                    {meet_line}
-                                </div>
+                            <div class="record-row record-header-row">
+                                <span class="event-name">{event}</span>
+                                <span class="time-value">{new_time}</span>
                             </div>
+                            <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                <span class="swimmer-name"><strong>{new_swimmer_html}</strong></span>
+                                <span class="date-value">{date}</span>
+                                <span class="expand-hint">▼</span>
+                            </div>
+                            <div class="record-location-hidden">📍 {meet}</div>
                             {prev_section}
-                            {improvement}
+                            {improvement_html}
                         </div>
                     </div>
                 </div>'''
@@ -411,7 +404,7 @@ def generate_records_broken_html(data):
 
 
 def generate_class_records_html(class_records, season):
-    """Generate the Class Records Broken section"""
+    """Generate the Class Records Broken section with compact expandable format"""
     season_records = [r for r in class_records if r.get('season') == season]
     if not season_records:
         return ''
@@ -426,6 +419,7 @@ def generate_class_records_html(class_records, season):
     
     grade_order = ['FR', 'SO', 'JR', 'SR']
     grade_names = {'FR': 'Freshman', 'SO': 'Sophomore', 'JR': 'Junior', 'SR': 'Senior'}
+    grade_badges = {'FR': 'grade-fr', 'SO': 'grade-so', 'JR': 'grade-jr', 'SR': 'grade-sr'}
     
     html = f'''
     <!-- Class Records Broken -->
@@ -457,37 +451,50 @@ def generate_class_records_html(class_records, season):
             prev = record.get('previous')
             
             # Color based on gender
-            color = '#2C5F2D' if gender == 'boys' else '#808080'
+            border_color = '#2C5F2D' if gender == 'boys' else '#666'
             gender_label = 'BOYS' if gender == 'boys' else 'GIRLS'
+            badge_class = grade_badges.get(grade, '')
             
-            # Build meet location line
-            meet_line = f'<div class="mt-1"><small>📍 {meet}</small></div>' if meet else ''
-            
-            prev_html = ''
+            # Build previous record section
+            prev_section = ''
             if prev:
                 prev_name = prev.get('name', '')
                 prev_time = prev.get('time', '')
                 prev_season = prev.get('season', '')
-                prev_html = f'''<hr class="my-2">
-                        <small class="text-muted">
-                            <strong>Previous:</strong> {prev_time} - {prev_name}<br>
-                            <span style="font-size: 0.85em;">{prev_season}</span>
-                        </small>'''
+                prev_section = f'''
+                            <div class="record-prev-section">
+                                <div class="record-row">
+                                    <span class="record-label-small">Previous:</span>
+                                    <span class="time-value-small">{prev_time}</span>
+                                </div>
+                                <div class="record-row">
+                                    <span class="swimmer-name text-muted">{prev_name}</span>
+                                    <span class="date-value text-muted small">{prev_season}</span>
+                                </div>
+                            </div>'''
             else:
-                prev_html = '''<hr class="my-2">
-                        <small class="text-muted">First record in this event/class</small>'''
+                prev_section = '''
+                            <div class="record-prev-section">
+                                <div class="record-row">
+                                    <span class="text-muted small">First record in this event/class</span>
+                                </div>
+                            </div>'''
             
             html += f'''
                 <div class="col-md-6">
-                    <div class="card" style="border-left: 4px solid {color}; background-color: #fafff5;">
+                    <div class="card record-card-compact" style="border-left: 4px solid {border_color};">
                         <div class="card-body">
-                            <h6 class="mb-2" style="color: {color};"><strong>{gender_label} - {grade_names.get(grade, grade)} {event}</strong></h6>
-                            <p class="mb-1">
-                                <span class="time">{time}</span> - <strong>{name}</strong>
-                            </p>
-                            <small class="text-muted">{date}</small>
-                            {meet_line}
-                            {prev_html}
+                            <div class="record-row record-header-row">
+                                <span class="event-name">{gender_label} {event} <span class="grade-badge {badge_class}">{grade}</span></span>
+                                <span class="time-value">{time}</span>
+                            </div>
+                            <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                <span class="swimmer-name"><strong>{name}</strong></span>
+                                <span class="date-value">{date}</span>
+                                <span class="expand-hint">▼</span>
+                            </div>
+                            <div class="record-location-hidden">📍 {meet}</div>
+                            {prev_section}
                         </div>
                     </div>
                 </div>'''

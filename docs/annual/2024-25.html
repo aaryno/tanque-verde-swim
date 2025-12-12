@@ -227,70 +227,66 @@
             <h3 class="mt-4 mb-3">🏆 Overall School Records</h3>
             <div class="row g-4">
                 <div class="col-md-6">
-                    <div class="card relay-record-broken">
+                    <div class="card record-card-compact">
                         <div class="card-body">
-                            <h5 class="card-title">Boys 100 BR</h5>
+                            <div class="record-row record-header-row">
+                                <span class="event-name">Boys 100 BR</span>
+                                <span class="time-value">59.51</span>
+                            </div>
+                            <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                <span class="swimmer-name"><strong>Zachary Duerkop <span class="grade-badge grade-jr">JR</span></strong></span>
+                                <span class="date-value">Sep 14, 2024</span>
+                                <span class="expand-hint">▼</span>
+                            </div>
+                            <div class="record-location-hidden">📍 Canyon del Oro Classic (Oro Valley, AZ)</div>
                             
-                            <div class="relay-record-entry mb-3">
-                                <div class="record-label">NEW RECORD</div>
-                                <div class="relay-compact-wrapper">
-                                    <div class="relay-line-1">
-                                        <span class="time-value">59.51</span>
-                                        <span class="date-value">Sep 14, 2024</span>
-                                    </div>
-                                    <div class="relay-line-2">
-                                        <strong>Zachary Duerkop <span class="grade-badge grade-jr">JR</span></strong>
-                                    </div>
-                                    <div class="relay-meet">📍 Canyon del Oro Classic (Oro Valley, AZ)</div>
+                            <div class="record-prev-section">
+                                <div class="record-row">
+                                    <span class="record-label-small">Previous:</span>
+                                    <span class="time-value-small">1:04.17</span>
                                 </div>
+                                <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                    <span class="swimmer-name">Zachary Duerkop</span>
+                                    <span class="expand-hint">▼</span>
+                                </div>
+                                <div class="record-location-hidden">📍 —</div>
                             </div>
                             
-                            <div class="relay-record-entry">
-                                <div class="record-label-old">PREVIOUS RECORD</div>
-                                <div class="relay-compact-wrapper">
-                                    <div class="relay-line-1">
-                                        <span class="time-value">1:04.17</span>
-                                    </div>
-                                    <div class="relay-line-2">
-                                        <strong>Zachary Duerkop</strong>
-                                    </div>
-                                </div>
+                            <div class="record-improvement">
+                                <span class="text-success"><strong>⬆ Improvement: 4.66 seconds</strong></span>
                             </div>
-                            <p class="mb-0 text-success mt-3"><strong>Improvement: 4.66 seconds</strong></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card relay-record-broken">
+                    <div class="card record-card-compact">
                         <div class="card-body">
-                            <h5 class="card-title">Girls 100 FL</h5>
+                            <div class="record-row record-header-row">
+                                <span class="event-name">Girls 100 FL</span>
+                                <span class="time-value">1:01.84</span>
+                            </div>
+                            <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                <span class="swimmer-name"><strong>Brianne Foley <span class="grade-badge grade-sr">SR</span></strong></span>
+                                <span class="date-value">Nov 09, 2024</span>
+                                <span class="expand-hint">▼</span>
+                            </div>
+                            <div class="record-location-hidden">📍 2024 D3 State Championship (Paradise Valley, AZ)</div>
                             
-                            <div class="relay-record-entry mb-3">
-                                <div class="record-label">NEW RECORD</div>
-                                <div class="relay-compact-wrapper">
-                                    <div class="relay-line-1">
-                                        <span class="time-value">1:01.84</span>
-                                        <span class="date-value">Nov 09, 2024</span>
-                                    </div>
-                                    <div class="relay-line-2">
-                                        <strong>Brianne Foley <span class="grade-badge grade-sr">SR</span></strong>
-                                    </div>
-                                    <div class="relay-meet">📍 2024 D3 State Championship (Paradise Valley, AZ)</div>
+                            <div class="record-prev-section">
+                                <div class="record-row">
+                                    <span class="record-label-small">Previous:</span>
+                                    <span class="time-value-small">1:03.68</span>
                                 </div>
+                                <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                    <span class="swimmer-name">Brianne Foley</span>
+                                    <span class="expand-hint">▼</span>
+                                </div>
+                                <div class="record-location-hidden">📍 —</div>
                             </div>
                             
-                            <div class="relay-record-entry">
-                                <div class="record-label-old">PREVIOUS RECORD</div>
-                                <div class="relay-compact-wrapper">
-                                    <div class="relay-line-1">
-                                        <span class="time-value">1:03.68</span>
-                                    </div>
-                                    <div class="relay-line-2">
-                                        <strong>Brianne Foley</strong>
-                                    </div>
-                                </div>
+                            <div class="record-improvement">
+                                <span class="text-success"><strong>⬆ Improvement: 1.84 seconds</strong></span>
                             </div>
-                            <p class="mb-0 text-success mt-3"><strong>Improvement: 1.84 seconds</strong></p>
                         </div>
                     </div>
                 </div>
@@ -310,36 +306,56 @@
             <h3 class="mt-4 mb-3">Sophomore Records</h3>
             <div class="row g-4">
                 <div class="col-md-6">
-                    <div class="card" style="border-left: 4px solid #2C5F2D; background-color: #fafff5;">
+                    <div class="card record-card-compact" style="border-left: 4px solid #2C5F2D;">
                         <div class="card-body">
-                            <h6 class="mb-2" style="color: #2C5F2D;"><strong>BOYS - Sophomore 100 Breaststroke</strong></h6>
-                            <p class="mb-1">
-                                <span class="time">1:01.51</span> - <strong>Wade Olsson</strong>
-                            </p>
-                            <small class="text-muted">Oct 25, 2024</small>
-                            <div class="mt-1"><small>📍 Southern Arizona Qualifier</small></div>
-                            <hr class="my-2">
-                        <small class="text-muted">
-                            <strong>Previous:</strong> 1:04.17 - Zachary Duerkop<br>
-                            <span style="font-size: 0.85em;">2023-24</span>
-                        </small>
+                            <div class="record-row record-header-row">
+                                <span class="event-name">BOYS 100 Breaststroke <span class="grade-badge grade-so">SO</span></span>
+                                <span class="time-value">1:01.51</span>
+                            </div>
+                            <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                <span class="swimmer-name"><strong>Wade Olsson</strong></span>
+                                <span class="date-value">Oct 25, 2024</span>
+                                <span class="expand-hint">▼</span>
+                            </div>
+                            <div class="record-location-hidden">📍 Southern Arizona Qualifier</div>
+                            
+                            <div class="record-prev-section">
+                                <div class="record-row">
+                                    <span class="record-label-small">Previous:</span>
+                                    <span class="time-value-small">1:04.17</span>
+                                </div>
+                                <div class="record-row">
+                                    <span class="swimmer-name text-muted">Zachary Duerkop</span>
+                                    <span class="date-value text-muted small">2023-24</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card" style="border-left: 4px solid #2C5F2D; background-color: #fafff5;">
+                    <div class="card record-card-compact" style="border-left: 4px solid #2C5F2D;">
                         <div class="card-body">
-                            <h6 class="mb-2" style="color: #2C5F2D;"><strong>BOYS - Sophomore 200 Individual Medley</strong></h6>
-                            <p class="mb-1">
-                                <span class="time">2:04.88</span> - <strong>Wade Olsson</strong>
-                            </p>
-                            <small class="text-muted">Nov 09, 2024</small>
-                            <div class="mt-1"><small>📍 2024 D-3 AIA State Championship</small></div>
-                            <hr class="my-2">
-                        <small class="text-muted">
-                            <strong>Previous:</strong> 2:07.86 - Nicholas Cusson<br>
-                            <span style="font-size: 0.85em;">2021-22</span>
-                        </small>
+                            <div class="record-row record-header-row">
+                                <span class="event-name">BOYS 200 Individual Medley <span class="grade-badge grade-so">SO</span></span>
+                                <span class="time-value">2:04.88</span>
+                            </div>
+                            <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                <span class="swimmer-name"><strong>Wade Olsson</strong></span>
+                                <span class="date-value">Nov 09, 2024</span>
+                                <span class="expand-hint">▼</span>
+                            </div>
+                            <div class="record-location-hidden">📍 2024 D-3 AIA State Championship</div>
+                            
+                            <div class="record-prev-section">
+                                <div class="record-row">
+                                    <span class="record-label-small">Previous:</span>
+                                    <span class="time-value-small">2:07.86</span>
+                                </div>
+                                <div class="record-row">
+                                    <span class="swimmer-name text-muted">Nicholas Cusson</span>
+                                    <span class="date-value text-muted small">2021-22</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -347,36 +363,56 @@
             <h3 class="mt-4 mb-3">Junior Records</h3>
             <div class="row g-4">
                 <div class="col-md-6">
-                    <div class="card" style="border-left: 4px solid #2C5F2D; background-color: #fafff5;">
+                    <div class="card record-card-compact" style="border-left: 4px solid #2C5F2D;">
                         <div class="card-body">
-                            <h6 class="mb-2" style="color: #2C5F2D;"><strong>BOYS - Junior 100 Breaststroke</strong></h6>
-                            <p class="mb-1">
-                                <span class="time">59.51</span> - <strong>Zachary Duerkop</strong>
-                            </p>
-                            <small class="text-muted">Sep 14, 2024</small>
-                            <div class="mt-1"><small>📍 Canyon del Oro Classic</small></div>
-                            <hr class="my-2">
-                        <small class="text-muted">
-                            <strong>Previous:</strong> 1:11.69 - Samuel Merrill<br>
-                            <span style="font-size: 0.85em;">2016-17</span>
-                        </small>
+                            <div class="record-row record-header-row">
+                                <span class="event-name">BOYS 100 Breaststroke <span class="grade-badge grade-jr">JR</span></span>
+                                <span class="time-value">59.51</span>
+                            </div>
+                            <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                <span class="swimmer-name"><strong>Zachary Duerkop</strong></span>
+                                <span class="date-value">Sep 14, 2024</span>
+                                <span class="expand-hint">▼</span>
+                            </div>
+                            <div class="record-location-hidden">📍 Canyon del Oro Classic</div>
+                            
+                            <div class="record-prev-section">
+                                <div class="record-row">
+                                    <span class="record-label-small">Previous:</span>
+                                    <span class="time-value-small">1:11.69</span>
+                                </div>
+                                <div class="record-row">
+                                    <span class="swimmer-name text-muted">Samuel Merrill</span>
+                                    <span class="date-value text-muted small">2016-17</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card" style="border-left: 4px solid #2C5F2D; background-color: #fafff5;">
+                    <div class="card record-card-compact" style="border-left: 4px solid #2C5F2D;">
                         <div class="card-body">
-                            <h6 class="mb-2" style="color: #2C5F2D;"><strong>BOYS - Junior 100 Butterfly</strong></h6>
-                            <p class="mb-1">
-                                <span class="time">54.45</span> - <strong>Zachary Duerkop</strong>
-                            </p>
-                            <small class="text-muted">Nov 09, 2024</small>
-                            <div class="mt-1"><small>📍 2024 D-3 AIA State Championship</small></div>
-                            <hr class="my-2">
-                        <small class="text-muted">
-                            <strong>Previous:</strong> 55.61 - Samuel Stott<br>
-                            <span style="font-size: 0.85em;">2021-22</span>
-                        </small>
+                            <div class="record-row record-header-row">
+                                <span class="event-name">BOYS 100 Butterfly <span class="grade-badge grade-jr">JR</span></span>
+                                <span class="time-value">54.45</span>
+                            </div>
+                            <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                <span class="swimmer-name"><strong>Zachary Duerkop</strong></span>
+                                <span class="date-value">Nov 09, 2024</span>
+                                <span class="expand-hint">▼</span>
+                            </div>
+                            <div class="record-location-hidden">📍 2024 D-3 AIA State Championship</div>
+                            
+                            <div class="record-prev-section">
+                                <div class="record-row">
+                                    <span class="record-label-small">Previous:</span>
+                                    <span class="time-value-small">55.61</span>
+                                </div>
+                                <div class="record-row">
+                                    <span class="swimmer-name text-muted">Samuel Stott</span>
+                                    <span class="date-value text-muted small">2021-22</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -384,19 +420,29 @@
             <h3 class="mt-4 mb-3">Senior Records</h3>
             <div class="row g-4">
                 <div class="col-md-6">
-                    <div class="card" style="border-left: 4px solid #808080; background-color: #fafff5;">
+                    <div class="card record-card-compact" style="border-left: 4px solid #666;">
                         <div class="card-body">
-                            <h6 class="mb-2" style="color: #808080;"><strong>GIRLS - Senior 100 Butterfly</strong></h6>
-                            <p class="mb-1">
-                                <span class="time">1:01.84</span> - <strong>Brianne Foley</strong>
-                            </p>
-                            <small class="text-muted">Nov 09, 2024</small>
-                            <div class="mt-1"><small>📍 2024 D-3 AIA State Championship</small></div>
-                            <hr class="my-2">
-                        <small class="text-muted">
-                            <strong>Previous:</strong> 1:04.32 - Paisley White<br>
-                            <span style="font-size: 0.85em;">2022-23</span>
-                        </small>
+                            <div class="record-row record-header-row">
+                                <span class="event-name">GIRLS 100 Butterfly <span class="grade-badge grade-sr">SR</span></span>
+                                <span class="time-value">1:01.84</span>
+                            </div>
+                            <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
+                                <span class="swimmer-name"><strong>Brianne Foley</strong></span>
+                                <span class="date-value">Nov 09, 2024</span>
+                                <span class="expand-hint">▼</span>
+                            </div>
+                            <div class="record-location-hidden">📍 2024 D-3 AIA State Championship</div>
+                            
+                            <div class="record-prev-section">
+                                <div class="record-row">
+                                    <span class="record-label-small">Previous:</span>
+                                    <span class="time-value-small">1:04.32</span>
+                                </div>
+                                <div class="record-row">
+                                    <span class="swimmer-name text-muted">Paisley White</span>
+                                    <span class="date-value text-muted small">2022-23</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

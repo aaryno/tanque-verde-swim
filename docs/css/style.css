@@ -1871,3 +1871,140 @@ h2[id], h3[id], .event-heading[id] {
   }
 }
 
+/* ==========================================
+   Compact Record Cards (Annual Summary)
+   ========================================== */
+.record-card-compact {
+  background-color: #fafff5;
+  border-radius: 8px;
+  transition: box-shadow 0.2s;
+}
+
+.record-card-compact:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.record-card-compact .card-body {
+  padding: 1rem;
+}
+
+.record-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.record-header-row {
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.record-row .event-name {
+  font-weight: bold;
+  color: var(--tvhs-dark-green, #0a3622);
+  font-size: 0.95rem;
+}
+
+.record-row .time-value {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--tvhs-primary, #2C5F2D);
+}
+
+.record-row .swimmer-name {
+  flex: 1;
+}
+
+.record-row .date-value {
+  font-size: 0.85rem;
+  color: #666;
+  white-space: nowrap;
+}
+
+.clickable-row {
+  cursor: pointer;
+  padding: 0.3rem 0;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.clickable-row:hover {
+  background-color: rgba(44, 95, 45, 0.1);
+}
+
+.expand-hint {
+  font-size: 0.7rem;
+  color: #999;
+  margin-left: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.clickable-row:hover .expand-hint {
+  color: var(--tvhs-primary, #2C5F2D);
+}
+
+.record-location-hidden {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease;
+  font-size: 0.85rem;
+  color: #666;
+  padding: 0;
+}
+
+.record-location-hidden.show {
+  max-height: 50px;
+  opacity: 1;
+  padding: 0.5rem 0;
+}
+
+.record-prev-section {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #ddd;
+}
+
+.record-label-small {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #888;
+  font-weight: bold;
+}
+
+.time-value-small {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.record-improvement {
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #eee;
+  font-size: 0.9rem;
+}
+
+/* Mobile adjustments for record cards */
+@media (max-width: 768px) {
+  .record-card-compact .card-body {
+    padding: 0.75rem;
+  }
+  
+  .record-row .event-name {
+    font-size: 0.85rem;
+  }
+  
+  .record-row .time-value {
+    font-size: 1rem;
+  }
+  
+  .record-row .date-value {
+    font-size: 0.75rem;
+  }
+}
+
