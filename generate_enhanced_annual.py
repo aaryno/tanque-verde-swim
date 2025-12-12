@@ -426,14 +426,23 @@ def generate_gender_season_bests_html(bests, gender, overall_records, class_reco
     
     return html
 
-def find_relay_splits(relay, splits_data, gender):
+def find_relay_splits(relay, splits_data, gender, event_type=None):
     """Find splits for a relay from the splits data"""
     participants = relay['participants']
     swimmers = [s.strip() for s in participants.split(',')]
     relay_time = relay['time']
+    relay_event = relay.get('event', event_type or '')
+    
+    best_match = None
+    best_score = 0
     
     # Look through splits data for a match
     for split_entry in splits_data.get(gender, []):
+        # Filter by event type if specified
+        entry_type = split_entry.get('type', '')
+        if relay_event and entry_type and relay_event != entry_type:
+            continue
+        
         entry_swimmers = []
         for s in split_entry.get('swimmers', []):
             # Remove grade suffix like " - Jr."
@@ -443,10 +452,12 @@ def find_relay_splits(relay, splits_data, gender):
         # Check if swimmers match (at least 3)
         relay_set = set(s.lower() for s in swimmers)
         entry_set = set(s.lower() for s in entry_swimmers)
-        if len(relay_set & entry_set) >= 3:
-            return split_entry.get('splits', [])
+        matching = len(relay_set & entry_set)
+        if matching >= 3 and matching > best_score:
+            best_score = matching
+            best_match = split_entry.get('splits', [])
     
-    return []
+    return best_match or []
 
 def generate_relay_section_html(relays, splits_data, gender):
     """Generate relay table HTML - looks like a single table with expandable rows"""

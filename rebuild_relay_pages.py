@@ -81,13 +81,16 @@ def find_splits_for_relay(splits_data, gender, event_type, swimmers, total_time)
     best_score = 0
     
     for split_entry in splits_data.get(gender, []):
-        # Check event type
+        # Check event type - now using full event names
         entry_type = split_entry.get('type', '')
-        if event_type == '200 Medley Relay' and entry_type != 'medley':
+        num_splits = len(split_entry.get('splits', []))
+        
+        # Match based on event type (full names now)
+        if event_type == '200 Medley Relay' and entry_type != '200 Medley Relay':
             continue
-        if event_type == '200 Free Relay' and (entry_type != 'free' or len(split_entry.get('splits', [])) != 4):
+        if event_type == '200 Free Relay' and entry_type != '200 Free Relay':
             continue
-        if event_type == '400 Free Relay' and (entry_type != 'free' or len(split_entry.get('splits', [])) != 8):
+        if event_type == '400 Free Relay' and entry_type != '400 Free Relay':
             continue
         
         # Match swimmers
