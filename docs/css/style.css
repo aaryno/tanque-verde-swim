@@ -1549,8 +1549,20 @@ footer a:hover {
     font-size: 0.8rem;
   }
   
+  /* Reset Boys and Girls columns to normal text styling */
+  .table-comparison td:nth-child(2),
+  .table-comparison td:nth-child(3) {
+    font-family: inherit;  /* Reset from monospace */
+    font-weight: normal;   /* Reset from bold */
+    font-size: 0.85rem;    /* Match table base */
+    color: inherit;        /* Reset from primary green */
+  }
+  
   .table-comparison .time {
     font-size: 0.9rem;
+    font-family: var(--time-font);
+    font-weight: var(--time-weight);
+    color: var(--tvhs-dark-green);
   }
   
   .table-comparison .grade-badge {
