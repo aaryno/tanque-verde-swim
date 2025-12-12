@@ -448,8 +448,9 @@ body {
   border: 1px solid #ddd;
   border-top: none;
   border-radius: 0 0 8px 8px;
-  padding: 1rem;
+  padding: 0;  /* Remove padding to match top10-event-cards */
   background: white;
+  overflow: hidden;
 }
 
 .section-content.collapsed {
@@ -471,14 +472,13 @@ body {
 
 .overall-record-card {
   background: white;
-  border: 1px solid #ddd;
-  border-top: none;
-  padding: 0.75rem 1rem;
+  padding: 0.65rem 1rem;  /* Match top10-card */
   cursor: pointer;
+  border-bottom: 1px solid #eee;  /* Match top10-card */
 }
 
 .overall-record-card:last-child {
-  border-radius: 0 0 8px 8px;
+  border-bottom: none;
 }
 
 .overall-record-card:nth-child(odd) {
@@ -639,13 +639,7 @@ body {
   border-radius: 8px 8px 0 0;
 }
 
-.relay-record-card {
-  border-top: 1px solid #ddd;
-}
-
-.relay-record-card:first-of-type {
-  border-top: none;
-}
+/* Relay record cards now use border-bottom like other cards */
 
 .relay-names {
   font-size: 0.95rem;
@@ -1947,13 +1941,19 @@ h2[id], h3[id], .event-heading[id] {
 
 /* Event section headings */
 .event-heading {
-  background-color: var(--bg-light);
+  /* Match top10-event-header styling */
+  background: var(--tvhs-primary);
+  color: white;
   padding: 0.75rem 1rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  border-left: 4px solid var(--tvhs-primary);
-  font-weight: bold;
-  font-size: 1.25rem;
+  margin: 1.5rem 0 0 0;
+  border-radius: 8px 8px 0 0;
+  border-left: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.event-heading:first-of-type {
+  margin-top: 0;
 }
 
 /* Time display - generic inline time */
@@ -2098,14 +2098,25 @@ h2[id], h3[id], .event-heading[id] {
 }
 
 /* Table-relay header and base styles */
+/* Relay table container - match top10-event-cards styling */
+.event-heading + .table-responsive {
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
 .table-relay {
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 
 .table-relay thead th {
-  background: var(--tvhs-primary, #0a3622);
-  color: white;
-  font-weight: 500;
+  background: #f8f9fa;  /* Light gray, not green (green is now in event-heading) */
+  color: var(--tvhs-dark-green);
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-bottom: 2px solid #ddd;
 }
 
 .table-relay .relay-names-cell {
