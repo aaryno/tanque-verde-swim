@@ -261,6 +261,8 @@ def generate_full_page_html(gender, events, splits_data):
             width: 50px;
             font-weight: bold;
             text-align: center;
+            vertical-align: top;
+            height: 1.5em;
         }}
         
         .time-cell {{
@@ -319,6 +321,7 @@ def generate_full_page_html(gender, events, splits_data):
         .split-swimmer {{
             font-weight: 500;
             flex: 1;
+            color: #333;
         }}
         
         .split-stroke {{
@@ -387,6 +390,10 @@ def generate_full_page_html(gender, events, splits_data):
             
             .rank-cell {{
                 width: 35px;
+                height: 35px !important;
+                max-height: 35px !important;
+                vertical-align: top !important;
+                line-height: 35px;
             }}
             
             .time-cell {{
