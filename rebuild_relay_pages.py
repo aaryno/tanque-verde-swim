@@ -553,22 +553,25 @@ def generate_full_page_html(gender, events, splits_data):
     
     <!-- Quick Nav Bar -->
     <nav class="navbar navbar-dark quick-nav" id="quick-nav">
-        <div class="container-fluid justify-content-center">
+        <div class="container-fluid justify-content-start">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/records/overall.html" title="Overall Records">🏆</a>
+                    <a class="nav-link nav-home" href="/index.html" title="Home">
+                        <img src="/images/hawk-logo.png" alt="Home" class="nav-logo">
+                        <span class="d-none d-md-inline">Home</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/records/{gender}-bygrade.html" title="Records by Grade">📊</a>
+                    <a class="nav-link" href="/records/overall.html" id="nav-overall" title="Overall Records">🏆<span class="d-none d-md-inline ms-1">Records</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/top10/{gender}-alltime.html" title="All-Time Top 10">🔟</a>
+                    <a class="nav-link" href="/top10/{gender}-alltime.html" id="nav-top10" title="All-Time Top 10">🔟<span class="d-none d-md-inline ms-1">Top 10</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/records/{gender}-relays.html" title="Relay Records">🤝</a>
+                    <a class="nav-link active" href="/records/{gender}-relays.html" id="nav-relays" title="Relay Records">🤝<span class="d-none d-md-inline ms-1">Relays</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="Season Top 10">📅</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅<span class="d-none d-md-inline ms-1">Top 10 by Year</span></a>
                     <ul class="dropdown-menu dropdown-menu-scroll">
                         <li><a class="dropdown-item" href="/top10/{gender}-2024-25.html">2024-25</a></li>
                         <li><a class="dropdown-item" href="/top10/{gender}-2023-24.html">2023-24</a></li>
@@ -591,7 +594,7 @@ def generate_full_page_html(gender, events, splits_data):
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="Season Summary">📈</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-summary" title="Season Summary">📈<span class="d-none d-md-inline ms-1">Summary by Year</span></a>
                     <ul class="dropdown-menu dropdown-menu-scroll dropdown-menu-end">
                         <li><a class="dropdown-item" href="/annual/2025-26.html">2025-26</a></li>
                         <li><a class="dropdown-item" href="/annual/2024-25.html">2024-25</a></li>
