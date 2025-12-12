@@ -416,6 +416,25 @@ def markdown_to_html_table(md_text):
     return result
 
 
+def convert_class_year_to_badges(html_content):
+    """Convert (FR), (SO), (JR), (SR) text to styled badge HTML"""
+    badge_classes = {
+        'FR': 'grade-fr',
+        'SO': 'grade-so', 
+        'JR': 'grade-jr',
+        'SR': 'grade-sr'
+    }
+    
+    def replace_grade(match):
+        grade = match.group(1).upper()
+        badge_class = badge_classes.get(grade, 'grade-open')
+        return f'<span class="grade-badge {badge_class}">{grade}</span>'
+    
+    # Match (FR), (SO), (JR), (SR) - case insensitive
+    result = re.sub(r'\((FR|SO|JR|SR)\)', replace_grade, html_content, flags=re.IGNORECASE)
+    return result
+
+
 def convert_markdown_file(md_file, output_file, title=None):
     """Convert a markdown file to HTML"""
     print(f"Converting {md_file.name} → {output_file.name}")
@@ -483,6 +502,9 @@ def convert_markdown_file(md_file, output_file, title=None):
             para = f'<p>{para}</p>'
         formatted_paragraphs.append(para)
     html_content = '\n'.join(formatted_paragraphs)
+    
+    # Convert class year text (FR), (SO), (JR), (SR) to styled badges
+    html_content = convert_class_year_to_badges(html_content)
     
     # Wrap in sections for better styling
     html_content = f'<div class="content">\n{html_content}\n</div>'

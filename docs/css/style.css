@@ -1362,7 +1362,7 @@ footer a:hover {
     color: #666;
     flex-shrink: 0;
     min-width: 1.5rem;
-    margin-right: 0.2rem;
+    margin-right: 0.08rem;  /* Tighter spacing on mobile */
   }
   
   /* Show abbreviation, hide full name on mobile */
@@ -1661,7 +1661,7 @@ h2[id], h3[id], .event-heading[id] {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;  /* Increased for desktop readability */
   padding: 0.25rem 0;
   border-bottom: 1px solid #eee;
 }
