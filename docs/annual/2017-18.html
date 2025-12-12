@@ -190,6 +190,95 @@
             margin-bottom: 2rem;
         }
         
+        /* Gender sections for toggling order */
+        .gender-section {
+            margin-bottom: 2rem;
+        }
+        
+        /* Relay table format */
+        .table-relay-annual {
+            margin-bottom: 1.5rem;
+        }
+        
+        .relay-row {
+            cursor: pointer;
+        }
+        
+        .relay-row:hover {
+            background-color: #e8f5e9 !important;
+        }
+        
+        .relay-names-cell {
+            position: relative;
+        }
+        
+        .relay-arrow {
+            font-size: 0.7rem;
+            margin-left: 0.5rem;
+            transition: transform 0.2s ease;
+            color: #999;
+        }
+        
+        .relay-row.expanded .relay-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .relay-details-row {
+            display: none;
+        }
+        
+        .relay-details-row.show {
+            display: table-row;
+        }
+        
+        .relay-details-row td {
+            background: #f8f9fa;
+            padding: 0.75rem 1rem;
+        }
+        
+        .relay-expanded-rows {
+            padding: 0.5rem 0;
+        }
+        
+        .relay-split-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .relay-split-row:last-of-type {
+            border-bottom: none;
+        }
+        
+        .split-swimmer {
+            font-weight: 500;
+            flex: 1;
+        }
+        
+        .split-stroke {
+            font-style: italic;
+            color: #666;
+            margin: 0 1rem;
+        }
+        
+        .split-time {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: var(--tvhs-primary, #0a3622);
+            min-width: 3rem;
+            text-align: right;
+        }
+        
+        .relay-meet-row {
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
         /* Senior cards */
         .senior-card {
             border-left: 4px solid var(--tvhs-primary, #0a3622);
@@ -311,10 +400,10 @@
     </div>
     
     <main class="container py-4">
-        <div class="section-header" data-section="season-bests">
-<h2>📊 Season Bests</h2>
+        <div class="gender-section" id="boys-section">
+<div class="section-header" data-section="boys-bests">
+<h2>📊 Boys Season Bests</h2>
 </div>
-<h3 class="event-heading">Boys Season Bests</h3>
 <div class="records-table-container">
 <table class="table table-striped table-hover table-records">
 <thead><tr><th>Event</th><th>Time</th><th>Swimmer</th><th>Date</th><th>Meet</th></tr></thead>
@@ -329,7 +418,32 @@
 <tr><td class="event-cell">200 Individual Medley</td><td class="time-cell"><strong>2:28.84</strong></td><td class="name-cell">Logan Radomsky <span class="grade-badge grade-so">SO</span></td><td class="date-cell">Oct 27, 2017</td><td class="meet-cell">Southern Arizona Regional Qualifier</td></tr>
 </tbody></table>
 </div>
-<h3 class="event-heading">Girls Season Bests</h3>
+<p class="text-muted small mt-2">🏆 = Overall School Record · ⭐ = Class Record</p>
+
+<h3 class="event-heading">Boys Relays</h3>
+<h3 class="event-heading">Boys Relays</h3>
+<div class="relay-table-container">
+<table class="table table-striped table-hover table-records table-relay-annual">
+<thead><tr><th>Event</th><th>Time</th><th>Relay</th><th>Date</th></tr></thead>
+<tbody>
+<tr class="relay-row odd" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="event-cell">200 Medley Relay</td>
+            <td class="time-cell"><strong>1:42.54</strong></td>
+            <td class="relay-names-cell">Radomsky, Flint, Baker, Deninghoff <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Oct 26, 2018</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4">
+                <div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Logan Radomsky</span><span class="split-stroke">Backstroke</span><span class="split-time">25.42</span></div><div class="relay-split-row"><span class="split-swimmer">Titan Flint</span><span class="split-stroke">Breaststroke</span><span class="split-time">28.07</span></div><div class="relay-split-row"><span class="split-swimmer">Lukas Baker</span><span class="split-stroke">Butterfly</span><span class="split-time">25.68</span></div><div class="relay-split-row"><span class="split-swimmer">John Deninghoff</span><span class="split-stroke">Freestyle</span><span class="split-time">23.37</span></div><div class="relay-meet-row">Southern Arizona Regional Qualifier</div></div>
+            </td>
+        </tr></tbody></table>
+</div>
+
+</div>
+<div class="gender-section" id="girls-section">
+<div class="section-header" data-section="girls-bests">
+<h2>📊 Girls Season Bests</h2>
+</div>
 <div class="records-table-container">
 <table class="table table-striped table-hover table-records">
 <thead><tr><th>Event</th><th>Time</th><th>Swimmer</th><th>Date</th><th>Meet</th></tr></thead>
@@ -345,6 +459,46 @@
 </div>
 <p class="text-muted small mt-2">🏆 = Overall School Record · ⭐ = Class Record</p>
 
+<h3 class="event-heading">Girls Relays</h3>
+<h3 class="event-heading">Girls Relays</h3>
+<div class="relay-table-container">
+<table class="table table-striped table-hover table-records table-relay-annual">
+<thead><tr><th>Event</th><th>Time</th><th>Relay</th><th>Date</th></tr></thead>
+<tbody>
+<tr class="relay-row odd" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="event-cell">200 Medley Relay</td>
+            <td class="time-cell"><strong>1:53.50</strong></td>
+            <td class="relay-names-cell">Sansom, Patterson, Pautler, Schoel-Smith <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Oct 26, 2018</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4">
+                <div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Isabelle Sansom</span><span class="split-stroke">Backstroke</span><span class="split-time">28.66</span></div><div class="relay-split-row"><span class="split-swimmer">Sarynn Patterson</span><span class="split-stroke">Breaststroke</span><span class="split-time">27.79</span></div><div class="relay-split-row"><span class="split-swimmer">Kennady Pautler</span><span class="split-stroke">Butterfly</span><span class="split-time">28.94</span></div><div class="relay-split-row"><span class="split-swimmer">Lindsey Schoel-Smith</span><span class="split-stroke">Freestyle</span><span class="split-time">28.11</span></div><div class="relay-meet-row">Southern Arizona Regional Qualifier</div></div>
+            </td>
+        </tr><tr class="relay-row even" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="event-cell">200 Free Relay</td>
+            <td class="time-cell"><strong>1:47.69</strong></td>
+            <td class="relay-names-cell">Sansom, Patterson, Dasse, Schoel-Smith <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Oct 26, 2018</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4">
+                <div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Isabelle Sansom</span><span class="split-stroke">Freestyle</span><span class="split-time">27.44</span></div><div class="relay-split-row"><span class="split-swimmer">Sarynn Patterson</span><span class="split-stroke">Freestyle</span><span class="split-time">26.49</span></div><div class="relay-split-row"><span class="split-swimmer">Hazel Dasse</span><span class="split-stroke">Freestyle</span><span class="split-time">26.58</span></div><div class="relay-split-row"><span class="split-swimmer">Lindsey Schoel-Smith</span><span class="split-stroke">Freestyle</span><span class="split-time">27.18</span></div><div class="relay-meet-row">Southern Arizona Regional Qualifier</div></div>
+            </td>
+        </tr><tr class="relay-row odd" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="event-cell">400 Free Relay</td>
+            <td class="time-cell"><strong>3:55.63</strong></td>
+            <td class="relay-names-cell">Patterson, Radomsky, Dasse, Sansom <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Nov 01, 2018</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4">
+                <div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Sarynn Patterson</span><span class="split-stroke">Freestyle</span><span class="split-time">27.44</span></div><div class="relay-split-row"><span class="split-swimmer">Ellie Radomsky</span><span class="split-stroke">Freestyle</span><span class="split-time">26.49</span></div><div class="relay-split-row"><span class="split-swimmer">Hazel Dasse</span><span class="split-stroke">Freestyle</span><span class="split-time">26.58</span></div><div class="relay-split-row"><span class="split-swimmer">Isabelle Sansom</span><span class="split-stroke">Freestyle</span><span class="split-time">27.18</span></div><div class="relay-meet-row">AIA D-3 Girls State Championship</div></div>
+            </td>
+        </tr></tbody></table>
+</div>
+
+</div>
 <div class="section-header" data-section="state-champs">
 <h2>🏆 State Championship Results</h2>
 </div>
@@ -368,173 +522,6 @@
 </tbody></table>
 </div>
 </div>
-
-<div class="section-header" data-section="relays">
-<h2>🤝 Relay Records</h2>
-</div>
-<h3 class="event-heading">Boys Relays</h3>
-<div class="relay-cards-container">
-
-        <div class="relay-card">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-event">200 Medley Relay</span>
-                    <span class="relay-time">1:42.54</span>
-                    <span class="relay-names-short">Radomsky, Flint, Baker, Deninghoff</span>
-                    <span class="relay-date">Oct 26, 2018</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Logan Radomsky</span>
-                    <span class="swimmer-stroke">Backstroke</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Titan Flint</span>
-                    <span class="swimmer-stroke">Breaststroke</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Lukas Baker</span>
-                    <span class="swimmer-stroke">Butterfly</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">John Deninghoff</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Southern Arizona Regional Qualifier</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div></div>
-
-<h3 class="event-heading">Girls Relays</h3>
-<div class="relay-cards-container">
-
-        <div class="relay-card">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-event">200 Medley Relay</span>
-                    <span class="relay-time">1:53.50</span>
-                    <span class="relay-names-short">Sansom, Patterson, Pautler, Schoel-Smith</span>
-                    <span class="relay-date">Oct 26, 2018</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Isabelle Sansom</span>
-                    <span class="swimmer-stroke">Backstroke</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Sarynn Patterson</span>
-                    <span class="swimmer-stroke">Breaststroke</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Kennady Pautler</span>
-                    <span class="swimmer-stroke">Butterfly</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Lindsey Schoel-Smith</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Southern Arizona Regional Qualifier</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-event">200 Free Relay</span>
-                    <span class="relay-time">1:47.69</span>
-                    <span class="relay-names-short">Sansom, Patterson, Dasse, Schoel-Smith</span>
-                    <span class="relay-date">Oct 26, 2018</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Isabelle Sansom</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Sarynn Patterson</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Hazel Dasse</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Lindsey Schoel-Smith</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Southern Arizona Regional Qualifier</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-event">400 Free Relay</span>
-                    <span class="relay-time">3:55.63</span>
-                    <span class="relay-names-short">Patterson, Radomsky, Dasse, Sansom</span>
-                    <span class="relay-date">Nov 01, 2018</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Sarynn Patterson</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Ellie Radomsky</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Hazel Dasse</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Isabelle Sansom</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">AIA D-3 Girls State Championship</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div></div>
 
 <div class="section-header" data-section="class-records">
 <h2>⭐ Class Records Broken</h2>

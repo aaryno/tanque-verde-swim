@@ -127,31 +127,29 @@ def strip_leading_zero(time_str):
         return time_str[1:]
     return time_str
 
-def generate_relay_card_html(relay, gender, splits_data, event_type):
-    """Generate HTML for a single relay card"""
+def generate_relay_row_html(relay, gender, splits_data, event_type, row_num):
+    """Generate HTML for a single relay table row"""
     rank = relay['rank']
-    time = strip_leading_zero(relay['time'])  # Remove leading zero
+    time = strip_leading_zero(relay['time'])
     participants = relay['participants']
     date = relay['date']
     meet = relay['meet']
     
-    # Get last names
     swimmers = [s.strip() for s in participants.split(',')]
     last_names = ', '.join(get_last_name(s) for s in swimmers)
     
     # Find splits
     splits_match = find_splits_for_relay(splits_data, gender, event_type, participants, time)
     
-    # Build swimmer lines with splits (matching splash page style)
-    swimmer_html = ''
+    # Build expanded content
+    expanded_html = '<div class="relay-expanded-rows">'
     for i, swimmer in enumerate(swimmers):
-        split_time = ''
         stroke = get_stroke_for_position(event_type, i)
+        split_time = ''
         
         if splits_match:
             splits = splits_match.get('splits', [])
             if event_type == '400 Free Relay' and len(splits) == 8:
-                # Sum two splits for 100 Free legs
                 idx = i * 2
                 if idx + 1 < len(splits):
                     try:
@@ -163,60 +161,46 @@ def generate_relay_card_html(relay, gender, splits_data, event_type):
             elif i < len(splits):
                 split_time = format_split_time(splits[i])
         
-        # Match splash page format: name | stroke (italic) | time (bold, right)
-        swimmer_html += f'''
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">{swimmer}</span>
-                                            <span class="swimmer-stroke">{stroke}</span>
-                                            <span class="swimmer-time">{split_time}</span>
-                                        </div>'''
+        expanded_html += f'<div class="relay-split-row">'
+        expanded_html += f'<span class="split-swimmer">{swimmer}</span>'
+        expanded_html += f'<span class="split-stroke">{stroke}</span>'
+        expanded_html += f'<span class="split-time">{split_time}</span>'
+        expanded_html += '</div>'
     
-    # Parse meet name and location
-    meet_match = re.match(r'^(.+?)(\s*\([^)]+\))?$', meet)
-    meet_name = meet_match.group(1).strip() if meet_match else meet
-    meet_location = meet_match.group(2).strip() if meet_match and meet_match.group(2) else ''
+    expanded_html += f'<div class="relay-meet-row">{meet}</div>'
+    expanded_html += '</div>'
     
-    # Rank badge class
-    rank_class = 'rank-1' if rank == 1 else ('rank-2' if rank == 2 else ('rank-3' if rank == 3 else ''))
+    row_class = '' if row_num % 2 == 0 else 'table-row-alt'
     
-    # Desktop: single line; Mobile: two lines
-    html = f'''
-        <div class="relay-card" data-rank="{rank}">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank {rank_class}">{rank}</span>
-                    <span class="relay-time">{time}</span>
-                    <span class="relay-names-short">{last_names}</span>
-                    <span class="relay-date">{date}</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">{swimmer_html}
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">{meet_name}</span>
-                        {f'<span class="meet-location">{meet_location}</span>' if meet_location else ''}
-                    </div>
-                </div>
-            </div>
-        </div>'''
+    html = f'''<tr class="relay-row {row_class}" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">{rank}</td>
+            <td class="time-cell"><strong>{time}</strong></td>
+            <td class="relay-names-cell">{last_names} <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">{date}</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4">{expanded_html}</td>
+        </tr>'''
     
     return html
 
 def generate_relay_section_html(event_name, relays, gender, splits_data):
-    """Generate HTML for an event section"""
-    cards_html = ''
-    for relay in relays[:10]:  # Only Top 10
-        cards_html += generate_relay_card_html(relay, gender, splits_data, event_name)
-    
+    """Generate HTML table for an event section"""
     event_id = event_name.lower().replace(' ', '-')
     
-    return f'''
-    <h2 id="{event_id}" class="event-heading">{event_name}</h2>
-    <div class="relay-cards-container">
-        {cards_html}
-    </div>
-    '''
+    html = f'<h2 id="{event_id}" class="event-heading">{event_name}</h2>\n'
+    html += '<div class="table-responsive">\n'
+    html += '<table class="table table-hover table-relay">\n'
+    html += '<thead><tr><th>Rank</th><th>Time</th><th>Relay</th><th>Date</th></tr></thead>\n'
+    html += '<tbody>\n'
+    
+    for i, relay in enumerate(relays[:10]):  # Top 10
+        html += generate_relay_row_html(relay, gender, splits_data, event_name, i)
+    
+    html += '</tbody></table>\n'
+    html += '</div>\n'
+    
+    return html
 
 def generate_full_page_html(gender, events, splits_data):
     """Generate the full HTML page"""
@@ -247,75 +231,42 @@ def generate_full_page_html(gender, events, splits_data):
     <link rel="apple-touch-icon" href="/images/hawk-logo.png">
     
     <style>
-        /* Relay Card Styles - matching splash page */
-        .relay-cards-container {{
-            max-width: 900px;
-            margin: 0 auto 2rem;
+        /* Relay Table Styles - matching Top 10 pages */
+        .table-relay {{
+            margin-bottom: 2rem;
         }}
         
-        .relay-card {{
-            background-color: #E8F5E9; /* Pale green like splash page */
-            border-left: 4px solid var(--tvhs-primary, #0a3622);
-            border-radius: 8px;
-            margin-bottom: 0.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            overflow: hidden;
+        .table-relay thead th {{
+            background: var(--tvhs-primary, #0a3622);
+            color: white;
+            font-weight: 500;
         }}
         
-        .relay-compact-wrapper {{
-            padding: 0.75rem 1rem;
+        .relay-row {{
             cursor: pointer;
-            user-select: none;
         }}
         
-        /* Desktop: Single line header */
-        .relay-header {{
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1rem;
-            flex-wrap: wrap;
+        .relay-row:hover {{
+            background-color: #e8f5e9 !important;
         }}
         
-        .relay-rank {{
+        .table-row-alt {{
+            background-color: #f8f9fa;
+        }}
+        
+        .rank-cell {{
+            width: 50px;
             font-weight: bold;
-            min-width: 1.5rem;
             text-align: center;
-            color: #666;
-            flex-shrink: 0;
         }}
         
-        .relay-rank.rank-1 {{
-            color: #d4af37;
-            font-size: 1.2rem;
-        }}
-        
-        .relay-rank.rank-2 {{
-            color: #a8a8a8;
-        }}
-        
-        .relay-rank.rank-3 {{
-            color: #cd7f32;
-        }}
-        
-        .relay-time {{
+        .time-cell {{
             font-family: 'Courier New', monospace;
-            font-weight: bold;
-            color: var(--tvhs-primary, #0a3622);
-            flex-shrink: 0;
-        }}
-        
-        .relay-names-short {{
-            color: #333;
-            font-size: 0.95rem;
-            flex: 1;
-        }}
-        
-        .relay-date {{
-            font-size: 0.85rem;
-            color: #666;
             white-space: nowrap;
-            flex-shrink: 0;
+        }}
+        
+        .relay-names-cell {{
+            position: relative;
         }}
         
         .relay-arrow {{
@@ -323,135 +274,78 @@ def generate_full_page_html(gender, events, splits_data):
             display: inline-block;
             transition: transform 0.2s ease;
             color: #999;
-            flex-shrink: 0;
+            margin-left: 0.5rem;
         }}
         
-        .relay-compact-wrapper.expanded .relay-arrow {{
+        .relay-row.expanded .relay-arrow {{
             transform: rotate(180deg);
         }}
         
-        .relay-expanded-content {{
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
+        .relay-details-row {{
+            display: none;
         }}
         
-        .relay-compact-wrapper.expanded .relay-expanded-content {{
-            max-height: 400px;
+        .relay-details-row.show {{
+            display: table-row;
         }}
         
-        .relay-swimmers {{
-            padding: 0.75rem 0 0.5rem 0;
-            border-top: 1px solid rgba(0,0,0,0.1);
-            margin-top: 0.75rem;
+        .relay-details-row td {{
+            background: #f8f9fa;
+            padding: 0.75rem 1rem;
         }}
         
-        /* Swimmer entry - matching splash page style */
-        .relay-swimmers .swimmer-entry {{
+        .relay-expanded-rows {{
+            padding: 0.5rem 0;
+        }}
+        
+        .relay-split-row {{
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 0.75rem;
             padding: 0.25rem 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid #eee;
         }}
         
-        .relay-swimmers .swimmer-entry:last-child {{
+        .relay-split-row:last-of-type {{
             border-bottom: none;
         }}
         
-        .relay-swimmers .swimmer-name {{
-            flex: 1;
+        .split-swimmer {{
             font-weight: 500;
-            color: #333;
+            flex: 1;
         }}
         
-        .relay-swimmers .swimmer-stroke {{
-            font-size: 0.85rem;
-            color: #666;
+        .split-stroke {{
             font-style: italic;
+            color: #666;
+            margin: 0 1rem;
         }}
         
-        .relay-swimmers .swimmer-time {{
+        .split-time {{
             font-family: 'Courier New', monospace;
             font-weight: bold;
-            font-size: 1rem;
             color: var(--tvhs-primary, #0a3622);
-            min-width: 3.5rem;
+            min-width: 3rem;
             text-align: right;
         }}
         
-        .relay-meet {{
-            padding: 0.5rem 0;
-            border-top: 1px solid rgba(0,0,0,0.1);
+        .relay-meet-row {{
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid #ddd;
             font-size: 0.85rem;
-            color: #555;
+            color: #666;
         }}
         
-        .meet-name {{
-            display: block;
+        .date-cell {{
+            white-space: nowrap;
+            color: #666;
         }}
         
-        .meet-location {{
-            display: block;
-            color: #888;
-            font-size: 0.8rem;
-        }}
-        
-        /* Mobile: Two lines - names wrap to second line */
+        /* Mobile styles */
         @media (max-width: 650px) {{
-            .relay-header {{
-                display: grid;
-                grid-template-columns: auto auto 1fr auto;
-                grid-template-rows: auto auto;
-                grid-template-areas:
-                    "rank time date arrow"
-                    "names names names names";
-                gap: 0.25rem 0.5rem;
-            }}
-            
-            .relay-rank {{
-                grid-area: rank;
-            }}
-            
-            .relay-time {{
-                grid-area: time;
-            }}
-            
-            .relay-date {{
-                grid-area: date;
-                text-align: right;
-            }}
-            
-            .relay-arrow {{
-                grid-area: arrow;
-            }}
-            
-            .relay-names-short {{
-                grid-area: names;
-                padding-top: 0.25rem;
-            }}
-            
-            /* Swimmer entry on mobile */
-            .relay-swimmers .swimmer-entry {{
-                display: grid;
-                grid-template-columns: 1fr auto;
-                grid-template-areas: 
-                    "name time"
-                    "stroke stroke";
-                gap: 0.25rem;
-            }}
-            
-            .relay-swimmers .swimmer-name {{
-                grid-area: name;
-            }}
-            
-            .relay-swimmers .swimmer-stroke {{
-                grid-area: stroke;
-                font-size: 0.8rem;
-            }}
-            
-            .relay-swimmers .swimmer-time {{
-                grid-area: time;
+            .table-relay td {{
+                font-size: 0.9rem;
             }}
         }}
     </style>

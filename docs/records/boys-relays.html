@@ -16,75 +16,42 @@
     <link rel="apple-touch-icon" href="/images/hawk-logo.png">
     
     <style>
-        /* Relay Card Styles - matching splash page */
-        .relay-cards-container {
-            max-width: 900px;
-            margin: 0 auto 2rem;
+        /* Relay Table Styles - matching Top 10 pages */
+        .table-relay {
+            margin-bottom: 2rem;
         }
         
-        .relay-card {
-            background-color: #E8F5E9; /* Pale green like splash page */
-            border-left: 4px solid var(--tvhs-primary, #0a3622);
-            border-radius: 8px;
-            margin-bottom: 0.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            overflow: hidden;
+        .table-relay thead th {
+            background: var(--tvhs-primary, #0a3622);
+            color: white;
+            font-weight: 500;
         }
         
-        .relay-compact-wrapper {
-            padding: 0.75rem 1rem;
+        .relay-row {
             cursor: pointer;
-            user-select: none;
         }
         
-        /* Desktop: Single line header */
-        .relay-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1rem;
-            flex-wrap: wrap;
+        .relay-row:hover {
+            background-color: #e8f5e9 !important;
         }
         
-        .relay-rank {
+        .table-row-alt {
+            background-color: #f8f9fa;
+        }
+        
+        .rank-cell {
+            width: 50px;
             font-weight: bold;
-            min-width: 1.5rem;
             text-align: center;
-            color: #666;
-            flex-shrink: 0;
         }
         
-        .relay-rank.rank-1 {
-            color: #d4af37;
-            font-size: 1.2rem;
-        }
-        
-        .relay-rank.rank-2 {
-            color: #a8a8a8;
-        }
-        
-        .relay-rank.rank-3 {
-            color: #cd7f32;
-        }
-        
-        .relay-time {
+        .time-cell {
             font-family: 'Courier New', monospace;
-            font-weight: bold;
-            color: var(--tvhs-primary, #0a3622);
-            flex-shrink: 0;
-        }
-        
-        .relay-names-short {
-            color: #333;
-            font-size: 0.95rem;
-            flex: 1;
-        }
-        
-        .relay-date {
-            font-size: 0.85rem;
-            color: #666;
             white-space: nowrap;
-            flex-shrink: 0;
+        }
+        
+        .relay-names-cell {
+            position: relative;
         }
         
         .relay-arrow {
@@ -92,135 +59,78 @@
             display: inline-block;
             transition: transform 0.2s ease;
             color: #999;
-            flex-shrink: 0;
+            margin-left: 0.5rem;
         }
         
-        .relay-compact-wrapper.expanded .relay-arrow {
+        .relay-row.expanded .relay-arrow {
             transform: rotate(180deg);
         }
         
-        .relay-expanded-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
+        .relay-details-row {
+            display: none;
         }
         
-        .relay-compact-wrapper.expanded .relay-expanded-content {
-            max-height: 400px;
+        .relay-details-row.show {
+            display: table-row;
         }
         
-        .relay-swimmers {
-            padding: 0.75rem 0 0.5rem 0;
-            border-top: 1px solid rgba(0,0,0,0.1);
-            margin-top: 0.75rem;
+        .relay-details-row td {
+            background: #f8f9fa;
+            padding: 0.75rem 1rem;
         }
         
-        /* Swimmer entry - matching splash page style */
-        .relay-swimmers .swimmer-entry {
+        .relay-expanded-rows {
+            padding: 0.5rem 0;
+        }
+        
+        .relay-split-row {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 0.75rem;
             padding: 0.25rem 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid #eee;
         }
         
-        .relay-swimmers .swimmer-entry:last-child {
+        .relay-split-row:last-of-type {
             border-bottom: none;
         }
         
-        .relay-swimmers .swimmer-name {
-            flex: 1;
+        .split-swimmer {
             font-weight: 500;
-            color: #333;
+            flex: 1;
         }
         
-        .relay-swimmers .swimmer-stroke {
-            font-size: 0.85rem;
-            color: #666;
+        .split-stroke {
             font-style: italic;
+            color: #666;
+            margin: 0 1rem;
         }
         
-        .relay-swimmers .swimmer-time {
+        .split-time {
             font-family: 'Courier New', monospace;
             font-weight: bold;
-            font-size: 1rem;
             color: var(--tvhs-primary, #0a3622);
-            min-width: 3.5rem;
+            min-width: 3rem;
             text-align: right;
         }
         
-        .relay-meet {
-            padding: 0.5rem 0;
-            border-top: 1px solid rgba(0,0,0,0.1);
+        .relay-meet-row {
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid #ddd;
             font-size: 0.85rem;
-            color: #555;
+            color: #666;
         }
         
-        .meet-name {
-            display: block;
+        .date-cell {
+            white-space: nowrap;
+            color: #666;
         }
         
-        .meet-location {
-            display: block;
-            color: #888;
-            font-size: 0.8rem;
-        }
-        
-        /* Mobile: Two lines - names wrap to second line */
+        /* Mobile styles */
         @media (max-width: 650px) {
-            .relay-header {
-                display: grid;
-                grid-template-columns: auto auto 1fr auto;
-                grid-template-rows: auto auto;
-                grid-template-areas:
-                    "rank time date arrow"
-                    "names names names names";
-                gap: 0.25rem 0.5rem;
-            }
-            
-            .relay-rank {
-                grid-area: rank;
-            }
-            
-            .relay-time {
-                grid-area: time;
-            }
-            
-            .relay-date {
-                grid-area: date;
-                text-align: right;
-            }
-            
-            .relay-arrow {
-                grid-area: arrow;
-            }
-            
-            .relay-names-short {
-                grid-area: names;
-                padding-top: 0.25rem;
-            }
-            
-            /* Swimmer entry on mobile */
-            .relay-swimmers .swimmer-entry {
-                display: grid;
-                grid-template-columns: 1fr auto;
-                grid-template-areas: 
-                    "name time"
-                    "stroke stroke";
-                gap: 0.25rem;
-            }
-            
-            .relay-swimmers .swimmer-name {
-                grid-area: name;
-            }
-            
-            .relay-swimmers .swimmer-stroke {
-                grid-area: stroke;
-                font-size: 0.8rem;
-            }
-            
-            .relay-swimmers .swimmer-time {
-                grid-area: time;
+            .table-relay td {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -322,1192 +232,268 @@
     </div>
     
     <main class="container py-4">
-        
-    <h2 id="200-medley-relay" class="event-heading">200 Medley Relay</h2>
-    <div class="relay-cards-container">
-        
-        <div class="relay-card" data-rank="1">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank rank-1">1</span>
-                    <span class="relay-time">1:42.54</span>
-                    <span class="relay-names-short">Radomsky, Flint, Baker, Deninghoff</span>
-                    <span class="relay-date">Oct 26, 2018</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Logan Radomsky</span>
-                                            <span class="swimmer-stroke">Backstroke</span>
-                                            <span class="swimmer-time">25.42</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Titan Flint</span>
-                                            <span class="swimmer-stroke">Breaststroke</span>
-                                            <span class="swimmer-time">28.07</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Lukas Baker</span>
-                                            <span class="swimmer-stroke">Butterfly</span>
-                                            <span class="swimmer-time">25.68</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">John Deninghoff</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">23.37</span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Southern Arizona Regional Qualifier</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="2">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank rank-2">2</span>
-                    <span class="relay-time">1:42.70</span>
-                    <span class="relay-names-short">Olsson, Olsson, Eftekhar, The</span>
-                    <span class="relay-date">Nov 08, 2025</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Kent Olsson</span>
-                                            <span class="swimmer-stroke">Backstroke</span>
-                                            <span class="swimmer-time">27.69</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Wade Olsson</span>
-                                            <span class="swimmer-stroke">Breaststroke</span>
-                                            <span class="swimmer-time">27.68</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Eftekhar</span>
-                                            <span class="swimmer-stroke">Butterfly</span>
-                                            <span class="swimmer-time">24.08</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Grayson The</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">23.25</span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">D-3 AIA State Championship</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="3">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank rank-3">3</span>
-                    <span class="relay-time">1:42.98</span>
-                    <span class="relay-names-short">Alvarez, Radomsky, Soedor, Moreland</span>
-                    <span class="relay-date">Oct 28, 2022</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Alejandro Alvarez</span>
-                                            <span class="swimmer-stroke">Backstroke</span>
-                                            <span class="swimmer-time">25.45</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nolan Radomsky</span>
-                                            <span class="swimmer-stroke">Breaststroke</span>
-                                            <span class="swimmer-time">25.12</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Tannor Soedor</span>
-                                            <span class="swimmer-stroke">Butterfly</span>
-                                            <span class="swimmer-time">26.16</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Stephen Moreland</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">26.25</span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Southern AZ Regional Qualifier</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="4">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">4</span>
-                    <span class="relay-time">1:43.02</span>
-                    <span class="relay-names-short">Colombo, Grimshaw, Pacheco, Radomsky</span>
-                    <span class="relay-date">Nov 01, 2019</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Dominic Colombo</span>
-                                            <span class="swimmer-stroke">Backstroke</span>
-                                            <span class="swimmer-time">26.66</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nate Grimshaw</span>
-                                            <span class="swimmer-stroke">Breaststroke</span>
-                                            <span class="swimmer-time">26.68</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Julian Pacheco</span>
-                                            <span class="swimmer-stroke">Butterfly</span>
-                                            <span class="swimmer-time">25.77</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Logan Radomsky</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">23.91</span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Canyon Del Oro Invite</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="5">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">5</span>
-                    <span class="relay-time">1:44.98</span>
-                    <span class="relay-names-short">The, Soeder, Caballero, Kowalski</span>
-                    <span class="relay-date">Oct 25, 2024</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Grayson The</span>
-                                            <span class="swimmer-stroke">Backstroke</span>
-                                            <span class="swimmer-time">25.63</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Lucas Soeder</span>
-                                            <span class="swimmer-stroke">Breaststroke</span>
-                                            <span class="swimmer-time">26.43</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Carter Caballero</span>
-                                            <span class="swimmer-stroke">Butterfly</span>
-                                            <span class="swimmer-time">28.25</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Peyton Kowalski</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">24.67</span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Southern Arizona Qualifier</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="6">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">6</span>
-                    <span class="relay-time">1:45.73</span>
-                    <span class="relay-names-short">Olsson, Duerkop, Eftekhar, Machamer</span>
-                    <span class="relay-date">Oct 25, 2024</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Wade Olsson</span>
-                                            <span class="swimmer-stroke">Backstroke</span>
-                                            <span class="swimmer-time">24.81</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Zachary Duerkop</span>
-                                            <span class="swimmer-stroke">Breaststroke</span>
-                                            <span class="swimmer-time">23.94</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Eftekhar</span>
-                                            <span class="swimmer-stroke">Butterfly</span>
-                                            <span class="swimmer-time">24.75</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Machamer</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">23.03</span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Southern Arizona Qualifier</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="7">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">7</span>
-                    <span class="relay-time">1:46.38</span>
-                    <span class="relay-names-short">Olsson, Olsson, Duerkop, Machamer</span>
-                    <span class="relay-date">Sep 20, 2025</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Kent Olsson</span>
-                                            <span class="swimmer-stroke">Backstroke</span>
-                                            <span class="swimmer-time">28.92</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Wade Olsson</span>
-                                            <span class="swimmer-stroke">Breaststroke</span>
-                                            <span class="swimmer-time">28.28</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Zachary Duerkop</span>
-                                            <span class="swimmer-stroke">Butterfly</span>
-                                            <span class="swimmer-time">23.99</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Machamer</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">25.19</span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Canyon del Oro Classic</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="8">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">8</span>
-                    <span class="relay-time">1:46.69</span>
-                    <span class="relay-names-short">Moreland, Spilotro, Alvarez, Radomsky</span>
-                    <span class="relay-date">Oct 23, 2021</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Stephen Moreland</span>
-                                            <span class="swimmer-stroke">Backstroke</span>
-                                            <span class="swimmer-time">25.45</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nicholas Spilotro</span>
-                                            <span class="swimmer-stroke">Breaststroke</span>
-                                            <span class="swimmer-time">25.12</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Alejandro Alvarez</span>
-                                            <span class="swimmer-stroke">Butterfly</span>
-                                            <span class="swimmer-time">26.16</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nolan Radomsky</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">26.25</span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Pecan Classic</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="9">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">9</span>
-                    <span class="relay-time">1:47.12</span>
-                    <span class="relay-names-short">Spilotro, Flint, Denninghoff, Stott</span>
-                    <span class="relay-date">Sep 22, 2018</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nicholas Spilotro</span>
-                                            <span class="swimmer-stroke">Backstroke</span>
-                                            <span class="swimmer-time">27.78</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Titan Flint</span>
-                                            <span class="swimmer-stroke">Breaststroke</span>
-                                            <span class="swimmer-time">26.96</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">John Denninghoff</span>
-                                            <span class="swimmer-stroke">Butterfly</span>
-                                            <span class="swimmer-time">25.17</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Eli Stott</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">27.21</span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Red Wolf Relays</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="10">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">10</span>
-                    <span class="relay-time">1:47.46</span>
-                    <span class="relay-names-short">Pacheco, Jacobs, Grimshaw, Stott</span>
-                    <span class="relay-date">Oct 05, 2019</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Julian Pacheco</span>
-                                            <span class="swimmer-stroke">Backstroke</span>
-                                            <span class="swimmer-time">25.84</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Joseph Jacobs</span>
-                                            <span class="swimmer-stroke">Breaststroke</span>
-                                            <span class="swimmer-time">28.09</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nate Grimshaw</span>
-                                            <span class="swimmer-stroke">Butterfly</span>
-                                            <span class="swimmer-time">26.85</span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Eli Stott</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time">26.68</span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">High School Classic</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <h2 id="200-free-relay" class="event-heading">200 Free Relay</h2>
-    <div class="relay-cards-container">
-        
-        <div class="relay-card" data-rank="1">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank rank-1">1</span>
-                    <span class="relay-time">1:30.45</span>
-                    <span class="relay-names-short">Eftekhar, The, Olsson, Duerkop</span>
-                    <span class="relay-date">Nov 08, 2025</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Eftekhar</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Grayson The</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Wade Olsson</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Zachary Duerkop</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">D-3 AIA State Championship</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="2">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank rank-2">2</span>
-                    <span class="relay-time">1:32.46</span>
-                    <span class="relay-names-short">Clausen, Radomsky, Spilotro, Stott</span>
-                    <span class="relay-date">Nov 07, 2019</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Trevor Clausen</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Logan Radomsky</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nicholas Spilotro</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Samuel Stott</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">2019 D-3 AIA State Championship</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="3">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank rank-3">3</span>
-                    <span class="relay-time">1:33.90</span>
-                    <span class="relay-names-short">Cusson, Alvarez, Moreland, Stott</span>
-                    <span class="relay-date">Nov 05, 2022</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nicholas Cusson</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Alejandro Alvarez</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Stephen Moreland</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Samuel Stott</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">2022 D-3 AIA Boys State Championship</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="4">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">4</span>
-                    <span class="relay-time">1:33.93</span>
-                    <span class="relay-names-short">Stott, Alvarez, Radomsky, Cusson</span>
-                    <span class="relay-date">Nov 05, 2021</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Samuel Stott</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Alejandro Alvarez</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nolan Radomsky</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nicholas Cusson</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">AIA D-III Boys State</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="5">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">5</span>
-                    <span class="relay-time">1:34.88</span>
-                    <span class="relay-names-short">Cusson, Soedor, Radomsky, Stott</span>
-                    <span class="relay-date">Nov 05, 2022</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nicholas Cusson</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Tannor Soedor</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nolan Radomsky</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Samuel Stott</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">2022 D-3 AIA Boys State Championship</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="6">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">6</span>
-                    <span class="relay-time">1:35.01</span>
-                    <span class="relay-names-short">The, Olsson, Kowalski, Duerkop</span>
-                    <span class="relay-date">Nov 09, 2024</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Grayson The</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Wade Olsson</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Peyton Kowalski</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Zachary Duerkop</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">2024 D-3 AIA State Championship</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="7">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">7</span>
-                    <span class="relay-time">1:35.27</span>
-                    <span class="relay-names-short">Radomsky, Machamer, Duerkop, Cusson</span>
-                    <span class="relay-date">Oct 21, 2023</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nolan Radomsky</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Machamer</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Zachary Duerkop</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nicholas Cusson</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Pecan Classic</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="8">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">8</span>
-                    <span class="relay-time">1:35.61</span>
-                    <span class="relay-names-short">Eftekhar, Olsson, Machamer, Duerkop</span>
-                    <span class="relay-date">Oct 18, 2025</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Eftekhar</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Kent Olsson</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Machamer</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Zachary Duerkop</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Pecan Classic</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="9">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">9</span>
-                    <span class="relay-time">1:35.90</span>
-                    <span class="relay-names-short">Eftekhar, Machamer, The, Duerkop</span>
-                    <span class="relay-date">Sep 28, 2024</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Eftekhar</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Machamer</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Grayson The</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Zachary Duerkop</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">21st Annual TYR HS Classic</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="10">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">10</span>
-                    <span class="relay-time">1:36.07</span>
-                    <span class="relay-names-short">Duerkop, Olsson, Machamer, Cusson</span>
-                    <span class="relay-date">Oct 25, 2023</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Zachary Duerkop</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Wade Olsson</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Machamer</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nicholas Cusson</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Southern Arizona Region Qualifier</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <h2 id="400-free-relay" class="event-heading">400 Free Relay</h2>
-    <div class="relay-cards-container">
-        
-        <div class="relay-card" data-rank="1">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank rank-1">1</span>
-                    <span class="relay-time">3:20.60</span>
-                    <span class="relay-names-short">Olsson, The, Eftekhar, Duerkop</span>
-                    <span class="relay-date">Oct 18, 2025</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Wade Olsson</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Grayson The</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Eftekhar</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Zachary Duerkop</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Pecan Classic</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="2">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank rank-2">2</span>
-                    <span class="relay-time">3:25.97</span>
-                    <span class="relay-names-short">Eftekhar, The, Machamer, Duerkop</span>
-                    <span class="relay-date">Nov 08, 2025</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Eftekhar</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Grayson The</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Machamer</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Zachary Duerkop</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">D-3 AIA State Championship</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="3">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank rank-3">3</span>
-                    <span class="relay-time">3:26.64</span>
-                    <span class="relay-names-short">Cusson, Alvarez, Radomsky, Stott</span>
-                    <span class="relay-date">Nov 05, 2021</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nicholas Cusson</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Alejandro Alvarez</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nolan Radomsky</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Samuel Stott</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">AIA D-III Boys State</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="4">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">4</span>
-                    <span class="relay-time">3:27.09</span>
-                    <span class="relay-names-short">Cusson, Soedor, Radomsky, Stott</span>
-                    <span class="relay-date">Nov 05, 2022</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nicholas Cusson</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Tannor Soedor</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nolan Radomsky</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Samuel Stott</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">2022 D-3 AIA Boys State Championship</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="5">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">5</span>
-                    <span class="relay-time">3:27.87</span>
-                    <span class="relay-names-short">Clausen, Spilotro, Radomsky, Stott</span>
-                    <span class="relay-date">Nov 07, 2019</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Trevor Clausen</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nicholas Spilotro</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Logan Radomsky</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Samuel Stott</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">2019 D-3 AIA State Championship</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="6">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">6</span>
-                    <span class="relay-time">3:29.49</span>
-                    <span class="relay-names-short">Olsson, Eftekhar, Machamer, Duerkop</span>
-                    <span class="relay-date">Sep 28, 2024</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Wade Olsson</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Eftekhar</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Machamer</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Zachary Duerkop</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">21st Annual TYR HS Classic</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="7">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">7</span>
-                    <span class="relay-time">3:29.96</span>
-                    <span class="relay-names-short">Cusson, Olsson, Machamer, Duerkop</span>
-                    <span class="relay-date">Sep 23, 2023</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Nicholas Cusson</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Wade Olsson</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Machamer</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Zachary Duerkop</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">TYR High School Classic</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="8">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">8</span>
-                    <span class="relay-time">3:30.05</span>
-                    <span class="relay-names-short">Eftekhar, Machamer, Kowalski, Duerkop</span>
-                    <span class="relay-date">Nov 09, 2024</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Eftekhar</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Machamer</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Peyton Kowalski</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Zachary Duerkop</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">2024 D-3 AIA State Championship</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="9">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">9</span>
-                    <span class="relay-time">3:30.18</span>
-                    <span class="relay-names-short">Olsson, Machamer, Olsson, Duerkop</span>
-                    <span class="relay-date">Sep 27, 2025</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Wade Olsson</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Jackson Machamer</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Kent Olsson</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Zachary Duerkop</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Arena High School Classic</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card" data-rank="10">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-rank ">10</span>
-                    <span class="relay-time">3:30.43</span>
-                    <span class="relay-names-short">Duerkop, Johnston, The, Olsson</span>
-                    <span class="relay-date">Oct 24, 2025</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Zachary Duerkop</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Bennett Johnston</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Grayson The</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                                        <div class="swimmer-entry">
-                                            <span class="swimmer-name">Wade Olsson</span>
-                                            <span class="swimmer-stroke">Freestyle</span>
-                                            <span class="swimmer-time"></span>
-                                        </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Southern Arizona Qualifier</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
+        <h2 id="200-medley-relay" class="event-heading">200 Medley Relay</h2>
+<div class="table-responsive">
+<table class="table table-hover table-relay">
+<thead><tr><th>Rank</th><th>Time</th><th>Relay</th><th>Date</th></tr></thead>
+<tbody>
+<tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">1</td>
+            <td class="time-cell"><strong>1:42.54</strong></td>
+            <td class="relay-names-cell">Radomsky, Flint, Baker, Deninghoff <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Oct 26, 2018</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Logan Radomsky</span><span class="split-stroke">Backstroke</span><span class="split-time">25.42</span></div><div class="relay-split-row"><span class="split-swimmer">Titan Flint</span><span class="split-stroke">Breaststroke</span><span class="split-time">28.07</span></div><div class="relay-split-row"><span class="split-swimmer">Lukas Baker</span><span class="split-stroke">Butterfly</span><span class="split-time">25.68</span></div><div class="relay-split-row"><span class="split-swimmer">John Deninghoff</span><span class="split-stroke">Freestyle</span><span class="split-time">23.37</span></div><div class="relay-meet-row">Southern Arizona Regional Qualifier</div></div></td>
+        </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">2</td>
+            <td class="time-cell"><strong>1:42.70</strong></td>
+            <td class="relay-names-cell">Olsson, Olsson, Eftekhar, The <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Nov 08, 2025</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Kent Olsson</span><span class="split-stroke">Backstroke</span><span class="split-time">27.69</span></div><div class="relay-split-row"><span class="split-swimmer">Wade Olsson</span><span class="split-stroke">Breaststroke</span><span class="split-time">27.68</span></div><div class="relay-split-row"><span class="split-swimmer">Jackson Eftekhar</span><span class="split-stroke">Butterfly</span><span class="split-time">24.08</span></div><div class="relay-split-row"><span class="split-swimmer">Grayson The</span><span class="split-stroke">Freestyle</span><span class="split-time">23.25</span></div><div class="relay-meet-row">D-3 AIA State Championship</div></div></td>
+        </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">3</td>
+            <td class="time-cell"><strong>1:42.98</strong></td>
+            <td class="relay-names-cell">Alvarez, Radomsky, Soedor, Moreland <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Oct 28, 2022</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Alejandro Alvarez</span><span class="split-stroke">Backstroke</span><span class="split-time">25.45</span></div><div class="relay-split-row"><span class="split-swimmer">Nolan Radomsky</span><span class="split-stroke">Breaststroke</span><span class="split-time">25.12</span></div><div class="relay-split-row"><span class="split-swimmer">Tannor Soedor</span><span class="split-stroke">Butterfly</span><span class="split-time">26.16</span></div><div class="relay-split-row"><span class="split-swimmer">Stephen Moreland</span><span class="split-stroke">Freestyle</span><span class="split-time">26.25</span></div><div class="relay-meet-row">Southern AZ Regional Qualifier</div></div></td>
+        </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">4</td>
+            <td class="time-cell"><strong>1:43.02</strong></td>
+            <td class="relay-names-cell">Colombo, Grimshaw, Pacheco, Radomsky <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Nov 01, 2019</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Dominic Colombo</span><span class="split-stroke">Backstroke</span><span class="split-time">26.66</span></div><div class="relay-split-row"><span class="split-swimmer">Nate Grimshaw</span><span class="split-stroke">Breaststroke</span><span class="split-time">26.68</span></div><div class="relay-split-row"><span class="split-swimmer">Julian Pacheco</span><span class="split-stroke">Butterfly</span><span class="split-time">25.77</span></div><div class="relay-split-row"><span class="split-swimmer">Logan Radomsky</span><span class="split-stroke">Freestyle</span><span class="split-time">23.91</span></div><div class="relay-meet-row">Canyon Del Oro Invite</div></div></td>
+        </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">5</td>
+            <td class="time-cell"><strong>1:44.98</strong></td>
+            <td class="relay-names-cell">The, Soeder, Caballero, Kowalski <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Oct 25, 2024</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Grayson The</span><span class="split-stroke">Backstroke</span><span class="split-time">25.63</span></div><div class="relay-split-row"><span class="split-swimmer">Lucas Soeder</span><span class="split-stroke">Breaststroke</span><span class="split-time">26.43</span></div><div class="relay-split-row"><span class="split-swimmer">Carter Caballero</span><span class="split-stroke">Butterfly</span><span class="split-time">28.25</span></div><div class="relay-split-row"><span class="split-swimmer">Peyton Kowalski</span><span class="split-stroke">Freestyle</span><span class="split-time">24.67</span></div><div class="relay-meet-row">Southern Arizona Qualifier</div></div></td>
+        </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">6</td>
+            <td class="time-cell"><strong>1:45.73</strong></td>
+            <td class="relay-names-cell">Olsson, Duerkop, Eftekhar, Machamer <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Oct 25, 2024</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Wade Olsson</span><span class="split-stroke">Backstroke</span><span class="split-time">24.81</span></div><div class="relay-split-row"><span class="split-swimmer">Zachary Duerkop</span><span class="split-stroke">Breaststroke</span><span class="split-time">23.94</span></div><div class="relay-split-row"><span class="split-swimmer">Jackson Eftekhar</span><span class="split-stroke">Butterfly</span><span class="split-time">24.75</span></div><div class="relay-split-row"><span class="split-swimmer">Jackson Machamer</span><span class="split-stroke">Freestyle</span><span class="split-time">23.03</span></div><div class="relay-meet-row">Southern Arizona Qualifier</div></div></td>
+        </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">7</td>
+            <td class="time-cell"><strong>1:46.38</strong></td>
+            <td class="relay-names-cell">Olsson, Olsson, Duerkop, Machamer <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Sep 20, 2025</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Kent Olsson</span><span class="split-stroke">Backstroke</span><span class="split-time">28.92</span></div><div class="relay-split-row"><span class="split-swimmer">Wade Olsson</span><span class="split-stroke">Breaststroke</span><span class="split-time">28.28</span></div><div class="relay-split-row"><span class="split-swimmer">Zachary Duerkop</span><span class="split-stroke">Butterfly</span><span class="split-time">23.99</span></div><div class="relay-split-row"><span class="split-swimmer">Jackson Machamer</span><span class="split-stroke">Freestyle</span><span class="split-time">25.19</span></div><div class="relay-meet-row">Canyon del Oro Classic</div></div></td>
+        </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">8</td>
+            <td class="time-cell"><strong>1:46.69</strong></td>
+            <td class="relay-names-cell">Moreland, Spilotro, Alvarez, Radomsky <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Oct 23, 2021</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Stephen Moreland</span><span class="split-stroke">Backstroke</span><span class="split-time">25.45</span></div><div class="relay-split-row"><span class="split-swimmer">Nicholas Spilotro</span><span class="split-stroke">Breaststroke</span><span class="split-time">25.12</span></div><div class="relay-split-row"><span class="split-swimmer">Alejandro Alvarez</span><span class="split-stroke">Butterfly</span><span class="split-time">26.16</span></div><div class="relay-split-row"><span class="split-swimmer">Nolan Radomsky</span><span class="split-stroke">Freestyle</span><span class="split-time">26.25</span></div><div class="relay-meet-row">Pecan Classic</div></div></td>
+        </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">9</td>
+            <td class="time-cell"><strong>1:47.12</strong></td>
+            <td class="relay-names-cell">Spilotro, Flint, Denninghoff, Stott <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Sep 22, 2018</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Nicholas Spilotro</span><span class="split-stroke">Backstroke</span><span class="split-time">27.78</span></div><div class="relay-split-row"><span class="split-swimmer">Titan Flint</span><span class="split-stroke">Breaststroke</span><span class="split-time">26.96</span></div><div class="relay-split-row"><span class="split-swimmer">John Denninghoff</span><span class="split-stroke">Butterfly</span><span class="split-time">25.17</span></div><div class="relay-split-row"><span class="split-swimmer">Eli Stott</span><span class="split-stroke">Freestyle</span><span class="split-time">27.21</span></div><div class="relay-meet-row">Red Wolf Relays</div></div></td>
+        </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">10</td>
+            <td class="time-cell"><strong>1:47.46</strong></td>
+            <td class="relay-names-cell">Pacheco, Jacobs, Grimshaw, Stott <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Oct 05, 2019</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Julian Pacheco</span><span class="split-stroke">Backstroke</span><span class="split-time">25.84</span></div><div class="relay-split-row"><span class="split-swimmer">Joseph Jacobs</span><span class="split-stroke">Breaststroke</span><span class="split-time">28.09</span></div><div class="relay-split-row"><span class="split-swimmer">Nate Grimshaw</span><span class="split-stroke">Butterfly</span><span class="split-time">26.85</span></div><div class="relay-split-row"><span class="split-swimmer">Eli Stott</span><span class="split-stroke">Freestyle</span><span class="split-time">26.68</span></div><div class="relay-meet-row">High School Classic</div></div></td>
+        </tr></tbody></table>
+</div>
+<h2 id="200-free-relay" class="event-heading">200 Free Relay</h2>
+<div class="table-responsive">
+<table class="table table-hover table-relay">
+<thead><tr><th>Rank</th><th>Time</th><th>Relay</th><th>Date</th></tr></thead>
+<tbody>
+<tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">1</td>
+            <td class="time-cell"><strong>1:30.45</strong></td>
+            <td class="relay-names-cell">Eftekhar, The, Olsson, Duerkop <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Nov 08, 2025</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Jackson Eftekhar</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Grayson The</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Wade Olsson</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Zachary Duerkop</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">D-3 AIA State Championship</div></div></td>
+        </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">2</td>
+            <td class="time-cell"><strong>1:32.46</strong></td>
+            <td class="relay-names-cell">Clausen, Radomsky, Spilotro, Stott <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Nov 07, 2019</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Trevor Clausen</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Logan Radomsky</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Nicholas Spilotro</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Samuel Stott</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">2019 D-3 AIA State Championship</div></div></td>
+        </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">3</td>
+            <td class="time-cell"><strong>1:33.90</strong></td>
+            <td class="relay-names-cell">Cusson, Alvarez, Moreland, Stott <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Nov 05, 2022</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Nicholas Cusson</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Alejandro Alvarez</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Stephen Moreland</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Samuel Stott</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">2022 D-3 AIA Boys State Championship</div></div></td>
+        </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">4</td>
+            <td class="time-cell"><strong>1:33.93</strong></td>
+            <td class="relay-names-cell">Stott, Alvarez, Radomsky, Cusson <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Nov 05, 2021</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Samuel Stott</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Alejandro Alvarez</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Nolan Radomsky</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Nicholas Cusson</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">AIA D-III Boys State</div></div></td>
+        </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">5</td>
+            <td class="time-cell"><strong>1:34.88</strong></td>
+            <td class="relay-names-cell">Cusson, Soedor, Radomsky, Stott <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Nov 05, 2022</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Nicholas Cusson</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Tannor Soedor</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Nolan Radomsky</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Samuel Stott</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">2022 D-3 AIA Boys State Championship</div></div></td>
+        </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">6</td>
+            <td class="time-cell"><strong>1:35.01</strong></td>
+            <td class="relay-names-cell">The, Olsson, Kowalski, Duerkop <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Nov 09, 2024</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Grayson The</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Wade Olsson</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Peyton Kowalski</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Zachary Duerkop</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">2024 D-3 AIA State Championship</div></div></td>
+        </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">7</td>
+            <td class="time-cell"><strong>1:35.27</strong></td>
+            <td class="relay-names-cell">Radomsky, Machamer, Duerkop, Cusson <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Oct 21, 2023</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Nolan Radomsky</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Jackson Machamer</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Zachary Duerkop</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Nicholas Cusson</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">Pecan Classic</div></div></td>
+        </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">8</td>
+            <td class="time-cell"><strong>1:35.61</strong></td>
+            <td class="relay-names-cell">Eftekhar, Olsson, Machamer, Duerkop <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Oct 18, 2025</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Jackson Eftekhar</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Kent Olsson</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Jackson Machamer</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Zachary Duerkop</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">Pecan Classic</div></div></td>
+        </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">9</td>
+            <td class="time-cell"><strong>1:35.90</strong></td>
+            <td class="relay-names-cell">Eftekhar, Machamer, The, Duerkop <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Sep 28, 2024</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Jackson Eftekhar</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Jackson Machamer</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Grayson The</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Zachary Duerkop</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">21st Annual TYR HS Classic</div></div></td>
+        </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">10</td>
+            <td class="time-cell"><strong>1:36.07</strong></td>
+            <td class="relay-names-cell">Duerkop, Olsson, Machamer, Cusson <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Oct 25, 2023</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Zachary Duerkop</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Wade Olsson</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Jackson Machamer</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Nicholas Cusson</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">Southern Arizona Region Qualifier</div></div></td>
+        </tr></tbody></table>
+</div>
+<h2 id="400-free-relay" class="event-heading">400 Free Relay</h2>
+<div class="table-responsive">
+<table class="table table-hover table-relay">
+<thead><tr><th>Rank</th><th>Time</th><th>Relay</th><th>Date</th></tr></thead>
+<tbody>
+<tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">1</td>
+            <td class="time-cell"><strong>3:20.60</strong></td>
+            <td class="relay-names-cell">Olsson, The, Eftekhar, Duerkop <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Oct 18, 2025</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Wade Olsson</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Grayson The</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Jackson Eftekhar</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Zachary Duerkop</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">Pecan Classic</div></div></td>
+        </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">2</td>
+            <td class="time-cell"><strong>3:25.97</strong></td>
+            <td class="relay-names-cell">Eftekhar, The, Machamer, Duerkop <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Nov 08, 2025</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Jackson Eftekhar</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Grayson The</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Jackson Machamer</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Zachary Duerkop</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">D-3 AIA State Championship</div></div></td>
+        </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">3</td>
+            <td class="time-cell"><strong>3:26.64</strong></td>
+            <td class="relay-names-cell">Cusson, Alvarez, Radomsky, Stott <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Nov 05, 2021</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Nicholas Cusson</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Alejandro Alvarez</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Nolan Radomsky</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Samuel Stott</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">AIA D-III Boys State</div></div></td>
+        </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">4</td>
+            <td class="time-cell"><strong>3:27.09</strong></td>
+            <td class="relay-names-cell">Cusson, Soedor, Radomsky, Stott <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Nov 05, 2022</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Nicholas Cusson</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Tannor Soedor</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Nolan Radomsky</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Samuel Stott</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">2022 D-3 AIA Boys State Championship</div></div></td>
+        </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">5</td>
+            <td class="time-cell"><strong>3:27.87</strong></td>
+            <td class="relay-names-cell">Clausen, Spilotro, Radomsky, Stott <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Nov 07, 2019</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Trevor Clausen</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Nicholas Spilotro</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Logan Radomsky</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Samuel Stott</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">2019 D-3 AIA State Championship</div></div></td>
+        </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">6</td>
+            <td class="time-cell"><strong>3:29.49</strong></td>
+            <td class="relay-names-cell">Olsson, Eftekhar, Machamer, Duerkop <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Sep 28, 2024</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Wade Olsson</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Jackson Eftekhar</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Jackson Machamer</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Zachary Duerkop</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">21st Annual TYR HS Classic</div></div></td>
+        </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">7</td>
+            <td class="time-cell"><strong>3:29.96</strong></td>
+            <td class="relay-names-cell">Cusson, Olsson, Machamer, Duerkop <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Sep 23, 2023</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Nicholas Cusson</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Wade Olsson</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Jackson Machamer</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Zachary Duerkop</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">TYR High School Classic</div></div></td>
+        </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">8</td>
+            <td class="time-cell"><strong>3:30.05</strong></td>
+            <td class="relay-names-cell">Eftekhar, Machamer, Kowalski, Duerkop <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Nov 09, 2024</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Jackson Eftekhar</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Jackson Machamer</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Peyton Kowalski</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Zachary Duerkop</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">2024 D-3 AIA State Championship</div></div></td>
+        </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">9</td>
+            <td class="time-cell"><strong>3:30.18</strong></td>
+            <td class="relay-names-cell">Olsson, Machamer, Olsson, Duerkop <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Sep 27, 2025</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Wade Olsson</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Jackson Machamer</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Kent Olsson</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Zachary Duerkop</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">Arena High School Classic</div></div></td>
+        </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="rank-cell">10</td>
+            <td class="time-cell"><strong>3:30.43</strong></td>
+            <td class="relay-names-cell">Duerkop, Johnston, The, Olsson <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Oct 24, 2025</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Zachary Duerkop</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Bennett Johnston</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Grayson The</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Wade Olsson</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">Southern Arizona Qualifier</div></div></td>
+        </tr></tbody></table>
+</div>
+
     </main>
     
     <!-- Footer -->

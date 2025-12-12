@@ -284,76 +284,97 @@ def get_class_records_broken_in_season(season, history):
     """Get class records that were broken in a specific season"""
     return [r for r in history if r['season'] == season]
 
-def generate_season_bests_html(boys_bests, girls_bests, overall_records, class_records, gender_label):
-    """Generate HTML for season bests tables"""
+def generate_gender_season_bests_html(bests, gender, overall_records, class_records):
+    """Generate HTML for a single gender's season bests table"""
     events_order = ['50 Freestyle', '100 Freestyle', '200 Freestyle', '500 Freestyle',
                     '100 Backstroke', '100 Breaststroke', '100 Butterfly', '200 Individual Medley']
     
-    html = ''
-    for gender, bests in [('boys', boys_bests), ('girls', girls_bests)]:
-        if not bests:
+    if not bests:
+        return '<p class="text-muted">No times recorded.</p>'
+    
+    html = '<div class="records-table-container">\n'
+    html += '<table class="table table-striped table-hover table-records">\n'
+    html += '<thead><tr><th>Event</th><th>Time</th><th>Swimmer</th><th>Date</th><th>Meet</th></tr></thead>\n'
+    html += '<tbody>\n'
+    
+    for event in events_order:
+        if event not in bests:
             continue
         
-        html += f'<h3 class="event-heading">{gender.title()} Season Bests</h3>\n'
-        html += '<div class="records-table-container">\n'
-        html += '<table class="table table-striped table-hover table-records">\n'
-        html += '<thead><tr><th>Event</th><th>Time</th><th>Swimmer</th><th>Date</th><th>Meet</th></tr></thead>\n'
-        html += '<tbody>\n'
+        entry = bests[event]
+        time = entry['time']
+        name = entry['name']
+        year = entry['year']
+        date = entry['date']
+        meet = entry['meet']
         
-        for event in events_order:
-            if event not in bests:
-                continue
-            
-            entry = bests[event]
-            time = entry['time']
-            name = entry['name']
-            year = entry['year']
-            date = entry['date']
-            meet = entry['meet']
-            
-            # Check for overall record
-            is_overall_record = False
-            overall = overall_records.get(gender, {}).get(event)
-            if overall and parse_time_to_seconds(time) <= parse_time_to_seconds(overall['time']):
-                is_overall_record = True
-            
-            # Check for class record
-            is_class_record = False
-            class_rec = class_records.get(gender, {}).get(event, {}).get(year)
-            if class_rec and parse_time_to_seconds(time) <= parse_time_to_seconds(class_rec['time']):
-                is_class_record = True
-            
-            # Build badges
-            badges = ''
-            if is_overall_record:
-                badges += ' 🏆'
-            elif is_class_record:
-                badges += ' ⭐'
-            
-            html += f'<tr>'
-            html += f'<td class="event-cell">{event}</td>'
-            html += f'<td class="time-cell"><strong>{time}</strong>{badges}</td>'
-            html += f'<td class="name-cell">{name} {grade_badge(year)}</td>'
-            html += f'<td class="date-cell">{date}</td>'
-            html += f'<td class="meet-cell">{meet}</td>'
-            html += f'</tr>\n'
+        # Check for overall record
+        is_overall_record = False
+        overall = overall_records.get(gender, {}).get(event)
+        if overall and parse_time_to_seconds(time) <= parse_time_to_seconds(overall['time']):
+            is_overall_record = True
         
-        html += '</tbody></table>\n'
-        html += '</div>\n'
+        # Check for class record
+        is_class_record = False
+        class_rec = class_records.get(gender, {}).get(event, {}).get(year)
+        if class_rec and parse_time_to_seconds(time) <= parse_time_to_seconds(class_rec['time']):
+            is_class_record = True
+        
+        # Build badges
+        badges = ''
+        if is_overall_record:
+            badges += ' 🏆'
+        elif is_class_record:
+            badges += ' ⭐'
+        
+        html += f'<tr>'
+        html += f'<td class="event-cell">{event}</td>'
+        html += f'<td class="time-cell"><strong>{time}</strong>{badges}</td>'
+        html += f'<td class="name-cell">{name} {grade_badge(year)}</td>'
+        html += f'<td class="date-cell">{date}</td>'
+        html += f'<td class="meet-cell">{meet}</td>'
+        html += f'</tr>\n'
     
-    # Add legend
+    html += '</tbody></table>\n'
+    html += '</div>\n'
     html += '<p class="text-muted small mt-2">🏆 = Overall School Record · ⭐ = Class Record</p>\n'
     
     return html
 
+def find_relay_splits(relay, splits_data, gender):
+    """Find splits for a relay from the splits data"""
+    participants = relay['participants']
+    swimmers = [s.strip() for s in participants.split(',')]
+    relay_time = relay['time']
+    
+    # Look through splits data for a match
+    for split_entry in splits_data.get(gender, []):
+        entry_swimmers = []
+        for s in split_entry.get('swimmers', []):
+            # Remove grade suffix like " - Jr."
+            name = re.sub(r'\s*-\s*(Fr|So|Jr|Sr)\.$', '', s, flags=re.IGNORECASE)
+            entry_swimmers.append(name.strip())
+        
+        # Check if swimmers match (at least 3)
+        relay_set = set(s.lower() for s in swimmers)
+        entry_set = set(s.lower() for s in entry_swimmers)
+        if len(relay_set & entry_set) >= 3:
+            return split_entry.get('splits', [])
+    
+    return []
+
 def generate_relay_section_html(relays, splits_data, gender):
-    """Generate relay cards HTML"""
+    """Generate relay table HTML - looks like a single table with expandable rows"""
     if not relays:
         return ''
     
     html = f'<h3 class="event-heading">{gender.title()} Relays</h3>\n'
-    html += '<div class="relay-cards-container">\n'
+    html += '<div class="relay-table-container">\n'
+    html += '<table class="table table-striped table-hover table-records table-relay-annual">\n'
+    html += '<thead><tr><th>Event</th><th>Time</th><th>Relay</th><th>Date</th></tr></thead>\n'
+    html += '<tbody>\n'
     
+    row_num = 0
     for event in ['200 Medley Relay', '200 Free Relay', '400 Free Relay']:
         if event not in relays:
             continue
@@ -369,44 +390,52 @@ def generate_relay_section_html(relays, splits_data, gender):
         date = relay['date']
         meet = relay['meet']
         
-        # Parse meet name and location
-        meet_match = re.match(r'^(.+?)(\s*\([^)]+\))?$', meet)
-        meet_name = meet_match.group(1).strip() if meet_match else meet
-        meet_location = meet_match.group(2).strip() if meet_match and meet_match.group(2) else ''
-        
-        # Build swimmer HTML (simplified - no splits for now)
-        swimmer_html = ''
+        # Get splits
+        splits = find_relay_splits(relay, splits_data, gender)
         strokes = ['Backstroke', 'Breaststroke', 'Butterfly', 'Freestyle'] if 'Medley' in event else ['Freestyle'] * 4
+        
+        # Build expanded content
+        expanded_html = '<div class="relay-expanded-rows">'
         for i, swimmer in enumerate(swimmers):
             stroke = strokes[i] if i < len(strokes) else 'Freestyle'
-            swimmer_html += f'''
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">{swimmer}</span>
-                    <span class="swimmer-stroke">{stroke}</span>
-                    <span class="swimmer-time"></span>
-                </div>'''
+            split_time = ''
+            if splits:
+                if event == '400 Free Relay' and len(splits) == 8:
+                    idx = i * 2
+                    if idx + 1 < len(splits):
+                        try:
+                            t1 = float(splits[idx].replace('00:', ''))
+                            t2 = float(splits[idx + 1].replace('00:', ''))
+                            split_time = f"{t1 + t2:.2f}"
+                        except:
+                            pass
+                elif i < len(splits):
+                    split_time = splits[i].replace('00:', '')
+            
+            expanded_html += f'<div class="relay-split-row">'
+            expanded_html += f'<span class="split-swimmer">{swimmer}</span>'
+            expanded_html += f'<span class="split-stroke">{stroke}</span>'
+            expanded_html += f'<span class="split-time">{split_time}</span>'
+            expanded_html += '</div>'
+        expanded_html += f'<div class="relay-meet-row">{meet}</div>'
+        expanded_html += '</div>'
         
-        html += f'''
-        <div class="relay-card">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-event">{event}</span>
-                    <span class="relay-time">{time}</span>
-                    <span class="relay-names-short">{last_names}</span>
-                    <span class="relay-date">{date}</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">{swimmer_html}
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">{meet_name}</span>
-                        {f'<span class="meet-location">{meet_location}</span>' if meet_location else ''}
-                    </div>
-                </div>
-            </div>
-        </div>'''
+        row_class = 'odd' if row_num % 2 == 0 else 'even'
+        row_num += 1
+        
+        html += f'''<tr class="relay-row {row_class}" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="event-cell">{event}</td>
+            <td class="time-cell"><strong>{time}</strong></td>
+            <td class="relay-names-cell">{last_names} <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">{date}</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4">
+                {expanded_html}
+            </td>
+        </tr>'''
     
+    html += '</tbody></table>\n'
     html += '</div>\n'
     return html
 
@@ -540,30 +569,36 @@ def generate_annual_page(season):
     girls_seniors = get_seniors_in_season(girls_entries)
     all_seniors = {**boys_seniors, **girls_seniors}
     
-    # Build page content
+    # Build page content - grouped by gender
     content_parts = []
     
-    # Season Bests section
-    content_parts.append('<div class="section-header" data-section="season-bests">')
-    content_parts.append('<h2>📊 Season Bests</h2>')
+    # Boys section
+    content_parts.append('<div class="gender-section" id="boys-section">')
+    content_parts.append('<div class="section-header" data-section="boys-bests">')
+    content_parts.append('<h2>📊 Boys Season Bests</h2>')
     content_parts.append('</div>')
-    content_parts.append(generate_season_bests_html(boys_bests, girls_bests, overall_records, class_records_before, season))
+    content_parts.append(generate_gender_season_bests_html(boys_bests, 'boys', overall_records, class_records_before))
+    if boys_relays:
+        content_parts.append('<h3 class="event-heading">Boys Relays</h3>')
+        content_parts.append(generate_relay_section_html(boys_relays, splits_data, 'boys'))
+    content_parts.append('</div>')
+    
+    # Girls section
+    content_parts.append('<div class="gender-section" id="girls-section">')
+    content_parts.append('<div class="section-header" data-section="girls-bests">')
+    content_parts.append('<h2>📊 Girls Season Bests</h2>')
+    content_parts.append('</div>')
+    content_parts.append(generate_gender_season_bests_html(girls_bests, 'girls', overall_records, class_records_before))
+    if girls_relays:
+        content_parts.append('<h3 class="event-heading">Girls Relays</h3>')
+        content_parts.append(generate_relay_section_html(girls_relays, splits_data, 'girls'))
+    content_parts.append('</div>')
     
     # State Championship section
     boys_state = get_state_meet_results(boys_entries)
     girls_state = get_state_meet_results(girls_entries)
     if boys_state or girls_state:
         content_parts.append(generate_state_championship_html(boys_state, girls_state, overall_records, class_records_before))
-    
-    # Relays section
-    if boys_relays or girls_relays:
-        content_parts.append('<div class="section-header" data-section="relays">')
-        content_parts.append('<h2>🤝 Relay Records</h2>')
-        content_parts.append('</div>')
-        if boys_relays:
-            content_parts.append(generate_relay_section_html(boys_relays, splits_data, 'boys'))
-        if girls_relays:
-            content_parts.append(generate_relay_section_html(girls_relays, splits_data, 'girls'))
     
     # Class Records Broken section
     if records_broken:
@@ -826,6 +861,95 @@ def create_html_page(title, content, season):
         /* State results container */
         .state-results-container {
             margin-bottom: 2rem;
+        }
+        
+        /* Gender sections for toggling order */
+        .gender-section {
+            margin-bottom: 2rem;
+        }
+        
+        /* Relay table format */
+        .table-relay-annual {
+            margin-bottom: 1.5rem;
+        }
+        
+        .relay-row {
+            cursor: pointer;
+        }
+        
+        .relay-row:hover {
+            background-color: #e8f5e9 !important;
+        }
+        
+        .relay-names-cell {
+            position: relative;
+        }
+        
+        .relay-arrow {
+            font-size: 0.7rem;
+            margin-left: 0.5rem;
+            transition: transform 0.2s ease;
+            color: #999;
+        }
+        
+        .relay-row.expanded .relay-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .relay-details-row {
+            display: none;
+        }
+        
+        .relay-details-row.show {
+            display: table-row;
+        }
+        
+        .relay-details-row td {
+            background: #f8f9fa;
+            padding: 0.75rem 1rem;
+        }
+        
+        .relay-expanded-rows {
+            padding: 0.5rem 0;
+        }
+        
+        .relay-split-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .relay-split-row:last-of-type {
+            border-bottom: none;
+        }
+        
+        .split-swimmer {
+            font-weight: 500;
+            flex: 1;
+        }
+        
+        .split-stroke {
+            font-style: italic;
+            color: #666;
+            margin: 0 1rem;
+        }
+        
+        .split-time {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: var(--tvhs-primary, #0a3622);
+            min-width: 3rem;
+            text-align: right;
+        }
+        
+        .relay-meet-row {
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.85rem;
+            color: #666;
         }
         
         /* Senior cards */

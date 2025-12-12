@@ -190,6 +190,95 @@
             margin-bottom: 2rem;
         }
         
+        /* Gender sections for toggling order */
+        .gender-section {
+            margin-bottom: 2rem;
+        }
+        
+        /* Relay table format */
+        .table-relay-annual {
+            margin-bottom: 1.5rem;
+        }
+        
+        .relay-row {
+            cursor: pointer;
+        }
+        
+        .relay-row:hover {
+            background-color: #e8f5e9 !important;
+        }
+        
+        .relay-names-cell {
+            position: relative;
+        }
+        
+        .relay-arrow {
+            font-size: 0.7rem;
+            margin-left: 0.5rem;
+            transition: transform 0.2s ease;
+            color: #999;
+        }
+        
+        .relay-row.expanded .relay-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .relay-details-row {
+            display: none;
+        }
+        
+        .relay-details-row.show {
+            display: table-row;
+        }
+        
+        .relay-details-row td {
+            background: #f8f9fa;
+            padding: 0.75rem 1rem;
+        }
+        
+        .relay-expanded-rows {
+            padding: 0.5rem 0;
+        }
+        
+        .relay-split-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .relay-split-row:last-of-type {
+            border-bottom: none;
+        }
+        
+        .split-swimmer {
+            font-weight: 500;
+            flex: 1;
+        }
+        
+        .split-stroke {
+            font-style: italic;
+            color: #666;
+            margin: 0 1rem;
+        }
+        
+        .split-time {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: var(--tvhs-primary, #0a3622);
+            min-width: 3rem;
+            text-align: right;
+        }
+        
+        .relay-meet-row {
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
         /* Senior cards */
         .senior-card {
             border-left: 4px solid var(--tvhs-primary, #0a3622);
@@ -311,10 +400,10 @@
     </div>
     
     <main class="container py-4">
-        <div class="section-header" data-section="season-bests">
-<h2>📊 Season Bests</h2>
+        <div class="gender-section" id="boys-section">
+<div class="section-header" data-section="boys-bests">
+<h2>📊 Boys Season Bests</h2>
 </div>
-<h3 class="event-heading">Boys Season Bests</h3>
 <div class="records-table-container">
 <table class="table table-striped table-hover table-records">
 <thead><tr><th>Event</th><th>Time</th><th>Swimmer</th><th>Date</th><th>Meet</th></tr></thead>
@@ -329,7 +418,52 @@
 <tr><td class="event-cell">200 Individual Medley</td><td class="time-cell"><strong>2:25.45</strong></td><td class="name-cell">Nolan Radomsky <span class="grade-badge grade-jr">JR</span></td><td class="date-cell">Oct 28, 2022</td><td class="meet-cell">Southern AZ Regional Qualifier</td></tr>
 </tbody></table>
 </div>
-<h3 class="event-heading">Girls Season Bests</h3>
+<p class="text-muted small mt-2">🏆 = Overall School Record · ⭐ = Class Record</p>
+
+<h3 class="event-heading">Boys Relays</h3>
+<h3 class="event-heading">Boys Relays</h3>
+<div class="relay-table-container">
+<table class="table table-striped table-hover table-records table-relay-annual">
+<thead><tr><th>Event</th><th>Time</th><th>Relay</th><th>Date</th></tr></thead>
+<tbody>
+<tr class="relay-row odd" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="event-cell">200 Medley Relay</td>
+            <td class="time-cell"><strong>1:42.98</strong></td>
+            <td class="relay-names-cell">Alvarez, Radomsky, Soedor, Moreland <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Oct 28, 2022</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4">
+                <div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Alejandro Alvarez</span><span class="split-stroke">Backstroke</span><span class="split-time">25.90</span></div><div class="relay-split-row"><span class="split-swimmer">Nolan Radomsky</span><span class="split-stroke">Breaststroke</span><span class="split-time">25.43</span></div><div class="relay-split-row"><span class="split-swimmer">Tannor Soedor</span><span class="split-stroke">Butterfly</span><span class="split-time">25.81</span></div><div class="relay-split-row"><span class="split-swimmer">Stephen Moreland</span><span class="split-stroke">Freestyle</span><span class="split-time">22.62</span></div><div class="relay-meet-row">Southern AZ Regional Qualifier</div></div>
+            </td>
+        </tr><tr class="relay-row even" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="event-cell">200 Free Relay</td>
+            <td class="time-cell"><strong>1:33.90</strong></td>
+            <td class="relay-names-cell">Cusson, Alvarez, Moreland, Stott <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Nov 05, 2022</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4">
+                <div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Nicholas Cusson</span><span class="split-stroke">Freestyle</span><span class="split-time">21.64</span></div><div class="relay-split-row"><span class="split-swimmer">Alejandro Alvarez</span><span class="split-stroke">Freestyle</span><span class="split-time">25.19</span></div><div class="relay-split-row"><span class="split-swimmer">Stephen Moreland</span><span class="split-stroke">Freestyle</span><span class="split-time">24.61</span></div><div class="relay-split-row"><span class="split-swimmer">Samuel Stott</span><span class="split-stroke">Freestyle</span><span class="split-time">22.46</span></div><div class="relay-meet-row">2022 D-3 AIA Boys State Championship</div></div>
+            </td>
+        </tr><tr class="relay-row odd" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="event-cell">400 Free Relay</td>
+            <td class="time-cell"><strong>3:27.09</strong></td>
+            <td class="relay-names-cell">Cusson, Soedor, Radomsky, Stott <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Nov 05, 2022</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4">
+                <div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Nicholas Cusson</span><span class="split-stroke">Freestyle</span><span class="split-time">21.78</span></div><div class="relay-split-row"><span class="split-swimmer">Tannor Soedor</span><span class="split-stroke">Freestyle</span><span class="split-time">25.62</span></div><div class="relay-split-row"><span class="split-swimmer">Nolan Radomsky</span><span class="split-stroke">Freestyle</span><span class="split-time">25.20</span></div><div class="relay-split-row"><span class="split-swimmer">Samuel Stott</span><span class="split-stroke">Freestyle</span><span class="split-time">22.28</span></div><div class="relay-meet-row">2022 D-3 AIA Boys State Championship</div></div>
+            </td>
+        </tr></tbody></table>
+</div>
+
+</div>
+<div class="gender-section" id="girls-section">
+<div class="section-header" data-section="girls-bests">
+<h2>📊 Girls Season Bests</h2>
+</div>
 <div class="records-table-container">
 <table class="table table-striped table-hover table-records">
 <thead><tr><th>Event</th><th>Time</th><th>Swimmer</th><th>Date</th><th>Meet</th></tr></thead>
@@ -346,6 +480,46 @@
 </div>
 <p class="text-muted small mt-2">🏆 = Overall School Record · ⭐ = Class Record</p>
 
+<h3 class="event-heading">Girls Relays</h3>
+<h3 class="event-heading">Girls Relays</h3>
+<div class="relay-table-container">
+<table class="table table-striped table-hover table-records table-relay-annual">
+<thead><tr><th>Event</th><th>Time</th><th>Relay</th><th>Date</th></tr></thead>
+<tbody>
+<tr class="relay-row odd" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="event-cell">200 Medley Relay</td>
+            <td class="time-cell"><strong>1:58.70</strong></td>
+            <td class="relay-names-cell">Alitiem, Niccum, Barnard, Cugini <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Oct 21, 2023</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4">
+                <div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Amira Alitiem</span><span class="split-stroke">Backstroke</span><span class="split-time">29.84</span></div><div class="relay-split-row"><span class="split-swimmer">Lily Niccum</span><span class="split-stroke">Breaststroke</span><span class="split-time">30.50</span></div><div class="relay-split-row"><span class="split-swimmer">Madeline Barnard</span><span class="split-stroke">Butterfly</span><span class="split-time">30.56</span></div><div class="relay-split-row"><span class="split-swimmer">Summer Cugini</span><span class="split-stroke">Freestyle</span><span class="split-time">27.80</span></div><div class="relay-meet-row">Pecan Classic</div></div>
+            </td>
+        </tr><tr class="relay-row even" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="event-cell">200 Free Relay</td>
+            <td class="time-cell"><strong>1:43.71</strong></td>
+            <td class="relay-names-cell">Colombo, White, Armstrong, Foley <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Nov 05, 2022</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4">
+                <div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Maggie Colombo</span><span class="split-stroke">Freestyle</span><span class="split-time">19.67</span></div><div class="relay-split-row"><span class="split-swimmer">Paisley White</span><span class="split-stroke">Freestyle</span><span class="split-time">16.08</span></div><div class="relay-split-row"><span class="split-swimmer">Natalie Armstrong</span><span class="split-stroke">Freestyle</span><span class="split-time">25.86</span></div><div class="relay-split-row"><span class="split-swimmer">Brianne Foley</span><span class="split-stroke">Freestyle</span><span class="split-time">42.10</span></div><div class="relay-meet-row">2022 D-3 AIA Girls State Championship</div></div>
+            </td>
+        </tr><tr class="relay-row odd" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="event-cell">400 Free Relay</td>
+            <td class="time-cell"><strong>3:53.36</strong></td>
+            <td class="relay-names-cell">White, Colombo, Foley, Armstrong <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Oct 22, 2022</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4">
+                <div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Paisley White</span><span class="split-stroke">Freestyle</span><span class="split-time">19.67</span></div><div class="relay-split-row"><span class="split-swimmer">Maggie Colombo</span><span class="split-stroke">Freestyle</span><span class="split-time">16.08</span></div><div class="relay-split-row"><span class="split-swimmer">Brianne Foley</span><span class="split-stroke">Freestyle</span><span class="split-time">25.86</span></div><div class="relay-split-row"><span class="split-swimmer">Natalie Armstrong</span><span class="split-stroke">Freestyle</span><span class="split-time">42.10</span></div><div class="relay-meet-row">Pecan Classic</div></div>
+            </td>
+        </tr></tbody></table>
+</div>
+
+</div>
 <div class="section-header" data-section="state-champs">
 <h2>🏆 State Championship Results</h2>
 </div>
@@ -372,251 +546,6 @@
 </tbody></table>
 </div>
 </div>
-
-<div class="section-header" data-section="relays">
-<h2>🤝 Relay Records</h2>
-</div>
-<h3 class="event-heading">Boys Relays</h3>
-<div class="relay-cards-container">
-
-        <div class="relay-card">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-event">200 Medley Relay</span>
-                    <span class="relay-time">1:42.98</span>
-                    <span class="relay-names-short">Alvarez, Radomsky, Soedor, Moreland</span>
-                    <span class="relay-date">Oct 28, 2022</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Alejandro Alvarez</span>
-                    <span class="swimmer-stroke">Backstroke</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Nolan Radomsky</span>
-                    <span class="swimmer-stroke">Breaststroke</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Tannor Soedor</span>
-                    <span class="swimmer-stroke">Butterfly</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Stephen Moreland</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Southern AZ Regional Qualifier</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-event">200 Free Relay</span>
-                    <span class="relay-time">1:33.90</span>
-                    <span class="relay-names-short">Cusson, Alvarez, Moreland, Stott</span>
-                    <span class="relay-date">Nov 05, 2022</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Nicholas Cusson</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Alejandro Alvarez</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Stephen Moreland</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Samuel Stott</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">2022 D-3 AIA Boys State Championship</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-event">400 Free Relay</span>
-                    <span class="relay-time">3:27.09</span>
-                    <span class="relay-names-short">Cusson, Soedor, Radomsky, Stott</span>
-                    <span class="relay-date">Nov 05, 2022</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Nicholas Cusson</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Tannor Soedor</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Nolan Radomsky</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Samuel Stott</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">2022 D-3 AIA Boys State Championship</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div></div>
-
-<h3 class="event-heading">Girls Relays</h3>
-<div class="relay-cards-container">
-
-        <div class="relay-card">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-event">200 Medley Relay</span>
-                    <span class="relay-time">1:58.70</span>
-                    <span class="relay-names-short">Alitiem, Niccum, Barnard, Cugini</span>
-                    <span class="relay-date">Oct 21, 2023</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Amira Alitiem</span>
-                    <span class="swimmer-stroke">Backstroke</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Lily Niccum</span>
-                    <span class="swimmer-stroke">Breaststroke</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Madeline Barnard</span>
-                    <span class="swimmer-stroke">Butterfly</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Summer Cugini</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Pecan Classic</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-event">200 Free Relay</span>
-                    <span class="relay-time">1:43.71</span>
-                    <span class="relay-names-short">Colombo, White, Armstrong, Foley</span>
-                    <span class="relay-date">Nov 05, 2022</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Maggie Colombo</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Paisley White</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Natalie Armstrong</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Brianne Foley</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">2022 D-3 AIA Girls State Championship</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="relay-card">
-            <div class="relay-compact-wrapper" onclick="this.classList.toggle('expanded')">
-                <div class="relay-header">
-                    <span class="relay-event">400 Free Relay</span>
-                    <span class="relay-time">3:53.36</span>
-                    <span class="relay-names-short">White, Colombo, Foley, Armstrong</span>
-                    <span class="relay-date">Oct 22, 2022</span>
-                    <span class="relay-arrow">▼</span>
-                </div>
-                <div class="relay-expanded-content">
-                    <div class="relay-swimmers">
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Paisley White</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Maggie Colombo</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Brianne Foley</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                <div class="swimmer-entry">
-                    <span class="swimmer-name">Natalie Armstrong</span>
-                    <span class="swimmer-stroke">Freestyle</span>
-                    <span class="swimmer-time"></span>
-                </div>
-                    </div>
-                    <div class="relay-meet">
-                        <span class="meet-name">Pecan Classic</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div></div>
 
 <div class="section-header" data-section="class-records">
 <h2>⭐ Class Records Broken</h2>
