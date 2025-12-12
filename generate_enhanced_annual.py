@@ -493,6 +493,353 @@ def generate_annual_page(season):
     
     return '\n'.join(content_parts)
 
+def create_html_page(title, content, season):
+    """Create a complete HTML page with navigation"""
+    
+    # Read the template from an existing page for consistency
+    nav_html = '''
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-dark" id="main-nav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html">
+                <img src="/images/hawk-logo.png" alt="Tanque Verde Hawks" class="navbar-logo">
+                <span class="navbar-brand-text">TVHS</span>
+            </a>
+            <!-- Gender Toggle -->
+            <div class="gender-toggle" id="gender-toggle">
+                <button class="btn btn-gender active" data-gender="boys">Boys</button>
+                <button class="btn btn-gender" data-gender="girls">Girls</button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Quick Nav Bar -->
+    <nav class="navbar navbar-dark quick-nav" id="quick-nav">
+        <div class="container-fluid justify-content-center">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/records/overall.html" title="Overall Records">🏆</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/records/boys-bygrade.html" id="nav-bygrade" title="Records by Grade">📊</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/top10/boys-alltime.html" id="nav-top10" title="All-Time Top 10">🔟</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/records/boys-relays.html" id="nav-relays" title="Relay Records">🤝</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="Season Top 10">📅</a>
+                    <ul class="dropdown-menu dropdown-menu-scroll">
+                        <li><a class="dropdown-item" href="/top10/boys-2024-25.html">2024-25</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2023-24.html">2023-24</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2022-23.html">2022-23</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2021-22.html">2021-22</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2020-21.html">2020-21</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2019-20.html">2019-20</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2018-19.html">2018-19</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2017-18.html">2017-18</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2016-17.html">2016-17</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2015-16.html">2015-16</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2014-15.html">2014-15</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2013-14.html">2013-14</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2012-13.html">2012-13</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" title="Season Summary">📈</a>
+                    <ul class="dropdown-menu dropdown-menu-scroll dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/annual/2025-26.html">2025-26</a></li>
+                        <li><a class="dropdown-item" href="/annual/2024-25.html">2024-25</a></li>
+                        <li><a class="dropdown-item" href="/annual/2023-24.html">2023-24</a></li>
+                        <li><a class="dropdown-item" href="/annual/2022-23.html">2022-23</a></li>
+                        <li><a class="dropdown-item" href="/annual/2021-22.html">2021-22</a></li>
+                        <li><a class="dropdown-item" href="/annual/2020-21.html">2020-21</a></li>
+                        <li><a class="dropdown-item" href="/annual/2019-20.html">2019-20</a></li>
+                        <li><a class="dropdown-item" href="/annual/2018-19.html">2018-19</a></li>
+                        <li><a class="dropdown-item" href="/annual/2017-18.html">2017-18</a></li>
+                        <li><a class="dropdown-item" href="/annual/2016-17.html">2016-17</a></li>
+                        <li><a class="dropdown-item" href="/annual/2015-16.html">2015-16</a></li>
+                        <li><a class="dropdown-item" href="/annual/2014-15.html">2014-15</a></li>
+                        <li><a class="dropdown-item" href="/annual/2013-14.html">2013-14</a></li>
+                        <li><a class="dropdown-item" href="/annual/2012-13.html">2012-13</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    '''
+    
+    styles = '''
+    <style>
+        /* Enhanced Annual Page Styles */
+        .section-header {
+            background: var(--tvhs-primary, #0a3622);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 8px 8px 0 0;
+            margin-top: 2rem;
+            margin-bottom: 0;
+        }
+        
+        .section-header h2 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+        
+        .table-records {
+            margin-bottom: 1.5rem;
+        }
+        
+        .table-records th {
+            background: var(--tvhs-primary, #0a3622);
+            color: white;
+            font-weight: 500;
+        }
+        
+        .time-cell {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        
+        .event-cell {
+            font-weight: 500;
+        }
+        
+        .date-cell, .meet-cell {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Relay cards for annual pages */
+        .relay-cards-container {
+            max-width: 900px;
+            margin: 0 auto 2rem;
+        }
+        
+        .relay-card {
+            background-color: #E8F5E9;
+            border-left: 4px solid var(--tvhs-primary, #0a3622);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .relay-compact-wrapper {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .relay-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        
+        .relay-event {
+            font-weight: bold;
+            color: var(--tvhs-primary, #0a3622);
+            min-width: 140px;
+        }
+        
+        .relay-time {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: var(--tvhs-primary, #0a3622);
+        }
+        
+        .relay-names-short {
+            flex: 1;
+            color: #333;
+        }
+        
+        .relay-date {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        .relay-arrow {
+            font-size: 0.7rem;
+            transition: transform 0.2s ease;
+            color: #999;
+        }
+        
+        .relay-compact-wrapper.expanded .relay-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .relay-expanded-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .relay-compact-wrapper.expanded .relay-expanded-content {
+            max-height: 400px;
+        }
+        
+        .relay-swimmers {
+            padding: 0.75rem 0 0.5rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            margin-top: 0.5rem;
+        }
+        
+        .swimmer-entry {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.25rem 0;
+        }
+        
+        .swimmer-name {
+            flex: 1;
+            font-weight: 500;
+        }
+        
+        .swimmer-stroke {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .swimmer-time {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            min-width: 3.5rem;
+            text-align: right;
+        }
+        
+        .relay-meet {
+            padding: 0.5rem 0;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            font-size: 0.85rem;
+            color: #555;
+        }
+        
+        /* Class record cards */
+        .class-record-card {
+            background: #fff;
+            border-left: 4px solid #ffc107;
+        }
+        
+        /* Senior cards */
+        .senior-card {
+            border-left: 4px solid var(--tvhs-primary, #0a3622);
+        }
+        
+        .senior-card .card-title {
+            color: var(--tvhs-primary, #0a3622);
+            font-weight: bold;
+        }
+        
+        .time {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: var(--tvhs-primary, #0a3622);
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .table-records td:nth-child(4),
+            .table-records th:nth-child(4),
+            .table-records td:nth-child(5),
+            .table-records th:nth-child(5) {
+                display: none;
+            }
+            
+            .relay-header {
+                flex-wrap: wrap;
+            }
+            
+            .relay-names-short {
+                width: 100%;
+                order: 10;
+                padding-top: 0.25rem;
+            }
+        }
+    </style>
+    '''
+    
+    html = f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{title} | Tanque Verde Swimming</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/hawk-logo.png">
+    
+    {styles}
+</head>
+<body>
+    {nav_html}
+    
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container d-flex align-items-center justify-content-between flex-wrap">
+            <h1 class="mb-0">{title}</h1>
+        </div>
+    </div>
+    
+    <main class="container py-4">
+        {content}
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <p class="text-muted small mb-1">
+                Results compiled from meets published on AZPreps365 and MaxPreps with limited data availability — 
+                not necessarily a complete compilation of all records. Contact aaryno@gmail.com with additional sources, errors, or corrections.
+            </p>
+            <p class="text-muted small mb-0">
+                &copy; 2025 Tanque Verde High School Swimming
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {{
+        // Gender toggle
+        let currentGender = localStorage.getItem('tvhs-gender') || 'boys';
+        
+        function updateGenderUI() {{
+            document.querySelectorAll('.btn-gender').forEach(btn => {{
+                btn.classList.toggle('active', btn.dataset.gender === currentGender);
+            }});
+        }}
+        
+        document.querySelectorAll('.btn-gender').forEach(btn => {{
+            btn.addEventListener('click', function() {{
+                currentGender = this.dataset.gender;
+                localStorage.setItem('tvhs-gender', currentGender);
+                updateGenderUI();
+            }});
+        }});
+        
+        updateGenderUI();
+    }});
+    </script>
+</body>
+</html>'''
+    
+    return html
+
 def main():
     print("Generating enhanced annual pages...")
     print("=" * 60)
@@ -502,19 +849,23 @@ def main():
         for f in Path('records').glob('annual-summary-*.md')
     ])
     
+    output_dir = Path('docs/annual')
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
     for season in seasons:
         content = generate_annual_page(season)
+        title = f"{season} Season Summary"
         
-        # Write to a temp file for now (will integrate with generate_website.py later)
-        output_dir = Path('docs/annual')
-        output_dir.mkdir(parents=True, exist_ok=True)
+        html = create_html_page(title, content, season)
         
-        # For now, just print what we'd generate
-        print(f"  ✓ {season}: {len(content)} chars")
+        output_path = output_dir / f"{season}.html"
+        with open(output_path, 'w') as f:
+            f.write(html)
+        
+        print(f"  ✓ {output_path}")
     
     print(f"\n{'=' * 60}")
-    print("✅ Enhanced annual page content generated")
-    print("Note: Full integration with generate_website.py coming next")
+    print(f"✅ Generated {len(seasons)} enhanced annual pages")
 
 if __name__ == '__main__':
     main()
