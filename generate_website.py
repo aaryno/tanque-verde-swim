@@ -623,29 +623,63 @@ def convert_markdown_file(md_file, output_file, title=None):
 
 
 def extract_open_records(md_file):
-    """Extract only OPEN records from a records markdown file"""
+    """Extract only OPEN records from a records markdown file, with class year"""
     with open(md_file, 'r') as f:
         content = f.read()
     
+    # Grade abbreviation mapping
+    grade_abbrev = {
+        'Freshman': 'FR',
+        'Sophomore': 'SO',
+        'Junior': 'JR',
+        'Senior': 'SR'
+    }
+    
     records = []
     current_event = None
+    current_event_records = []  # Store grade records for current event
     
     for line in content.split('\n'):
         # Match event headings
         event_match = re.match(r'^### (.+)$', line)
         if event_match:
             current_event = event_match.group(1)
+            current_event_records = []
             continue
+        
+        # Parse grade record rows (non-bold, before OPEN)
+        if current_event and line.startswith('|') and '**' not in line:
+            parts = [p.strip() for p in line.split('|') if p.strip()]
+            if len(parts) >= 5 and parts[0] in grade_abbrev:
+                current_event_records.append({
+                    'grade': parts[0],
+                    'time': parts[1],
+                    'name': parts[2],
+                    'date': parts[3],
+                    'meet': parts[4]
+                })
         
         # Match OPEN record rows (bold)
         if current_event and '**Open**' in line:
             # Parse the table row: | **Open** | **Time** | **Name** | **Date** | **Meet** |
             parts = [p.strip().replace('**', '') for p in line.split('|') if p.strip()]
             if len(parts) >= 5:
+                open_time = parts[1]
+                open_name = parts[2]
+                
+                # Find which grade record matches the OPEN record
+                class_year = ''
+                for grade_rec in current_event_records:
+                    # Match by time and name
+                    if grade_rec['time'] == open_time and grade_rec['name'] == open_name:
+                        class_year = grade_abbrev.get(grade_rec['grade'], '')
+                        break
+                
                 records.append({
                     'event': current_event,
                     'time': parts[1],
                     'name': parts[2],
+                    'class_year': class_year,
                     'date': parts[3],
                     'meet': parts[4]
                 })
@@ -756,11 +790,19 @@ def generate_overall_records_page(records_dir, docs_dir):
         
         # Individual records - single line with expandable location
         for record in records:
+            # Build class year badge if available
+            class_year = record.get('class_year', '')
+            if class_year:
+                grade_class = f"grade-{class_year.lower()}"
+                class_badge = f' <span class="grade-badge {grade_class}">{class_year}</span>'
+            else:
+                class_badge = ''
+            
             html += f'''<div class="overall-record-card" onclick="this.classList.toggle('expanded')">
     <div class="record-line">
         <span class="event-name">{record['event']}</span>
         <span class="record-time">{record['time']}</span>
-        <span class="record-athlete">{record['name']}</span>
+        <span class="record-athlete">{record['name']}{class_badge}</span>
         <span class="record-date">{record['date']}</span>
         <span class="expand-arrow">▼</span>
     </div>
