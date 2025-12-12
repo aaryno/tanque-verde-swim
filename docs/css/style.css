@@ -1279,6 +1279,28 @@ footer a:hover {
     display: none; /* Hidden - shown in expandable details */
   }
   
+  /* Relay expanded content - override grid styles */
+  .table-relay .relay-details-row td {
+    display: block !important;
+    grid-row: auto !important;
+    grid-column: auto !important;
+    text-align: left !important;
+    width: 100% !important;
+    padding: 0.5rem !important;
+    background: #f8f9fa !important;
+  }
+  
+  .table-relay .relay-split-row {
+    display: flex !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+  
+  .table-relay .split-swimmer {
+    text-align: left !important;
+    margin-right: auto !important;
+  }
+  
   /* Sticky header adjustments for mobile */
   #main-nav {
     padding: 0.3rem 0.5rem;
