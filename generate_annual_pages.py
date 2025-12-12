@@ -105,7 +105,43 @@ def grade_to_badge(grade_text):
     return grade_text
 
 
-def parse_annual_summary(md_file):
+def parse_top10_for_meets(records_dir, season, gender):
+    """Parse top10 file to get meet locations for #1 times"""
+    top10_file = records_dir / f'top10-{gender}-{season}.md'
+    meets = {}
+    
+    if not top10_file.exists():
+        return meets
+    
+    with open(top10_file, 'r') as f:
+        content = f.read()
+    
+    current_event = None
+    for line in content.split('\n'):
+        # Event header
+        if line.startswith('## ') and 'Freestyle' in line or 'Backstroke' in line or 'Breaststroke' in line or 'Butterfly' in line or 'Individual Medley' in line:
+            current_event = line.replace('## ', '').strip()
+        elif line.startswith('## '):
+            # Check for event names in ## headers
+            event_check = line.replace('## ', '').strip()
+            if any(e in event_check for e in ['Free', 'Back', 'Breast', 'Fly', 'IM']):
+                current_event = event_check
+        
+        # Parse rank 1 row
+        if current_event and '| 1 |' in line:
+            parts = [p.strip() for p in line.split('|') if p.strip()]
+            if len(parts) >= 6:
+                time = parts[1]
+                athlete = parts[2]
+                meet = parts[5] if len(parts) > 5 else ''
+                # Normalize event name for lookup
+                event_key = current_event.lower().replace('freestyle', 'free').replace('backstroke', 'back').replace('breaststroke', 'breast').replace('butterfly', 'fly').replace('individual medley', 'im')
+                meets[event_key] = {'time': time, 'athlete': athlete, 'meet': meet}
+    
+    return meets
+
+
+def parse_annual_summary(md_file, records_dir=None):
     """Parse the annual summary markdown file"""
     with open(md_file, 'r') as f:
         content = f.read()
@@ -121,13 +157,20 @@ def parse_annual_summary(md_file):
         'meets_list': [],
         'records_broken': [],
         'best_times': [],
-        'active_swimmers': {'boys': {}, 'girls': {}}
+        'active_swimmers': {'boys': {}, 'girls': {}},
+        'boys_meets': {},
+        'girls_meets': {}
     }
     
     # Extract season from filename
     match = re.search(r'annual-summary-(\d{4}-\d{2})', md_file.name)
     if match:
         data['season'] = match.group(1)
+    
+    # Load meet info from top10 files
+    if records_dir:
+        data['boys_meets'] = parse_top10_for_meets(records_dir, data['season'], 'boys')
+        data['girls_meets'] = parse_top10_for_meets(records_dir, data['season'], 'girls')
     
     # Extract stats
     stats_match = re.search(r'\*\*Total Swims:\*\*\s*(\d+)', content)
@@ -348,7 +391,21 @@ def generate_season_best_times_html(data):
     if not data['best_times']:
         return ''
     
+    # Event name expansions and key normalization
+    event_expansions = {
+        '50 Free': '50 Freestyle', '100 Free': '100 Freestyle', 
+        '200 Free': '200 Freestyle', '500 Free': '500 Freestyle',
+        '100 Back': '100 Backstroke', '100 Breast': '100 Breaststroke',
+        '100 Fly': '100 Butterfly', '200 IM': '200 Individual Medley'
+    }
+    
+    def get_event_key(event_name):
+        """Normalize event name for lookup in meets dict"""
+        return event_name.lower().replace('freestyle', 'free').replace('backstroke', 'back').replace('breaststroke', 'breast').replace('butterfly', 'fly').replace('individual medley', 'im').replace(' ', ' ')
+    
     html = ''
+    boys_meets = data.get('boys_meets', {})
+    girls_meets = data.get('girls_meets', {})
     
     # Boys Season Best
     html += f'''
@@ -366,14 +423,12 @@ def generate_season_best_times_html(data):
     for bt in data['best_times']:
         boys_swimmer = re.sub(r'\((\w+)\)', lambda m: grade_to_badge(m.group(1)), bt['boys_swimmer'])
         event_name = bt['event']
-        # Expand abbreviated event names
-        event_expansions = {
-            '50 Free': '50 Freestyle', '100 Free': '100 Freestyle', 
-            '200 Free': '200 Freestyle', '500 Free': '500 Freestyle',
-            '100 Back': '100 Backstroke', '100 Breast': '100 Breaststroke',
-            '100 Fly': '100 Butterfly', '200 IM': '200 Individual Medley'
-        }
         event_full = event_expansions.get(event_name, event_name)
+        
+        # Look up meet from top10 data
+        event_key = get_event_key(event_full)
+        meet_info = boys_meets.get(event_key, {})
+        meet_name = meet_info.get('meet', 'Meet info not available')
         
         html += f'''
                 <div class="top10-card" onclick="this.classList.toggle('expanded')">
@@ -384,7 +439,7 @@ def generate_season_best_times_html(data):
                         <span class="expand-arrow">▼</span>
                     </div>
                     <div class="top10-expanded">
-                        <div class="record-meet">📍 Meet info not available</div>
+                        <div class="record-meet">📍 {meet_name}</div>
                     </div>
                 </div>'''
     
@@ -409,13 +464,12 @@ def generate_season_best_times_html(data):
     for bt in data['best_times']:
         girls_swimmer = re.sub(r'\((\w+)\)', lambda m: grade_to_badge(m.group(1)), bt['girls_swimmer'])
         event_name = bt['event']
-        event_expansions = {
-            '50 Free': '50 Freestyle', '100 Free': '100 Freestyle', 
-            '200 Free': '200 Freestyle', '500 Free': '500 Freestyle',
-            '100 Back': '100 Backstroke', '100 Breast': '100 Breaststroke',
-            '100 Fly': '100 Butterfly', '200 IM': '200 Individual Medley'
-        }
         event_full = event_expansions.get(event_name, event_name)
+        
+        # Look up meet from top10 data
+        event_key = get_event_key(event_full)
+        meet_info = girls_meets.get(event_key, {})
+        meet_name = meet_info.get('meet', 'Meet info not available')
         
         html += f'''
                 <div class="top10-card" onclick="this.classList.toggle('expanded')">
@@ -426,7 +480,7 @@ def generate_season_best_times_html(data):
                         <span class="expand-arrow">▼</span>
                     </div>
                     <div class="top10-expanded">
-                        <div class="record-meet">📍 Meet info not available</div>
+                        <div class="record-meet">📍 {meet_name}</div>
                     </div>
                 </div>'''
     
@@ -871,7 +925,7 @@ def main():
         print(f"  📄 {season}...", end=' ')
         
         # Parse the markdown
-        data = parse_annual_summary(md_file)
+        data = parse_annual_summary(md_file, records_dir)
         
         # Generate HTML
         html = generate_page_html(data, class_records)
