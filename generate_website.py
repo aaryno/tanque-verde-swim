@@ -372,7 +372,7 @@ def markdown_to_html_table(md_text):
             html += f'<th>{header}</th>\n'
         html += '</tr>\n</thead>\n<tbody>\n'
         
-        # Grade abbreviation mapping
+        # Grade abbreviation mapping (full names to abbreviations)
         grade_abbrev = {
             'Freshman': 'FR',
             'Sophomore': 'SO',
@@ -380,6 +380,9 @@ def markdown_to_html_table(md_text):
             'Senior': 'SR',
             'Open': 'OPEN'
         }
+        
+        # Also handle already-abbreviated grades
+        abbrev_grades = {'FR', 'SO', 'JR', 'SR'}
         
         for row in rows:
             html += '<tr>\n'
@@ -391,6 +394,11 @@ def markdown_to_html_table(md_text):
                 # Check if this is a grade column (first column often has grade names)
                 if cell_clean in grade_abbrev:
                     abbrev = grade_abbrev[cell_clean]
+                    css_class = abbrev.lower()
+                    html += f'<td><span class="grade-badge grade-{css_class}">{abbrev}</span></td>\n'
+                # Also check for already-abbreviated grades
+                elif cell_clean.upper() in abbrev_grades:
+                    abbrev = cell_clean.upper()
                     css_class = abbrev.lower()
                     html += f'<td><span class="grade-badge grade-{css_class}">{abbrev}</span></td>\n'
                 # Check if this is a record holder (bold text)
