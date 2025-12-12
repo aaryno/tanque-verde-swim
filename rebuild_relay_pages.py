@@ -285,16 +285,19 @@ def generate_full_page_html(gender, events, splits_data):
         }}
         
         .relay-details-row {{
-            display: none;
+            display: none !important;
         }}
         
         .relay-details-row.show {{
-            display: table-row;
+            display: table-row !important;
         }}
         
         .relay-details-row td {{
-            background: #f8f9fa;
-            padding: 0.75rem 1rem;
+            background: #f8f9fa !important;
+            padding: 0.75rem 1rem !important;
+            border-radius: 0 !important;
+            width: auto !important;
+            height: auto !important;
         }}
         
         .relay-expanded-rows {{
