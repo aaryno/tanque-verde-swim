@@ -119,7 +119,15 @@ def parse_annual_summary(md_file):
             elif line.startswith('- *Date:*'):
                 match = re.search(r'\*Date:\*\s*(.+)', line)
                 if match:
-                    current_record['date'] = match.group(1).strip()
+                    date_str = match.group(1).strip()
+                    # Split date and meet location
+                    if ' at ' in date_str:
+                        parts = date_str.split(' at ', 1)
+                        current_record['date'] = parts[0].strip()
+                        current_record['meet'] = parts[1].strip()
+                    else:
+                        current_record['date'] = date_str
+                        current_record['meet'] = ''
         if current_record:
             data['records_broken'].append(current_record)
     
@@ -320,9 +328,11 @@ def generate_records_broken_html(data):
         prev_time = record.get('prev_time', '')
         prev_swimmer = record.get('prev_swimmer', '')
         date = record.get('date', '')
+        meet = record.get('meet', '')
         
         # Convert grade notations to badges
-        new_swimmer = re.sub(r'\((\w+)\)', lambda m: grade_to_badge(m.group(1)), new_swimmer)
+        new_swimmer_html = re.sub(r'\((\w+)\)', lambda m: grade_to_badge(m.group(1)), new_swimmer)
+        prev_swimmer_html = re.sub(r'\((\w+)\)', lambda m: grade_to_badge(m.group(1)), prev_swimmer) if prev_swimmer else ''
         
         # Calculate improvement if possible
         improvement = ''
@@ -339,6 +349,9 @@ def generate_records_broken_html(data):
             except:
                 pass
         
+        # Build meet location line
+        meet_line = f'<div class="relay-meet">📍 {meet}</div>' if meet else ''
+        
         prev_section = ''
         if prev_time and prev_time != 'None':
             prev_section = f'''
@@ -349,7 +362,7 @@ def generate_records_broken_html(data):
                                         <span class="time-value">{prev_time}</span>
                                     </div>
                                     <div class="relay-line-2">
-                                        <span>{prev_swimmer}</span>
+                                        <strong>{prev_swimmer_html}</strong>
                                     </div>
                                 </div>
                             </div>'''
@@ -375,11 +388,12 @@ def generate_records_broken_html(data):
                                 <div class="relay-compact-wrapper">
                                     <div class="relay-line-1">
                                         <span class="time-value">{new_time}</span>
-                                        <span class="date-value">{date.split(' at ')[0] if ' at ' in date else date}</span>
+                                        <span class="date-value">{date}</span>
                                     </div>
                                     <div class="relay-line-2">
-                                        <span>{new_swimmer}</span>
+                                        <strong>{new_swimmer_html}</strong>
                                     </div>
+                                    {meet_line}
                                 </div>
                             </div>
                             {prev_section}
@@ -446,12 +460,18 @@ def generate_class_records_html(class_records, season):
             color = '#2C5F2D' if gender == 'boys' else '#808080'
             gender_label = 'BOYS' if gender == 'boys' else 'GIRLS'
             
+            # Build meet location line
+            meet_line = f'<div class="mt-1"><small>📍 {meet}</small></div>' if meet else ''
+            
             prev_html = ''
             if prev:
+                prev_name = prev.get('name', '')
+                prev_time = prev.get('time', '')
+                prev_season = prev.get('season', '')
                 prev_html = f'''<hr class="my-2">
                         <small class="text-muted">
-                            <strong>Previous:</strong> {prev.get('time', '')} - {prev.get('name', '')}<br>
-                            <span style="font-size: 0.85em;">{prev.get('season', '')}</span>
+                            <strong>Previous:</strong> {prev_time} - {prev_name}<br>
+                            <span style="font-size: 0.85em;">{prev_season}</span>
                         </small>'''
             else:
                 prev_html = '''<hr class="my-2">
@@ -465,7 +485,8 @@ def generate_class_records_html(class_records, season):
                             <p class="mb-1">
                                 <span class="time">{time}</span> - <strong>{name}</strong>
                             </p>
-                            <small class="text-muted">{date} at {meet}</small>
+                            <small class="text-muted">{date}</small>
+                            {meet_line}
                             {prev_html}
                         </div>
                     </div>
