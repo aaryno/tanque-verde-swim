@@ -190,6 +190,12 @@
             margin-bottom: 2rem;
         }
         
+        .table-state .place-cell {
+            text-align: center;
+            font-weight: bold;
+            width: 60px;
+        }
+        
         /* Gender sections for toggling order */
         .gender-section {
             margin-bottom: 2rem;
@@ -446,11 +452,11 @@
 <div class="state-results-container">
 <h3 class="event-heading">Girls State Results</h3>
 <div class="table-responsive">
-<table class="table table-striped table-hover table-records">
-<thead><tr><th>Event</th><th>Time</th><th>Swimmer</th></tr></thead>
+<table class="table table-striped table-hover table-records table-state">
+<thead><tr><th>Event</th><th>Swimmer</th><th>Time</th><th>Place</th></tr></thead>
 <tbody>
-<tr><td>200 Freestyle</td><td class="time-cell"><strong>2:03.27</strong> <span class="badge badge-sr">Record</span></td><td>Marisol Rivera <span class="grade-badge grade-sr">SR</span></td></tr>
-<tr><td>500 Freestyle</td><td class="time-cell"><strong>5:34.97</strong> <span class="badge badge-class-record">SR Record</span></td><td>Marisol Rivera <span class="grade-badge grade-sr">SR</span></td></tr>
+<tr class=""><td>200 Freestyle</td><td>Marisol Rivera <span class="grade-badge grade-sr">SR</span></td><td class="time-cell"><strong>2:03.27</strong> <span class="badge badge-sr">Record</span></td><td class="place-cell">—</td></tr>
+<tr class="table-row-alt"><td>500 Freestyle</td><td>Marisol Rivera <span class="grade-badge grade-sr">SR</span></td><td class="time-cell"><strong>5:34.97</strong> <span class="badge badge-class-record">SR Record</span></td><td class="place-cell">—</td></tr>
 </tbody></table>
 </div>
 </div>

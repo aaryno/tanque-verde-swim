@@ -190,6 +190,12 @@
             margin-bottom: 2rem;
         }
         
+        .table-state .place-cell {
+            text-align: center;
+            font-weight: bold;
+            width: 60px;
+        }
+        
         /* Gender sections for toggling order */
         .gender-section {
             margin-bottom: 2rem;
@@ -466,22 +472,30 @@
 <div class="state-results-container">
 <h3 class="event-heading">Boys State Results</h3>
 <div class="table-responsive">
-<table class="table table-striped table-hover table-records">
-<thead><tr><th>Event</th><th>Time</th><th>Swimmer</th></tr></thead>
+<table class="table table-striped table-hover table-records table-state">
+<thead><tr><th>Event</th><th>Swimmer</th><th>Time</th><th>Place</th></tr></thead>
 <tbody>
-<tr><td>100 Freestyle</td><td class="time-cell"><strong>1:00.88</strong></td><td>Austin Morris <span class="grade-badge grade-jr">JR</span></td></tr>
-<tr><td>500 Freestyle</td><td class="time-cell"><strong>5:29.68</strong></td><td>Austin Morris <span class="grade-badge grade-jr">JR</span></td></tr>
-<tr><td>100 Backstroke</td><td class="time-cell"><strong>1:00.88</strong></td><td>Austin Morris <span class="grade-badge grade-jr">JR</span></td></tr>
+<tr class=""><td>100 Freestyle</td><td>Austin Morris <span class="grade-badge grade-jr">JR</span></td><td class="time-cell"><strong>1:00.88</strong></td><td class="place-cell">—</td></tr>
+<tr class="table-row-alt"><td>500 Freestyle</td><td>Austin Morris <span class="grade-badge grade-jr">JR</span></td><td class="time-cell"><strong>5:29.68</strong></td><td class="place-cell">—</td></tr>
+<tr class=""><td>100 Backstroke</td><td>Austin Morris <span class="grade-badge grade-jr">JR</span></td><td class="time-cell"><strong>1:00.88</strong></td><td class="place-cell">—</td></tr>
 </tbody></table>
 </div>
 <h3 class="event-heading">Girls State Results</h3>
 <div class="table-responsive">
-<table class="table table-striped table-hover table-records">
-<thead><tr><th>Event</th><th>Time</th><th>Swimmer</th></tr></thead>
+<table class="table table-striped table-hover table-records table-state">
+<thead><tr><th>Event</th><th>Swimmer</th><th>Time</th><th>Place</th></tr></thead>
 <tbody>
-<tr><td>200 Freestyle</td><td class="time-cell"><strong>2:11.68</strong> <span class="badge badge-class-record">SO Record</span></td><td>Bridget Spooner <span class="grade-badge grade-so">SO</span></td></tr>
-<tr><td>500 Freestyle</td><td class="time-cell"><strong>5:56.61</strong></td><td>Bridget Spooner <span class="grade-badge grade-so">SO</span></td></tr>
-</tbody></table>
+<tr class=""><td>200 Freestyle</td><td>Bridget Spooner <span class="grade-badge grade-so">SO</span></td><td class="time-cell"><strong>2:11.68</strong> <span class="badge badge-class-record">SO Record</span></td><td class="place-cell">—</td></tr>
+<tr class="table-row-alt"><td>500 Freestyle</td><td>Bridget Spooner <span class="grade-badge grade-so">SO</span></td><td class="time-cell"><strong>5:56.61</strong></td><td class="place-cell">—</td></tr>
+<tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+                    <td>400 Free Relay</td>
+                    <td class="relay-names-cell">Spooner, Ellis, Sohoel-Smith, Dasse <span class="relay-arrow">▼</span></td>
+                    <td class="time-cell"><strong>4:02.04</strong></td>
+                    <td class="place-cell">—</td>
+                </tr>
+                <tr class="relay-details-row">
+                    <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Bridget Spooner</span><span class="split-stroke">Freestyle</span><span class="split-time">31.17</span></div><div class="relay-split-row"><span class="split-swimmer">Anna Ellis</span><span class="split-stroke">Freestyle</span><span class="split-time">31.59</span></div><div class="relay-split-row"><span class="split-swimmer">Lindsey Sohoel-Smith</span><span class="split-stroke">Freestyle</span><span class="split-time">31.36</span></div><div class="relay-split-row"><span class="split-swimmer">Hazel Dasse</span><span class="split-stroke">Freestyle</span><span class="split-time">26.22</span></div></div></td>
+                </tr></tbody></table>
 </div>
 </div>
 

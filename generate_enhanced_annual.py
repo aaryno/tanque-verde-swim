@@ -205,9 +205,30 @@ def get_state_meet_results(entries):
     
     return results
 
-def generate_state_championship_html(boys_state, girls_state, overall_records, class_records):
-    """Generate State Championship summary section"""
-    if not boys_state and not girls_state:
+def get_state_meet_relays(season, all_relays):
+    """Get relay results from state meets for a season"""
+    state_keywords = ['state', 'aia', 'championship']
+    year_start = int(season.split('-')[0])
+    
+    results = {}
+    for relay in all_relays:
+        meet = relay.get('meet', '').lower()
+        if any(kw in meet for kw in state_keywords):
+            # Check if in season range
+            date = relay['date']
+            match = re.search(r'(\d{4})', date)
+            if match:
+                relay_year = int(match.group(1))
+                if relay_year == year_start or relay_year == year_start + 1:
+                    event = relay['event']
+                    if event not in results:
+                        results[event] = relay
+    return results
+
+def generate_state_championship_html(boys_state, girls_state, boys_relays, girls_relays, 
+                                      overall_records, class_records, splits_data):
+    """Generate State Championship summary section with relays"""
+    if not boys_state and not girls_state and not boys_relays and not girls_relays:
         return ''
     
     html = '<div class="section-header" data-section="state-champs">\n'
@@ -215,8 +236,9 @@ def generate_state_championship_html(boys_state, girls_state, overall_records, c
     html += '</div>\n'
     html += '<div class="state-results-container">\n'
     
-    for gender, results in [('boys', boys_state), ('girls', girls_state)]:
-        if not results:
+    for gender, results, relays in [('boys', boys_state, boys_relays), 
+                                     ('girls', girls_state, girls_relays)]:
+        if not results and not relays:
             continue
         
         # Group by event and get best result per event
@@ -226,42 +248,105 @@ def generate_state_championship_html(boys_state, girls_state, overall_records, c
             if event not in event_bests or entry['time_seconds'] < event_bests[event]['time_seconds']:
                 event_bests[event] = entry
         
-        if not event_bests:
-            continue
-        
         html += f'<h3 class="event-heading">{gender.title()} State Results</h3>\n'
         html += '<div class="table-responsive">\n'
-        html += '<table class="table table-striped table-hover table-records">\n'
-        html += '<thead><tr><th>Event</th><th>Time</th><th>Swimmer</th></tr></thead>\n'
+        html += '<table class="table table-striped table-hover table-records table-state">\n'
+        html += '<thead><tr><th>Event</th><th>Swimmer</th><th>Time</th><th>Place</th></tr></thead>\n'
         html += '<tbody>\n'
         
-        events_order = ['50 Freestyle', '100 Freestyle', '200 Freestyle', '500 Freestyle',
-                        '100 Backstroke', '100 Breaststroke', '100 Butterfly', '200 Individual Medley']
+        events_order = ['200 Medley Relay', '200 Freestyle', '200 Individual Medley', 
+                        '50 Freestyle', '100 Butterfly', '100 Freestyle', 
+                        '500 Freestyle', '200 Free Relay', '100 Backstroke', 
+                        '100 Breaststroke', '400 Free Relay']
         
+        row_num = 0
         for event in events_order:
-            if event not in event_bests:
-                continue
-            
-            entry = event_bests[event]
-            time = entry['time']
-            name = entry['name']
-            year = entry['year']
-            
-            # Check for records
-            badges = ''
-            overall = overall_records.get(gender, {}).get(event)
-            if overall and parse_time_to_seconds(time) <= parse_time_to_seconds(overall['time']):
-                badges += ' <span class="badge badge-sr">Record</span>'
+            # Check if it's a relay
+            if 'Relay' in event:
+                if event not in relays:
+                    continue
+                
+                relay = relays[event]
+                time = relay['time']
+                if time.startswith('0'):
+                    time = time[1:]
+                
+                participants = relay['participants']
+                swimmers = [s.strip() for s in participants.split(',')]
+                last_names = ', '.join(s.split()[-1] for s in swimmers)
+                
+                # Find splits
+                splits = find_relay_splits(relay, splits_data, gender)
+                strokes = ['Backstroke', 'Breaststroke', 'Butterfly', 'Freestyle'] if 'Medley' in event else ['Freestyle'] * 4
+                
+                # Build expanded content
+                expanded_html = '<div class="relay-expanded-rows">'
+                for i, swimmer in enumerate(swimmers):
+                    stroke = strokes[i] if i < len(strokes) else 'Freestyle'
+                    split_time = ''
+                    year = ''
+                    
+                    if splits:
+                        if event == '400 Free Relay' and len(splits) == 8:
+                            idx = i * 2
+                            if idx + 1 < len(splits):
+                                try:
+                                    t1 = float(splits[idx].replace('00:', ''))
+                                    t2 = float(splits[idx + 1].replace('00:', ''))
+                                    split_time = f"{t1 + t2:.2f}"
+                                except:
+                                    pass
+                        elif i < len(splits):
+                            split_time = splits[i].replace('00:', '')
+                    
+                    expanded_html += f'<div class="relay-split-row">'
+                    expanded_html += f'<span class="split-swimmer">{swimmer}</span>'
+                    expanded_html += f'<span class="split-stroke">{stroke}</span>'
+                    expanded_html += f'<span class="split-time">{split_time}</span>'
+                    expanded_html += '</div>'
+                expanded_html += '</div>'
+                
+                row_class = '' if row_num % 2 == 0 else 'table-row-alt'
+                row_num += 1
+                
+                html += f'''<tr class="relay-row {row_class}" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+                    <td>{event}</td>
+                    <td class="relay-names-cell">{last_names} <span class="relay-arrow">▼</span></td>
+                    <td class="time-cell"><strong>{time}</strong></td>
+                    <td class="place-cell">—</td>
+                </tr>
+                <tr class="relay-details-row">
+                    <td colspan="4">{expanded_html}</td>
+                </tr>'''
             else:
-                class_rec = class_records.get(gender, {}).get(event, {}).get(year)
-                if class_rec and parse_time_to_seconds(time) <= parse_time_to_seconds(class_rec['time']):
-                    badges += f' <span class="badge badge-class-record">{year} Record</span>'
-            
-            html += f'<tr>'
-            html += f'<td>{event}</td>'
-            html += f'<td class="time-cell"><strong>{time}</strong>{badges}</td>'
-            html += f'<td>{name} {grade_badge(year)}</td>'
-            html += f'</tr>\n'
+                # Individual event
+                if event not in event_bests:
+                    continue
+                
+                entry = event_bests[event]
+                time = entry['time']
+                name = entry['name']
+                year = entry['year']
+                
+                # Check for records
+                badges = ''
+                overall = overall_records.get(gender, {}).get(event)
+                if overall and parse_time_to_seconds(time) <= parse_time_to_seconds(overall['time']):
+                    badges += ' <span class="badge badge-sr">Record</span>'
+                else:
+                    class_rec = class_records.get(gender, {}).get(event, {}).get(year)
+                    if class_rec and parse_time_to_seconds(time) <= parse_time_to_seconds(class_rec['time']):
+                        badges += f' <span class="badge badge-class-record">{year} Record</span>'
+                
+                row_class = '' if row_num % 2 == 0 else 'table-row-alt'
+                row_num += 1
+                
+                html += f'<tr class="{row_class}">'
+                html += f'<td>{event}</td>'
+                html += f'<td>{name} {grade_badge(year)}</td>'
+                html += f'<td class="time-cell"><strong>{time}</strong>{badges}</td>'
+                html += f'<td class="place-cell">—</td>'
+                html += f'</tr>\n'
         
         html += '</tbody></table>\n'
         html += '</div>\n'
@@ -554,6 +639,8 @@ def generate_annual_page(season):
     boys_relay_path = Path('records') / 'relay-records-boys.md'
     girls_relay_path = Path('records') / 'relay-records-girls.md'
     
+    all_boys_relays = []
+    all_girls_relays = []
     if boys_relay_path.exists():
         all_boys_relays = parse_relay_file(boys_relay_path)
         boys_relays = get_season_relay_bests(season, all_boys_relays)
@@ -597,8 +684,12 @@ def generate_annual_page(season):
     # State Championship section
     boys_state = get_state_meet_results(boys_entries)
     girls_state = get_state_meet_results(girls_entries)
-    if boys_state or girls_state:
-        content_parts.append(generate_state_championship_html(boys_state, girls_state, overall_records, class_records_before))
+    boys_state_relays = get_state_meet_relays(season, all_boys_relays)
+    girls_state_relays = get_state_meet_relays(season, all_girls_relays)
+    if boys_state or girls_state or boys_state_relays or girls_state_relays:
+        content_parts.append(generate_state_championship_html(
+            boys_state, girls_state, boys_state_relays, girls_state_relays,
+            overall_records, class_records_before, splits_data))
     
     # Class Records Broken section
     if records_broken:
@@ -861,6 +952,12 @@ def create_html_page(title, content, season):
         /* State results container */
         .state-results-container {
             margin-bottom: 2rem;
+        }
+        
+        .table-state .place-cell {
+            text-align: center;
+            font-weight: bold;
+            width: 60px;
         }
         
         /* Gender sections for toggling order */
