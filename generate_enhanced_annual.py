@@ -275,16 +275,18 @@ def generate_state_championship_html(boys_state, girls_state, boys_relays, girls
                 swimmers = [s.strip() for s in participants.split(',')]
                 last_names = ', '.join(s.split()[-1] for s in swimmers)
                 
-                # Find splits
-                splits = find_relay_splits(relay, splits_data, gender)
-                strokes = ['Backstroke', 'Breaststroke', 'Butterfly', 'Freestyle'] if 'Medley' in event else ['Freestyle'] * 4
+                # Find splits (get full entry for class info)
+                splits_entry = find_relay_splits_entry(relay, splits_data, gender)
+                splits = splits_entry.get('splits', []) if splits_entry else []
+                strokes = ['BK', 'BR', 'FL', 'FR'] if 'Medley' in event else ['FR'] * 4
                 
                 # Build expanded content
                 expanded_html = '<div class="relay-expanded-rows">'
                 for i, swimmer in enumerate(swimmers):
-                    stroke = strokes[i] if i < len(strokes) else 'Freestyle'
+                    stroke = strokes[i] if i < len(strokes) else 'FR'
                     split_time = ''
-                    year = ''
+                    swimmer_class = extract_class_from_splits_entry(splits_entry, swimmer) if splits_entry else ''
+                    class_badge_html = grade_badge(swimmer_class) if swimmer_class else ''
                     
                     if splits:
                         if event == '400 Free Relay' and len(splits) == 8:
@@ -300,8 +302,8 @@ def generate_state_championship_html(boys_state, girls_state, boys_relays, girls
                             split_time = splits[i].replace('00:', '')
                     
                     expanded_html += f'<div class="relay-split-row">'
-                    expanded_html += f'<span class="split-swimmer">{swimmer}</span>'
                     expanded_html += f'<span class="split-stroke">{stroke}</span>'
+                    expanded_html += f'<span class="split-swimmer">{swimmer} {class_badge_html}</span>'
                     expanded_html += f'<span class="split-time">{split_time}</span>'
                     expanded_html += '</div>'
                 expanded_html += '</div>'
@@ -356,6 +358,8 @@ def generate_state_championship_html(boys_state, girls_state, boys_relays, girls
 
 def grade_badge(year):
     """Generate grade badge HTML"""
+    if not year:
+        return ''
     year = year.upper()
     badge_class = {
         'FR': 'grade-fr',
@@ -364,6 +368,22 @@ def grade_badge(year):
         'SR': 'grade-sr'
     }.get(year, 'grade-open')
     return f'<span class="grade-badge {badge_class}">{year}</span>'
+
+def extract_class_from_splits_entry(split_entry, swimmer_name):
+    """Extract class (FR/SO/JR/SR) from splits data for a swimmer"""
+    if not split_entry:
+        return ''
+    
+    swimmer_lower = swimmer_name.lower().strip()
+    for full_name in split_entry.get('swimmers', []):
+        # Check if this swimmer matches
+        name_part = re.sub(r'\s*-\s*(Fr|So|Jr|Sr)\.?$', '', full_name, flags=re.IGNORECASE)
+        if name_part.lower().strip() == swimmer_lower:
+            # Extract class
+            match = re.search(r'-\s*(Fr|So|Jr|Sr)\.?$', full_name, flags=re.IGNORECASE)
+            if match:
+                return match.group(1).upper()
+    return ''
 
 def get_class_records_broken_in_season(season, history):
     """Get class records that were broken in a specific season"""
@@ -426,8 +446,8 @@ def generate_gender_season_bests_html(bests, gender, overall_records, class_reco
     
     return html
 
-def find_relay_splits(relay, splits_data, gender, event_type=None):
-    """Find splits for a relay from the splits data"""
+def find_relay_splits_entry(relay, splits_data, gender, event_type=None):
+    """Find full split entry for a relay from the splits data (includes swimmer classes)"""
     participants = relay['participants']
     swimmers = [s.strip() for s in participants.split(',')]
     relay_time = relay['time']
@@ -455,9 +475,14 @@ def find_relay_splits(relay, splits_data, gender, event_type=None):
         matching = len(relay_set & entry_set)
         if matching >= 3 and matching > best_score:
             best_score = matching
-            best_match = split_entry.get('splits', [])
+            best_match = split_entry  # Return full entry, not just splits
     
-    return best_match or []
+    return best_match
+
+def find_relay_splits(relay, splits_data, gender, event_type=None):
+    """Find splits for a relay from the splits data"""
+    entry = find_relay_splits_entry(relay, splits_data, gender, event_type)
+    return entry.get('splits', []) if entry else []
 
 def generate_relay_section_html(relays, splits_data, gender):
     """Generate relay table HTML - looks like a single table with expandable rows"""
@@ -486,15 +511,19 @@ def generate_relay_section_html(relays, splits_data, gender):
         date = relay['date']
         meet = relay['meet']
         
-        # Get splits
-        splits = find_relay_splits(relay, splits_data, gender)
-        strokes = ['Backstroke', 'Breaststroke', 'Butterfly', 'Freestyle'] if 'Medley' in event else ['Freestyle'] * 4
+        # Get splits (get full entry for class info)
+        splits_entry = find_relay_splits_entry(relay, splits_data, gender)
+        splits = splits_entry.get('splits', []) if splits_entry else []
+        strokes = ['BK', 'BR', 'FL', 'FR'] if 'Medley' in event else ['FR'] * 4
         
         # Build expanded content
         expanded_html = '<div class="relay-expanded-rows">'
         for i, swimmer in enumerate(swimmers):
-            stroke = strokes[i] if i < len(strokes) else 'Freestyle'
+            stroke = strokes[i] if i < len(strokes) else 'FR'
             split_time = ''
+            swimmer_class = extract_class_from_splits_entry(splits_entry, swimmer) if splits_entry else ''
+            class_badge_html = grade_badge(swimmer_class) if swimmer_class else ''
+            
             if splits:
                 if event == '400 Free Relay' and len(splits) == 8:
                     idx = i * 2
@@ -509,8 +538,8 @@ def generate_relay_section_html(relays, splits_data, gender):
                     split_time = splits[i].replace('00:', '')
             
             expanded_html += f'<div class="relay-split-row">'
-            expanded_html += f'<span class="split-swimmer">{swimmer}</span>'
             expanded_html += f'<span class="split-stroke">{stroke}</span>'
+            expanded_html += f'<span class="split-swimmer">{swimmer} {class_badge_html}</span>'
             expanded_html += f'<span class="split-time">{split_time}</span>'
             expanded_html += '</div>'
         expanded_html += f'<div class="relay-meet-row">{meet}</div>'

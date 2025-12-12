@@ -14,6 +14,314 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="apple-touch-icon" href="/images/hawk-logo.png">
+    
+    
+    <style>
+        /* Enhanced Annual Page Styles */
+        .section-header {
+            background: var(--tvhs-primary, #0a3622);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 8px 8px 0 0;
+            margin-top: 2rem;
+            margin-bottom: 0;
+        }
+        
+        .section-header h2 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+        
+        .table-records {
+            margin-bottom: 1.5rem;
+        }
+        
+        .table-records th {
+            background: var(--tvhs-primary, #0a3622);
+            color: white;
+            font-weight: 500;
+        }
+        
+        .time-cell {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        
+        .event-cell {
+            font-weight: 500;
+        }
+        
+        .date-cell, .meet-cell {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Relay cards for annual pages */
+        .relay-cards-container {
+            max-width: 900px;
+            margin: 0 auto 2rem;
+        }
+        
+        .relay-card {
+            background-color: #E8F5E9;
+            border-left: 4px solid var(--tvhs-primary, #0a3622);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .relay-compact-wrapper {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .relay-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        
+        .relay-event {
+            font-weight: bold;
+            color: var(--tvhs-primary, #0a3622);
+            min-width: 140px;
+        }
+        
+        .relay-time {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: var(--tvhs-primary, #0a3622);
+        }
+        
+        .relay-names-short {
+            flex: 1;
+            color: #333;
+        }
+        
+        .relay-date {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        .relay-arrow {
+            font-size: 0.7rem;
+            transition: transform 0.2s ease;
+            color: #999;
+        }
+        
+        .relay-compact-wrapper.expanded .relay-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .relay-expanded-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .relay-compact-wrapper.expanded .relay-expanded-content {
+            max-height: 400px;
+        }
+        
+        .relay-swimmers {
+            padding: 0.75rem 0 0.5rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            margin-top: 0.5rem;
+        }
+        
+        .swimmer-entry {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.25rem 0;
+        }
+        
+        .swimmer-name {
+            flex: 1;
+            font-weight: 500;
+        }
+        
+        .swimmer-stroke {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .swimmer-time {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            min-width: 3.5rem;
+            text-align: right;
+        }
+        
+        .relay-meet {
+            padding: 0.5rem 0;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            font-size: 0.85rem;
+            color: #555;
+        }
+        
+        /* Class record cards */
+        .class-record-card {
+            background: #fff;
+            border-left: 4px solid #ffc107;
+        }
+        
+        /* Record badges */
+        .badge-sr {
+            background: var(--tvhs-primary, #0a3622);
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.4rem;
+        }
+        
+        .badge-class-record {
+            background: #ffc107;
+            color: #333;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.4rem;
+        }
+        
+        /* State results container */
+        .state-results-container {
+            margin-bottom: 2rem;
+        }
+        
+        .table-state .place-cell {
+            text-align: center;
+            font-weight: bold;
+            width: 60px;
+        }
+        
+        /* Gender sections for toggling order */
+        .gender-section {
+            margin-bottom: 2rem;
+        }
+        
+        /* Relay table format */
+        .table-relay-annual {
+            margin-bottom: 1.5rem;
+        }
+        
+        .relay-row {
+            cursor: pointer;
+        }
+        
+        .relay-row:hover {
+            background-color: #e8f5e9 !important;
+        }
+        
+        .relay-names-cell {
+            position: relative;
+        }
+        
+        .relay-arrow {
+            font-size: 0.7rem;
+            margin-left: 0.5rem;
+            transition: transform 0.2s ease;
+            color: #999;
+        }
+        
+        .relay-row.expanded .relay-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .relay-details-row {
+            display: none;
+        }
+        
+        .relay-details-row.show {
+            display: table-row;
+        }
+        
+        .relay-details-row td {
+            background: #f8f9fa;
+            padding: 0.75rem 1rem;
+        }
+        
+        .relay-expanded-rows {
+            padding: 0.5rem 0;
+        }
+        
+        .relay-split-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .relay-split-row:last-of-type {
+            border-bottom: none;
+        }
+        
+        .split-swimmer {
+            font-weight: 500;
+            flex: 1;
+        }
+        
+        .split-stroke {
+            font-style: italic;
+            color: #666;
+            margin: 0 1rem;
+        }
+        
+        .split-time {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: var(--tvhs-primary, #0a3622);
+            min-width: 3rem;
+            text-align: right;
+        }
+        
+        .relay-meet-row {
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        /* Senior cards */
+        .senior-card {
+            border-left: 4px solid var(--tvhs-primary, #0a3622);
+        }
+        
+        .senior-card .card-title {
+            color: var(--tvhs-primary, #0a3622);
+            font-weight: bold;
+        }
+        
+        .time {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: var(--tvhs-primary, #0a3622);
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .table-records td:nth-child(4),
+            .table-records th:nth-child(4),
+            .table-records td:nth-child(5),
+            .table-records th:nth-child(5) {
+                display: none;
+            }
+            
+            .relay-header {
+                flex-wrap: wrap;
+            }
+            
+            .relay-names-short {
+                width: 100%;
+                order: 10;
+                padding-top: 0.25rem;
+            }
+        }
+    </style>
+    
 </head>
 <body>
     
@@ -37,42 +345,37 @@
         <div class="container-fluid justify-content-center">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/records/overall.html" id="nav-overall" title="Overall Records">🏆</a>
+                    <a class="nav-link" href="/records/overall.html" title="Overall Records">🏆</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="nav-bygrade" title="Records by Grade">📊</a>
+                    <a class="nav-link" href="/records/boys-bygrade.html" id="nav-bygrade" title="Records by Grade">📊</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="nav-top10" title="All-Time Top 10">🔟</a>
+                    <a class="nav-link" href="/top10/boys-alltime.html" id="nav-top10" title="All-Time Top 10">🔟</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="nav-relays" title="Relay Records">🤝</a>
+                    <a class="nav-link" href="/records/boys-relays.html" id="nav-relays" title="Relay Records">🤝</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="Season Top 10">📅</a>
                     <ul class="dropdown-menu dropdown-menu-scroll">
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2024-25</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2023-24</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2022-23</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2021-22</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2020-21</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2019-20</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2018-19</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2017-18</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2016-17</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2015-16</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2014-15</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2013-14</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2012-13</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2011-12</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2010-11</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2009-10</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2008-09</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2007-08</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2024-25.html">2024-25</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2023-24.html">2023-24</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2022-23.html">2022-23</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2021-22.html">2021-22</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2020-21.html">2020-21</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2019-20.html">2019-20</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2018-19.html">2018-19</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2017-18.html">2017-18</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2016-17.html">2016-17</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2015-16.html">2015-16</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2014-15.html">2014-15</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2013-14.html">2013-14</a></li>
+                        <li><a class="dropdown-item" href="/top10/boys-2012-13.html">2012-13</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-summary" title="Season Summary">📈</a>
+                    <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" title="Season Summary">📈</a>
                     <ul class="dropdown-menu dropdown-menu-scroll dropdown-menu-end">
                         <li><a class="dropdown-item" href="/annual/2025-26.html">2025-26</a></li>
                         <li><a class="dropdown-item" href="/annual/2024-25.html">2024-25</a></li>
@@ -99,392 +402,485 @@
     <div class="page-header">
         <div class="container d-flex align-items-center justify-content-between flex-wrap">
             <h1 class="mb-0">2016-17 Season Summary</h1>
-            <div id="jump-to-container"></div>
         </div>
     </div>
     
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Build Jump To dropdown from event headings (h2 or h3.event-heading)
-        let headings = document.querySelectorAll('h2, h3.event-heading');
-        if (headings.length > 2) {
-            let options = '<div class="jump-to-dropdown dropdown"><button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">Jump To</button><ul class="dropdown-menu dropdown-menu-end dropdown-menu-scroll">';
-            headings.forEach(function(h, i) {
-                const id = 'event-' + i;
-                h.id = id;
-                options += '<li><a class="dropdown-item" href="#' + id + '">' + h.textContent + '</a></li>';
-            });
-            options += '</ul></div>';
-            document.getElementById('jump-to-container').innerHTML = options;
-        }
-        
-        // Check if this is a relay records page
-        const isRelayPage = document.title.toLowerCase().includes('relay');
-        if (isRelayPage && window.innerWidth <= 576) {
-            // Transform relay tables for mobile
-            document.querySelectorAll('table tbody tr').forEach(function(row) {
-                const cells = row.querySelectorAll('td');
-                if (cells.length >= 5) {
-                    const participants = cells[2].textContent;
-                    const date = cells[3].textContent;  // Date is column 4 (index 3)
-                    const meet = cells[4].textContent;  // Meet is column 5 (index 4)
-                    
-                    // Extract last names
-                    const names = participants.split(',').map(n => n.trim());
-                    const lastNames = names.map(n => {
-                        const parts = n.split(' ');
-                        return parts[parts.length - 1];
-                    }).join(', ');
-                    
-                    // Create expandable content
-                    const shortNames = document.createElement('div');
-                    shortNames.className = 'relay-names';
-                    shortNames.textContent = lastNames;
-                    
-                    const details = document.createElement('div');
-                    details.className = 'relay-details';
-                    names.forEach(n => {
-                        const member = document.createElement('span');
-                        member.className = 'member';
-                        member.textContent = n;
-                        details.appendChild(member);
-                    });
-                    
-                    // Split meet name from location (typically in parentheses)
-                    const meetMatch = meet.match(/^(.+?)(\s*\([^)]+\))?$/);
-                    const meetName = meetMatch ? meetMatch[1].trim() : meet;
-                    const meetLocation = meetMatch && meetMatch[2] ? meetMatch[2].trim() : '';
-                    
-                    const meetDiv = document.createElement('div');
-                    meetDiv.className = 'meet-full';
-                    const meetNameSpan = document.createElement('span');
-                    meetNameSpan.className = 'meet-name';
-                    meetNameSpan.textContent = meetName;
-                    meetDiv.appendChild(meetNameSpan);
-                    if (meetLocation) {
-                        const meetLocSpan = document.createElement('span');
-                        meetLocSpan.className = 'meet-location';
-                        meetLocSpan.textContent = meetLocation;
-                        meetDiv.appendChild(meetLocSpan);
-                    }
-                    details.appendChild(meetDiv);
-                    
-                    // Replace participants cell content
-                    cells[2].innerHTML = '';
-                    cells[2].appendChild(shortNames);
-                    cells[2].appendChild(details);
-                    
-                    // Put date in the date cell (hide meet cell)
-                    cells[3].textContent = date;
-                    cells[4].style.display = 'none';  // Hide meet column
-                    
-                    // Add click handler
-                    shortNames.addEventListener('click', function() {
-                        this.classList.toggle('expanded');
-                        details.classList.toggle('show');
-                    });
-                }
-            });
-        }
-        
-        // Gender toggle and navigation
-        let currentGender = localStorage.getItem('tvhs-gender') || 'boys';
-        
-        // Detect current page gender from URL
-        const currentPath = window.location.pathname;
-        if (currentPath.includes('girls')) {
-            currentGender = 'girls';
-        } else if (currentPath.includes('boys')) {
-            currentGender = 'boys';
-        }
-        localStorage.setItem('tvhs-gender', currentGender);
-        
-        function updateGenderUI() {
-            document.querySelectorAll('.btn-gender').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.gender === currentGender);
-            });
-            updateNavLinks();
-        }
-        
-        function updateNavLinks() {
-            const g = currentGender;
-            // Overall records page shows both genders (no gender in URL)
-            document.getElementById('nav-bygrade').href = '/records/' + g + '-bygrade.html';
-            document.getElementById('nav-top10').href = '/top10/' + g + '-alltime.html';
-            document.getElementById('nav-relays').href = '/records/' + g + '-relays.html';
-            
-            // Update season links
-            document.querySelectorAll('.season-link').forEach(link => {
-                const season = link.textContent;
-                link.href = '/top10/' + g + '-' + season + '.html';
-            });
-            
-            // Reorder sections on Overall Records page based on gender
-            const overallPage = document.querySelector('.overall-records-page');
-            if (overallPage) {
-                const boysSection = document.getElementById('boys-records');
-                const girlsSection = document.getElementById('girls-records');
-                if (boysSection && girlsSection) {
-                    if (g === 'girls') {
-                        overallPage.insertBefore(girlsSection, boysSection);
-                    } else {
-                        overallPage.insertBefore(boysSection, girlsSection);
-                    }
-                }
-            }
-        }
-        
-        // Gender toggle click handlers - navigate to corresponding gender page
-        document.querySelectorAll('.btn-gender').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const newGender = this.dataset.gender;
-                if (newGender === currentGender) return;
-                
-                localStorage.setItem('tvhs-gender', newGender);
-                
-                // Try to navigate to the corresponding gender version of current page
-                const path = window.location.pathname;
-                let newPath = path;
-                
-                if (path.includes('boys')) {
-                    newPath = path.replace('boys', 'girls');
-                } else if (path.includes('girls')) {
-                    newPath = path.replace('girls', 'boys');
-                } else {
-                    // Not a gendered page, just update UI
-                    currentGender = newGender;
-                    updateGenderUI();
-                    return;
-                }
-                
-                // Navigate to the new page
-                window.location.href = newPath;
-            });
-        });
-        
-        // Initialize
-        updateGenderUI();
-    });
-    </script>
-    
-    <!-- Main Content -->
-    <div class="container my-4">
-        <div class="content">
-
-
-<hr>
-<h2>Season Overview</h2>
-<strong>Total Swims:</strong> 213
-<strong>Swimmers:</strong> 33
-<strong>Meets Attended:</strong> 5
-<h3 class="event-heading">Participation by Gender</h3>
-<ul>
-<li><strong>Boys:</strong> 112 swims</li>
-<li><strong>Girls:</strong> 101 swims</li>
-</ul>
-<h3 class="event-heading">Participation by Grade</h3>
-<ul>
-<li><strong>Freshman:</strong> 65 swims</li>
-<li><strong>Sophomore:</strong> 80 swims</li>
-<li><strong>Junior:</strong> 22 swims</li>
-<li><strong>Senior:</strong> 46 swims</li>
-</ul>
-<hr>
-<h2>Meet Schedule</h2>
-<div class="table-responsive record-table">
-<table class="table table-striped table-hover ">
-<thead>
-<tr>
-<th>Date</th>
-<th>Meet</th>
-</tr>
-</thead>
+    <main class="container py-4">
+        <div class="gender-section" id="boys-section">
+<div class="section-header" data-section="boys-bests">
+<h2>📊 Boys Season Bests</h2>
+</div>
+<div class="records-table-container">
+<table class="table table-striped table-hover table-records">
+<thead><tr><th>Event</th><th>Time</th><th>Swimmer</th><th>Date</th><th>Meet</th></tr></thead>
 <tbody>
-<tr>
-<td>Sep 17, 2016</td>
-<td>Canyon Del Oro Classic (Tucson, AZ)</td>
-</tr>
-<tr>
-<td>Oct 01, 2016</td>
-<td>2016 TYR High School Classic (Tucson, AZ)</td>
-</tr>
-<tr>
-<td>Oct 29, 2016</td>
-<td>Southern Arizona Regional Qualifier (Tucson, AZ)</td>
-</tr>
-<tr>
-<td>Nov 04, 2016</td>
-<td>2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ)</td>
-</tr>
-<tr>
-<td>Nov 05, 2016</td>
-<td>2016 D-3 AIA State Championships (AZ)</td>
-</tr>
-</tbody>
-</table>
+<tr><td class="event-cell">50 Freestyle</td><td class="time-cell"><strong>22.76</strong> ⭐</td><td class="name-cell">Joseph Breinholt <span class="grade-badge grade-sr">SR</span></td><td class="date-cell">Oct 29, 2016</td><td class="meet-cell">Southern Arizona Regional Qualifier</td></tr>
+<tr><td class="event-cell">100 Freestyle</td><td class="time-cell"><strong>47.98</strong> ⭐</td><td class="name-cell">Joseph Breinholt <span class="grade-badge grade-sr">SR</span></td><td class="date-cell">Oct 29, 2016</td><td class="meet-cell">Southern Arizona Regional Qualifier</td></tr>
+<tr><td class="event-cell">200 Freestyle</td><td class="time-cell"><strong>1:49.68</strong> ⭐</td><td class="name-cell">Joseph Breinholt <span class="grade-badge grade-sr">SR</span></td><td class="date-cell">Oct 01, 2016</td><td class="meet-cell">2016 TYR High School Classic</td></tr>
+<tr><td class="event-cell">500 Freestyle</td><td class="time-cell"><strong>6:03.77</strong></td><td class="name-cell">Malachi Poulsen <span class="grade-badge grade-jr">JR</span></td><td class="date-cell">Oct 29, 2016</td><td class="meet-cell">Southern Arizona Regional Qualifier</td></tr>
+<tr><td class="event-cell">100 Backstroke</td><td class="time-cell"><strong>1:00.82</strong> ⭐</td><td class="name-cell">Samuel Merrill <span class="grade-badge grade-jr">JR</span></td><td class="date-cell">Sep 17, 2016</td><td class="meet-cell">Canyon Del Oro Classic</td></tr>
+<tr><td class="event-cell">100 Breaststroke</td><td class="time-cell"><strong>1:09.05</strong> ⭐</td><td class="name-cell">Tanner Morris <span class="grade-badge grade-sr">SR</span></td><td class="date-cell">Nov 05, 2016</td><td class="meet-cell">2016 D-3 AIA State Championship</td></tr>
+<tr><td class="event-cell">100 Butterfly</td><td class="time-cell"><strong>59.89</strong></td><td class="name-cell">Alexander Flores <span class="grade-badge grade-sr">SR</span></td><td class="date-cell">Nov 05, 2016</td><td class="meet-cell">2016 D-3 AIA State Championship</td></tr>
+<tr><td class="event-cell">200 Individual Medley</td><td class="time-cell"><strong>2:13.67</strong> ⭐</td><td class="name-cell">Alexander Flores <span class="grade-badge grade-sr">SR</span></td><td class="date-cell">Nov 05, 2016</td><td class="meet-cell">2016 D-3 AIA State Championship</td></tr>
+</tbody></table>
 </div>
-<hr>
-<h2>🏆 Records Broken</h2>
-<strong>Boys 50 FR SCY</strong>
-<ul>
-<li><strong>NEW:</strong> 22.76 - Joe Breinholt (SR)</li>
-<li><em>Previous:</em> 25.27 - Andrew Lam</li>
-<li><em>Date:</em> Oct 29, 2016 at Southern Arizona Regional Qualifier (Tucson, AZ)</li>
-</ul>
-<strong>Boys 100 FR SCY</strong>
-<ul>
-<li><strong>NEW:</strong> 47.98 - Joe Breinholt (SR)</li>
-<li><em>Previous:</em> 49.10 - Joseph Breinholt</li>
-<li><em>Date:</em> Oct 29, 2016 at Southern Arizona Regional Qualifier (Tucson, AZ)</li>
-</ul>
-<strong>Boys 100 BR SCY</strong>
-<ul>
-<li><strong>NEW:</strong> 1:09.05 - Tanner Morris (SR)</li>
-<li><em>Previous:</em> 1:20.46 - Jerah Francone</li>
-<li><em>Date:</em> Nov 05, 2016 at 2016 D-3 AIA State Championships (AZ)</li>
-</ul>
-<strong>Boys 100 FL SCY</strong>
-<ul>
-<li><strong>NEW:</strong> 59.89 - Alexander Flores (SR)</li>
-<li><em>Previous:</em> 1:02.80 - Alexander Flores</li>
-<li><em>Date:</em> Nov 05, 2016 at 2016 D-3 AIA State Championships (AZ)</li>
-</ul>
-<strong>Boys 200 IM SCY</strong>
-<ul>
-<li><strong>NEW:</strong> 2:13.67 - Alexander Flores (SR)</li>
-<li><em>Previous:</em> 2:21.41 - Andrew Lam</li>
-<li><em>Date:</em> Nov 05, 2016 at 2016 D-3 AIA State Championships (AZ)</li>
-</ul>
-<strong>Girls 200 FR SCY</strong>
-<ul>
-<li><strong>NEW:</strong> 2:05.33 - Hazel Dasse (SO)</li>
-<li><em>Previous:</em> 2:20.08 - Anna Ellis</li>
-<li><em>Date:</em> Nov 04, 2016 at 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ)</li>
-</ul>
-<strong>Girls 500 FR SCY</strong>
-<ul>
-<li><strong>NEW:</strong> 5:32.67 - Anna Ellis (SO)</li>
-<li><em>Previous:</em> 5:35.08 - Anna Ellis</li>
-<li><em>Date:</em> Nov 04, 2016 at 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ)</li>
-</ul>
-<strong>Girls 100 BK SCY</strong>
-<ul>
-<li><strong>NEW:</strong> 1:05.85 - Hazel Dasse (SO)</li>
-<li><em>Previous:</em> 1:06.58 - Hazel Dasse</li>
-<li><em>Date:</em> Nov 04, 2016 at 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ)</li>
-</ul>
-<strong>Girls 100 BR SCY</strong>
-<ul>
-<li><strong>NEW:</strong> 1:07.01 - Lindsey Sohoel-Smith (SO)</li>
-<li><em>Previous:</em> 1:08.97 - Lindsey Sohoel-Smith</li>
-<li><em>Date:</em> Nov 04, 2016 at 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ)</li>
-</ul>
-<strong>Girls 200 IM SCY</strong>
-<ul>
-<li><strong>NEW:</strong> 2:15.55 - Lindsey Sohoel-Smith (SO)</li>
-<li><em>Previous:</em> 2:21.44 - Lindsey Sohoel-Smith</li>
-<li><em>Date:</em> Nov 04, 2016 at 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ)</li>
-</ul>
-<hr>
-<h2>Season Best Times</h2>
-<div class="table-responsive record-table">
-<table class="table table-striped table-hover table-5col">
-<thead>
-<tr>
-<th>Event</th>
-<th>Boys Time</th>
-<th>Boys Swimmer</th>
-<th>Girls Time</th>
-<th>Girls Swimmer</th>
-</tr>
-</thead>
+<p class="text-muted small mt-2">🏆 = Overall School Record · ⭐ = Class Record</p>
+
+<h3 class="event-heading">Boys Relays</h3>
+<h3 class="event-heading">Boys Relays</h3>
+<div class="relay-table-container">
+<table class="table table-striped table-hover table-records table-relay-annual">
+<thead><tr><th>Event</th><th>Time</th><th>Relay</th><th>Date</th></tr></thead>
 <tbody>
-<tr>
-<td>50 Free</td>
-<td>22.76</td>
-<td>Joe Breinholt (SR)</td>
-<td>27.06</td>
-<td>Hazel Dasse (SO)</td>
-</tr>
-<tr>
-<td>100 Free</td>
-<td>47.98</td>
-<td>Joe Breinholt (SR)</td>
-<td>1:00.95</td>
-<td>Hazel Dasse (SO)</td>
-</tr>
-<tr>
-<td>200 Free</td>
-<td>1:49.68</td>
-<td>Joe Breinholt (SR)</td>
-<td>2:05.33</td>
-<td>Hazel Dasse (SO)</td>
-</tr>
-<tr>
-<td>500 Free</td>
-<td>6:03.77</td>
-<td>Malachi Poulsen (JR)</td>
-<td>5:32.67</td>
-<td>Anna Ellis (SO)</td>
-</tr>
-<tr>
-<td>100 Back</td>
-<td>1:00.82</td>
-<td>Samuel Merrill (JR)</td>
-<td>1:05.85</td>
-<td>Hazel Dasse (SO)</td>
-</tr>
-<tr>
-<td>100 Breast</td>
-<td>1:09.05</td>
-<td>Tanner Morris (SR)</td>
-<td>1:07.01</td>
-<td>Lindsey Sohoel-Smith (SO)</td>
-</tr>
-<tr>
-<td>100 Fly</td>
-<td>59.89</td>
-<td>Alexander Flores (SR)</td>
-<td>1:13.52</td>
-<td>Madison Winkle (FR)</td>
-</tr>
-<tr>
-<td>200 IM</td>
-<td>2:13.67</td>
-<td>Alexander Flores (SR)</td>
-<td>2:15.55</td>
-<td>Lindsey Sohoel-Smith (SO)</td>
-</tr>
-</tbody>
-</table>
+<tr class="relay-row odd" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="event-cell">200 Free Relay</td>
+            <td class="time-cell"><strong>1:37.46</strong></td>
+            <td class="relay-names-cell">Flores, Merrill, Morris, Breinholt <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Sep 17, 2016</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4">
+                <div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Alexander Flores </span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Samuel Merrill </span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Tanner Morris </span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Joe Breinholt </span><span class="split-time"></span></div><div class="relay-meet-row">Canyon Del Oro Classic</div></div>
+            </td>
+        </tr></tbody></table>
 </div>
-<hr>
 
 </div>
-    </div>
+<div class="gender-section" id="girls-section">
+<div class="section-header" data-section="girls-bests">
+<h2>📊 Girls Season Bests</h2>
+</div>
+<div class="records-table-container">
+<table class="table table-striped table-hover table-records">
+<thead><tr><th>Event</th><th>Time</th><th>Swimmer</th><th>Date</th><th>Meet</th></tr></thead>
+<tbody>
+<tr><td class="event-cell">50 Freestyle</td><td class="time-cell"><strong>27.06</strong></td><td class="name-cell">Hazel Dasse <span class="grade-badge grade-so">SO</span></td><td class="date-cell">Oct 01, 2016</td><td class="meet-cell">2016 TYR High School Classic</td></tr>
+<tr><td class="event-cell">100 Freestyle</td><td class="time-cell"><strong>1:00.95</strong> ⭐</td><td class="name-cell">Hazel Dasse <span class="grade-badge grade-so">SO</span></td><td class="date-cell">Oct 29, 2016</td><td class="meet-cell">Southern Arizona Regional Qualifier</td></tr>
+<tr><td class="event-cell">200 Freestyle</td><td class="time-cell"><strong>2:05.33</strong> ⭐</td><td class="name-cell">Hazel Dasse <span class="grade-badge grade-so">SO</span></td><td class="date-cell">Nov 04, 2016</td><td class="meet-cell">2016 D-3 AIA State Championship</td></tr>
+<tr><td class="event-cell">500 Freestyle</td><td class="time-cell"><strong>5:32.67</strong> 🏆</td><td class="name-cell">Anna Ellis <span class="grade-badge grade-so">SO</span></td><td class="date-cell">Nov 04, 2016</td><td class="meet-cell">2016 D-3 AIA State Championship</td></tr>
+<tr><td class="event-cell">100 Backstroke</td><td class="time-cell"><strong>1:05.85</strong> ⭐</td><td class="name-cell">Hazel Dasse <span class="grade-badge grade-so">SO</span></td><td class="date-cell">Nov 04, 2016</td><td class="meet-cell">2016 D-3 AIA State Championship</td></tr>
+<tr><td class="event-cell">100 Breaststroke</td><td class="time-cell"><strong>1:07.01</strong> ⭐</td><td class="name-cell">Lindsey Sohoel-Smith <span class="grade-badge grade-so">SO</span></td><td class="date-cell">Nov 04, 2016</td><td class="meet-cell">2016 D-3 AIA State Championship</td></tr>
+<tr><td class="event-cell">100 Butterfly</td><td class="time-cell"><strong>1:13.52</strong></td><td class="name-cell">Madison Winkle <span class="grade-badge grade-fr">FR</span></td><td class="date-cell">Oct 29, 2016</td><td class="meet-cell">Southern Arizona Regional Qualifier</td></tr>
+<tr><td class="event-cell">200 Individual Medley</td><td class="time-cell"><strong>2:15.55</strong> 🏆</td><td class="name-cell">Lindsey Sohoel-Smith <span class="grade-badge grade-so">SO</span></td><td class="date-cell">Nov 04, 2016</td><td class="meet-cell">2016 D-3 AIA State Championship</td></tr>
+</tbody></table>
+</div>
+<p class="text-muted small mt-2">🏆 = Overall School Record · ⭐ = Class Record</p>
+
+<h3 class="event-heading">Girls Relays</h3>
+<h3 class="event-heading">Girls Relays</h3>
+<div class="relay-table-container">
+<table class="table table-striped table-hover table-records table-relay-annual">
+<thead><tr><th>Event</th><th>Time</th><th>Relay</th><th>Date</th></tr></thead>
+<tbody>
+<tr class="relay-row odd" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="event-cell">200 Medley Relay</td>
+            <td class="time-cell"><strong>1:54.06</strong></td>
+            <td class="relay-names-cell">Dasse, Patterson, Radomsky, Sohoel-Smith <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Oct 01, 2016</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4">
+                <div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">BK</span><span class="split-swimmer">Hazel Dasse <span class="grade-badge grade-so">SO</span></span><span class="split-time">31.40</span></div><div class="relay-split-row"><span class="split-stroke">BR</span><span class="split-swimmer">Sarynn Patterson <span class="grade-badge grade-fr">FR</span></span><span class="split-time">33.96</span></div><div class="relay-split-row"><span class="split-stroke">FL</span><span class="split-swimmer">Ellie Radomsky <span class="grade-badge grade-so">SO</span></span><span class="split-time">32.41</span></div><div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Lindsey Sohoel-Smith <span class="grade-badge grade-so">SO</span></span><span class="split-time">28.00</span></div><div class="relay-meet-row">2016 TYR High School Classic</div></div>
+            </td>
+        </tr><tr class="relay-row even" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="event-cell">200 Free Relay</td>
+            <td class="time-cell"><strong>1:50.63</strong></td>
+            <td class="relay-names-cell">Isenberg, Morris, Radomsky, Dasse <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Oct 07, 2017</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4">
+                <div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Calla Isenberg <span class="grade-badge grade-sr">SR</span></span><span class="split-time">26.48</span></div><div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Emma Morris <span class="grade-badge grade-so">SO</span></span><span class="split-time">28.20</span></div><div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Ellie Radomsky <span class="grade-badge grade-jr">JR</span></span><span class="split-time">28.49</span></div><div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Hazel Dasse <span class="grade-badge grade-jr">JR</span></span><span class="split-time">27.46</span></div><div class="relay-meet-row">2017 TYR High School Classic</div></div>
+            </td>
+        </tr><tr class="relay-row odd" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+            <td class="event-cell">400 Free Relay</td>
+            <td class="time-cell"><strong>3:56.02</strong></td>
+            <td class="relay-names-cell">Spooner, Dasse, Patterson, Sohoel-Smith <span class="relay-arrow">▼</span></td>
+            <td class="date-cell">Nov 04, 2016</td>
+        </tr>
+        <tr class="relay-details-row">
+            <td colspan="4">
+                <div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Bridget Spooner <span class="grade-badge grade-sr">SR</span></span><span class="split-time">58.95</span></div><div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Hazel Dasse <span class="grade-badge grade-so">SO</span></span><span class="split-time">59.06</span></div><div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Sarynn Patterson <span class="grade-badge grade-fr">FR</span></span><span class="split-time">60.72</span></div><div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Lindsey Sohoel-Smith <span class="grade-badge grade-so">SO</span></span><span class="split-time">57.29</span></div><div class="relay-meet-row">2016 D-3 AIA State Championship</div></div>
+            </td>
+        </tr></tbody></table>
+</div>
+
+</div>
+<div class="section-header" data-section="state-champs">
+<h2>🏆 State Championship Results</h2>
+</div>
+<div class="state-results-container">
+<h3 class="event-heading">Boys State Results</h3>
+<div class="table-responsive">
+<table class="table table-striped table-hover table-records table-state">
+<thead><tr><th>Event</th><th>Swimmer</th><th>Time</th><th>Place</th></tr></thead>
+<tbody>
+<tr class=""><td>200 Individual Medley</td><td>Alexander Flores <span class="grade-badge grade-sr">SR</span></td><td class="time-cell"><strong>2:13.67</strong> <span class="badge badge-class-record">SR Record</span></td><td class="place-cell">—</td></tr>
+<tr class="table-row-alt"><td>100 Butterfly</td><td>Alexander Flores <span class="grade-badge grade-sr">SR</span></td><td class="time-cell"><strong>59.89</strong></td><td class="place-cell">—</td></tr>
+<tr class=""><td>100 Breaststroke</td><td>Tanner Morris <span class="grade-badge grade-sr">SR</span></td><td class="time-cell"><strong>1:09.05</strong> <span class="badge badge-class-record">SR Record</span></td><td class="place-cell">—</td></tr>
+</tbody></table>
+</div>
+<h3 class="event-heading">Girls State Results</h3>
+<div class="table-responsive">
+<table class="table table-striped table-hover table-records table-state">
+<thead><tr><th>Event</th><th>Swimmer</th><th>Time</th><th>Place</th></tr></thead>
+<tbody>
+<tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+                    <td>200 Medley Relay</td>
+                    <td class="relay-names-cell">Randomsky, Morris, Hughes, Patterson <span class="relay-arrow">▼</span></td>
+                    <td class="time-cell"><strong>1:55.49</strong></td>
+                    <td class="place-cell">—</td>
+                </tr>
+                <tr class="relay-details-row">
+                    <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">BK</span><span class="split-swimmer">Ellie Randomsky </span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">BR</span><span class="split-swimmer">Emma Morris </span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">FL</span><span class="split-swimmer">Regan Hughes </span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Sarynn Patterson </span><span class="split-time"></span></div></div></td>
+                </tr><tr class="table-row-alt"><td>200 Freestyle</td><td>Hazel Dasse <span class="grade-badge grade-so">SO</span></td><td class="time-cell"><strong>2:05.33</strong> <span class="badge badge-class-record">SO Record</span></td><td class="place-cell">—</td></tr>
+<tr class=""><td>200 Individual Medley</td><td>Lindsey Sohoel-Smith <span class="grade-badge grade-so">SO</span></td><td class="time-cell"><strong>2:15.55</strong> <span class="badge badge-sr">Record</span></td><td class="place-cell">—</td></tr>
+<tr class="table-row-alt"><td>500 Freestyle</td><td>Anna Ellis <span class="grade-badge grade-so">SO</span></td><td class="time-cell"><strong>5:32.67</strong> <span class="badge badge-sr">Record</span></td><td class="place-cell">—</td></tr>
+<tr class=""><td>100 Backstroke</td><td>Hazel Dasse <span class="grade-badge grade-so">SO</span></td><td class="time-cell"><strong>1:05.85</strong> <span class="badge badge-class-record">SO Record</span></td><td class="place-cell">—</td></tr>
+<tr class="table-row-alt"><td>100 Breaststroke</td><td>Lindsey Sohoel-Smith <span class="grade-badge grade-so">SO</span></td><td class="time-cell"><strong>1:07.01</strong> <span class="badge badge-class-record">SO Record</span></td><td class="place-cell">—</td></tr>
+<tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
+                    <td>400 Free Relay</td>
+                    <td class="relay-names-cell">Spooner, Dasse, Patterson, Sohoel-Smith <span class="relay-arrow">▼</span></td>
+                    <td class="time-cell"><strong>3:56.02</strong></td>
+                    <td class="place-cell">—</td>
+                </tr>
+                <tr class="relay-details-row">
+                    <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Bridget Spooner <span class="grade-badge grade-sr">SR</span></span><span class="split-time">58.95</span></div><div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Hazel Dasse <span class="grade-badge grade-so">SO</span></span><span class="split-time">59.06</span></div><div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Sarynn Patterson <span class="grade-badge grade-fr">FR</span></span><span class="split-time">60.72</span></div><div class="relay-split-row"><span class="split-stroke">FR</span><span class="split-swimmer">Lindsey Sohoel-Smith <span class="grade-badge grade-so">SO</span></span><span class="split-time">57.29</span></div></div></td>
+                </tr></tbody></table>
+</div>
+</div>
+
+<div class="section-header" data-section="class-records">
+<h2>⭐ Class Records Broken</h2>
+</div>
+<div class="class-records-container">
+<h3>Boys</h3>
+<div class="row g-3">
+
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">SR 50 Freestyle</h6>
+                        <p class="mb-1"><strong>22.76</strong> - Joseph Breinholt <span class="badge badge-pb pb-mediumgray">-4.81s</span></p>
+                        <p class="text-muted small mb-0">Oct 29, 2016 at Southern Arizona Regional Qualifier</p>
+                        <p class="text-muted small mb-0">Previous: 27.57 by Wyatt Wimberly</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">SR 100 Freestyle</h6>
+                        <p class="mb-1"><strong>47.98</strong> - Joseph Breinholt <span class="badge badge-pb pb-mediumgray">-4.38s</span></p>
+                        <p class="text-muted small mb-0">Oct 29, 2016 at Southern Arizona Regional Qualifier</p>
+                        <p class="text-muted small mb-0">Previous: 52.36 by Austin Morris</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">SR 200 Freestyle</h6>
+                        <p class="mb-1"><strong>1:49.68</strong> - Joseph Breinholt <span class="badge badge-pb pb-mediumgray">-5.08s</span></p>
+                        <p class="text-muted small mb-0">Oct 01, 2016 at 2016 TYR High School Classic</p>
+                        <p class="text-muted small mb-0">Previous: 1:54.76 by Austin Morris</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">SO 200 Freestyle</h6>
+                        <p class="mb-1"><strong>2:25.61</strong> - Titan Flint </p>
+                        <p class="text-muted small mb-0">Oct 29, 2016 at Southern Arizona Regional Qualifier</p>
+                        <p class="text-muted small mb-0 fst-italic">First-Ever SO Record!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">SO 500 Freestyle</h6>
+                        <p class="mb-1"><strong>6:15.57</strong> - Titan Flint </p>
+                        <p class="text-muted small mb-0">Oct 29, 2016 at Southern Arizona Regional Qualifier</p>
+                        <p class="text-muted small mb-0 fst-italic">First-Ever SO Record!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">FR 500 Freestyle</h6>
+                        <p class="mb-1"><strong>6:22.67</strong> - Logan Radomsky <span class="badge badge-pb pb-mediumgray">-52.64s</span></p>
+                        <p class="text-muted small mb-0">Oct 29, 2016 at Southern Arizona Regional Qualifier</p>
+                        <p class="text-muted small mb-0">Previous: 7:15.31 by Paul Morrison</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">JR 100 Backstroke</h6>
+                        <p class="mb-1"><strong>1:00.82</strong> - Samuel Merrill <span class="badge badge-pb pb-mediumgray">-0.06s</span></p>
+                        <p class="text-muted small mb-0">Sep 17, 2016 at Canyon Del Oro Classic</p>
+                        <p class="text-muted small mb-0">Previous: 1:00.88 by Austin Morris</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">SR 100 Breaststroke</h6>
+                        <p class="mb-1"><strong>1:09.05</strong> - Tanner Morris <span class="badge badge-pb pb-mediumgray">-16.79s</span></p>
+                        <p class="text-muted small mb-0">Nov 05, 2016 at 2016 D-3 AIA State Championship</p>
+                        <p class="text-muted small mb-0">Previous: 1:25.84 by Forrest Carlton</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">JR 100 Breaststroke</h6>
+                        <p class="mb-1"><strong>1:11.69</strong> - Samuel Merrill <span class="badge badge-pb pb-mediumgray">-5.02s</span></p>
+                        <p class="text-muted small mb-0">Oct 01, 2016 at 2016 TYR High School Classic</p>
+                        <p class="text-muted small mb-0">Previous: 1:16.71 by Kurt Matsunaga</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">SO 100 Breaststroke</h6>
+                        <p class="mb-1"><strong>1:22.15</strong> - Titan Flint <span class="badge badge-pb pb-mediumgray">-11.57s</span></p>
+                        <p class="text-muted small mb-0">Sep 17, 2016 at Canyon Del Oro Classic</p>
+                        <p class="text-muted small mb-0">Previous: 1:33.72 by Kyle Ramsden</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">SR 100 Butterfly</h6>
+                        <p class="mb-1"><strong>59.89</strong> - Alexander Flores </p>
+                        <p class="text-muted small mb-0">Nov 05, 2016 at 2016 D-3 AIA State Championship</p>
+                        <p class="text-muted small mb-0 fst-italic">First-Ever SR Record!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">FR 100 Butterfly</h6>
+                        <p class="mb-1"><strong>1:23.65</strong> - Brian Lopez <span class="badge badge-pb pb-mediumgray">-5.98s</span></p>
+                        <p class="text-muted small mb-0">Oct 01, 2016 at 2016 TYR High School Classic</p>
+                        <p class="text-muted small mb-0">Previous: 1:29.63 by Alexander Flores</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">SR 200 Individual Medley</h6>
+                        <p class="mb-1"><strong>2:13.67</strong> - Alexander Flores <span class="badge badge-pb pb-mediumgray">-7.74s</span></p>
+                        <p class="text-muted small mb-0">Nov 05, 2016 at 2016 D-3 AIA State Championship</p>
+                        <p class="text-muted small mb-0">Previous: 2:21.41 by Andrew Lam</p>
+                    </div>
+                </div>
+            </div></div>
+<h3>Girls</h3>
+<div class="row g-3">
+
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">SO 100 Freestyle</h6>
+                        <p class="mb-1"><strong>1:00.95</strong> - Hazel Dasse <span class="badge badge-pb pb-mediumgray">-7.58s</span></p>
+                        <p class="text-muted small mb-0">Oct 29, 2016 at Southern Arizona Regional Qualifier</p>
+                        <p class="text-muted small mb-0">Previous: 1:08.53 by Sierra Roh</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">SO 200 Freestyle</h6>
+                        <p class="mb-1"><strong>2:05.33</strong> - Hazel Dasse <span class="badge badge-pb pb-mediumgray">-6.35s</span></p>
+                        <p class="text-muted small mb-0">Nov 04, 2016 at 2016 D-3 AIA State Championship</p>
+                        <p class="text-muted small mb-0">Previous: 2:11.68 by Bridget Spooner</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">SO 500 Freestyle</h6>
+                        <p class="mb-1"><strong>5:32.67</strong> - Anna Ellis <span class="badge badge-pb pb-mediumgray">-23.94s</span></p>
+                        <p class="text-muted small mb-0">Nov 04, 2016 at 2016 D-3 AIA State Championship</p>
+                        <p class="text-muted small mb-0">Previous: 5:56.61 by Bridget Spooner</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">SO 100 Backstroke</h6>
+                        <p class="mb-1"><strong>1:05.85</strong> - Hazel Dasse <span class="badge badge-pb pb-mediumgray">-28.44s</span></p>
+                        <p class="text-muted small mb-0">Nov 04, 2016 at 2016 D-3 AIA State Championship</p>
+                        <p class="text-muted small mb-0">Previous: 1:34.29 by Jenna Elliott</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">FR 100 Backstroke</h6>
+                        <p class="mb-1"><strong>1:06.38</strong> - Sarynn Patterson <span class="badge badge-pb pb-mediumgray">-0.20s</span></p>
+                        <p class="text-muted small mb-0">Nov 04, 2016 at 2016 D-3 AIA State Championship</p>
+                        <p class="text-muted small mb-0">Previous: 1:06.58 by Hazel Dasse</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">SO 100 Breaststroke</h6>
+                        <p class="mb-1"><strong>1:07.01</strong> - Lindsey Sohoel-Smith <span class="badge badge-pb pb-mediumgray">-24.54s</span></p>
+                        <p class="text-muted small mb-0">Nov 04, 2016 at 2016 D-3 AIA State Championship</p>
+                        <p class="text-muted small mb-0">Previous: 1:31.55 by Sierra Roh</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card class-record-card">
+                    <div class="card-body">
+                        <h6 class="card-title">SO 200 Individual Medley</h6>
+                        <p class="mb-1"><strong>2:15.55</strong> - Lindsey Sohoel-Smith <span class="badge badge-pb pb-mediumgray">-39.69s</span></p>
+                        <p class="text-muted small mb-0">Nov 04, 2016 at 2016 D-3 AIA State Championship</p>
+                        <p class="text-muted small mb-0">Previous: 2:55.24 by Dana Kristofitz</p>
+                    </div>
+                </div>
+            </div></div>
+</div>
+
+<div class="section-header" data-section="seniors">
+<h2>🎓 Seniors</h2>
+</div>
+<div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="card h-100 senior-card">
+                <div class="card-body">
+                    <h5 class="card-title">Alexander Flores</h5>
+                    <p class="mb-2"><strong>3 events</strong></p>
+                    <div class="events-section"><p class="mb-1"><small>100 Breaststroke: <span class="time">1:12.88</span></small></p>
+<p class="mb-1"><small>100 Butterfly: <span class="time">59.89</span></small></p>
+<p class="mb-1"><small>200 Individual Medley: <span class="time">2:13.67</span></small></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 senior-card">
+                <div class="card-body">
+                    <h5 class="card-title">Jordon Hamilton</h5>
+                    <p class="mb-2"><strong>1 events</strong></p>
+                    <div class="events-section"><p class="mb-1"><small>100 Freestyle: <span class="time">1:18.41</span></small></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 senior-card">
+                <div class="card-body">
+                    <h5 class="card-title">Joseph Breinholt</h5>
+                    <p class="mb-2"><strong>3 events</strong></p>
+                    <div class="events-section"><p class="mb-1"><small>100 Freestyle: <span class="time">47.98</span></small></p>
+<p class="mb-1"><small>200 Freestyle: <span class="time">1:49.68</span></small></p>
+<p class="mb-1"><small>50 Freestyle: <span class="time">22.76</span></small></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 senior-card">
+                <div class="card-body">
+                    <h5 class="card-title">Kyle Ramsden</h5>
+                    <p class="mb-2"><strong>3 events</strong></p>
+                    <div class="events-section"><p class="mb-1"><small>100 Breaststroke: <span class="time">1:32.30</span></small></p>
+<p class="mb-1"><small>100 Freestyle: <span class="time">1:08.85</span></small></p>
+<p class="mb-1"><small>50 Freestyle: <span class="time">31.01</span></small></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 senior-card">
+                <div class="card-body">
+                    <h5 class="card-title">Regan Hughes</h5>
+                    <p class="mb-2"><strong>2 events</strong></p>
+                    <div class="events-section"><p class="mb-1"><small>100 Breaststroke: <span class="time">1:24.80</span></small></p>
+<p class="mb-1"><small>100 Freestyle: <span class="time">1:10.01</span></small></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 senior-card">
+                <div class="card-body">
+                    <h5 class="card-title">Tanner Morris</h5>
+                    <p class="mb-2"><strong>2 events</strong></p>
+                    <div class="events-section"><p class="mb-1"><small>100 Breaststroke: <span class="time">1:09.05</span></small></p>
+<p class="mb-1"><small>50 Freestyle: <span class="time">24.21</span></small></p>
+
+                    </div>
+                </div>
+            </div>
+        </div></div>
+
+    </main>
     
     <!-- Footer -->
-    <footer class="mt-5">
+    <footer class="footer mt-auto py-3 bg-light">
         <div class="container text-center">
-            <div class="disclaimer mb-3">
-                <small class="text-muted">
-                    Results compiled from meets published on <a href="https://azpreps365.com" target="_blank">AZPreps365</a> 
-                    and <a href="https://maxpreps.com" target="_blank">MaxPreps</a> with limited data availability — 
-                    not necessarily a complete compilation of all records. 
-                    Contact <a href="mailto:aaryno@gmail.com">aaryno@gmail.com</a> with additional sources, errors, or corrections.
-                </small>
-            </div>
-            <p class="mb-2">&copy; 2025 Tanque Verde High School Swimming</p>
-            <p class="mb-0">
-                <small>
-                    Generated on December 11, 2025 | 
-                    <a href="https://github.com/aaryno/tanque-verde-swim">View on GitHub</a>
-                </small>
+            <p class="text-muted small mb-1">
+                Results compiled from meets published on AZPreps365 and MaxPreps with limited data availability — 
+                not necessarily a complete compilation of all records. Contact aaryno@gmail.com with additional sources, errors, or corrections.
+            </p>
+            <p class="text-muted small mb-0">
+                &copy; 2025 Tanque Verde High School Swimming
             </p>
         </div>
     </footer>
     
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Gender toggle
+        let currentGender = localStorage.getItem('tvhs-gender') || 'boys';
+        
+        function updateGenderUI() {
+            document.querySelectorAll('.btn-gender').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.gender === currentGender);
+            });
+        }
+        
+        document.querySelectorAll('.btn-gender').forEach(btn => {
+            btn.addEventListener('click', function() {
+                currentGender = this.dataset.gender;
+                localStorage.setItem('tvhs-gender', currentGender);
+                updateGenderUI();
+            });
+        });
+        
+        updateGenderUI();
+    });
+    </script>
 </body>
 </html>
