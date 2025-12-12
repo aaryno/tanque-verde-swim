@@ -25,6 +25,69 @@ INCOMPLETE_DATA_YEARS = ["2007-08", "2008-09", "2009-10", "2010-11", "2011-12"]
 TOP10_SEASONS = [s for s in SEASONS if s != "2025-26"]
 
 
+# Global cache for class records history
+_class_records_cache = None
+
+def get_class_records_history():
+    """Load class records history and cache it"""
+    global _class_records_cache
+    if _class_records_cache is None:
+        history_file = Path('data/class_records_history.json')
+        if history_file.exists():
+            with open(history_file, 'r') as f:
+                _class_records_cache = json.load(f)
+        else:
+            _class_records_cache = []
+    return _class_records_cache
+
+
+def lookup_previous_record_meet(prev_time, prev_swimmer, event_hint=''):
+    """Look up the meet location for a previous record from class records history.
+    
+    Args:
+        prev_time: The time of the previous record
+        prev_swimmer: The swimmer who held the previous record
+        event_hint: Optional hint about the event (e.g., '100 BR' or '100 Breaststroke')
+    
+    Returns:
+        (meet, date) tuple, or ('', '') if not found
+    """
+    records = get_class_records_history()
+    
+    # Normalize event hint (handle abbreviations)
+    event_lower = event_hint.lower().replace('scy', '').strip()
+    event_words = {
+        'fr': 'freestyle', 'free': 'freestyle',
+        'bk': 'backstroke', 'back': 'backstroke',
+        'br': 'breaststroke', 'breast': 'breaststroke',
+        'fl': 'butterfly', 'fly': 'butterfly',
+        'im': 'individual medley', 'medley': 'individual medley'
+    }
+    
+    # Normalize swimmer name for comparison
+    prev_swimmer_lower = prev_swimmer.lower().strip()
+    prev_swimmer_last = prev_swimmer_lower.split()[-1] if prev_swimmer_lower else ''
+    
+    for record in records:
+        record_time = record.get('time', '')
+        record_name = record.get('name', '').lower()
+        record_name_last = record_name.split()[-1] if record_name else ''
+        
+        # Check if time matches
+        if record_time != prev_time:
+            continue
+        
+        # Check if name matches (full name or last name)
+        if prev_swimmer_lower not in record_name and record_name not in prev_swimmer_lower:
+            if prev_swimmer_last != record_name_last:
+                continue
+        
+        # Found a match
+        return (record.get('meet', ''), record.get('date', ''))
+    
+    return ('', '')
+
+
 def grade_to_badge(grade_text):
     """Convert (FR), (SO), etc to badge HTML"""
     grade_map = {
@@ -359,6 +422,14 @@ def generate_records_broken_html(data):
         # Build previous record section
         prev_section = ''
         if prev_time and prev_time != 'None':
+            # Look up the previous record's meet and date
+            prev_meet, prev_date = lookup_previous_record_meet(prev_time, prev_swimmer, event)
+            prev_date_display = prev_date if prev_date else '—'
+            prev_meet_display = prev_meet if prev_meet else '—'
+            
+            # Build previous meet location (expandable)
+            prev_meet_html = f'<div class="record-location-hidden">📍 {prev_meet_display}</div>'
+            
             prev_section = f'''
                             <div class="record-prev-section">
                                 <div class="record-row">
@@ -367,9 +438,9 @@ def generate_records_broken_html(data):
                                 </div>
                                 <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
                                     <span class="swimmer-name">{prev_swimmer_html}</span>
-                                    <span class="date-value">—</span>
+                                    <span class="date-value">{prev_date_display}</span>
                                 </div>
-                                <div class="record-location-hidden">📍 —</div>
+                                {prev_meet_html}
                             </div>'''
         else:
             prev_section = '''
@@ -464,16 +535,24 @@ def generate_class_records_html(class_records, season):
                 prev_name = prev.get('name', '')
                 prev_time = prev.get('time', '')
                 prev_season = prev.get('season', '')
+                prev_meet = prev.get('meet', '')
+                
+                # Build previous meet location (expandable)
+                prev_meet_html = ''
+                if prev_meet:
+                    prev_meet_html = f'<div class="record-location-hidden">📍 {prev_meet}</div>'
+                
                 prev_section = f'''
                             <div class="record-prev-section">
                                 <div class="record-row">
                                     <span class="record-label-small">Previous:</span>
                                     <span class="time-value-small">{prev_time}</span>
                                 </div>
-                                <div class="record-row">
+                                <div class="record-row clickable-row" onclick="this.nextElementSibling.classList.toggle('show')">
                                     <span class="swimmer-name text-muted">{prev_name}</span>
                                     <span class="date-value text-muted small">{prev_season}</span>
                                 </div>
+                                {prev_meet_html}
                             </div>'''
             else:
                 prev_section = '''
