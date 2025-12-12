@@ -90,14 +90,23 @@
         
         .relay-split-row {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             padding: 0.25rem 0;
             border-bottom: 1px solid #eee;
+            white-space: nowrap;
+            gap: 0.5rem;
         }
         
         .relay-split-row:last-of-type {
             border-bottom: none;
+        }
+        
+        .split-stroke {
+            font-style: italic;
+            color: #666;
+            min-width: 5rem;
+            flex-shrink: 0;
         }
         
         .split-swimmer {
@@ -106,19 +115,13 @@
             color: #333;
         }
         
-        .split-stroke {
-            font-style: italic;
-            color: #666;
-            margin: 0 1rem;
-            display: inline !important;
-        }
-        
         .split-time {
             font-family: 'Courier New', monospace;
             font-weight: bold;
             color: var(--tvhs-primary, #0a3622);
             min-width: 3rem;
             text-align: right;
+            flex-shrink: 0;
             display: inline !important;
         }
         
@@ -197,22 +200,25 @@
             }
             
             .relay-split-row {
-                flex-wrap: wrap;
-                padding: 0.4rem 0;
-            }
-            
-            .split-swimmer {
-                flex: 0 0 100%;
-                margin-bottom: 0.2rem;
+                flex-wrap: nowrap;
+                padding: 0.3rem 0;
+                gap: 0.3rem;
             }
             
             .split-stroke {
-                margin: 0;
-                font-size: 0.8rem;
+                min-width: 4rem;
+                font-size: 0.75rem;
+            }
+            
+            .split-swimmer {
+                font-size: 0.85rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
             
             .split-time {
-                font-size: 0.9rem;
+                font-size: 0.85rem;
+                min-width: 2.5rem;
             }
         }
     </style>
@@ -326,7 +332,7 @@
             <td class="date-cell">Oct 25, 2024</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Grace Davis</span><span class="split-stroke">Backstroke</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Ella Bissmeyer</span><span class="split-stroke">Breaststroke</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Adrianna Witte</span><span class="split-stroke">Butterfly</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Logan Sulger</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">Southern Arizona Qualifier</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Backstroke</span><span class="split-swimmer">Grace Davis</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">Breaststroke</span><span class="split-swimmer">Ella Bissmeyer</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">Butterfly</span><span class="split-swimmer">Adrianna Witte</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Logan Sulger</span><span class="split-time"></span></div><div class="relay-meet-row">Southern Arizona Qualifier</div></div></td>
         </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">2</td>
             <td class="time-cell"><strong>1:52.45</strong></td>
@@ -334,7 +340,7 @@
             <td class="date-cell">Oct 18, 2025</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Amelia Kidd</span><span class="split-stroke">Backstroke</span><span class="split-time">30.98</span></div><div class="relay-split-row"><span class="split-swimmer">Logan Sulger</span><span class="split-stroke">Breaststroke</span><span class="split-time">34.18</span></div><div class="relay-split-row"><span class="split-swimmer">Adrianna Witte</span><span class="split-stroke">Butterfly</span><span class="split-time">29.95</span></div><div class="relay-split-row"><span class="split-swimmer">Hadley Cusson</span><span class="split-stroke">Freestyle</span><span class="split-time">26.83</span></div><div class="relay-meet-row">Pecan Classic</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Backstroke</span><span class="split-swimmer">Amelia Kidd</span><span class="split-time">30.98</span></div><div class="relay-split-row"><span class="split-stroke">Breaststroke</span><span class="split-swimmer">Logan Sulger</span><span class="split-time">34.18</span></div><div class="relay-split-row"><span class="split-stroke">Butterfly</span><span class="split-swimmer">Adrianna Witte</span><span class="split-time">29.95</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Hadley Cusson</span><span class="split-time">26.83</span></div><div class="relay-meet-row">Pecan Classic</div></div></td>
         </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">3</td>
             <td class="time-cell"><strong>1:53.19</strong></td>
@@ -342,7 +348,7 @@
             <td class="date-cell">Oct 24, 2025</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Logan Sulger</span><span class="split-stroke">Backstroke</span><span class="split-time">31.64</span></div><div class="relay-split-row"><span class="split-swimmer">Kadynce Drummond</span><span class="split-stroke">Breaststroke</span><span class="split-time">36.77</span></div><div class="relay-split-row"><span class="split-swimmer">Madeline Barnard</span><span class="split-stroke">Butterfly</span><span class="split-time">31.87</span></div><div class="relay-split-row"><span class="split-swimmer">Isla Cerepak</span><span class="split-stroke">Freestyle</span><span class="split-time">27.66</span></div><div class="relay-meet-row">Southern Arizona Qualifier</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Backstroke</span><span class="split-swimmer">Logan Sulger</span><span class="split-time">31.64</span></div><div class="relay-split-row"><span class="split-stroke">Breaststroke</span><span class="split-swimmer">Kadynce Drummond</span><span class="split-time">36.77</span></div><div class="relay-split-row"><span class="split-stroke">Butterfly</span><span class="split-swimmer">Madeline Barnard</span><span class="split-time">31.87</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Isla Cerepak</span><span class="split-time">27.66</span></div><div class="relay-meet-row">Southern Arizona Qualifier</div></div></td>
         </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">4</td>
             <td class="time-cell"><strong>1:53.50</strong></td>
@@ -350,7 +356,7 @@
             <td class="date-cell">Oct 26, 2018</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Isabelle Sansom</span><span class="split-stroke">Backstroke</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Sarynn Patterson</span><span class="split-stroke">Breaststroke</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Kennady Pautler</span><span class="split-stroke">Butterfly</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Lindsey Schoel-Smith</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">Southern Arizona Regional Qualifier</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Backstroke</span><span class="split-swimmer">Isabelle Sansom</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">Breaststroke</span><span class="split-swimmer">Sarynn Patterson</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">Butterfly</span><span class="split-swimmer">Kennady Pautler</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Lindsey Schoel-Smith</span><span class="split-time"></span></div><div class="relay-meet-row">Southern Arizona Regional Qualifier</div></div></td>
         </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">5</td>
             <td class="time-cell"><strong>1:53.58</strong></td>
@@ -358,7 +364,7 @@
             <td class="date-cell">Nov 01, 2018</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Isabelle Sansom</span><span class="split-stroke">Backstroke</span><span class="split-time">38.35</span></div><div class="relay-split-row"><span class="split-swimmer">Kennady Pautler</span><span class="split-stroke">Breaststroke</span><span class="split-time">38.61</span></div><div class="relay-split-row"><span class="split-swimmer">Violet Dasse</span><span class="split-stroke">Butterfly</span><span class="split-time">35.18</span></div><div class="relay-split-row"><span class="split-swimmer">Trinity Weatherwax</span><span class="split-stroke">Freestyle</span><span class="split-time">28.51</span></div><div class="relay-meet-row">AIA D-3 Girls State Championship</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Backstroke</span><span class="split-swimmer">Isabelle Sansom</span><span class="split-time">38.35</span></div><div class="relay-split-row"><span class="split-stroke">Breaststroke</span><span class="split-swimmer">Kennady Pautler</span><span class="split-time">38.61</span></div><div class="relay-split-row"><span class="split-stroke">Butterfly</span><span class="split-swimmer">Violet Dasse</span><span class="split-time">35.18</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Trinity Weatherwax</span><span class="split-time">28.51</span></div><div class="relay-meet-row">AIA D-3 Girls State Championship</div></div></td>
         </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">6</td>
             <td class="time-cell"><strong>1:54.06</strong></td>
@@ -366,7 +372,7 @@
             <td class="date-cell">Oct 01, 2016</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Hazel Dasse</span><span class="split-stroke">Backstroke</span><span class="split-time">31.40</span></div><div class="relay-split-row"><span class="split-swimmer">Sarynn Patterson</span><span class="split-stroke">Breaststroke</span><span class="split-time">33.96</span></div><div class="relay-split-row"><span class="split-swimmer">Ellie Radomsky</span><span class="split-stroke">Butterfly</span><span class="split-time">32.41</span></div><div class="relay-split-row"><span class="split-swimmer">Lindsey Sohoel-Smith</span><span class="split-stroke">Freestyle</span><span class="split-time">28.00</span></div><div class="relay-meet-row">2016 TYR High School Classic</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Backstroke</span><span class="split-swimmer">Hazel Dasse</span><span class="split-time">31.40</span></div><div class="relay-split-row"><span class="split-stroke">Breaststroke</span><span class="split-swimmer">Sarynn Patterson</span><span class="split-time">33.96</span></div><div class="relay-split-row"><span class="split-stroke">Butterfly</span><span class="split-swimmer">Ellie Radomsky</span><span class="split-time">32.41</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Lindsey Sohoel-Smith</span><span class="split-time">28.00</span></div><div class="relay-meet-row">2016 TYR High School Classic</div></div></td>
         </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">7</td>
             <td class="time-cell"><strong>1:54.87</strong></td>
@@ -374,7 +380,7 @@
             <td class="date-cell">Nov 01, 2018</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Sarynn Patterson</span><span class="split-stroke">Backstroke</span><span class="split-time">29.78</span></div><div class="relay-split-row"><span class="split-swimmer">Lindsey Schoel-Smith</span><span class="split-stroke">Breaststroke</span><span class="split-time">30.08</span></div><div class="relay-split-row"><span class="split-swimmer">Hazel Dasse</span><span class="split-stroke">Butterfly</span><span class="split-time">28.46</span></div><div class="relay-split-row"><span class="split-swimmer">Ellie Radomsky</span><span class="split-stroke">Freestyle</span><span class="split-time">26.55</span></div><div class="relay-meet-row">AIA D-3 Girls State Championship</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Backstroke</span><span class="split-swimmer">Sarynn Patterson</span><span class="split-time">29.78</span></div><div class="relay-split-row"><span class="split-stroke">Breaststroke</span><span class="split-swimmer">Lindsey Schoel-Smith</span><span class="split-time">30.08</span></div><div class="relay-split-row"><span class="split-stroke">Butterfly</span><span class="split-swimmer">Hazel Dasse</span><span class="split-time">28.46</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Ellie Radomsky</span><span class="split-time">26.55</span></div><div class="relay-meet-row">AIA D-3 Girls State Championship</div></div></td>
         </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">8</td>
             <td class="time-cell"><strong>1:55.49</strong></td>
@@ -382,7 +388,7 @@
             <td class="date-cell">Nov 04, 2016</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Ellie Randomsky</span><span class="split-stroke">Backstroke</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Emma Morris</span><span class="split-stroke">Breaststroke</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Regan Hughes</span><span class="split-stroke">Butterfly</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Sarynn Patterson</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">2016 D-3 AIA State Championship</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Backstroke</span><span class="split-swimmer">Ellie Randomsky</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">Breaststroke</span><span class="split-swimmer">Emma Morris</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">Butterfly</span><span class="split-swimmer">Regan Hughes</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Sarynn Patterson</span><span class="split-time"></span></div><div class="relay-meet-row">2016 D-3 AIA State Championship</div></div></td>
         </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">9</td>
             <td class="time-cell"><strong>1:56.01</strong></td>
@@ -390,7 +396,7 @@
             <td class="date-cell">Sep 28, 2024</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Summer Cugini</span><span class="split-stroke">Backstroke</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Logan Sulger</span><span class="split-stroke">Breaststroke</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Ella Bissmeyer</span><span class="split-stroke">Butterfly</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Adrianna Witte</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">21st Annual TYR HS Classic</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Backstroke</span><span class="split-swimmer">Summer Cugini</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">Breaststroke</span><span class="split-swimmer">Logan Sulger</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">Butterfly</span><span class="split-swimmer">Ella Bissmeyer</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Adrianna Witte</span><span class="split-time"></span></div><div class="relay-meet-row">21st Annual TYR HS Classic</div></div></td>
         </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">10</td>
             <td class="time-cell"><strong>1:56.16</strong></td>
@@ -398,7 +404,7 @@
             <td class="date-cell">Oct 06, 2012</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Marisol Rivera</span><span class="split-stroke">Backstroke</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Sierra Roh</span><span class="split-stroke">Breaststroke</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Amanda Grimshaw</span><span class="split-stroke">Butterfly</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Meghan Marner</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">High School Classic</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Backstroke</span><span class="split-swimmer">Marisol Rivera</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">Breaststroke</span><span class="split-swimmer">Sierra Roh</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">Butterfly</span><span class="split-swimmer">Amanda Grimshaw</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Meghan Marner</span><span class="split-time"></span></div><div class="relay-meet-row">High School Classic</div></div></td>
         </tr></tbody></table>
 </div>
 <h2 id="200-free-relay" class="event-heading">200 Free Relay</h2>
@@ -413,7 +419,7 @@
             <td class="date-cell">Nov 05, 2022</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Maggie Colombo</span><span class="split-stroke">Freestyle</span><span class="split-time">19.67</span></div><div class="relay-split-row"><span class="split-swimmer">Paisley White</span><span class="split-stroke">Freestyle</span><span class="split-time">16.08</span></div><div class="relay-split-row"><span class="split-swimmer">Natalie Armstrong</span><span class="split-stroke">Freestyle</span><span class="split-time">25.86</span></div><div class="relay-split-row"><span class="split-swimmer">Brianne Foley</span><span class="split-stroke">Freestyle</span><span class="split-time">42.10</span></div><div class="relay-meet-row">2022 D-3 AIA Girls State Championship</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Maggie Colombo</span><span class="split-time">19.67</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Paisley White</span><span class="split-time">16.08</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Natalie Armstrong</span><span class="split-time">25.86</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Brianne Foley</span><span class="split-time">42.10</span></div><div class="relay-meet-row">2022 D-3 AIA Girls State Championship</div></div></td>
         </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">2</td>
             <td class="time-cell"><strong>1:43.75</strong></td>
@@ -421,7 +427,7 @@
             <td class="date-cell">Nov 05, 2022</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Brianne Foley</span><span class="split-stroke">Freestyle</span><span class="split-time">26.18</span></div><div class="relay-split-row"><span class="split-swimmer">Ryann Lightcap</span><span class="split-stroke">Freestyle</span><span class="split-time">25.77</span></div><div class="relay-split-row"><span class="split-swimmer">Maggie Colombo</span><span class="split-stroke">Freestyle</span><span class="split-time">26.00</span></div><div class="relay-split-row"><span class="split-swimmer">Natalie Armstrong</span><span class="split-stroke">Freestyle</span><span class="split-time">25.80</span></div><div class="relay-meet-row">2022 D-3 AIA Girls State Championship</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Brianne Foley</span><span class="split-time">26.18</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Ryann Lightcap</span><span class="split-time">25.77</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Maggie Colombo</span><span class="split-time">26.00</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Natalie Armstrong</span><span class="split-time">25.80</span></div><div class="relay-meet-row">2022 D-3 AIA Girls State Championship</div></div></td>
         </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">3</td>
             <td class="time-cell"><strong>1:44.10</strong></td>
@@ -429,7 +435,7 @@
             <td class="date-cell">Nov 07, 2019</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Paisley White</span><span class="split-stroke">Freestyle</span><span class="split-time">26.77</span></div><div class="relay-split-row"><span class="split-swimmer">Maggie Colombo</span><span class="split-stroke">Freestyle</span><span class="split-time">26.24</span></div><div class="relay-split-row"><span class="split-swimmer">Sarynn Patterson</span><span class="split-stroke">Freestyle</span><span class="split-time">26.04</span></div><div class="relay-split-row"><span class="split-swimmer">Isabelle Sansom</span><span class="split-stroke">Freestyle</span><span class="split-time">25.05</span></div><div class="relay-meet-row">2019 D-3 AIA State Championship</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Paisley White</span><span class="split-time">26.77</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Maggie Colombo</span><span class="split-time">26.24</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Sarynn Patterson</span><span class="split-time">26.04</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Isabelle Sansom</span><span class="split-time">25.05</span></div><div class="relay-meet-row">2019 D-3 AIA State Championship</div></div></td>
         </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">4</td>
             <td class="time-cell"><strong>1:44.97</strong></td>
@@ -437,7 +443,7 @@
             <td class="date-cell">Oct 21, 2023</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Grace Davis</span><span class="split-stroke">Freestyle</span><span class="split-time">26.57</span></div><div class="relay-split-row"><span class="split-swimmer">Ryann Lightcap</span><span class="split-stroke">Freestyle</span><span class="split-time">27.24</span></div><div class="relay-split-row"><span class="split-swimmer">Brianne Foley</span><span class="split-stroke">Freestyle</span><span class="split-time">25.45</span></div><div class="relay-split-row"><span class="split-swimmer">Natalie Armstrong</span><span class="split-stroke">Freestyle</span><span class="split-time">25.71</span></div><div class="relay-meet-row">Pecan Classic</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Grace Davis</span><span class="split-time">26.57</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Ryann Lightcap</span><span class="split-time">27.24</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Brianne Foley</span><span class="split-time">25.45</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Natalie Armstrong</span><span class="split-time">25.71</span></div><div class="relay-meet-row">Pecan Classic</div></div></td>
         </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">5</td>
             <td class="time-cell"><strong>1:46.46</strong></td>
@@ -445,7 +451,7 @@
             <td class="date-cell">Nov 06, 2021</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Maggie Colombo</span><span class="split-stroke">Freestyle</span><span class="split-time">26.69</span></div><div class="relay-split-row"><span class="split-swimmer">Shaye Sulgar</span><span class="split-stroke">Freestyle</span><span class="split-time">27.73</span></div><div class="relay-split-row"><span class="split-swimmer">Natalie Armstrong</span><span class="split-stroke">Freestyle</span><span class="split-time">25.96</span></div><div class="relay-split-row"><span class="split-swimmer">Paisley White</span><span class="split-stroke">Freestyle</span><span class="split-time">26.08</span></div><div class="relay-meet-row">AIA D-III Girls State</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Maggie Colombo</span><span class="split-time">26.69</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Shaye Sulgar</span><span class="split-time">27.73</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Natalie Armstrong</span><span class="split-time">25.96</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Paisley White</span><span class="split-time">26.08</span></div><div class="relay-meet-row">AIA D-III Girls State</div></div></td>
         </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">6</td>
             <td class="time-cell"><strong>1:46.81</strong></td>
@@ -453,7 +459,7 @@
             <td class="date-cell">Nov 09, 2024</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Brianne Foley</span><span class="split-stroke">Freestyle</span><span class="split-time">26.10</span></div><div class="relay-split-row"><span class="split-swimmer">Adrianna Witte</span><span class="split-stroke">Freestyle</span><span class="split-time">27.24</span></div><div class="relay-split-row"><span class="split-swimmer">Hadley Cusson</span><span class="split-stroke">Freestyle</span><span class="split-time">28.35</span></div><div class="relay-split-row"><span class="split-swimmer">Grace Davis</span><span class="split-stroke">Freestyle</span><span class="split-time">25.12</span></div><div class="relay-meet-row">2024 D-3 AIA State Championship</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Brianne Foley</span><span class="split-time">26.10</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Adrianna Witte</span><span class="split-time">27.24</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Hadley Cusson</span><span class="split-time">28.35</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Grace Davis</span><span class="split-time">25.12</span></div><div class="relay-meet-row">2024 D-3 AIA State Championship</div></div></td>
         </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">7</td>
             <td class="time-cell"><strong>1:47.67</strong></td>
@@ -461,7 +467,7 @@
             <td class="date-cell">Sep 24, 2022</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Natalie Armstrong</span><span class="split-stroke">Freestyle</span><span class="split-time">27.25</span></div><div class="relay-split-row"><span class="split-swimmer">Ryann Lightcap</span><span class="split-stroke">Freestyle</span><span class="split-time">29.00</span></div><div class="relay-split-row"><span class="split-swimmer">Paisley White</span><span class="split-stroke">Freestyle</span><span class="split-time">25.86</span></div><div class="relay-split-row"><span class="split-swimmer">Maggie Colombo</span><span class="split-stroke">Freestyle</span><span class="split-time">25.56</span></div><div class="relay-meet-row">TYR High School Classic</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Natalie Armstrong</span><span class="split-time">27.25</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Ryann Lightcap</span><span class="split-time">29.00</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Paisley White</span><span class="split-time">25.86</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Maggie Colombo</span><span class="split-time">25.56</span></div><div class="relay-meet-row">TYR High School Classic</div></div></td>
         </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">8</td>
             <td class="time-cell"><strong>1:47.69</strong></td>
@@ -469,7 +475,7 @@
             <td class="date-cell">Oct 26, 2018</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Isabelle Sansom</span><span class="split-stroke">Freestyle</span><span class="split-time">27.44</span></div><div class="relay-split-row"><span class="split-swimmer">Sarynn Patterson</span><span class="split-stroke">Freestyle</span><span class="split-time">26.49</span></div><div class="relay-split-row"><span class="split-swimmer">Hazel Dasse</span><span class="split-stroke">Freestyle</span><span class="split-time">26.58</span></div><div class="relay-split-row"><span class="split-swimmer">Lindsey Schoel-Smith</span><span class="split-stroke">Freestyle</span><span class="split-time">27.18</span></div><div class="relay-meet-row">Southern Arizona Regional Qualifier</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Isabelle Sansom</span><span class="split-time">27.44</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Sarynn Patterson</span><span class="split-time">26.49</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Hazel Dasse</span><span class="split-time">26.58</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Lindsey Schoel-Smith</span><span class="split-time">27.18</span></div><div class="relay-meet-row">Southern Arizona Regional Qualifier</div></div></td>
         </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">9</td>
             <td class="time-cell"><strong>1:48.11</strong></td>
@@ -477,7 +483,7 @@
             <td class="date-cell">Oct 25, 2023</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Summer Cugini</span><span class="split-stroke">Freestyle</span><span class="split-time">28.13</span></div><div class="relay-split-row"><span class="split-swimmer">Ryann Lightcap</span><span class="split-stroke">Freestyle</span><span class="split-time">27.68</span></div><div class="relay-split-row"><span class="split-swimmer">Brianne Foley</span><span class="split-stroke">Freestyle</span><span class="split-time">26.05</span></div><div class="relay-split-row"><span class="split-swimmer">Natalie Armstrong</span><span class="split-stroke">Freestyle</span><span class="split-time">26.25</span></div><div class="relay-meet-row">Southern Arizona Region Qualifier</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Summer Cugini</span><span class="split-time">28.13</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Ryann Lightcap</span><span class="split-time">27.68</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Brianne Foley</span><span class="split-time">26.05</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Natalie Armstrong</span><span class="split-time">26.25</span></div><div class="relay-meet-row">Southern Arizona Region Qualifier</div></div></td>
         </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">10</td>
             <td class="time-cell"><strong>1:48.20</strong></td>
@@ -485,7 +491,7 @@
             <td class="date-cell">Nov 05, 2020</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Chloe Weatherwax</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Paisley White</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Violet Dasse</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Natalie Armstrong</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">AIA D-3 State Championship</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Chloe Weatherwax</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Paisley White</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Violet Dasse</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Natalie Armstrong</span><span class="split-time"></span></div><div class="relay-meet-row">AIA D-3 State Championship</div></div></td>
         </tr></tbody></table>
 </div>
 <h2 id="400-free-relay" class="event-heading">400 Free Relay</h2>
@@ -500,7 +506,7 @@
             <td class="date-cell">Oct 22, 2022</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Paisley White</span><span class="split-stroke">Freestyle</span><span class="split-time">57.96</span></div><div class="relay-split-row"><span class="split-swimmer">Maggie Colombo</span><span class="split-stroke">Freestyle</span><span class="split-time">57.59</span></div><div class="relay-split-row"><span class="split-swimmer">Brianne Foley</span><span class="split-stroke">Freestyle</span><span class="split-time">59.68</span></div><div class="relay-split-row"><span class="split-swimmer">Natalie Armstrong</span><span class="split-stroke">Freestyle</span><span class="split-time">58.13</span></div><div class="relay-meet-row">Pecan Classic</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Paisley White</span><span class="split-time">57.96</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Maggie Colombo</span><span class="split-time">57.59</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Brianne Foley</span><span class="split-time">59.68</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Natalie Armstrong</span><span class="split-time">58.13</span></div><div class="relay-meet-row">Pecan Classic</div></div></td>
         </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">2</td>
             <td class="time-cell"><strong>3:55.46</strong></td>
@@ -508,7 +514,7 @@
             <td class="date-cell">Oct 21, 2023</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Hadley Cusson</span><span class="split-stroke">Freestyle</span><span class="split-time">62.27</span></div><div class="relay-split-row"><span class="split-swimmer">Grace Davis</span><span class="split-stroke">Freestyle</span><span class="split-time">59.99</span></div><div class="relay-split-row"><span class="split-swimmer">Brianne Foley</span><span class="split-stroke">Freestyle</span><span class="split-time">56.87</span></div><div class="relay-split-row"><span class="split-swimmer">Natalie Armstrong</span><span class="split-stroke">Freestyle</span><span class="split-time">56.33</span></div><div class="relay-meet-row">Pecan Classic</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Hadley Cusson</span><span class="split-time">62.27</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Grace Davis</span><span class="split-time">59.99</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Brianne Foley</span><span class="split-time">56.87</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Natalie Armstrong</span><span class="split-time">56.33</span></div><div class="relay-meet-row">Pecan Classic</div></div></td>
         </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">3</td>
             <td class="time-cell"><strong>3:55.63</strong></td>
@@ -516,7 +522,7 @@
             <td class="date-cell">Nov 01, 2018</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Sarynn Patterson</span><span class="split-stroke">Freestyle</span><span class="split-time">59.90</span></div><div class="relay-split-row"><span class="split-swimmer">Ellie Radomsky</span><span class="split-stroke">Freestyle</span><span class="split-time">60.44</span></div><div class="relay-split-row"><span class="split-swimmer">Hazel Dasse</span><span class="split-stroke">Freestyle</span><span class="split-time">57.12</span></div><div class="relay-split-row"><span class="split-swimmer">Isabelle Sansom</span><span class="split-stroke">Freestyle</span><span class="split-time">58.17</span></div><div class="relay-meet-row">AIA D-3 Girls State Championship</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Sarynn Patterson</span><span class="split-time">59.90</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Ellie Radomsky</span><span class="split-time">60.44</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Hazel Dasse</span><span class="split-time">57.12</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Isabelle Sansom</span><span class="split-time">58.17</span></div><div class="relay-meet-row">AIA D-3 Girls State Championship</div></div></td>
         </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">4</td>
             <td class="time-cell"><strong>3:56.02</strong></td>
@@ -524,7 +530,7 @@
             <td class="date-cell">Nov 04, 2016</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Bridget Spooner</span><span class="split-stroke">Freestyle</span><span class="split-time">58.95</span></div><div class="relay-split-row"><span class="split-swimmer">Hazel Dasse</span><span class="split-stroke">Freestyle</span><span class="split-time">59.06</span></div><div class="relay-split-row"><span class="split-swimmer">Sarynn Patterson</span><span class="split-stroke">Freestyle</span><span class="split-time">60.72</span></div><div class="relay-split-row"><span class="split-swimmer">Lindsey Sohoel-Smith</span><span class="split-stroke">Freestyle</span><span class="split-time">57.29</span></div><div class="relay-meet-row">2016 D-3 AIA State Championship</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Bridget Spooner</span><span class="split-time">58.95</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Hazel Dasse</span><span class="split-time">59.06</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Sarynn Patterson</span><span class="split-time">60.72</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Lindsey Sohoel-Smith</span><span class="split-time">57.29</span></div><div class="relay-meet-row">2016 D-3 AIA State Championship</div></div></td>
         </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">5</td>
             <td class="time-cell"><strong>3:58.56</strong></td>
@@ -532,7 +538,7 @@
             <td class="date-cell">Nov 05, 2020</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Maggie Colombo</span><span class="split-stroke">Freestyle</span><span class="split-time">59.84</span></div><div class="relay-split-row"><span class="split-swimmer">Paisley White</span><span class="split-stroke">Freestyle</span><span class="split-time">59.16</span></div><div class="relay-split-row"><span class="split-swimmer">Kennady Pautler</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-swimmer">Natalie Armstrong</span><span class="split-stroke">Freestyle</span><span class="split-time"></span></div><div class="relay-meet-row">AIA D-3 State Championship</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Maggie Colombo</span><span class="split-time">59.84</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Paisley White</span><span class="split-time">59.16</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Kennady Pautler</span><span class="split-time"></span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Natalie Armstrong</span><span class="split-time"></span></div><div class="relay-meet-row">AIA D-3 State Championship</div></div></td>
         </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">6</td>
             <td class="time-cell"><strong>3:58.96</strong></td>
@@ -540,7 +546,7 @@
             <td class="date-cell">Nov 06, 2021</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Maggie Colombo</span><span class="split-stroke">Freestyle</span><span class="split-time">58.61</span></div><div class="relay-split-row"><span class="split-swimmer">Brianne Foley</span><span class="split-stroke">Freestyle</span><span class="split-time">61.46</span></div><div class="relay-split-row"><span class="split-swimmer">Shaye Sulgar</span><span class="split-stroke">Freestyle</span><span class="split-time">61.29</span></div><div class="relay-split-row"><span class="split-swimmer">Natalie Armstrong</span><span class="split-stroke">Freestyle</span><span class="split-time">57.60</span></div><div class="relay-meet-row">AIA D-III Girls State</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Maggie Colombo</span><span class="split-time">58.61</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Brianne Foley</span><span class="split-time">61.46</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Shaye Sulgar</span><span class="split-time">61.29</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Natalie Armstrong</span><span class="split-time">57.60</span></div><div class="relay-meet-row">AIA D-III Girls State</div></div></td>
         </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">7</td>
             <td class="time-cell"><strong>3:59.44</strong></td>
@@ -548,7 +554,7 @@
             <td class="date-cell">Nov 03, 2017</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Hazel Dasse</span><span class="split-stroke">Freestyle</span><span class="split-time">58.96</span></div><div class="relay-split-row"><span class="split-swimmer">Ellie Radomsky</span><span class="split-stroke">Freestyle</span><span class="split-time">62.16</span></div><div class="relay-split-row"><span class="split-swimmer">Sarynn Patterson</span><span class="split-stroke">Freestyle</span><span class="split-time">60.81</span></div><div class="relay-split-row"><span class="split-swimmer">Calla Isenberg</span><span class="split-stroke">Freestyle</span><span class="split-time">57.51</span></div><div class="relay-meet-row">2017 AIA Division III State Championships (Girls)</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Hazel Dasse</span><span class="split-time">58.96</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Ellie Radomsky</span><span class="split-time">62.16</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Sarynn Patterson</span><span class="split-time">60.81</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Calla Isenberg</span><span class="split-time">57.51</span></div><div class="relay-meet-row">2017 AIA Division III State Championships (Girls)</div></div></td>
         </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">8</td>
             <td class="time-cell"><strong>3:59.59</strong></td>
@@ -556,7 +562,7 @@
             <td class="date-cell">Nov 06, 2021</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Maggie Colombo</span><span class="split-stroke">Freestyle</span><span class="split-time">59.06</span></div><div class="relay-split-row"><span class="split-swimmer">Shaye Sulgar</span><span class="split-stroke">Freestyle</span><span class="split-time">62.92</span></div><div class="relay-split-row"><span class="split-swimmer">Paisley White</span><span class="split-stroke">Freestyle</span><span class="split-time">59.28</span></div><div class="relay-split-row"><span class="split-swimmer">Natalie Armstrong</span><span class="split-stroke">Freestyle</span><span class="split-time">58.33</span></div><div class="relay-meet-row">AIA D-III Girls State</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Maggie Colombo</span><span class="split-time">59.06</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Shaye Sulgar</span><span class="split-time">62.92</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Paisley White</span><span class="split-time">59.28</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Natalie Armstrong</span><span class="split-time">58.33</span></div><div class="relay-meet-row">AIA D-III Girls State</div></div></td>
         </tr><tr class="relay-row " onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">9</td>
             <td class="time-cell"><strong>4:00.33</strong></td>
@@ -564,7 +570,7 @@
             <td class="date-cell">Nov 08, 2025</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Isla Cerepak</span><span class="split-stroke">Freestyle</span><span class="split-time">59.75</span></div><div class="relay-split-row"><span class="split-swimmer">Rachel Anderson</span><span class="split-stroke">Freestyle</span><span class="split-time">64.90</span></div><div class="relay-split-row"><span class="split-swimmer">Stella Eftekhar</span><span class="split-stroke">Freestyle</span><span class="split-time">58.00</span></div><div class="relay-split-row"><span class="split-swimmer">Hadley Cusson</span><span class="split-stroke">Freestyle</span><span class="split-time">57.68</span></div><div class="relay-meet-row">D-3 AIA State Championship</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Isla Cerepak</span><span class="split-time">59.75</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Rachel Anderson</span><span class="split-time">64.90</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Stella Eftekhar</span><span class="split-time">58.00</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Hadley Cusson</span><span class="split-time">57.68</span></div><div class="relay-meet-row">D-3 AIA State Championship</div></div></td>
         </tr><tr class="relay-row table-row-alt" onclick="this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('show')">
             <td class="rank-cell">10</td>
             <td class="time-cell"><strong>4:00.39</strong></td>
@@ -572,7 +578,7 @@
             <td class="date-cell">Oct 27, 2017</td>
         </tr>
         <tr class="relay-details-row">
-            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-swimmer">Hazel Dasse</span><span class="split-stroke">Freestyle</span><span class="split-time">58.41</span></div><div class="relay-split-row"><span class="split-swimmer">Emma Morris</span><span class="split-stroke">Freestyle</span><span class="split-time">61.47</span></div><div class="relay-split-row"><span class="split-swimmer">Sarynn Patterson</span><span class="split-stroke">Freestyle</span><span class="split-time">61.49</span></div><div class="relay-split-row"><span class="split-swimmer">Calla Isenberg</span><span class="split-stroke">Freestyle</span><span class="split-time">59.02</span></div><div class="relay-meet-row">Southern Arizona Regional Qualifier</div></div></td>
+            <td colspan="4"><div class="relay-expanded-rows"><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Hazel Dasse</span><span class="split-time">58.41</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Emma Morris</span><span class="split-time">61.47</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Sarynn Patterson</span><span class="split-time">61.49</span></div><div class="relay-split-row"><span class="split-stroke">Freestyle</span><span class="split-swimmer">Calla Isenberg</span><span class="split-time">59.02</span></div><div class="relay-meet-row">Southern Arizona Regional Qualifier</div></div></td>
         </tr></tbody></table>
 </div>
 

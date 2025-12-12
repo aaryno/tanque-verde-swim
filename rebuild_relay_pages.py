@@ -165,8 +165,8 @@ def generate_relay_row_html(relay, gender, splits_data, event_type, row_num):
                 split_time = format_split_time(splits[i])
         
         expanded_html += f'<div class="relay-split-row">'
-        expanded_html += f'<span class="split-swimmer">{swimmer}</span>'
         expanded_html += f'<span class="split-stroke">{stroke}</span>'
+        expanded_html += f'<span class="split-swimmer">{swimmer}</span>'
         expanded_html += f'<span class="split-time">{split_time}</span>'
         expanded_html += '</div>'
     
@@ -308,14 +308,23 @@ def generate_full_page_html(gender, events, splits_data):
         
         .relay-split-row {{
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             padding: 0.25rem 0;
             border-bottom: 1px solid #eee;
+            white-space: nowrap;
+            gap: 0.5rem;
         }}
         
         .relay-split-row:last-of-type {{
             border-bottom: none;
+        }}
+        
+        .split-stroke {{
+            font-style: italic;
+            color: #666;
+            min-width: 5rem;
+            flex-shrink: 0;
         }}
         
         .split-swimmer {{
@@ -324,19 +333,13 @@ def generate_full_page_html(gender, events, splits_data):
             color: #333;
         }}
         
-        .split-stroke {{
-            font-style: italic;
-            color: #666;
-            margin: 0 1rem;
-            display: inline !important;
-        }}
-        
         .split-time {{
             font-family: 'Courier New', monospace;
             font-weight: bold;
             color: var(--tvhs-primary, #0a3622);
             min-width: 3rem;
             text-align: right;
+            flex-shrink: 0;
             display: inline !important;
         }}
         
@@ -415,22 +418,25 @@ def generate_full_page_html(gender, events, splits_data):
             }}
             
             .relay-split-row {{
-                flex-wrap: wrap;
-                padding: 0.4rem 0;
-            }}
-            
-            .split-swimmer {{
-                flex: 0 0 100%;
-                margin-bottom: 0.2rem;
+                flex-wrap: nowrap;
+                padding: 0.3rem 0;
+                gap: 0.3rem;
             }}
             
             .split-stroke {{
-                margin: 0;
-                font-size: 0.8rem;
+                min-width: 4rem;
+                font-size: 0.75rem;
+            }}
+            
+            .split-swimmer {{
+                font-size: 0.85rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }}
             
             .split-time {{
-                font-size: 0.9rem;
+                font-size: 0.85rem;
+                min-width: 2.5rem;
             }}
         }}
     </style>
