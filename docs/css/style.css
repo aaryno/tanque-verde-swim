@@ -400,6 +400,7 @@ body {
   border: 1px solid #ddd;
   border-top: none;
   padding: 0.75rem 1rem;
+  cursor: pointer;
 }
 
 .overall-record-card:last-child {
@@ -408,6 +409,93 @@ body {
 
 .overall-record-card:nth-child(odd) {
   background: #f8f9fa;
+}
+
+.overall-record-card:hover {
+  background: #e8f5e9;
+}
+
+/* Single line layout for records */
+.record-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.record-line .event-name {
+  flex: 0 0 180px;
+  font-weight: bold;
+  color: var(--tvhs-dark-green);
+}
+
+.record-line .record-time {
+  flex: 0 0 70px;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+}
+
+.record-line .record-athlete {
+  flex: 1;
+}
+
+.record-line .record-date {
+  flex: 0 0 100px;
+  font-size: 0.85rem;
+  color: #666;
+  text-align: right;
+}
+
+.expand-arrow {
+  font-size: 0.7rem;
+  color: #999;
+  transition: transform 0.2s ease;
+}
+
+.overall-record-card.expanded .expand-arrow {
+  transform: rotate(180deg);
+}
+
+/* Expanded content */
+.record-expanded {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.overall-record-card.expanded .record-expanded {
+  max-height: 300px;
+  padding-top: 0.5rem;
+}
+
+/* Relay splits in overall records */
+.overall-record-card .relay-splits {
+  margin-bottom: 0.5rem;
+}
+
+.overall-record-card .relay-split-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.overall-record-card .relay-split-row:last-child {
+  border-bottom: none;
+}
+
+.overall-record-card .split-swimmer {
+  font-weight: 500;
+}
+
+.overall-record-card .split-stroke {
+  font-style: italic;
+  color: #666;
+}
+
+.overall-record-card .split-time {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  color: var(--tvhs-primary);
 }
 
 .record-header {
@@ -476,17 +564,57 @@ body {
 }
 
 /* Mobile adjustments for overall records */
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .overall-record-card {
     padding: 0.5rem 0.75rem;
   }
   
-  .event-name {
+  .record-line {
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+  }
+  
+  .record-line .event-name {
+    flex: 0 0 50%;
     font-size: 0.9rem;
   }
   
-  .record-date {
+  .record-line .record-date {
+    flex: 0 0 40%;
     font-size: 0.75rem;
+  }
+  
+  .record-line .record-time {
+    flex: 0 0 auto;
+  }
+  
+  .record-line .record-athlete {
+    flex: 1 1 100%;
+    font-size: 0.9rem;
+  }
+  
+  .expand-arrow {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+  }
+  
+  .overall-record-card {
+    position: relative;
+  }
+  
+  /* Mobile relay splits - 2 lines per swimmer */
+  .overall-record-card .relay-split-row {
+    flex-wrap: wrap;
+  }
+  
+  .overall-record-card .split-swimmer {
+    flex: 0 0 100%;
+  }
+  
+  .overall-record-card .split-stroke,
+  .overall-record-card .split-time {
+    flex: 0 0 auto;
   }
   
   .record-time {

@@ -567,45 +567,110 @@ def generate_overall_records_page(records_dir, docs_dir):
     boys_relays = extract_top_relay_records(records_dir / 'relay-records-boys.md')
     girls_relays = extract_top_relay_records(records_dir / 'relay-records-girls.md')
     
+    # Load relay splits
+    splits_data = {}
+    splits_file = Path('data/historical_splits/all_relay_splits.json')
+    if splits_file.exists():
+        import json
+        with open(splits_file, 'r') as f:
+            splits_data = json.load(f)
+    
     def get_last_names(participants):
         """Extract last names from participants string"""
         names = [n.strip() for n in participants.split(',')]
         return ', '.join(n.split()[-1] for n in names)
+    
+    def find_relay_splits(relay, gender, event):
+        """Find splits for a relay from the splits data"""
+        swimmers = [s.strip() for s in relay['participants'].split(',')]
+        relay_set = set(s.lower() for s in swimmers)
+        
+        for split_entry in splits_data.get(gender, []):
+            entry_type = split_entry.get('type', '')
+            if entry_type != event:
+                continue
+            
+            entry_swimmers = []
+            for s in split_entry.get('swimmers', []):
+                import re
+                name = re.sub(r'\s*-\s*(Fr|So|Jr|Sr)\.$', '', s, flags=re.IGNORECASE)
+                entry_swimmers.append(name.strip())
+            
+            entry_set = set(s.lower() for s in entry_swimmers)
+            if len(relay_set & entry_set) >= 3:
+                return split_entry.get('splits', [])
+        return []
+    
+    def get_stroke_for_position(event, pos):
+        if 'Medley' in event:
+            strokes = ['Backstroke', 'Breaststroke', 'Butterfly', 'Freestyle']
+            return strokes[pos] if pos < 4 else 'Freestyle'
+        return 'Freestyle'
     
     # Build HTML content for overall records with special layout
     def build_records_html(records, relays, gender):
         html = f'<div class="overall-records-section" id="{gender}-records">\n'
         html += f'<h2 class="gender-header">{gender.title()} Team Records</h2>\n'
         
-        # Individual records
+        # Individual records - single line with expandable location
         for record in records:
-            html += f'''<div class="overall-record-card">
-    <div class="record-header">
+            html += f'''<div class="overall-record-card" onclick="this.classList.toggle('expanded')">
+    <div class="record-line">
         <span class="event-name">{record['event']}</span>
-        <span class="record-date">{record['date']}</span>
-    </div>
-    <div class="record-main">
         <span class="record-time">{record['time']}</span>
         <span class="record-athlete">{record['name']}</span>
+        <span class="record-date">{record['date']}</span>
+        <span class="expand-arrow">▼</span>
     </div>
-    <div class="record-meet">📍 {record['meet']}</div>
+    <div class="record-expanded">
+        <div class="record-meet">📍 {record['meet']}</div>
+    </div>
 </div>\n'''
         
-        # Relay records section
+        # Relay records section with expandable splits
         if relays:
             html += f'<h3 class="relay-header">Relay Records</h3>\n'
             for relay in relays:
                 last_names = get_last_names(relay['participants'])
-                html += f'''<div class="overall-record-card relay-record-card">
-    <div class="record-header">
+                swimmers = [s.strip() for s in relay['participants'].split(',')]
+                splits = find_relay_splits(relay, gender, relay['event'])
+                
+                # Build splits HTML
+                splits_html = ''
+                for i, swimmer in enumerate(swimmers):
+                    stroke = get_stroke_for_position(relay['event'], i)
+                    split_time = ''
+                    if splits:
+                        if relay['event'] == '400 Free Relay' and len(splits) == 8:
+                            idx = i * 2
+                            if idx + 1 < len(splits):
+                                try:
+                                    t1 = float(splits[idx].replace('00:', ''))
+                                    t2 = float(splits[idx + 1].replace('00:', ''))
+                                    split_time = f"{t1 + t2:.2f}"
+                                except:
+                                    pass
+                        elif i < len(splits):
+                            split_time = splits[i].replace('00:', '')
+                    
+                    splits_html += f'''<div class="relay-split-row">
+    <span class="split-swimmer">{swimmer}</span>
+    <span class="split-stroke">{stroke}</span>
+    <span class="split-time">{split_time}</span>
+</div>'''
+                
+                html += f'''<div class="overall-record-card relay-record-card" onclick="this.classList.toggle('expanded')">
+    <div class="record-line">
         <span class="event-name">{relay['event']}</span>
-        <span class="record-date">{relay['date']}</span>
-    </div>
-    <div class="record-main">
         <span class="record-time">{relay['time']}</span>
         <span class="record-athlete relay-names">{last_names}</span>
+        <span class="record-date">{relay['date']}</span>
+        <span class="expand-arrow">▼</span>
     </div>
-    <div class="record-meet">📍 {relay['meet']}</div>
+    <div class="record-expanded">
+        <div class="relay-splits">{splits_html}</div>
+        <div class="record-meet">📍 {relay['meet']}</div>
+    </div>
 </div>\n'''
         
         html += '</div>\n'
