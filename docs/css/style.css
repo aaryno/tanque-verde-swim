@@ -1555,3 +1555,95 @@ h2[id], h3[id], .event-heading[id] {
   }
 }
 
+/* ===== LANDSCAPE MODE ADJUSTMENTS ===== */
+@media (orientation: landscape) and (max-height: 500px) {
+  /* Compact headers in landscape */
+  #main-nav {
+    padding: 0.2rem 0.5rem !important;
+  }
+  
+  .quick-nav {
+    padding: 0.15rem 0.5rem !important;
+  }
+  
+  .page-header {
+    padding: 0.25rem 0 !important;
+  }
+  
+  .page-header h1 {
+    font-size: 1rem !important;
+    margin: 0 !important;
+  }
+  
+  .hero-header {
+    padding: 0.25rem 0 !important;
+  }
+  
+  /* Adjust sticky positions for compact headers */
+  .quick-nav {
+    top: 32px !important;
+  }
+  
+  .page-header,
+  .hero-header {
+    top: 60px !important;
+  }
+  
+  /* Tables take full width in landscape */
+  .table-responsive {
+    width: 100%;
+  }
+  
+  .table {
+    width: 100%;
+    table-layout: auto;
+  }
+  
+  /* Revert mobile card layout to table layout in landscape */
+  .table thead {
+    display: table-header-group;
+  }
+  
+  .table tbody {
+    display: table-row-group;
+  }
+  
+  .table tbody tr {
+    display: table-row;
+    background: transparent;
+    box-shadow: none;
+    margin-bottom: 0;
+    padding: 0;
+  }
+  
+  .table tbody td {
+    display: table-cell;
+    border: 1px solid #dee2e6;
+    padding: 0.5rem;
+  }
+  
+  /* Ensure all columns visible in landscape */
+  .table-5col tbody td,
+  .table-6col tbody td {
+    display: table-cell !important;
+  }
+  
+  /* Hide mobile-specific pseudo-elements */
+  .table tbody td::before {
+    display: none !important;
+  }
+  
+  /* Compact event headings */
+  .event-heading {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* Jump To dropdown compact */
+  .jump-to-dropdown {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+
