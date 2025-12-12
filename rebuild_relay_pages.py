@@ -325,6 +325,7 @@ def generate_full_page_html(gender, events, splits_data):
             font-style: italic;
             color: #666;
             margin: 0 1rem;
+            display: inline !important;
         }}
         
         .split-time {{
@@ -333,6 +334,7 @@ def generate_full_page_html(gender, events, splits_data):
             color: var(--tvhs-primary, #0a3622);
             min-width: 3rem;
             text-align: right;
+            display: inline !important;
         }}
         
         .relay-meet-row {{
