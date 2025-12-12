@@ -1,137 +1,118 @@
-# Tanque Verde High School - AI Assistant Context
+# Tanque Verde Swimming Website - AI Assistant Context
 
 ## Repository Overview
 
-Private analysis repository for **Tanque Verde High School** (TVHS).
+This is the **self-contained** repository for the Tanque Verde High School Swimming records website.
 
-**Team Code:**   
-**LSC:**  ()  
-**SwimCloud ID:** 
-
-This repository was initialized with [swim-data-tool](https://github.com/aaryno/swim-data-tool) v0.10.0.
+**Live Site:** https://tanqueverdeswim.org  
+**GitHub:** https://github.com/aaryno/tanque-verde-swim
 
 ## Purpose
 
-Track and analyze swim team records and statistics:
-- Historical swimmer data (-)
-- Team records by course (SCY, LCM, SCM)
-- Top 10 all-time lists
-- Annual summaries
+Track and publish swim team records and statistics:
+- Team records (SCY) by grade and overall
+- All-time and seasonal Top 10 lists
+- Annual season summaries with records broken
+- Relay records with split times
 
-## Tool Usage
-
-All data operations use `swim-data-tool`:
+## Quick Start
 
 ```bash
-# Navigate to repository
-cd ~/swimming/tanque-verde-high-school
+cd ~/workspaces/swimming/tanque-verde-swim
 
-# Activate swim-data-tool environment
-source ~/swimming/swim-data-tool/.venv/bin/activate
+# Regenerate entire website
+python3 generate_website.py
 
-# Run commands
-swim-data-tool status
-swim-data-tool import swimmers --src=usa-swimming
-swim-data-tool generate records
+# Commit and deploy
+git add -A && git commit -m "Update records" && git push
 ```
-
-## Data Flow
-
-1. **Import:** `swim-data-tool import swimmers` → Downloads from USA Swimming API
-2. **Process:** `swim-data-tool classify unattached` → Classifies swim types
-3. **Generate:** `swim-data-tool generate records` → Creates markdown records
-4. **Publish:** `swim-data-tool publish records` → Publishes to public repo
 
 ## Directory Structure
 
 ```
-data/
-├── raw/                # Raw API data (NOT committed)
-│   └── swimmers/       # Individual swimmer CSVs
-├── processed/          # Classified data (NOT committed)
-│   └── unattached/     # Probationary vs unattached
-├── records/            # Generated records (committed)
-│   ├── scy/
-│   ├── lcm/
-│   └── scm/
-├── reports/            # Analysis reports (committed)
-└── lookups/            # Reference data (committed)
+tanque-verde-swim/
+├── docs/                      # Generated HTML (GitHub Pages)
+│   ├── index.html             # Splash page (manually maintained)
+│   ├── css/style.css          # Main stylesheet
+│   ├── images/                # Logos and images
+│   ├── records/               # Overall, relays, by-grade pages
+│   ├── top10/                 # All-time and seasonal top 10
+│   └── annual/                # Annual summary pages
+│
+├── records/                   # Source markdown files
+│   ├── records-boys.md        # Boys records (SOURCE OF TRUTH)
+│   ├── records-girls.md       # Girls records (SOURCE OF TRUTH)
+│   ├── annual-summary-*.md    # Annual data
+│   └── top10-*.md             # Top 10 lists
+│
+├── data/                      # JSON data files
+│   ├── class_records_history.json    # Class records with history
+│   ├── historical_splits/            # Relay splits by season
+│   └── all_relays.json               # Raw relay data
+│
+├── WORKFLOW.md                # Detailed maintenance guide
+└── [Python scripts]           # Generation scripts
 ```
 
-## Configuration
+## Active Scripts
 
-Configuration is in `.env` (not committed). View with:
+| Script | Purpose |
+|--------|---------|
+| `generate_website.py` | **Main entry point** - runs all generators |
+| `generate_annual_pages.py` | Creates annual summary HTML pages |
+| `rebuild_relay_pages.py` | Creates relay pages with splits |
+| `enrich_previous_record_locations.py` | Adds meet info to previous records |
+
+## Common Tasks
+
+### Add a New Record
+1. Edit `records/records-boys.md` or `records/records-girls.md`
+2. Run `python3 generate_website.py`
+3. Commit and push
+
+### Add Class Records for New Season
+1. Create script like `add_2025_26_class_records.py`
+2. Run it to update `data/class_records_history.json`
+3. Run `python3 enrich_previous_record_locations.py`
+4. Run `python3 generate_website.py`
+
+### Update Relay Splits
+1. Add/edit `data/historical_splits/splits_YYYY-YY.json`
+2. Run `python3 rebuild_relay_pages.py`
+
+## Data Sources
+
+- **AZPreps365** - Arizona high school results
+- **MaxPreps** - National high school database
+- **Manual Entry** - Historical records, corrections
+
+## Deployment
+
+Auto-deploys via GitHub Pages when pushed to `main` branch.
 
 ```bash
-swim-data-tool config
+git add -A
+git commit -m "Description"
+git push origin main
 ```
 
-Key settings:
-- Team codes and IDs
-- Data directory paths
-- Collection date ranges
-- Public repository URL
+## Key Files
 
-## Common Workflows
+| File | Description |
+|------|-------------|
+| `records/records-boys.md` | Boys team records - SOURCE OF TRUTH |
+| `records/records-girls.md` | Girls team records - SOURCE OF TRUTH |
+| `data/class_records_history.json` | Class records with previous holders |
+| `docs/index.html` | Splash page (manually maintained) |
+| `docs/css/style.css` | All website styling |
 
-### Initial Data Collection
+## Notes
 
-```bash
-# Import all historical swimmers
-swim-data-tool import swimmers --src=usa-swimming
-
-# Classify unattached swims
-swim-data-tool classify unattached
-
-# Generate all records
-swim-data-tool generate records --course=all
-```
-
-### Update Records
-
-```bash
-# Import new swimmers or update existing
-swim-data-tool import swimmers --src=usa-swimming --start-date=YYYY-MM-DD
-
-# Regenerate records
-swim-data-tool generate records --course=all
-
-# Publish to public repo
-swim-data-tool publish records
-```
-
-### Add Specific Swimmer
-
-```bash
-# Import individual swimmer
-swim-data-tool import swimmer "First Last" --full
-
-# Regenerate affected records
-swim-data-tool generate records
-```
-
-## Privacy & Security
-
-**⚠️ PRIVATE REPOSITORY - Contains PII**
-
-- Swimmer names, dates of birth, PersonKeys
-- Raw data files are NOT committed (in .gitignore)
-- Only aggregate records are public
-- Never commit `.env` file
-
-## Tools Reference
-
-- **Tool Repo:** ~/swimming/swim-data-tool
-- **Tool Version:** 0.10.0
-- **Docs:** See ~/swimming/swim-data-tool/claude.md
-- **Commands:** `swim-data-tool --help`
-
-## Team-Specific Notes
-
-<!-- Add team-specific workflows, policies, or notes here -->
+- The `docs/` folder is deployed directly via GitHub Pages
+- The splash page (`docs/index.html`) is manually maintained
+- All other HTML pages are generated from markdown/JSON
+- CDN may cache pages - hard refresh to see updates
 
 ---
 
-**Generated by:** swim-data-tool v0.10.0  
-**Initialized:** 2025-10-08
-
+**Last Updated:** December 12, 2025
