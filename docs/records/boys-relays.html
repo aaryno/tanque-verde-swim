@@ -181,15 +181,21 @@
             color: #666;
         }
         
-        /* Mobile styles - override main style.css table transformations */
+        /* Mobile styles - ensure proper table display */
         @media (max-width: 768px) {
-            /* Prevent table from being converted to block display */
-            .table-relay,
-            .table-relay thead,
-            .table-relay tbody,
+            /* Explicit table display values (style.css now excludes .table-relay from grid) */
+            .table-relay {
+                display: table !important;
+            }
+            .table-relay thead {
+                display: none !important;
+            }
+            .table-relay tbody {
+                display: table-row-group !important;
+            }
             .table-relay th,
             .table-relay td {
-                display: revert !important;
+                display: table-cell !important;
             }
             
             /* Relay rows need explicit table-row display */
