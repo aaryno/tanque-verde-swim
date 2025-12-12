@@ -712,8 +712,8 @@ def generate_overall_records_page(records_dir, docs_dir):
                             split_time = splits[i].replace('00:', '')
                     
                     splits_html += f'''<div class="relay-split-row">
-    <span class="split-swimmer">{swimmer}</span>
     <span class="split-stroke">{stroke}</span>
+    <span class="split-swimmer">{swimmer}</span>
     <span class="split-time">{split_time}</span>
 </div>'''
                 

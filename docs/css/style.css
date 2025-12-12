@@ -429,13 +429,14 @@ body {
 }
 
 .record-line .record-time {
-  flex: 0 0 70px;
+  flex: 0 0 85px;
   font-family: 'Courier New', monospace;
   font-weight: bold;
 }
 
 .record-line .record-athlete {
   flex: 1;
+  text-align: left;
 }
 
 .record-line .record-date {
@@ -474,7 +475,9 @@ body {
 
 .overall-record-card .relay-split-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0.2rem 0;
   border-bottom: 1px solid #eee;
 }
@@ -483,8 +486,23 @@ body {
   border-bottom: none;
 }
 
+.overall-record-card .split-stroke {
+  flex: 0 0 90px;
+  font-style: italic;
+  color: #666;
+  text-align: left;
+}
+
 .overall-record-card .split-swimmer {
+  flex: 1;
   font-weight: 500;
+  text-align: left;
+}
+
+.overall-record-card .split-time {
+  flex: 0 0 60px;
+  font-family: 'Courier New', monospace;
+  text-align: right;
 }
 
 .overall-record-card .split-stroke {
