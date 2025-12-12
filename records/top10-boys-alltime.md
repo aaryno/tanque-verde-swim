@@ -11,7 +11,7 @@
 |-----:|-----:|---------|------|------|------|
 | **1** | **21.64 (r)** | **Nicholas Cusson** | **JR** | **Nov 05, 2022** | **2022 D-3 AIA Boys State Championship** |
 | 2 | 22.13 | Samuel Stott | SR | Nov 05, 2022 | 2022 D-3 AIA Boys State Championship |
-| 3 | 22.43 (r) | Joseph Breinholt | SR | 2016-17 | 200FR Relay Leadoff |
+| 3 | 22.43 (r) | Joseph Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier |
 | 4 | 22.96 | Zachary Duerkop | SR | Sep 27, 2025 | Arena High School Classic |
 | 5 | 23.21 (r) | Jackson Eftekhar | JR | Nov 08, 2025 | D-3 AIA State Championship |
 | 6 | 23.26 (r) | Trevor Clausen | SO | Nov 07, 2019 | 2019 D-3 AIA State Championship |
