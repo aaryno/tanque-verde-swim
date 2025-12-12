@@ -2,10 +2,15 @@
 """
 Generate enhanced annual summary pages with index.html-style formatting.
 Generates pages oldest to newest to properly track class records.
+
+Usage:
+    python generate_annual_pages.py           # Generate all years
+    python generate_annual_pages.py 2024-25   # Generate single year
 """
 
 import json
 import re
+import sys
 from pathlib import Path
 from datetime import datetime
 
@@ -331,39 +336,102 @@ def generate_season_overview_html(data, class_records_count):
                 Records shown are based on available data from state meets and select invitationals.</small>
             </div>'''
     
-    # Add best times table
-    if data['best_times']:
-        html += '''
-            
-            <h4 class="mt-5 mb-3">Season Best Times</h4>
-            <div class="table-responsive">
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>Event</th>
-                            <th>Boys</th>
-                            <th>Girls</th>
-                        </tr>
-                    </thead>
-                    <tbody>'''
+    html += '''
+        </div>
+    </div>'''
+    
+    return html
+
+
+def generate_season_best_times_html(data):
+    """Generate the Boys and Girls Season Best Times sections with card-based layout"""
+    if not data['best_times']:
+        return ''
+    
+    html = ''
+    
+    # Boys Season Best
+    html += f'''
+    <!-- Boys Season Best -->
+    <div class="container my-5" id="boys-best-times">
+        <div class="section-header" data-section="boys-best">
+            <h2 class="mb-0">🏊 Boys Season Best</h2>
+            <button class="section-toggle" data-target="boys-best-content">
+                <span class="toggle-icon">▼</span>
+            </button>
+        </div>
+        <div class="section-content" id="boys-best-content">
+            <div class="top10-event-cards">'''
+    
+    for bt in data['best_times']:
+        boys_swimmer = re.sub(r'\((\w+)\)', lambda m: grade_to_badge(m.group(1)), bt['boys_swimmer'])
+        event_name = bt['event']
+        # Expand abbreviated event names
+        event_expansions = {
+            '50 Free': '50 Freestyle', '100 Free': '100 Freestyle', 
+            '200 Free': '200 Freestyle', '500 Free': '500 Freestyle',
+            '100 Back': '100 Backstroke', '100 Breast': '100 Breaststroke',
+            '100 Fly': '100 Butterfly', '200 IM': '200 Individual Medley'
+        }
+        event_full = event_expansions.get(event_name, event_name)
         
-        for bt in data['best_times']:
-            boys_swimmer = re.sub(r'\((\w+)\)', lambda m: grade_to_badge(m.group(1)), bt['boys_swimmer'])
-            girls_swimmer = re.sub(r'\((\w+)\)', lambda m: grade_to_badge(m.group(1)), bt['girls_swimmer'])
-            
-            html += f'''
-                        <tr>
-                            <td>{bt['event']}</td>
-                            <td><span class="time">{bt['boys_time']}</span> - {boys_swimmer}</td>
-                            <td><span class="time">{bt['girls_time']}</span> - {girls_swimmer}</td>
-                        </tr>'''
-        
-        html += '''
-                    </tbody>
-                </table>
-            </div>'''
+        html += f'''
+                <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                    <div class="top10-line">
+                        <span class="event-name">{event_full}</span>
+                        <span class="top10-time">{bt['boys_time']}</span>
+                        <span class="top10-athlete">{boys_swimmer}</span>
+                        <span class="expand-arrow">▼</span>
+                    </div>
+                    <div class="top10-expanded">
+                        <div class="record-meet">📍 Meet info not available</div>
+                    </div>
+                </div>'''
     
     html += '''
+            </div>
+        </div>
+    </div>'''
+    
+    # Girls Season Best
+    html += f'''
+    <!-- Girls Season Best -->
+    <div class="container my-5" id="girls-best-times">
+        <div class="section-header" data-section="girls-best">
+            <h2 class="mb-0">🏊 Girls Season Best</h2>
+            <button class="section-toggle" data-target="girls-best-content">
+                <span class="toggle-icon">▼</span>
+            </button>
+        </div>
+        <div class="section-content" id="girls-best-content">
+            <div class="top10-event-cards">'''
+    
+    for bt in data['best_times']:
+        girls_swimmer = re.sub(r'\((\w+)\)', lambda m: grade_to_badge(m.group(1)), bt['girls_swimmer'])
+        event_name = bt['event']
+        event_expansions = {
+            '50 Free': '50 Freestyle', '100 Free': '100 Freestyle', 
+            '200 Free': '200 Freestyle', '500 Free': '500 Freestyle',
+            '100 Back': '100 Backstroke', '100 Breast': '100 Breaststroke',
+            '100 Fly': '100 Butterfly', '200 IM': '200 Individual Medley'
+        }
+        event_full = event_expansions.get(event_name, event_name)
+        
+        html += f'''
+                <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                    <div class="top10-line">
+                        <span class="event-name">{event_full}</span>
+                        <span class="top10-time">{bt['girls_time']}</span>
+                        <span class="top10-athlete">{girls_swimmer}</span>
+                        <span class="expand-arrow">▼</span>
+                    </div>
+                    <div class="top10-expanded">
+                        <div class="record-meet">📍 Meet info not available</div>
+                    </div>
+                </div>'''
+    
+    html += '''
+            </div>
         </div>
     </div>'''
     
@@ -635,6 +703,8 @@ def generate_page_html(data, class_records):
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item jump-to-link" href="#season-overview">📊 Season Overview</a></li>
+                    <li><a class="dropdown-item jump-to-link" href="#boys-best-times">🏊 Boys Season Best</a></li>
+                    <li><a class="dropdown-item jump-to-link" href="#girls-best-times">🏊 Girls Season Best</a></li>
                     <li><a class="dropdown-item jump-to-link" href="#records-broken">📈 Records Broken</a></li>
                     <li><a class="dropdown-item jump-to-link" href="#class-records">🎯 Class Records</a></li>
                 </ul>
@@ -642,6 +712,7 @@ def generate_page_html(data, class_records):
         </div>
     </div>
 {generate_season_overview_html(data, class_records_count)}
+{generate_season_best_times_html(data)}
 {generate_records_broken_html(data)}
 {generate_class_records_html(class_records, season)}
     
@@ -690,6 +761,17 @@ def generate_page_html(data, class_records):
                 const season = link.textContent;
                 link.href = '/top10/' + g + '-' + season + '.html';
             }});
+            
+            // Reorder Season Best sections based on gender
+            const boysSection = document.getElementById('boys-best-times');
+            const girlsSection = document.getElementById('girls-best-times');
+            if (boysSection && girlsSection) {{
+                if (g === 'girls') {{
+                    girlsSection.parentNode.insertBefore(girlsSection, boysSection);
+                }} else {{
+                    boysSection.parentNode.insertBefore(boysSection, girlsSection);
+                }}
+            }}
         }}
         
         document.querySelectorAll('.btn-gender').forEach(btn => {{
@@ -762,12 +844,25 @@ def main():
         with open(class_records_file, 'r') as f:
             class_records = json.load(f)
     
-    print("🏊 Generating Enhanced Annual Summary Pages")
+    # Check for single-season argument
+    single_season = None
+    if len(sys.argv) > 1:
+        single_season = sys.argv[1]
+        if single_season not in SEASONS:
+            print(f"❌ Invalid season: {single_season}")
+            print(f"   Valid seasons: {', '.join(SEASONS)}")
+            sys.exit(1)
+        print(f"🏊 Generating Annual Summary Page for {single_season}")
+    else:
+        print("🏊 Generating Enhanced Annual Summary Pages")
     print("=" * 50)
+    
+    # Determine which seasons to generate
+    seasons_to_generate = [single_season] if single_season else SEASONS
     
     # Generate pages oldest to newest
     generated = 0
-    for season in SEASONS:
+    for season in seasons_to_generate:
         md_file = records_dir / f'annual-summary-{season}.md'
         if not md_file.exists():
             print(f"  ⚠️  {season}: No markdown file found, skipping")

@@ -107,6 +107,8 @@
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item jump-to-link" href="#season-overview">📊 Season Overview</a></li>
+                    <li><a class="dropdown-item jump-to-link" href="#boys-best-times">🏊 Boys Season Best</a></li>
+                    <li><a class="dropdown-item jump-to-link" href="#girls-best-times">🏊 Girls Season Best</a></li>
                     <li><a class="dropdown-item jump-to-link" href="#records-broken">📈 Records Broken</a></li>
                     <li><a class="dropdown-item jump-to-link" href="#class-records">🎯 Class Records</a></li>
                 </ul>
@@ -157,60 +159,208 @@
                     </div>
                 </div>
             </div>
-            
-            <h4 class="mt-5 mb-3">Season Best Times</h4>
-            <div class="table-responsive">
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>Event</th>
-                            <th>Boys</th>
-                            <th>Girls</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>50 Free</td>
-                            <td><span class="time">22.96</span> - Zachary Duerkop <span class="grade-badge grade-sr">SR</span></td>
-                            <td><span class="time">26.61</span> - Hadley Cusson <span class="grade-badge grade-jr">JR</span></td>
-                        </tr>
-                        <tr>
-                            <td>100 Free</td>
-                            <td><span class="time">51.43</span> - Jackson Eftekhar <span class="grade-badge grade-jr">JR</span></td>
-                            <td><span class="time">58.02</span> - Isla Cerepak <span class="grade-badge grade-fr">FR</span></td>
-                        </tr>
-                        <tr>
-                            <td>200 Free</td>
-                            <td><span class="time">1:48.07</span> - Zachary Duerkop <span class="grade-badge grade-sr">SR</span></td>
-                            <td><span class="time">2:16.83</span> - Ella Bissmeyer <span class="grade-badge grade-so">SO</span></td>
-                        </tr>
-                        <tr>
-                            <td>500 Free</td>
-                            <td><span class="time">5:07.85</span> - Kent Olsson <span class="grade-badge grade-fr">FR</span></td>
-                            <td><span class="time">6:01.25</span> - Talia Schwab <span class="grade-badge grade-fr">FR</span></td>
-                        </tr>
-                        <tr>
-                            <td>100 Back</td>
-                            <td><span class="time">57.27</span> - Wade Olsson <span class="grade-badge grade-jr">JR</span></td>
-                            <td><span class="time">1:02.29</span> - Logan Sulger <span class="grade-badge grade-sr">SR</span></td>
-                        </tr>
-                        <tr>
-                            <td>100 Breast</td>
-                            <td><span class="time">59.61</span> - Zachary Duerkop <span class="grade-badge grade-sr">SR</span></td>
-                            <td><span class="time">1:13.71</span> - Adrianna Witte <span class="grade-badge grade-sr">SR</span></td>
-                        </tr>
-                        <tr>
-                            <td>100 Fly</td>
-                            <td><span class="time">52.48</span> - Zachary Duerkop <span class="grade-badge grade-sr">SR</span></td>
-                            <td><span class="time">1:07.42</span> - Stella Eftekhar <span class="grade-badge grade-fr">FR</span></td>
-                        </tr>
-                        <tr>
-                            <td>200 IM</td>
-                            <td><span class="time">1:57.78</span> - Wade Olsson <span class="grade-badge grade-jr">JR</span></td>
-                            <td><span class="time">2:30.38</span> - Madeline Barnard <span class="grade-badge grade-sr">SR</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+        </div>
+    </div>
+
+    <!-- Boys Season Best -->
+    <div class="container my-5" id="boys-best-times">
+        <div class="section-header" data-section="boys-best">
+            <h2 class="mb-0">🏊 Boys Season Best</h2>
+            <button class="section-toggle" data-target="boys-best-content">
+                <span class="toggle-icon">▼</span>
+            </button>
+        </div>
+        <div class="section-content" id="boys-best-content">
+            <div class="top10-event-cards">
+                <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                    <div class="top10-line">
+                        <span class="event-name">50 Freestyle</span>
+                        <span class="top10-time">22.96</span>
+                        <span class="top10-athlete">Zachary Duerkop <span class="grade-badge grade-sr">SR</span></span>
+                        <span class="expand-arrow">▼</span>
+                    </div>
+                    <div class="top10-expanded">
+                        <div class="record-meet">📍 Meet info not available</div>
+                    </div>
+                </div>
+                <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                    <div class="top10-line">
+                        <span class="event-name">100 Freestyle</span>
+                        <span class="top10-time">51.43</span>
+                        <span class="top10-athlete">Jackson Eftekhar <span class="grade-badge grade-jr">JR</span></span>
+                        <span class="expand-arrow">▼</span>
+                    </div>
+                    <div class="top10-expanded">
+                        <div class="record-meet">📍 Meet info not available</div>
+                    </div>
+                </div>
+                <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                    <div class="top10-line">
+                        <span class="event-name">200 Freestyle</span>
+                        <span class="top10-time">1:48.07</span>
+                        <span class="top10-athlete">Zachary Duerkop <span class="grade-badge grade-sr">SR</span></span>
+                        <span class="expand-arrow">▼</span>
+                    </div>
+                    <div class="top10-expanded">
+                        <div class="record-meet">📍 Meet info not available</div>
+                    </div>
+                </div>
+                <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                    <div class="top10-line">
+                        <span class="event-name">500 Freestyle</span>
+                        <span class="top10-time">5:07.85</span>
+                        <span class="top10-athlete">Kent Olsson <span class="grade-badge grade-fr">FR</span></span>
+                        <span class="expand-arrow">▼</span>
+                    </div>
+                    <div class="top10-expanded">
+                        <div class="record-meet">📍 Meet info not available</div>
+                    </div>
+                </div>
+                <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                    <div class="top10-line">
+                        <span class="event-name">100 Backstroke</span>
+                        <span class="top10-time">57.27</span>
+                        <span class="top10-athlete">Wade Olsson <span class="grade-badge grade-jr">JR</span></span>
+                        <span class="expand-arrow">▼</span>
+                    </div>
+                    <div class="top10-expanded">
+                        <div class="record-meet">📍 Meet info not available</div>
+                    </div>
+                </div>
+                <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                    <div class="top10-line">
+                        <span class="event-name">100 Breaststroke</span>
+                        <span class="top10-time">59.61</span>
+                        <span class="top10-athlete">Zachary Duerkop <span class="grade-badge grade-sr">SR</span></span>
+                        <span class="expand-arrow">▼</span>
+                    </div>
+                    <div class="top10-expanded">
+                        <div class="record-meet">📍 Meet info not available</div>
+                    </div>
+                </div>
+                <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                    <div class="top10-line">
+                        <span class="event-name">100 Butterfly</span>
+                        <span class="top10-time">52.48</span>
+                        <span class="top10-athlete">Zachary Duerkop <span class="grade-badge grade-sr">SR</span></span>
+                        <span class="expand-arrow">▼</span>
+                    </div>
+                    <div class="top10-expanded">
+                        <div class="record-meet">📍 Meet info not available</div>
+                    </div>
+                </div>
+                <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                    <div class="top10-line">
+                        <span class="event-name">200 Individual Medley</span>
+                        <span class="top10-time">1:57.78</span>
+                        <span class="top10-athlete">Wade Olsson <span class="grade-badge grade-jr">JR</span></span>
+                        <span class="expand-arrow">▼</span>
+                    </div>
+                    <div class="top10-expanded">
+                        <div class="record-meet">📍 Meet info not available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Girls Season Best -->
+    <div class="container my-5" id="girls-best-times">
+        <div class="section-header" data-section="girls-best">
+            <h2 class="mb-0">🏊 Girls Season Best</h2>
+            <button class="section-toggle" data-target="girls-best-content">
+                <span class="toggle-icon">▼</span>
+            </button>
+        </div>
+        <div class="section-content" id="girls-best-content">
+            <div class="top10-event-cards">
+                <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                    <div class="top10-line">
+                        <span class="event-name">50 Freestyle</span>
+                        <span class="top10-time">26.61</span>
+                        <span class="top10-athlete">Hadley Cusson <span class="grade-badge grade-jr">JR</span></span>
+                        <span class="expand-arrow">▼</span>
+                    </div>
+                    <div class="top10-expanded">
+                        <div class="record-meet">📍 Meet info not available</div>
+                    </div>
+                </div>
+                <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                    <div class="top10-line">
+                        <span class="event-name">100 Freestyle</span>
+                        <span class="top10-time">58.02</span>
+                        <span class="top10-athlete">Isla Cerepak <span class="grade-badge grade-fr">FR</span></span>
+                        <span class="expand-arrow">▼</span>
+                    </div>
+                    <div class="top10-expanded">
+                        <div class="record-meet">📍 Meet info not available</div>
+                    </div>
+                </div>
+                <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                    <div class="top10-line">
+                        <span class="event-name">200 Freestyle</span>
+                        <span class="top10-time">2:16.83</span>
+                        <span class="top10-athlete">Ella Bissmeyer <span class="grade-badge grade-so">SO</span></span>
+                        <span class="expand-arrow">▼</span>
+                    </div>
+                    <div class="top10-expanded">
+                        <div class="record-meet">📍 Meet info not available</div>
+                    </div>
+                </div>
+                <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                    <div class="top10-line">
+                        <span class="event-name">500 Freestyle</span>
+                        <span class="top10-time">6:01.25</span>
+                        <span class="top10-athlete">Talia Schwab <span class="grade-badge grade-fr">FR</span></span>
+                        <span class="expand-arrow">▼</span>
+                    </div>
+                    <div class="top10-expanded">
+                        <div class="record-meet">📍 Meet info not available</div>
+                    </div>
+                </div>
+                <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                    <div class="top10-line">
+                        <span class="event-name">100 Backstroke</span>
+                        <span class="top10-time">1:02.29</span>
+                        <span class="top10-athlete">Logan Sulger <span class="grade-badge grade-sr">SR</span></span>
+                        <span class="expand-arrow">▼</span>
+                    </div>
+                    <div class="top10-expanded">
+                        <div class="record-meet">📍 Meet info not available</div>
+                    </div>
+                </div>
+                <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                    <div class="top10-line">
+                        <span class="event-name">100 Breaststroke</span>
+                        <span class="top10-time">1:13.71</span>
+                        <span class="top10-athlete">Adrianna Witte <span class="grade-badge grade-sr">SR</span></span>
+                        <span class="expand-arrow">▼</span>
+                    </div>
+                    <div class="top10-expanded">
+                        <div class="record-meet">📍 Meet info not available</div>
+                    </div>
+                </div>
+                <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                    <div class="top10-line">
+                        <span class="event-name">100 Butterfly</span>
+                        <span class="top10-time">1:07.42</span>
+                        <span class="top10-athlete">Stella Eftekhar <span class="grade-badge grade-fr">FR</span></span>
+                        <span class="expand-arrow">▼</span>
+                    </div>
+                    <div class="top10-expanded">
+                        <div class="record-meet">📍 Meet info not available</div>
+                    </div>
+                </div>
+                <div class="top10-card" onclick="this.classList.toggle('expanded')">
+                    <div class="top10-line">
+                        <span class="event-name">200 Individual Medley</span>
+                        <span class="top10-time">2:30.38</span>
+                        <span class="top10-athlete">Madeline Barnard <span class="grade-badge grade-sr">SR</span></span>
+                        <span class="expand-arrow">▼</span>
+                    </div>
+                    <div class="top10-expanded">
+                        <div class="record-meet">📍 Meet info not available</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -690,6 +840,17 @@
                 const season = link.textContent;
                 link.href = '/top10/' + g + '-' + season + '.html';
             });
+            
+            // Reorder Season Best sections based on gender
+            const boysSection = document.getElementById('boys-best-times');
+            const girlsSection = document.getElementById('girls-best-times');
+            if (boysSection && girlsSection) {
+                if (g === 'girls') {
+                    girlsSection.parentNode.insertBefore(girlsSection, boysSection);
+                } else {
+                    boysSection.parentNode.insertBefore(boysSection, girlsSection);
+                }
+            }
         }
         
         document.querySelectorAll('.btn-gender').forEach(btn => {
