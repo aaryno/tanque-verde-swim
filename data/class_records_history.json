@@ -1,0 +1,2690 @@
+[
+  {
+    "season": "2007-08",
+    "gender": "boys",
+    "event": "200 Freestyle",
+    "grade": "FR",
+    "time": "2:48.05",
+    "name": "Kurt Matsunaga",
+    "date": "Nov 2007",
+    "meet": "2007 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2007-08",
+    "gender": "boys",
+    "event": "100 Backstroke",
+    "grade": "FR",
+    "time": "1:12.51",
+    "name": "Conor Montijo",
+    "date": "Nov 2007",
+    "meet": "2007 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2007-08",
+    "gender": "boys",
+    "event": "200 Individual Medley",
+    "grade": "FR",
+    "time": "2:30.66",
+    "name": "Matthew Nanni",
+    "date": "Nov 2007",
+    "meet": "2007 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2007-08",
+    "gender": "girls",
+    "event": "50 Freestyle",
+    "grade": "SO",
+    "time": "35.65",
+    "name": "Samantha Kappler",
+    "date": "Nov 2007",
+    "meet": "2007 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2007-08",
+    "gender": "girls",
+    "event": "500 Freestyle",
+    "grade": "SR",
+    "time": "6:25.65",
+    "name": "Janessa Grabe",
+    "date": "Nov 2007",
+    "meet": "2007 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2007-08",
+    "gender": "girls",
+    "event": "100 Breaststroke",
+    "grade": "SR",
+    "time": "1:20.06",
+    "name": "Janessa Grabe",
+    "date": "Nov 2007",
+    "meet": "2007 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2007-08",
+    "gender": "girls",
+    "event": "200 Individual Medley",
+    "grade": "FR",
+    "time": "2:58.12",
+    "name": "Dana Kristofitz",
+    "date": "Nov 2007",
+    "meet": "2007 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2008-09",
+    "gender": "boys",
+    "event": "100 Freestyle",
+    "grade": "FR",
+    "time": "56.66",
+    "name": "Xavier Rivera",
+    "date": "Nov 2008",
+    "meet": "2008 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2008-09",
+    "gender": "boys",
+    "event": "100 Backstroke",
+    "grade": "FR",
+    "time": "1:04.76",
+    "name": "Xavier Rivera",
+    "date": "Nov 2008",
+    "meet": "2008 AIA State Championship",
+    "previous": {
+      "time": "1:12.51",
+      "name": "Conor Montijo",
+      "date": "Nov 2007",
+      "season": "2007-08"
+    }
+  },
+  {
+    "season": "2008-09",
+    "gender": "boys",
+    "event": "200 Individual Medley",
+    "grade": "SO",
+    "time": "2:23.23",
+    "name": "Matthew Nanni",
+    "date": "Nov 2008",
+    "meet": "2008 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2008-09",
+    "gender": "girls",
+    "event": "50 Freestyle",
+    "grade": "JR",
+    "time": "27.52",
+    "name": "Rachel Decesari",
+    "date": "Nov 2008",
+    "meet": "2008 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2008-09",
+    "gender": "girls",
+    "event": "100 Freestyle",
+    "grade": "SO",
+    "time": "1:10.11",
+    "name": "Dana Kristofitz",
+    "date": "Nov 2008",
+    "meet": "2008 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2008-09",
+    "gender": "girls",
+    "event": "100 Butterfly",
+    "grade": "JR",
+    "time": "1:11.40",
+    "name": "Rachel Decesari",
+    "date": "Nov 2008",
+    "meet": "2008 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2008-09",
+    "gender": "girls",
+    "event": "200 Individual Medley",
+    "grade": "SO",
+    "time": "2:55.24",
+    "name": "Dana Kristofitz",
+    "date": "Nov 2008",
+    "meet": "2008 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2009-10",
+    "gender": "boys",
+    "event": "50 Freestyle",
+    "grade": "SO",
+    "time": "26.92",
+    "name": "Jose Perez",
+    "date": "Nov 2009",
+    "meet": "2009 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2009-10",
+    "gender": "boys",
+    "event": "50 Freestyle",
+    "grade": "FR",
+    "time": "28.40",
+    "name": "Brandon Kapela",
+    "date": "Nov 2009",
+    "meet": "2009 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2009-10",
+    "gender": "boys",
+    "event": "100 Backstroke",
+    "grade": "SO",
+    "time": "1:01.91",
+    "name": "Xavier Rivera",
+    "date": "Nov 2009",
+    "meet": "2009 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2009-10",
+    "gender": "boys",
+    "event": "100 Breaststroke",
+    "grade": "JR",
+    "time": "1:16.71",
+    "name": "Kurt Matsunaga",
+    "date": "Nov 2009",
+    "meet": "2009 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2009-10",
+    "gender": "boys",
+    "event": "100 Butterfly",
+    "grade": "SO",
+    "time": "1:00.99",
+    "name": "Xavier Rivera",
+    "date": "Nov 2009",
+    "meet": "2009 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2009-10",
+    "gender": "boys",
+    "event": "200 Individual Medley",
+    "grade": "JR",
+    "time": "2:54.53",
+    "name": "Ben Wheeler",
+    "date": "Nov 2009",
+    "meet": "2009 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2009-10",
+    "gender": "girls",
+    "event": "50 Freestyle",
+    "grade": "SO",
+    "time": "25.58",
+    "name": "Carly Wilson",
+    "date": "Nov 2009",
+    "meet": "2009 AIA State Championship",
+    "previous": {
+      "time": "35.65",
+      "name": "Samantha Kappler",
+      "date": "Nov 2007",
+      "season": "2007-08"
+    }
+  },
+  {
+    "season": "2009-10",
+    "gender": "girls",
+    "event": "200 Freestyle",
+    "grade": "FR",
+    "time": "2:55.51",
+    "name": "Rachel Foss",
+    "date": "Nov 2009",
+    "meet": "2009 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2009-10",
+    "gender": "girls",
+    "event": "100 Backstroke",
+    "grade": "JR",
+    "time": "1:28.61",
+    "name": "Dana Kristofitz",
+    "date": "Nov 2009",
+    "meet": "2009 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2009-10",
+    "gender": "girls",
+    "event": "100 Butterfly",
+    "grade": "SO",
+    "time": "1:00.93",
+    "name": "Carly Wilson",
+    "date": "Nov 2009",
+    "meet": "2009 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2009-10",
+    "gender": "girls",
+    "event": "200 Individual Medley",
+    "grade": "JR",
+    "time": "3:01.98",
+    "name": "Dana Kristofitz",
+    "date": "Nov 2009",
+    "meet": "2009 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2010-11",
+    "gender": "boys",
+    "event": "100 Butterfly",
+    "grade": "JR",
+    "time": "57.54",
+    "name": "Xavier Rivera",
+    "date": "Nov 2010",
+    "meet": "2010 D-2 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2010-11",
+    "gender": "girls",
+    "event": "50 Freestyle",
+    "grade": "JR",
+    "time": "23.84",
+    "name": "Carly Wilson",
+    "date": "Nov 2010",
+    "meet": "2010 D-2 AIA State Championship",
+    "previous": {
+      "time": "27.52",
+      "name": "Rachel Decesari",
+      "date": "Nov 2008",
+      "season": "2008-09"
+    }
+  },
+  {
+    "season": "2010-11",
+    "gender": "girls",
+    "event": "100 Freestyle",
+    "grade": "JR",
+    "time": "52.12",
+    "name": "Carly Wilson",
+    "date": "Nov 2010",
+    "meet": "2010 D-2 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2010-11",
+    "gender": "girls",
+    "event": "200 Freestyle",
+    "grade": "JR",
+    "time": "2:14.87",
+    "name": "Carly Wilson",
+    "date": "Sep 23, 2010",
+    "meet": "CDO Classic",
+    "previous": null
+  },
+  {
+    "season": "2010-11",
+    "gender": "girls",
+    "event": "500 Freestyle",
+    "grade": "JR",
+    "time": "5:27.18",
+    "name": "Carly Wilson",
+    "date": "Oct 21, 2010",
+    "meet": "Pecan Classic",
+    "previous": null
+  },
+  {
+    "season": "2010-11",
+    "gender": "girls",
+    "event": "100 Backstroke",
+    "grade": "JR",
+    "time": "1:00.33",
+    "name": "Carly Wilson",
+    "date": "Sep 23, 2010",
+    "meet": "CDO Classic",
+    "previous": {
+      "time": "1:28.61",
+      "name": "Dana Kristofitz",
+      "date": "Nov 2009",
+      "season": "2009-10"
+    }
+  },
+  {
+    "season": "2011-12",
+    "gender": "boys",
+    "event": "100 Backstroke",
+    "grade": "SR",
+    "time": "1:03.62",
+    "name": "Xavier Rivera",
+    "date": "Nov 2011",
+    "meet": "2011 D-2 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2011-12",
+    "gender": "girls",
+    "event": "50 Freestyle",
+    "grade": "SR",
+    "time": "24.41",
+    "name": "Carly Wilson",
+    "date": "Nov 2011",
+    "meet": "2011 D-2 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2011-12",
+    "gender": "girls",
+    "event": "100 Freestyle",
+    "grade": "SR",
+    "time": "52.54",
+    "name": "Carly Wilson",
+    "date": "Nov 2011",
+    "meet": "2011 D-2 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2011-12",
+    "gender": "girls",
+    "event": "200 Freestyle",
+    "grade": "SR",
+    "time": "2:02.06",
+    "name": "Carly Wilson",
+    "date": "Oct 18, 2011",
+    "meet": "Pecan Classic",
+    "previous": null
+  },
+  {
+    "season": "2012-13",
+    "gender": "boys",
+    "event": "50 Freestyle",
+    "grade": "JR",
+    "time": "25.27",
+    "name": "Andrew Lam",
+    "date": "Oct 13, 2012",
+    "meet": "Tiger Last Chance Invitational",
+    "previous": null
+  },
+  {
+    "season": "2012-13",
+    "gender": "boys",
+    "event": "50 Freestyle",
+    "grade": "SR",
+    "time": "27.57",
+    "name": "Wyatt Wimberly",
+    "date": "Oct 06, 2012",
+    "meet": "High School Classic",
+    "previous": null
+  },
+  {
+    "season": "2012-13",
+    "gender": "boys",
+    "event": "100 Freestyle",
+    "grade": "JR",
+    "time": "55.89",
+    "name": "Andrew Lam",
+    "date": "Oct 13, 2012",
+    "meet": "Tiger Last Chance Invitational",
+    "previous": null
+  },
+  {
+    "season": "2012-13",
+    "gender": "boys",
+    "event": "100 Freestyle",
+    "grade": "SR",
+    "time": "1:15.24",
+    "name": "Alexander Mitchell",
+    "date": "Oct 06, 2012",
+    "meet": "High School Classic",
+    "previous": null
+  },
+  {
+    "season": "2012-13",
+    "gender": "boys",
+    "event": "200 Freestyle",
+    "grade": "SR",
+    "time": "2:13.28",
+    "name": "Keith Kristofitz",
+    "date": "Oct 13, 2012",
+    "meet": "Tiger Last Chance Invitational",
+    "previous": null
+  },
+  {
+    "season": "2012-13",
+    "gender": "boys",
+    "event": "500 Freestyle",
+    "grade": "SR",
+    "time": "5:53.49",
+    "name": "Keith Kristofitz",
+    "date": "Oct 06, 2012",
+    "meet": "High School Classic",
+    "previous": null
+  },
+  {
+    "season": "2012-13",
+    "gender": "boys",
+    "event": "200 Individual Medley",
+    "grade": "JR",
+    "time": "2:48.20",
+    "name": "Greg Wheeler",
+    "date": "Oct 06, 2012",
+    "meet": "High School Classic",
+    "previous": {
+      "time": "2:54.53",
+      "name": "Ben Wheeler",
+      "date": "Nov 2009",
+      "season": "2009-10"
+    }
+  },
+  {
+    "season": "2012-13",
+    "gender": "girls",
+    "event": "200 Freestyle",
+    "grade": "FR",
+    "time": "2:34.75",
+    "name": "Sierra Roh",
+    "date": "Oct 06, 2012",
+    "meet": "High School Classic",
+    "previous": {
+      "time": "2:55.51",
+      "name": "Rachel Foss",
+      "date": "Nov 2009",
+      "season": "2009-10"
+    }
+  },
+  {
+    "season": "2012-13",
+    "gender": "girls",
+    "event": "100 Backstroke",
+    "grade": "SO",
+    "time": "1:50.78",
+    "name": "Nicole Ortega",
+    "date": "Oct 13, 2012",
+    "meet": "Tiger Last Chance Invitational",
+    "previous": null
+  },
+  {
+    "season": "2012-13",
+    "gender": "girls",
+    "event": "100 Breaststroke",
+    "grade": "JR",
+    "time": "1:06.04",
+    "name": "Marisol Rivera",
+    "date": "Nov 03, 2012",
+    "meet": "2012 AIA Division II State Championships",
+    "previous": null
+  },
+  {
+    "season": "2012-13",
+    "gender": "girls",
+    "event": "200 Individual Medley",
+    "grade": "JR",
+    "time": "2:39.26",
+    "name": "Meghan Marner",
+    "date": "Oct 06, 2012",
+    "meet": "High School Classic",
+    "previous": {
+      "time": "3:01.98",
+      "name": "Dana Kristofitz",
+      "date": "Nov 2009",
+      "season": "2009-10"
+    }
+  },
+  {
+    "season": "2013-14",
+    "gender": "boys",
+    "event": "100 Freestyle",
+    "grade": "SR",
+    "time": "53.91",
+    "name": "Andrew Lam",
+    "date": "Oct 05, 2013",
+    "meet": "High School Classic",
+    "previous": {
+      "time": "1:15.24",
+      "name": "Alexander Mitchell",
+      "date": "Oct 06, 2012",
+      "season": "2012-13"
+    }
+  },
+  {
+    "season": "2013-14",
+    "gender": "boys",
+    "event": "200 Freestyle",
+    "grade": "FR",
+    "time": "2:31.79",
+    "name": "Alexander Flores",
+    "date": "Nov 02, 2013",
+    "meet": "Southern Arizona Regional Qualifier",
+    "previous": {
+      "time": "2:48.05",
+      "name": "Kurt Matsunaga",
+      "date": "Nov 2007",
+      "season": "2007-08"
+    }
+  },
+  {
+    "season": "2013-14",
+    "gender": "boys",
+    "event": "100 Breaststroke",
+    "grade": "SR",
+    "time": "1:25.84",
+    "name": "Forrest Carlton",
+    "date": "Oct 05, 2013",
+    "meet": "High School Classic",
+    "previous": null
+  },
+  {
+    "season": "2013-14",
+    "gender": "boys",
+    "event": "100 Breaststroke",
+    "grade": "FR",
+    "time": "1:36.09",
+    "name": "Alexander Flores",
+    "date": "Oct 05, 2013",
+    "meet": "High School Classic",
+    "previous": null
+  },
+  {
+    "season": "2013-14",
+    "gender": "boys",
+    "event": "100 Butterfly",
+    "grade": "FR",
+    "time": "1:29.63",
+    "name": "Alexander Flores",
+    "date": "Oct 05, 2013",
+    "meet": "High School Classic",
+    "previous": null
+  },
+  {
+    "season": "2013-14",
+    "gender": "boys",
+    "event": "200 Individual Medley",
+    "grade": "SR",
+    "time": "2:21.41",
+    "name": "Andrew Lam",
+    "date": "Oct 26, 2013",
+    "meet": "Mike Ward Memorial Invitational",
+    "previous": null
+  },
+  {
+    "season": "2013-14",
+    "gender": "girls",
+    "event": "50 Freestyle",
+    "grade": "FR",
+    "time": "37.21",
+    "name": "Elyse Johnson",
+    "date": "Oct 26, 2013",
+    "meet": "Mike Ward Memorial Invitational",
+    "previous": null
+  },
+  {
+    "season": "2013-14",
+    "gender": "girls",
+    "event": "100 Freestyle",
+    "grade": "SO",
+    "time": "1:08.53",
+    "name": "Sierra Roh",
+    "date": "Nov 02, 2013",
+    "meet": "Southern Arizona Regional Qualifier",
+    "previous": {
+      "time": "1:10.11",
+      "name": "Dana Kristofitz",
+      "date": "Nov 2008",
+      "season": "2008-09"
+    }
+  },
+  {
+    "season": "2013-14",
+    "gender": "girls",
+    "event": "200 Freestyle",
+    "grade": "SO",
+    "time": "2:28.50",
+    "name": "Sierra Roh",
+    "date": "Oct 26, 2013",
+    "meet": "Mike Ward Memorial Invitational",
+    "previous": null
+  },
+  {
+    "season": "2013-14",
+    "gender": "girls",
+    "event": "500 Freestyle",
+    "grade": "SR",
+    "time": "5:34.97",
+    "name": "Marisol Rivera",
+    "date": "Nov 02, 2013",
+    "meet": "2013 AIA Division II State Championships",
+    "previous": {
+      "time": "6:25.65",
+      "name": "Janessa Grabe",
+      "date": "Nov 2007",
+      "season": "2007-08"
+    }
+  },
+  {
+    "season": "2013-14",
+    "gender": "girls",
+    "event": "100 Breaststroke",
+    "grade": "SO",
+    "time": "1:31.55",
+    "name": "Sierra Roh",
+    "date": "Oct 05, 2013",
+    "meet": "High School Classic",
+    "previous": null
+  },
+  {
+    "season": "2013-14",
+    "gender": "girls",
+    "event": "100 Breaststroke",
+    "grade": "FR",
+    "time": "1:36.85",
+    "name": "Elyse Johnson",
+    "date": "Oct 26, 2013",
+    "meet": "Mike Ward Memorial Invitational",
+    "previous": null
+  },
+  {
+    "season": "2013-14",
+    "gender": "girls",
+    "event": "200 Individual Medley",
+    "grade": "JR",
+    "time": "2:35.04",
+    "name": "Madisyn Clausen",
+    "date": "Oct 26, 2013",
+    "meet": "Mike Ward Memorial Invitational",
+    "previous": {
+      "time": "2:39.26",
+      "name": "Meghan Marner",
+      "date": "Oct 06, 2012",
+      "season": "2012-13"
+    }
+  },
+  {
+    "season": "2014-15",
+    "gender": "boys",
+    "event": "50 Freestyle",
+    "grade": "SO",
+    "time": "26.89",
+    "name": "Alexander Flores",
+    "date": "Oct 31, 2014",
+    "meet": "Southern Arizona Region Qualifier",
+    "previous": {
+      "time": "26.92",
+      "name": "Jose Perez",
+      "date": "Nov 2009",
+      "season": "2009-10"
+    }
+  },
+  {
+    "season": "2014-15",
+    "gender": "boys",
+    "event": "100 Freestyle",
+    "grade": "JR",
+    "time": "54.09",
+    "name": "Austin Morris",
+    "date": "Oct 11, 2014",
+    "meet": "Marana Tiger Last Chance Invitational",
+    "previous": {
+      "time": "55.89",
+      "name": "Andrew Lam",
+      "date": "Oct 13, 2012",
+      "season": "2012-13"
+    }
+  },
+  {
+    "season": "2014-15",
+    "gender": "boys",
+    "event": "100 Freestyle",
+    "grade": "SO",
+    "time": "1:08.90",
+    "name": "Avery Robinson",
+    "date": "Oct 31, 2014",
+    "meet": "Southern Arizona Region Qualifier",
+    "previous": null
+  },
+  {
+    "season": "2014-15",
+    "gender": "boys",
+    "event": "200 Freestyle",
+    "grade": "JR",
+    "time": "2:00.05",
+    "name": "Austin Morris",
+    "date": "Oct 31, 2014",
+    "meet": "Southern Arizona Region Qualifier",
+    "previous": null
+  },
+  {
+    "season": "2014-15",
+    "gender": "boys",
+    "event": "200 Freestyle",
+    "grade": "FR",
+    "time": "2:08.51",
+    "name": "Jerah Francone",
+    "date": "Oct 25, 2014",
+    "meet": "Mike Ward Memorial (Tucson, AZ)",
+    "previous": {
+      "time": "2:31.79",
+      "name": "Alexander Flores",
+      "date": "Nov 02, 2013",
+      "season": "2013-14"
+    }
+  },
+  {
+    "season": "2014-15",
+    "gender": "boys",
+    "event": "500 Freestyle",
+    "grade": "JR",
+    "time": "5:27.34",
+    "name": "Austin Morris",
+    "date": "Oct 31, 2014",
+    "meet": "Southern Arizona Region Qualifier",
+    "previous": null
+  },
+  {
+    "season": "2014-15",
+    "gender": "boys",
+    "event": "100 Backstroke",
+    "grade": "JR",
+    "time": "1:00.88",
+    "name": "Austin Morris",
+    "date": "Nov 08, 2014",
+    "meet": "2014 AIA Division II State Meet - Finals",
+    "previous": null
+  },
+  {
+    "season": "2014-15",
+    "gender": "boys",
+    "event": "100 Backstroke",
+    "grade": "FR",
+    "time": "1:02.18",
+    "name": "Samuel Merrill",
+    "date": "Oct 31, 2014",
+    "meet": "Southern Arizona Region Qualifier",
+    "previous": {
+      "time": "1:04.76",
+      "name": "Xavier Rivera",
+      "date": "Nov 2008",
+      "season": "2008-09"
+    }
+  },
+  {
+    "season": "2014-15",
+    "gender": "boys",
+    "event": "100 Breaststroke",
+    "grade": "FR",
+    "time": "1:20.46",
+    "name": "Jerah Francone",
+    "date": "Oct 25, 2014",
+    "meet": "Mike Ward Memorial (Tucson, AZ)",
+    "previous": {
+      "time": "1:36.09",
+      "name": "Alexander Flores",
+      "date": "Oct 05, 2013",
+      "season": "2013-14"
+    }
+  },
+  {
+    "season": "2014-15",
+    "gender": "boys",
+    "event": "100 Breaststroke",
+    "grade": "SO",
+    "time": "1:33.72",
+    "name": "Kyle Ramsden",
+    "date": "Oct 31, 2014",
+    "meet": "Southern Arizona Region Qualifier",
+    "previous": null
+  },
+  {
+    "season": "2014-15",
+    "gender": "boys",
+    "event": "200 Individual Medley",
+    "grade": "FR",
+    "time": "2:26.49",
+    "name": "Jerah Francone",
+    "date": "Oct 31, 2014",
+    "meet": "Southern Arizona Region Qualifier",
+    "previous": {
+      "time": "2:30.66",
+      "name": "Matthew Nanni",
+      "date": "Nov 2007",
+      "season": "2007-08"
+    }
+  },
+  {
+    "season": "2014-15",
+    "gender": "girls",
+    "event": "50 Freestyle",
+    "grade": "FR",
+    "time": "36.45",
+    "name": "Cheyanne Stevenson",
+    "date": "Oct 31, 2014",
+    "meet": "Southern Arizona Region Qualifier",
+    "previous": {
+      "time": "37.21",
+      "name": "Elyse Johnson",
+      "date": "Oct 26, 2013",
+      "season": "2013-14"
+    }
+  },
+  {
+    "season": "2014-15",
+    "gender": "girls",
+    "event": "100 Freestyle",
+    "grade": "FR",
+    "time": "1:25.67",
+    "name": "Cheyanne Stevenson",
+    "date": "Oct 25, 2014",
+    "meet": "Mike Ward Memorial (Tucson, AZ)",
+    "previous": null
+  },
+  {
+    "season": "2014-15",
+    "gender": "girls",
+    "event": "200 Freestyle",
+    "grade": "SO",
+    "time": "2:11.68",
+    "name": "Bridget Spooner",
+    "date": "Nov 08, 2014",
+    "meet": "2014 AIA Division II State Championships",
+    "previous": {
+      "time": "2:28.50",
+      "name": "Sierra Roh",
+      "date": "Oct 26, 2013",
+      "season": "2013-14"
+    }
+  },
+  {
+    "season": "2014-15",
+    "gender": "girls",
+    "event": "500 Freestyle",
+    "grade": "SO",
+    "time": "5:56.61",
+    "name": "Bridget Spooner",
+    "date": "Nov 08, 2014",
+    "meet": "2014 AIA Division II State Championships",
+    "previous": null
+  },
+  {
+    "season": "2014-15",
+    "gender": "girls",
+    "event": "100 Backstroke",
+    "grade": "SR",
+    "time": "1:47.02",
+    "name": "Nicole Ortega",
+    "date": "Oct 31, 2014",
+    "meet": "Southern Arizona Region Qualifier",
+    "previous": null
+  },
+  {
+    "season": "2014-15",
+    "gender": "girls",
+    "event": "100 Breaststroke",
+    "grade": "SR",
+    "time": "1:16.11",
+    "name": "Madisyn Clausen",
+    "date": "Oct 31, 2014",
+    "meet": "Southern Arizona Region Qualifier",
+    "previous": {
+      "time": "1:20.06",
+      "name": "Janessa Grabe",
+      "date": "Nov 2007",
+      "season": "2007-08"
+    }
+  },
+  {
+    "season": "2015-16",
+    "gender": "boys",
+    "event": "100 Freestyle",
+    "grade": "JR",
+    "time": "49.10",
+    "name": "Joseph Breinholt",
+    "date": "Nov 06, 2015",
+    "meet": "2015 D-2 AIA State Championship",
+    "previous": {
+      "time": "54.09",
+      "name": "Austin Morris",
+      "date": "Oct 11, 2014",
+      "season": "2014-15"
+    }
+  },
+  {
+    "season": "2015-16",
+    "gender": "boys",
+    "event": "100 Freestyle",
+    "grade": "SR",
+    "time": "52.36",
+    "name": "Austin Morris",
+    "date": "Oct 24, 2015",
+    "meet": "Small School Championships",
+    "previous": {
+      "time": "53.91",
+      "name": "Andrew Lam",
+      "date": "Oct 05, 2013",
+      "season": "2013-14"
+    }
+  },
+  {
+    "season": "2015-16",
+    "gender": "boys",
+    "event": "200 Freestyle",
+    "grade": "JR",
+    "time": "1:48.76",
+    "name": "Joseph Breinholt",
+    "date": "Nov 06, 2015",
+    "meet": "2015 D-2 AIA State Championship",
+    "previous": {
+      "time": "2:00.05",
+      "name": "Austin Morris",
+      "date": "Oct 31, 2014",
+      "season": "2014-15"
+    }
+  },
+  {
+    "season": "2015-16",
+    "gender": "boys",
+    "event": "200 Freestyle",
+    "grade": "SR",
+    "time": "1:54.76",
+    "name": "Austin Morris",
+    "date": "Nov 06, 2015",
+    "meet": "2015 D-2 AIA State Championship",
+    "previous": {
+      "time": "2:13.28",
+      "name": "Keith Kristofitz",
+      "date": "Oct 13, 2012",
+      "season": "2012-13"
+    }
+  },
+  {
+    "season": "2015-16",
+    "gender": "boys",
+    "event": "500 Freestyle",
+    "grade": "JR",
+    "time": "5:04.10",
+    "name": "Joseph Breinholt",
+    "date": "Oct 24, 2015",
+    "meet": "Small School Championships",
+    "previous": {
+      "time": "5:27.34",
+      "name": "Austin Morris",
+      "date": "Oct 31, 2014",
+      "season": "2014-15"
+    }
+  },
+  {
+    "season": "2015-16",
+    "gender": "boys",
+    "event": "500 Freestyle",
+    "grade": "SR",
+    "time": "5:19.99",
+    "name": "Austin Morris",
+    "date": "Sep 10, 2015",
+    "meet": "Desert Christian / Tanque Verde / Amphi (Tucson, AZ)",
+    "previous": {
+      "time": "5:53.49",
+      "name": "Keith Kristofitz",
+      "date": "Oct 06, 2012",
+      "season": "2012-13"
+    }
+  },
+  {
+    "season": "2015-16",
+    "gender": "boys",
+    "event": "500 Freestyle",
+    "grade": "FR",
+    "time": "7:15.31",
+    "name": "Paul Morrison",
+    "date": "Sep 10, 2015",
+    "meet": "Desert Christian / Tanque Verde / Amphi (Tucson, AZ)",
+    "previous": null
+  },
+  {
+    "season": "2015-16",
+    "gender": "boys",
+    "event": "100 Backstroke",
+    "grade": "SR",
+    "time": "59.61",
+    "name": "Austin Morris",
+    "date": "Oct 24, 2015",
+    "meet": "Small School Championships",
+    "previous": {
+      "time": "1:03.62",
+      "name": "Xavier Rivera",
+      "date": "Nov 2011",
+      "season": "2011-12"
+    }
+  },
+  {
+    "season": "2015-16",
+    "gender": "boys",
+    "event": "200 Individual Medley",
+    "grade": "JR",
+    "time": "2:22.43",
+    "name": "Alexander Flores",
+    "date": "Oct 24, 2015",
+    "meet": "Small School Championships",
+    "previous": {
+      "time": "2:48.20",
+      "name": "Greg Wheeler",
+      "date": "Oct 06, 2012",
+      "season": "2012-13"
+    }
+  },
+  {
+    "season": "2015-16",
+    "gender": "girls",
+    "event": "50 Freestyle",
+    "grade": "FR",
+    "time": "27.05",
+    "name": "Hazel Dasse",
+    "date": "Oct 30, 2015",
+    "meet": "Southern Arizona Regional Qualifier",
+    "previous": {
+      "time": "36.45",
+      "name": "Cheyanne Stevenson",
+      "date": "Oct 31, 2014",
+      "season": "2014-15"
+    }
+  },
+  {
+    "season": "2015-16",
+    "gender": "girls",
+    "event": "100 Freestyle",
+    "grade": "FR",
+    "time": "1:03.16",
+    "name": "Anna Ellis",
+    "date": "Oct 24, 2015",
+    "meet": "Small School Championships",
+    "previous": {
+      "time": "1:25.67",
+      "name": "Cheyanne Stevenson",
+      "date": "Oct 25, 2014",
+      "season": "2014-15"
+    }
+  },
+  {
+    "season": "2015-16",
+    "gender": "girls",
+    "event": "200 Freestyle",
+    "grade": "FR",
+    "time": "2:20.08",
+    "name": "Anna Ellis",
+    "date": "Oct 30, 2015",
+    "meet": "Southern Arizona Regional Qualifier",
+    "previous": {
+      "time": "2:34.75",
+      "name": "Sierra Roh",
+      "date": "Oct 06, 2012",
+      "season": "2012-13"
+    }
+  },
+  {
+    "season": "2015-16",
+    "gender": "girls",
+    "event": "500 Freestyle",
+    "grade": "FR",
+    "time": "5:35.08",
+    "name": "Anna Ellis",
+    "date": "Nov 06, 2015",
+    "meet": "2015 D-2 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2015-16",
+    "gender": "girls",
+    "event": "100 Backstroke",
+    "grade": "FR",
+    "time": "1:06.58",
+    "name": "Hazel Dasse",
+    "date": "Oct 24, 2015",
+    "meet": "Small School Championships",
+    "previous": null
+  },
+  {
+    "season": "2015-16",
+    "gender": "girls",
+    "event": "100 Backstroke",
+    "grade": "SR",
+    "time": "1:20.87",
+    "name": "Stephanie Svob",
+    "date": "Sep 10, 2015",
+    "meet": "DC / Amphi / TV (Tucson, AZ)",
+    "previous": {
+      "time": "1:47.02",
+      "name": "Nicole Ortega",
+      "date": "Oct 31, 2014",
+      "season": "2014-15"
+    }
+  },
+  {
+    "season": "2015-16",
+    "gender": "girls",
+    "event": "100 Backstroke",
+    "grade": "SO",
+    "time": "1:34.29",
+    "name": "Jenna Elliott",
+    "date": "Oct 24, 2015",
+    "meet": "Small School Championships",
+    "previous": {
+      "time": "1:50.78",
+      "name": "Nicole Ortega",
+      "date": "Oct 13, 2012",
+      "season": "2012-13"
+    }
+  },
+  {
+    "season": "2015-16",
+    "gender": "girls",
+    "event": "100 Breaststroke",
+    "grade": "FR",
+    "time": "1:08.97",
+    "name": "Lindsey Sohoel-Smith",
+    "date": "Oct 24, 2015",
+    "meet": "Small School Championships",
+    "previous": {
+      "time": "1:36.85",
+      "name": "Elyse Johnson",
+      "date": "Oct 26, 2013",
+      "season": "2013-14"
+    }
+  },
+  {
+    "season": "2015-16",
+    "gender": "girls",
+    "event": "100 Butterfly",
+    "grade": "FR",
+    "time": "1:08.62",
+    "name": "Lindsey Sohoel-Smith",
+    "date": "Oct 03, 2015",
+    "meet": "2015 High School Classic",
+    "previous": null
+  },
+  {
+    "season": "2015-16",
+    "gender": "girls",
+    "event": "100 Butterfly",
+    "grade": "SR",
+    "time": "1:21.19",
+    "name": "Alix Morris",
+    "date": "Sep 10, 2015",
+    "meet": "DC / Amphi / TV (Tucson, AZ)",
+    "previous": null
+  },
+  {
+    "season": "2015-16",
+    "gender": "girls",
+    "event": "200 Individual Medley",
+    "grade": "FR",
+    "time": "2:21.44",
+    "name": "Lindsey Sohoel-Smith",
+    "date": "Oct 24, 2015",
+    "meet": "Small School Championships",
+    "previous": {
+      "time": "2:58.12",
+      "name": "Dana Kristofitz",
+      "date": "Nov 2007",
+      "season": "2007-08"
+    }
+  },
+  {
+    "season": "2016-17",
+    "gender": "boys",
+    "event": "50 Freestyle",
+    "grade": "SR",
+    "time": "22.76",
+    "name": "Joseph Breinholt",
+    "date": "Oct 29, 2016",
+    "meet": "Southern Arizona Regional Qualifier",
+    "previous": {
+      "time": "27.57",
+      "name": "Wyatt Wimberly",
+      "date": "Oct 06, 2012",
+      "season": "2012-13"
+    }
+  },
+  {
+    "season": "2016-17",
+    "gender": "boys",
+    "event": "100 Freestyle",
+    "grade": "SR",
+    "time": "47.98",
+    "name": "Joseph Breinholt",
+    "date": "Oct 29, 2016",
+    "meet": "Southern Arizona Regional Qualifier",
+    "previous": {
+      "time": "52.36",
+      "name": "Austin Morris",
+      "date": "Oct 24, 2015",
+      "season": "2015-16"
+    }
+  },
+  {
+    "season": "2016-17",
+    "gender": "boys",
+    "event": "200 Freestyle",
+    "grade": "SR",
+    "time": "1:49.68",
+    "name": "Joseph Breinholt",
+    "date": "Oct 01, 2016",
+    "meet": "2016 TYR High School Classic",
+    "previous": {
+      "time": "1:54.76",
+      "name": "Austin Morris",
+      "date": "Nov 06, 2015",
+      "season": "2015-16"
+    }
+  },
+  {
+    "season": "2016-17",
+    "gender": "boys",
+    "event": "200 Freestyle",
+    "grade": "SO",
+    "time": "2:25.61",
+    "name": "Titan Flint",
+    "date": "Oct 29, 2016",
+    "meet": "Southern Arizona Regional Qualifier",
+    "previous": null
+  },
+  {
+    "season": "2016-17",
+    "gender": "boys",
+    "event": "500 Freestyle",
+    "grade": "SO",
+    "time": "6:15.57",
+    "name": "Titan Flint",
+    "date": "Oct 29, 2016",
+    "meet": "Southern Arizona Regional Qualifier",
+    "previous": null
+  },
+  {
+    "season": "2016-17",
+    "gender": "boys",
+    "event": "500 Freestyle",
+    "grade": "FR",
+    "time": "6:22.67",
+    "name": "Logan Radomsky",
+    "date": "Oct 29, 2016",
+    "meet": "Southern Arizona Regional Qualifier",
+    "previous": {
+      "time": "7:15.31",
+      "name": "Paul Morrison",
+      "date": "Sep 10, 2015",
+      "season": "2015-16"
+    }
+  },
+  {
+    "season": "2016-17",
+    "gender": "boys",
+    "event": "100 Backstroke",
+    "grade": "JR",
+    "time": "1:00.82",
+    "name": "Samuel Merrill",
+    "date": "Sep 17, 2016",
+    "meet": "Canyon Del Oro Classic",
+    "previous": {
+      "time": "1:00.88",
+      "name": "Austin Morris",
+      "date": "Nov 08, 2014",
+      "season": "2014-15"
+    }
+  },
+  {
+    "season": "2016-17",
+    "gender": "boys",
+    "event": "100 Breaststroke",
+    "grade": "SR",
+    "time": "1:09.05",
+    "name": "Tanner Morris",
+    "date": "Nov 05, 2016",
+    "meet": "2016 D-3 AIA State Championship",
+    "previous": {
+      "time": "1:25.84",
+      "name": "Forrest Carlton",
+      "date": "Oct 05, 2013",
+      "season": "2013-14"
+    }
+  },
+  {
+    "season": "2016-17",
+    "gender": "boys",
+    "event": "100 Breaststroke",
+    "grade": "JR",
+    "time": "1:11.69",
+    "name": "Samuel Merrill",
+    "date": "Oct 01, 2016",
+    "meet": "2016 TYR High School Classic",
+    "previous": {
+      "time": "1:16.71",
+      "name": "Kurt Matsunaga",
+      "date": "Nov 2009",
+      "season": "2009-10"
+    }
+  },
+  {
+    "season": "2016-17",
+    "gender": "boys",
+    "event": "100 Breaststroke",
+    "grade": "SO",
+    "time": "1:22.15",
+    "name": "Titan Flint",
+    "date": "Sep 17, 2016",
+    "meet": "Canyon Del Oro Classic",
+    "previous": {
+      "time": "1:33.72",
+      "name": "Kyle Ramsden",
+      "date": "Oct 31, 2014",
+      "season": "2014-15"
+    }
+  },
+  {
+    "season": "2016-17",
+    "gender": "boys",
+    "event": "100 Butterfly",
+    "grade": "SR",
+    "time": "59.89",
+    "name": "Alexander Flores",
+    "date": "Nov 05, 2016",
+    "meet": "2016 D-3 AIA State Championship",
+    "previous": null
+  },
+  {
+    "season": "2016-17",
+    "gender": "boys",
+    "event": "100 Butterfly",
+    "grade": "FR",
+    "time": "1:23.65",
+    "name": "Brian Lopez",
+    "date": "Oct 01, 2016",
+    "meet": "2016 TYR High School Classic",
+    "previous": {
+      "time": "1:29.63",
+      "name": "Alexander Flores",
+      "date": "Oct 05, 2013",
+      "season": "2013-14"
+    }
+  },
+  {
+    "season": "2016-17",
+    "gender": "boys",
+    "event": "200 Individual Medley",
+    "grade": "SR",
+    "time": "2:13.67",
+    "name": "Alexander Flores",
+    "date": "Nov 05, 2016",
+    "meet": "2016 D-3 AIA State Championship",
+    "previous": {
+      "time": "2:21.41",
+      "name": "Andrew Lam",
+      "date": "Oct 26, 2013",
+      "season": "2013-14"
+    }
+  },
+  {
+    "season": "2016-17",
+    "gender": "girls",
+    "event": "100 Freestyle",
+    "grade": "SO",
+    "time": "1:00.95",
+    "name": "Hazel Dasse",
+    "date": "Oct 29, 2016",
+    "meet": "Southern Arizona Regional Qualifier",
+    "previous": {
+      "time": "1:08.53",
+      "name": "Sierra Roh",
+      "date": "Nov 02, 2013",
+      "season": "2013-14"
+    }
+  },
+  {
+    "season": "2016-17",
+    "gender": "girls",
+    "event": "200 Freestyle",
+    "grade": "SO",
+    "time": "2:05.33",
+    "name": "Hazel Dasse",
+    "date": "Nov 04, 2016",
+    "meet": "2016 D-3 AIA State Championship",
+    "previous": {
+      "time": "2:11.68",
+      "name": "Bridget Spooner",
+      "date": "Nov 08, 2014",
+      "season": "2014-15"
+    }
+  },
+  {
+    "season": "2016-17",
+    "gender": "girls",
+    "event": "500 Freestyle",
+    "grade": "SO",
+    "time": "5:32.67",
+    "name": "Anna Ellis",
+    "date": "Nov 04, 2016",
+    "meet": "2016 D-3 AIA State Championship",
+    "previous": {
+      "time": "5:56.61",
+      "name": "Bridget Spooner",
+      "date": "Nov 08, 2014",
+      "season": "2014-15"
+    }
+  },
+  {
+    "season": "2016-17",
+    "gender": "girls",
+    "event": "100 Backstroke",
+    "grade": "SO",
+    "time": "1:05.85",
+    "name": "Hazel Dasse",
+    "date": "Nov 04, 2016",
+    "meet": "2016 D-3 AIA State Championship",
+    "previous": {
+      "time": "1:34.29",
+      "name": "Jenna Elliott",
+      "date": "Oct 24, 2015",
+      "season": "2015-16"
+    }
+  },
+  {
+    "season": "2016-17",
+    "gender": "girls",
+    "event": "100 Backstroke",
+    "grade": "FR",
+    "time": "1:06.38",
+    "name": "Sarynn Patterson",
+    "date": "Nov 04, 2016",
+    "meet": "2016 D-3 AIA State Championship",
+    "previous": {
+      "time": "1:06.58",
+      "name": "Hazel Dasse",
+      "date": "Oct 24, 2015",
+      "season": "2015-16"
+    }
+  },
+  {
+    "season": "2016-17",
+    "gender": "girls",
+    "event": "100 Breaststroke",
+    "grade": "SO",
+    "time": "1:07.01",
+    "name": "Lindsey Sohoel-Smith",
+    "date": "Nov 04, 2016",
+    "meet": "2016 D-3 AIA State Championship",
+    "previous": {
+      "time": "1:31.55",
+      "name": "Sierra Roh",
+      "date": "Oct 05, 2013",
+      "season": "2013-14"
+    }
+  },
+  {
+    "season": "2016-17",
+    "gender": "girls",
+    "event": "200 Individual Medley",
+    "grade": "SO",
+    "time": "2:15.55",
+    "name": "Lindsey Sohoel-Smith",
+    "date": "Nov 04, 2016",
+    "meet": "2016 D-3 AIA State Championship",
+    "previous": {
+      "time": "2:55.24",
+      "name": "Dana Kristofitz",
+      "date": "Nov 2008",
+      "season": "2008-09"
+    }
+  },
+  {
+    "season": "2017-18",
+    "gender": "boys",
+    "event": "50 Freestyle",
+    "grade": "FR",
+    "time": "28.38",
+    "name": "Dominic Colombo",
+    "date": "Oct 07, 2017",
+    "meet": "2017 TYR High School Classic",
+    "previous": {
+      "time": "28.40",
+      "name": "Brandon Kapela",
+      "date": "Nov 2009",
+      "season": "2009-10"
+    }
+  },
+  {
+    "season": "2017-18",
+    "gender": "boys",
+    "event": "100 Freestyle",
+    "grade": "SO",
+    "time": "59.56",
+    "name": "Eli Stott",
+    "date": "Oct 27, 2017",
+    "meet": "Southern Arizona Regional Qualifier",
+    "previous": {
+      "time": "1:08.90",
+      "name": "Avery Robinson",
+      "date": "Oct 31, 2014",
+      "season": "2014-15"
+    }
+  },
+  {
+    "season": "2017-18",
+    "gender": "boys",
+    "event": "200 Freestyle",
+    "grade": "SO",
+    "time": "2:11.69",
+    "name": "Logan Radomsky",
+    "date": "Oct 07, 2017",
+    "meet": "2017 TYR High School Classic",
+    "previous": {
+      "time": "2:25.61",
+      "name": "Titan Flint",
+      "date": "Oct 29, 2016",
+      "season": "2016-17"
+    }
+  },
+  {
+    "season": "2017-18",
+    "gender": "boys",
+    "event": "500 Freestyle",
+    "grade": "SO",
+    "time": "5:56.89",
+    "name": "Logan Radomsky",
+    "date": "Oct 27, 2017",
+    "meet": "Southern Arizona Regional Qualifier",
+    "previous": {
+      "time": "6:15.57",
+      "name": "Titan Flint",
+      "date": "Oct 29, 2016",
+      "season": "2016-17"
+    }
+  },
+  {
+    "season": "2017-18",
+    "gender": "boys",
+    "event": "100 Breaststroke",
+    "grade": "FR",
+    "time": "1:19.19",
+    "name": "Dominic Colombo",
+    "date": "Oct 07, 2017",
+    "meet": "2017 TYR High School Classic",
+    "previous": {
+      "time": "1:20.46",
+      "name": "Jerah Francone",
+      "date": "Oct 25, 2014",
+      "season": "2014-15"
+    }
+  },
+  {
+    "season": "2017-18",
+    "gender": "girls",
+    "event": "200 Freestyle",
+    "grade": "JR",
+    "time": "2:08.16",
+    "name": "Hazel Dasse",
+    "date": "Oct 07, 2017",
+    "meet": "2017 TYR High School Classic",
+    "previous": {
+      "time": "2:14.87",
+      "name": "Carly Wilson",
+      "date": "Sep 23, 2010",
+      "season": "2010-11"
+    }
+  },
+  {
+    "season": "2017-18",
+    "gender": "girls",
+    "event": "100 Backstroke",
+    "grade": "SR",
+    "time": "1:02.65",
+    "name": "Calla Isenberg",
+    "date": "Oct 27, 2017",
+    "meet": "Southern Arizona Regional Qualifier",
+    "previous": {
+      "time": "1:20.87",
+      "name": "Stephanie Svob",
+      "date": "Sep 10, 2015",
+      "season": "2015-16"
+    }
+  },
+  {
+    "season": "2017-18",
+    "gender": "girls",
+    "event": "200 Individual Medley",
+    "grade": "JR",
+    "time": "2:34.70",
+    "name": "Hazel Dasse",
+    "date": "Sep 16, 2017",
+    "meet": "Canyon Del Oro Classic",
+    "previous": {
+      "time": "2:35.04",
+      "name": "Madisyn Clausen",
+      "date": "Oct 26, 2013",
+      "season": "2013-14"
+    }
+  },
+  {
+    "season": "2018-19",
+    "gender": "boys",
+    "event": "50 Freestyle",
+    "grade": "FR",
+    "time": "27.42",
+    "name": "Nicholas Spilotro",
+    "date": "Oct 20, 2018",
+    "meet": "Mike Ward Invitational",
+    "previous": {
+      "time": "28.38",
+      "name": "Dominic Colombo",
+      "date": "Oct 07, 2017",
+      "season": "2017-18"
+    }
+  },
+  {
+    "season": "2018-19",
+    "gender": "boys",
+    "event": "200 Freestyle",
+    "grade": "SR",
+    "time": "1:48.60",
+    "name": "John Deninghoff",
+    "date": "Nov 01, 2018",
+    "meet": "AIA D-3 Boys State Championship",
+    "previous": {
+      "time": "1:49.68",
+      "name": "Joseph Breinholt",
+      "date": "Oct 01, 2016",
+      "season": "2016-17"
+    }
+  },
+  {
+    "season": "2018-19",
+    "gender": "boys",
+    "event": "100 Breaststroke",
+    "grade": "SO",
+    "time": "1:14.27",
+    "name": "Dominic Colombo",
+    "date": "Oct 20, 2018",
+    "meet": "Mike Ward Invitational",
+    "previous": {
+      "time": "1:22.15",
+      "name": "Titan Flint",
+      "date": "Sep 17, 2016",
+      "season": "2016-17"
+    }
+  },
+  {
+    "season": "2018-19",
+    "gender": "girls",
+    "event": "100 Breaststroke",
+    "grade": "SR",
+    "time": "1:05.10",
+    "name": "Lindsey Schoel-Smith",
+    "date": "Nov 01, 2018",
+    "meet": "AIA D-3 Girls State Championship",
+    "previous": {
+      "time": "1:16.11",
+      "name": "Madisyn Clausen",
+      "date": "Oct 31, 2014",
+      "season": "2014-15"
+    }
+  },
+  {
+    "season": "2018-19",
+    "gender": "girls",
+    "event": "200 Individual Medley",
+    "grade": "JR",
+    "time": "2:21.97",
+    "name": "Isabelle Sansom",
+    "date": "Nov 01, 2018",
+    "meet": "AIA D-3 Girls State Championship",
+    "previous": {
+      "time": "2:34.70",
+      "name": "Hazel Dasse",
+      "date": "Sep 16, 2017",
+      "season": "2017-18"
+    }
+  },
+  {
+    "season": "2018-19",
+    "gender": "girls",
+    "event": "200 Individual Medley",
+    "grade": "SR",
+    "time": "2:28.33",
+    "name": "Hazel Dasse",
+    "date": "Oct 26, 2018",
+    "meet": "Southern Arizona Regional Qualifier",
+    "previous": null
+  },
+  {
+    "season": "2019-20",
+    "gender": "boys",
+    "event": "50 Freestyle",
+    "grade": "SO",
+    "time": "23.34",
+    "name": "Trevor Clausen",
+    "date": "Nov 07, 2019",
+    "meet": "2019 D-3 AIA State Championship",
+    "previous": {
+      "time": "26.89",
+      "name": "Alexander Flores",
+      "date": "Oct 31, 2014",
+      "season": "2014-15"
+    }
+  },
+  {
+    "season": "2019-20",
+    "gender": "boys",
+    "event": "100 Freestyle",
+    "grade": "FR",
+    "time": "47.93",
+    "name": "Samuel Stott",
+    "date": "Nov 07, 2019",
+    "meet": "2019 D-3 AIA State Championship",
+    "previous": {
+      "time": "56.66",
+      "name": "Xavier Rivera",
+      "date": "Nov 2008",
+      "season": "2008-09"
+    }
+  },
+  {
+    "season": "2019-20",
+    "gender": "boys",
+    "event": "100 Freestyle",
+    "grade": "SO",
+    "time": "53.14",
+    "name": "Trevor Clausen",
+    "date": "Oct 05, 2019",
+    "meet": "High School Classic",
+    "previous": {
+      "time": "59.56",
+      "name": "Eli Stott",
+      "date": "Oct 27, 2017",
+      "season": "2017-18"
+    }
+  },
+  {
+    "season": "2019-20",
+    "gender": "boys",
+    "event": "200 Freestyle",
+    "grade": "FR",
+    "time": "1:46.05",
+    "name": "Samuel Stott",
+    "date": "Nov 07, 2019",
+    "meet": "2019 D-3 AIA State Championship",
+    "previous": {
+      "time": "2:08.51",
+      "name": "Jerah Francone",
+      "date": "Oct 25, 2014",
+      "season": "2014-15"
+    }
+  },
+  {
+    "season": "2019-20",
+    "gender": "boys",
+    "event": "200 Freestyle",
+    "grade": "SO",
+    "time": "2:04.36",
+    "name": "Trevor Clausen",
+    "date": "Oct 05, 2019",
+    "meet": "High School Classic",
+    "previous": {
+      "time": "2:11.69",
+      "name": "Logan Radomsky",
+      "date": "Oct 07, 2017",
+      "season": "2017-18"
+    }
+  },
+  {
+    "season": "2019-20",
+    "gender": "boys",
+    "event": "500 Freestyle",
+    "grade": "FR",
+    "time": "5:08.11",
+    "name": "Samuel Stott",
+    "date": "Nov 01, 2019",
+    "meet": "Canyon Del Oro Invite",
+    "previous": {
+      "time": "6:22.67",
+      "name": "Logan Radomsky",
+      "date": "Oct 29, 2016",
+      "season": "2016-17"
+    }
+  },
+  {
+    "season": "2019-20",
+    "gender": "boys",
+    "event": "100 Butterfly",
+    "grade": "FR",
+    "time": "55.94",
+    "name": "Samuel Stott",
+    "date": "Oct 19, 2019",
+    "meet": "Mike Ward Invitational",
+    "previous": {
+      "time": "1:23.65",
+      "name": "Brian Lopez",
+      "date": "Oct 01, 2016",
+      "season": "2016-17"
+    }
+  },
+  {
+    "season": "2019-20",
+    "gender": "boys",
+    "event": "100 Butterfly",
+    "grade": "SO",
+    "time": "59.28",
+    "name": "Trevor Clausen",
+    "date": "Nov 07, 2019",
+    "meet": "2019 D-3 AIA State Championship",
+    "previous": {
+      "time": "1:00.99",
+      "name": "Xavier Rivera",
+      "date": "Nov 2009",
+      "season": "2009-10"
+    }
+  },
+  {
+    "season": "2019-20",
+    "gender": "boys",
+    "event": "200 Individual Medley",
+    "grade": "FR",
+    "time": "2:07.98",
+    "name": "Samuel Stott",
+    "date": "Nov 01, 2019",
+    "meet": "Canyon Del Oro Invite",
+    "previous": {
+      "time": "2:26.49",
+      "name": "Jerah Francone",
+      "date": "Oct 31, 2014",
+      "season": "2014-15"
+    }
+  },
+  {
+    "season": "2019-20",
+    "gender": "girls",
+    "event": "100 Freestyle",
+    "grade": "FR",
+    "time": "1:01.43",
+    "name": "Maggie Colombo",
+    "date": "Nov 01, 2019",
+    "meet": "Canyon Del Oro Invite",
+    "previous": {
+      "time": "1:03.16",
+      "name": "Anna Ellis",
+      "date": "Oct 24, 2015",
+      "season": "2015-16"
+    }
+  },
+  {
+    "season": "2019-20",
+    "gender": "girls",
+    "event": "200 Freestyle",
+    "grade": "FR",
+    "time": "2:14.05",
+    "name": "Maggie Colombo",
+    "date": "Nov 07, 2019",
+    "meet": "2019 D-3 AIA State Championship",
+    "previous": {
+      "time": "2:20.08",
+      "name": "Anna Ellis",
+      "date": "Oct 30, 2015",
+      "season": "2015-16"
+    }
+  },
+  {
+    "season": "2019-20",
+    "gender": "girls",
+    "event": "100 Butterfly",
+    "grade": "FR",
+    "time": "1:05.90",
+    "name": "Paisley White",
+    "date": "Nov 07, 2019",
+    "meet": "2019 D-3 AIA State Championship",
+    "previous": {
+      "time": "1:08.62",
+      "name": "Lindsey Sohoel-Smith",
+      "date": "Oct 03, 2015",
+      "season": "2015-16"
+    }
+  },
+  {
+    "season": "2019-20",
+    "gender": "girls",
+    "event": "100 Butterfly",
+    "grade": "SR",
+    "time": "1:19.20",
+    "name": "Kenedy Jackson",
+    "date": "Nov 01, 2019",
+    "meet": "Canyon Del Oro Invite",
+    "previous": {
+      "time": "1:21.19",
+      "name": "Alix Morris",
+      "date": "Sep 10, 2015",
+      "season": "2015-16"
+    }
+  },
+  {
+    "season": "2019-20",
+    "gender": "girls",
+    "event": "200 Individual Medley",
+    "grade": "SR",
+    "time": "2:20.75",
+    "name": "Sarynn Patterson",
+    "date": "Nov 07, 2019",
+    "meet": "2019 D-3 AIA State Championship",
+    "previous": {
+      "time": "2:28.33",
+      "name": "Hazel Dasse",
+      "date": "Oct 26, 2018",
+      "season": "2018-19"
+    }
+  },
+  {
+    "season": "2020-21",
+    "gender": "boys",
+    "event": "50 Freestyle",
+    "grade": "SO",
+    "time": "22.24",
+    "name": "Samuel Stott",
+    "date": "Nov 05, 2020",
+    "meet": "AIA D-3 State Championship",
+    "previous": {
+      "time": "23.34",
+      "name": "Trevor Clausen",
+      "date": "Nov 07, 2019",
+      "season": "2019-20"
+    }
+  },
+  {
+    "season": "2020-21",
+    "gender": "boys",
+    "event": "100 Freestyle",
+    "grade": "SO",
+    "time": "47.71",
+    "name": "Samuel Stott",
+    "date": "Nov 05, 2020",
+    "meet": "AIA D-3 State Championship",
+    "previous": {
+      "time": "53.14",
+      "name": "Trevor Clausen",
+      "date": "Oct 05, 2019",
+      "season": "2019-20"
+    }
+  },
+  {
+    "season": "2020-21",
+    "gender": "girls",
+    "event": "50 Freestyle",
+    "grade": "FR",
+    "time": "26.31",
+    "name": "Chloe Weatherwax",
+    "date": "Oct 30, 2020",
+    "meet": "SQ  @ CDO (Oro Valley, AZ)",
+    "previous": {
+      "time": "27.05",
+      "name": "Hazel Dasse",
+      "date": "Oct 30, 2015",
+      "season": "2015-16"
+    }
+  },
+  {
+    "season": "2020-21",
+    "gender": "girls",
+    "event": "100 Freestyle",
+    "grade": "FR",
+    "time": "58.58",
+    "name": "Natalie Armstrong",
+    "date": "Nov 05, 2020",
+    "meet": "AIA D-3 State Championship",
+    "previous": {
+      "time": "1:01.43",
+      "name": "Maggie Colombo",
+      "date": "Nov 01, 2019",
+      "season": "2019-20"
+    }
+  },
+  {
+    "season": "2020-21",
+    "gender": "girls",
+    "event": "100 Freestyle",
+    "grade": "SO",
+    "time": "59.10",
+    "name": "Maggie Colombo",
+    "date": "Nov 05, 2020",
+    "meet": "AIA D-3 State Championship",
+    "previous": {
+      "time": "1:00.95",
+      "name": "Hazel Dasse",
+      "date": "Oct 29, 2016",
+      "season": "2016-17"
+    }
+  },
+  {
+    "season": "2020-21",
+    "gender": "girls",
+    "event": "200 Freestyle",
+    "grade": "FR",
+    "time": "2:08.36",
+    "name": "Natalie Armstrong",
+    "date": "Nov 05, 2020",
+    "meet": "AIA D-3 State Championship",
+    "previous": {
+      "time": "2:14.05",
+      "name": "Maggie Colombo",
+      "date": "Nov 07, 2019",
+      "season": "2019-20"
+    }
+  },
+  {
+    "season": "2020-21",
+    "gender": "girls",
+    "event": "100 Backstroke",
+    "grade": "SO",
+    "time": "1:05.84",
+    "name": "Paisley White",
+    "date": "Nov 05, 2020",
+    "meet": "AIA D-3 State Championship",
+    "previous": {
+      "time": "1:05.85",
+      "name": "Hazel Dasse",
+      "date": "Nov 04, 2016",
+      "season": "2016-17"
+    }
+  },
+  {
+    "season": "2021-22",
+    "gender": "boys",
+    "event": "50 Freestyle",
+    "grade": "SO",
+    "time": "21.99",
+    "name": "Nicholas Cusson",
+    "date": "Oct 23, 2021",
+    "meet": "2021 D-3 AIA State Championship",
+    "previous": {
+      "time": "22.24",
+      "name": "Samuel Stott",
+      "date": "Nov 05, 2020",
+      "season": "2020-21"
+    }
+  },
+  {
+    "season": "2021-22",
+    "gender": "boys",
+    "event": "50 Freestyle",
+    "grade": "JR",
+    "time": "22.83",
+    "name": "Samuel Stott",
+    "date": "Sep 25, 2021",
+    "meet": "TYR HS Classic",
+    "previous": {
+      "time": "25.27",
+      "name": "Andrew Lam",
+      "date": "Oct 13, 2012",
+      "season": "2012-13"
+    }
+  },
+  {
+    "season": "2021-22",
+    "gender": "boys",
+    "event": "100 Freestyle",
+    "grade": "JR",
+    "time": "48.08",
+    "name": "Samuel Stott",
+    "date": "Oct 23, 2021",
+    "meet": "2021 D-3 AIA State Championship",
+    "previous": {
+      "time": "49.10",
+      "name": "Joseph Breinholt",
+      "date": "Nov 06, 2015",
+      "season": "2015-16"
+    }
+  },
+  {
+    "season": "2021-22",
+    "gender": "boys",
+    "event": "200 Freestyle",
+    "grade": "JR",
+    "time": "1:44.73",
+    "name": "Samuel Stott",
+    "date": "Oct 23, 2021",
+    "meet": "2021 D-3 AIA State Championship",
+    "previous": {
+      "time": "1:48.76",
+      "name": "Joseph Breinholt",
+      "date": "Nov 06, 2015",
+      "season": "2015-16"
+    }
+  },
+  {
+    "season": "2021-22",
+    "gender": "boys",
+    "event": "200 Freestyle",
+    "grade": "SO",
+    "time": "1:50.15",
+    "name": "Nicholas Cusson",
+    "date": "Oct 29, 2021",
+    "meet": "Southern AZ Regional Qualifier",
+    "previous": {
+      "time": "2:04.36",
+      "name": "Trevor Clausen",
+      "date": "Oct 05, 2019",
+      "season": "2019-20"
+    }
+  },
+  {
+    "season": "2021-22",
+    "gender": "boys",
+    "event": "500 Freestyle",
+    "grade": "SO",
+    "time": "5:54.76",
+    "name": "Nolan Radomsky",
+    "date": "Oct 29, 2021",
+    "meet": "Southern AZ Regional Qualifier",
+    "previous": {
+      "time": "5:56.89",
+      "name": "Logan Radomsky",
+      "date": "Oct 27, 2017",
+      "season": "2017-18"
+    }
+  },
+  {
+    "season": "2021-22",
+    "gender": "boys",
+    "event": "100 Backstroke",
+    "grade": "SO",
+    "time": "56.59",
+    "name": "Nicholas Cusson",
+    "date": "Oct 23, 2021",
+    "meet": "Pecan Classic",
+    "previous": {
+      "time": "1:01.91",
+      "name": "Xavier Rivera",
+      "date": "Nov 2009",
+      "season": "2009-10"
+    }
+  },
+  {
+    "season": "2021-22",
+    "gender": "boys",
+    "event": "100 Breaststroke",
+    "grade": "FR",
+    "time": "1:12.28",
+    "name": "Oren Zadorozny",
+    "date": "Oct 23, 2021",
+    "meet": "Pecan Classic",
+    "previous": {
+      "time": "1:19.19",
+      "name": "Dominic Colombo",
+      "date": "Oct 07, 2017",
+      "season": "2017-18"
+    }
+  },
+  {
+    "season": "2021-22",
+    "gender": "boys",
+    "event": "100 Butterfly",
+    "grade": "SO",
+    "time": "55.19",
+    "name": "Nicholas Cusson",
+    "date": "Oct 23, 2021",
+    "meet": "Pecan Classic",
+    "previous": {
+      "time": "59.28",
+      "name": "Trevor Clausen",
+      "date": "Nov 07, 2019",
+      "season": "2019-20"
+    }
+  },
+  {
+    "season": "2021-22",
+    "gender": "boys",
+    "event": "100 Butterfly",
+    "grade": "JR",
+    "time": "55.61",
+    "name": "Samuel Stott",
+    "date": "Sep 25, 2021",
+    "meet": "TYR HS Classic",
+    "previous": {
+      "time": "57.54",
+      "name": "Xavier Rivera",
+      "date": "Nov 2010",
+      "season": "2010-11"
+    }
+  },
+  {
+    "season": "2021-22",
+    "gender": "boys",
+    "event": "200 Individual Medley",
+    "grade": "JR",
+    "time": "2:03.99",
+    "name": "Samuel Stott",
+    "date": "Oct 29, 2021",
+    "meet": "Southern AZ Regional Qualifier",
+    "previous": {
+      "time": "2:22.43",
+      "name": "Alexander Flores",
+      "date": "Oct 24, 2015",
+      "season": "2015-16"
+    }
+  },
+  {
+    "season": "2021-22",
+    "gender": "boys",
+    "event": "200 Individual Medley",
+    "grade": "SO",
+    "time": "2:07.86",
+    "name": "Nicholas Cusson",
+    "date": "Sep 25, 2021",
+    "meet": "TYR HS Classic",
+    "previous": {
+      "time": "2:23.23",
+      "name": "Matthew Nanni",
+      "date": "Nov 2008",
+      "season": "2008-09"
+    }
+  },
+  {
+    "season": "2021-22",
+    "gender": "girls",
+    "event": "100 Freestyle",
+    "grade": "SO",
+    "time": "58.00",
+    "name": "Natalie Armstrong",
+    "date": "Oct 23, 2021",
+    "meet": "2021 D-3 AIA State Championship",
+    "previous": {
+      "time": "59.10",
+      "name": "Maggie Colombo",
+      "date": "Nov 05, 2020",
+      "season": "2020-21"
+    }
+  },
+  {
+    "season": "2021-22",
+    "gender": "girls",
+    "event": "100 Butterfly",
+    "grade": "JR",
+    "time": "1:08.23",
+    "name": "Paisley White",
+    "date": "Sep 25, 2021",
+    "meet": "TYR HS Classic",
+    "previous": {
+      "time": "1:11.40",
+      "name": "Rachel Decesari",
+      "date": "Nov 2008",
+      "season": "2008-09"
+    }
+  },
+  {
+    "season": "2022-23",
+    "gender": "boys",
+    "event": "50 Freestyle",
+    "grade": "JR",
+    "time": "22.13",
+    "name": "Nicholas Cusson",
+    "date": "Oct 28, 2022",
+    "meet": "Southern AZ Regional Qualifier",
+    "previous": {
+      "time": "22.83",
+      "name": "Samuel Stott",
+      "date": "Sep 25, 2021",
+      "season": "2021-22"
+    }
+  },
+  {
+    "season": "2022-23",
+    "gender": "boys",
+    "event": "50 Freestyle",
+    "grade": "SR",
+    "time": "22.13",
+    "name": "Samuel Stott",
+    "date": "Nov 05, 2022",
+    "meet": "2022 D-3 AIA Boys State Championship",
+    "previous": {
+      "time": "22.76",
+      "name": "Joseph Breinholt",
+      "date": "Oct 29, 2016",
+      "season": "2016-17"
+    }
+  },
+  {
+    "season": "2022-23",
+    "gender": "boys",
+    "event": "200 Freestyle",
+    "grade": "JR",
+    "time": "1:43.60",
+    "name": "Nicholas Cusson",
+    "date": "Nov 05, 2022",
+    "meet": "2022 D-3 AIA Boys State Championship",
+    "previous": {
+      "time": "1:44.73",
+      "name": "Samuel Stott",
+      "date": "Oct 23, 2021",
+      "season": "2021-22"
+    }
+  },
+  {
+    "season": "2022-23",
+    "gender": "boys",
+    "event": "100 Backstroke",
+    "grade": "JR",
+    "time": "52.83",
+    "name": "Nicholas Cusson",
+    "date": "Nov 05, 2022",
+    "meet": "2022 D-3 AIA Boys State Championship",
+    "previous": {
+      "time": "1:00.82",
+      "name": "Samuel Merrill",
+      "date": "Sep 17, 2016",
+      "season": "2016-17"
+    }
+  },
+  {
+    "season": "2022-23",
+    "gender": "boys",
+    "event": "100 Breaststroke",
+    "grade": "SR",
+    "time": "1:08.06",
+    "name": "Samuel Stott",
+    "date": "Oct 28, 2022",
+    "meet": "Southern AZ Regional Qualifier",
+    "previous": {
+      "time": "1:09.05",
+      "name": "Tanner Morris",
+      "date": "Nov 05, 2016",
+      "season": "2016-17"
+    }
+  },
+  {
+    "season": "2022-23",
+    "gender": "boys",
+    "event": "100 Breaststroke",
+    "grade": "SO",
+    "time": "1:10.91",
+    "name": "Oren Zadorozny",
+    "date": "Sep 24, 2022",
+    "meet": "TYR High School Classic",
+    "previous": {
+      "time": "1:14.27",
+      "name": "Dominic Colombo",
+      "date": "Oct 20, 2018",
+      "season": "2018-19"
+    }
+  },
+  {
+    "season": "2022-23",
+    "gender": "girls",
+    "event": "200 Freestyle",
+    "grade": "JR",
+    "time": "2:08.09",
+    "name": "Natalie Armstrong",
+    "date": "Oct 22, 2022",
+    "meet": "Pecan Classic",
+    "previous": {
+      "time": "2:08.16",
+      "name": "Hazel Dasse",
+      "date": "Oct 07, 2017",
+      "season": "2017-18"
+    }
+  },
+  {
+    "season": "2022-23",
+    "gender": "girls",
+    "event": "100 Butterfly",
+    "grade": "SR",
+    "time": "1:04.32",
+    "name": "Paisley White",
+    "date": "Oct 22, 2022",
+    "meet": "Pecan Classic",
+    "previous": {
+      "time": "1:19.20",
+      "name": "Kenedy Jackson",
+      "date": "Nov 01, 2019",
+      "season": "2019-20"
+    }
+  },
+  {
+    "season": "2023-24",
+    "gender": "boys",
+    "event": "50 Freestyle",
+    "grade": "FR",
+    "time": "25.03",
+    "name": "Jackson Machamer",
+    "date": "Oct 25, 2023",
+    "meet": "Southern Arizona Region Qualifier",
+    "previous": {
+      "time": "27.42",
+      "name": "Nicholas Spilotro",
+      "date": "Oct 20, 2018",
+      "season": "2018-19"
+    }
+  },
+  {
+    "season": "2023-24",
+    "gender": "boys",
+    "event": "100 Freestyle",
+    "grade": "SR",
+    "time": "46.44",
+    "name": "Nicholas Cusson",
+    "date": "Nov 04, 2023",
+    "meet": "2023 D-3 AIA State Championship",
+    "previous": {
+      "time": "47.98",
+      "name": "Joseph Breinholt",
+      "date": "Oct 29, 2016",
+      "season": "2016-17"
+    }
+  },
+  {
+    "season": "2023-24",
+    "gender": "boys",
+    "event": "200 Freestyle",
+    "grade": "SR",
+    "time": "1:47.33",
+    "name": "Nicholas Cusson",
+    "date": "Oct 21, 2023",
+    "meet": "Pecan Classic",
+    "previous": {
+      "time": "1:48.60",
+      "name": "John Deninghoff",
+      "date": "Nov 01, 2018",
+      "season": "2018-19"
+    }
+  },
+  {
+    "season": "2023-24",
+    "gender": "boys",
+    "event": "500 Freestyle",
+    "grade": "SO",
+    "time": "5:19.88",
+    "name": "Zachary Duerkop",
+    "date": "Oct 25, 2023",
+    "meet": "Southern Arizona Region Qualifier",
+    "previous": {
+      "time": "5:54.76",
+      "name": "Nolan Radomsky",
+      "date": "Oct 29, 2021",
+      "season": "2021-22"
+    }
+  },
+  {
+    "season": "2023-24",
+    "gender": "boys",
+    "event": "100 Backstroke",
+    "grade": "SR",
+    "time": "52.68",
+    "name": "Nicholas Cusson",
+    "date": "Nov 04, 2023",
+    "meet": "2023 D-3 AIA State Championship",
+    "previous": {
+      "time": "59.61",
+      "name": "Austin Morris",
+      "date": "Oct 24, 2015",
+      "season": "2015-16"
+    }
+  },
+  {
+    "season": "2023-24",
+    "gender": "boys",
+    "event": "100 Breaststroke",
+    "grade": "SO",
+    "time": "1:04.17",
+    "name": "Zachary Duerkop",
+    "date": "Oct 21, 2023",
+    "meet": "Pecan Classic",
+    "previous": {
+      "time": "1:10.91",
+      "name": "Oren Zadorozny",
+      "date": "Sep 24, 2022",
+      "season": "2022-23"
+    }
+  },
+  {
+    "season": "2023-24",
+    "gender": "boys",
+    "event": "100 Breaststroke",
+    "grade": "FR",
+    "time": "1:07.59",
+    "name": "Wade Olsson",
+    "date": "Oct 21, 2023",
+    "meet": "Pecan Classic",
+    "previous": {
+      "time": "1:12.28",
+      "name": "Oren Zadorozny",
+      "date": "Oct 23, 2021",
+      "season": "2021-22"
+    }
+  },
+  {
+    "season": "2023-24",
+    "gender": "boys",
+    "event": "100 Butterfly",
+    "grade": "SR",
+    "time": "53.45",
+    "name": "Nicholas Cusson",
+    "date": "Oct 21, 2023",
+    "meet": "Pecan Classic",
+    "previous": {
+      "time": "59.89",
+      "name": "Alexander Flores",
+      "date": "Nov 05, 2016",
+      "season": "2016-17"
+    }
+  },
+  {
+    "season": "2023-24",
+    "gender": "boys",
+    "event": "200 Individual Medley",
+    "grade": "SR",
+    "time": "2:02.29",
+    "name": "Nicholas Cusson",
+    "date": "Sep 16, 2023",
+    "meet": "CDO Classic",
+    "previous": {
+      "time": "2:13.67",
+      "name": "Alexander Flores",
+      "date": "Nov 05, 2016",
+      "season": "2016-17"
+    }
+  },
+  {
+    "season": "2023-24",
+    "gender": "girls",
+    "event": "100 Butterfly",
+    "grade": "JR",
+    "time": "1:03.68",
+    "name": "Brianne Foley",
+    "date": "Sep 23, 2023",
+    "meet": "TYR High School Classic",
+    "previous": {
+      "time": "1:08.23",
+      "name": "Paisley White",
+      "date": "Sep 25, 2021",
+      "season": "2021-22"
+    }
+  },
+  {
+    "season": "2024-25",
+    "gender": "boys",
+    "event": "100 Breaststroke",
+    "grade": "JR",
+    "time": "59.51",
+    "name": "Zachary Duerkop",
+    "date": "Sep 14, 2024",
+    "meet": "Canyon del Oro Classic",
+    "previous": {
+      "time": "1:11.69",
+      "name": "Samuel Merrill",
+      "date": "Oct 01, 2016",
+      "season": "2016-17"
+    }
+  },
+  {
+    "season": "2024-25",
+    "gender": "boys",
+    "event": "100 Breaststroke",
+    "grade": "SO",
+    "time": "1:01.51",
+    "name": "Wade Olsson",
+    "date": "Oct 25, 2024",
+    "meet": "Southern Arizona Qualifier",
+    "previous": {
+      "time": "1:04.17",
+      "name": "Zachary Duerkop",
+      "date": "Oct 21, 2023",
+      "season": "2023-24"
+    }
+  },
+  {
+    "season": "2024-25",
+    "gender": "boys",
+    "event": "100 Butterfly",
+    "grade": "JR",
+    "time": "54.45",
+    "name": "Zachary Duerkop",
+    "date": "Nov 09, 2024",
+    "meet": "2024 D-3 AIA State Championship",
+    "previous": {
+      "time": "55.61",
+      "name": "Samuel Stott",
+      "date": "Sep 25, 2021",
+      "season": "2021-22"
+    }
+  },
+  {
+    "season": "2024-25",
+    "gender": "boys",
+    "event": "200 Individual Medley",
+    "grade": "SO",
+    "time": "2:04.88",
+    "name": "Wade Olsson",
+    "date": "Nov 09, 2024",
+    "meet": "2024 D-3 AIA State Championship",
+    "previous": {
+      "time": "2:07.86",
+      "name": "Nicholas Cusson",
+      "date": "Sep 25, 2021",
+      "season": "2021-22"
+    }
+  },
+  {
+    "season": "2024-25",
+    "gender": "girls",
+    "event": "100 Butterfly",
+    "grade": "SR",
+    "time": "1:01.84",
+    "name": "Brianne Foley",
+    "date": "Nov 09, 2024",
+    "meet": "2024 D-3 AIA State Championship",
+    "previous": {
+      "time": "1:04.32",
+      "name": "Paisley White",
+      "date": "Oct 22, 2022",
+      "season": "2022-23"
+    }
+  }
+]

@@ -1,0 +1,550 @@
+{
+  "boys": {
+    "200 Freestyle": {
+      "FR": {
+        "time": "1:46.05",
+        "time_seconds": 106.05,
+        "name": "Samuel Stott",
+        "date": "Nov 07, 2019",
+        "meet": "2019 D-3 AIA State Championship",
+        "season": "2019-20"
+      },
+      "SR": {
+        "time": "1:47.33",
+        "time_seconds": 107.33,
+        "name": "Nicholas Cusson",
+        "date": "Oct 21, 2023",
+        "meet": "Pecan Classic",
+        "season": "2023-24"
+      },
+      "JR": {
+        "time": "1:43.60",
+        "time_seconds": 103.6,
+        "name": "Nicholas Cusson",
+        "date": "Nov 05, 2022",
+        "meet": "2022 D-3 AIA Boys State Championship",
+        "season": "2022-23"
+      },
+      "SO": {
+        "time": "1:50.15",
+        "time_seconds": 110.15,
+        "name": "Nicholas Cusson",
+        "date": "Oct 29, 2021",
+        "meet": "Southern AZ Regional Qualifier",
+        "season": "2021-22"
+      }
+    },
+    "100 Backstroke": {
+      "FR": {
+        "time": "1:02.18",
+        "time_seconds": 62.18,
+        "name": "Samuel Merrill",
+        "date": "Oct 31, 2014",
+        "meet": "Southern Arizona Region Qualifier",
+        "season": "2014-15"
+      },
+      "SO": {
+        "time": "56.59",
+        "time_seconds": 56.59,
+        "name": "Nicholas Cusson",
+        "date": "Oct 23, 2021",
+        "meet": "Pecan Classic",
+        "season": "2021-22"
+      },
+      "SR": {
+        "time": "52.68",
+        "time_seconds": 52.68,
+        "name": "Nicholas Cusson",
+        "date": "Nov 04, 2023",
+        "meet": "2023 D-3 AIA State Championship",
+        "season": "2023-24"
+      },
+      "JR": {
+        "time": "52.83",
+        "time_seconds": 52.83,
+        "name": "Nicholas Cusson",
+        "date": "Nov 05, 2022",
+        "meet": "2022 D-3 AIA Boys State Championship",
+        "season": "2022-23"
+      }
+    },
+    "200 Individual Medley": {
+      "FR": {
+        "time": "2:07.98",
+        "time_seconds": 127.98,
+        "name": "Samuel Stott",
+        "date": "Nov 01, 2019",
+        "meet": "Canyon Del Oro Invite",
+        "season": "2019-20"
+      },
+      "SO": {
+        "time": "2:04.88",
+        "time_seconds": 124.88,
+        "name": "Wade Olsson",
+        "date": "Nov 09, 2024",
+        "meet": "2024 D-3 AIA State Championship",
+        "season": "2024-25"
+      },
+      "JR": {
+        "time": "2:03.99",
+        "time_seconds": 123.99,
+        "name": "Samuel Stott",
+        "date": "Oct 29, 2021",
+        "meet": "Southern AZ Regional Qualifier",
+        "season": "2021-22"
+      },
+      "SR": {
+        "time": "2:02.29",
+        "time_seconds": 122.29,
+        "name": "Nicholas Cusson",
+        "date": "Sep 16, 2023",
+        "meet": "CDO Classic",
+        "season": "2023-24"
+      }
+    },
+    "100 Freestyle": {
+      "FR": {
+        "time": "47.93",
+        "time_seconds": 47.93,
+        "name": "Samuel Stott",
+        "date": "Nov 07, 2019",
+        "meet": "2019 D-3 AIA State Championship",
+        "season": "2019-20"
+      },
+      "JR": {
+        "time": "48.08",
+        "time_seconds": 48.08,
+        "name": "Samuel Stott",
+        "date": "Oct 23, 2021",
+        "meet": "2021 D-3 AIA State Championship",
+        "season": "2021-22"
+      },
+      "SR": {
+        "time": "46.44",
+        "time_seconds": 46.44,
+        "name": "Nicholas Cusson",
+        "date": "Nov 04, 2023",
+        "meet": "2023 D-3 AIA State Championship",
+        "season": "2023-24"
+      },
+      "SO": {
+        "time": "47.71",
+        "time_seconds": 47.71,
+        "name": "Samuel Stott",
+        "date": "Nov 05, 2020",
+        "meet": "AIA D-3 State Championship",
+        "season": "2020-21"
+      }
+    },
+    "50 Freestyle": {
+      "SO": {
+        "time": "21.99",
+        "time_seconds": 21.99,
+        "name": "Nicholas Cusson",
+        "date": "Oct 23, 2021",
+        "meet": "2021 D-3 AIA State Championship",
+        "season": "2021-22"
+      },
+      "FR": {
+        "time": "25.03",
+        "time_seconds": 25.03,
+        "name": "Jackson Machamer",
+        "date": "Oct 25, 2023",
+        "meet": "Southern Arizona Region Qualifier",
+        "season": "2023-24"
+      },
+      "JR": {
+        "time": "22.13",
+        "time_seconds": 22.13,
+        "name": "Nicholas Cusson",
+        "date": "Oct 28, 2022",
+        "meet": "Southern AZ Regional Qualifier",
+        "season": "2022-23"
+      },
+      "SR": {
+        "time": "22.13",
+        "time_seconds": 22.13,
+        "name": "Samuel Stott",
+        "date": "Nov 05, 2022",
+        "meet": "2022 D-3 AIA Boys State Championship",
+        "season": "2022-23"
+      }
+    },
+    "100 Breaststroke": {
+      "JR": {
+        "time": "59.51",
+        "time_seconds": 59.51,
+        "name": "Zachary Duerkop",
+        "date": "Sep 14, 2024",
+        "meet": "Canyon del Oro Classic",
+        "season": "2024-25"
+      },
+      "SR": {
+        "time": "1:08.06",
+        "time_seconds": 68.06,
+        "name": "Samuel Stott",
+        "date": "Oct 28, 2022",
+        "meet": "Southern AZ Regional Qualifier",
+        "season": "2022-23"
+      },
+      "FR": {
+        "time": "1:07.59",
+        "time_seconds": 67.59,
+        "name": "Wade Olsson",
+        "date": "Oct 21, 2023",
+        "meet": "Pecan Classic",
+        "season": "2023-24"
+      },
+      "SO": {
+        "time": "1:01.51",
+        "time_seconds": 61.51,
+        "name": "Wade Olsson",
+        "date": "Oct 25, 2024",
+        "meet": "Southern Arizona Qualifier",
+        "season": "2024-25"
+      }
+    },
+    "100 Butterfly": {
+      "SO": {
+        "time": "55.19",
+        "time_seconds": 55.19,
+        "name": "Nicholas Cusson",
+        "date": "Oct 23, 2021",
+        "meet": "Pecan Classic",
+        "season": "2021-22"
+      },
+      "JR": {
+        "time": "54.45",
+        "time_seconds": 54.45,
+        "name": "Zachary Duerkop",
+        "date": "Nov 09, 2024",
+        "meet": "2024 D-3 AIA State Championship",
+        "season": "2024-25"
+      },
+      "FR": {
+        "time": "55.94",
+        "time_seconds": 55.94,
+        "name": "Samuel Stott",
+        "date": "Oct 19, 2019",
+        "meet": "Mike Ward Invitational",
+        "season": "2019-20"
+      },
+      "SR": {
+        "time": "53.45",
+        "time_seconds": 53.45,
+        "name": "Nicholas Cusson",
+        "date": "Oct 21, 2023",
+        "meet": "Pecan Classic",
+        "season": "2023-24"
+      }
+    },
+    "500 Freestyle": {
+      "SR": {
+        "time": "5:19.99",
+        "time_seconds": 319.99,
+        "name": "Austin Morris",
+        "date": "Sep 10, 2015",
+        "meet": "Desert Christian / Tanque Verde / Amphi (Tucson, AZ)",
+        "season": "2015-16"
+      },
+      "JR": {
+        "time": "5:04.10",
+        "time_seconds": 304.1,
+        "name": "Joseph Breinholt",
+        "date": "Oct 24, 2015",
+        "meet": "Small School Championships",
+        "season": "2015-16"
+      },
+      "FR": {
+        "time": "5:08.11",
+        "time_seconds": 308.11,
+        "name": "Samuel Stott",
+        "date": "Nov 01, 2019",
+        "meet": "Canyon Del Oro Invite",
+        "season": "2019-20"
+      },
+      "SO": {
+        "time": "5:19.88",
+        "time_seconds": 319.88,
+        "name": "Zachary Duerkop",
+        "date": "Oct 25, 2023",
+        "meet": "Southern Arizona Region Qualifier",
+        "season": "2023-24"
+      }
+    }
+  },
+  "girls": {
+    "50 Freestyle": {
+      "SO": {
+        "time": "25.58",
+        "time_seconds": 25.58,
+        "name": "Carly Wilson",
+        "date": "Nov 2009",
+        "meet": "2009 AIA State Championship",
+        "season": "2009-10"
+      },
+      "JR": {
+        "time": "23.84",
+        "time_seconds": 23.84,
+        "name": "Carly Wilson",
+        "date": "Nov 2010",
+        "meet": "2010 D-2 AIA State Championship",
+        "season": "2010-11"
+      },
+      "SR": {
+        "time": "24.41",
+        "time_seconds": 24.41,
+        "name": "Carly Wilson",
+        "date": "Nov 2011",
+        "meet": "2011 D-2 AIA State Championship",
+        "season": "2011-12"
+      },
+      "FR": {
+        "time": "26.31",
+        "time_seconds": 26.31,
+        "name": "Chloe Weatherwax",
+        "date": "Oct 30, 2020",
+        "meet": "SQ  @ CDO (Oro Valley, AZ)",
+        "season": "2020-21"
+      }
+    },
+    "500 Freestyle": {
+      "SR": {
+        "time": "5:34.97",
+        "time_seconds": 334.97,
+        "name": "Marisol Rivera",
+        "date": "Nov 02, 2013",
+        "meet": "2013 AIA Division II State Championships",
+        "season": "2013-14"
+      },
+      "JR": {
+        "time": "5:27.18",
+        "time_seconds": 327.18,
+        "name": "Carly Wilson",
+        "date": "Oct 21, 2010",
+        "meet": "Pecan Classic",
+        "season": "2010-11"
+      },
+      "SO": {
+        "time": "5:32.67",
+        "time_seconds": 332.67,
+        "name": "Anna Ellis",
+        "date": "Nov 04, 2016",
+        "meet": "2016 D-3 AIA State Championship",
+        "season": "2016-17"
+      },
+      "FR": {
+        "time": "5:35.08",
+        "time_seconds": 335.08,
+        "name": "Anna Ellis",
+        "date": "Nov 06, 2015",
+        "meet": "2015 D-2 AIA State Championship",
+        "season": "2015-16"
+      }
+    },
+    "100 Breaststroke": {
+      "SR": {
+        "time": "1:05.10",
+        "time_seconds": 65.1,
+        "name": "Lindsey Schoel-Smith",
+        "date": "Nov 01, 2018",
+        "meet": "AIA D-3 Girls State Championship",
+        "season": "2018-19"
+      },
+      "JR": {
+        "time": "1:06.04",
+        "time_seconds": 66.04,
+        "name": "Marisol Rivera",
+        "date": "Nov 03, 2012",
+        "meet": "2012 AIA Division II State Championships",
+        "season": "2012-13"
+      },
+      "SO": {
+        "time": "1:07.01",
+        "time_seconds": 67.01,
+        "name": "Lindsey Sohoel-Smith",
+        "date": "Nov 04, 2016",
+        "meet": "2016 D-3 AIA State Championship",
+        "season": "2016-17"
+      },
+      "FR": {
+        "time": "1:08.97",
+        "time_seconds": 68.97,
+        "name": "Lindsey Sohoel-Smith",
+        "date": "Oct 24, 2015",
+        "meet": "Small School Championships",
+        "season": "2015-16"
+      }
+    },
+    "200 Individual Medley": {
+      "FR": {
+        "time": "2:21.44",
+        "time_seconds": 141.44,
+        "name": "Lindsey Sohoel-Smith",
+        "date": "Oct 24, 2015",
+        "meet": "Small School Championships",
+        "season": "2015-16"
+      },
+      "SO": {
+        "time": "2:15.55",
+        "time_seconds": 135.55,
+        "name": "Lindsey Sohoel-Smith",
+        "date": "Nov 04, 2016",
+        "meet": "2016 D-3 AIA State Championship",
+        "season": "2016-17"
+      },
+      "JR": {
+        "time": "2:21.97",
+        "time_seconds": 141.97,
+        "name": "Isabelle Sansom",
+        "date": "Nov 01, 2018",
+        "meet": "AIA D-3 Girls State Championship",
+        "season": "2018-19"
+      },
+      "SR": {
+        "time": "2:20.75",
+        "time_seconds": 140.75,
+        "name": "Sarynn Patterson",
+        "date": "Nov 07, 2019",
+        "meet": "2019 D-3 AIA State Championship",
+        "season": "2019-20"
+      }
+    },
+    "100 Freestyle": {
+      "SO": {
+        "time": "58.00",
+        "time_seconds": 58.0,
+        "name": "Natalie Armstrong",
+        "date": "Oct 23, 2021",
+        "meet": "2021 D-3 AIA State Championship",
+        "season": "2021-22"
+      },
+      "JR": {
+        "time": "52.12",
+        "time_seconds": 52.12,
+        "name": "Carly Wilson",
+        "date": "Nov 2010",
+        "meet": "2010 D-2 AIA State Championship",
+        "season": "2010-11"
+      },
+      "SR": {
+        "time": "52.54",
+        "time_seconds": 52.54,
+        "name": "Carly Wilson",
+        "date": "Nov 2011",
+        "meet": "2011 D-2 AIA State Championship",
+        "season": "2011-12"
+      },
+      "FR": {
+        "time": "58.58",
+        "time_seconds": 58.58,
+        "name": "Natalie Armstrong",
+        "date": "Nov 05, 2020",
+        "meet": "AIA D-3 State Championship",
+        "season": "2020-21"
+      }
+    },
+    "100 Butterfly": {
+      "JR": {
+        "time": "1:03.68",
+        "time_seconds": 63.68,
+        "name": "Brianne Foley",
+        "date": "Sep 23, 2023",
+        "meet": "TYR High School Classic",
+        "season": "2023-24"
+      },
+      "SO": {
+        "time": "1:00.93",
+        "time_seconds": 60.93,
+        "name": "Carly Wilson",
+        "date": "Nov 2009",
+        "meet": "2009 AIA State Championship",
+        "season": "2009-10"
+      },
+      "FR": {
+        "time": "1:05.90",
+        "time_seconds": 65.9,
+        "name": "Paisley White",
+        "date": "Nov 07, 2019",
+        "meet": "2019 D-3 AIA State Championship",
+        "season": "2019-20"
+      },
+      "SR": {
+        "time": "1:01.84",
+        "time_seconds": 61.84,
+        "name": "Brianne Foley",
+        "date": "Nov 09, 2024",
+        "meet": "2024 D-3 AIA State Championship",
+        "season": "2024-25"
+      }
+    },
+    "200 Freestyle": {
+      "FR": {
+        "time": "2:08.36",
+        "time_seconds": 128.36,
+        "name": "Natalie Armstrong",
+        "date": "Nov 05, 2020",
+        "meet": "AIA D-3 State Championship",
+        "season": "2020-21"
+      },
+      "JR": {
+        "time": "2:08.09",
+        "time_seconds": 128.09,
+        "name": "Natalie Armstrong",
+        "date": "Oct 22, 2022",
+        "meet": "Pecan Classic",
+        "season": "2022-23"
+      },
+      "SR": {
+        "time": "2:02.06",
+        "time_seconds": 122.06,
+        "name": "Carly Wilson",
+        "date": "Oct 18, 2011",
+        "meet": "Pecan Classic",
+        "season": "2011-12"
+      },
+      "SO": {
+        "time": "2:05.33",
+        "time_seconds": 125.33,
+        "name": "Hazel Dasse",
+        "date": "Nov 04, 2016",
+        "meet": "2016 D-3 AIA State Championship",
+        "season": "2016-17"
+      }
+    },
+    "100 Backstroke": {
+      "JR": {
+        "time": "1:00.33",
+        "time_seconds": 60.33,
+        "name": "Carly Wilson",
+        "date": "Sep 23, 2010",
+        "meet": "CDO Classic",
+        "season": "2010-11"
+      },
+      "SO": {
+        "time": "1:05.84",
+        "time_seconds": 65.84,
+        "name": "Paisley White",
+        "date": "Nov 05, 2020",
+        "meet": "AIA D-3 State Championship",
+        "season": "2020-21"
+      },
+      "SR": {
+        "time": "1:02.65",
+        "time_seconds": 62.65,
+        "name": "Calla Isenberg",
+        "date": "Oct 27, 2017",
+        "meet": "Southern Arizona Regional Qualifier",
+        "season": "2017-18"
+      },
+      "FR": {
+        "time": "1:06.38",
+        "time_seconds": 66.38,
+        "name": "Sarynn Patterson",
+        "date": "Nov 04, 2016",
+        "meet": "2016 D-3 AIA State Championship",
+        "season": "2016-17"
+      }
+    }
+  }
+}
