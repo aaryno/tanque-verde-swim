@@ -117,12 +117,12 @@ def format_split_time(split_str):
     return re.sub(r'^00:', '', split_str)
 
 def get_stroke_for_position(event_type, position):
-    """Get stroke abbreviation for relay position"""
+    """Get stroke info for relay position - returns (abbreviation, full_name)"""
     if 'Medley' in event_type:
-        strokes = ['BK', 'BR', 'FL', 'FR']
-        return strokes[position] if position < 4 else ''
+        strokes = [('BK', 'Backstroke'), ('BR', 'Breaststroke'), ('FL', 'Butterfly'), ('FR', 'Freestyle')]
+        return strokes[position] if position < 4 else ('', '')
     else:
-        return 'FR'
+        return ('FR', 'Freestyle')
 
 def strip_leading_zero(time_str):
     """Remove leading zero from time (01:42.54 -> 1:42.54)"""
@@ -185,7 +185,7 @@ def generate_relay_row_html(relay, gender, splits_data, event_type, row_num):
     # Build expanded content
     expanded_html = '<div class="relay-expanded-rows">'
     for i, swimmer in enumerate(swimmers):
-        stroke = get_stroke_for_position(event_type, i)
+        stroke_abbrev, stroke_full = get_stroke_for_position(event_type, i)
         split_time = ''
         
         if splits_match:
@@ -207,7 +207,7 @@ def generate_relay_row_html(relay, gender, splits_data, event_type, row_num):
         class_badge = get_class_badge_html(swimmer_class)
         
         expanded_html += f'<div class="relay-split-row">'
-        expanded_html += f'<span class="split-stroke">{stroke}</span>'
+        expanded_html += f'<span class="split-stroke"><span class="stroke-abbrev">{stroke_abbrev}</span><span class="stroke-full">{stroke_full}</span></span>'
         expanded_html += f'<span class="split-swimmer">{swimmer} {class_badge}</span>'
         expanded_html += f'<span class="split-time">{split_time}</span>'
         expanded_html += '</div>'
@@ -368,9 +368,18 @@ def generate_full_page_html(gender, events, splits_data):
         .split-stroke {{
             font-style: italic;
             color: #666;
-            width: 1.5rem;
             flex-shrink: 0;
             text-align: left;
+            margin-right: 0.5rem;
+        }}
+        
+        /* Show full stroke name on desktop, abbreviation on mobile */
+        .stroke-abbrev {{
+            display: none;
+        }}
+        
+        .stroke-full {{
+            display: inline;
         }}
         
         .split-swimmer {{
@@ -501,9 +510,18 @@ def generate_full_page_html(gender, events, splits_data):
             }}
             
             .split-stroke {{
-                width: 1.2rem;
                 font-size: 0.75rem;
                 text-align: left;
+                margin-right: 0.3rem;
+            }}
+            
+            /* Show abbreviation on mobile */
+            .stroke-abbrev {{
+                display: inline;
+            }}
+            
+            .stroke-full {{
+                display: none;
             }}
             
             .split-swimmer {{
