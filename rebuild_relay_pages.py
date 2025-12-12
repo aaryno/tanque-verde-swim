@@ -117,12 +117,12 @@ def format_split_time(split_str):
     return re.sub(r'^00:', '', split_str)
 
 def get_stroke_for_position(event_type, position):
-    """Get stroke name for relay position"""
+    """Get stroke abbreviation for relay position"""
     if 'Medley' in event_type:
-        strokes = ['Backstroke', 'Breaststroke', 'Butterfly', 'Freestyle']
+        strokes = ['BA', 'BR', 'BU', 'FR']
         return strokes[position] if position < 4 else ''
     else:
-        return 'Freestyle'
+        return 'FR'
 
 def strip_leading_zero(time_str):
     """Remove leading zero from time (01:42.54 -> 1:42.54)"""
@@ -258,11 +258,11 @@ def generate_full_page_html(gender, events, splits_data):
         }}
         
         .rank-cell {{
-            width: 50px;
+            width: 40px;
             font-weight: bold;
             text-align: center;
             vertical-align: top;
-            height: 1.5em;
+            color: var(--tvhs-primary, #0a3622);
         }}
         
         .time-cell {{
@@ -323,7 +323,7 @@ def generate_full_page_html(gender, events, splits_data):
         .split-stroke {{
             font-style: italic;
             color: #666;
-            min-width: 5rem;
+            min-width: 2rem;
             flex-shrink: 0;
         }}
         
@@ -392,11 +392,10 @@ def generate_full_page_html(gender, events, splits_data):
             }}
             
             .rank-cell {{
-                width: 35px;
-                height: 35px !important;
-                max-height: 35px !important;
-                vertical-align: top !important;
-                line-height: 35px;
+                width: 30px;
+                font-weight: bold;
+                color: var(--tvhs-primary, #0a3622);
+                vertical-align: top;
             }}
             
             .time-cell {{
@@ -424,14 +423,12 @@ def generate_full_page_html(gender, events, splits_data):
             }}
             
             .split-stroke {{
-                min-width: 4rem;
+                min-width: 1.5rem;
                 font-size: 0.75rem;
             }}
             
             .split-swimmer {{
                 font-size: 0.85rem;
-                overflow: hidden;
-                text-overflow: ellipsis;
             }}
             
             .split-time {{
