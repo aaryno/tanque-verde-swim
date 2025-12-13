@@ -15,7 +15,7 @@ This is the **self-contained** repository for the Tanque Verde High School Swimm
 
 ```bash
 cd ~/workspaces/swimming/tanque-verde-swim
-python3 generate_website.py
+python3 scripts/generate_website.py
 git add -A && git commit -m "Regenerate website" && git push
 ```
 
@@ -76,7 +76,8 @@ tanque-verde-swim/
 │   ├── images/                # Logos and images
 │   ├── records/               # Overall records, relays, by-grade pages
 │   ├── top10/                 # All-time and seasonal top 10 pages
-│   └── annual/                # Annual summary pages (2012-13 through 2025-26)
+│   ├── annual/                # Annual summary pages (2012-13 through 2025-26)
+│   └── archive/               # Backup of website (Dec 2025)
 │
 ├── records/                   # SOURCE OF TRUTH - Markdown files
 │   ├── records-boys.md        # Boys team records (edit this!)
@@ -95,13 +96,17 @@ tanque-verde-swim/
 │   │   └── splits_YYYY-YY.json       # Per-season relay splits
 │   └── lookups/                      # Rosters and swimmer data
 │
-├── artifacts/                 # Session notes, debugging logs, CSS experiments
+├── scripts/                   # All Python scripts
+│   ├── generate_website.py    # Main entry point
+│   ├── *.py                   # Active scripts (23 total)
+│   ├── harvest/               # Data harvesting scripts (17)
+│   └── archive/               # Archived/superseded scripts (27)
 │
-├── [Python scripts]           # Generation and analysis scripts (see below)
+├── artifacts/                 # Session notes, debugging logs
 │
 ├── requirements.txt           # Python dependencies
 ├── claude.md                  # This file - AI assistant context
-├── WORKFLOW.md                # Detailed maintenance guide
+├── WORKFLOW.md                # Quick reference guide
 └── SEASON_UPDATE_GUIDE.md     # End-of-season workflow
 ```
 
@@ -109,15 +114,17 @@ tanque-verde-swim/
 
 ## Script Categories
 
+All scripts are in the `scripts/` directory.
+
 ### 🟢 Core Generation (ALWAYS NEEDED)
 
 These scripts generate the website. They only use Python stdlib.
 
 | Script | Purpose | Called By |
 |--------|---------|-----------|
-| `generate_website.py` | **Main entry point** - runs all generators | Manual |
-| `generate_annual_pages.py` | Creates annual summary HTML pages | generate_website.py |
-| `rebuild_relay_pages.py` | Creates relay pages with expandable splits | generate_website.py |
+| `scripts/generate_website.py` | **Main entry point** - runs all generators | Manual |
+| `scripts/generate_annual_pages.py` | Creates annual summary HTML pages | generate_website.py |
+| `scripts/rebuild_relay_pages.py` | Creates relay pages with expandable splits | generate_website.py |
 
 ### 🟡 Data Enrichment (AS NEEDED)
 
@@ -125,8 +132,19 @@ Run these after adding new data to enrich with additional info.
 
 | Script | Purpose | When to Run |
 |--------|---------|-------------|
-| `enrich_previous_record_locations.py` | Adds meet locations to previous records | After adding class records |
-| `add_2025_26_class_records.py` | Template for extracting class records | Copy & modify for new seasons |
+| `scripts/enrich_previous_record_locations.py` | Adds meet locations to previous records | After adding class records |
+| `scripts/add_2025_26_class_records.py` | Template for extracting class records | Copy & modify for new seasons |
+
+### 🟠 Harvesting Scripts
+
+Located in `scripts/harvest/` - for importing data from external sources:
+- `harvest_azpreps365_v3.py` - Latest AZPreps365 scraper
+- `parse_aia_state_meets.py` - State championship PDF parsing
+- `merge_aia_state_data.py` - Merge parsed state data
+
+### ⚪ Archived Scripts
+
+Located in `scripts/archive/` - one-time fixes and superseded versions (27 scripts).
 
 ### 🔵 Analysis Tools
 
@@ -264,7 +282,7 @@ Name normalization for consistent display.
 
 ```bash
 cd ~/workspaces/swimming/tanque-verde-swim
-python3 generate_website.py
+python3 scripts/generate_website.py
 git add -A && git commit -m "Regenerate website" && git push
 ```
 
@@ -284,7 +302,7 @@ git add -A && git commit -m "Regenerate website" && git push
 
 3. **Regenerate and deploy:**
    ```bash
-   python3 generate_website.py
+   python3 scripts/generate_website.py
    git add -A && git commit -m "New record: [event] [time] [athlete]"
    git push
    ```
@@ -299,8 +317,8 @@ git add -A && git commit -m "Regenerate website" && git push
 
 2. **Regenerate relay pages:**
    ```bash
-   python3 rebuild_relay_pages.py
-   python3 generate_website.py
+   python3 scripts/rebuild_relay_pages.py
+   python3 scripts/generate_website.py
    ```
 
 ### 4. Start a New Season (e.g., 2026-27)
@@ -323,7 +341,7 @@ git add -A && git commit -m "Regenerate website" && git push
    # Add: {"boys": [], "girls": []}
    ```
 
-4. **Update `generate_annual_pages.py`:**
+4. **Update `scripts/generate_annual_pages.py`:**
    ```python
    # Add "2026-27" to SEASONS list
    SEASONS = [..., "2025-26", "2026-27"]
@@ -331,7 +349,7 @@ git add -A && git commit -m "Regenerate website" && git push
 
 5. **Regenerate:**
    ```bash
-   python3 generate_website.py
+   python3 scripts/generate_website.py
    ```
 
 ### 5. End-of-Season Update (Comprehensive)
@@ -343,15 +361,15 @@ Quick version:
 # 1. Download state championship PDF from AIA website
 
 # 2. Run automated update (if using swim-data-tool)
-python run_season_update.py \
+python scripts/run_season_update.py \
   --season 26-27 \
   --state-pdf ~/Downloads/d3-state-2026.pdf \
   --senior-class 2027
 
 # 3. Or manually:
-python parse_aia_state_meets.py        # Parse state PDF
-python merge_aia_state_data.py          # Merge into data
-python generate_website.py              # Regenerate site
+python scripts/harvest/parse_aia_state_meets.py   # Parse state PDF
+python scripts/harvest/merge_aia_state_data.py   # Merge into data
+python scripts/generate_website.py               # Regenerate site
 
 # 4. Commit and push
 git add -A && git commit -m "Season 2026-27 update" && git push

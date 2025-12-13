@@ -900,8 +900,10 @@ def main():
     print("=" * 80)
     print()
     
-    records_dir = Path('records')
-    docs_dir = Path('docs')
+    # Get project root (parent of scripts/ directory)
+    project_root = Path(__file__).parent.parent
+    records_dir = project_root / 'records'
+    docs_dir = project_root / 'docs'
     
     # Generate Overall Records page (OPEN records only)
     generate_overall_records_page(records_dir, docs_dir)
@@ -935,7 +937,8 @@ def main():
     # This provides expandable cards with splits data
     print("\n🏃 Generating Relay Records (via rebuild_relay_pages.py)...")
     import subprocess
-    result = subprocess.run(['python3', 'rebuild_relay_pages.py'], capture_output=True, text=True)
+    script_dir = Path(__file__).parent
+    result = subprocess.run(['python3', str(script_dir / 'rebuild_relay_pages.py')], capture_output=True, text=True)
     if result.returncode != 0:
         print(f"  ⚠️ Warning: rebuild_relay_pages.py failed: {result.stderr}")
     else:
@@ -959,8 +962,7 @@ def main():
     
     # Generate annual summaries using dedicated script (maintains styled format)
     print("\n📅 Generating Annual Summaries (via generate_annual_pages.py)...")
-    import subprocess
-    result = subprocess.run(['python3', 'generate_annual_pages.py'], capture_output=True, text=True)
+    result = subprocess.run(['python3', str(script_dir / 'generate_annual_pages.py')], capture_output=True, text=True)
     if result.returncode != 0:
         print(f"  ⚠️ Warning: generate_annual_pages.py failed: {result.stderr}")
     else:

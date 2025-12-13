@@ -30,6 +30,9 @@ INCOMPLETE_DATA_YEARS = ["2007-08", "2008-09", "2009-10", "2010-11", "2011-12"]
 TOP10_SEASONS = [s for s in SEASONS if s != "2025-26"]
 
 
+# Project root (parent of scripts/ directory)
+PROJECT_ROOT = Path(__file__).parent.parent
+
 # Global cache for class records history
 _class_records_cache = None
 
@@ -37,7 +40,7 @@ def get_class_records_history():
     """Load class records history and cache it"""
     global _class_records_cache
     if _class_records_cache is None:
-        history_file = Path('data/class_records_history.json')
+        history_file = PROJECT_ROOT / 'data/class_records_history.json'
         if history_file.exists():
             with open(history_file, 'r') as f:
                 _class_records_cache = json.load(f)
@@ -885,7 +888,8 @@ def generate_page_html(data, class_records):
 
 
 def main():
-    base_dir = Path(__file__).parent
+    # Project root is parent of scripts/ directory
+    base_dir = Path(__file__).parent.parent
     records_dir = base_dir / 'records'
     docs_dir = base_dir / 'docs'
     data_dir = base_dir / 'data'

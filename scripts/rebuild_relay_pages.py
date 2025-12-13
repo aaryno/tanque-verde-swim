@@ -10,10 +10,13 @@ import json
 import re
 from pathlib import Path
 
+# Get project root (parent of scripts/ directory)
+PROJECT_ROOT = Path(__file__).parent.parent
+
 def load_splits():
     """Load all relay splits from harvested data"""
     try:
-        with open('data/historical_splits/all_relay_splits.json', 'r') as f:
+        with open(PROJECT_ROOT / 'data/historical_splits/all_relay_splits.json', 'r') as f:
             return json.load(f)
     except:
         return {'boys': [], 'girls': []}
@@ -423,12 +426,12 @@ def main():
     print(f"  Loaded {len(splits_data.get('boys', []))} boys splits, {len(splits_data.get('girls', []))} girls splits")
     
     for gender in ['boys', 'girls']:
-        md_path = f'records/relay-records-{gender}.md'
-        html_path = f'docs/records/{gender}-relays.html'
+        md_path = PROJECT_ROOT / f'records/relay-records-{gender}.md'
+        html_path = PROJECT_ROOT / f'docs/records/{gender}-relays.html'
         
         print(f"\nProcessing {gender}...")
         
-        events = parse_relay_markdown(md_path)
+        events = parse_relay_markdown(str(md_path))
         for event, relays in events.items():
             print(f"  {event}: {len(relays)} relays (showing top 10)")
         

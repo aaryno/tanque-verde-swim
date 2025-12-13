@@ -12,7 +12,7 @@ This document provides quick-reference commands for common maintenance tasks.
 
 ### Regenerate Entire Website
 ```bash
-python3 generate_website.py
+python3 scripts/generate_website.py
 git add -A && git commit -m "Regenerate website" && git push
 ```
 
@@ -20,7 +20,7 @@ git add -A && git commit -m "Regenerate website" && git push
 ```bash
 # Edit records/records-boys.md or records/records-girls.md
 # Then:
-python3 generate_website.py
+python3 scripts/generate_website.py
 git add -A && git commit -m "New record: [event] [time] [athlete]" && git push
 ```
 
@@ -28,8 +28,8 @@ git add -A && git commit -m "New record: [event] [time] [athlete]" && git push
 ```bash
 # Edit data/class_records_history.json
 # Then:
-python3 enrich_previous_record_locations.py
-python3 generate_website.py
+python3 scripts/enrich_previous_record_locations.py
+python3 scripts/generate_website.py
 git add -A && git commit -m "Add class records for 20XX-XX" && git push
 ```
 
@@ -37,7 +37,7 @@ git add -A && git commit -m "Add class records for 20XX-XX" && git push
 ```bash
 # Edit data/historical_splits/splits_YYYY-YY.json
 # Then:
-python3 rebuild_relay_pages.py
+python3 scripts/rebuild_relay_pages.py
 git add -A && git commit -m "Update relay splits" && git push
 ```
 
@@ -47,10 +47,10 @@ git add -A && git commit -m "Update relay splits" && git push
 
 | Command | Purpose |
 |---------|---------|
-| `python3 generate_website.py` | Regenerate all HTML pages |
-| `python3 generate_annual_pages.py` | Regenerate only annual summary pages |
-| `python3 rebuild_relay_pages.py` | Regenerate only relay pages |
-| `python3 enrich_previous_record_locations.py` | Add meet info to previous records |
+| `python3 scripts/generate_website.py` | Regenerate all HTML pages |
+| `python3 scripts/generate_annual_pages.py` | Regenerate only annual summary pages |
+| `python3 scripts/rebuild_relay_pages.py` | Regenerate only relay pages |
+| `python3 scripts/enrich_previous_record_locations.py` | Add meet info to previous records |
 
 ---
 
