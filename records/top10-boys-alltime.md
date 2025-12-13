@@ -9,16 +9,16 @@
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| **1** | **21.64 (r)** | **Nicholas Cusson** | **JR** | **Nov 05, 2022** | **2022 D-3 AIA Boys State Championship** |
+| **1** | **21.64r** | **Nicholas Cusson** | **JR** | **Nov 05, 2022** | **2022 D-3 AIA Boys State Championship** |
 | 2 | 22.13 | Samuel Stott | SR | Nov 05, 2022 | 2022 D-3 AIA Boys State Championship |
-| 3 | 22.43 (r) | Joseph Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier |
+| 3 | 22.43r | Joseph Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier |
 | 4 | 22.96 | Zachary Duerkop | SR | Sep 27, 2025 | Arena High School Classic |
-| 5 | 23.21 (r) | Jackson Eftekhar | JR | Nov 08, 2025 | D-3 AIA State Championship |
-| 6 | 23.26 (r) | Trevor Clausen | SO | Nov 07, 2019 | 2019 D-3 AIA State Championship |
+| 5 | 23.21r | Jackson Eftekhar | JR | Nov 08, 2025 | D-3 AIA State Championship |
+| 6 | 23.26r | Trevor Clausen | SO | Nov 07, 2019 | 2019 D-3 AIA State Championship |
 | 7 | 23.54 | Grayson The | SR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
 | 8 | 24.21 | Tanner Morris | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier |
-| 9 | 24.81 (r) | Wade Olsson | SO | Oct 19, 2024 | Pecan Classic |
-| 10 | 24.85 (r) | Alexander Flores | SR | Sep 17, 2016 | Canyon Del Oro Classic |
+| 9 | 24.81r | Wade Olsson | SO | Oct 19, 2024 | Pecan Classic |
+| 10 | 24.85r | Alexander Flores | SR | Sep 17, 2016 | Canyon Del Oro Classic |
 
 ### 100 Freestyle
 
@@ -26,12 +26,12 @@
 |-----:|-----:|---------|------|------|------|
 | **1** | **46.44** | **Nicholas Cusson** | **SR** | **Nov 04, 2023** | **2023 D-3 AIA State Championship** |
 | 2 | 47.71 | Samuel Stott | SO | Nov 05, 2020 | AIA D-3 State Championship |
-| 3 | 47.92 (r) | Zachary Duerkop | SR | Oct 24, 2025 | Southern Arizona Qualifier |
+| 3 | 47.92r | Zachary Duerkop | SR | Oct 24, 2025 | Southern Arizona Qualifier |
 | 4 | 47.98 | Joseph Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier |
 | 5 | 49.71 | John Deninghoff | SR | Nov 01, 2018 | AIA D-3 Boys State Championship |
-| 6 | 50.09 (r) | Wade Olsson | JR | Oct 18, 2025 | Pecan Classic |
+| 6 | 50.09r | Wade Olsson | JR | Oct 18, 2025 | Pecan Classic |
 | 7 | 51.43 | Jackson Eftekhar | JR | Oct 18, 2025 | Pecan Classic |
-| 8 | 52.04 (r) | Trevor Clausen | SO | Nov 07, 2019 | 2019 D-3 AIA State Championship |
+| 8 | 52.04r | Trevor Clausen | SO | Nov 07, 2019 | 2019 D-3 AIA State Championship |
 | 9 | 52.36 | Austin Morris | SR | Oct 24, 2015 | Small School Championships |
 | 10 | 53.58 | Jackson Machamer | SO | Nov 09, 2024 | 2024 D-3 AIA State Championship |
 

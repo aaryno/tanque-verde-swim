@@ -43,7 +43,7 @@ def parse_top10_file(filepath):
             if len(parts) >= 5:
                 try:
                     rank = int(parts[0]) if parts[0].isdigit() else None
-                    time = parts[1].replace('(r)', '').strip()
+                    time = parts[1].replace('(r)', '').rstrip('r').strip()
                     name = parts[2]
                     year = parts[3].upper()  # FR, SO, JR, SR
                     date = parts[4]

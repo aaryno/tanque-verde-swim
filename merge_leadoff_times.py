@@ -69,8 +69,8 @@ def parse_markdown_table(content, event_name):
             meet = cells[5].replace('**', '').strip() if len(cells) > 5 else ''
             
             # Check if this is a relay time (marked with r)
-            is_relay = '(r)' in time_str
-            time_clean = time_str.replace('(r)', '').strip()
+            is_relay = '(r)' in time_str or time_str.endswith('r')
+            time_clean = time_str.replace('(r)', '').rstrip('r').strip()
             
             records.append({
                 'time': parse_time_to_seconds(time_clean),
@@ -129,7 +129,7 @@ def format_record_row(record, rank, is_record_holder=False):
     """Format a record as a markdown table row"""
     time_str = record['time_str']
     if record.get('is_relay'):
-        time_str = f"{time_str} (r)"
+        time_str = f"{time_str}r"
     
     if is_record_holder:
         return f"| **{rank}** | **{time_str}** | **{record['name']}** | **{record['year']}** | **{record['date']}** | **{record['meet']}** |"
@@ -225,7 +225,7 @@ def main():
     for f in updated_files:
         print(f"  ✓ {f}")
     
-    print("\nNote: Times marked with '(r)' are from relay leadoffs.")
+    print("\nNote: Times marked with 'r' suffix are from relay leadoffs.")
     print("Run generate_website.py to regenerate HTML with updated records.")
 
 if __name__ == "__main__":

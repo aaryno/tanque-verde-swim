@@ -77,7 +77,7 @@ def load_overall_records():
 
 def parse_time_to_seconds(time_str):
     """Convert time string to seconds"""
-    time_str = time_str.strip().replace('**', '').replace('(r)', '')
+    time_str = time_str.strip().replace('**', '').replace('(r)', '').rstrip('r')
     try:
         if ':' in time_str:
             parts = time_str.split(':')
@@ -104,7 +104,7 @@ def parse_top10_file(filepath):
             parts = [p.strip().replace('**', '') for p in line.split('|') if p.strip()]
             if len(parts) >= 5:
                 try:
-                    time = parts[1].replace('(r)', '').strip()
+                    time = parts[1].replace('(r)', '').rstrip('r').strip()
                     entries.append({
                         'event': current_event,
                         'time': time,
