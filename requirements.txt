@@ -1,0 +1,21 @@
+# Tanque Verde Swimming Website - Python Dependencies
+# 
+# Core generation (generate_website.py) only needs stdlib.
+# These packages are needed for harvesting and analysis scripts.
+
+# Data processing
+pandas>=2.0.0
+
+# Web scraping
+beautifulsoup4>=4.12.0
+requests>=2.31.0
+
+# PDF parsing (for AIA State Championship results)
+pdfplumber>=0.10.0
+
+# Browser automation (for dynamic sites like SwimCloud)
+playwright>=1.40.0
+
+# Note: After installing playwright, run:
+#   playwright install chromium
+

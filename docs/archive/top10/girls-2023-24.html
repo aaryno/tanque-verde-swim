@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Girls Top 10 - 2023-24 | Tanque Verde Swimming</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/hawk-logo.png">
+</head>
+<body>
+    
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-dark" id="main-nav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html">
+                <img src="/images/hawk-logo.png" alt="Tanque Verde Hawks" class="navbar-logo">
+                <span class="navbar-brand-text d-md-none">TVHS</span>
+                <span class="navbar-brand-text d-none d-md-inline">Tanque Verde Swimming Records</span>
+            </a>
+            <!-- Gender Toggle -->
+            <div class="gender-toggle" id="gender-toggle">
+                <button class="btn btn-gender active" data-gender="boys">Boys</button>
+                <button class="btn btn-gender" data-gender="girls">Girls</button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Quick Nav Bar -->
+    <nav class="navbar navbar-dark quick-nav" id="quick-nav">
+        <div class="container-fluid justify-content-start">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link nav-home" href="/index.html" title="Home">
+                        <img src="/images/hawk-logo.png" alt="Home" class="nav-logo">
+                        <span class="d-none d-md-inline">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/records/overall.html" id="nav-overall" title="Overall Records">🏆<span class="d-none d-md-inline ms-1">Records</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nav-top10" title="All-Time Top 10">🔟<span class="d-none d-md-inline ms-1">Top 10</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nav-relays" title="Relay Records">🤝<span class="d-none d-md-inline ms-1">Relays</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅<span class="d-none d-md-inline ms-1">Top 10 by Year</span></a>
+                    <ul class="dropdown-menu dropdown-menu-scroll">
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2024-25</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2023-24</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2022-23</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2021-22</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2020-21</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2019-20</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2018-19</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2017-18</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2016-17</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2015-16</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2014-15</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2013-14</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2012-13</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2011-12</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2010-11</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2009-10</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2008-09</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2007-08</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-summary" title="Season Summary">📈<span class="d-none d-md-inline ms-1">Summary by Year</span></a>
+                    <ul class="dropdown-menu dropdown-menu-scroll dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/annual/2025-26.html">2025-26</a></li>
+                        <li><a class="dropdown-item" href="/annual/2024-25.html">2024-25</a></li>
+                        <li><a class="dropdown-item" href="/annual/2023-24.html">2023-24</a></li>
+                        <li><a class="dropdown-item" href="/annual/2022-23.html">2022-23</a></li>
+                        <li><a class="dropdown-item" href="/annual/2021-22.html">2021-22</a></li>
+                        <li><a class="dropdown-item" href="/annual/2020-21.html">2020-21</a></li>
+                        <li><a class="dropdown-item" href="/annual/2019-20.html">2019-20</a></li>
+                        <li><a class="dropdown-item" href="/annual/2018-19.html">2018-19</a></li>
+                        <li><a class="dropdown-item" href="/annual/2017-18.html">2017-18</a></li>
+                        <li><a class="dropdown-item" href="/annual/2016-17.html">2016-17</a></li>
+                        <li><a class="dropdown-item" href="/annual/2015-16.html">2015-16</a></li>
+                        <li><a class="dropdown-item" href="/annual/2014-15.html">2014-15</a></li>
+                        <li><a class="dropdown-item" href="/annual/2013-14.html">2013-14</a></li>
+                        <li><a class="dropdown-item" href="/annual/2012-13.html">2012-13</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container d-flex align-items-center justify-content-between flex-wrap">
+            <h1 class="mb-0">Girls Top 10 - 2023-24</h1>
+            <div id="jump-to-container"></div>
+        </div>
+    </div>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Build Jump To dropdown from event headings (h2 or h3.event-heading)
+        let headings = document.querySelectorAll('h2, h3.event-heading');
+        if (headings.length > 2) {
+            let options = '<div class="jump-to-dropdown dropdown"><button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">Jump To</button><ul class="dropdown-menu dropdown-menu-end dropdown-menu-scroll">';
+            headings.forEach(function(h, i) {
+                const id = 'event-' + i;
+                h.id = id;
+                options += '<li><a class="dropdown-item" href="#' + id + '">' + h.textContent + '</a></li>';
+            });
+            options += '</ul></div>';
+            document.getElementById('jump-to-container').innerHTML = options;
+        }
+        
+        // Check if this is a relay records page
+        const isRelayPage = document.title.toLowerCase().includes('relay');
+        if (isRelayPage && window.innerWidth <= 576) {
+            // Transform relay tables for mobile
+            document.querySelectorAll('table tbody tr').forEach(function(row) {
+                const cells = row.querySelectorAll('td');
+                if (cells.length >= 5) {
+                    const participants = cells[2].textContent;
+                    const date = cells[3].textContent;  // Date is column 4 (index 3)
+                    const meet = cells[4].textContent;  // Meet is column 5 (index 4)
+                    
+                    // Extract last names
+                    const names = participants.split(',').map(n => n.trim());
+                    const lastNames = names.map(n => {
+                        const parts = n.split(' ');
+                        return parts[parts.length - 1];
+                    }).join(', ');
+                    
+                    // Create expandable content
+                    const shortNames = document.createElement('div');
+                    shortNames.className = 'relay-names';
+                    shortNames.textContent = lastNames;
+                    
+                    const details = document.createElement('div');
+                    details.className = 'relay-details';
+                    names.forEach(n => {
+                        const member = document.createElement('span');
+                        member.className = 'member';
+                        member.textContent = n;
+                        details.appendChild(member);
+                    });
+                    
+                    // Split meet name from location (typically in parentheses)
+                    const meetMatch = meet.match(/^(.+?)(\s*\([^)]+\))?$/);
+                    const meetName = meetMatch ? meetMatch[1].trim() : meet;
+                    const meetLocation = meetMatch && meetMatch[2] ? meetMatch[2].trim() : '';
+                    
+                    const meetDiv = document.createElement('div');
+                    meetDiv.className = 'meet-full';
+                    const meetNameSpan = document.createElement('span');
+                    meetNameSpan.className = 'meet-name';
+                    meetNameSpan.textContent = meetName;
+                    meetDiv.appendChild(meetNameSpan);
+                    if (meetLocation) {
+                        const meetLocSpan = document.createElement('span');
+                        meetLocSpan.className = 'meet-location';
+                        meetLocSpan.textContent = meetLocation;
+                        meetDiv.appendChild(meetLocSpan);
+                    }
+                    details.appendChild(meetDiv);
+                    
+                    // Replace participants cell content
+                    cells[2].innerHTML = '';
+                    cells[2].appendChild(shortNames);
+                    cells[2].appendChild(details);
+                    
+                    // Put date in the date cell (hide meet cell)
+                    cells[3].textContent = date;
+                    cells[4].style.display = 'none';  // Hide meet column
+                    
+                    // Add click handler
+                    shortNames.addEventListener('click', function() {
+                        this.classList.toggle('expanded');
+                        details.classList.toggle('show');
+                    });
+                }
+            });
+        }
+        
+        // Gender toggle and navigation
+        let currentGender = localStorage.getItem('tvhs-gender') || 'boys';
+        
+        // Detect current page gender from URL
+        const currentPath = window.location.pathname;
+        if (currentPath.includes('girls')) {
+            currentGender = 'girls';
+        } else if (currentPath.includes('boys')) {
+            currentGender = 'boys';
+        }
+        localStorage.setItem('tvhs-gender', currentGender);
+        
+        function updateGenderUI() {
+            document.querySelectorAll('.btn-gender').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.gender === currentGender);
+            });
+            updateNavLinks();
+        }
+        
+        function updateNavLinks() {
+            const g = currentGender;
+            // Update nav links based on current gender
+            document.getElementById('nav-top10').href = '/top10/' + g + '-alltime.html';
+            document.getElementById('nav-relays').href = '/records/' + g + '-relays.html';
+            
+            // Update season links
+            document.querySelectorAll('.season-link').forEach(link => {
+                const season = link.textContent;
+                link.href = '/top10/' + g + '-' + season + '.html';
+            });
+            
+            // Reorder sections on Overall Records page based on gender
+            const overallPage = document.querySelector('.overall-records-page');
+            if (overallPage) {
+                const boysSection = document.getElementById('boys-records');
+                const girlsSection = document.getElementById('girls-records');
+                if (boysSection && girlsSection) {
+                    if (g === 'girls') {
+                        overallPage.insertBefore(girlsSection, boysSection);
+                    } else {
+                        overallPage.insertBefore(boysSection, girlsSection);
+                    }
+                }
+            }
+        }
+        
+        // Gender toggle click handlers - navigate to corresponding gender page
+        document.querySelectorAll('.btn-gender').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const newGender = this.dataset.gender;
+                if (newGender === currentGender) return;
+                
+                localStorage.setItem('tvhs-gender', newGender);
+                
+                // Try to navigate to the corresponding gender version of current page
+                const path = window.location.pathname;
+                let newPath = path;
+                
+                if (path.includes('boys')) {
+                    newPath = path.replace('boys', 'girls');
+                } else if (path.includes('girls')) {
+                    newPath = path.replace('girls', 'boys');
+                } else {
+                    // Not a gendered page, just update UI
+                    currentGender = newGender;
+                    updateGenderUI();
+                    return;
+                }
+                
+                // Navigate to the new page
+                window.location.href = newPath;
+            });
+        });
+        
+        // Initialize
+        updateGenderUI();
+        
+        // Collapsible sections
+        document.querySelectorAll('.section-header').forEach(header => {
+            header.addEventListener('click', function(e) {
+                e.preventDefault();
+                const toggleBtn = this.querySelector('.section-toggle');
+                if (!toggleBtn) return;
+                
+                const targetId = toggleBtn.dataset.target;
+                const content = document.getElementById(targetId);
+                
+                if (content) {
+                    this.classList.toggle('collapsed');
+                    content.classList.toggle('collapsed');
+                }
+            });
+        });
+    });
+    </script>
+    
+    <!-- Main Content -->
+    <div class="container my-4">
+        <div class="content top10-cards">
+<h3 class="event-heading top10-event-header">50 Freestyle</h3>
+<div class="top10-event-cards">
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">1</span>
+        <span class="top10-time">26.03</span>
+        <span class="top10-athlete">Brianne Foley <span class="grade-badge grade-jr">JR</span></span>
+        <span class="top10-date">Sep 16, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 CDO Classic</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">2</span>
+        <span class="top10-time">26.77</span>
+        <span class="top10-athlete">Natalie Armstrong <span class="grade-badge grade-sr">SR</span></span>
+        <span class="top10-date">Sep 23, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 TYR High School Classic</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">3</span>
+        <span class="top10-time">28.10</span>
+        <span class="top10-athlete">Hadley Cusson <span class="grade-badge grade-fr">FR</span></span>
+        <span class="top10-date">Oct 25, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 Southern Arizona Region Qualifier</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">4</span>
+        <span class="top10-time">29.84</span>
+        <span class="top10-athlete">Amira Alitiem <span class="grade-badge grade-fr">FR</span></span>
+        <span class="top10-date">Sep 23, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 TYR High School Classic</div>
+    </div>
+</div>
+</div>
+<h3 class="event-heading top10-event-header">100 Freestyle</h3>
+<div class="top10-event-cards">
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">1</span>
+        <span class="top10-time">57.21</span>
+        <span class="top10-athlete">Natalie Armstrong <span class="grade-badge grade-sr">SR</span></span>
+        <span class="top10-date">Oct 21, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 Pecan Classic</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">2</span>
+        <span class="top10-time">57.37</span>
+        <span class="top10-athlete">Brianne Foley <span class="grade-badge grade-jr">JR</span></span>
+        <span class="top10-date">Oct 25, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 Southern Arizona Region Qualifier</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">3</span>
+        <span class="top10-time">1:02.77</span>
+        <span class="top10-athlete">Summer Cugini <span class="grade-badge grade-jr">JR</span></span>
+        <span class="top10-date">Oct 25, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 Southern Arizona Region Qualifier</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">4</span>
+        <span class="top10-time">1:03.77</span>
+        <span class="top10-athlete">Hadley Cusson <span class="grade-badge grade-fr">FR</span></span>
+        <span class="top10-date">Sep 16, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 CDO Classic</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">5</span>
+        <span class="top10-time">1:06.29</span>
+        <span class="top10-athlete">Clementine  Dasse <span class="grade-badge grade-jr">JR</span></span>
+        <span class="top10-date">Sep 23, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 TYR High School Classic</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">6</span>
+        <span class="top10-time">1:11.02</span>
+        <span class="top10-athlete">Lily Niccum <span class="grade-badge grade-fr">FR</span></span>
+        <span class="top10-date">Sep 23, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 TYR High School Classic</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">7</span>
+        <span class="top10-time">1:17.38</span>
+        <span class="top10-athlete">Madeline VanDeMark <span class="grade-badge grade-fr">FR</span></span>
+        <span class="top10-date">Sep 16, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 CDO Classic</div>
+    </div>
+</div>
+</div>
+<h3 class="event-heading top10-event-header">200 Freestyle</h3>
+<div class="top10-event-cards">
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">1</span>
+        <span class="top10-time">2:07.92</span>
+        <span class="top10-athlete">Natalie Armstrong <span class="grade-badge grade-sr">SR</span></span>
+        <span class="top10-date">Oct 21, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 Pecan Classic</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">2</span>
+        <span class="top10-time">2:09.78</span>
+        <span class="top10-athlete">Grace Davis <span class="grade-badge grade-fr">FR</span></span>
+        <span class="top10-date">Sep 23, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 TYR High School Classic</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">3</span>
+        <span class="top10-time">2:10.40</span>
+        <span class="top10-athlete">Brianne Foley <span class="grade-badge grade-jr">JR</span></span>
+        <span class="top10-date">Oct 25, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 Southern Arizona Region Qualifier</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">4</span>
+        <span class="top10-time">2:28.90</span>
+        <span class="top10-athlete">Summer Cugini <span class="grade-badge grade-jr">JR</span></span>
+        <span class="top10-date">Sep 23, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 TYR High School Classic</div>
+    </div>
+</div>
+</div>
+<h3 class="event-heading top10-event-header">500 Freestyle</h3>
+<div class="top10-event-cards">
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">1</span>
+        <span class="top10-time">6:17.63</span>
+        <span class="top10-athlete">Kadynce Drummond <span class="grade-badge grade-fr">FR</span></span>
+        <span class="top10-date">Oct 21, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 Pecan Classic</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">2</span>
+        <span class="top10-time">6:22.94</span>
+        <span class="top10-athlete">Summer Cugini <span class="grade-badge grade-jr">JR</span></span>
+        <span class="top10-date">Oct 21, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 Pecan Classic</div>
+    </div>
+</div>
+</div>
+<h3 class="event-heading top10-event-header">100 Backstroke</h3>
+<div class="top10-event-cards">
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">1</span>
+        <span class="top10-time">1:07.29</span>
+        <span class="top10-athlete">Brianne Foley <span class="grade-badge grade-jr">JR</span></span>
+        <span class="top10-date">Sep 23, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 TYR High School Classic</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">2</span>
+        <span class="top10-time">1:09.24</span>
+        <span class="top10-athlete">Summer Cugini <span class="grade-badge grade-jr">JR</span></span>
+        <span class="top10-date">Oct 21, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 Pecan Classic</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">3</span>
+        <span class="top10-time">1:10.02</span>
+        <span class="top10-athlete">Logan Sulger <span class="grade-badge grade-so">SO</span></span>
+        <span class="top10-date">Oct 25, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 Southern Arizona Region Qualifier</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">4</span>
+        <span class="top10-time">1:15.06</span>
+        <span class="top10-athlete">Amira Alitiem <span class="grade-badge grade-fr">FR</span></span>
+        <span class="top10-date">Sep 23, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 TYR High School Classic</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">5</span>
+        <span class="top10-time">1:16.31</span>
+        <span class="top10-athlete">Hadley Cusson <span class="grade-badge grade-fr">FR</span></span>
+        <span class="top10-date">Sep 23, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 TYR High School Classic</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">6</span>
+        <span class="top10-time">1:17.08</span>
+        <span class="top10-athlete">Clementine  Dasse <span class="grade-badge grade-jr">JR</span></span>
+        <span class="top10-date">Oct 25, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 Southern Arizona Region Qualifier</div>
+    </div>
+</div>
+</div>
+<h3 class="event-heading top10-event-header">100 Breaststroke</h3>
+<div class="top10-event-cards">
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">1</span>
+        <span class="top10-time">1:18.30</span>
+        <span class="top10-athlete">Alexa Barrera <span class="grade-badge grade-sr">SR</span></span>
+        <span class="top10-date">Oct 25, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 Southern Arizona Region Qualifier</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">2</span>
+        <span class="top10-time">1:18.94</span>
+        <span class="top10-athlete">Madeline Barnard <span class="grade-badge grade-so">SO</span></span>
+        <span class="top10-date">Oct 25, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 Southern Arizona Region Qualifier</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">3</span>
+        <span class="top10-time">1:24.07</span>
+        <span class="top10-athlete">Amelia Kidd <span class="grade-badge grade-fr">FR</span></span>
+        <span class="top10-date">Oct 25, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 Southern Arizona Region Qualifier</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">4</span>
+        <span class="top10-time">1:29.34</span>
+        <span class="top10-athlete">Lily Niccum <span class="grade-badge grade-fr">FR</span></span>
+        <span class="top10-date">Oct 25, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 Southern Arizona Region Qualifier</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">5</span>
+        <span class="top10-time">1:37.59</span>
+        <span class="top10-athlete">Brooklyn Johnson <span class="grade-badge grade-so">SO</span></span>
+        <span class="top10-date">Sep 23, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 TYR High School Classic</div>
+    </div>
+</div>
+</div>
+<h3 class="event-heading top10-event-header">100 Butterfly</h3>
+<div class="top10-event-cards">
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">1</span>
+        <span class="top10-time">1:03.68</span>
+        <span class="top10-athlete">Brianne Foley <span class="grade-badge grade-jr">JR</span></span>
+        <span class="top10-date">Sep 23, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 TYR High School Classic</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">2</span>
+        <span class="top10-time">1:06.77</span>
+        <span class="top10-athlete">Grace Davis <span class="grade-badge grade-fr">FR</span></span>
+        <span class="top10-date">Nov 04, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 2023 D-3 AIA State Championship</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">3</span>
+        <span class="top10-time">1:17.93</span>
+        <span class="top10-athlete">Alexa Barrera <span class="grade-badge grade-sr">SR</span></span>
+        <span class="top10-date">Sep 23, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 TYR High School Classic</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">4</span>
+        <span class="top10-time">1:20.77</span>
+        <span class="top10-athlete">Kadynce Drummond <span class="grade-badge grade-fr">FR</span></span>
+        <span class="top10-date">Sep 23, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 TYR High School Classic</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">5</span>
+        <span class="top10-time">1:31.86</span>
+        <span class="top10-athlete">Molly Guyman <span class="grade-badge grade-jr">JR</span></span>
+        <span class="top10-date">Sep 16, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 CDO Classic</div>
+    </div>
+</div>
+</div>
+<h3 class="event-heading top10-event-header">200 Individual Medley</h3>
+<div class="top10-event-cards">
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">1</span>
+        <span class="top10-time">2:43.18</span>
+        <span class="top10-athlete">Hadley Cusson <span class="grade-badge grade-fr">FR</span></span>
+        <span class="top10-date">Sep 23, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 TYR High School Classic</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">2</span>
+        <span class="top10-time">2:44.06</span>
+        <span class="top10-athlete">Madeline Barnard <span class="grade-badge grade-so">SO</span></span>
+        <span class="top10-date">Oct 25, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 Southern Arizona Region Qualifier</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">3</span>
+        <span class="top10-time">2:44.48</span>
+        <span class="top10-athlete">Amelia Kidd <span class="grade-badge grade-fr">FR</span></span>
+        <span class="top10-date">Oct 25, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 Southern Arizona Region Qualifier</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">4</span>
+        <span class="top10-time">2:46.97</span>
+        <span class="top10-athlete">Kadynce Drummond <span class="grade-badge grade-fr">FR</span></span>
+        <span class="top10-date">Sep 16, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 CDO Classic</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">5</span>
+        <span class="top10-time">2:49.25</span>
+        <span class="top10-athlete">Logan Sulger <span class="grade-badge grade-so">SO</span></span>
+        <span class="top10-date">Sep 23, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 TYR High School Classic</div>
+    </div>
+</div>
+<div class="top10-card" onclick="this.classList.toggle('expanded')">
+    <div class="top10-line">
+        <span class="top10-rank">6</span>
+        <span class="top10-time">2:58.74</span>
+        <span class="top10-athlete">Molly Guyman <span class="grade-badge grade-jr">JR</span></span>
+        <span class="top10-date">Oct 25, 2023</span>
+        <span class="expand-arrow">▼</span>
+    </div>
+    <div class="top10-expanded">
+        <div class="record-meet">📍 Southern Arizona Region Qualifier</div>
+    </div>
+</div>
+</div>
+</div>
+
+    </div>
+    
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container text-center">
+            <div class="disclaimer mb-3">
+                <small class="text-muted">
+                    Results compiled from meets published on <a href="https://azpreps365.com" target="_blank">AZPreps365</a> 
+                    and <a href="https://maxpreps.com" target="_blank">MaxPreps</a> with limited data availability — 
+                    not necessarily a complete compilation of all records. 
+                    Contact <a href="mailto:aaryno@gmail.com">aaryno@gmail.com</a> with additional sources, errors, or corrections.
+                </small>
+            </div>
+            <p class="mb-2">&copy; 2025 Tanque Verde High School Swimming</p>
+            <p class="mb-0">
+                <small>
+                    Generated on December 12, 2025 | 
+                    <a href="https://github.com/aaryno/tanque-verde-swim">View on GitHub</a>
+                </small>
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

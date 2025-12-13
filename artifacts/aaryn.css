@@ -1,0 +1,80 @@
+# CSS Inconsistency: overall.html vs boys-alltime.html
+
+## Problem
+
+Two pages on the TVHS Swimming Records site have inconsistent styling for times and swimmer names:
+
+- **overall.html** (Records page): Times are large, swimmer names are bold
+- **boys-alltime.html** (Top 10 page): Times are smaller, swimmer names are normal weight
+
+## Root Cause
+
+The two pages use **different CSS class structures** with different styling values:
+
+| Page | Class Structure | Time Size | Athlete Weight |
+|------|-----------------|-----------|----------------|
+| `overall.html` | `.record-line`, `.record-time`, `.record-athlete` | `1.3rem` | `600` |
+| `boys-alltime.html` | `.top10-line`, `.top10-time`, `.top10-athlete` | `1.05rem` | `500` |
+
+## Relevant CSS (from style.css)
+
+### Records page styling:
+```css
+.record-time {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--tvhs-primary);
+  font-family: 'Courier New', monospace;
+}
+
+.record-athlete {
+  font-size: 1rem;
+  font-weight: 600;
+}
+```
+
+### Top 10 page styling:
+```css
+.top10-time {
+  flex: 0 0 100px;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: var(--tvhs-dark-green);
+}
+
+.top10-athlete {
+  flex: 1;
+  font-weight: 500;
+}
+```
+
+## Recommended Fix
+
+Update `style.css` to make the Records page match the Top 10 page:
+
+```css
+.record-time {
+  font-size: 1.05rem;  /* Changed from 1.3rem */
+  font-weight: bold;
+  color: var(--tvhs-primary);
+  font-family: 'Courier New', monospace;
+}
+
+.record-athlete {
+  font-size: 1rem;
+  font-weight: 500;  /* Changed from 600 */
+}
+```
+
+## Files Affected
+
+- `docs/css/style.css` — contains both `.record-*` and `.top10-*` class definitions
+- `docs/records/overall.html` — uses `.record-line` structure
+- `docs/top10/boys-alltime.html` — uses `.top10-line` structure
+
+## Notes
+
+- This is purely a CSS issue, not an HTML structure problem
+- Both pages generate their HTML from Python scripts, so the class names are intentional—just the styling values diverged
+- Consider whether you want identical styling across all pages, or if Records should be more prominent than Top 10 entries

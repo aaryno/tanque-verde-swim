@@ -1,0 +1,2474 @@
+/* Tanque Verde High School Swim Records Website */
+
+:root {
+  --tvhs-primary: #2C5F2D;      /* Forest Green */
+  --tvhs-secondary: #C0C0C0;    /* Silver */
+  --tvhs-accent: #4A7C4E;       /* Light Forest Green */
+  --tvhs-dark-green: #1B4332;   /* Dark Forest Green */
+  --bg-light: #f8f9fa;
+  --text-dark: #212529;
+  
+  /* ==========================================
+     Design System - Typography Tokens
+     ========================================== */
+  
+  /* Time display - monospace, bold, primary color */
+  --time-font: 'Courier New', monospace;
+  --time-weight: bold;
+  --time-color: var(--tvhs-primary);
+  --time-color-muted: #666;
+  --time-size-lg: 1.3rem;   /* Hero/record times */
+  --time-size-md: 1.05rem;  /* Standard display */
+  --time-size-sm: 0.95rem;  /* Compact/secondary */
+  --time-size-xs: 0.85rem;  /* Splits, mobile */
+  
+  /* Date display - smaller, muted color */
+  --date-color: #666;
+  --date-size: 0.85rem;
+  --date-size-sm: 0.75rem;  /* Mobile/compact */
+  
+  /* Swimmer name display */
+  --swimmer-weight: 500;
+  --swimmer-weight-bold: 600;
+}
+
+/* ==========================================
+   Design System - Base Classes
+   ==========================================
+   
+   These base classes define consistent styling for common elements.
+   Context-specific classes extend these patterns.
+   
+   TIMES: .time-display, or use context classes:
+     - .time, .time-value, .time-value-small
+     - .record-time, .top10-time, .split-time, .time-cell
+   
+   DATES: .date-display, or use context classes:
+     - .date-value, .record-date, .top10-date, .date-cell
+   
+   SWIMMERS: .swimmer-display, or use context classes:
+     - .swimmer-name, .record-athlete, .top10-athlete, .split-swimmer
+   ========================================== */
+
+/* Base time display - all times share these core properties */
+.time-display,
+.time,
+.time-value,
+.time-value-small,
+.record-time,
+.top10-time,
+.split-time,
+.time-cell,
+.swimmer-time,
+.relay-line-1 .time-value {
+  font-family: var(--time-font);
+  font-weight: var(--time-weight);
+  font-size: var(--time-size-md);  /* Unified time size: 1.05rem */
+  color: var(--tvhs-dark-green);
+}
+
+/* Base date display - all dates share these core properties */
+.date-display,
+.date-value,
+.record-date,
+.top10-date,
+.date-cell,
+.relay-line-1 .date-value {
+  font-size: var(--date-size);
+  color: var(--date-color);
+}
+
+/* Base swimmer name display - all swimmer names share these properties */
+.swimmer-display,
+.swimmer-name,
+.record-athlete,
+.top10-athlete,
+.split-swimmer {
+  font-weight: var(--swimmer-weight);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  max-width: 100vw;
+  /* NO overflow-x - it breaks sticky positioning on Safari */
+}
+
+/* Grade Badges */
+.grade-badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 2.5rem;
+  text-align: center;
+}
+
+.grade-fr {
+  background: #e3f2fd;
+  color: #1565c0;
+  border: 1px solid #90caf9;
+}
+
+.grade-so {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+.grade-jr {
+  background: #fff3e0;
+  color: #e65100;
+  border: 1px solid #ffcc80;
+}
+
+.grade-sr {
+  background: #fce4ec;
+  color: #c2185b;
+  border: 1px solid #f48fb1;
+}
+
+.grade-open {
+  background: var(--tvhs-dark-green);
+  color: white;
+  border: 1px solid var(--tvhs-primary);
+  font-weight: bold;
+}
+
+/* State Championship Highlight Badges */
+.highlight-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.badge-sr {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #000;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid #DAA520;
+}
+
+.badge-class-record {
+  background: linear-gradient(135deg, #C0C0C0 0%, #A8A8A8 100%);
+  color: #000;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid #909090;
+}
+
+.badge-pb {
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: white;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+/* PB gradient: -5s/50y = black, -1s/50y = medium gray */
+.badge-pb.pb-black {
+  background: #000000;
+}
+
+.badge-pb.pb-darkgray {
+  background: #404040;
+}
+
+.badge-pb.pb-gray {
+  background: #666666;
+}
+
+.badge-pb.pb-mediumgray {
+  background: #808080;
+  color: #000;
+}
+
+.badge-pb.pb-lightgray {
+  background: #888888;
+  color: #fff;
+}
+
+.badge-pb.pb-verylightgray {
+  background: #aaaaaa;
+  color: #000;
+}
+
+/* Relay Record Broken Cards (Index Page) */
+.relay-record-broken {
+  background-color: #E8F5E9; /* Pale green */
+  border-left: 4px solid var(--tvhs-primary);
+}
+
+.relay-record-entry {
+  position: relative;
+}
+
+.record-label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--tvhs-primary);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.record-label-old {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+/* Relay compact wrapper for record cards */
+.relay-compact-wrapper {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  padding: 0.75rem;
+}
+
+.relay-line-1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.relay-line-1 .rank-badge {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.relay-line-1 .time-value {
+  /* Base properties set in Design System section above */
+  font-size: var(--time-size-md);
+  color: var(--time-color);
+  flex-shrink: 0;
+}
+
+.relay-line-1 .date-value {
+  /* Base properties set in Design System section above */
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.relay-line-2 {
+  cursor: pointer;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #555;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+.relay-line-2:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--tvhs-primary);
+}
+
+.relay-expanded-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.relay-compact-wrapper.expanded .relay-expanded-content {
+  max-height: 500px;
+  margin-top: 0.75rem;
+}
+
+.relay-compact-wrapper.expanded .relay-line-2 .relay-names-short::after {
+  content: " ▲";
+}
+
+.relay-swimmers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.relay-swimmers .swimmer-entry {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.relay-swimmers .swimmer-entry:last-child {
+  border-bottom: none;
+}
+
+.relay-swimmers .swimmer-name {
+  /* Base properties set in Design System section above */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.relay-swimmers .swimmer-stroke {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+}
+
+.relay-swimmers .swimmer-time {
+  /* Base properties set in Design System section above */
+  font-size: 1rem;
+  color: var(--time-color);
+  margin-left: auto;
+}
+
+/* Mobile: 2-line layout */
+@media (max-width: 768px) {
+  .relay-swimmers .swimmer-entry {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 
+      "name name"
+      "stroke time";
+    gap: 0.25rem 0.5rem;
+    align-items: start;
+  }
+  
+  .relay-swimmers .swimmer-name {
+    grid-area: name;
+  }
+  
+  .relay-swimmers .swimmer-stroke {
+    grid-area: stroke;
+    font-size: 0.8rem;
+  }
+  
+  .relay-swimmers .swimmer-time {
+    grid-area: time;
+    margin-left: 0;
+    justify-self: end;
+  }
+}
+
+.relay-meet {
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  border-left: 3px solid var(--tvhs-accent);
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .relay-line-1 {
+    gap: 0.5rem;
+  }
+  
+  .relay-line-1 .rank-badge {
+    font-size: 1rem;
+  }
+  
+  .relay-line-1 .time-value {
+    font-size: 1rem;
+  }
+  
+  .relay-line-1 .date-value {
+    font-size: 0.7rem;
+  }
+  
+  .relay-line-2 {
+    font-size: 0.85rem;
+  }
+}
+
+/* Overall Records Page */
+.overall-records-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Index Page Sections */
+.jump-to-index {
+  background: #f8f9fa;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.jump-to-index a {
+  color: var(--tvhs-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.jump-to-index a:hover {
+  text-decoration: underline;
+}
+
+.section-header {
+  background-color: var(--tvhs-primary);
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.section-header:hover {
+  background-color: var(--tvhs-dark-green);
+}
+
+.section-header h2 {
+  color: white;
+  font-size: 1.1rem;  /* Match .top10-event-header and .event-heading */
+  margin: 0;
+  font-weight: 600;  /* Match other headers (600 instead of bold) */
+}
+
+.section-toggle {
+  display: none; /* Hide toggle button, click header instead */
+}
+
+.section-content {
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 0;  /* Remove padding to match top10-event-cards */
+  background: white;
+  overflow: hidden;
+}
+
+.section-content.collapsed {
+  display: none;
+}
+
+.overall-records-section {
+  margin-bottom: 2rem;
+}
+
+/* Season Best Times page (annual summary) */
+.season-best-times-page {
+  padding: 0;
+}
+
+.season-best-section {
+  margin-bottom: 1.5rem;
+}
+
+.season-best-section:last-child {
+  margin-bottom: 0;
+}
+
+.season-best-section .event-heading {
+  margin-top: 1rem;
+}
+
+.season-best-section:first-child .event-heading {
+  margin-top: 0;
+}
+
+.gender-header {
+  background: var(--tvhs-primary);
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 0;
+  font-size: 1.3rem;
+}
+
+.overall-record-card {
+  background: white;
+  padding: 0.65rem 1rem;  /* Match top10-card */
+  cursor: pointer;
+  border-bottom: 1px solid #eee;  /* Match top10-card */
+}
+
+.overall-record-card:last-child {
+  border-bottom: none;
+}
+
+.overall-record-card:nth-child(odd) {
+  background: #f8f9fa;
+}
+
+.overall-record-card:hover {
+  background: #e8f5e9;
+}
+
+/* Single line layout for records */
+.record-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.record-line .event-name {
+  flex: 0 0 180px;
+  font-weight: bold;
+  color: var(--tvhs-dark-green);
+}
+
+.record-line .record-time {
+  /* Base properties set in Design System section above */
+  flex: 0 0 85px;
+}
+
+.record-line .record-athlete {
+  flex: 1;
+  text-align: left;
+}
+
+.record-line .record-date {
+  /* Base properties set in Design System section above */
+  flex: 0 0 100px;
+  text-align: right;
+}
+
+.expand-arrow {
+  font-size: 0.7rem;
+  color: #999;
+  transition: transform 0.2s ease;
+}
+
+.overall-record-card.expanded .expand-arrow {
+  transform: rotate(180deg);
+}
+
+/* Expanded content */
+.record-expanded {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.overall-record-card.expanded .record-expanded {
+  max-height: 300px;
+  padding-top: 0.5rem;
+}
+
+/* Relay splits in overall records */
+.overall-record-card .relay-splits {
+  margin-bottom: 0.5rem;
+}
+
+.overall-record-card .relay-split-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.2rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.overall-record-card .relay-split-row:last-child {
+  border-bottom: none;
+}
+
+.overall-record-card .split-stroke {
+  flex: 0 0 90px;
+  font-style: italic;
+  color: #666;
+  text-align: left;
+}
+
+.overall-record-card .split-swimmer {
+  /* Base properties set in Design System section above */
+  flex: 1;
+  text-align: left;
+}
+
+.overall-record-card .split-time {
+  flex: 0 0 60px;
+  font-family: 'Courier New', monospace;
+  text-align: right;
+}
+
+.overall-record-card .split-stroke {
+  font-style: italic;
+  color: #666;
+}
+
+.overall-record-card .split-time {
+  /* Base properties set in Design System section above */
+  color: var(--time-color);
+}
+
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.event-name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--tvhs-dark-green);
+}
+
+.record-date {
+  /* Base properties set in Design System section above */
+  background: transparent;
+}
+
+.record-main {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+}
+
+.record-time {
+  /* Inherits font-size and color from base time display */
+}
+
+.record-athlete {
+  /* Match top10-athlete styling exactly */
+  font-size: 1rem;
+  font-weight: var(--swimmer-weight);  /* 500 = not bold, matches top10 */
+}
+
+.record-meet {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Relay section header */
+.relay-header {
+  background: var(--tvhs-primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0 0 0;
+  font-size: 1rem;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Relay record cards now use border-bottom like other cards */
+
+.relay-names {
+  font-size: 0.95rem;
+}
+
+/* Top 10 Cards (matching Overall Records style) */
+.top10-cards {
+  padding: 1rem;
+}
+
+.top10-event-header {
+  background: var(--tvhs-primary) !important;
+  color: white !important;
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0 0 0;
+  border-radius: 8px 8px 0 0;
+  border-left: none !important;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.top10-event-header:first-child {
+  margin-top: 0;
+}
+
+.top10-event-cards {
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+
+.top10-card {
+  background: white;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.top10-card:last-child {
+  border-bottom: none;
+}
+
+.top10-card:nth-child(odd) {
+  background: #f8f9fa;
+}
+
+.top10-card:hover {
+  background: #e8f5e9;
+}
+
+.top10-card.record-holder-row {
+  background: linear-gradient(90deg, rgba(255,215,0,0.15) 0%, rgba(255,255,255,0) 50%);
+}
+
+.top10-card.record-holder-row:hover {
+  background: linear-gradient(90deg, rgba(255,215,0,0.25) 0%, #e8f5e9 50%);
+}
+
+.top10-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.top10-rank {
+  flex: 0 0 28px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: var(--tvhs-primary);
+  text-align: center;
+}
+
+.top10-time {
+  /* Inherits font-size and color from base time display */
+  flex: 0 0 100px;
+  white-space: nowrap;
+}
+
+.top10-athlete {
+  /* Base properties set in Design System section above */
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.top10-date {
+  /* Base properties set in Design System section above */
+  flex: 0 0 100px;
+  text-align: right;
+}
+
+.top10-card .expand-arrow {
+  font-size: 0.7rem;
+  color: #999;
+  transition: transform 0.2s ease;
+}
+
+.top10-card.expanded .expand-arrow {
+  transform: rotate(180deg);
+}
+
+.top10-expanded {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.top10-card.expanded .top10-expanded {
+  max-height: 100px;
+  padding-top: 0.5rem;
+}
+
+/* Mobile adjustments for Top 10 cards */
+@media (max-width: 768px) {
+  .top10-cards {
+    padding: 0.5rem;
+  }
+  
+  .top10-event-header {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .top10-line {
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+  }
+  
+  .top10-rank {
+    flex: 0 0 24px;
+    font-size: 0.85rem;
+  }
+  
+  .top10-time {
+    flex: 0 0 70px;
+    font-size: 0.95rem;
+  }
+  
+  .top10-athlete {
+    flex: 1 1 60%;
+    font-size: 0.9rem;
+  }
+  
+  .top10-date {
+    flex: 1 1 100%;
+    text-align: left;
+    font-size: 0.8rem;
+    order: 5;
+  }
+  
+  .top10-card .expand-arrow {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+  }
+  
+  .top10-card {
+    position: relative;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* Mobile adjustments for overall records */
+@media (max-width: 768px) {
+  .overall-record-card {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .record-line {
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+  }
+  
+  .record-line .event-name {
+    flex: 0 0 50%;
+    font-size: 0.9rem;
+  }
+  
+  .record-line .record-date {
+    flex: 0 0 40%;
+    font-size: 0.75rem;
+  }
+  
+  .record-line .record-time {
+    flex: 0 0 auto;
+  }
+  
+  .record-line .record-athlete {
+    flex: 1 1 100%;
+    font-size: 0.9rem;
+  }
+  
+  .expand-arrow {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+  }
+  
+  .overall-record-card {
+    position: relative;
+  }
+  
+  /* Mobile relay splits - 2 lines per swimmer */
+  .overall-record-card .relay-split-row {
+    flex-wrap: wrap;
+  }
+  
+  .overall-record-card .split-swimmer {
+    flex: 0 0 100%;
+  }
+  
+  .overall-record-card .split-stroke,
+  .overall-record-card .split-time {
+    flex: 0 0 auto;
+  }
+  
+  .record-time {
+    font-size: 0.95rem;  /* Match top10-time mobile size */
+  }
+  
+  .record-athlete {
+    font-size: 0.9rem;  /* Match top10-athlete mobile size */
+  }
+  
+  .record-meet {
+    font-size: 0.7rem;
+  }
+}
+
+/* Collapsible Hero Header (Index Page) */
+.hero-header {
+  background: linear-gradient(135deg, var(--tvhs-primary) 0%, var(--tvhs-dark-green) 100%);
+  color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 88px;  /* main-nav (48px) + quick-nav (40px) */
+  z-index: 1015;
+  /* CRITICAL: Only transition specific properties, NOT 'all' */
+  transition: padding 0.3s ease, opacity 0.3s ease;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  margin: 0;
+}
+
+.hero-expanded {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.hero-expanded .hero-logo {
+  height: 80px;
+  margin-bottom: 0.75rem;
+}
+
+.hero-expanded h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.hero-expanded h2 {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.hero-expanded .subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.hero-collapse-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 0 0 8px 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.2s;
+}
+
+.hero-collapse-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.hero-collapsed {
+  display: none;
+  padding: 0.5rem 0;
+}
+
+.hero-collapsed .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-collapsed .hero-logo-small {
+  height: 28px;
+  margin-right: 0.5rem;
+}
+
+.hero-collapsed .hero-title-small {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.hero-expand-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  transition: background 0.2s;
+}
+
+.hero-expand-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* Collapsed state */
+.hero-header.collapsed .hero-expanded {
+  display: none !important;
+}
+
+.hero-header.collapsed .hero-collapsed {
+  display: block !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  .hero-header {
+    top: 80px;
+  }
+  
+  .hero-expanded {
+    padding: 1.5rem 0;
+  }
+  
+  .hero-expanded .hero-logo {
+    height: 60px;
+  }
+  
+  .hero-expanded h1 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-expanded h2 {
+    font-size: 1.1rem;
+  }
+  
+  .hero-expanded .subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .hero-collapsed .hero-title-small {
+    font-size: 0.95rem;
+  }
+}
+
+/* Main Navigation */
+#main-nav {
+  background-color: var(--tvhs-primary);
+  padding: 0.4rem 0.75rem;
+  position: -webkit-sticky;  /* Safari prefix */
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  /* Force GPU layer to help Safari */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.navbar-logo {
+  height: 32px;
+  width: auto;
+}
+
+/* Gender Toggle */
+.gender-toggle {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.btn-gender {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.6);
+  padding: 0.3rem 0.9rem;
+  font-size: 0.95rem;
+  font-weight: normal;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.btn-gender:hover {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  border-color: rgba(255,255,255,0.6);
+}
+
+.btn-gender.active {
+  background: white;
+  color: var(--tvhs-primary);
+  font-weight: bold;
+  border-color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Quick Navigation Bar */
+.quick-nav {
+  background-color: var(--tvhs-accent);
+  padding: 0.25rem 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 48px;  /* Height of main-nav */
+  z-index: 1025;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+.quick-nav .nav {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.quick-nav .nav-link {
+  font-size: 1.5rem;
+  padding: 0.25rem 0.75rem;
+  color: white !important;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Nav logo in quick-nav */
+.quick-nav .nav-logo {
+  height: 24px;
+  width: auto;
+}
+
+/* Desktop: smaller emoji font when text is shown */
+@media (min-width: 768px) {
+  .quick-nav .nav-link {
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+.quick-nav .nav-link:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.quick-nav .dropdown-toggle::after {
+  display: none;
+}
+
+.quick-nav .nav-link {
+  color: #fff !important;
+}
+
+.dropdown-menu {
+  background-color: var(--tvhs-primary);
+  border: none;
+  border-radius: 0 0 8px 8px;
+  margin-top: 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.dropdown-menu-scroll {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.dropdown-item {
+  color: #fff !important;
+  transition: background-color 0.3s ease;
+  padding: 0.5rem 1rem;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--tvhs-accent) !important;
+  color: var(--tvhs-secondary) !important;
+}
+
+.dropdown-header {
+  color: var(--tvhs-secondary) !important;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dropdown-divider {
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* Page header */
+.page-header {
+  background: linear-gradient(135deg, var(--tvhs-primary) 0%, var(--tvhs-accent) 100%);
+  color: white;
+  padding: 0.75rem 0;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 88px;  /* main-nav (48px) + quick-nav (40px) */
+  z-index: 1015;  /* LOWER than quick-nav */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* Jump To dropdown */
+.jump-to-dropdown {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.jump-to-dropdown .btn {
+  background-color: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.75rem;
+}
+
+.jump-to-dropdown .btn:hover {
+  background-color: rgba(255,255,255,0.3);
+}
+
+.jump-to-dropdown .dropdown-menu {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.page-header h1 {
+  font-weight: bold;
+  margin: 0;
+}
+
+.page-header .subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+}
+
+/* Tables */
+.record-table {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table thead {
+  background-color: var(--tvhs-primary);
+  color: white;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0,51,102,0.05);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0,51,102,0.1);
+}
+
+/* Record holder emphasis */
+.record-holder {
+  font-weight: bold;
+  color: var(--tvhs-accent);
+}
+
+.school-record {
+  background-color: #fffacd;
+  font-weight: bold;
+}
+
+/* Cards */
+.card {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card-header {
+  background-color: var(--tvhs-primary);
+  color: white;
+  font-weight: bold;
+}
+
+/* Highlights section */
+.highlight-box {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.highlight-box h3 {
+  color: var(--tvhs-primary);
+  font-weight: bold;
+}
+
+/* Badges */
+.place-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.place-1 { background-color: #FFD700; color: #000; }
+.place-2 { background-color: #C0C0C0; color: #000; }
+.place-3 { background-color: #CD7F32; color: #fff; }
+.place-top10 { background-color: #4CAF50; color: #fff; }
+
+/* Footer */
+footer {
+  background-color: var(--tvhs-primary);
+  color: white;
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+footer a {
+  color: var(--tvhs-secondary);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive - Tablets */
+@media (max-width: 768px) {
+  .table-responsive {
+    font-size: 0.85rem;
+  }
+  
+  .page-header {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+  }
+  
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+  
+  .navbar-logo {
+    height: 32px;
+  }
+  
+  footer {
+    padding: 1rem 0;
+    margin-top: 2rem;
+  }
+  
+  .event-heading {
+    font-size: 1.1rem;
+    padding: 0.5rem 0.75rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/* Responsive - Mobile phones */
+@media (max-width: 576px) {
+  .page-header {
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .page-header h1 {
+    font-size: 1.1rem;
+  }
+  
+  .navbar {
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .navbar-brand {
+    font-size: 0.85rem;
+  }
+  
+  .navbar-logo {
+    height: 24px;
+  }
+  
+  .navbar-brand-text {
+    font-size: 0.9rem;
+  }
+  
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  footer {
+    padding: 0.75rem 0;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .disclaimer {
+    font-size: 0.7rem;
+  }
+  
+  .event-heading {
+    font-size: 1rem;
+    padding: 0.4rem 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  /* Convert tables to stacked cards on mobile (exclude relay tables) */
+  .table-responsive {
+    border: none;
+    overflow: visible;
+  }
+  
+  .table:not(.table-relay) thead {
+    display: none;
+  }
+  
+  .table:not(.table-relay) tbody {
+    display: block;
+  }
+  
+  .table:not(.table-relay) tbody tr {
+    display: grid;
+    grid-template-columns: 32px 1fr auto;
+    grid-template-rows: auto auto auto;
+    gap: 0 0.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    align-items: start;
+  }
+  
+  .table:not(.table-relay) tbody tr:nth-of-type(odd) {
+    background: #f8f9fa;
+  }
+  
+  .table:not(.table-relay) tbody td {
+    border: none;
+    padding: 0;
+  }
+  
+  /* First column - Grade badge or Rank */
+  .table:not(.table-relay) tbody td:first-child {
+    grid-row: 1 / 3;
+    grid-column: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 0.1rem;
+  }
+  
+  /* 6-column tables have rank as first column - show as green circle */
+  .table-6col tbody td:first-child {
+    background: var(--tvhs-primary);
+    color: white;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: bold;
+  }
+  
+  /* Time - large, in middle of first row */
+  .table:not(.table-relay) tbody td:nth-child(2) {
+    grid-row: 1;
+    grid-column: 2;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--tvhs-primary);
+    font-family: 'Courier New', monospace;
+  }
+  
+  /* Athlete name - second row */
+  .table:not(.table-relay) tbody td:nth-child(3) {
+    grid-row: 2;
+    grid-column: 2 / 4;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  
+  /* ===== 5-column tables (Records): Grade | Time | Athlete | Date | Meet ===== */
+  .table-5col tbody td:nth-child(4) {
+    grid-row: 1;
+    grid-column: 3;
+    font-size: 0.75rem;
+    color: #666;
+    text-align: right;
+    white-space: nowrap;
+  }
+  
+  .table-5col tbody td:nth-child(5) {
+    grid-row: 3;
+    grid-column: 2 / 4;
+    font-size: 0.7rem;
+    color: #888;
+  }
+  
+  .table-5col tbody td:nth-child(5):not(:empty)::before {
+    content: "📍 ";
+  }
+  
+  /* ===== 6-column tables (Top10): Rank | Time | Athlete | Year | Date | Meet ===== */
+  .table-6col tbody td:nth-child(4) {
+    grid-row: 2;
+    grid-column: 3;
+    font-size: 0.8rem;
+    color: #666;
+    text-align: right;
+  }
+  
+  .table-6col tbody td:nth-child(5) {
+    grid-row: 1;
+    grid-column: 3;
+    font-size: 0.75rem;
+    color: #666;
+    text-align: right;
+    white-space: nowrap;
+  }
+  
+  .table-6col tbody td:nth-child(6) {
+    grid-row: 3;
+    grid-column: 2 / 4;
+    font-size: 0.7rem;
+    color: #888;
+  }
+  
+  .table-6col tbody td:nth-child(6):not(:empty)::before {
+    content: "📍 ";
+  }
+  
+  /* ===== Comparison tables (Event | Boys | Girls): Keep table display ===== */
+  /* These 3-column comparison tables shouldn't use the card transformation */
+  .table-comparison,
+  .table-comparison thead,
+  .table-comparison tbody,
+  .table-comparison tr,
+  .table-comparison th,
+  .table-comparison td {
+    display: revert !important;
+  }
+  
+  .table-comparison {
+    width: 100%;
+    font-size: 0.85rem;
+  }
+  
+  .table-comparison th,
+  .table-comparison td {
+    padding: 0.5rem 0.4rem;
+    vertical-align: middle;
+  }
+  
+  .table-comparison thead {
+    display: table-header-group !important;
+  }
+  
+  .table-comparison th:first-child {
+    width: 25%;
+    font-weight: 600;
+  }
+  
+  .table-comparison td:first-child {
+    font-weight: 500;
+    font-size: 0.8rem;
+  }
+  
+  /* Reset Boys and Girls columns to normal text styling */
+  .table-comparison td:nth-child(2),
+  .table-comparison td:nth-child(3) {
+    font-family: inherit;  /* Reset from monospace */
+    font-weight: normal;   /* Reset from bold */
+    font-size: 0.85rem;    /* Match table base */
+    color: inherit;        /* Reset from primary green */
+  }
+  
+  .table-comparison .time {
+    font-size: 0.9rem;
+    font-family: var(--time-font);
+    font-weight: var(--time-weight);
+    color: var(--tvhs-dark-green);
+  }
+  
+  .table-comparison .grade-badge {
+    font-size: 0.55rem;
+    padding: 0.1rem 0.2rem;
+  }
+  
+  /* ===== Relay tables: Keep table display (not grid) for colspan support ===== */
+  /* Relay tables display as proper tables, not cards */
+  .table-relay {
+    display: table;
+    width: 100%;
+  }
+  
+  .table-relay thead {
+    display: none; /* Hide header on mobile like other tables */
+  }
+  
+  .table-relay tbody {
+    display: table-row-group;
+  }
+  
+  .table-relay tbody tr,
+  .table-relay .relay-row {
+    display: table-row;
+    background: white;
+  }
+  
+  .table-relay tbody tr:nth-of-type(odd) {
+    background: #f8f9fa;
+  }
+  
+  .table-relay tbody td {
+    display: table-cell;
+    padding: 0.5rem 0.3rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #eee;
+  }
+  
+  /* Rank cell - plain bold number, no oval */
+  .table-relay .rank-cell {
+    width: 30px;
+    min-width: 30px;
+    max-width: 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--tvhs-primary, #0a3622);
+    text-align: center;
+    vertical-align: top;
+    padding-top: 0.5rem;
+  }
+  
+  /* Time cell - inherits from base, just add layout properties */
+  .table-relay .time-cell {
+    white-space: nowrap;
+    font-size: 0.95rem;  /* Match top10-time mobile size */
+  }
+  
+  /* Relay names cell */
+  .table-relay .relay-names-cell {
+    font-size: 0.8rem;
+  }
+  
+  /* Date cell - matches top10 date styling */
+  .table-relay .date-cell {
+    font-size: 0.8rem;  /* Match top10-date mobile size */
+    white-space: nowrap;
+    /* color inherited from base .date-cell */
+  }
+  
+  /* Details row - hidden by default, shown when expanded */
+  .table-relay .relay-details-row {
+    display: none;
+  }
+  
+  .table-relay .relay-details-row.show {
+    display: table-row;
+  }
+  
+  .table-relay .relay-details-row td {
+    display: table-cell;
+    background: #f8f9fa;
+    padding: 0.5rem;
+    text-align: left;
+  }
+  
+  /* Expanded content layout - flexbox for swimmer rows */
+  .table-relay .relay-expanded-rows {
+    padding: 0.25rem 0;
+    text-align: left;
+  }
+  
+  .table-relay .relay-split-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.85rem;
+  }
+  
+  .table-relay .relay-split-row:last-of-type {
+    border-bottom: none;
+  }
+  
+  .table-relay .split-stroke {
+    font-style: italic;
+    color: #666;
+    flex: 0 0 2rem;
+    text-align: left;
+  }
+  
+  /* Show abbreviation, hide full name on mobile */
+  .table-relay .stroke-abbrev {
+    display: inline;
+  }
+  
+  .table-relay .stroke-full {
+    display: none;
+  }
+  
+  .table-relay .split-swimmer {
+    font-weight: 500;
+    color: #333;
+    text-align: left;
+    flex: 1;
+    font-size: 0.85rem;
+  }
+  
+  .table-relay .split-time {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: var(--tvhs-primary, #0a3622);
+    text-align: right;
+    flex: 0 0 2.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .table-relay .relay-meet-row {
+    font-size: 0.75rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 0.25rem;
+    padding-top: 0.25rem;
+    border-top: 1px solid #ddd;
+  }
+  
+  /* Grade badges - smaller on mobile */
+  .table-relay .grade-badge {
+    font-size: 0.6rem;
+    padding: 0.1rem 0.2rem;
+  }
+  
+  /* Relay pages mobile: prevent table card transformation */
+  .table-relay,
+  .table-relay thead,
+  .table-relay tbody,
+  .table-relay th,
+  .table-relay td {
+    display: revert !important;
+  }
+  
+  .table-relay .relay-row {
+    display: table-row !important;
+  }
+  
+  .table-relay .relay-details-row {
+    display: none !important;
+  }
+  
+  .table-relay .relay-details-row.show {
+    display: table-row !important;
+  }
+  
+  .table-relay {
+    width: 100%;
+    font-size: 0.85rem;
+  }
+  
+  .table-relay th,
+  .table-relay td {
+    padding: 0.5rem 0.3rem;
+  }
+  
+  .table-relay .relay-names-cell {
+    font-size: 0.8rem;
+  }
+  
+  .table-relay .relay-details-row td {
+    padding: 0.5rem !important;
+    text-align: left !important;
+  }
+  
+  .table-relay .relay-split-row {
+    padding: 0.3rem 0;
+    gap: 0.5rem;
+    text-align: left;
+  }
+  
+  .table-relay .split-stroke {
+    flex: 0 0 2rem;
+    font-size: 0.8rem;
+    text-align: left;
+  }
+  
+  .table-relay .split-swimmer {
+    flex: 1;
+    font-size: 0.85rem;
+    text-align: left;
+  }
+  
+  .table-relay .split-time {
+    flex: 0 0 2.5rem;
+    font-size: 0.85rem;
+    text-align: right;
+  }
+  
+  /* Sticky header adjustments for mobile */
+  #main-nav {
+    padding: 0.3rem 0.5rem;
+    /* Let height be natural, don't force it */
+  }
+  
+  .quick-nav {
+    top: 40px;  /* Approximate height of mobile main-nav */
+    padding: 0.2rem 0;
+  }
+  
+  .page-header,
+  .hero-header {
+    top: 76px;  /* 40px + 36px approximate */
+    padding: 0.35rem 0;
+  }
+  
+  .quick-nav .nav-link {
+    font-size: 1.3rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .btn-gender {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+  .page-header h1 {
+    font-size: 1rem;
+  }
+  
+  .navbar-brand {
+    font-size: 0.75rem;
+  }
+  
+  .navbar-logo {
+    height: 22px;
+  }
+  
+  .table:not(.table-relay) tbody td:nth-child(2) {
+    font-size: 1.15rem;
+  }
+  
+  .table:not(.table-relay) tbody tr {
+    padding: 0.5rem;
+    padding-right: 2rem;
+  }
+  
+  /* Relay tables on very small screens */
+  .table-relay .rank-cell {
+    width: 25px;
+    min-width: 25px;
+    font-size: 0.85rem;
+  }
+  
+  .table-relay .time-cell {
+    font-size: 0.85rem;
+  }
+  
+  .table-relay .relay-names-cell {
+    font-size: 0.75rem;
+  }
+  
+  .table-relay .date-cell {
+    display: none; /* Hide date on very small screens */
+  }
+  
+  .table-relay .relay-split-row {
+    font-size: 0.8rem;
+  }
+}
+
+/* Jump To scroll offset for sticky headers */
+h2[id], h3[id], .event-heading[id] {
+  scroll-margin-top: 140px;
+}
+
+@media (max-width: 576px) {
+  h2[id], h3[id], .event-heading[id] {
+    scroll-margin-top: 130px;
+  }
+}
+
+/* Relay card mobile styles */
+@media (max-width: 576px) {
+  .relay-names {
+    font-size: 0.8rem;
+    color: #555;
+    cursor: pointer;
+    padding: 0.25rem 0;
+  }
+  
+  .relay-names::after {
+    content: " ▼";
+    font-size: 0.6rem;
+    opacity: 0.6;
+  }
+  
+  .relay-names.expanded::after {
+    content: " ▲";
+  }
+  
+  .relay-details {
+    display: none;
+    padding: 0.5rem 0;
+    border-top: 1px solid #eee;
+    margin-top: 0.25rem;
+  }
+  
+  .relay-details.show {
+    display: block;
+  }
+  
+  .relay-details .member {
+    display: block;
+    font-size: 0.8rem;
+    padding: 0.1rem 0;
+  }
+  
+  .relay-details .meet-full {
+    display: block;
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 0.25rem;
+  }
+  
+  .relay-details .meet-name::before {
+    content: "📍 ";
+  }
+  
+  .relay-details .meet-name {
+    display: block;
+  }
+  
+  .relay-details .meet-location {
+    display: block;
+    font-size: 0.7rem;
+    color: #888;
+    padding-left: 1.2rem;
+  }
+  
+}
+
+/* Print styles */
+@media print {
+  .navbar, footer, .no-print {
+    display: none !important;
+  }
+  
+  .page-header {
+    background: none;
+    color: black;
+    box-shadow: none;
+  }
+  
+  .card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}
+
+/* Event section headings */
+.event-heading {
+  /* Match top10-event-header styling */
+  background: var(--tvhs-primary);
+  color: white;
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0 0 0;
+  border-radius: 8px 8px 0 0;
+  border-left: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.event-heading:first-of-type {
+  margin-top: 0;
+}
+
+/* Time display - generic inline time */
+.time {
+  /* Base properties set in Design System section above */
+  color: var(--time-color);
+}
+
+/* Loading animation */
+.loading {
+  text-align: center;
+  padding: 3rem;
+}
+
+.loading:after {
+  content: '⏱️';
+  font-size: 3rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ==========================================
+   Senior Card Styling
+   ========================================== */
+.senior-card {
+  border-left: 4px solid var(--tvhs-primary);
+}
+
+.senior-card .card-title {
+  font-weight: 600;
+  color: var(--tvhs-dark-green);
+  margin-bottom: 0.5rem;
+}
+
+.senior-card .records-section {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  border-radius: 6px;
+  padding: 0.75rem;
+  border: 1px solid #d1fae5;
+}
+
+.senior-card .records-header {
+  color: var(--tvhs-dark-green);
+  font-size: 0.8rem !important;
+}
+
+.senior-card .records-section .time {
+  color: var(--tvhs-primary);
+}
+
+.senior-card .events-section {
+  border-top: 1px dashed #e5e7eb;
+  padding-top: 0.5rem;
+}
+
+.senior-card .records-section + .events-section {
+  border-top: none;
+  padding-top: 0;
+}
+
+/* ==========================================
+   Relay Splits Styling
+   ========================================== */
+.relay-splits {
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed #ccc;
+  font-size: 0.9rem;
+}
+
+/* ==========================================
+   Relay Pages - Table and Row Styles
+   ========================================== */
+
+/* Relay row interactivity */
+.relay-row {
+  cursor: pointer;
+}
+
+.relay-row:hover {
+  background-color: #e8f5e9 !important;
+}
+
+.table-row-alt {
+  background-color: #f8f9fa;
+}
+
+/* Details row toggle */
+.relay-details-row {
+  display: none !important;
+}
+
+.relay-details-row.show {
+  display: table-row !important;
+}
+
+.relay-details-row td {
+  background: #f8f9fa !important;
+  padding: 0.75rem 1rem !important;
+  text-align: left !important;
+}
+
+.relay-expanded-rows {
+  padding: 0.5rem 0;
+  text-align: left;
+}
+
+/* Relay arrow (expand indicator) */
+.relay-arrow {
+  font-size: 0.7rem;
+  display: inline-block;
+  transition: transform 0.2s ease;
+  color: #999;
+  margin-left: 0.5rem;
+}
+
+.relay-row.expanded .relay-arrow {
+  transform: rotate(180deg);
+}
+
+/* Stroke name display - desktop shows full, mobile shows abbrev */
+.stroke-abbrev {
+  display: none;
+}
+
+.stroke-full {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .stroke-abbrev {
+    display: inline;
+  }
+  
+  .stroke-full {
+    display: none;
+  }
+}
+
+/* Table-relay header and base styles */
+/* Relay table container - match top10-event-cards styling */
+.event-heading + .table-responsive {
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.table-relay {
+  margin-bottom: 0;
+}
+
+/* Hide relay table header - event name is now in .event-heading */
+.table-relay thead {
+  display: none;
+}
+
+.table-relay .relay-names-cell {
+  position: relative;
+}
+
+/* Table-relay split row styles (apply on all screen sizes) */
+.table-relay .relay-split-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.table-relay .relay-split-row:last-of-type {
+  border-bottom: none;
+}
+
+.table-relay .split-stroke {
+  flex: 0 0 90px;
+  font-style: italic;
+  color: #666;
+  text-align: left;
+}
+
+.table-relay .split-swimmer {
+  /* Base properties set in Design System section above */
+  flex: 1;
+  color: #333;
+  text-align: left;
+}
+
+.table-relay .split-time {
+  /* Base properties set in Design System section above */
+  flex: 0 0 50px;
+  color: var(--time-color);
+  text-align: right;
+  min-width: 3rem;
+}
+
+.table-relay .relay-meet-row {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #ddd;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.split-entry {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.split-entry:last-child {
+  border-bottom: none;
+}
+
+/* Scoped to .split-entry context (NOT for .table-relay) */
+.split-entry .split-name {
+  flex: 2;
+  font-weight: 500;
+}
+
+.split-entry .split-stroke {
+  flex: 1;
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  font-size: 0.85em;
+}
+
+.split-entry .split-time {
+  flex: 1;
+  text-align: right;
+  font-family: 'Courier New', monospace;
+  color: var(--tvhs-primary);
+  font-weight: bold;
+}
+
+/* Mobile adjustments for splits (scoped to .split-entry) */
+@media (max-width: 768px) {
+  .split-entry {
+    flex-wrap: wrap;
+  }
+  
+  .split-entry .split-name {
+    flex-basis: 50%;
+  }
+  
+  .split-entry .split-stroke {
+    flex-basis: 25%;
+    font-size: 0.8em;
+  }
+  
+  .split-entry .split-time {
+    flex-basis: 25%;
+  }
+}
+
+/* ===== LANDSCAPE MODE ADJUSTMENTS ===== */
+@media (orientation: landscape) and (max-height: 500px) {
+  /* Compact headers in landscape */
+  #main-nav {
+    padding: 0.2rem 0.5rem !important;
+  }
+  
+  .quick-nav {
+    padding: 0.15rem 0.5rem !important;
+  }
+  
+  .page-header {
+    padding: 0.25rem 0 !important;
+  }
+  
+  .page-header h1 {
+    font-size: 1rem !important;
+    margin: 0 !important;
+  }
+  
+  .hero-header {
+    padding: 0.25rem 0 !important;
+  }
+  
+  /* Adjust sticky positions for compact headers */
+  .quick-nav {
+    top: 32px !important;
+  }
+  
+  .page-header,
+  .hero-header {
+    top: 60px !important;
+  }
+  
+  /* Tables take full width in landscape */
+  .table-responsive {
+    width: 100%;
+  }
+  
+  .table {
+    width: 100%;
+    table-layout: auto;
+  }
+  
+  /* Revert mobile card layout to table layout in landscape */
+  .table thead {
+    display: table-header-group;
+  }
+  
+  .table tbody {
+    display: table-row-group;
+  }
+  
+  .table tbody tr {
+    display: table-row;
+    background: transparent;
+    box-shadow: none;
+    margin-bottom: 0;
+    padding: 0;
+  }
+  
+  .table tbody td {
+    display: table-cell;
+    border: 1px solid #dee2e6;
+    padding: 0.5rem;
+  }
+  
+  /* Ensure all columns visible in landscape */
+  .table-5col tbody td,
+  .table-6col tbody td {
+    display: table-cell !important;
+  }
+  
+  /* Hide mobile-specific pseudo-elements */
+  .table tbody td::before {
+    display: none !important;
+  }
+  
+  /* Compact event headings */
+  .event-heading {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* Jump To dropdown compact */
+  .jump-to-dropdown {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* ==========================================
+   Compact Record Cards (Annual Summary)
+   ========================================== */
+.record-card-compact {
+  background-color: #fafff5;
+  border-radius: 8px;
+  transition: box-shadow 0.2s;
+}
+
+.record-card-compact:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.record-card-compact .card-body {
+  padding: 1rem;
+}
+
+.record-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.record-header-row {
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.record-row .event-name {
+  font-weight: bold;
+  color: var(--tvhs-dark-green, #0a3622);
+  font-size: 0.95rem;
+}
+
+.record-row .time-value {
+  /* Base properties set in Design System section above */
+  font-size: var(--time-size-md);
+  color: var(--time-color);
+}
+
+.record-row .swimmer-name {
+  flex: 1;
+}
+
+.record-row .date-value {
+  /* Base properties set in Design System section above */
+  white-space: nowrap;
+}
+
+.clickable-row {
+  cursor: pointer;
+  padding: 0.3rem 0;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.clickable-row:hover {
+  background-color: rgba(44, 95, 45, 0.1);
+}
+
+.expand-hint {
+  font-size: 0.7rem;
+  color: #999;
+  margin-left: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.clickable-row:hover .expand-hint {
+  color: var(--tvhs-primary, #2C5F2D);
+}
+
+.record-location-hidden {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease;
+  font-size: 0.85rem;
+  color: #666;
+  padding: 0;
+}
+
+.record-location-hidden.show {
+  max-height: 50px;
+  opacity: 1;
+  padding: 0.5rem 0;
+}
+
+.record-prev-section {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #ddd;
+}
+
+.record-label-small {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #888;
+  font-weight: bold;
+}
+
+.time-value-small {
+  /* Base properties set in Design System section above */
+  font-size: var(--time-size-sm);
+  color: var(--time-color-muted);
+}
+
+.record-improvement {
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #eee;
+  font-size: 0.9rem;
+}
+
+/* Mobile adjustments for record cards */
+@media (max-width: 768px) {
+  .record-card-compact .card-body {
+    padding: 0.75rem;
+  }
+  
+  .record-row .event-name {
+    font-size: 0.85rem;
+  }
+  
+  .record-row .time-value {
+    font-size: 1rem;
+  }
+  
+  .record-row .date-value {
+    font-size: 0.75rem;
+  }
+}
+

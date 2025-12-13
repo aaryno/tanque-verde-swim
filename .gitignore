@@ -59,3 +59,6 @@ data/temp/
 ehthumbs.db
 Thumbs.db
 
+
+# But keep requirements.txt
+!requirements.txt
