@@ -7,6 +7,9 @@ import json
 import re
 from pathlib import Path
 
+# Project root (parent of scripts/ directory)
+PROJECT_ROOT = Path(__file__).parent.parent
+
 
 def parse_records_file(filepath, gender):
     """Parse a records markdown file and extract all 2025-26 class records"""
@@ -96,8 +99,8 @@ def main():
     print("Adding 2025-26 Class Records")
     print("=" * 60)
     
-    records_dir = Path('records')
-    history_file = Path('data/class_records_history.json')
+    records_dir = PROJECT_ROOT / 'records'
+    history_file = PROJECT_ROOT / 'data/class_records_history.json'
     
     # Load existing class records
     with open(history_file, 'r') as f:
