@@ -7,9 +7,8 @@
 
 | Rank | Time | Participants | Date | Meet |
 |-----:|-----:|--------------|------|------|
-| **1** | **01:52.45** | **Amelia Kidd, Logan Sulger, Adrianna Witte, Hadley Cusson** | **Oct 18, 2025** | **Pecan Classic** |
-| 2 | 01:53.19 | Logan Sulger, Kadynce Drummond, Madeline Barnard, Isla Cerepak | Oct 24, 2025 | Southern Arizona Qualifier |
-| 3 | 01:53.50 | Isabelle Sansom, Sarynn Patterson, Kennady Pautler, Lindsey Schoel-Smith | Oct 26, 2018 | Southern Arizona Regional Qualifier |
+| **1** | **01:53.50** | **Isabelle Sansom, Sarynn Patterson, Kennady Pautler, Lindsey Schoel-Smith** | **Oct 26, 2018** | **Southern Arizona Regional Qualifier** |
+| 2 | 01:53.58 | Isabelle Sansom, Kennady Pautler, Violet Dasse, Trinity Weatherwax | Nov 01, 2018 | AIA D-3 Girls State Championship |
 | 4 | 01:53.58 | Isabelle Sansom, Kennady Pautler, Violet Dasse, Trinity Weatherwax | Nov 01, 2018 | AIA D-3 Girls State Championship |
 | 5 | 01:54.06 | Hazel Dasse, Sarynn Patterson, Ellie Radomsky, Lindsey Sohoel-Smith | Oct 01, 2016 | 2016 TYR High School Classic |
 | 6 | 01:54.87 | Sarynn Patterson, Lindsey Schoel-Smith, Hazel Dasse, Ellie Radomsky | Nov 01, 2018 | AIA D-3 Girls State Championship |
