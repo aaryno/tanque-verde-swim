@@ -62,7 +62,7 @@
 | Freshman | 1:08.97 | Lindsey Sohoel-Smith | Oct 24, 2015 | Small School Championships |
 | Sophomore | 1:07.01 | Lindsey Sohoel-Smith | Nov 04, 2016 | 2016 D-3 AIA State Championship |
 | Junior | 1:16.16 | Adrianna Witte | Nov 09, 2024 | 2024 D-3 AIA State Championship |
-| Senior | 1:13.71 | Adrianna Witte | Sep 20, 2025 | Canyon del Oro Classic |
+| Senior | 1:05.10 | Lindsey Sohoel-Smith | Nov 02, 2018 | 2018 D-3 AIA State Championship |
 | **Open** | **1:05.10** | **Lindsey Sohoel-Smith** | **Nov 02, 2018** | **2018 D-3 AIA State Championship** |
 
 ### 100 Butterfly
