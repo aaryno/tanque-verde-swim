@@ -423,7 +423,37 @@ Create `scripts/setup_new_season.py` that:
 
 ---
 
+---
+
+## Historical Records Reference
+
+### Carly Wilson (2009-2011) - Record Holder
+
+Carly Wilson holds multiple OPEN records from the 2009-10 and 2010-11 seasons:
+
+| Event | Time | Date | Meet | Notes |
+|-------|------|------|------|-------|
+| 50 Free | **23.84** | Nov 06, 2010 | 2010 D-2 AIA State Championship | OPEN RECORD |
+| 100 Free | **52.12** | Nov 06, 2010 | 2010 D-2 AIA State Championship | OPEN RECORD |
+| 200 Free | **2:02.06** | Oct 18, 2011 | Pecan Classic | OPEN RECORD |
+| 500 Free | **5:27.18** | Oct 21, 2010 | Pecan Classic | OPEN RECORD |
+| 100 Fly | **1:00.33** | Sep 23, 2010 | CDO Classic | OPEN RECORD |
+| 200 IM | **2:14.87** | Sep 23, 2010 | CDO Classic | OPEN RECORD |
+
+**Important:** These records pre-date most digital tracking. When adding historical data, verify against the original source document.
+
+### Boys 50 Free Discrepancy
+
+There's a potential discrepancy in the Boys 50 Free:
+- **Database:** 21.99 (Nicholas Cusson, Oct 23, 2021) or 21.64r (relay split)
+- **Some sources show:** 21.5 (Nov 03, 2023)
+
+If the 21.5 is verified, it would be a new record. The "21.5" may be a typo for 22.5 or 21.5X.
+
+---
+
 **Last Updated:** December 14, 2025  
 **Season Covered:** 2025-26 (complete), 2026-27 (template ready)
+**Records Fixed:** Carly Wilson historical records added Dec 2025
 
 
