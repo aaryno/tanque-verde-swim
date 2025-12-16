@@ -426,3 +426,4 @@ Create `scripts/setup_new_season.py` that:
 **Last Updated:** December 14, 2025  
 **Season Covered:** 2025-26 (complete), 2026-27 (template ready)
 
+

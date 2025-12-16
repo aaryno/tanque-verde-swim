@@ -144,3 +144,4 @@ git add -A && git commit -m "Regenerate site" && git push origin main
 
 4. **Push changes** to see them on the live site (GitHub Pages deploys automatically)
 
+

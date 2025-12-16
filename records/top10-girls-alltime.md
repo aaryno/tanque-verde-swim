@@ -69,16 +69,16 @@
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| 1 | 1:00.33 | Carly Wilson | JR | Sep 23, 2010 | CDO Classic |
-| 2 | 1:02.29 | Logan Sulger | SR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
-| 3 | 1:02.65 | Calla Isenberg | SR | Oct 27, 2017 | Southern Arizona Regional Qualifier |
-| 4 | 1:03.12 | Lindsey Schoel-Smith | SR | Nov 01, 2018 | AIA D-3 Girls State Championship |
-| 5 | 1:03.34 | Sarynn Patterson | SR | Nov 07, 2019 | 2019 D-3 AIA State Championship |
-| 6 | 1:04.81 | Paisley White | SR | Nov 05, 2022 | 2022 D-3 AIA Girls State Championship |
-| 7 | 1:05.85 | Hazel Dasse | SO | Nov 04, 2016 | 2016 D-3 AIA State Championship |
-| 8 | 1:06.23 | Brianne Foley | SR | Oct 25, 2024 | Southern Arizona Qualifier |
-| 9 | 1:07.64 | Shaye Sulger | SR | Sep 25, 2021 | TYR HS Classic |
-| 10 | 1:08.24 | Summer Cugini | SR | Nov 09, 2024 | 2024 D-3 AIA State Championship |
+| 1 | 1:02.29 | Logan Sulger | SR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
+| 2 | 1:02.65 | Calla Isenberg | SR | Oct 27, 2017 | Southern Arizona Regional Qualifier |
+| 3 | 1:03.12 | Lindsey Schoel-Smith | SR | Nov 01, 2018 | AIA D-3 Girls State Championship |
+| 4 | 1:03.34 | Sarynn Patterson | SR | Nov 07, 2019 | 2019 D-3 AIA State Championship |
+| 5 | 1:04.81 | Paisley White | SR | Nov 05, 2022 | 2022 D-3 AIA Girls State Championship |
+| 6 | 1:05.85 | Hazel Dasse | SO | Nov 04, 2016 | 2016 D-3 AIA State Championship |
+| 7 | 1:06.23 | Brianne Foley | SR | Oct 25, 2024 | Southern Arizona Qualifier |
+| 8 | 1:07.64 | Shaye Sulger | SR | Sep 25, 2021 | TYR HS Classic |
+| 9 | 1:08.24 | Summer Cugini | SR | Nov 09, 2024 | 2024 D-3 AIA State Championship |
+| 10 | 1:08.37 | Amelia Kidd | SO | Nov 08, 2025 | 2025 D-3 AIA State Championship |
 
 ### 100 Breaststroke
 
@@ -99,7 +99,7 @@
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| 1 | 1:00.93 | Carly Wilson | SO | Nov 2009 | 2009 AIA State Championship |
+| 1 | 1:00.33 | Carly Wilson | SO | Sep 23, 2010 | CDO Classic |
 | 2 | 1:01.84 | Brianne Foley | SR | Nov 09, 2024 | 2024 D-3 AIA State Championship |
 | 3 | 1:04.32 | Paisley White | SR | Oct 22, 2022 | Pecan Classic |
 | 4 | 1:05.95 | Chloe Weatherwax | FR | Nov 05, 2020 | AIA D-3 State Championship |
@@ -114,13 +114,13 @@
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| 1 | 2:15.55 | Lindsey Schoel-Smith | SO | Nov 04, 2016 | 2016 D-3 AIA State Championship |
-| 2 | 2:20.75 | Sarynn Patterson | SR | Nov 07, 2019 | 2019 D-3 AIA State Championship |
-| 3 | 2:21.97 | Isabelle Sansom | JR | Nov 01, 2018 | AIA D-3 Girls State Championship |
-| 4 | 2:27.21 | Hazel Dasse | FR | Oct 24, 2015 | Small School Championships |
-| 5 | 2:30.38 | Madeline Barnard | SR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
-| 6 | 2:34.87 | Ella Bissmeyer | SO | Nov 08, 2025 | 2025 D-3 AIA State Championship |
-| 7 | 2:35.04 | Madisyn Clausen | JR | Oct 26, 2013 | Mike Ward Memorial Invitational |
-| 8 | 2:35.54 | Adrianna Witte | SR | Sep 27, 2025 | Arena High School Classic |
-| 9 | 2:35.94 | Isla Cerepak | FR | Sep 20, 2025 | Canyon del Oro Classic |
-| 10 | 2:36.65 | Paisley White | JR | Oct 23, 2021 | Pecan Classic |
+| 1 | 2:14.87 | Carly Wilson | SO | Sep 23, 2010 | CDO Classic |
+| 2 | 2:15.55 | Lindsey Schoel-Smith | SO | Nov 04, 2016 | 2016 D-3 AIA State Championship |
+| 3 | 2:20.75 | Sarynn Patterson | SR | Nov 07, 2019 | 2019 D-3 AIA State Championship |
+| 4 | 2:21.97 | Isabelle Sansom | JR | Nov 01, 2018 | AIA D-3 Girls State Championship |
+| 5 | 2:27.21 | Hazel Dasse | FR | Oct 24, 2015 | Small School Championships |
+| 6 | 2:30.38 | Madeline Barnard | SR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
+| 7 | 2:34.87 | Ella Bissmeyer | SO | Nov 08, 2025 | 2025 D-3 AIA State Championship |
+| 8 | 2:35.04 | Madisyn Clausen | JR | Oct 26, 2013 | Mike Ward Memorial Invitational |
+| 9 | 2:35.54 | Adrianna Witte | SR | Sep 27, 2025 | Arena High School Classic |
+| 10 | 2:35.94 | Isla Cerepak | FR | Sep 20, 2025 | Canyon del Oro Classic |

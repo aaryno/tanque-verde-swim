@@ -198,3 +198,4 @@ Key requirements:
 - The expandable row is `.relay-details-row` with a single `<td colspan="4">`
 - The show/hide toggle is controlled by adding/removing `.show` class via JavaScript onclick
 
+
