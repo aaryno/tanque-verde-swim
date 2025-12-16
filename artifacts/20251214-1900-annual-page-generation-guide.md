@@ -442,13 +442,14 @@ Carly Wilson holds multiple OPEN records from the 2009-10 and 2010-11 seasons:
 
 **Important:** These records pre-date most digital tracking. When adding historical data, verify against the original source document.
 
-### Boys 50 Free Discrepancy
+### Boys 50 Free - Verified
 
-There's a potential discrepancy in the Boys 50 Free:
-- **Database:** 21.99 (Nicholas Cusson, Oct 23, 2021) or 21.64r (relay split)
-- **Some sources show:** 21.5 (Nov 03, 2023)
+Nick Cusson's 50 Free times (verified Dec 2025):
+- **Individual Record:** 21.99 (Oct 23, 2021 - 2021 D-3 AIA State Championship)
+- **Fastest Relay Split:** 21.64r (Nov 05, 2022 - 2022 D-3 AIA Boys State Championship)
+- MaxPreps shows 21.76 relay leadoff (Sep 16, 2023 - CDO Classic)
 
-If the 21.5 is verified, it would be a new record. The "21.5" may be a typo for 22.5 or 21.5X.
+**Note:** A "21.5" in some historical documents was a typo. No sub-21.64 time exists.
 
 ---
 
