@@ -7,21 +7,20 @@
 
 | Rank | Time | Participants | Date | Meet |
 |-----:|-----:|--------------|------|------|
-| **1** | **01:42.54** | **Logan Radomsky, Titan Flint, Lukas Baker, John Deninghoff** | **Oct 26, 2018** | **Southern Arizona Regional Qualifier** |
-| 2 | 01:42.70 | Kent Olsson, Wade Olsson, Jackson Eftekhar, Grayson The | Nov 08, 2025 | D-3 AIA State Championship |
-| 3 | 01:42.98 | Alejandro Alvarez, Nolan Radomsky, Tannor Soedor, Stephen Moreland | Oct 28, 2022 | Southern AZ Regional Qualifier |
-| 4 | 01:43.02 | Dominic Colombo, Nate Grimshaw, Julian Pacheco, Logan Radomsky | Nov 01, 2019 | Canyon Del Oro Invite |
-| 5 | 01:44.98 | Grayson The, Lucas Soeder, Carter Caballero, Peyton Kowalski | Oct 25, 2024 | Southern Arizona Qualifier |
-| 6 | 01:45.73 | Wade Olsson, Zachary Duerkop, Jackson Eftekhar, Jackson Machamer | Oct 25, 2024 | Southern Arizona Qualifier |
-| 7 | 01:46.38 | Kent Olsson, Wade Olsson, Zachary Duerkop, Jackson Machamer | Sep 20, 2025 | Canyon del Oro Classic |
-| 8 | 01:46.69 | Stephen Moreland, Nicholas Spilotro, Alejandro Alvarez, Nolan Radomsky | Oct 23, 2021 | Pecan Classic |
-| 9 | 01:47.12 | Nicholas Spilotro, Titan Flint, John Denninghoff, Eli Stott | Sep 22, 2018 | Red Wolf Relays |
-| 10 | 01:47.46 | Julian Pacheco, Joseph Jacobs, Nate Grimshaw, Eli Stott | Oct 05, 2019 | High School Classic |
-| 11 | 01:47.54 | Nicholas Cusson, Wade Olsson, Nolan Radomsky, Zachary Duerkop | Sep 23, 2023 | TYR High School Classic |
-| 12 | 01:47.66 | Nicholas Spilotro, Oren Zadorozny, Samuel Stott, Nicholas Cusson | Oct 23, 2021 | Pecan Classic |
-| 13 | 01:47.87 | Eli Stott, Julian Pacheco, Joseph Jacobs, Trevor Clausen | Sep 27, 2019 | Red Wolf Qualifier |
-| 14 | 01:48.53 | Wade Olsson, Lucas Soeder, Jackson Eftekhar, Jackson Machamer | Nov 09, 2024 | 2024 D-3 AIA State Championship |
-| 15 | 01:48.69 | Julian Pacheco, Dominic Colombo, Nicholas Spilotro, Joseph Jacobs | Oct 20, 2018 | Mike Ward Invitational |
+| **1** | **01:42.70** | **Kent Olsson, Wade Olsson, Jackson Eftekhar, Grayson The** | **Nov 08, 2025** | **D-3 AIA State Championship** |
+| 2 | 01:42.98 | Alejandro Alvarez, Nolan Radomsky, Tannor Soedor, Stephen Moreland | Oct 28, 2022 | Southern AZ Regional Qualifier |
+| 3 | 01:43.02 | Dominic Colombo, Nate Grimshaw, Julian Pacheco, Logan Radomsky | Nov 01, 2019 | Canyon Del Oro Invite |
+| 4 | 01:44.98 | Grayson The, Lucas Soeder, Carter Caballero, Peyton Kowalski | Oct 25, 2024 | Southern Arizona Qualifier |
+| 5 | 01:45.73 | Wade Olsson, Zachary Duerkop, Jackson Eftekhar, Jackson Machamer | Oct 25, 2024 | Southern Arizona Qualifier |
+| 6 | 01:46.38 | Kent Olsson, Wade Olsson, Zachary Duerkop, Jackson Machamer | Sep 20, 2025 | Canyon del Oro Classic |
+| 7 | 01:46.69 | Stephen Moreland, Nicholas Spilotro, Alejandro Alvarez, Nolan Radomsky | Oct 23, 2021 | Pecan Classic |
+| 8 | 01:47.12 | Nicholas Spilotro, Titan Flint, John Denninghoff, Eli Stott | Sep 22, 2018 | Red Wolf Relays |
+| 9 | 01:47.46 | Julian Pacheco, Joseph Jacobs, Nate Grimshaw, Eli Stott | Oct 05, 2019 | High School Classic |
+| 10 | 01:47.54 | Nicholas Cusson, Wade Olsson, Nolan Radomsky, Zachary Duerkop | Sep 23, 2023 | TYR High School Classic |
+| 11 | 01:47.66 | Nicholas Spilotro, Oren Zadorozny, Samuel Stott, Nicholas Cusson | Oct 23, 2021 | Pecan Classic |
+| 12 | 01:47.87 | Eli Stott, Julian Pacheco, Joseph Jacobs, Trevor Clausen | Sep 27, 2019 | Red Wolf Qualifier |
+| 13 | 01:48.53 | Wade Olsson, Lucas Soeder, Jackson Eftekhar, Jackson Machamer | Nov 09, 2024 | 2024 D-3 AIA State Championship |
+| 14 | 01:48.69 | Julian Pacheco, Dominic Colombo, Nicholas Spilotro, Joseph Jacobs | Oct 20, 2018 | Mike Ward Invitational |
 
 ---
 
