@@ -47,9 +47,13 @@ def create_nav_html():
                 <li class="nav-item">
                     <a class="nav-link" href="#" id="nav-relays" title="Relay Records">🤝<span class="d-none d-md-inline ms-1">Relays</span></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/seniors/class-of-2026.html" id="nav-seniors" title="Senior Recognition">🎓<span class="d-none d-md-inline ms-1">Seniors</span></a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅<span class="d-none d-md-inline ms-1">Top 10 by Year</span></a>
                     <ul class="dropdown-menu dropdown-menu-scroll">
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2026-27</a></li>
                         <li><a class="dropdown-item season-link" data-path="top10" href="#">2024-25</a></li>
                         <li><a class="dropdown-item season-link" data-path="top10" href="#">2023-24</a></li>
                         <li><a class="dropdown-item season-link" data-path="top10" href="#">2022-23</a></li>
@@ -974,6 +978,14 @@ def main():
                       'times swum so far in ' + season + ', not a final season list.')
         convert_top10_to_cards(top10_file, output, title, notice=notice)
     
+    # Generate the season landing page (docs/index.html)
+    print("\n\U0001F3E0 Generating Season Landing Page...")
+    result = subprocess.run(['python3', str(script_dir / 'generate_landing_page.py')], capture_output=True, text=True)
+    if result.returncode != 0:
+        print(f"  \u26a0\ufe0f Warning: generate_landing_page.py failed: {result.stderr}")
+    else:
+        print(result.stdout.rstrip())
+
     # Generate annual summaries using dedicated script (maintains styled format)
     print("\n📅 Generating Annual Summaries (via generate_annual_pages.py)...")
     result = subprocess.run(['python3', str(script_dir / 'generate_annual_pages.py')], capture_output=True, text=True)
