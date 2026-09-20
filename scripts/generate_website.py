@@ -9,6 +9,26 @@ from pathlib import Path
 from datetime import datetime
 
 
+PROJECT_ROOT = Path(__file__).parent.parent
+RECORDS_DIR = PROJECT_ROOT / 'records'
+
+
+def seasons_with_top10():
+    """Seasons that actually have committed top-10 source files.
+
+    The "Top 10 by Year" menu is derived from this rather than from a
+    hand-written list, so a season can never be linked before its
+    records/top10-{boys,girls}-<season>.md exist. Both genders are required
+    because the menu links to the boys page and the gender toggle rewrites
+    the same href to the girls page.
+    """
+    boys = {f.name[len('top10-boys-'):-len('.md')]
+            for f in RECORDS_DIR.glob('top10-boys-*.md')}
+    girls = {f.name[len('top10-girls-'):-len('.md')]
+             for f in RECORDS_DIR.glob('top10-girls-*.md')}
+    return sorted(s for s in boys & girls if re.fullmatch(r'\d{4}-\d{2}', s))
+
+
 def create_nav_html():
     """Create mobile-friendly navigation with Boys/Girls toggle and emoji shortcuts"""
     return '''
@@ -53,25 +73,7 @@ def create_nav_html():
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅<span class="d-none d-md-inline ms-1">Top 10 by Year</span></a>
                     <ul class="dropdown-menu dropdown-menu-scroll">
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2026-27</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2024-25</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2023-24</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2022-23</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2021-22</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2020-21</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2019-20</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2018-19</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2017-18</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2016-17</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2015-16</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2014-15</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2013-14</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2012-13</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2011-12</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2010-11</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2009-10</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2008-09</a></li>
-                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2007-08</a></li>
+''' + '\n'.join([f'                        <li><a class="dropdown-item season-link" data-path="top10" href="#">{s}</a></li>' for s in reversed(seasons_with_top10())]) + '''
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
