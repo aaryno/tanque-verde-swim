@@ -21,20 +21,11 @@ RECORDS_DIR = PROJECT_ROOT / 'records'
 SPLITS_FILE = PROJECT_ROOT / 'data' / 'historical_splits' / 'all_relay_splits.json'
 
 
-def seasons_with_top10():
-    """Seasons that actually have committed top-10 source files.
-
-    The "Top 10 by Year" menu is derived from this rather than from a
-    hand-written list, so a season can never be linked before its
-    records/top10-{boys,girls}-<season>.md exist. Both genders are required
-    because the menu links to the boys page and the gender toggle rewrites
-    the same href to the girls page.
-    """
-    boys = {f.name[len('top10-boys-'):-len('.md')]
-            for f in RECORDS_DIR.glob('top10-boys-*.md')}
-    girls = {f.name[len('top10-girls-'):-len('.md')]
-             for f in RECORDS_DIR.glob('top10-girls-*.md')}
-    return sorted(s for s in boys & girls if re.fullmatch(r'\d{4}-\d{2}', s))
+# The two season menus are derived from the committed sources, in one place
+# shared with generate_annual_pages.py and rebuild_relay_pages.py -- three
+# private copies of the same list is how the relay pages ended up two seasons
+# behind every other page. See scripts/site_seasons.py.
+from site_seasons import seasons_with_annual, seasons_with_top10  # noqa: E402
 
 
 def create_nav_html():
@@ -98,21 +89,7 @@ def create_nav_html():
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-summary" title="Season Summary">📈<span class="d-none d-md-inline ms-1">Summary by Year</span></a>
                     <ul class="dropdown-menu dropdown-menu-scroll dropdown-menu-end">
-                        <li><a class="dropdown-item" href="/annual/2026-27.html">2026-27</a></li>
-                        <li><a class="dropdown-item" href="/annual/2025-26.html">2025-26</a></li>
-                        <li><a class="dropdown-item" href="/annual/2024-25.html">2024-25</a></li>
-                        <li><a class="dropdown-item" href="/annual/2023-24.html">2023-24</a></li>
-                        <li><a class="dropdown-item" href="/annual/2022-23.html">2022-23</a></li>
-                        <li><a class="dropdown-item" href="/annual/2021-22.html">2021-22</a></li>
-                        <li><a class="dropdown-item" href="/annual/2020-21.html">2020-21</a></li>
-                        <li><a class="dropdown-item" href="/annual/2019-20.html">2019-20</a></li>
-                        <li><a class="dropdown-item" href="/annual/2018-19.html">2018-19</a></li>
-                        <li><a class="dropdown-item" href="/annual/2017-18.html">2017-18</a></li>
-                        <li><a class="dropdown-item" href="/annual/2016-17.html">2016-17</a></li>
-                        <li><a class="dropdown-item" href="/annual/2015-16.html">2015-16</a></li>
-                        <li><a class="dropdown-item" href="/annual/2014-15.html">2014-15</a></li>
-                        <li><a class="dropdown-item" href="/annual/2013-14.html">2013-14</a></li>
-                        <li><a class="dropdown-item" href="/annual/2012-13.html">2012-13</a></li>
+''' + '\n'.join([f'                        <li><a class="dropdown-item" href="/annual/{s}.html">{s}</a></li>' for s in reversed(seasons_with_annual())]) + '''
                     </ul>
                 </li>
             </ul>
@@ -793,7 +770,6 @@ def generate_overall_records_page(records_dir, docs_dir):
     with open(splits_file, 'r') as f:
         splits_data = json.load(f)
 
-    
     def get_last_names(participants):
         """Extract last names from participants string"""
         names = [n.strip() for n in participants.split(',')]
@@ -1139,7 +1115,6 @@ def run_data_guards(script_dir):
                   f"{'!' * 78}\n{out}\n"
                   f"! This does not block the build. Run for detail:\n"
                   f"!   python3 scripts/{name}\n{'!' * 78}", file=sys.stderr)
-
 
 
 if __name__ == '__main__':
