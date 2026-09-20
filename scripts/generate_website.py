@@ -6,6 +6,7 @@ Converts all markdown files to HTML with Bootstrap styling and navigation
 
 import os
 import re
+import subprocess
 import sys
 from pathlib import Path
 from datetime import datetime
@@ -17,6 +18,7 @@ from generate_senior_page import senior_href  # noqa: E402
 
 PROJECT_ROOT = Path(__file__).parent.parent
 RECORDS_DIR = PROJECT_ROOT / 'records'
+SPLITS_FILE = PROJECT_ROOT / 'data' / 'historical_splits' / 'all_relay_splits.json'
 
 
 def seasons_with_top10():
@@ -777,13 +779,20 @@ def generate_overall_records_page(records_dir, docs_dir):
     boys_relays = extract_top_relay_records(records_dir / 'relay-records-boys.md')
     girls_relays = extract_top_relay_records(records_dir / 'relay-records-girls.md')
     
-    # Load relay splits
-    splits_data = {}
-    splits_file = Path('data/historical_splits/all_relay_splits.json')
-    if splits_file.exists():
-        import json
-        with open(splits_file, 'r') as f:
-            splits_data = json.load(f)
+    # Load relay splits.
+    # Anchored to the project root, not the CWD: this path used to be relative,
+    # so running the generator from anywhere but the repo root silently produced
+    # a site with every relay split blank and still exited 0.
+    import json
+    splits_file = SPLITS_FILE
+    if not splits_file.exists():
+        raise SystemExit(
+            f"\n⛔ relay splits file missing: {splits_file}\n"
+            "   Every relay split breakdown would render blank and the build would\n"
+            "   still report success. Restore the file from git before generating.")
+    with open(splits_file, 'r') as f:
+        splits_data = json.load(f)
+
     
     def get_last_names(participants):
         """Extract last names from participants string"""
@@ -1099,6 +1108,38 @@ def main():
     print("✅ Website generation complete!")
     print(f"📁 Output directory: {docs_dir.absolute()}")
     print("=" * 80)
+
+    run_data_guards(script_dir)
+
+
+def run_data_guards(script_dir):
+    """Run the data guards after a render and report to stderr.
+
+    These report on the SOURCE data, not on the HTML, so they are advisory here
+    and deliberately do not fail the build -- the site must stay generatable
+    while the underlying data questions are open. They go to stderr so they
+    survive `> build.log` and stay visible; each one also runs standalone and
+    exits non-zero, which is what a gate should call.
+    """
+    guards = [
+        ('relay split attachment', 'check_relay_split_attachment.py'),
+        ('class records history', 'check_class_records_history.py'),
+    ]
+    for label, name in guards:
+        script = script_dir / name
+        if not script.exists():
+            continue
+        result = subprocess.run(['python3', str(script), '--quiet'],
+                                capture_output=True, text=True)
+        out = (result.stdout + result.stderr).strip()
+        if result.returncode == 0:
+            print(f"\n✓ guard clean: {label}\n  {out}", file=sys.stderr)
+        else:
+            print(f"\n{'!' * 78}\n! DATA GUARD REPORTED A PROBLEM: {label}\n"
+                  f"{'!' * 78}\n{out}\n"
+                  f"! This does not block the build. Run for detail:\n"
+                  f"!   python3 scripts/{name}\n{'!' * 78}", file=sys.stderr)
+
 
 
 if __name__ == '__main__':
