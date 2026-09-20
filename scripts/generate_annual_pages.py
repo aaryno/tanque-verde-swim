@@ -26,8 +26,23 @@ SEASONS = [
 # Years with incomplete data (only state meet results available)
 INCOMPLETE_DATA_YEARS = ["2007-08", "2008-09", "2009-10", "2010-11", "2011-12"]
 
-# Seasons that have top10 pages (excludes current season)
-TOP10_SEASONS = [s for s in SEASONS if s != "2025-26"]
+# Seasons that have top10 pages. Derived from the committed top-10 source
+# files rather than hardcoded by name: a season appears in the "Top 10 by Year"
+# menu exactly when records/top10-{boys,girls}-<season>.md both exist, so the
+# menu can never link a page that was not built. Both genders are required
+# because the gender toggle rewrites the same href to the girls page.
+# (Replaces `[s for s in SEASONS if s != "2025-26"]` from 0459cdc, which
+# excluded 2025-26 by name and would have kept excluding it forever.)
+def _seasons_with_top10():
+    records_dir = Path(__file__).parent.parent / 'records'
+    boys = {f.name[len('top10-boys-'):-len('.md')]
+            for f in records_dir.glob('top10-boys-*.md')}
+    girls = {f.name[len('top10-girls-'):-len('.md')]
+             for f in records_dir.glob('top10-girls-*.md')}
+    return [s for s in SEASONS if s in boys & girls]
+
+
+TOP10_SEASONS = _seasons_with_top10()
 
 
 # Project root (parent of scripts/ directory)
