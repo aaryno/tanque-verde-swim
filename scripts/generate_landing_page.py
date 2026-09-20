@@ -42,10 +42,11 @@ def parse_record_date(s):
 
 
 def collect_open_boys_records(records_dir):
-    """Every standing boys OPEN record as (event, date_tuple, date_text).
+    """Every standing boys OPEN record as (event, date_tuple, date_text, time, who).
 
     Individual OPEN records are the bold 'Open' grade row; relay records are the
-    bold rank-1 row. Both files are the repo's source of truth.
+    bold rank-1 row. Both files are the repo's source of truth. Every column the
+    page names is read from the same row, so a record change moves the prose.
     """
     out = []
 
@@ -63,7 +64,9 @@ def collect_open_boys_records(records_dir):
             continue
         d = parse_record_date(cells[3].replace('*', ''))
         if d:
-            out.append((event, d, cells[3].replace('*', '').strip()))
+            out.append((event, d, cells[3].replace('*', '').strip(),
+                        cells[1].replace('*', '').strip(),
+                        cells[2].replace('*', '').strip()))
 
     rel = (records_dir / 'relay-records-boys.md').read_text()
     event = None
@@ -79,7 +82,9 @@ def collect_open_boys_records(records_dir):
             continue
         d = parse_record_date(cells[3].replace('*', ''))
         if d:
-            out.append((event, d, cells[3].replace('*', '').strip()))
+            out.append((event, d, cells[3].replace('*', '').strip(),
+                        cells[1].replace('*', '').strip(),
+                        cells[2].replace('*', '').strip()))
 
     return out
 
@@ -110,6 +115,16 @@ def verify_oldest_record(records_dir, milestone):
         return ('oldest', 'the oldest record on the Tanque Verde boys books', runner_up)
     return ('not-oldest', 'one of the longest-standing records on the Tanque Verde boys books',
             runner_up)
+
+
+def describe_record(rec):
+    """A record row as '<event> &mdash; <time>, <swimmer>, <date>'.
+
+    Every field comes from the same parsed row as the date, so naming the time
+    and the swimmer cannot drift out of step with the records files.
+    """
+    event, _, date_text, time, who = rec
+    return f'{esc(event)} &mdash; {esc(time)}, {esc(who)}, {esc(date_text)}'
 
 
 def fmt_meet_date(start, end):
@@ -175,11 +190,11 @@ def build_page(project_root):
         oldest_line = (
             f'''<p class="mb-0">{broken_desc} was <strong>{phrase}</strong>. '''
             f'''It had stood longer than any other boys school record, individual or relay. '''
-            f'''The next-oldest still standing is the {esc(runner_up[0])} record from {esc(runner_up[2])}.</p>''')
+            f'''The next-oldest still standing is the {describe_record(runner_up)}.</p>''')
     elif verdict == 'not-oldest':
         oldest_line = (
             f'''<p class="mb-0">{broken_desc} was <strong>{phrase}</strong>. '''
-            f'''The oldest still standing is the {esc(runner_up[0])} record from {esc(runner_up[2])}.</p>''')
+            f'''The oldest still standing is the {describe_record(runner_up)}.</p>''')
     else:
         oldest_line = f'<p class="mb-0">{broken_desc} had stood for more than a decade.</p>'
 
@@ -492,7 +507,8 @@ def main():
         project_root / 'records', data['milestone'])
     print(f"  oldest-record check: {verdict} -> \"{phrase}\"")
     if runner_up:
-        print(f"  next-oldest standing boys record: {runner_up[0]} ({runner_up[2]})")
+        print(f"  next-oldest standing boys record: {runner_up[0]} "
+              f"({runner_up[3]}, {runner_up[4]}, {runner_up[2]})")
     out.write_text(build_page(project_root))
     print(f"  ✓ {out}")
 

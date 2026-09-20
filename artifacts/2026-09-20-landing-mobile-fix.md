@@ -445,3 +445,33 @@ measures this site that way. Use CDP `Emulation.setDeviceMetricsOverride
 Then judge by `document.scrollingElement.scrollWidth` and by element rects against the
 viewport, not by eye alone — a clipped capture and a clipped layout look identical in a
 PNG, which is the whole lesson of this ticket.
+
+---
+
+## Naming the next-oldest record (Aaryn, 20:19Z — own order, 21:3xZ)
+
+The Kent Olsson section closed on a bare date: *"The next-oldest still standing is the
+50 Freestyle record from Oct 23, 2021."* A date alone makes the reader leave the page to
+find out what the record actually is, so it now reads *"The next-oldest still standing is
+the 50 Freestyle &mdash; 21.99, Nicholas Cusson, Oct 23, 2021."* One sentence changed;
+`git diff docs/` is a single line in `docs/index.html` and nothing else on the site moved.
+The three facts come from `records/records-boys.md`, the bold **Open** row under
+`### 50 Freestyle`: `| **Open** | **21.99** | **Nicholas Cusson** | **Oct 23, 2021** |
+**2021 D-3 AIA State Championship** |`. Nothing under `records/` or `data/` was edited,
+and no harvester was run.
+
+The facts are derived, not typed. `collect_open_boys_records()` already parsed that exact
+row to get the date; it now carries the time and the swimmer out of the same `cells[1]`
+and `cells[2]` it was already splitting, and a new `describe_record()` formats them. Grep
+the generator for `Cusson` or `21.99` and there are no hits — if the 50 Free record falls,
+this sentence renames itself the same build the records file changes, exactly as the
+`oldest` superlative already does. Proof: run against a scratch copy of `records/` with the
+Open row rewritten to `20.11 / Test Swimmer`, the sentence rendered "20.11, Test Swimmer"
+without touching the generator. `verify_oldest_record()` still returns `oldest` and the
+page still prints the superlative — the build line is
+`oldest-record check: oldest -> "the oldest record on the Tanque Verde boys books"`,
+followed by `next-oldest standing boys record: 50 Freestyle (21.99, Nicholas Cusson,
+Oct 23, 2021)`. `generate_website.py` run twice produces byte-identical output across all
+120 HTML files. The grade clause was skipped deliberately: the Open row's grade cell reads
+`Open`, so the parse does not carry the grade Cusson was in, and inventing a parse to say
+"as a sophomore" would have been a fact not read from the file.
