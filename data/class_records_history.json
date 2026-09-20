@@ -2980,5 +2980,22 @@
       "season": "2020-21",
       "meet": "AIA D-3 State Championship"
     }
+  },
+  {
+    "season": "2026-27",
+    "gender": "boys",
+    "event": "500 Freestyle",
+    "grade": "SO",
+    "time": "5:03.13",
+    "name": "Kent Olsson",
+    "date": "Sep 19, 2026",
+    "meet": "Canyon del Oro Classic",
+    "previous": {
+      "time": "5:19.88",
+      "name": "Zachary Duerkop",
+      "date": "Oct 25, 2023",
+      "season": "2023-24",
+      "meet": "Southern Arizona Region Qualifier"
+    }
   }
 ]

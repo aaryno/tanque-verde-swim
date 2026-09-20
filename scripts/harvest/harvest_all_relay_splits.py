@@ -17,7 +17,8 @@ from pathlib import Path
 
 # Years to harvest (most recent first)
 YEARS = [
-    '25-26',  # Current season
+    '26-27',  # Current season (in progress)
+    '25-26',
     '24-25',
     '23-24',
     '22-23',
