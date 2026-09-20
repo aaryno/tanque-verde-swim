@@ -5879,6 +5879,90 @@
         "00:25.67"
       ],
       "team": "Relay Team"
+    },
+    {
+      "type": "200 Medley Relay",
+      "year": "26-27",
+      "gender": "boys",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Kent Olsson - So.",
+        "Bennett Johnston - Jr.",
+        "Jackson Eftekhar - Sr.",
+        "Jackson Machamer - Sr."
+      ],
+      "splits": [
+        "00:25.85",
+        "00:34.05",
+        "00:21.41",
+        "00:24.62"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "200 Free Relay",
+      "year": "26-27",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Bennett Johnston - Jr.",
+        "Gavin Contreras - Fr.",
+        "Shane Gardner - So.",
+        "Quinn Scott - Jr."
+      ],
+      "splits": [
+        "00:24.79",
+        "00:28.97",
+        "00:27.16",
+        "00:26.52"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "400 Free Relay",
+      "year": "26-27",
+      "gender": "boys",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Jackson Machamer - Sr.",
+        "Jackson Machamer - Sr.",
+        "Kent Olsson - So.",
+        "Kent Olsson - So.",
+        "Quinn Scott - Jr.",
+        "Quinn Scott - Jr.",
+        "Jackson Eftekhar - Sr.",
+        "Jackson Eftekhar - Sr."
+      ],
+      "splits": [
+        "00:25.79",
+        "00:28.45",
+        "00:25.74",
+        "00:28.82",
+        "00:27.71",
+        "00:31.30",
+        "00:23.10",
+        "00:26.64"
+      ],
+      "team": "Relay Team"
     }
   ],
   "girls": [
@@ -12791,6 +12875,174 @@
         "00:33.22",
         "00:28.13",
         "00:31.19"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "200 Free Relay",
+      "year": "26-27",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Stella Eftekhar - So.",
+        "Amira Alitiem - Sr.",
+        "Ella Bissmeyer - Jr.",
+        "Hadley Cusson - Sr."
+      ],
+      "splits": [
+        "00:26.70",
+        "00:28.58",
+        "00:28.18",
+        "00:26.14"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "200 Free Relay",
+      "year": "26-27",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4"
+      ],
+      "swimmers": [
+        "Kadynce Drummond - Sr.",
+        "Sarah Moritz - So.",
+        "Laura Feldman - So.",
+        "Magdalena McGovern - So."
+      ],
+      "splits": [
+        "00:30.04",
+        "00:43.90",
+        "00:30.34",
+        "00:33.38"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "200 Medley Relay",
+      "year": "26-27",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Amira Alitiem - Sr.",
+        "Rachel Anderson - So.",
+        "Avery Fleming - Fr.",
+        "Kadynce Drummond - Sr."
+      ],
+      "splits": [
+        "00:31.28",
+        "00:35.76",
+        "00:36.59",
+        "00:21.44"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "200 Medley Relay",
+      "year": "26-27",
+      "gender": "girls",
+      "legs": [
+        "Back",
+        "Breast",
+        "Fly",
+        "Free"
+      ],
+      "swimmers": [
+        "Laila Alitiem - So.",
+        "Penelope Dixon - Fr.",
+        "Magdalena McGovern - So.",
+        "Sarah Moritz - So."
+      ],
+      "splits": [
+        "00:34.14",
+        "00:38.34",
+        "00:38.73",
+        "00:42.69"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "400 Free Relay",
+      "year": "26-27",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Rachel Anderson - So.",
+        "Rachel Anderson - So.",
+        "Isla Cerepak - So.",
+        "Isla Cerepak - So.",
+        "Stella Eftekhar - So.",
+        "Stella Eftekhar - So.",
+        "Hadley Cusson - Sr.",
+        "Hadley Cusson - Sr."
+      ],
+      "splits": [
+        "00:28.74",
+        "00:30.50",
+        "00:29.90",
+        "00:33.55",
+        "00:28.43",
+        "00:32.73",
+        "00:15.29",
+        "00:43.22"
+      ],
+      "team": "Relay Team"
+    },
+    {
+      "type": "400 Free Relay",
+      "year": "26-27",
+      "gender": "girls",
+      "legs": [
+        "Split 1",
+        "Split 2",
+        "Split 3",
+        "Split 4",
+        "Split 5",
+        "Split 6",
+        "Split 7",
+        "Split 8"
+      ],
+      "swimmers": [
+        "Ella Bissmeyer - Jr.",
+        "Ella Bissmeyer - Jr.",
+        "Talia Schwab - So.",
+        "Talia Schwab - So.",
+        "Lilly Bieberstein - So.",
+        "Lilly Bieberstein - So.",
+        "Laila Alitiem - So.",
+        "Laila Alitiem - So."
+      ],
+      "splits": [
+        "00:30.05",
+        "00:32.16",
+        "00:32.63",
+        "00:38.65",
+        "00:36.74",
+        "00:42.02",
+        "00:34.10",
+        "00:36.30"
       ],
       "team": "Relay Team"
     }

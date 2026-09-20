@@ -76,6 +76,7 @@ def create_nav_html():
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-summary" title="Season Summary">📈<span class="d-none d-md-inline ms-1">Summary by Year</span></a>
                     <ul class="dropdown-menu dropdown-menu-scroll dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/annual/2026-27.html">2026-27</a></li>
                         <li><a class="dropdown-item" href="/annual/2025-26.html">2025-26</a></li>
                         <li><a class="dropdown-item" href="/annual/2024-25.html">2024-25</a></li>
                         <li><a class="dropdown-item" href="/annual/2023-24.html">2023-24</a></li>
@@ -458,7 +459,13 @@ def convert_class_year_to_badges(html_content):
     return result
 
 
-def convert_top10_to_cards(md_file, output_file, title):
+# Seasons still being swum, keyed to the records/top10-*-<season>.md files.
+# A partial season's top 10 is a running snapshot, so the page has to say so --
+# otherwise it is indistinguishable from a finished season's final list.
+IN_PROGRESS_SEASONS = ["2026-27"]
+
+
+def convert_top10_to_cards(md_file, output_file, title, notice=None):
     """Convert a Top 10 markdown file to card-style HTML matching Overall Records format"""
     print(f"Converting {md_file.name} → {output_file.name} (card format)")
     
@@ -475,6 +482,9 @@ def convert_top10_to_cards(md_file, output_file, title):
     
     # Parse events and records
     html_content = '<div class="content top10-cards">\n'
+    if notice:
+        html_content += (
+            '<div class="alert alert-warning"><small>' + notice + '</small></div>\n')
     
     # Find all event sections (## or ### Event Name followed by table)
     # Support both h2 (## Event) and h3 (### Event) headers
@@ -961,7 +971,11 @@ def main():
             output_name = f"{gender}-{season}.html"
         
         output = docs_dir / 'top10' / output_name
-        convert_top10_to_cards(top10_file, output, title)
+        notice = None
+        if season in IN_PROGRESS_SEASONS:
+            notice = ('\u26a0\ufe0f <strong>Season in progress.</strong> These are the fastest '
+                      'times swum so far in ' + season + ', not a final season list.')
+        convert_top10_to_cards(top10_file, output, title, notice=notice)
     
     # Generate annual summaries using dedicated script (maintains styled format)
     print("\n📅 Generating Annual Summaries (via generate_annual_pages.py)...")

@@ -20,7 +20,7 @@ SEASONS = [
     "2007-08", "2008-09", "2009-10", "2010-11", "2011-12",
     "2012-13", "2013-14", "2014-15", "2015-16", "2016-17",
     "2017-18", "2018-19", "2019-20", "2020-21", "2021-22",
-    "2022-23", "2023-24", "2024-25", "2025-26"
+    "2022-23", "2023-24", "2024-25", "2025-26", "2026-27"
 ]
 
 # Years with incomplete data (only state meet results available)
@@ -340,6 +340,14 @@ def generate_nav_html():
     </nav>'''
 
 
+# Seasons still being swum. A season runs Aug 1 - Jul 31, so the current one is
+# partial until the following August and its totals are a running count, not a
+# final tally. INCOMPLETE_DATA_YEARS is a different claim -- those are finished
+# seasons we only hold partial history for -- so this needs its own list and its
+# own wording.
+IN_PROGRESS_SEASONS = ["2026-27"]
+
+
 def generate_season_overview_html(data, class_records_count):
     """Generate the Season Overview section"""
     records_count = len(data['records_broken'])
@@ -389,6 +397,15 @@ def generate_season_overview_html(data, class_records_count):
                 </div>
             </div>'''
     
+    # Add in-progress notice if applicable
+    if data['season'] in IN_PROGRESS_SEASONS:
+        html += '''
+            <div class="alert alert-warning mt-4">
+                <small>⚠️ <strong>Season in progress.</strong> The ''' + data['season'] + ''' season runs
+                Aug 1, 2026 through Jul 31, 2027. Everything on this page reflects only the meets
+                swum so far and will keep changing; it is not a final season summary.</small>
+            </div>'''
+
     # Add incomplete data notice if applicable
     if data['season'] in INCOMPLETE_DATA_YEARS:
         html += '''

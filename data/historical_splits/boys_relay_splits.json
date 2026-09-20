@@ -5878,5 +5878,89 @@
       "00:29.14"
     ],
     "team": "Relay Team"
+  },
+  {
+    "type": "200 Medley Relay",
+    "year": "26-27",
+    "gender": "boys",
+    "legs": [
+      "Back",
+      "Breast",
+      "Fly",
+      "Free"
+    ],
+    "swimmers": [
+      "Kent Olsson - So.",
+      "Bennett Johnston - Jr.",
+      "Jackson Eftekhar - Sr.",
+      "Jackson Machamer - Sr."
+    ],
+    "splits": [
+      "00:25.85",
+      "00:34.05",
+      "00:21.41",
+      "00:24.62"
+    ],
+    "team": "Relay Team"
+  },
+  {
+    "type": "200 Free Relay",
+    "year": "26-27",
+    "gender": "boys",
+    "legs": [
+      "Split 1",
+      "Split 2",
+      "Split 3",
+      "Split 4"
+    ],
+    "swimmers": [
+      "Bennett Johnston - Jr.",
+      "Gavin Contreras - Fr.",
+      "Shane Gardner - So.",
+      "Quinn Scott - Jr."
+    ],
+    "splits": [
+      "00:24.79",
+      "00:28.97",
+      "00:27.16",
+      "00:26.52"
+    ],
+    "team": "Relay Team"
+  },
+  {
+    "type": "400 Free Relay",
+    "year": "26-27",
+    "gender": "boys",
+    "legs": [
+      "Split 1",
+      "Split 2",
+      "Split 3",
+      "Split 4",
+      "Split 5",
+      "Split 6",
+      "Split 7",
+      "Split 8"
+    ],
+    "swimmers": [
+      "Jackson Machamer - Sr.",
+      "Jackson Machamer - Sr.",
+      "Kent Olsson - So.",
+      "Kent Olsson - So.",
+      "Quinn Scott - Jr.",
+      "Quinn Scott - Jr.",
+      "Jackson Eftekhar - Sr.",
+      "Jackson Eftekhar - Sr."
+    ],
+    "splits": [
+      "00:25.79",
+      "00:28.45",
+      "00:25.74",
+      "00:28.82",
+      "00:27.71",
+      "00:31.30",
+      "00:23.10",
+      "00:26.64"
+    ],
+    "team": "Relay Team"
   }
 ]
