@@ -284,7 +284,7 @@ def build_page(project_root):
             <p class="lead mb-3 mt-3">{len(sched['meets'])} meets, ending at the AIA Division III State Championship.
             Meets already swum are greyed out.</p>
             <div class="table-responsive">
-                <table class="table table-sm align-middle">
+                <table class="table table-sm align-middle table-schedule">
                     <thead>
                         <tr><th>Date</th><th>Meet</th><th>Where</th></tr>
                     </thead>
