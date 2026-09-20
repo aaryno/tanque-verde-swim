@@ -1,0 +1,153 @@
+{
+  "season": "2026-27",
+  "season_start": "2026-08-01",
+  "season_end": "2027-07-31",
+  "_season_boundary_source": "scripts/generate_all_season_top10.py lines 35-38",
+  "schedule": {
+    "_source": "Tanque Verde High School official 2026-27 Varsity Swim Schedule, reconciled 2026-09-06 against the sheet Aaryn photographed. Held as calendar theme 'swim-tvhs' in ~/sites/family-calendar/events.json (not a public URL). All 10 meets carry status=confirmed; none tentative.",
+    "_verified_utc": "2026-09-20T19:46Z",
+    "_note": "MaxPreps reports 'No Schedule' for 26-27; this schedule does NOT come from MaxPreps.",
+    "meets": [
+      {
+        "date_start": "2026-09-03",
+        "date_end": "2026-09-03",
+        "name": "at Mica Mountain & Desert View",
+        "venue": "Clements Recreation Center, Tucson",
+        "home": false,
+        "note": "Away tri-meet. Season opener."
+      },
+      {
+        "date_start": "2026-09-10",
+        "date_end": "2026-09-10",
+        "name": "vs Ironwood Ridge",
+        "venue": "49er Country Club, Tucson",
+        "home": true,
+        "note": "Home. The home pool moved to 49er CC for 2026."
+      },
+      {
+        "date_start": "2026-09-19",
+        "date_end": "2026-09-19",
+        "name": "Canyon del Oro Classic",
+        "venue": "Oro Valley Municipal Pool, Oro Valley",
+        "home": false,
+        "note": "AIA state qualifier, hosted by Canyon del Oro HS."
+      },
+      {
+        "date_start": "2026-09-24",
+        "date_end": "2026-09-24",
+        "name": "at Canyon del Oro & Salpointe",
+        "venue": "Oro Valley Pool, Oro Valley",
+        "home": false,
+        "note": "Away tri-meet."
+      },
+      {
+        "date_start": "2026-10-01",
+        "date_end": "2026-10-01",
+        "name": "at Sahuarita & Sunnyside",
+        "venue": "Sahuarita Aquatics Center, Sahuarita",
+        "home": false,
+        "note": "Away tri-meet."
+      },
+      {
+        "date_start": "2026-10-15",
+        "date_end": "2026-10-15",
+        "name": "vs Walden Grove",
+        "venue": "49er Country Club, Tucson",
+        "home": true,
+        "note": "Home."
+      },
+      {
+        "date_start": "2026-10-17",
+        "date_end": "2026-10-17",
+        "name": "HS Classic",
+        "venue": "Hillenbrand Aquatic Center, University of Arizona, Tucson",
+        "home": false,
+        "note": "AIA state qualifier, co-hosted by Catalina Foothills HS and Ford Aquatics. No start time published."
+      },
+      {
+        "date_start": "2026-10-23",
+        "date_end": "2026-10-24",
+        "name": "Southern Arizona Regional Qualifier",
+        "venue": "Oro Valley Municipal Pool, Oro Valley",
+        "home": false,
+        "note": "Two days, Friday and Saturday. Last local qualifier of the season."
+      },
+      {
+        "date_start": "2026-10-29",
+        "date_end": "2026-10-29",
+        "name": "vs Amphitheater & The Gregory School",
+        "venue": "49er Country Club, Tucson",
+        "home": true,
+        "note": "Home. Last dual meet, and the AIA qualifying deadline."
+      },
+      {
+        "date_start": "2026-11-06",
+        "date_end": "2026-11-07",
+        "name": "AIA Division III State Championship",
+        "venue": "Dady Aquatic Center, Phoenix Country Day School, Paradise Valley",
+        "home": false,
+        "note": "No start time published."
+      }
+    ]
+  },
+  "roster": {
+    "_source_boys": "https://www.maxpreps.com/az/tucson/tanque-verde-hawks/swimming/fall/26-27/roster/",
+    "_source_girls": "https://www.maxpreps.com/az/tucson/tanque-verde-hawks/swimming/girls/fall/26-27/roster/",
+    "_fetched_utc": "2026-09-20T19:47Z",
+    "_note": "Grade is taken verbatim from the roster's stated grade, never inferred. All 11 boys and all 23 girls carried a stated grade; none were dropped.",
+    "seniors_boys": [
+      "Jackson Eftekhar",
+      "Jackson Machamer",
+      "Wade Olsson"
+    ],
+    "seniors_girls": [
+      "Amira Alitiem",
+      "Hadley Cusson",
+      "Kadynce Drummond",
+      "Amelia Kidd",
+      "Lily Niccum",
+      "Maddi VanDeMark"
+    ],
+    "counts": {
+      "boys_total": 11,
+      "girls_total": 23
+    }
+  },
+  "results_so_far": {
+    "_note": "MaxPreps has posted results from one meet only. Do not imply a complete season.",
+    "meets_with_results": 1,
+    "latest_meet": "Canyon del Oro Classic",
+    "latest_meet_date": "2026-09-19"
+  },
+  "milestone": {
+    "_source": "Established in PR #2 (branch worker/tv-swim-2026-27-prepare-2026-09-20) from MaxPreps /stats/ and corroborated by the azpreps365 Division III leaderboard. Round=Final.",
+    "swimmer": "Kent Olsson",
+    "grade": "Sophomore",
+    "event": "500 Freestyle",
+    "time": "5:03.13",
+    "meet": "Canyon del Oro Classic",
+    "date": "Sep 19, 2026",
+    "broke_open": {
+      "time": "5:04.10",
+      "name": "Joseph Breinholt",
+      "date": "Oct 24, 2015",
+      "date_iso": "2015-10-24",
+      "meet": "Small School Championships",
+      "margin": "0.97"
+    },
+    "broke_class": {
+      "grade": "Sophomore",
+      "time": "5:19.88",
+      "name": "Zachary Duerkop",
+      "date": "Oct 25, 2023",
+      "meet": "Southern Arizona Region Qualifier",
+      "margin": "16.75"
+    },
+    "already_held": {
+      "grade": "Freshman",
+      "time": "5:07.85",
+      "date": "Nov 08, 2025",
+      "meet": "2025 D-3 AIA State Championship"
+    }
+  }
+}
