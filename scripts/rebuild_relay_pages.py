@@ -76,52 +76,10 @@ def get_last_name(full_name):
     return parts[-1] if parts else full_name
 
 def find_splits_for_relay(splits_data, gender, event_type, swimmers, total_time):
-    """Find matching splits for a relay based on swimmers and time"""
-    # Normalize swimmer names for matching
-    relay_swimmers = [s.strip() for s in swimmers.split(',')]
-    relay_set = set(s.lower().strip() for s in relay_swimmers)
-    
-    # Parse total time to seconds for comparison
-    try:
-        time_parts = total_time.replace(':', '.').split('.')
-        if len(time_parts) == 3:
-            total_secs = int(time_parts[0]) * 60 + float(f"{time_parts[1]}.{time_parts[2]}")
-        else:
-            total_secs = float(total_time)
-    except:
-        total_secs = 0
-    
-    best_match = None
-    best_score = 0
-    
-    for split_entry in splits_data.get(gender, []):
-        # Check event type - now using full event names
-        entry_type = split_entry.get('type', '')
-        num_splits = len(split_entry.get('splits', []))
-        
-        # Match based on event type (full names now)
-        if event_type == '200 Medley Relay' and entry_type != '200 Medley Relay':
-            continue
-        if event_type == '200 Free Relay' and entry_type != '200 Free Relay':
-            continue
-        if event_type == '400 Free Relay' and entry_type != '400 Free Relay':
-            continue
-        
-        # Match swimmers
-        entry_swimmers = set()
-        for s in split_entry.get('swimmers', []):
-            # Remove grade suffix like " - Jr."
-            name = re.sub(r'\s*-\s*(Fr|So|Jr|Sr)\.$', '', s, flags=re.IGNORECASE)
-            entry_swimmers.add(name.lower().strip())
-        
-        # Check overlap
-        matching = len(relay_set & entry_swimmers)
-        if matching >= 3:  # At least 3 swimmers match
-            if matching > best_score:
-                best_score = matching
-                best_match = split_entry
-    
-    return best_match
+    """Splits only when their legs add up to this record (relay_splits.py)."""
+    from relay_splits import select_entry
+    return select_entry(splits_data, gender, event_type, swimmers, total_time)
+
 
 def format_split_time(split_str):
     """Format split time for display"""
