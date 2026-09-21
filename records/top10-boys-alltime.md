@@ -1,7 +1,7 @@
 # All-Time Top 10 - Boys
 ## Tanque Verde High School Swimming
 
-**Generated:** September 20, 2026 at 07:35 PM
+**Generated:** September 20, 2026 at 08:50 PM
 
 ---
 
@@ -32,8 +32,8 @@
 | 6 | 51.43 | Jackson Eftekhar | JR | Oct 18, 2025 | Pecan Classic |
 | 7 | 52.36 | Austin Morris | SR | Oct 24, 2015 | Small School Championships |
 | 8 | 53.14 | Trevor Clausen | SO | Oct 05, 2019 | High School Classic |
-| 9 | 53.58 | Jackson Machamer | SO | Nov 09, 2024 | 2024 D-3 AIA State Championship |
-| 10 | 53.91 | Andrew Lam | SR | Oct 05, 2013 | High School Classic |
+| 9 | 53.57 | Grayson The | SR | Sep 20, 2025 | Canyon del Oro Classic |
+| 10 | 53.58 | Jackson Machamer | SO | Nov 09, 2024 | 2024 D-3 AIA State Championship |
 
 ### 200 Freestyle
 

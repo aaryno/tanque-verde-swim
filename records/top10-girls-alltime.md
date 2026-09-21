@@ -1,7 +1,7 @@
 # All-Time Top 10 - Girls
 ## Tanque Verde High School Swimming
 
-**Generated:** September 20, 2026 at 07:35 PM
+**Generated:** September 20, 2026 at 08:50 PM
 
 ---
 
@@ -31,9 +31,9 @@
 | 5 | 57.37 | Brianne Foley | JR | Oct 25, 2023 | Southern Arizona Region Qualifier |
 | 6 | 58.02 | Isla Cerepak | FR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
 | 7 | 58.11 | Grace Davis | SO | Nov 09, 2024 | 2024 D-3 AIA State Championship |
-| 8 | 58.30 | Calla Isenberg | SR | Oct 07, 2017 | 2017 TYR High School Classic |
-| 9 | 58.81 | Hadley Cusson | SR | Sep 19, 2026 | Canyon del Oro Classic |
-| 10 | 1:00.51 | Stella Eftekhar | SO | Sep 19, 2026 | Canyon del Oro Classic |
+| 8 | 58.11 | Hadley Cusson | JR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
+| 9 | 58.30 | Calla Isenberg | SR | Oct 07, 2017 | 2017 TYR High School Classic |
+| 10 | 1:00.36 | Ella Bissmeyer | SO | Oct 24, 2025 | Southern Arizona Qualifier |
 
 ### 200 Freestyle
 

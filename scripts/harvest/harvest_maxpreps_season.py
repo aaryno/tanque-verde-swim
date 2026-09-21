@@ -189,15 +189,50 @@ def display_date(d):
         return d.strip()
 
 
-def clean_meet(m):
-    """Drop the trailing '(City, ST)' that MaxPreps appends.
+# MaxPreps meet label -> the name records/*.md already uses for that meet.
+#
+# Same job as EVENT_MAP, one level up: MaxPreps calls the AIA state meet
+# "Division III - State Swim & Dive", but every committed row for it -- back
+# through 2007 -- reads "<year> D-3 AIA State Championship". Writing the
+# MaxPreps label would put the same meet in the repo under two names, and the
+# season and all-time lists would then disagree about where a swim was swum.
+#
+# Deliberately explicit and deliberately small: an unlisted meet passes through
+# under its own (city-stripped) name rather than being guessed at. Keys are
+# matched AFTER the trailing "(City, ST)" is stripped.
+MEET_ALIASES = {
+    'Division III - State Swim & Dive': '{year} D-3 AIA State Championship',
+}
+
+
+def clean_meet(m, date=''):
+    """Drop the trailing '(City, ST)' that MaxPreps appends, then alias.
 
     records/*.md overwhelmingly stores the bare meet name -- the committed
     rows read 'Canyon del Oro Classic', not 'Canyon del Oro Classic (Oro
     Valley, AZ)'. Matching that keeps the same meet from appearing as two
     different strings across seasons.
+
+    `date` supplies {year} for an alias that names its year, so the 2025 and
+    2026 state meets stay distinguishable instead of collapsing into one label.
     """
-    return re.sub(r'\s*\([^)]*\)\s*$', '', m.strip()).strip()
+    bare = re.sub(r'\s*\([^)]*\)\s*$', '', m.strip()).strip()
+    tmpl = MEET_ALIASES.get(bare)
+    if not tmpl:
+        return bare
+    year = ''
+    try:
+        year = str(datetime.strptime(date.strip(), '%m/%d/%Y').year)
+    except ValueError:
+        pass
+    if '{year}' in tmpl and not year:
+        # Without a year the alias would render a meet called "{year} D-3 ...".
+        # Keeping the source label is wrong but visible; that is the better of
+        # the two failures.
+        print(f"  meet alias needs a year but date is {date!r}: keeping {bare!r}",
+              file=sys.stderr)
+        return bare
+    return tmpl.format(year=year)
 
 
 def season_label(season):
@@ -211,6 +246,17 @@ def render_top10(rows, gender, season, in_progress_note):
 
     Whole-file render from the harvested rows: re-running replaces the file
     rather than appending to it, so the file cannot accumulate duplicates.
+
+    NO ROUND FILTER, and that is deliberate. "Best Times by Event" already
+    holds exactly one row per swimmer per event -- their season best -- and the
+    Round cell says which round that best happened to be swum in. Dropping the
+    Preliminary rows would therefore not prefer a final over a prelim; it would
+    delete the swimmer's season best outright and leave the event blank for
+    them. Measured on 2025-26: 30 of 105 swims are Preliminary, and they
+    include three records the repo already publishes -- Kent Olsson 100 Back
+    59.71, Jackson Eftekhar 100 Fly 54.41 and Isla Cerepak 100 Free 58.02, all
+    committed in records/records-*.md as class records. A finals-only list
+    would contradict the records page on its first render.
     """
     label = season_label(season)
     out = [f"# {gender.title()} Top 10 - {label} Season",
@@ -241,7 +287,7 @@ def render_top10(rows, gender, season, in_progress_note):
             out.append(
                 f"| {i} | {display_time(r['time'])} | {r['athlete']} | "
                 f"{GRADE_BADGE.get(r['grade'], '')} | {display_date(r['date'])} | "
-                f"{clean_meet(r['meet'])} |")
+                f"{clean_meet(r['meet'], r['date'])} |")
         out += ["", "---", ""]
     return "\n".join(out).rstrip() + "\n"
 
