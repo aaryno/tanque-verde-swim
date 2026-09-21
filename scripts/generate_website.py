@@ -1053,7 +1053,10 @@ def main():
     print("\n\U0001F3E0 Generating Season Landing Page...")
     result = subprocess.run(['python3', str(script_dir / 'generate_landing_page.py')], capture_output=True, text=True)
     if result.returncode != 0:
-        print(f"  \u26a0\ufe0f Warning: generate_landing_page.py failed: {result.stderr}")
+        # A failed page generator used to be a warning with exit 0, which left
+        # the previous page silently in place (2026-09-21: the landing page).
+        print(f"  \u274c generate_landing_page.py failed:\n{result.stderr}")
+        sys.exit(1)
     else:
         print(result.stdout.rstrip())
 
@@ -1061,7 +1064,10 @@ def main():
     print("\n📅 Generating Annual Summaries (via generate_annual_pages.py)...")
     result = subprocess.run(['python3', str(script_dir / 'generate_annual_pages.py')], capture_output=True, text=True)
     if result.returncode != 0:
-        print(f"  ⚠️ Warning: generate_annual_pages.py failed: {result.stderr}")
+        # A failed page generator used to be a warning with exit 0, which left
+        # the previous page silently in place (2026-09-21: the landing page).
+        print(f"  \u274c generate_annual_pages.py failed:\n{result.stderr}")
+        sys.exit(1)
     else:
         print("  ✓ Annual pages generated with styled format")
     
