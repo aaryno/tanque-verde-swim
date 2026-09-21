@@ -20,11 +20,35 @@ Usage:  python3 scripts/validate_records.py [--quiet]
 Exit 0 = clean, 1 = problems found.
 """
 
+import json
 import re
 import sys
 from pathlib import Path
 
 RECORDS_DIR = Path(__file__).parent.parent / 'records'
+ALIASES_PATH = Path(__file__).parent.parent / 'data' / 'swimmer_aliases.json'
+
+
+def load_aliases():
+    """Explicit, hand-adjudicated name map. Deliberately NOT fuzzy matching.
+
+    Near-duplicate names are frequently different people -- the Radomsky and
+    Alitiem sisters, the Radomsky and Caballero brothers, the Lightcap
+    siblings all score as near-identical and are distinct swimmers. Any
+    similarity heuristic merges real athletes into one. So identity comes only
+    from this table, which a human maintains one entry at a time.
+    """
+    try:
+        return json.loads(ALIASES_PATH.read_text())
+    except Exception:
+        return {}
+
+
+ALIASES = load_aliases()
+
+
+def canonical(name):
+    return ALIASES.get(name.strip(), name.strip())
 GRADES = ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Open']
 MONTHS = {m: i + 1 for i, m in enumerate(
     'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split())}
@@ -108,10 +132,11 @@ def column(header, row, name):
     return row[i] if i < len(row) else None
 
 
-def check_rank_table(path, event, header, rows):
+def check_rank_table(path, event, header, rows, one_per_athlete=False):
     if not rows or not header:
         return
     ranks, seen, prev_t = [], {}, None
+    by_athlete = {}
     for row in rows:
         if len(row) != len(header):
             problem(path, event,
@@ -134,6 +159,30 @@ def check_rank_table(path, event, header, rows):
             prev_t = t
         if parse_date(date_s) is None:
             problem(path, event, f"rank {rank}: unparseable date {date_s!r}")
+        if one_per_athlete and who:
+            # A top-10 list holds each swimmer once, at their best time. Two
+            # rows for one athlete means the same person is split across two
+            # spellings -- which both wastes a slot and hides whoever should
+            # hold it. Compare canonical names so a known alias is caught.
+            c = canonical(who)
+            if c in by_athlete:
+                prev_rank, prev_who = by_athlete[c]
+                if prev_who.strip() == who.strip():
+                    # Identical spelling twice: a duplicated row, not an alias.
+                    remedy = ("duplicated row -- one must be removed and the "
+                              "list re-ranked")
+                    detail = f"{who!r}"
+                else:
+                    remedy = ("two spellings of one swimmer -- already mapped "
+                              "in data/swimmer_aliases.json, so the source "
+                              "markdown still needs the rows merged")
+                    detail = f"{prev_who!r} / {who!r} -> {c!r}"
+                problem(path, event,
+                        f"ranks {prev_rank} and {rank} are the same athlete "
+                        f"({detail}): {remedy}")
+            else:
+                by_athlete[c] = (rank, who)
+
         key = (time_s, date_s, who)
         if key in seen:
             problem(path, event,
@@ -187,7 +236,8 @@ def main():
             sorted(RECORDS_DIR.glob('relay-records-*.md')):
         for event, header, rows in read_tables(path, r'^#{2,3}'):
             if rows:
-                check_rank_table(path, event, header, rows)
+                check_rank_table(path, event, header, rows,
+                                 one_per_athlete=path.name.startswith('top10-'))
                 checked += 1
     for path in sorted(RECORDS_DIR.glob('records-*.md')):
         for event, header, rows in read_tables(path, r'^#{2,3}'):

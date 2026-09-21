@@ -1,7 +1,7 @@
 # All-Time Top 10 - Boys
 ## Tanque Verde High School Swimming
 
-**Generated:** September 20, 2026 at 04:57 PM
+**Generated:** September 20, 2026 at 07:35 PM
 
 ---
 
@@ -27,7 +27,7 @@
 | 1 | 46.44 | Nicholas Cusson | SR | Nov 04, 2023 | 2023 D-3 AIA State Championship |
 | 2 | 47.71 | Samuel Stott | SO | Nov 05, 2020 | AIA D-3 State Championship |
 | 3 | 47.98 | Joseph Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier |
-| 4 | 49.71 | John Deninghoff | SR | Nov 01, 2018 | AIA D-3 Boys State Championship |
+| 4 | 49.71 | John Denninghoff | SR | Nov 01, 2018 | AIA D-3 Boys State Championship |
 | 5 | 50.64 | Zachary Duerkop | JR | Oct 19, 2024 | Pecan Classic |
 | 6 | 51.43 | Jackson Eftekhar | JR | Oct 18, 2025 | Pecan Classic |
 | 7 | 52.36 | Austin Morris | SR | Oct 24, 2015 | Small School Championships |
@@ -42,7 +42,7 @@
 | 1 | 1:43.60 | Nicholas Cusson | JR | Nov 05, 2022 | 2022 D-3 AIA Boys State Championship |
 | 2 | 1:44.73 | Samuel Stott | JR | Oct 23, 2021 | 2021 D-3 AIA State Championship |
 | 3 | 1:48.07 | Zachary Duerkop | SR | Oct 24, 2025 | Southern Arizona Qualifier |
-| 4 | 1:48.60 | John Deninghoff | SR | Nov 01, 2018 | AIA D-3 Boys State Championship |
+| 4 | 1:48.60 | John Denninghoff | SR | Nov 01, 2018 | AIA D-3 Boys State Championship |
 | 5 | 1:48.76 | Joseph Breinholt | JR | Nov 06, 2015 | 2015 D-2 AIA State Championship |
 | 6 | 1:49.66 | Wade Olsson | JR | Oct 24, 2025 | Southern Arizona Qualifier |
 | 7 | 1:54.76 | Austin Morris | SR | Nov 06, 2015 | 2015 D-2 AIA State Championship |

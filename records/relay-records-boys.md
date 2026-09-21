@@ -42,7 +42,7 @@
 | 11 | 01:36.53 | Wade Olsson, Jackson Eftekhar, Jackson Machamer, Zachary Duerkop | Oct 19, 2024 | Pecan Classic |
 | 12 | 01:36.61 | Nicholas Cusson, Nolan Radomsky, Wade Olsson, Stephen Moreland | Sep 16, 2023 | CDO Classic |
 | 13 | 01:37.29 | Samuel Stott, Alejandro Alvarez, Tannor Soedor, Nicholas Cusson | Sep 24, 2022 | TYR High School Classic |
-| 14 | 01:37.46 | Alexander Flores, Samuel Merrill, Tanner Morris, Joe Breinholt | Sep 17, 2016 | Canyon Del Oro Classic |
+| 14 | 01:37.46 | Alexander Flores, Samuel Merrill, Tanner Morris, Joseph Breinholt | Sep 17, 2016 | Canyon Del Oro Classic |
 | 15 | 01:38.14 | Nicholas Cusson, Nicholas Spilotro, Joseph Jacobs, Samuel Stott | Nov 05, 2020 | AIA D-3 State Championship |
 
 ---

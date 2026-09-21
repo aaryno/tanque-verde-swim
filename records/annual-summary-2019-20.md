@@ -39,12 +39,12 @@
 
 **Boys 100 FR SCY**
 - **NEW:** 47.93 - Samuel Stott (FR)
-- *Previous:* 47.98 - Joe Breinholt
+- *Previous:* 47.98 - Joseph Breinholt
 - *Date:* Nov 07, 2019 at 2019 AIA D-III State Meet (AZ)
 
 **Boys 200 FR SCY**
 - **NEW:** 1:46.05 - Samuel Stott (FR)
-- *Previous:* 1:48.60 - John Deninghoff
+- *Previous:* 1:48.60 - John Denninghoff
 - *Date:* Nov 07, 2019 at 2019 AIA D-III State Meet (AZ)
 
 **Boys 100 FL SCY**
@@ -74,7 +74,7 @@
 
 **Girls 100 FL SCY**
 - **NEW:** 1:05.90 - Paisley White (FR)
-- *Previous:* 1:08.62 - Lindsey Sohoel-Smith
+- *Previous:* 1:08.62 - Lindsey Schoel-Smith
 - *Date:* Nov 07, 2019 at 2019 AIA D-III State Meet (AZ)
 
 
