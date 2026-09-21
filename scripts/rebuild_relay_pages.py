@@ -7,6 +7,11 @@ Rebuild relay records pages with expandable card pattern.
 """
 
 import json
+import sys
+from pathlib import Path as _P
+sys.path.insert(0, str(_P(__file__).resolve().parent))
+from generate_senior_page import senior_href  # noqa: E402
+SENIOR_HREF = senior_href()
 import re
 from pathlib import Path
 
@@ -312,8 +317,22 @@ def generate_full_page_html(gender, events, splits_data):
                 <li class="nav-item">
                     <a class="nav-link" href="/top10/{gender}-alltime.html" id="nav-top10" title="All-Time Top 10">🔟<span class="d-none d-md-inline ms-1">Top 10</span></a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-class-top10" title="Class Top 10">🏅<span class="d-none d-md-inline ms-1">Class Top 10</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item class-link" data-grade="freshman" href="/top10/{gender}-freshman.html">Freshman</a></li>
+                        <li><a class="dropdown-item class-link" data-grade="sophomore" href="/top10/{gender}-sophomore.html">Sophomore</a></li>
+                        <li><a class="dropdown-item class-link" data-grade="junior" href="/top10/{gender}-junior.html">Junior</a></li>
+                        <li><a class="dropdown-item class-link" data-grade="senior" href="/top10/{gender}-senior.html">Senior</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item class-link" data-grade="bygrade" href="/records/{gender}-bygrade.html">Class Records</a></li>
+                    </ul>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="/records/{gender}-relays.html" id="nav-relays" title="Relay Records">🤝<span class="d-none d-md-inline ms-1">Relays</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{SENIOR_HREF}" id="nav-seniors" title="Seniors">🎓<span class="d-none d-md-inline ms-1">Seniors</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅<span class="d-none d-md-inline ms-1">Top 10 by Year</span></a>
