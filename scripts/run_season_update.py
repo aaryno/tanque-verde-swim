@@ -14,6 +14,24 @@ Usage:
     
 For next year:
     python run_season_update.py --season 2026-27 --state-pdf ~/Downloads/d3-state-2026.pdf
+
+⚠️  THIS SCRIPT DOES NOT CURRENTLY RUN. Four of the steps below call scripts
+    that do not exist in this repo:
+
+        update_state_parser.py      (Step 1)
+        parse_aia_state_meets.py    (Step 2)
+        merge_aia_state_data.py     (Step 3)
+        generate_annual_summary.py  (Step 12)
+
+    It also invokes the steps as bare filenames (`python generate_website.py`),
+    which resolves only with CWD=scripts/, while the steps themselves read
+    root-relative paths like Path('data/records'), which resolve only with
+    CWD=repo root. Both cannot hold at once.
+
+    It is kept because it documents the intended order of a season update, and
+    Step 9b below records where the all-time rebuild belongs. Do not assume
+    running it updates the site. Until it is repaired, the update is driven by
+    hand and the real safety net is the guard inside generate_website.py.
 """
 
 import argparse
@@ -124,6 +142,17 @@ Senior Class: {args.senior_class or 'Not specified'}
     if not run_command(
         'python generate_all_season_top10.py',
         f"Step 9: Generate all season top 10 lists"
+    ):
+        sys.exit(1)
+
+    # Step 9b rebuilds the ALL-TIME lists from the season lists just written.
+    # Its absence is why tanqueverdeswim.org published a contradiction on
+    # 2026-09-20: the season pages had the new swims, the all-time pages did
+    # not. generate_website.py now refuses to render when these are stale, so
+    # skipping this step fails loudly instead of publishing silently.
+    if not run_command(
+        'python build_alltime_top10.py',
+        f"Step 9b: Rebuild all-time top 10 lists"
     ):
         sys.exit(1)
     

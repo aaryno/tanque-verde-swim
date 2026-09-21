@@ -144,8 +144,17 @@ def format_top10_table(entries: list) -> list:
 
 
 def main():
-    base_dir = Path(__file__).parent
-    source_dir = base_dir / "data" / "records"
+    # Anchor on the repo root, not on scripts/. This script used to live at the
+    # root; moving it into scripts/ left Path(__file__).parent pointing at
+    # scripts/data/records, which does not exist -- so every run found 0 season
+    # files and then died writing to scripts/records/. The all-time lists have
+    # been silently frozen ever since.
+    #
+    # Source is the PUBLISHED records/ dir, which is what generate_website.py
+    # renders (RECORDS_DIR = PROJECT_ROOT / 'records'). Building all-time from
+    # the same files the site publishes is what keeps the two consistent.
+    base_dir = Path(__file__).resolve().parent.parent
+    source_dir = base_dir / "records"
     dest_dir = base_dir / "records"
     aliases_path = base_dir / "data" / "swimmer_aliases.json"
     

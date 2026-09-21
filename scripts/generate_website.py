@@ -4,9 +4,14 @@ Generate GitHub Pages website from markdown records
 Converts all markdown files to HTML with Bootstrap styling and navigation
 """
 
+import os
 import re
+import sys
 from pathlib import Path
 from datetime import datetime
+
+# Allow importing sibling scripts (check_alltime_current) regardless of CWD.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -915,6 +920,27 @@ def main():
     print("GENERATING TANQUE VERDE SWIM WEBSITE")
     print("=" * 80)
     print()
+
+    # GUARD: refuse to render a site that contradicts itself.
+    #
+    # The all-time Top 10 pages are rendered from records/top10-*-alltime.md,
+    # which this script does NOT compute. If that source is stale, the annual
+    # page can announce a new school record while the all-time page still shows
+    # the old one at #1 -- which is exactly what tanqueverdeswim.org published
+    # on 2026-09-20. This is the last step before a publish, so it is the right
+    # place to catch it.
+    #
+    # Escape hatch for a deliberate render on known-stale data:
+    #   SKIP_ALLTIME_CHECK=1 python3 scripts/generate_website.py
+    if os.environ.get('SKIP_ALLTIME_CHECK') != '1':
+        from check_alltime_current import main as _check_alltime
+        if _check_alltime() != 0:
+            print()
+            print("Refusing to generate the website on stale all-time lists.")
+            print("Override with SKIP_ALLTIME_CHECK=1 if this is deliberate.")
+            sys.exit(1)
+        print()
+
     
     # Get project root (parent of scripts/ directory)
     project_root = Path(__file__).parent.parent
