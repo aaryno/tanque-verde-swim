@@ -941,6 +941,25 @@ def main():
             sys.exit(1)
         print()
 
+    # GUARD: every list must use canonical names and hold each swimmer once.
+    # The alias table (data/swimmer_aliases.json) used to be applied only by
+    # the all-time builder, so a season page could show "Madsion Garcia" while
+    # the all-time page showed "Madison Garcia", and one swimmer could occupy
+    # two slots of a season top 10 under two spellings. apply_aliases.py fixes
+    # every list; this refuses to publish until it has been run.
+    #   SKIP_ALIAS_CHECK=1 python3 scripts/generate_website.py   (deliberate override)
+    if os.environ.get('SKIP_ALIAS_CHECK') != '1':
+        import subprocess
+        chk = subprocess.run([sys.executable, str(Path(__file__).resolve().parent / 'apply_aliases.py'), '--check'],
+                             capture_output=True, text=True)
+        print(chk.stdout.rstrip())
+        if chk.returncode != 0:
+            print()
+            print("Refusing to generate the website on non-canonical or duplicated swimmers.")
+            print("Override with SKIP_ALIAS_CHECK=1 if this is deliberate.")
+            sys.exit(1)
+        print()
+
     
     # Get project root (parent of scripts/ directory)
     project_root = Path(__file__).parent.parent
