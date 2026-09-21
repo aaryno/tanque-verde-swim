@@ -59,11 +59,11 @@
 
 | Grade | Time | Athlete | Date | Meet |
 |-------|-----:|---------|------|------|
-| Freshman | 1:08.97 | Lindsey Sohoel-Smith | Oct 24, 2015 | Small School Championships |
-| Sophomore | 1:07.01 | Lindsey Sohoel-Smith | Nov 04, 2016 | 2016 D-3 AIA State Championship |
+| Freshman | 1:08.97 | Lindsey Schoel-Smith | Oct 24, 2015 | Small School Championships |
+| Sophomore | 1:07.01 | Lindsey Schoel-Smith | Nov 04, 2016 | 2016 D-3 AIA State Championship |
 | Junior | 1:16.16 | Adrianna Witte | Nov 09, 2024 | 2024 D-3 AIA State Championship |
-| Senior | 1:05.10 | Lindsey Sohoel-Smith | Nov 02, 2018 | 2018 D-3 AIA State Championship |
-| **Open** | **1:05.10** | **Lindsey Sohoel-Smith** | **Nov 02, 2018** | **2018 D-3 AIA State Championship** |
+| Senior | 1:05.10 | Lindsey Schoel-Smith | Nov 02, 2018 | 2018 D-3 AIA State Championship |
+| **Open** | **1:05.10** | **Lindsey Schoel-Smith** | **Nov 02, 2018** | **2018 D-3 AIA State Championship** |
 
 ### 100 Butterfly
 
@@ -79,7 +79,7 @@
 
 | Grade | Time | Athlete | Date | Meet |
 |-------|-----:|---------|------|------|
-| Freshman | 2:21.44 | Lindsey Sohoel-Smith | Oct 24, 2015 | Small School Championships |
+| Freshman | 2:21.44 | Lindsey Schoel-Smith | Oct 24, 2015 | Small School Championships |
 | Sophomore | 2:14.87 | Carly Wilson | Sep 23, 2010 | CDO Classic |
 | Junior | 2:21.97 | Isabelle Sansom | Nov 01, 2018 | AIA D-3 Girls State Championship |
 | Senior | 2:20.75 | Sarynn Patterson | Nov 07, 2019 | 2019 D-3 AIA State Championship |

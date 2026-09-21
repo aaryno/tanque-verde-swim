@@ -38,12 +38,12 @@
 ## 🏆 Records Broken
 
 **Boys 50 FR SCY**
-- **NEW:** 22.76 - Joe Breinholt (SR)
+- **NEW:** 22.76 - Joseph Breinholt (SR)
 - *Previous:* 25.27 - Andrew Lam
 - *Date:* Oct 29, 2016 at Southern Arizona Regional Qualifier (Tucson, AZ)
 
 **Boys 100 FR SCY**
-- **NEW:** 47.98 - Joe Breinholt (SR)
+- **NEW:** 47.98 - Joseph Breinholt (SR)
 - *Previous:* 49.10 - Joseph Breinholt
 - *Date:* Oct 29, 2016 at Southern Arizona Regional Qualifier (Tucson, AZ)
 
@@ -78,13 +78,13 @@
 - *Date:* Nov 04, 2016 at 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ)
 
 **Girls 100 BR SCY**
-- **NEW:** 1:07.01 - Lindsey Sohoel-Smith (SO)
-- *Previous:* 1:08.97 - Lindsey Sohoel-Smith
+- **NEW:** 1:07.01 - Lindsey Schoel-Smith (SO)
+- *Previous:* 1:08.97 - Lindsey Schoel-Smith
 - *Date:* Nov 04, 2016 at 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ)
 
 **Girls 200 IM SCY**
-- **NEW:** 2:15.55 - Lindsey Sohoel-Smith (SO)
-- *Previous:* 2:21.44 - Lindsey Sohoel-Smith
+- **NEW:** 2:15.55 - Lindsey Schoel-Smith (SO)
+- *Previous:* 2:21.44 - Lindsey Schoel-Smith
 - *Date:* Nov 04, 2016 at 2016 AIA Division III State Swimming & Diving Championships (Mesa, AZ)
 
 
@@ -94,14 +94,14 @@
 
 | Event | Boys Time | Boys Swimmer | Girls Time | Girls Swimmer |
 |-------|----------:|--------------|-----------:|---------------|
-| 50 Free | 22.76 | Joe Breinholt (SR) | 27.06 | Hazel Dasse (SO) |
-| 100 Free | 47.98 | Joe Breinholt (SR) | 1:00.95 | Hazel Dasse (SO) |
-| 200 Free | 1:49.68 | Joe Breinholt (SR) | 2:05.33 | Hazel Dasse (SO) |
+| 50 Free | 22.76 | Joseph Breinholt (SR) | 27.06 | Hazel Dasse (SO) |
+| 100 Free | 47.98 | Joseph Breinholt (SR) | 1:00.95 | Hazel Dasse (SO) |
+| 200 Free | 1:49.68 | Joseph Breinholt (SR) | 2:05.33 | Hazel Dasse (SO) |
 | 500 Free | 6:03.77 | Malachi Poulsen (JR) | 5:32.67 | Anna Ellis (SO) |
 | 100 Back | 1:00.82 | Samuel Merrill (JR) | 1:05.85 | Hazel Dasse (SO) |
-| 100 Breast | 1:09.05 | Tanner Morris (SR) | 1:07.01 | Lindsey Sohoel-Smith (SO) |
+| 100 Breast | 1:09.05 | Tanner Morris (SR) | 1:07.01 | Lindsey Schoel-Smith (SO) |
 | 100 Fly | 59.89 | Alexander Flores (SR) | 1:13.52 | Madison Winkle (FR) |
-| 200 IM | 2:13.67 | Alexander Flores (SR) | 2:15.55 | Lindsey Sohoel-Smith (SO) |
+| 200 IM | 2:13.67 | Alexander Flores (SR) | 2:15.55 | Lindsey Schoel-Smith (SO) |
 
 ---
 

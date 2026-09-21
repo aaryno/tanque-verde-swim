@@ -9,17 +9,16 @@
 |-----:|-----:|--------------|------|------|
 | **1** | **01:53.50** | **Isabelle Sansom, Sarynn Patterson, Kennady Pautler, Lindsey Schoel-Smith** | **Oct 26, 2018** | **Southern Arizona Regional Qualifier** |
 | 2 | 01:53.58 | Isabelle Sansom, Kennady Pautler, Violet Dasse, Trinity Weatherwax | Nov 01, 2018 | AIA D-3 Girls State Championship |
-| 4 | 01:53.58 | Isabelle Sansom, Kennady Pautler, Violet Dasse, Trinity Weatherwax | Nov 01, 2018 | AIA D-3 Girls State Championship |
-| 5 | 01:54.06 | Hazel Dasse, Sarynn Patterson, Ellie Radomsky, Lindsey Sohoel-Smith | Oct 01, 2016 | 2016 TYR High School Classic |
-| 6 | 01:54.87 | Sarynn Patterson, Lindsey Schoel-Smith, Hazel Dasse, Ellie Radomsky | Nov 01, 2018 | AIA D-3 Girls State Championship |
-| 7 | 01:55.49 | Ellie Randomsky, Emma Morris, Regan Hughes, Sarynn Patterson | Nov 04, 2016 | 2016 D-3 AIA State Championship |
-| 8 | 01:56.01 | Summer Cugini, Logan Sulger, Ella Bissmeyer, Adrianna Witte | Sep 28, 2024 | 21st Annual TYR HS Classic |
-| 9 | 01:56.16 | Marisol Rivera, Sierra Roh, Amanda Grimshaw, Meghan Marner | Oct 06, 2012 | High School Classic |
-| 10 | 01:56.54 | Emma Morris, Hayley Jones, Violet Dasse, Ellie Radomsky | Oct 27, 2017 | Southern Arizona Regional Qualifier |
-| 11 | 01:56.96 | Shaye Sulgar, Lainie Radomsky, Sydney Hagerman, Alexandra Foley | Sep 25, 2021 | TYR HS Classic |
-| 12 | 01:58.24 | Emma Morris, Ellie Radomsky, Madison Winkle, Anna Ellis | Sep 17, 2016 | Canyon Del Oro Classic |
-| 13 | 01:58.70 | Amira Alitiem, Lily Niccum, Madeline Barnard, Summer Cugini | Oct 21, 2023 | Pecan Classic |
-| 14 | 01:58.80 | Sarynn Patterson, Isabelle Sansom, Paisley White, Maggie Colombo | Nov 07, 2019 | 2019 D-3 AIA State Championship |
+| 3 | 01:54.06 | Hazel Dasse, Sarynn Patterson, Ellie Radomsky, Lindsey Schoel-Smith | Oct 01, 2016 | 2016 TYR High School Classic |
+| 4 | 01:54.87 | Sarynn Patterson, Lindsey Schoel-Smith, Hazel Dasse, Ellie Radomsky | Nov 01, 2018 | AIA D-3 Girls State Championship |
+| 5 | 01:55.49 | Ellie Radomsky, Emma Morris, Regan Hughes, Sarynn Patterson | Nov 04, 2016 | 2016 D-3 AIA State Championship |
+| 6 | 01:56.01 | Summer Cugini, Logan Sulger, Ella Bissmeyer, Adrianna Witte | Sep 28, 2024 | 21st Annual TYR HS Classic |
+| 7 | 01:56.16 | Marisol Rivera, Sierra Roh, Amanda Grimshaw, Meghan Marner | Oct 06, 2012 | High School Classic |
+| 8 | 01:56.54 | Emma Morris, Hayley Jones, Violet Dasse, Ellie Radomsky | Oct 27, 2017 | Southern Arizona Regional Qualifier |
+| 9 | 01:56.96 | Shaye Sulger, Lainie Radomsky, Sydney Hagerman, Alexandra Foley | Sep 25, 2021 | TYR HS Classic |
+| 10 | 01:58.24 | Emma Morris, Ellie Radomsky, Madison Winkle, Anna Ellis | Sep 17, 2016 | Canyon Del Oro Classic |
+| 11 | 01:58.70 | Amira Alitiem, Lily Niccum, Madeline Barnard, Summer Cugini | Oct 21, 2023 | Pecan Classic |
+| 12 | 01:58.80 | Sarynn Patterson, Isabelle Sansom, Paisley White, Maggie Colombo | Nov 07, 2019 | 2019 D-3 AIA State Championship |
 
 ---
 
@@ -31,13 +30,13 @@
 | 2 | 01:43.75 | Brianne Foley, Ryann Lightcap, Maggie Colombo, Natalie Armstrong | Nov 05, 2022 | 2022 D-3 AIA Girls State Championship |
 | 3 | 01:44.10 | Paisley White, Maggie Colombo, Sarynn Patterson, Isabelle Sansom | Nov 07, 2019 | 2019 D-3 AIA State Championship |
 | 4 | 01:44.97 | Grace Davis, Ryann Lightcap, Brianne Foley, Natalie Armstrong | Oct 21, 2023 | Pecan Classic |
-| 5 | 01:46.46 | Maggie Colombo, Shaye Sulgar, Natalie Armstrong, Paisley White | Nov 06, 2021 | AIA D-III Girls State |
+| 5 | 01:46.46 | Maggie Colombo, Shaye Sulger, Natalie Armstrong, Paisley White | Nov 06, 2021 | AIA D-III Girls State |
 | 6 | 01:46.81 | Brianne Foley, Adrianna Witte, Hadley Cusson, Grace Davis | Nov 09, 2024 | 2024 D-3 AIA State Championship |
 | 7 | 01:47.67 | Natalie Armstrong, Ryann Lightcap, Paisley White, Maggie Colombo | Sep 24, 2022 | TYR High School Classic |
 | 8 | 01:47.69 | Isabelle Sansom, Sarynn Patterson, Hazel Dasse, Lindsey Schoel-Smith | Oct 26, 2018 | Southern Arizona Regional Qualifier |
 | 9 | 01:48.11 | Summer Cugini, Ryann Lightcap, Brianne Foley, Natalie Armstrong | Oct 25, 2023 | Southern Arizona Region Qualifier |
 | 10 | 01:48.20 | Chloe Weatherwax, Paisley White, Violet Dasse, Natalie Armstrong | Nov 05, 2020 | AIA D-3 State Championship |
-| 11 | 01:48.27 | Maggie Colombo, Sydney Hagerman, Shaye Sulgar, Natalie Armstrong | Nov 06, 2021 | AIA D-III Girls State |
+| 11 | 01:48.27 | Maggie Colombo, Sydney Hagerman, Shaye Sulger, Natalie Armstrong | Nov 06, 2021 | AIA D-III Girls State |
 | 12 | 01:48.54 | Isla Cerepak, Logan Sulger, Adrianna Witte, Hadley Cusson | Nov 08, 2025 | D-3 AIA State Championship |
 | 13 | 01:48.59 | Hadley Cusson, Grace Davis, Ryann Lightcap, Natalie Armstrong | Sep 16, 2023 | CDO Classic |
 | 14 | 01:50.57 | Adrianna Witte, Stella Eftekhar, Logan Sulger, Hadley Cusson | Sep 27, 2025 | Arena High School Classic |
@@ -53,14 +52,14 @@
 | 2 | 03:53.36 | Paisley White, Maggie Colombo, Brianne Foley, Natalie Armstrong | Oct 22, 2022 | Pecan Classic |
 | 3 | 03:55.46 | Hadley Cusson, Grace Davis, Brianne Foley, Natalie Armstrong | Oct 21, 2023 | Pecan Classic |
 | 4 | 03:55.63 | Sarynn Patterson, Ellie Radomsky, Hazel Dasse, Isabelle Sansom | Nov 01, 2018 | AIA D-3 Girls State Championship |
-| 5 | 03:56.02 | Bridget Spooner, Hazel Dasse, Sarynn Patterson, Lindsey Sohoel-Smith | Nov 04, 2016 | 2016 D-3 AIA State Championship |
+| 5 | 03:56.02 | Bridget Spooner, Hazel Dasse, Sarynn Patterson, Lindsey Schoel-Smith | Nov 04, 2016 | 2016 D-3 AIA State Championship |
 | 6 | 03:58.56 | Maggie Colombo, Paisley White, Kennady Pautler, Natalie Armstrong | Nov 05, 2020 | AIA D-3 State Championship |
-| 7 | 03:58.96 | Maggie Colombo, Brianne Foley, Shaye Sulgar, Natalie Armstrong | Nov 06, 2021 | AIA D-III Girls State |
+| 7 | 03:58.96 | Maggie Colombo, Brianne Foley, Shaye Sulger, Natalie Armstrong | Nov 06, 2021 | AIA D-III Girls State |
 | 8 | 03:59.44 | Hazel Dasse, Ellie Radomsky, Sarynn Patterson, Calla Isenberg | Nov 03, 2017 | 2017 AIA Division III State Championships (Girls) |
-| 9 | 03:59.59 | Maggie Colombo, Shaye Sulgar, Paisley White, Natalie Armstrong | Nov 06, 2021 | AIA D-III Girls State |
+| 9 | 03:59.59 | Maggie Colombo, Shaye Sulger, Paisley White, Natalie Armstrong | Nov 06, 2021 | AIA D-III Girls State |
 | 10 | 04:00.33 | Isla Cerepak, Rachel Anderson, Stella Eftekhar, Hadley Cusson | Nov 08, 2025 | D-3 AIA State Championship |
 | 11 | 04:00.39 | Hazel Dasse, Emma Morris, Sarynn Patterson, Calla Isenberg | Oct 27, 2017 | Southern Arizona Regional Qualifier |
-| 12 | 04:02.04 | Bridget Spooner, Anna Ellis, Lindsey Sohoel-Smith, Hazel Dasse | Oct 24, 2015 | Small School Championships |
+| 12 | 04:02.04 | Bridget Spooner, Anna Ellis, Lindsey Schoel-Smith, Hazel Dasse | Oct 24, 2015 | Small School Championships |
 | 13 | 04:02.42 | Isla Cerepak, Stella Eftekhar, Adrianna Witte, Hadley Cusson | Sep 27, 2025 | Arena High School Classic |
 | 14 | 04:02.50 | Isla Cerepak, Stella Eftekhar, Kadynce Drummond, Hadley Cusson | Oct 24, 2025 | Southern Arizona Qualifier |
 | 15 | 04:02.93 | Hadley Cusson, Summer Cugini, Adrianna Witte, Brianne Foley | Nov 09, 2024 | 2024 D-3 AIA State Championship |

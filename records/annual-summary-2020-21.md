@@ -36,7 +36,7 @@
 
 **Boys 50 FR SCY**
 - **NEW:** 22.24 - Samuel Stott ()
-- *Previous:* 22.76 - Joe Breinholt
+- *Previous:* 22.76 - Joseph Breinholt
 - *Date:* Nov 05, 2020 at AIA State Meet - D3 (AZ)
 
 **Boys 100 FR SCY**

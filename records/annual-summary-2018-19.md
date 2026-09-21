@@ -38,7 +38,7 @@
 ## 🏆 Records Broken
 
 **Boys 200 FR SCY**
-- **NEW:** 1:48.60 - John Deninghoff ()
+- **NEW:** 1:48.60 - John Denninghoff ()
 - *Previous:* 1:48.76 - Joseph Breinholt
 - *Date:* Nov 01, 2018 at AIA D-III Boys State Meet (AZ)
 
@@ -54,7 +54,7 @@
 
 **Girls 100 BR SCY**
 - **NEW:** 1:05.10 - Lindsey Schoel-Smith ()
-- *Previous:* 1:07.01 - Lindsey Sohoel-Smith
+- *Previous:* 1:07.01 - Lindsey Schoel-Smith
 - *Date:* Nov 01, 2018 at AIA D-III Girls State Meet (AZ)
 
 
@@ -65,8 +65,8 @@
 | Event | Boys Time | Boys Swimmer | Girls Time | Girls Swimmer |
 |-------|----------:|--------------|-----------:|---------------|
 | 50 Free | 26.01 | Lukas Baker (SR) | 26.86 | Isabelle Sansom (JR) |
-| 100 Free | 49.71 | John Deninghoff | 56.94 | Isabelle Sansom (JR) |
-| 200 Free | 1:48.60 | John Deninghoff | 2:05.30 | Hazel Dasse (SR) |
+| 100 Free | 49.71 | John Denninghoff | 56.94 | Isabelle Sansom (JR) |
+| 200 Free | 1:48.60 | John Denninghoff | 2:05.30 | Hazel Dasse (SR) |
 | 500 Free | 5:24.96 | John Denninghoff (SR) | — | — |
 | 100 Back | 1:04.24 | Nicholas Spilotro (FR) | 1:03.12 | Lindsey Schoel-Smith |
 | 100 Breast | 1:14.27 | Dominic Colombo (SO) | 1:05.10 | Lindsey Schoel-Smith |
