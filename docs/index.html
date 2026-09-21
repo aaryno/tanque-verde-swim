@@ -193,59 +193,59 @@
         </div>
         <div class="section-content" id="schedule-content">
             <p class="lead mb-3 mt-3">10 meets, ending at the AIA Division III State Championship.
-            Meets already swum are greyed out.</p>
+            Meets already swum are greyed out and marked &#10003;&nbsp;Swum.</p>
             <div class="table-responsive">
                 <table class="table table-sm align-middle table-schedule">
                     <thead>
                         <tr><th>Date</th><th>Meet</th><th>Where</th></tr>
                     </thead>
                     <tbody>
-                        <tr class="text-muted">
+                        <tr class="meet-row meet-past" data-end="2026-09-03">
                             <td class="text-nowrap"><strong>Sep 3</strong></td>
                             <td>at Mica Mountain &amp; Desert View <span class="badge bg-light text-dark">Away</span><br><small class="text-muted">Away tri-meet. Season opener.</small></td>
                             <td><small>Clements Recreation Center, Tucson</small></td>
                         </tr>
-                        <tr class="text-muted">
+                        <tr class="meet-row meet-past" data-end="2026-09-10">
                             <td class="text-nowrap"><strong>Sep 10</strong></td>
                             <td>vs Ironwood Ridge <span class="badge bg-secondary">Home</span><br><small class="text-muted">Home. The home pool moved to 49er CC for 2026.</small></td>
                             <td><small>49er Country Club, Tucson</small></td>
                         </tr>
-                        <tr class="text-muted">
+                        <tr class="meet-row meet-past" data-end="2026-09-19">
                             <td class="text-nowrap"><strong>Sep 19</strong></td>
                             <td>Canyon del Oro Classic <span class="badge bg-light text-dark">Away</span><br><small class="text-muted">AIA state qualifier, hosted by Canyon del Oro HS.</small></td>
                             <td><small>Oro Valley Municipal Pool, Oro Valley</small></td>
                         </tr>
-                        <tr>
+                        <tr class="meet-row" data-end="2026-09-24">
                             <td class="text-nowrap"><strong>Sep 24</strong></td>
                             <td>at Canyon del Oro &amp; Salpointe <span class="badge bg-light text-dark">Away</span><br><small class="text-muted">Away tri-meet.</small></td>
                             <td><small>Oro Valley Pool, Oro Valley</small></td>
                         </tr>
-                        <tr>
+                        <tr class="meet-row" data-end="2026-10-01">
                             <td class="text-nowrap"><strong>Oct 1</strong></td>
                             <td>at Sahuarita &amp; Sunnyside <span class="badge bg-light text-dark">Away</span><br><small class="text-muted">Away tri-meet.</small></td>
                             <td><small>Sahuarita Aquatics Center, Sahuarita</small></td>
                         </tr>
-                        <tr>
+                        <tr class="meet-row" data-end="2026-10-15">
                             <td class="text-nowrap"><strong>Oct 15</strong></td>
                             <td>vs Walden Grove <span class="badge bg-secondary">Home</span><br><small class="text-muted">Home.</small></td>
                             <td><small>49er Country Club, Tucson</small></td>
                         </tr>
-                        <tr>
+                        <tr class="meet-row" data-end="2026-10-17">
                             <td class="text-nowrap"><strong>Oct 17</strong></td>
                             <td>HS Classic <span class="badge bg-light text-dark">Away</span><br><small class="text-muted">AIA state qualifier, co-hosted by Catalina Foothills HS and Ford Aquatics. No start time published.</small></td>
                             <td><small>Hillenbrand Aquatic Center, University of Arizona, Tucson</small></td>
                         </tr>
-                        <tr>
+                        <tr class="meet-row" data-end="2026-10-24">
                             <td class="text-nowrap"><strong>Oct 23&ndash;24</strong></td>
                             <td>Southern Arizona Regional Qualifier <span class="badge bg-light text-dark">Away</span><br><small class="text-muted">Two days, Friday and Saturday. Last local qualifier of the season.</small></td>
                             <td><small>Oro Valley Municipal Pool, Oro Valley</small></td>
                         </tr>
-                        <tr>
+                        <tr class="meet-row" data-end="2026-10-29">
                             <td class="text-nowrap"><strong>Oct 29</strong></td>
                             <td>vs Amphitheater &amp; The Gregory School <span class="badge bg-secondary">Home</span><br><small class="text-muted">Home. Last dual meet, and the AIA qualifying deadline.</small></td>
                             <td><small>49er Country Club, Tucson</small></td>
                         </tr>
-                        <tr>
+                        <tr class="meet-row" data-end="2026-11-07">
                             <td class="text-nowrap"><strong>Nov 6&ndash;7</strong></td>
                             <td>AIA Division III State Championship <span class="badge bg-light text-dark">Away</span><br><small class="text-muted">No start time published.</small></td>
                             <td><small>Dady Aquatic Center, Phoenix Country Day School, Paradise Valley</small></td>
@@ -441,6 +441,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        // Mark swum meets by date, in Arizona time, so the schedule stays true
+        // between rebuilds. A meet is swum once its last day has passed.
+        (function () {
+            var today = new Intl.DateTimeFormat('en-CA', {timeZone: 'America/Phoenix'}).format(new Date());
+            document.querySelectorAll('tr.meet-row[data-end]').forEach(function (tr) {
+                tr.classList.toggle('meet-past', tr.dataset.end < today);
+            });
+        })();
+
     document.addEventListener('DOMContentLoaded', function() {
         // Collapsible hero header
         const heroHeader = document.getElementById('hero-header');

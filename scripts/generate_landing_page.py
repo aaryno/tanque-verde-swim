@@ -145,9 +145,12 @@ def schedule_rows(data, today):
         past = m['date_end'] < today
         badge = ('<span class="badge bg-secondary">Home</span>' if m['home']
                  else '<span class="badge bg-light text-dark">Away</span>')
-        cls = ' class="text-muted"' if past else ''
+        # "Past" is re-decided in the browser from data-end (script at the end of
+        # the page), so a meet greys out the day after it is swum without a
+        # rebuild. The build-time class is only the no-JavaScript fallback.
+        cls = ' meet-past' if past else ''
         rows.append(
-            f'''                        <tr{cls}>
+            f'''                        <tr class="meet-row{cls}" data-end="{m['date_end']}">
                             <td class="text-nowrap"><strong>{fmt_meet_date(m['date_start'], m['date_end'])}</strong></td>
                             <td>{esc(m['name'])} {badge}<br><small class="text-muted">{esc(m['note'])}</small></td>
                             <td><small>{esc(m['venue'])}</small></td>
@@ -297,7 +300,7 @@ def build_page(project_root):
         </div>
         <div class="section-content" id="schedule-content">
             <p class="lead mb-3 mt-3">{len(sched['meets'])} meets, ending at the AIA Division III State Championship.
-            Meets already swum are greyed out.</p>
+            Meets already swum are greyed out and marked &#10003;&nbsp;Swum.</p>
             <div class="table-responsive">
                 <table class="table table-sm align-middle table-schedule">
                     <thead>
@@ -426,6 +429,15 @@ def build_page(project_root):
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        // Mark swum meets by date, in Arizona time, so the schedule stays true
+        // between rebuilds. A meet is swum once its last day has passed.
+        (function () {{
+            var today = new Intl.DateTimeFormat('en-CA', {{timeZone: 'America/Phoenix'}}).format(new Date());
+            document.querySelectorAll('tr.meet-row[data-end]').forEach(function (tr) {{
+                tr.classList.toggle('meet-past', tr.dataset.end < today);
+            }});
+        }})();
+
     document.addEventListener('DOMContentLoaded', function() {{
         // Collapsible hero header
         const heroHeader = document.getElementById('hero-header');

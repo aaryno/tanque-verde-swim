@@ -2524,3 +2524,20 @@ h2[id], h3[id], .event-heading[id] {
   }
 }
 
+
+
+/* ===== Schedule: meets already swum (landing page) =====
+   A muted colour on the <tr> is not enough: Bootstrap 5.3 sets colour on every
+   table cell, and the mobile card layout restyles the cells again, so a
+   "text-muted" row looked the same as an upcoming one. Fade the whole row and
+   label it, which survives both layouts. */
+.table-schedule tr.meet-past > td {
+  opacity: 0.45;
+}
+.table-schedule tr.meet-past td:first-child strong::after {
+  content: " \2713 Swum";
+  font-weight: 600;
+  font-size: 0.75em;
+  margin-left: 0.35em;
+  color: var(--tvhs-primary, #2d5a27);
+}
