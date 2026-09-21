@@ -1,7 +1,7 @@
 # All-Time Top 10 - Girls
 ## Tanque Verde High School Swimming
 
-**Generated:** September 20, 2026 at 08:50 PM
+**Generated:** September 20, 2026 at 09:32 PM
 
 ---
 
@@ -78,7 +78,7 @@
 | 7 | 1:06.23 | Brianne Foley | SR | Oct 25, 2024 | Southern Arizona Qualifier |
 | 8 | 1:07.64 | Shaye Sulger | SR | Sep 25, 2021 | TYR HS Classic |
 | 9 | 1:08.24 | Summer Cugini | SR | Nov 09, 2024 | 2024 D-3 AIA State Championship |
-| 10 | 1:08.37 | Amelia Kidd | SO | Nov 08, 2025 | 2025 D-3 AIA State Championship |
+| 10 | 1:09.56 | Amira Alitiem | SR | Sep 19, 2026 | Canyon del Oro Classic |
 
 ### 100 Breaststroke
 
