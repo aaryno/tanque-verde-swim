@@ -1,7 +1,7 @@
 # All-Time Top 10 - Boys
 ## Tanque Verde High School Swimming
 
-**Generated:** December 11, 2025 at 10:09 AM
+**Generated:** September 20, 2026 at 04:57 PM
 
 ---
 
@@ -9,31 +9,31 @@
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| **1** | **21.64r** | **Nicholas Cusson** | **JR** | **Nov 05, 2022** | **2022 D-3 AIA Boys State Championship** |
+| 1 | 21.99 | Nicholas Cusson | SO | Oct 23, 2021 | 2021 D-3 AIA State Championship |
 | 2 | 22.13 | Samuel Stott | SR | Nov 05, 2022 | 2022 D-3 AIA Boys State Championship |
-| 3 | 22.43r | Joseph Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier |
-| 4 | 22.96 | Zachary Duerkop | SR | Sep 27, 2025 | Arena High School Classic |
-| 5 | 23.21r | Jackson Eftekhar | JR | Nov 08, 2025 | D-3 AIA State Championship |
-| 6 | 23.26r | Trevor Clausen | SO | Nov 07, 2019 | 2019 D-3 AIA State Championship |
+| 3 | 22.53 | Jackson Eftekhar | SR | Sep 19, 2026 | Canyon del Oro Classic |
+| 4 | 22.76 | Joseph Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier |
+| 5 | 22.96 | Zachary Duerkop | SR | Sep 27, 2025 | Arena High School Classic |
+| 6 | 23.34 | Trevor Clausen | SO | Nov 07, 2019 | 2019 D-3 AIA State Championship |
 | 7 | 23.54 | Grayson The | SR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
 | 8 | 24.21 | Tanner Morris | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier |
-| 9 | 24.81r | Wade Olsson | SO | Oct 19, 2024 | Pecan Classic |
-| 10 | 24.85r | Alexander Flores | SR | Sep 17, 2016 | Canyon Del Oro Classic |
+| 9 | 25.03 | Jackson Machamer | FR | Oct 25, 2023 | Southern Arizona Region Qualifier |
+| 10 | 25.09 | Peyton Kowalski | SR | Sep 14, 2024 | Canyon del Oro Classic |
 
 ### 100 Freestyle
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| **1** | **46.44** | **Nicholas Cusson** | **SR** | **Nov 04, 2023** | **2023 D-3 AIA State Championship** |
+| 1 | 46.44 | Nicholas Cusson | SR | Nov 04, 2023 | 2023 D-3 AIA State Championship |
 | 2 | 47.71 | Samuel Stott | SO | Nov 05, 2020 | AIA D-3 State Championship |
-| 3 | 47.92r | Zachary Duerkop | SR | Oct 24, 2025 | Southern Arizona Qualifier |
-| 4 | 47.98 | Joseph Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier |
-| 5 | 49.71 | John Deninghoff | SR | Nov 01, 2018 | AIA D-3 Boys State Championship |
-| 6 | 50.09r | Wade Olsson | JR | Oct 18, 2025 | Pecan Classic |
-| 7 | 51.43 | Jackson Eftekhar | JR | Oct 18, 2025 | Pecan Classic |
-| 8 | 52.04r | Trevor Clausen | SO | Nov 07, 2019 | 2019 D-3 AIA State Championship |
-| 9 | 52.36 | Austin Morris | SR | Oct 24, 2015 | Small School Championships |
-| 10 | 53.58 | Jackson Machamer | SO | Nov 09, 2024 | 2024 D-3 AIA State Championship |
+| 3 | 47.98 | Joseph Breinholt | SR | Oct 29, 2016 | Southern Arizona Regional Qualifier |
+| 4 | 49.71 | John Deninghoff | SR | Nov 01, 2018 | AIA D-3 Boys State Championship |
+| 5 | 50.64 | Zachary Duerkop | JR | Oct 19, 2024 | Pecan Classic |
+| 6 | 51.43 | Jackson Eftekhar | JR | Oct 18, 2025 | Pecan Classic |
+| 7 | 52.36 | Austin Morris | SR | Oct 24, 2015 | Small School Championships |
+| 8 | 53.14 | Trevor Clausen | SO | Oct 05, 2019 | High School Classic |
+| 9 | 53.58 | Jackson Machamer | SO | Nov 09, 2024 | 2024 D-3 AIA State Championship |
+| 10 | 53.91 | Andrew Lam | SR | Oct 05, 2013 | High School Classic |
 
 ### 200 Freestyle
 
@@ -54,8 +54,8 @@
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| 1 | 5:04.10 | Joseph Breinholt | JR | Oct 24, 2015 | Small School Championships |
-| 2 | 5:07.85 | Kent Olsson | FR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
+| 1 | 5:03.13 | Kent Olsson | SO | Sep 19, 2026 | Canyon del Oro Classic |
+| 2 | 5:04.10 | Joseph Breinholt | JR | Oct 24, 2015 | Small School Championships |
 | 3 | 5:08.11 | Samuel Stott | FR | Nov 01, 2019 | Canyon Del Oro Invite |
 | 4 | 5:17.84 | Wade Olsson | FR | Nov 04, 2023 | 2023 D-3 AIA State Championship |
 | 5 | 5:19.88 | Zachary Duerkop | SO | Oct 25, 2023 | Southern Arizona Region Qualifier |
@@ -71,8 +71,8 @@
 |-----:|-----:|---------|------|------|------|
 | 1 | 52.68 | Nicholas Cusson | SR | Nov 04, 2023 | 2023 D-3 AIA State Championship |
 | 2 | 57.27 | Wade Olsson | JR | Oct 18, 2025 | Pecan Classic |
-| 3 | 59.61 | Austin Morris | SR | Oct 24, 2015 | Small School Championships |
-| 4 | 59.71 | Kent Olsson | FR | Oct 24, 2025 | Southern Arizona Qualifier |
+| 3 | 57.57 | Kent Olsson | SO | Sep 19, 2026 | Canyon del Oro Classic |
+| 4 | 59.61 | Austin Morris | SR | Oct 24, 2015 | Small School Championships |
 | 5 | 1:00.82 | Samuel Merrill | JR | Sep 17, 2016 | Canyon Del Oro Classic |
 | 6 | 1:01.91 | Xavier Rivera | SO | Nov 2009 | 2009 AIA State Championship |
 | 7 | 1:02.03 | Stephen Moreland | JR | Oct 25, 2023 | Southern Arizona Region Qualifier |
@@ -100,8 +100,8 @@
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
 | 1 | 52.48 | Zachary Duerkop | SR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
-| 2 | 53.45 | Nicholas Cusson | SR | Oct 21, 2023 | Pecan Classic |
-| 3 | 54.41 | Jackson Eftekhar | JR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
+| 2 | 53.31 | Jackson Eftekhar | SR | Sep 19, 2026 | Canyon del Oro Classic |
+| 3 | 53.45 | Nicholas Cusson | SR | Oct 21, 2023 | Pecan Classic |
 | 4 | 55.61 | Samuel Stott | JR | Sep 25, 2021 | TYR HS Classic |
 | 5 | 57.54 | Xavier Rivera | JR | Nov 2010 | 2010 D-2 AIA State Championship |
 | 6 | 59.28 | Trevor Clausen | SO | Nov 07, 2019 | 2019 D-3 AIA State Championship |
