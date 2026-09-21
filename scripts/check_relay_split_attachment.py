@@ -205,46 +205,37 @@ def check(splits_path, only=None):
                 continue          # renders with blank splits; honest, not a defect
             matched += 1
 
-            first = pick_first(cands)
-            best = pick_best(cands)
-            rev = list(reversed(cands))
-            first_rev, best_rev = pick_first(rev), pick_best(rev)
+            # Both renderers now attach through relay_splits.select_entry (since
+            # 2026-09-21), so that function IS the renderers' behaviour -- model
+            # it, not the retired first-match / best-overlap rules.
+            from relay_splits import select_entry
+            chosen = select_entry(data, gender, event, row['participants'], row['time'])
+            rev = {g: list(reversed(v)) for g, v in data.items()}
+            chosen_rev = select_entry(rev, gender, event, row['participants'], row['time'])
 
             if len(cands) > 1:
                 add('AMBIGUOUS', gender, event, row,
                     f"{len(cands)} candidates matched (seasons "
                     f"{', '.join(c[2].get('year', '?') for c in cands)})")
 
-            if first[0] != first_rev[0] or best[0] != best_rev[0]:
+            if (chosen or {}).get('splits') != (chosen_rev or {}).get('splits'):
                 add('ORDER_SENSITIVE', gender, event, row,
-                    f"reversing the candidate list moves overall.html "
-                    f"{first[2].get('year')}->{first_rev[2].get('year')} and the relay page "
-                    f"{best[2].get('year')}->{best_rev[2].get('year')}")
+                    "reversing the splits file changes which legs are attached")
 
-            if first[0] != best[0]:
-                add('PAGE_DISAGREE', gender, event, row,
-                    f"overall.html attaches the {first[2].get('year')} entry, "
-                    f"{gender}-relays.html attaches the {best[2].get('year')} entry")
+            if chosen is None:
+                continue          # rendered without splits: nothing proves any set
 
             record_secs = parse_time(row['time'])
-            for label, chosen in (('overall.html', first), (f'{gender}-relays.html', best)):
-                total = entry_total(chosen[2])
-                if total is None:
-                    add('UNPARSEABLE', gender, event, row,
-                        f"{label}: attached {chosen[2].get('year')} entry has a split "
-                        f"that is not a time: {chosen[2].get('splits')}")
-                elif record_secs is not None and abs(total - record_secs) > TOLERANCE:
-                    add('SUM_MISMATCH', gender, event, row,
-                        f"{label}: attached {chosen[2].get('year')} splits sum to "
-                        f"{total:.2f}s but the record is {row['time']} ({record_secs:.2f}s)")
+            total = entry_total(chosen)
+            if total is None or record_secs is None or abs(total - record_secs) > TOLERANCE:
+                add('SUM_MISMATCH', gender, event, row,
+                    f"attached {chosen.get('year')} splits do not sum to {row['time']}")
 
             want_season = season_of(row['date'])
-            if want_season:
-                for label, chosen in (('overall.html', first), (f'{gender}-relays.html', best)):
-                    if chosen[2].get('year') != want_season:
-                        add('SEASON_MISMATCH', gender, event, row,
-                            f"{label}: attached a {chosen[2].get('year')} swim to a "
-                            f"{want_season} record")
+            if want_season and chosen.get('year') != want_season:
+                add('SEASON_MISMATCH', gender, event, row,
+                    f"attached a {chosen.get('year')} swim to a {want_season} record "
+                    f"(legs sum exactly, so the swim is right and the file's season label is off)")
     return findings, rows, matched
 
 
@@ -277,6 +268,36 @@ def format_report(findings, rows, matched, splits_path):
     return '\n'.join(lines)
 
 
+def rendered_mismatches(docs_dir=PROJECT_ROOT / 'docs'):
+    """Read the RENDERED pages and add up the legs shown under each relay record.
+
+    Independent of every function above: it parses docs/ HTML, so it catches a
+    renderer that attaches the wrong swim no matter how the choice was made.
+    This is the check that found the boys 200 Medley Relay record (1:41.80)
+    shown with legs summing to 1:45.73 on overall.html.
+    """
+    out = []
+    for page in ('records/overall.html', 'records/boys-relays.html', 'records/girls-relays.html'):
+        path = Path(docs_dir) / page
+        if not path.exists():
+            continue
+        cur, rows = None, []
+        for m in re.finditer(r'class="(?:record-time|time-cell)">(?:<strong>)?([\d:.]+)'
+                             r'|class="split-time">([\d:.]+)', path.read_text()):
+            if m.group(1):
+                cur = [m.group(1), []]
+                rows.append(cur)
+            elif cur:
+                cur[1].append(m.group(2))
+        for time, legs in rows:
+            if not legs:
+                continue
+            total = sum(parse_time(x) or 0 for x in legs)
+            if abs(total - (parse_time(time) or 0)) > TOLERANCE:
+                out.append(f"{page}: {time} shown with legs summing to {total:.2f}s")
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     ap.add_argument('--splits', default=str(DEFAULT_SPLITS),
@@ -293,6 +314,7 @@ def main():
 
     findings, rows, matched = check(args.splits, only)
     failing = [f for f in findings if f['code'] in FAILING]
+    rendered = rendered_mismatches()
 
     if args.quiet:
         counts = {c: sum(1 for f in findings if f['code'] == c) for c in CODES}
@@ -301,7 +323,13 @@ def main():
     else:
         print(format_report(findings, rows, matched, args.splits))
 
-    return 1 if failing else 0
+    if rendered:
+        print(f"RENDERED_SUM_MISMATCH={len(rendered)}")
+        for r in rendered:
+            print(f"  {r}")
+    elif not args.quiet:
+        print("rendered pages: every split breakdown shown adds up to its record")
+    return 1 if (failing or rendered) else 0
 
 
 if __name__ == '__main__':

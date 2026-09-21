@@ -776,26 +776,11 @@ def generate_overall_records_page(records_dir, docs_dir):
         return ', '.join(n.split()[-1] for n in names)
     
     def find_relay_splits(relay, gender, event):
-        """Find splits for a relay from the splits data"""
-        swimmers = [s.strip() for s in relay['participants'].split(',')]
-        relay_set = set(s.lower() for s in swimmers)
-        
-        for split_entry in splits_data.get(gender, []):
-            entry_type = split_entry.get('type', '')
-            if entry_type != event:
-                continue
-            
-            entry_swimmers = []
-            for s in split_entry.get('swimmers', []):
-                import re
-                name = re.sub(r'\s*-\s*(Fr|So|Jr|Sr)\.$', '', s, flags=re.IGNORECASE)
-                entry_swimmers.append(name.strip())
-            
-            entry_set = set(s.lower() for s in entry_swimmers)
-            if len(relay_set & entry_set) >= 3:
-                return split_entry.get('splits', [])
-        return []
-    
+        """Splits only when their legs add up to this record (relay_splits.py)."""
+        from relay_splits import select_entry
+        entry = select_entry(splits_data, gender, event, relay['participants'], relay['time'])
+        return entry.get('splits', []) if entry else []
+
     def get_stroke_for_position(event, pos):
         if 'Medley' in event:
             strokes = ['Backstroke', 'Breaststroke', 'Butterfly', 'Freestyle']
@@ -1091,8 +1076,9 @@ def main():
 def run_data_guards(script_dir):
     """Run the data guards after a render and report to stderr.
 
-    These report on the SOURCE data, not on the HTML, so they are advisory here
-    and deliberately do not fail the build -- the site must stay generatable
+    The class-records-history guard reports on SOURCE data and is advisory. The
+    relay guard also audits the rendered HTML and BLOCKS -- see below. Advisory
+    guards deliberately do not fail the build -- the site must stay generatable
     while the underlying data questions are open. They go to stderr so they
     survive `> build.log` and stay visible; each one also runs standalone and
     exits non-zero, which is what a gate should call.
@@ -1108,6 +1094,15 @@ def run_data_guards(script_dir):
         result = subprocess.run(['python3', str(script), '--quiet'],
                                 capture_output=True, text=True)
         out = (result.stdout + result.stderr).strip()
+        # The relay guard BLOCKS (since 2026-09-21): it reads the rendered pages,
+        # and a split breakdown that does not add up to its record is a false
+        # statement under a school record. It passes now, so it can gate.
+        # SKIP_RELAY_CHECK=1 overrides deliberately.
+        if (result.returncode != 0 and name == 'check_relay_split_attachment.py'
+                and os.environ.get('SKIP_RELAY_CHECK') != '1'):
+            print(f"\n{out}\n\nRefusing: relay splits shown on the site do not add up to "
+                  f"their records.\n  python3 scripts/{name}", file=sys.stderr)
+            sys.exit(1)
         if result.returncode == 0:
             print(f"\n✓ guard clean: {label}\n  {out}", file=sys.stderr)
         else:
