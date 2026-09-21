@@ -12,6 +12,7 @@ from datetime import datetime
 
 # Allow importing sibling scripts (check_alltime_current) regardless of CWD.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from generate_senior_page import senior_href  # noqa: E402
 
 
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -69,11 +70,22 @@ def create_nav_html():
                 <li class="nav-item">
                     <a class="nav-link" href="#" id="nav-top10" title="All-Time Top 10">🔟<span class="d-none d-md-inline ms-1">Top 10</span></a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-class-top10" title="Class Top 10">🏅<span class="d-none d-md-inline ms-1">Class Top 10</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item class-link" data-grade="freshman" href="/top10/boys-freshman.html">Freshman</a></li>
+                        <li><a class="dropdown-item class-link" data-grade="sophomore" href="/top10/boys-sophomore.html">Sophomore</a></li>
+                        <li><a class="dropdown-item class-link" data-grade="junior" href="/top10/boys-junior.html">Junior</a></li>
+                        <li><a class="dropdown-item class-link" data-grade="senior" href="/top10/boys-senior.html">Senior</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item class-link" data-grade="bygrade" href="/records/boys-bygrade.html">Class Records</a></li>
+                    </ul>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" id="nav-relays" title="Relay Records">🤝<span class="d-none d-md-inline ms-1">Relays</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/seniors/class-of-2026.html" id="nav-seniors" title="Senior Recognition">🎓<span class="d-none d-md-inline ms-1">Seniors</span></a>
+                    <a class="nav-link" href="''' + senior_href() + '''" id="nav-seniors" title="Seniors">🎓<span class="d-none d-md-inline ms-1">Seniors</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅<span class="d-none d-md-inline ms-1">Top 10 by Year</span></a>
@@ -248,6 +260,14 @@ def create_html_page(title, content, page_type="default"):
             document.getElementById('nav-top10').href = '/top10/' + g + '-alltime.html';
             document.getElementById('nav-relays').href = '/records/' + g + '-relays.html';
             
+            // Update class top 10 links (Class Records lives under /records/)
+            document.querySelectorAll('.class-link').forEach(link => {{
+                const grade = link.dataset.grade;
+                link.href = grade === 'bygrade'
+                    ? '/records/' + g + '-bygrade.html'
+                    : '/top10/' + g + '-' + grade + '.html';
+            }});
+
             // Update season links
             document.querySelectorAll('.season-link').forEach(link => {{
                 const season = link.textContent;
@@ -941,6 +961,17 @@ def main():
             sys.exit(1)
         print()
 
+    # GUARD: the class records must match the Class Top 10. Otherwise the
+    # records page and the #1 of a class list disagree -- the same shape of
+    # contradiction the all-time lists had. SKIP_CLASS_CHECK=1 overrides.
+    if os.environ.get('SKIP_CLASS_CHECK') != '1':
+        from class_top10 import main as _check_class
+        if _check_class() != 0:
+            print()
+            print("Refusing to generate the website on stale class records.")
+            sys.exit(1)
+        print()
+
     # GUARD: every list must use canonical names and hold each swimmer once.
     # The alias table (data/swimmer_aliases.json) used to be applied only by
     # the all-time builder, so a season page could show "Madsion Garcia" while
@@ -1025,6 +1056,29 @@ def main():
                       'times swum so far in ' + season + ', not a final season list.')
         convert_top10_to_cards(top10_file, output, title, notice=notice)
     
+    # Class Top 10: derived from the published lists on every build, never
+    # committed as a source file, so it cannot go stale (see class_top10.py).
+    print("\n\U0001F3C5 Generating Class Top 10 pages...")
+    import tempfile
+    from class_top10 import to_markdown, GRADES
+    class_notice = ('Fastest times ever swum <strong>as a {grade}</strong>. #1 is the class record. '
+                    'Built from each season\'s Top 10 and the class records, so a swim that missed '
+                    'its own season\'s Top 10 is not listed. 2025-26 has no season list yet, so '
+                    'its swims appear only where they made the all-time lists or a class record.')
+    with tempfile.TemporaryDirectory() as tmp:
+        for gender in ('boys', 'girls'):
+            for code, name in GRADES:
+                md = Path(tmp) / f'{gender}-{name.lower()}.md'
+                md.write_text(to_markdown(gender, code))
+                convert_top10_to_cards(md, docs_dir / 'top10' / f'{gender}-{name.lower()}.html',
+                                       f"{gender.title()} {name} Top 10",
+                                       notice=class_notice.format(grade=name.lower()))
+
+    # Current senior class page; the class year follows the newest season file.
+    print("\n\U0001F393 Generating senior class page...")
+    import generate_senior_page
+    generate_senior_page.build()
+
     # Generate the season landing page (docs/index.html)
     print("\n\U0001F3E0 Generating Season Landing Page...")
     result = subprocess.run(['python3', str(script_dir / 'generate_landing_page.py')], capture_output=True, text=True)
