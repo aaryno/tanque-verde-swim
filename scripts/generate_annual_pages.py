@@ -30,23 +30,12 @@ SEASONS = [
 # Years with incomplete data (only state meet results available)
 INCOMPLETE_DATA_YEARS = ["2007-08", "2008-09", "2009-10", "2010-11", "2011-12"]
 
-# Seasons that have top10 pages. Derived from the committed top-10 source
-# files rather than hardcoded by name: a season appears in the "Top 10 by Year"
-# menu exactly when records/top10-{boys,girls}-<season>.md both exist, so the
-# menu can never link a page that was not built. Both genders are required
-# because the gender toggle rewrites the same href to the girls page.
-# (Replaces `[s for s in SEASONS if s != "2025-26"]` from 0459cdc, which
-# excluded 2025-26 by name and would have kept excluding it forever.)
-def _seasons_with_top10():
-    records_dir = Path(__file__).parent.parent / 'records'
-    boys = {f.name[len('top10-boys-'):-len('.md')]
-            for f in records_dir.glob('top10-boys-*.md')}
-    girls = {f.name[len('top10-girls-'):-len('.md')]
-             for f in records_dir.glob('top10-girls-*.md')}
-    return [s for s in SEASONS if s in boys & girls]
+# The season menus are derived from the committed sources, in one place shared
+# with generate_website.py and rebuild_relay_pages.py. See scripts/site_seasons.py
+# for why three private copies of this list was the bug rather than the style.
+from site_seasons import seasons_with_annual, seasons_with_top10
 
-
-TOP10_SEASONS = _seasons_with_top10()
+TOP10_SEASONS = seasons_with_top10()
 
 
 # Project root (parent of scripts/ directory)
@@ -344,13 +333,13 @@ def generate_nav_html():
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅<span class="d-none d-md-inline ms-1">Top 10 by Year</span></a>
                     <ul class="dropdown-menu dropdown-menu-scroll">
-''' + '\n'.join([f'                        <li><a class="dropdown-item season-link" data-path="top10" href="/top10/boys-{s}.html">{s}</a></li>' for s in reversed(TOP10_SEASONS) if s >= "2007-08"]) + '''
+''' + '\n'.join([f'                        <li><a class="dropdown-item season-link" data-path="top10" href="/top10/boys-{s}.html">{s}</a></li>' for s in reversed(TOP10_SEASONS)]) + '''
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-summary" title="Season Summary">📈<span class="d-none d-md-inline ms-1">Summary by Year</span></a>
                     <ul class="dropdown-menu dropdown-menu-scroll dropdown-menu-end">
-''' + '\n'.join([f'                        <li><a class="dropdown-item" href="/annual/{s}.html">{s}</a></li>' for s in reversed(SEASONS) if s >= "2012-13"]) + '''
+''' + '\n'.join([f'                        <li><a class="dropdown-item" href="/annual/{s}.html">{s}</a></li>' for s in reversed(seasons_with_annual())]) + '''
                     </ul>
                 </li>
             </ul>
