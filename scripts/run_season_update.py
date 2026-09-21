@@ -15,13 +15,17 @@ Usage:
 For next year:
     python run_season_update.py --season 2026-27 --state-pdf ~/Downloads/d3-state-2026.pdf
 
-⚠️  THIS SCRIPT DOES NOT CURRENTLY RUN. Four of the steps below call scripts
-    that do not exist in this repo:
+⚠️  THIS SCRIPT DOES NOT CURRENTLY RUN. Every step is invoked as a bare
+    filename (`python update_state_parser.py`), but four of the scripts live in
+    subdirectories, so no single working directory finds them all:
 
-        update_state_parser.py      (Step 1)
-        parse_aia_state_meets.py    (Step 2)
-        merge_aia_state_data.py     (Step 3)
-        generate_annual_summary.py  (Step 12)
+        update_state_parser.py      (Step 1)   scripts/harvest/
+        parse_aia_state_meets.py    (Step 2)   scripts/harvest/
+        merge_aia_state_data.py     (Step 3)   scripts/harvest/
+        generate_annual_summary.py  (Step 12)  scripts/archive/  (retired?)
+
+    (A 2026-09-20 version of this banner said these four "do not exist in this
+    repo". That was wrong -- they exist, in the directories above.)
 
     It also invokes the steps as bare filenames (`python generate_website.py`),
     which resolves only with CWD=scripts/, while the steps themselves read
