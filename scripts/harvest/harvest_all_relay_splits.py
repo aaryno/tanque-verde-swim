@@ -166,21 +166,50 @@ def harvest_all_seasons():
     
     return all_relays
 
+def season_sort_key(year):
+    """'12-13' -> 2012. Seasons are two-digit and do not wrap within this data."""
+    start = int(year.split('-')[0])
+    return start + 2000 if start < 50 else start + 1900
+
+
+def in_stable_order(relays):
+    """Season-ascending, preserving the harvester's within-season order.
+
+    The output order is not cosmetic. `generate_website.py:find_relay_splits`
+    and `rebuild_relay_pages.py:find_splits_for_relay` attach a split breakdown
+    to a relay record row by taking the first list entry that matches on event
+    type plus >= 3 swimmer names, so WHICH ENTRY COMES FIRST decides which swim
+    is printed under a record. YEARS above is newest-first, while the committed
+    files are oldest-first; emitting YEARS order would therefore hand a
+    different year's splits to historical records on a plain re-harvest, with no
+    relay time and no rank changing to give it away (measured 2026-09-20: 23
+    changed lines across boys-relays.html, girls-relays.html and overall.html).
+
+    Sorting here removes the reorder. It does NOT make the attachment correct --
+    the match itself is still ambiguous, which is what
+    `scripts/check_relay_split_attachment.py` reports.
+    """
+    return sorted(relays, key=lambda r: season_sort_key(r['year']))
+
+
 def save_results(all_relays):
     """Save harvested relays to JSON files"""
-    
+
     output_dir = Path("data/historical_splits")
     output_dir.mkdir(parents=True, exist_ok=True)
-    
+
+    all_relays = {gender: in_stable_order(relays)
+                  for gender, relays in all_relays.items()}
+
     # Save combined
     with open(output_dir / "all_relay_splits.json", 'w') as f:
         json.dump(all_relays, f, indent=2)
-    
+
     # Save by gender
     for gender in ['boys', 'girls']:
         with open(output_dir / f"{gender}_relay_splits.json", 'w') as f:
             json.dump(all_relays[gender], f, indent=2)
-    
+
     # Save by year
     by_year = {}
     for gender in ['boys', 'girls']:

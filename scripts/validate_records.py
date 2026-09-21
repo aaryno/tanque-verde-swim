@@ -9,6 +9,7 @@ never rewrites a file.
 Checks:
   * rank tables (top10-*.md, relay-records-*.md): ranks are contiguous 1..N
   * rank tables: (time, date, participants) is unique within a table
+  * relay tables: each row names exactly four distinct swimmers
   * rank tables: times are non-decreasing down the ranks
   * grade tables (records-*.md): grade labels are known and not repeated
   * grade tables: the Open row matches the fastest grade row in that event
@@ -182,6 +183,22 @@ def check_rank_table(path, event, header, rows, one_per_athlete=False):
                         f"({detail}): {remedy}")
             else:
                 by_athlete[c] = (rank, who)
+
+        if 'Participants' in header:
+            # A relay row must name four distinct swimmers. This is structure,
+            # not judgement, and it is load-bearing downstream: both renderers
+            # attach a split breakdown by counting how many of these names
+            # overlap a splits entry (>= 3 of 4 wins), so a row with three or
+            # five names silently changes which swim gets printed under it.
+            # See scripts/check_relay_split_attachment.py.
+            names = [n.strip() for n in (who or '').split(',') if n.strip()]
+            if len(names) != 4:
+                problem(path, event,
+                        f"rank {rank}: {len(names)} participants, expected 4: {who!r}")
+            elif len(set(names)) != 4:
+                dupes = sorted({n for n in names if names.count(n) > 1})
+                problem(path, event,
+                        f"rank {rank}: swimmer listed twice in one relay: {', '.join(dupes)}")
 
         key = (time_s, date_s, who)
         if key in seen:

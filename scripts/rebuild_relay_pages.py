@@ -15,6 +15,12 @@ SENIOR_HREF = senior_href()
 import re
 from pathlib import Path
 
+# Both season menus below were 18- and 14-season literals that nothing updated,
+# so these pages sat two seasons behind every other page on the site: the
+# 2026-27 Top-10 page existed and returned HTTP 200 but was unreachable from
+# the relay pages' navigation. Derive from the committed sources instead.
+from site_seasons import seasons_with_annual, seasons_with_top10
+
 # Get project root (parent of scripts/ directory)
 PROJECT_ROOT = Path(__file__).parent.parent
 
@@ -266,6 +272,13 @@ def generate_full_page_html(gender, events, splits_data):
         if event_name in events and events[event_name]:
             sections_html += generate_relay_section_html(event_name, events[event_name], gender, splits_data)
     
+    top10_links = '\n'.join(
+        f'                        <li><a class="dropdown-item" href="/top10/{gender}-{s}.html">{s}</a></li>'
+        for s in reversed(seasons_with_top10()))
+    annual_links = '\n'.join(
+        f'                        <li><a class="dropdown-item" href="/annual/{s}.html">{s}</a></li>'
+        for s in reversed(seasons_with_annual()))
+
     html = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -337,43 +350,13 @@ def generate_full_page_html(gender, events, splits_data):
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅<span class="d-none d-md-inline ms-1">Top 10 by Year</span></a>
                     <ul class="dropdown-menu dropdown-menu-scroll">
-                        <li><a class="dropdown-item" href="/top10/{gender}-2024-25.html">2024-25</a></li>
-                        <li><a class="dropdown-item" href="/top10/{gender}-2023-24.html">2023-24</a></li>
-                        <li><a class="dropdown-item" href="/top10/{gender}-2022-23.html">2022-23</a></li>
-                        <li><a class="dropdown-item" href="/top10/{gender}-2021-22.html">2021-22</a></li>
-                        <li><a class="dropdown-item" href="/top10/{gender}-2020-21.html">2020-21</a></li>
-                        <li><a class="dropdown-item" href="/top10/{gender}-2019-20.html">2019-20</a></li>
-                        <li><a class="dropdown-item" href="/top10/{gender}-2018-19.html">2018-19</a></li>
-                        <li><a class="dropdown-item" href="/top10/{gender}-2017-18.html">2017-18</a></li>
-                        <li><a class="dropdown-item" href="/top10/{gender}-2016-17.html">2016-17</a></li>
-                        <li><a class="dropdown-item" href="/top10/{gender}-2015-16.html">2015-16</a></li>
-                        <li><a class="dropdown-item" href="/top10/{gender}-2014-15.html">2014-15</a></li>
-                        <li><a class="dropdown-item" href="/top10/{gender}-2013-14.html">2013-14</a></li>
-                        <li><a class="dropdown-item" href="/top10/{gender}-2012-13.html">2012-13</a></li>
-                        <li><a class="dropdown-item" href="/top10/{gender}-2011-12.html">2011-12</a></li>
-                        <li><a class="dropdown-item" href="/top10/{gender}-2010-11.html">2010-11</a></li>
-                        <li><a class="dropdown-item" href="/top10/{gender}-2009-10.html">2009-10</a></li>
-                        <li><a class="dropdown-item" href="/top10/{gender}-2008-09.html">2008-09</a></li>
-                        <li><a class="dropdown-item" href="/top10/{gender}-2007-08.html">2007-08</a></li>
+{top10_links}
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-summary" title="Season Summary">📈<span class="d-none d-md-inline ms-1">Summary by Year</span></a>
                     <ul class="dropdown-menu dropdown-menu-scroll dropdown-menu-end">
-                        <li><a class="dropdown-item" href="/annual/2025-26.html">2025-26</a></li>
-                        <li><a class="dropdown-item" href="/annual/2024-25.html">2024-25</a></li>
-                        <li><a class="dropdown-item" href="/annual/2023-24.html">2023-24</a></li>
-                        <li><a class="dropdown-item" href="/annual/2022-23.html">2022-23</a></li>
-                        <li><a class="dropdown-item" href="/annual/2021-22.html">2021-22</a></li>
-                        <li><a class="dropdown-item" href="/annual/2020-21.html">2020-21</a></li>
-                        <li><a class="dropdown-item" href="/annual/2019-20.html">2019-20</a></li>
-                        <li><a class="dropdown-item" href="/annual/2018-19.html">2018-19</a></li>
-                        <li><a class="dropdown-item" href="/annual/2017-18.html">2017-18</a></li>
-                        <li><a class="dropdown-item" href="/annual/2016-17.html">2016-17</a></li>
-                        <li><a class="dropdown-item" href="/annual/2015-16.html">2015-16</a></li>
-                        <li><a class="dropdown-item" href="/annual/2014-15.html">2014-15</a></li>
-                        <li><a class="dropdown-item" href="/annual/2013-14.html">2013-14</a></li>
-                        <li><a class="dropdown-item" href="/annual/2012-13.html">2012-13</a></li>
+{annual_links}
                     </ul>
                 </li>
             </ul>
