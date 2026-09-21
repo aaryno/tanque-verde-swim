@@ -20,7 +20,7 @@
 | Grade | Time | Athlete | Date | Meet |
 |-------|-----:|---------|------|------|
 | Freshman | 47.93 | Samuel Stott | Nov 07, 2019 | 2019 D-3 AIA State Championship |
-| Sophomore | 48.30 | Nicholas Cusson | Nov 05, 2021 | AIA  D-III Boys State |
+| Sophomore | 47.71 | Samuel Stott | Nov 05, 2020 | AIA D-3 State Championship |
 | Junior | 48.08 | Samuel Stott | Oct 23, 2021 | 2021 D-3 AIA State Championship |
 | Senior | 46.44 | Nicholas Cusson | Nov 04, 2023 | 2023 D-3 AIA State Championship |
 | **Open** | **46.44** | **Nicholas Cusson** | **Nov 04, 2023** | **2023 D-3 AIA State Championship** |

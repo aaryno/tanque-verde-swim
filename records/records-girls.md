@@ -9,10 +9,10 @@
 
 | Grade | Time | Athlete | Date | Meet |
 |-------|-----:|---------|------|------|
-| Freshman | 27.05 | Hazel Dasse | Oct 30, 2015 | Southern Arizona Regional Qualifier |
-| Sophomore | 25.95 | Grace Davis | Sep 28, 2024 | 21st Annual TYR HS Classic |
+| Freshman | 26.31 | Chloe Weatherwax | Oct 30, 2020 | SQ  @ CDO (Oro Valley, AZ) |
+| Sophomore | 25.58 | Carly Wilson | Nov 2009 | 2009 AIA State Championship |
 | Junior | 23.84 | Carly Wilson | Nov 06, 2010 | 2010 D-2 AIA State Championship |
-| Senior | 24.91 | Isabelle Sansom | Oct 05, 2019 | High School Classic |
+| Senior | 24.41 | Carly Wilson | Nov 2011 | 2011 D-2 AIA State Championship |
 | **Open** | **23.84** | **Carly Wilson** | **Nov 06, 2010** | **2010 D-2 AIA State Championship** |
 
 ### 100 Freestyle
@@ -22,7 +22,7 @@
 | Freshman | 58.02 | Isla Cerepak | Nov 08, 2025 | 2025 D-3 AIA State Championship |
 | Sophomore | 58.00 | Natalie Armstrong | Nov 06, 2021 | AIA  D-III Girls State |
 | Junior | 52.12 | Carly Wilson | Nov 06, 2010 | 2010 D-2 AIA State Championship |
-| Senior | 54.11 | Isabelle Sansom | Nov 07, 2019 | 2019 D-3 AIA State Championship |
+| Senior | 52.54 | Carly Wilson | Nov 2011 | 2011 D-2 AIA State Championship |
 | **Open** | **52.12** | **Carly Wilson** | **Nov 06, 2010** | **2010 D-2 AIA State Championship** |
 
 ### 200 Freestyle
@@ -42,7 +42,7 @@
 | Freshman | 5:35.08 | Anna Ellis | Nov 06, 2015 | 2015 D-2 AIA State Championship |
 | Sophomore | 5:32.67 | Anna Ellis | Nov 04, 2016 | 2016 D-3 AIA State Championship |
 | Junior | 5:27.18 | Carly Wilson | Oct 21, 2010 | Pecan Classic |
-| Senior | 6:13.72 | Sarynn Patterson | Oct 19, 2019 | Mike Ward Invitational |
+| Senior | 5:34.97 | Marisol Rivera | Nov 02, 2013 | 2013 AIA Division II State Championships |
 | **Open** | **5:27.18** | **Carly Wilson** | **Oct 21, 2010** | **Pecan Classic** |
 
 ### 100 Backstroke
@@ -61,7 +61,7 @@
 |-------|-----:|---------|------|------|
 | Freshman | 1:08.97 | Lindsey Schoel-Smith | Oct 24, 2015 | Small School Championships |
 | Sophomore | 1:07.01 | Lindsey Schoel-Smith | Nov 04, 2016 | 2016 D-3 AIA State Championship |
-| Junior | 1:16.16 | Adrianna Witte | Nov 09, 2024 | 2024 D-3 AIA State Championship |
+| Junior | 1:06.04 | Marisol Rivera | Nov 03, 2012 | 2012 AIA Division II State Championships |
 | Senior | 1:05.10 | Lindsey Schoel-Smith | Nov 02, 2018 | 2018 D-3 AIA State Championship |
 | **Open** | **1:05.10** | **Lindsey Schoel-Smith** | **Nov 02, 2018** | **2018 D-3 AIA State Championship** |
 
