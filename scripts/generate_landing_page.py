@@ -452,11 +452,11 @@ def build_page(project_root):
                             Jump To
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item jump-to-link" href="#kent">&#127942; School Records: the Olsson brothers</a></li>
+                            <li><a class="dropdown-item jump-to-link" href="#highlights">&#9889; {esc(res['latest_meet'])} highlights</a></li>
                             <li><a class="dropdown-item jump-to-link" href="#season">&#127946; The {SEASON} Season</a></li>
                             <li><a class="dropdown-item jump-to-link" href="#schedule">&#128197; Meet Schedule</a></li>
                             <li><a class="dropdown-item jump-to-link" href="#seniors">&#127891; Senior Class of 2027</a></li>
-                            <li><a class="dropdown-item jump-to-link" href="#kent">&#127942; School Records: the Olsson brothers</a></li>
-                            <li><a class="dropdown-item jump-to-link" href="#highlights">&#9889; {esc(res['latest_meet'])} highlights</a></li>
                         </ul>
                     </div>
                 </div>
@@ -464,7 +464,50 @@ def build_page(project_root):
         </div>
     </div>
 
-    <!-- 1. Season Introduction -->
+    <!-- 1. School records: the Olsson brothers -->
+    <div class="container my-5" id="kent">
+        <div class="section-header" data-section="kent">
+            <h2 class="mb-0">&#127942; School Records: the Olsson brothers</h2>
+            <button class="section-toggle" data-target="kent-content">
+                <span class="toggle-icon">&#9660;</span>
+            </button>
+        </div>
+        <div class="section-content" id="kent-content">
+            <div class="alert alert-success mt-3">
+                <h4 class="alert-heading mb-2">First Kent, then Wade</h4>
+                <p class="mb-2">At the {esc(ms['meet'])} on {esc(ms['date'])}, {esc(ms['grade']).lower()}
+                {esc(ms['swimmer'])} swam the {esc(ms['event'])} in
+                <span class="time"><strong>{esc(ms['time'])}</strong></span> and broke two Tanque Verde
+                records in the same swim.</p>
+                {oldest_line}
+{followup_lead}
+            </div>
+
+            <div class="row g-3">
+{record_cards}
+            </div>
+
+            <p class="mt-3 mb-0">{kent_line} See the
+            <a href="/records/overall.html">all-time records</a> and the
+            <a href="/records/boys-bygrade.html">boys records by grade</a>.</p>
+        </div>
+    </div>
+
+    <!-- 2. Latest meet highlights (derived from the meet file) -->
+    <div class="container my-5" id="highlights">
+        <div class="section-header" data-section="highlights">
+            <h2 class="mb-0">&#9889; {esc(res['latest_meet'])} highlights</h2>
+            <button class="section-toggle" data-target="highlights-content">
+                <span class="toggle-icon">&#9660;</span>
+            </button>
+        </div>
+        <div class="section-content" id="highlights-content">
+            <p class="lead mt-3 mb-2">More from {hl_when}.</p>
+{hl_html}
+        </div>
+    </div>
+
+    <!-- 3. Season Introduction -->
     <div class="container my-5" id="season">
         <div class="section-header" data-section="season">
             <h2 class="mb-0">&#127946; The {SEASON} Season</h2>
@@ -496,7 +539,7 @@ def build_page(project_root):
         </div>
     </div>
 
-    <!-- 2. Meet Schedule -->
+    <!-- 4. Meet Schedule -->
     <div class="container my-5" id="schedule">
         <div class="section-header" data-section="schedule">
             <h2 class="mb-0">&#128197; {SEASON} Meet Schedule</h2>
@@ -523,7 +566,7 @@ def build_page(project_root):
         </div>
     </div>
 
-    <!-- 3. Senior Class -->
+    <!-- 5. Senior Class -->
     <div class="container my-5" id="seniors">
         <div class="section-header" data-section="seniors">
             <h2 class="mb-0">&#127891; Senior Class of 2027</h2>
@@ -549,49 +592,6 @@ def build_page(project_root):
             {SEASON} roster, which states each swimmer's grade. Spelling follows the roster.
             A full senior recognition page will follow at the end of the season, as it did for the
             <a href="/seniors/class-of-2026.html">Class of 2026</a>.</small></p>
-        </div>
-    </div>
-
-    <!-- 4. School records: the Olsson brothers -->
-    <div class="container my-5" id="kent">
-        <div class="section-header" data-section="kent">
-            <h2 class="mb-0">&#127942; School Records: the Olsson brothers</h2>
-            <button class="section-toggle" data-target="kent-content">
-                <span class="toggle-icon">&#9660;</span>
-            </button>
-        </div>
-        <div class="section-content" id="kent-content">
-            <div class="alert alert-success mt-3">
-                <h4 class="alert-heading mb-2">First Kent, then Wade</h4>
-                <p class="mb-2">At the {esc(ms['meet'])} on {esc(ms['date'])}, {esc(ms['grade']).lower()}
-                {esc(ms['swimmer'])} swam the {esc(ms['event'])} in
-                <span class="time"><strong>{esc(ms['time'])}</strong></span> and broke two Tanque Verde
-                records in the same swim.</p>
-                {oldest_line}
-{followup_lead}
-            </div>
-
-            <div class="row g-3">
-{record_cards}
-            </div>
-
-            <p class="mt-3 mb-0">{kent_line} See the
-            <a href="/records/overall.html">all-time records</a> and the
-            <a href="/records/boys-bygrade.html">boys records by grade</a>.</p>
-        </div>
-    </div>
-
-    <!-- 5. Latest meet highlights (derived from the meet file) -->
-    <div class="container my-5" id="highlights">
-        <div class="section-header" data-section="highlights">
-            <h2 class="mb-0">&#9889; {esc(res['latest_meet'])} highlights</h2>
-            <button class="section-toggle" data-target="highlights-content">
-                <span class="toggle-icon">&#9660;</span>
-            </button>
-        </div>
-        <div class="section-content" id="highlights-content">
-            <p class="lead mt-3 mb-2">More from {hl_when}.</p>
-{hl_html}
         </div>
     </div>
 
