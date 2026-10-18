@@ -1,37 +1,37 @@
 # 2026-27 Season Summary
 ## Tanque Verde High School Swimming
 
-**Generated:** September 20, 2026
+**Generated:** October 18, 2026
 
 > ⚠️ **SEASON IN PROGRESS — NOT A FINAL SUMMARY.**
-> The 2026-27 season runs Aug 1, 2026 through Jul 31, 2027. As of Sep 20, 2026 the
-> team has swum **one** meet. Every number below is a running count and will change.
+> The 2026-27 season runs Aug 1, 2026 through Jul 31, 2027. As of Oct 18, 2026 this summary
+> covers **two** meets: the Canyon del Oro Classic (Sep 19) and the Arena High School Classic
+> (Oct 17). Dual-meet results are not included. Every number below is a running count.
 >
-> **Counting caveat for whoever updates this next.** The figures come from the MaxPreps
-> "Best Times by Event" tables, which hold one row per swimmer per event — their best.
-> With a single meet swum, best-per-event and swim-per-event are the same thing, so the
-> totals below are exact. **They stop being exact the moment a second meet is swum**,
-> because a swimmer's slower repeat of an event is not listed. Do not simply re-run and
-> trust these totals later in the season; the per-swim corpus (`data/raw/`) is what the
-> original counts were built from, and it is not present in this repo.
+> **How the counts are made.** Canyon del Oro swims come from the MaxPreps "Best Times by
+> Event" tables (one row per swimmer per event — exact for a single meet). Arena High School
+> Classic swims come from the meet's own Hy-Tek results file
+> (`data/meets/2026-10-17-arena-high-school-classic.json`), every finals swim, DQs and
+> no-swims excluded. If MaxPreps later posts a second meet, its best-per-event rows will hide
+> slower repeat swims and these totals stop being exact.
 
 ---
 
 ## Season Overview
 
-**Total Swims:** 41
-**Swimmers:** 24
-**Meets Attended:** 1
+**Total Swims:** 103
+**Swimmers:** 33
+**Meets Attended:** 2
 
 ### Participation by Gender
-- **Boys:** 17 swims
-- **Girls:** 24 swims
+- **Boys:** 39 swims
+- **Girls:** 64 swims
 
 ### Participation by Grade
-- **Freshman:** 9 swims
-- **Sophomore:** 16 swims
-- **Junior:** 6 swims
-- **Senior:** 10 swims
+- **Freshman:** 25 swims
+- **Sophomore:** 38 swims
+- **Junior:** 12 swims
+- **Senior:** 28 swims
 
 ---
 
@@ -40,6 +40,7 @@
 | Date | Meet |
 |------|------|
 | Sep 19, 2026 | Canyon del Oro Classic (Oro Valley, AZ) |
+| Oct 17, 2026 | Arena High School Classic (Tucson, AZ) |
 
 ---
 
@@ -50,6 +51,16 @@
 - *Previous:* 5:04.10 - Joseph Breinholt
 - *Date:* Sep 19, 2026 at Canyon del Oro Classic (Oro Valley, AZ)
 
+**Boys 500 FR SCY**
+- **NEW:** 4:53.96 - Wade Olsson (SR)
+- *Previous:* 5:03.13 - Kent Olsson
+- *Date:* Oct 17, 2026 at Arena High School Classic (Tucson, AZ)
+
+**Boys 200 IM SCY**
+- **NEW:** 1:55.22 - Wade Olsson (SR)
+- *Previous:* 1:57.78 - Wade Olsson
+- *Date:* Oct 17, 2026 at Arena High School Classic (Tucson, AZ)
+
 
 ---
 
@@ -58,13 +69,13 @@
 | Event | Boys Time | Boys Swimmer | Girls Time | Girls Swimmer |
 |-------|----------:|--------------|-----------:|---------------|
 | 50 Free | 22.53 | Jackson Eftekhar (SR) | 26.48 | Hadley Cusson (SR) |
-| 100 Free | 55.26 | Bennett Johnston (JR) | 58.81 | Hadley Cusson (SR) |
-| 200 Free | — | — | 2:08.90 | Rachel Anderson (SO) |
-| 500 Free | 5:03.13 | Kent Olsson (SO) | 5:43.91 | Rachel Anderson (SO) |
-| 100 Back | 57.57 | Kent Olsson (SO) | 1:09.56 | Amira Alitiem (SR) |
-| 100 Breast | 1:12.08 | Bennett Johnston (JR) | 1:26.68 | Penelope Dixon (FR) |
+| 100 Free | 53.52 | Jackson Machamer (SR) | 58.81 | Hadley Cusson (SR) |
+| 200 Free | 1:52.37 | Kent Olsson (SO) | 2:06.64 | Rachel Anderson (SO) |
+| 500 Free | 4:53.96 | Wade Olsson (SR) | 5:43.91 | Rachel Anderson (SO) |
+| 100 Back | 56.77 | Kent Olsson (SO) | 1:07.96 | Avery Fleming (FR) |
+| 100 Breast | 1:12.08 | Bennett Johnston (JR) | 1:15.26 | Rachel Anderson (SO) |
 | 100 Fly | 53.31 | Jackson Eftekhar (SR) | 1:07.68 | Avery Fleming (FR) |
-| 200 IM | 2:19.48 | Jackson Machamer (SR) | 2:34.34 | Avery Fleming (FR) |
+| 200 IM | 1:55.22 | Wade Olsson (SR) | 2:34.34 | Avery Fleming (FR) |
 
 ---
 
@@ -73,47 +84,56 @@
 ### Boys
 
 **FR:**
-- Brad Enderle (1 swims)
-- Gavin Contreras (2 swims)
-- Walker Tappan (2 swims)
+- Brad Enderle (3 swims)
+- Gavin Contreras (4 swims)
+- Grant Enderle (2 swims)
+- Walker Tappan (4 swims)
 
 **SO:**
-- Kent Olsson (2 swims)
-- Shane Gardner (2 swims)
+- Kent Olsson (4 swims)
+- Shane Gardner (4 swims)
 
 **JR:**
-- Bennett Johnston (2 swims)
-- Quinn Scott (2 swims)
+- Bennett Johnston (4 swims)
+- Quinn Scott (4 swims)
 
 **SR:**
-- Jackson Eftekhar (2 swims)
-- Jackson Machamer (2 swims)
+- Jackson Eftekhar (4 swims)
+- Jackson Machamer (4 swims)
+- Wade Olsson (2 swims)
 
 ### Girls
 
 **FR:**
-- Avery Fleming (2 swims)
-- Madelyn Pertile (1 swims)
-- Penelope Dixon (1 swims)
+- Avery Fleming (4 swims)
+- Kayley Barrett (1 swims)
+- Madelyn Pertile (3 swims)
+- Matilda Bridgett-Bowman (1 swims)
+- Penelope Dixon (3 swims)
 
 **SO:**
-- Isla Cerepak (1 swims)
-- Laila Alitiem (2 swims)
-- Laura Feldman (1 swims)
-- Lilly Bieberstein (1 swims)
-- Magdalena McGovern (1 swims)
-- Rachel Anderson (2 swims)
-- Stella Eftekhar (2 swims)
-- Talia Schwab (2 swims)
+- Isla Cerepak (3 swims)
+- Laila Alitiem (4 swims)
+- Laine Lightcap (2 swims)
+- Laura Feldman (3 swims)
+- Lilly Bieberstein (2 swims)
+- Magdalena McGovern (3 swims)
+- Rachel Anderson (4 swims)
+- Sarah Moritz (1 swims)
+- Stella Eftekhar (4 swims)
+- Talia Schwab (4 swims)
 
 **JR:**
-- Ella Bissmeyer (2 swims)
+- Ella Bissmeyer (4 swims)
 
 **SR:**
-- Amira Alitiem (2 swims)
-- Hadley Cusson (2 swims)
-- Kadynce Drummond (2 swims)
+- Amelia Kidd (2 swims)
+- Amira Alitiem (4 swims)
+- Hadley Cusson (4 swims)
+- Kadynce Drummond (4 swims)
+- Lily Niccum (2 swims)
+- Madeline VanDeMark (2 swims)
 
 ---
 
-*Generated: September 20, 2026 — season in progress, 1 of an unknown number of meets swum.*
+*Generated: October 18, 2026 — season in progress, 2 meets included (dual meets not included).*

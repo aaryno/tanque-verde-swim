@@ -292,6 +292,50 @@ def render_top10(rows, gender, season, in_progress_note):
     return "\n".join(out).rstrip() + "\n"
 
 
+def merge_meet_files(out, rosters, season, meets_dir=None):
+    """Add every committed data/meets/*.json swum inside this season.
+
+    Those files come from meet-results exports (import_hytek_cl2.py) and cover
+    meets MaxPreps has not posted. Merging them here, on every run, is what
+    keeps a re-run of this harvest from erasing them.
+
+    A swim MaxPreps already lists (same athlete, event, date and time) is not
+    added twice. The meet file's grade must agree with the MaxPreps roster:
+    a disagreement is a question about who the swimmer is, so it stops the run
+    instead of picking one.
+    """
+    from pathlib import Path
+    meets_dir = meets_dir or Path(__file__).resolve().parents[2] / 'data' / 'meets'
+    a, b = season.split('-')
+    start, end = datetime(2000 + int(a), 8, 1), datetime(2000 + int(b), 7, 31)
+    # Roster names go through the explicit alias table (never fuzzy matching),
+    # so a roster nickname -- "Maddi" for "Madeline" -- still finds its grade.
+    aliases = json.loads((meets_dir.parent / 'swimmer_aliases.json').read_text())
+    rosters = {g: {aliases.get(n, n): gr for n, gr in r.items()} for g, r in rosters.items()}
+    have = {(r['athlete'], r['event'], r['date'], r['time']) for r in out['individual']}
+    for path in sorted(meets_dir.glob('*.json')):
+        doc = json.loads(path.read_text())
+        if not start <= datetime.strptime(doc['date'], '%Y-%m-%d') <= end:
+            continue
+        added = 0
+        for r in doc['individual']:
+            roster_grade = rosters.get(r['gender'], {}).get(r['athlete'])
+            if roster_grade is None:
+                out['not_on_roster'].append(f"{r['gender']}/{r['athlete']}")
+            elif roster_grade != r['grade']:
+                sys.exit(f"{path.name}: {r['athlete']} is {r['grade']} in the meet file "
+                         f"but {roster_grade} on the roster -- resolve before merging")
+            key = (r['athlete'], r['event'], r['date'], r['time'])
+            if key in have:
+                continue
+            have.add(key)
+            out['individual'].append(dict({k: v for k, v in r.items() if k != 'seed'}, event_mapped=True, is_relay=False,
+                                          season=season, source=f"meet-file:{path.name}"))
+            added += 1
+        out['meet_files'].append(f"{path.name}: +{added} individual")
+    out['not_on_roster'] = sorted(set(out['not_on_roster']))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--season', required=True,
@@ -315,13 +359,17 @@ def main():
         'relay': [],
         'unmapped_events': [],
         'missing_grade': [],
+        'meet_files': [],
+        'not_on_roster': [],
     }
+    rosters = {}
 
     for gender in ('boys', 'girls'):
         stats = fetch(get_url(gender, args.season))
         if not stats:
             continue
         grades = parse_grades(fetch(roster_url(gender, args.season)) or '')
+        rosters[gender] = grades
         for row in parse_best_times(stats, gender, args.season, fetched_at):
             if row['is_relay']:
                 # No participant names on these rows -- the relay page names
@@ -337,6 +385,7 @@ def main():
             out['individual'].append(row)
         time.sleep(0.5)
 
+    merge_meet_files(out, rosters, args.season)
     out['unmapped_events'] = sorted(set(out['unmapped_events']))
     out['missing_grade'] = sorted(set(out['missing_grade']))
 

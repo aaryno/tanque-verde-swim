@@ -42,8 +42,8 @@
 | Freshman | 5:07.85 | Kent Olsson | Nov 08, 2025 | 2025 D-3 AIA State Championship |
 | Sophomore | 5:03.13 | Kent Olsson | Sep 19, 2026 | Canyon del Oro Classic |
 | Junior | 5:04.10 | Joseph Breinholt | Oct 24, 2015 | Small School Championships |
-| Senior | 5:19.99 | Austin Morris | Sep 10, 2015 | Desert Christian / Tanque Verde / Amphi (Tucson, AZ) |
-| **Open** | **5:03.13** | **Kent Olsson** | **Sep 19, 2026** | **Canyon del Oro Classic** |
+| Senior | 4:53.96 | Wade Olsson | Oct 17, 2026 | Arena High School Classic |
+| **Open** | **4:53.96** | **Wade Olsson** | **Oct 17, 2026** | **Arena High School Classic** |
 
 ### 100 Backstroke
 
@@ -82,8 +82,8 @@
 | Freshman | 2:07.98 | Samuel Stott | Nov 01, 2019 | Canyon Del Oro Invite |
 | Sophomore | 2:04.88 | Wade Olsson | Nov 09, 2024 | 2024 D-3 AIA State Championship |
 | Junior | 1:57.78 | Wade Olsson | Nov 08, 2025 | 2025 D-3 AIA State Championship |
-| Senior | 2:00.80 | Zachary Duerkop | Oct 18, 2025 | Pecan Classic |
-| **Open** | **1:57.78** | **Wade Olsson** | **Nov 08, 2025** | **2025 D-3 AIA State Championship** |
+| Senior | 1:55.22 | Wade Olsson | Oct 17, 2026 | Arena High School Classic |
+| **Open** | **1:55.22** | **Wade Olsson** | **Oct 17, 2026** | **Arena High School Classic** |
 
 ---
 

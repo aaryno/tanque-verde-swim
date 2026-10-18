@@ -2997,5 +2997,39 @@
       "season": "2023-24",
       "meet": "Southern Arizona Region Qualifier"
     }
+  },
+  {
+    "season": "2026-27",
+    "gender": "boys",
+    "event": "500 Freestyle",
+    "grade": "SR",
+    "time": "4:53.96",
+    "name": "Wade Olsson",
+    "date": "Oct 17, 2026",
+    "meet": "Arena High School Classic",
+    "previous": {
+      "time": "5:19.99",
+      "name": "Austin Morris",
+      "date": "Sep 10, 2015",
+      "season": "2015-16",
+      "meet": "Desert Christian / Tanque Verde / Amphi (Tucson, AZ)"
+    }
+  },
+  {
+    "season": "2026-27",
+    "gender": "boys",
+    "event": "200 Individual Medley",
+    "grade": "SR",
+    "time": "1:55.22",
+    "name": "Wade Olsson",
+    "date": "Oct 17, 2026",
+    "meet": "Arena High School Classic",
+    "previous": {
+      "time": "2:00.80",
+      "name": "Zachary Duerkop",
+      "date": "Oct 18, 2025",
+      "season": "2025-26",
+      "meet": "Pecan Classic"
+    }
   }
 ]
