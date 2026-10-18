@@ -27,6 +27,7 @@ SEASON = '2026-27'
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June',
           'July', 'August', 'September', 'October', 'November', 'December']
 MONTH_NUM = {m[:3]: i + 1 for i, m in enumerate(MONTHS)}
+GRADES = ['Freshman', 'Sophomore', 'Junior', 'Senior']
 
 
 def esc(s):
@@ -117,6 +118,142 @@ def verify_oldest_record(records_dir, milestone):
             runner_up)
 
 
+def to_secs(t):
+    """'4:53.96' / '00:56.77' / '56.77' -> seconds."""
+    parts = t.strip().replace('*', '').split(':')
+    return sum(float(x) * 60 ** i for i, x in enumerate(reversed(parts)))
+
+
+def show_time(t):
+    """'00:56.77' -> '56.77', '04:53.96' -> '4:53.96' (the records/*.md style)."""
+    m, _, sec = t.rpartition(':')
+    return sec if not m or int(m) == 0 else f'{int(m)}:{sec}'
+
+
+def margin(old, new):
+    return f'{to_secs(old) - to_secs(new):.2f}'
+
+
+def grade_tables(records_dir, gender):
+    """records-{gender}.md as {event: {grade: (time, who, date)}}."""
+    out, event = {}, None
+    for line in (records_dir / f'records-{gender}.md').read_text().splitlines():
+        h = re.match(r'^###\s+(.*)', line.strip())
+        if h:
+            event = h.group(1).strip()
+            continue
+        cells = [c.replace('*', '').strip() for c in line.strip().strip('|').split('|')]
+        if event and line.startswith('|') and len(cells) >= 5 and cells[0] in GRADES + ['Open']:
+            out.setdefault(event, {})[cells[0]] = (cells[1], cells[2], cells[3])
+    return out
+
+
+def check_followups(records_dir, followups):
+    """Refuse to build if a headline record is not the record the books show.
+
+    The headline is hand-entered in the season JSON; the records file is the
+    source of truth. If they disagree -- the record was broken again, or a
+    typo -- the page must not go out saying something the records page denies.
+    """
+    boys = grade_tables(records_dir, 'boys')
+    for f in followups:
+        t, who, _ = boys[f['event']]['Open']
+        if (t, who) != (f['time'], f['swimmer']):
+            sys.exit(f"season JSON headline says {f['swimmer']} {f['time']} holds the "
+                     f"{f['event']} record; records-boys.md says {who} {t}. Fix one of them.")
+
+
+def grades_held(records_dir, event, swimmer):
+    """Which grade records (and Open) a swimmer holds in one boys event, in order."""
+    row = grade_tables(records_dir, 'boys').get(event, {})
+    return [g for g in GRADES + ['Open'] if row.get(g, ('', ''))[1] == swimmer]
+
+
+def latest_meet_file(project_root, season_start, season_end):
+    files = []
+    for path in sorted((project_root / 'data' / 'meets').glob('*.json')):
+        doc = json.loads(path.read_text())
+        if season_start <= doc['date'] <= season_end:
+            files.append(doc)
+    return files[-1] if files else None
+
+
+def meet_highlights(project_root, meet, near_pct=2.5, drop_pct=4.0):
+    """Derive one meet's talking points from the meet file and the records.
+
+    Nothing here is typed in. near: a swim within near_pct of the grade or
+    Open record that did not break it. alltime: the meet's swims that sit in
+    an all-time Top 10 now. drops: biggest falls from ENTRY time, which is the
+    coach's seed -- often a season best, not a verified personal best.
+    """
+    records_dir = project_root / 'records'
+    grade_of = {'Fr.': 'Freshman', 'So.': 'Sophomore', 'Jr.': 'Junior', 'Sr.': 'Senior'}
+    tables = {g: grade_tables(records_dir, g) for g in ('boys', 'girls')}
+    near, drops = [], []
+    for r in meet['individual']:
+        rec = tables[r['gender']].get(r['event'], {})
+        t = to_secs(r['time'])
+        for label in (grade_of[r['grade']], 'Open'):
+            if label not in rec:
+                continue
+            rt, who, when = rec[label]
+            gap = t - to_secs(rt)
+            if 0 < gap <= to_secs(rt) * near_pct / 100:
+                near.append(dict(r, label=label, rec_time=rt, rec_who=who, rec_date=when, gap=gap))
+                break
+        if r.get('seed'):
+            drop = to_secs(r['seed']) - t
+            if drop > 0 and 100 * drop / to_secs(r['seed']) >= drop_pct:
+                drops.append(dict(r, drop=drop, pct=100 * drop / to_secs(r['seed'])))
+    near.sort(key=lambda x: x['gap'] / to_secs(x['rec_time']))
+    drops.sort(key=lambda x: -x['pct'])
+
+    day = datetime.strptime(meet['date'], '%Y-%m-%d').strftime('%b %d, %Y')
+    alltime = []
+    for g in ('boys', 'girls'):
+        event = None
+        for line in (records_dir / f'top10-{g}-alltime.md').read_text().splitlines():
+            h = re.match(r'^###\s+(.*)', line.strip())
+            if h:
+                event = h.group(1).strip()
+                continue
+            cells = [c.strip() for c in line.strip().strip('|').split('|')]
+            if line.startswith('|') and len(cells) >= 6 and cells[4] == day and cells[5] == meet['meet']:
+                alltime.append(dict(gender=g, event=event, rank=int(cells[0]), time=cells[1], athlete=cells[2]))
+    alltime.sort(key=lambda x: (x['rank'], x['gender']))
+    return near, alltime, drops[:8]
+
+
+def highlights_html(meet, near, alltime, drops):
+    day = datetime.strptime(meet['date'], '%Y-%m-%d')
+    when = f"{MONTHS[day.month - 1][:3]} {day.day}"
+    def li(text):
+        return f'                <li>{text}</li>'
+    near_li = [li(f"<strong>{esc(n['athlete'])}</strong> &mdash; {esc(n['event'])} "
+                  f"<span class=\"time\">{esc(show_time(n['time']))}</span>, just "
+                  f"<strong>{n['gap']:.2f}s</strong> off the {esc(n['label'])} record "
+                  f"({esc(n['rec_time'])}, {esc(n['rec_who'])}, {esc(n['rec_date'][-4:])})") for n in near]
+    top_li = [li(f"#{a['rank']} all-time &mdash; <strong>{esc(a['athlete'])}</strong>, "
+                 f"{a['gender'].title()} {esc(a['event'])} <span class=\"time\">{esc(a['time'])}</span>")
+              for a in alltime if a['rank'] > 1]
+    drop_li = [li(f"<strong>{esc(d['athlete'])}</strong> &mdash; {esc(d['event'])} "
+                  f"{esc(show_time(d['seed']))} &rarr; <span class=\"time\">{esc(show_time(d['time']))}</span> "
+                  f"<span class=\"badge badge-pb pb-black\">&minus;{d['drop']:.2f}s</span>") for d in drops]
+    blocks = []
+    if near_li:
+        blocks.append('            <h5 class="mt-3">&#128064; Knocking on the door</h5>\n'
+                      '            <p class="mb-1">Within a couple of percent of a Tanque Verde record:</p>\n'
+                      '            <ul>\n' + '\n'.join(near_li) + '\n            </ul>')
+    if top_li:
+        blocks.append('            <h5 class="mt-3">&#128200; New on the all-time Top 10</h5>\n'
+                      '            <ul>\n' + '\n'.join(top_li) + '\n            </ul>')
+    if drop_li:
+        blocks.append('            <h5 class="mt-3">&#9889; Big drops</h5>\n'
+                      '            <p class="mb-1">Measured from each swimmer\'s entry time for the meet.</p>\n'
+                      '            <ul>\n' + '\n'.join(drop_li) + '\n            </ul>')
+    return when, '\n'.join(blocks)
+
+
 def describe_record(rec):
     """A record row as '<event> &mdash; <time>, <swimmer>, <date>'.
 
@@ -201,6 +338,74 @@ def build_page(project_root):
     else:
         oldest_line = f'<p class="mb-0">{broken_desc} had stood for more than a decade.</p>'
 
+    followups = data.get('milestone_followups', [])
+    check_followups(records_dir, followups)
+    kent_holds = grades_held(records_dir, ms['event'], ms['swimmer'])
+    meet = latest_meet_file(project_root, data['season_start'], data['season_end'])
+    hl_when, hl_html = highlights_html(meet, *meet_highlights(project_root, meet)) if meet else ('', '')
+    n_meets = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'][res['meets_with_results']]
+
+    def card(title, time, prev_time, prev_name, prev_date, prev_meet):
+        return f'''                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{title}</h5>
+                            <p class="mb-1"><span class="time"><strong>{esc(time)}</strong></span>
+                                &nbsp;<span class="badge badge-pb pb-black">&minus;{margin(prev_time, time)}s</span></p>
+                            <hr class="my-2">
+                            <small class="text-muted">
+                                <strong>Previous:</strong> {esc(prev_time)} &mdash; {esc(prev_name)}<br>
+                                <span style="font-size: 0.85em;">{esc(prev_date)} at {esc(prev_meet)}</span>
+                            </small>
+                        </div>
+                    </div>
+                </div>'''
+
+    cards = [card(f"&#127942; {esc(ms['swimmer'])} &middot; {esc(ms['event'])} &middot; school record",
+                  ms['time'], ms['broke_open']['time'], ms['broke_open']['name'],
+                  ms['broke_open']['date'], ms['broke_open']['meet']),
+             card(f"&#129352; {esc(ms['swimmer'])} &middot; {esc(ms['broke_class']['grade'])} record",
+                  ms['time'], ms['broke_class']['time'], ms['broke_class']['name'],
+                  ms['broke_class']['date'], ms['broke_class']['meet'])]
+    for f in followups:
+        cards.append(card(f"&#127942; {esc(f['swimmer'])} &middot; {esc(f['event'])} &middot; school record",
+                          f['time'], f['broke_open']['time'], f['broke_open']['name'],
+                          f['broke_open']['date'], f['broke_open']['meet']))
+        cards.append(card(f"&#129352; {esc(f['swimmer'])} &middot; {esc(f['broke_class']['grade'])} {esc(f['event'])} record",
+                          f['time'], f['broke_class']['time'], f['broke_class']['name'],
+                          f['broke_class']['date'], f['broke_class']['meet']))
+    record_cards = '\n'.join(cards)
+
+    same = [f for f in followups if f['event'] == ms['event']]
+    others = [f for f in followups if f['event'] != ms['event']]
+    followup_lead = ''
+    if same:
+        f = same[0]
+        also = ''.join(f" He also lowered the {esc(o['event'])} record to "
+                       f"<span class=\"time\"><strong>{esc(o['time'])}</strong></span>"
+                       + (f" &mdash; beating his own record from the {esc(o['broke_open']['meet'])} by "
+                          f"{margin(o['broke_open']['time'], o['time'])}s." if o['broke_open']['name'] == o['swimmer']
+                          else f", previously {esc(o['broke_open']['time'])} by {esc(o['broke_open']['name'])}.")
+                       for o in others)
+        days = (datetime(*parse_record_date(f['date'])) - datetime(*parse_record_date(ms['date']))).days
+        gap_words = (f"{['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six'][days // 7]} week{'s' if days > 7 else ''}"
+                     if days % 7 == 0 and 0 < days <= 42 else f"{days} days")
+        followup_lead = (
+            f'''                <p class="mb-0 mt-2">{gap_words} later, at the {esc(f['meet'])} on
+                {esc(f['date'])}, his {esc(f['relation'])} {esc(f['swimmer'])}, a {esc(f['grade']).lower()},
+                swam <span class="time"><strong>{esc(f['time'])}</strong></span> &mdash;
+                {margin(f['broke_open']['time'], f['time'])} seconds under Kent's mark.{also}</p>''')
+
+    held = [g for g in kent_holds if g != 'Open']
+    if held:
+        named = ' and '.join(held) if len(held) <= 2 else ', '.join(held[:-1]) + ' and ' + held[-1]
+        kent_line = (f"{esc(ms['swimmer'])} still holds the {named} {esc(ms['event'])} "
+                     f"record{'s' if len(held) > 1 else ''}"
+                     + (" and the Open record." if 'Open' in kent_holds else
+                        f", and as a {esc(ms['grade']).lower()} has two more seasons to chase his brother's time."))
+    else:
+        kent_line = ''
+
     nav_html = create_nav_html()
 
     return f'''<!DOCTYPE html>
@@ -250,7 +455,8 @@ def build_page(project_root):
                             <li><a class="dropdown-item jump-to-link" href="#season">&#127946; The {SEASON} Season</a></li>
                             <li><a class="dropdown-item jump-to-link" href="#schedule">&#128197; Meet Schedule</a></li>
                             <li><a class="dropdown-item jump-to-link" href="#seniors">&#127891; Senior Class of 2027</a></li>
-                            <li><a class="dropdown-item jump-to-link" href="#kent">&#127942; School Record: {esc(ms['swimmer'])}</a></li>
+                            <li><a class="dropdown-item jump-to-link" href="#kent">&#127942; School Records: the Olsson brothers</a></li>
+                            <li><a class="dropdown-item jump-to-link" href="#highlights">&#9889; {esc(res['latest_meet'])} highlights</a></li>
                         </ul>
                     </div>
                 </div>
@@ -273,10 +479,10 @@ def build_page(project_root):
 
             <div class="alert alert-warning">
                 <strong>This season is just getting started.</strong>
-                Results have been published from <strong>one meet</strong> so far &mdash; the
+                Results are in from <strong>{n_meets} meets</strong> so far &mdash; most recently the
                 {esc(res['latest_meet'])} on {fmt_meet_date(res['latest_meet_date'], res['latest_meet_date'])}.
-                Every {SEASON} page on this site reflects that single meet, not a finished season,
-                and will fill in as more results are posted.
+                Dual-meet results are not included yet. Every {SEASON} page on this site is a running
+                count, not a finished season, and will fill in as more results are posted.
             </div>
 
             <p class="mb-2">A few places to look while the season builds:</p>
@@ -346,61 +552,46 @@ def build_page(project_root):
         </div>
     </div>
 
-    <!-- 4. Kent Olsson school record -->
+    <!-- 4. School records: the Olsson brothers -->
     <div class="container my-5" id="kent">
         <div class="section-header" data-section="kent">
-            <h2 class="mb-0">&#127942; School Record: {esc(ms['swimmer'])}, {esc(ms['event'])}</h2>
+            <h2 class="mb-0">&#127942; School Records: the Olsson brothers</h2>
             <button class="section-toggle" data-target="kent-content">
                 <span class="toggle-icon">&#9660;</span>
             </button>
         </div>
         <div class="section-content" id="kent-content">
             <div class="alert alert-success mt-3">
-                <h4 class="alert-heading mb-2">Congratulations, {esc(ms['swimmer'])}!</h4>
-                <p class="mb-2">At the {esc(ms['meet'])} on {esc(ms['date'])}, {esc(ms['swimmer'])} swam the
-                {esc(ms['event'])} in <span class="time"><strong>{esc(ms['time'])}</strong></span> &mdash;
-                and broke <strong>two</strong> Tanque Verde records in the same swim.</p>
+                <h4 class="alert-heading mb-2">First Kent, then Wade</h4>
+                <p class="mb-2">At the {esc(ms['meet'])} on {esc(ms['date'])}, {esc(ms['grade']).lower()}
+                {esc(ms['swimmer'])} swam the {esc(ms['event'])} in
+                <span class="time"><strong>{esc(ms['time'])}</strong></span> and broke two Tanque Verde
+                records in the same swim.</p>
                 {oldest_line}
+{followup_lead}
             </div>
 
             <div class="row g-3">
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">&#127942; Open school record</h5>
-                            <p class="mb-1"><span class="time"><strong>{esc(ms['time'])}</strong></span>
-                                &nbsp;<span class="badge badge-pb pb-black">&minus;{esc(ms['broke_open']['margin'])}s</span></p>
-                            <hr class="my-2">
-                            <small class="text-muted">
-                                <strong>Previous:</strong> {esc(ms['broke_open']['time'])} &mdash; {esc(ms['broke_open']['name'])}<br>
-                                <span style="font-size: 0.85em;">{esc(ms['broke_open']['date'])} at {esc(ms['broke_open']['meet'])}</span>
-                            </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">&#129352; {esc(ms['broke_class']['grade'])} class record</h5>
-                            <p class="mb-1"><span class="time"><strong>{esc(ms['time'])}</strong></span>
-                                &nbsp;<span class="badge badge-pb pb-black">&minus;{esc(ms['broke_class']['margin'])}s</span></p>
-                            <hr class="my-2">
-                            <small class="text-muted">
-                                <strong>Previous:</strong> {esc(ms['broke_class']['time'])} &mdash; {esc(ms['broke_class']['name'])}<br>
-                                <span style="font-size: 0.85em;">{esc(ms['broke_class']['date'])} at {esc(ms['broke_class']['meet'])}</span>
-                            </small>
-                        </div>
-                    </div>
-                </div>
+{record_cards}
             </div>
 
-            <p class="mt-3 mb-0">He already owned the {esc(ms['already_held']['grade'])}
-            {esc(ms['event'])} record &mdash; {esc(ms['already_held']['time'])}, set at the
-            {esc(ms['already_held']['meet'])} on {esc(ms['already_held']['date'])}. As a
-            {esc(ms['grade']).lower()}, he now holds the Freshman record, the Sophomore record and the
-            Open record in the same event. See the
+            <p class="mt-3 mb-0">{kent_line} See the
             <a href="/records/overall.html">all-time records</a> and the
             <a href="/records/boys-bygrade.html">boys records by grade</a>.</p>
+        </div>
+    </div>
+
+    <!-- 5. Latest meet highlights (derived from the meet file) -->
+    <div class="container my-5" id="highlights">
+        <div class="section-header" data-section="highlights">
+            <h2 class="mb-0">&#9889; {esc(res['latest_meet'])} highlights</h2>
+            <button class="section-toggle" data-target="highlights-content">
+                <span class="toggle-icon">&#9660;</span>
+            </button>
+        </div>
+        <div class="section-content" id="highlights-content">
+            <p class="lead mt-3 mb-2">More from {hl_when}.</p>
+{hl_html}
         </div>
     </div>
 

@@ -114,10 +114,10 @@
     }
   },
   "results_so_far": {
-    "_note": "MaxPreps has posted results from one meet only. Do not imply a complete season.",
-    "meets_with_results": 1,
-    "latest_meet": "Canyon del Oro Classic",
-    "latest_meet_date": "2026-09-19"
+    "_note": "Two meets are included: Canyon del Oro Classic (MaxPreps /stats/) and Arena High School Classic (Hy-Tek results file, data/meets/). Dual meets are not included. Do not imply a complete season.",
+    "meets_with_results": 2,
+    "latest_meet": "Arena High School Classic",
+    "latest_meet_date": "2026-10-17"
   },
   "milestone": {
     "_source": "Established in PR #2 (branch worker/tv-swim-2026-27-prepare-2026-09-20) from MaxPreps /stats/ and corroborated by the azpreps365 Division III leaderboard. Round=Final.",
@@ -149,5 +149,53 @@
       "date": "Nov 08, 2025",
       "meet": "2025 D-3 AIA State Championship"
     }
-  }
+  },
+  "milestone_followups": [
+    {
+      "_source": "data/meets/2026-10-17-arena-high-school-classic.json (Hy-Tek .cl2, finals). generate_landing_page.py refuses to build unless this is the current Open record in records/records-boys.md.",
+      "swimmer": "Wade Olsson",
+      "relation": "older brother",
+      "grade": "Senior",
+      "event": "500 Freestyle",
+      "time": "4:53.96",
+      "meet": "Arena High School Classic",
+      "date": "Oct 17, 2026",
+      "broke_open": {
+        "time": "5:03.13",
+        "name": "Kent Olsson",
+        "date": "Sep 19, 2026",
+        "meet": "Canyon del Oro Classic"
+      },
+      "broke_class": {
+        "grade": "Senior",
+        "time": "5:19.99",
+        "name": "Austin Morris",
+        "date": "Sep 10, 2015",
+        "meet": "Desert Christian / Tanque Verde / Amphi (Tucson, AZ)"
+      }
+    },
+    {
+      "_source": "data/meets/2026-10-17-arena-high-school-classic.json (Hy-Tek .cl2, finals). Same build-time check.",
+      "swimmer": "Wade Olsson",
+      "relation": "older brother",
+      "grade": "Senior",
+      "event": "200 Individual Medley",
+      "time": "1:55.22",
+      "meet": "Arena High School Classic",
+      "date": "Oct 17, 2026",
+      "broke_open": {
+        "time": "1:57.78",
+        "name": "Wade Olsson",
+        "date": "Nov 08, 2025",
+        "meet": "2025 D-3 AIA State Championship"
+      },
+      "broke_class": {
+        "grade": "Senior",
+        "time": "2:00.80",
+        "name": "Zachary Duerkop",
+        "date": "Oct 18, 2025",
+        "meet": "Pecan Classic"
+      }
+    }
+  ]
 }

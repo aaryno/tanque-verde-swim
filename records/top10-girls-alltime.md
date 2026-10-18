@@ -1,7 +1,7 @@
 # All-Time Top 10 - Girls
 ## Tanque Verde High School Swimming
 
-**Generated:** September 20, 2026 at 09:32 PM
+**Generated:** October 18, 2026 at 06:05 AM
 
 ---
 
@@ -43,9 +43,9 @@
 | 2 | 2:03.27 | Marisol Rivera | SR | Nov 02, 2013 | 2013 AIA Division II State Championships |
 | 3 | 2:04.70 | Isabelle Sansom | SR | Nov 01, 2019 | Canyon Del Oro Invite |
 | 4 | 2:05.30 | Hazel Dasse | SR | Nov 01, 2018 | AIA D-3 Girls State Championship |
-| 5 | 2:07.61 | Natalie Armstrong | SO | Oct 23, 2021 | 2021 D-3 AIA State Championship |
-| 6 | 2:07.85 | Maggie Colombo | SR | Oct 22, 2022 | Pecan Classic |
-| 7 | 2:08.90 | Rachel Anderson | SO | Sep 19, 2026 | Canyon del Oro Classic |
+| 5 | 2:06.64 | Rachel Anderson | SO | Oct 17, 2026 | Arena High School Classic |
+| 6 | 2:07.61 | Natalie Armstrong | SO | Oct 23, 2021 | 2021 D-3 AIA State Championship |
+| 7 | 2:07.85 | Maggie Colombo | SR | Oct 22, 2022 | Pecan Classic |
 | 8 | 2:09.78 | Grace Davis | FR | Sep 23, 2023 | TYR High School Classic |
 | 9 | 2:10.40 | Brianne Foley | JR | Oct 25, 2023 | Southern Arizona Region Qualifier |
 | 10 | 2:11.68 | Bridget Spooner | SO | Nov 08, 2014 | 2014 AIA Division II State Championships |
@@ -77,8 +77,8 @@
 | 6 | 1:05.85 | Hazel Dasse | SO | Nov 04, 2016 | 2016 D-3 AIA State Championship |
 | 7 | 1:06.23 | Brianne Foley | SR | Oct 25, 2024 | Southern Arizona Qualifier |
 | 8 | 1:07.64 | Shaye Sulger | SR | Sep 25, 2021 | TYR HS Classic |
-| 9 | 1:08.24 | Summer Cugini | SR | Nov 09, 2024 | 2024 D-3 AIA State Championship |
-| 10 | 1:09.56 | Amira Alitiem | SR | Sep 19, 2026 | Canyon del Oro Classic |
+| 9 | 1:07.96 | Avery Fleming | FR | Oct 17, 2026 | Arena High School Classic |
+| 10 | 1:08.24 | Summer Cugini | SR | Nov 09, 2024 | 2024 D-3 AIA State Championship |
 
 ### 100 Breaststroke
 
@@ -87,13 +87,13 @@
 | 1 | 1:05.10 | Lindsey Schoel-Smith | SR | Nov 01, 2018 | AIA D-3 Girls State Championship |
 | 2 | 1:06.04 | Marisol Rivera | JR | Nov 03, 2012 | 2012 AIA Division II State Championships |
 | 3 | 1:13.71 | Adrianna Witte | SR | Sep 20, 2025 | Canyon del Oro Classic |
-| 4 | 1:15.32 | Madeline Barnard | SR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
-| 5 | 1:16.11 | Madisyn Clausen | SR | Oct 31, 2014 | Southern Arizona Region Qualifier |
-| 6 | 1:16.95 | Sage Weatherwax | JR | Oct 30, 2020 | SQ  @ CDO (Oro Valley, AZ) |
-| 7 | 1:17.02 | Sarynn Patterson | SR | Oct 19, 2019 | Mike Ward Invitational |
-| 8 | 1:17.49 | Isabelle Sansom | SR | Oct 19, 2019 | Mike Ward Invitational |
-| 9 | 1:18.30 | Alexa Barrera | SR | Oct 25, 2023 | Southern Arizona Region Qualifier |
-| 10 | 1:20.06 | Janessa Grabe | SR | Nov 2007 | 2007 AIA State Championship |
+| 4 | 1:15.26 | Rachel Anderson | SO | Oct 17, 2026 | Arena High School Classic |
+| 5 | 1:15.32 | Madeline Barnard | SR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
+| 6 | 1:16.11 | Madisyn Clausen | SR | Oct 31, 2014 | Southern Arizona Region Qualifier |
+| 7 | 1:16.95 | Sage Weatherwax | JR | Oct 30, 2020 | SQ  @ CDO (Oro Valley, AZ) |
+| 8 | 1:17.02 | Sarynn Patterson | SR | Oct 19, 2019 | Mike Ward Invitational |
+| 9 | 1:17.49 | Isabelle Sansom | SR | Oct 19, 2019 | Mike Ward Invitational |
+| 10 | 1:18.30 | Alexa Barrera | SR | Oct 25, 2023 | Southern Arizona Region Qualifier |
 
 ### 100 Butterfly
 

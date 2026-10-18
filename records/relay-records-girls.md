@@ -19,6 +19,7 @@
 | 10 | 01:58.24 | Emma Morris, Ellie Radomsky, Madison Winkle, Anna Ellis | Sep 17, 2016 | Canyon Del Oro Classic |
 | 11 | 01:58.70 | Amira Alitiem, Lily Niccum, Madeline Barnard, Summer Cugini | Oct 21, 2023 | Pecan Classic |
 | 12 | 01:58.80 | Sarynn Patterson, Isabelle Sansom, Paisley White, Maggie Colombo | Nov 07, 2019 | 2019 D-3 AIA State Championship |
+| 13 | 02:16.97 | Kadynce Drummond, Lily Niccum, Isla Cerepak, Amelia Kidd | Oct 17, 2026 | Arena High School Classic |
 
 ---
 

@@ -15,13 +15,14 @@
 | 6 | 01:45.73 | Wade Olsson, Zachary Duerkop, Jackson Eftekhar, Jackson Machamer | Oct 25, 2024 | Southern Arizona Qualifier |
 | 7 | 01:46.38 | Kent Olsson, Wade Olsson, Zachary Duerkop, Jackson Machamer | Sep 20, 2025 | Canyon del Oro Classic |
 | 8 | 01:46.69 | Stephen Moreland, Nicholas Spilotro, Alejandro Alvarez, Nolan Radomsky | Oct 23, 2021 | Pecan Classic |
-| 9 | 01:47.12 | Nicholas Spilotro, Titan Flint, John Denninghoff, Eli Stott | Sep 22, 2018 | Red Wolf Relays |
-| 10 | 01:47.46 | Julian Pacheco, Joseph Jacobs, Nate Grimshaw, Eli Stott | Oct 05, 2019 | High School Classic |
-| 11 | 01:47.54 | Nicholas Cusson, Wade Olsson, Nolan Radomsky, Zachary Duerkop | Sep 23, 2023 | TYR High School Classic |
-| 12 | 01:47.66 | Nicholas Spilotro, Oren Zadorozny, Samuel Stott, Nicholas Cusson | Oct 23, 2021 | Pecan Classic |
-| 13 | 01:47.87 | Eli Stott, Julian Pacheco, Joseph Jacobs, Trevor Clausen | Sep 27, 2019 | Red Wolf Qualifier |
-| 14 | 01:48.53 | Wade Olsson, Lucas Soeder, Jackson Eftekhar, Jackson Machamer | Nov 09, 2024 | 2024 D-3 AIA State Championship |
-| 15 | 01:48.69 | Julian Pacheco, Dominic Colombo, Nicholas Spilotro, Joseph Jacobs | Oct 20, 2018 | Mike Ward Invitational |
+| 9 | 01:46.78 | Jackson Machamer, Wade Olsson, Jackson Eftekhar, Bennett Johnston | Oct 17, 2026 | Arena High School Classic |
+| 10 | 01:47.12 | Nicholas Spilotro, Titan Flint, John Denninghoff, Eli Stott | Sep 22, 2018 | Red Wolf Relays |
+| 11 | 01:47.46 | Julian Pacheco, Joseph Jacobs, Nate Grimshaw, Eli Stott | Oct 05, 2019 | High School Classic |
+| 12 | 01:47.54 | Nicholas Cusson, Wade Olsson, Nolan Radomsky, Zachary Duerkop | Sep 23, 2023 | TYR High School Classic |
+| 13 | 01:47.66 | Nicholas Spilotro, Oren Zadorozny, Samuel Stott, Nicholas Cusson | Oct 23, 2021 | Pecan Classic |
+| 14 | 01:47.87 | Eli Stott, Julian Pacheco, Joseph Jacobs, Trevor Clausen | Sep 27, 2019 | Red Wolf Qualifier |
+| 15 | 01:48.53 | Wade Olsson, Lucas Soeder, Jackson Eftekhar, Jackson Machamer | Nov 09, 2024 | 2024 D-3 AIA State Championship |
+| 16 | 01:48.69 | Julian Pacheco, Dominic Colombo, Nicholas Spilotro, Joseph Jacobs | Oct 20, 2018 | Mike Ward Invitational |
 
 ---
 
