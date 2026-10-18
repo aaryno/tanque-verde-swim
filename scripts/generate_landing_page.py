@@ -276,6 +276,44 @@ def fmt_meet_date(start, end):
     return f'{mon} {sd} &ndash; {MONTHS[em - 1][:3]} {ed}'
 
 
+def season_phase(meets, today):
+    """Opening line and status heading for the season intro, from the schedule.
+
+    Derived from the build date so the page never says 'just getting started'
+    in October. The last meet on the schedule is the state championship."""
+    words = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
+    state = meets[-1]
+    swum = [m for m in meets if m['date_end'] < today]
+    left = [m for m in meets[:-1] if m['date_end'] >= today]
+    state_when = fmt_meet_date(state['date_start'], state['date_end'])
+    days_to_state = (datetime.strptime(state['date_start'], '%Y-%m-%d')
+                     - datetime.strptime(today, '%Y-%m-%d')).days
+    if state['date_end'] < today:
+        return (f'The season is over. The Hawks swam {words[len(swum)]} meets, ending at the '
+                f'{esc(state["name"])} on {state_when}.', 'Season complete.')
+    if state['date_start'] <= today:
+        return (f'State is here: the {esc(state["name"])} is {state_when}.', 'State week.')
+    if not swum:
+        return (f'The season opens on {fmt_meet_date(meets[0]["date_start"], meets[0]["date_end"])} '
+                f'and runs through the {esc(state["name"])} on {state_when}.', 'The season is about to start.')
+    weeks = round(days_to_state / 7)
+    if days_to_state <= 35:
+        def called(m):
+            n = m['name']
+            if n.startswith(('vs ', 'at ')):
+                return f'a dual meet {esc(n)}'
+            return f'the {esc(n)}'
+        items = [f'{called(m)} ({fmt_meet_date(m["date_start"], m["date_end"])})' for m in left]
+        before = ''.join(items) if len(items) <= 1 else ', '.join(items[:-1]) + ' and ' + items[-1]
+        tail = f' Still to come before State: {before}.' if items else ' Every meet before State is done.'
+        return (f'The Hawks are in the home stretch. {len(swum)} of {len(meets)} meets '
+                f'are done, and the {esc(state["name"])} is {state_when}, about '
+                f'{words[weeks] if weeks < len(words) else weeks} week{"s" if weeks != 1 else ""} away.{tail}',
+                'Wrapping up the season.')
+    return (f'The season is under way: {len(swum)} of {len(meets)} meets are done, building '
+            f'toward the {esc(state["name"])} on {state_when}.', 'Season in progress.')
+
+
 def schedule_rows(data, today):
     rows = []
     for m in data['schedule']['meets']:
@@ -343,6 +381,7 @@ def build_page(project_root):
     kent_holds = grades_held(records_dir, ms['event'], ms['swimmer'])
     meet = latest_meet_file(project_root, data['season_start'], data['season_end'])
     hl_when, hl_html = highlights_html(meet, *meet_highlights(project_root, meet)) if meet else ('', '')
+    phase_lead, phase_head = season_phase(sched['meets'], today)
     n_meets = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'][res['meets_with_results']]
 
     def card(title, time, prev_time, prev_name, prev_date, prev_meet):
@@ -516,19 +555,17 @@ def build_page(project_root):
             </button>
         </div>
         <div class="section-content" id="season-content">
-            <p class="lead mb-3 mt-3">The Hawks are back in the water. The {SEASON} season opened on
-            {fmt_meet_date(sched['meets'][0]['date_start'], sched['meets'][0]['date_end'])} and runs through
-            the AIA Division III State Championship in November.</p>
+            <p class="lead mb-3 mt-3">{phase_lead}</p>
 
             <div class="alert alert-warning">
-                <strong>This season is just getting started.</strong>
+                <strong>{phase_head}</strong>
                 Results are in from <strong>{n_meets} meets</strong> so far &mdash; most recently the
                 {esc(res['latest_meet'])} on {fmt_meet_date(res['latest_meet_date'], res['latest_meet_date'])}.
                 Dual-meet results are not included yet. Every {SEASON} page on this site is a running
-                count, not a finished season, and will fill in as more results are posted.
+                count until the season ends.
             </div>
 
-            <p class="mb-2">A few places to look while the season builds:</p>
+            <p class="mb-2">Where to look:</p>
             <ul class="mb-0">
                 <li><a href="/top10/boys-{SEASON}.html">Boys {SEASON} Top 10</a> &middot;
                     <a href="/top10/girls-{SEASON}.html">Girls {SEASON} Top 10</a> &mdash; the fastest times swum so far this year</li>
