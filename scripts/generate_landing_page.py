@@ -211,34 +211,6 @@ def meet_highlights(project_root, meet, near_pct=2.5, drop_pct=4.0):
     return near, alltime, drops[:8]
 
 
-def highlights_html(meet, near, alltime, drops):
-    day = datetime.strptime(meet['date'], '%Y-%m-%d')
-    when = f"{MONTHS[day.month - 1][:3]} {day.day}"
-    def li(text):
-        return f'                <li>{text}</li>'
-    near_li = [li(f"<strong>{esc(n['athlete'])}</strong> &mdash; {esc(n['event'])} "
-                  f"<span class=\"time\">{esc(show_time(n['time']))}</span>, just "
-                  f"<strong>{n['gap']:.2f}s</strong> off the {esc(n['label'])} record "
-                  f"({esc(n['rec_time'])}, {esc(n['rec_who'])}, {esc(n['rec_date'][-4:])})") for n in near]
-    top_li = [li(f"#{a['rank']} all-time &mdash; <strong>{esc(a['athlete'])}</strong>, "
-                 f"{a['gender'].title()} {esc(a['event'])} <span class=\"time\">{esc(a['time'])}</span>")
-              for a in alltime if a['rank'] > 1]
-    drop_li = [li(f"<strong>{esc(d['athlete'])}</strong> &mdash; {esc(d['event'])} "
-                  f"{esc(show_time(d['seed']))} &rarr; <span class=\"time\">{esc(show_time(d['time']))}</span> "
-                  f"<span class=\"badge badge-pb pb-black\">&minus;{d['drop']:.2f}s</span>") for d in drops]
-    blocks = []
-    if near_li:
-        blocks.append('            <h5 class="mt-3">&#128064; Knocking on the door</h5>\n'
-                      '            <p class="mb-1">Within a couple of percent of a Tanque Verde record:</p>\n'
-                      '            <ul>\n' + '\n'.join(near_li) + '\n            </ul>')
-    if top_li:
-        blocks.append('            <h5 class="mt-3">&#128200; New on the all-time Top 10</h5>\n'
-                      '            <ul>\n' + '\n'.join(top_li) + '\n            </ul>')
-    if drop_li:
-        blocks.append('            <h5 class="mt-3">&#9889; Big drops</h5>\n'
-                      '            <p class="mb-1">Measured from each swimmer\'s entry time for the meet.</p>\n'
-                      '            <ul>\n' + '\n'.join(drop_li) + '\n            </ul>')
-    return when, '\n'.join(blocks)
 
 
 def describe_record(rec):
@@ -302,8 +274,9 @@ def season_phase(meets, today):
 
 
 def latest_teaser(project_root, built):
-    """Home-page teaser for the newest meet page: its lead story's headline and
-    one paragraph, then a full-width button to the meet page. Older meets are
+    """Home-page teaser for the newest meet page: its story's headline and two
+    sentences -- the lead, then one that spreads the credit -- and a full-width
+    button to the meet page. Older meets are
     one line. Everything else lives on the meet pages, so the home page does
     not grow with the season."""
     if not built:
@@ -315,12 +288,13 @@ def latest_teaser(project_root, built):
     parts = ['            <div class="latest-teaser mt-3">',
              f'                <div class="kicker">{when} &middot; {esc(meet["meet"])}</div>']
     if st:
+        two = st['short'] + (' ' + st['summary'] if st.get('summary') else '')
         parts += [f'                <h3 class="mt-1 mb-2">{st["headline"]}</h3>',
-                  f'                <p class="mb-3">{st["lede"]}</p>']
+                  f'                <p class="mb-3">{two}</p>']
     else:
         parts.append(f'                <h3 class="mt-1 mb-3">{esc(meet["meet"])}</h3>')
-    parts += [f'                <a class="btn btn-success w-100" href="{meet["href"]}">Read more: records, '
-              f'highlights &amp; results &rarr;</a>',
+    parts += [f'                <a class="btn btn-success w-100" href="{meet["href"]}">Read the full story, top swims '
+              f'&amp; results &rarr;</a>',
               '            </div>']
     if len(built) > 1:
         older = [f'<a href="{m["href"]}">{esc(m["meet"])}</a> ({esc(MONTHS[int(m["date"][5:7]) - 1][:3])} '
