@@ -59,6 +59,12 @@ def first_last(n):
     return f"{first} {last}"
 
 
+
+def place(raw):
+    """Finals place. 0 marks an exhibition swim, written 'Ex.' (Aaryn, 2026-10-19).
+    The swim still happened and its time stands; it just did not score."""
+    return 'Ex.' if raw.strip() in ('0', '00', '000') else raw.strip()
+
 def parse(path, team):
     rows, relays, dropped, team_name, cur, relay = [], [], [], None, None, None
     for line in open(path, encoding='latin-1'):
@@ -78,7 +84,7 @@ def parse(path, team):
                 continue
             rows.append(dict(event=ev, athlete=who, grade=GRADE.get(col(line, 64, 65), ''),
                              gender=SEX[col(line, 67, 67)], time=t, date=col(line, 81, 88),
-                             round='Final', place=col(line, 136, 138),
+                             round='Final', place=place(col(line, 136, 138)),
                              seed=mmss(col(line, 89, 97))))
         elif rt == 'E0':
             raw = re.findall(r'(\d*:?\d+\.\d\dY|DQY|NSY)', line[44:])[-1]

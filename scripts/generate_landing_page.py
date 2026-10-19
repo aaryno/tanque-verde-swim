@@ -302,50 +302,31 @@ def season_phase(meets, today):
 
 
 def latest_teaser(project_root, built):
-    """Short home-page teaser for the newest meet page: its records, its single
-    closest near-record and biggest drop, and a "more" link. Older meets are
-    one line each. Everything else lives on the meet pages."""
+    """Home-page teaser for the newest meet page: its lead story's headline and
+    one paragraph, then a full-width button to the meet page. Older meets are
+    one line. Everything else lives on the meet pages, so the home page does
+    not grow with the season."""
     if not built:
         return '            <p class="mt-3 mb-0">No meet results posted yet this season.</p>', 'none yet'
-    meet, recs = built[-1]
+    meet, _ = built[-1]
     day = datetime.strptime(meet['date'], '%Y-%m-%d')
     when = f"{MONTHS[day.month - 1][:3]} {day.day}"
-    parts = [f'            <h4 class="mt-3 mb-2"><a href="{meet["href"]}">{esc(meet["meet"])}</a> '
-             f'<small class="text-muted">{when}</small></h4>']
-    items = []
-    for r in recs:
-        if r['open_prev']:
-            p = r['open_prev']
-            beat = (f" &mdash; beat {esc(p['name'])}'s {esc(p['time'])} from {esc(p['date'][:6].strip(','))}"
-                    if r['open_prev_href'] else '')
-            items.append(f"&#127942; <strong>{esc(r['name'])}</strong>, {esc(r['event'])} "
-                         f"<span class=\"time\">{esc(r['time'])}</span>: new school record{beat}")
-        else:
-            items.append(f"&#129352; <strong>{esc(r['name'])}</strong>, {esc(r['event'])} "
-                         f"<span class=\"time\">{esc(r['time'])}</span>: new {esc(GRADE_LONG[r['grade']])} record")
-    near, _, drops = meet_highlights(project_root, meet)
-    if near:
-        n = near[0]
-        items.append(f"&#128064; <strong>{esc(n['athlete'])}</strong>, {esc(n['event'])} "
-                     f"<span class=\"time\">{esc(show_time(n['time']))}</span>: {n['gap']:.2f}s off the "
-                     f"{esc(n['label'])} record")
-    if drops:
-        d = drops[0]
-        items.append(f"&#9889; <strong>{esc(d['athlete'])}</strong> dropped {d['drop']:.2f}s in the {esc(d['event'])}")
-    if items:
-        parts.append('            <ul class="mb-2">\n' + '\n'.join(f'                <li>{i}</li>' for i in items)
-                     + '\n            </ul>')
-    parts.append(f'            <p class="mb-3"><a href="{meet["href"]}">&hellip; more: records, highlights and every '
-                 f'Hawks swim &rarr;</a></p>')
+    st = meet.get('story')
+    parts = ['            <div class="latest-teaser mt-3">',
+             f'                <div class="kicker">{when} &middot; {esc(meet["meet"])}</div>']
+    if st:
+        parts += [f'                <h3 class="mt-1 mb-2">{st["headline"]}</h3>',
+                  f'                <p class="mb-3">{st["lede"]}</p>']
+    else:
+        parts.append(f'                <h3 class="mt-1 mb-3">{esc(meet["meet"])}</h3>')
+    parts += [f'                <a class="btn btn-success w-100" href="{meet["href"]}">Read more: records, '
+              f'highlights &amp; results &rarr;</a>',
+              '            </div>']
     if len(built) > 1:
         older = [f'<a href="{m["href"]}">{esc(m["meet"])}</a> ({esc(MONTHS[int(m["date"][5:7]) - 1][:3])} '
                  f'{int(m["date"][8:])})' for m, _ in reversed(built[:-1])]
-        parts.append(f'            <p class="mb-0 small">Earlier meets: {" &middot; ".join(older)}. '
-                     f'All of them are linked in the <a href="#schedule">schedule</a>.</p>')
+        parts.append(f'            <p class="mt-3 mb-0 small">Earlier meets: {" &middot; ".join(older)}</p>')
     return '\n'.join(parts), meet['meet']
-
-
-GRADE_LONG = {'FR': 'Freshman', 'SO': 'Sophomore', 'JR': 'Junior', 'SR': 'Senior'}
 
 
 def schedule_rows(data, today, pages_by_date=None):

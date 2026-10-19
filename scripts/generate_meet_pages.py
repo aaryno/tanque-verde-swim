@@ -114,21 +114,130 @@ def check_meet(meet, recs, project_root):
                      f"{rec[0]} in records/records-{r['gender']}.md -- update the records first")
 
 
-def story_extras(season, project_root, rec):
-    """Sentences from the season file's milestone entries for this swim."""
-    lines = []
-    ms = season.get('milestone')
-    if ms and ms['swimmer'] == rec['name'] and ms['event'] == rec['event'] and ms['time'] == rec['time']:
-        verdict, phrase, runner_up = verify_oldest_record(project_root / 'records', ms)
-        if verdict == 'oldest':
-            lines.append(f"The school record it beat was <strong>{phrase}</strong>. "
-                         f"The next-oldest still standing is the {describe_record(runner_up)}.")
+WORDS = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six']
+
+
+def gap_words(d1, d2):
+    days = (d2 - d1).days
+    if days % 7 == 0 and 0 < days <= 42:
+        return f"{WORDS[days // 7]} week{'s' if days > 7 else ''}"
+    return f'{days} days'
+
+
+def relation_of(season, rec):
+    """'older brother' etc., from the season file -- never guessed from surnames."""
     for f in season.get('milestone_followups', []):
-        if f['swimmer'] == rec['name'] and f['event'] == rec['event'] and f['time'] == rec['time'] \
-                and f.get('relation') and f['broke_open']['name'] != rec['name']:
-            first = f['broke_open']['name'].split()[0]
-            lines.append(f"{esc(rec['name'].split()[0])} is {esc(first)}'s {esc(f['relation'])}.")
-    return lines
+        if (f['swimmer'], f['event'], f['time']) == (rec['name'], rec['event'], rec['time']) and f.get('relation'):
+            return f['relation']
+    return None
+
+
+def oldest_verdict(season, project_root, rec):
+    ms = season.get('milestone')
+    if ms and (ms['swimmer'], ms['event'], ms['time']) == (rec['name'], rec['event'], rec['time']):
+        verdict, phrase, runner_up = verify_oldest_record(project_root / 'records', ms)
+        return verdict == 'oldest', phrase, runner_up
+    return False, None, None
+
+
+def meet_notes(near, alltime, drops):
+    """Plain sentences about the meet's other swims: near-records (with an
+    all-time rank folded in), new top-5 all-time swims, the biggest drops."""
+    rank = {(a['athlete'], a['event']): a['rank'] for a in alltime}
+    said, notes = set(), []
+    for n in near[:3]:
+        r = rank.get((n['athlete'], n['event']))
+        notes.append(f"<strong>{esc(n['athlete'])}</strong> came within {n['gap']:.2f}s of the "
+                     f"{esc(n['label'])} {esc(n['event'])} record with <span class=\"time\">"
+                     f"{esc(show_time(n['time']))}</span>" + (f", now #{r} all-time." if r else '.'))
+        said.add((n['athlete'], n['event']))
+    for a in alltime:
+        if 1 < a['rank'] <= 5 and (a['athlete'], a['event']) not in said:
+            notes.append(f"<strong>{esc(a['athlete'])}</strong>'s <span class=\"time\">{esc(a['time'])}</span> "
+                         f"in the {esc(a['event'])} is now #{a['rank']} all-time.")
+            said.add((a['athlete'], a['event']))
+    for d in drops[:2]:
+        ex = ' in an exhibition swim' if d.get('place') == 'Ex.' else ''
+        notes.append(f"<strong>{esc(d['athlete'])}</strong> dropped {d['drop']:.2f}s in the "
+                     f"{esc(d['event'])}{ex}, from {esc(show_time(d['seed']))} to "
+                     f"<span class=\"time\">{esc(show_time(d['time']))}</span>.")
+    return notes
+
+
+def story(meet, recs, season, project_root, near, alltime=(), drops=()):
+    """The meet's lead story: headline, one paragraph, and links to the meets it
+    continues or is continued by. Derived from the records; the season file adds
+    only the facts records cannot know (who is whose brother, the oldest-record
+    claim, re-verified at build)."""
+    first = lambda n: n.split()[0]  # noqa: E731
+    his = lambda r: 'his' if r['gender'] == 'boys' else 'her'  # noqa: E731
+    day = datetime.strptime(meet['date'], '%Y-%m-%d')
+    opens = [r for r in recs if r['open_prev']]
+    sequel = next((r for r in opens if r['open_prev_href'] and r['open_prev']['name'] != r['name']), None)
+    links = []
+    def also(rest, r0):
+        bits = []
+        for r in rest:
+            if r['open_prev'] and r['open_prev']['name'] == r['name']:
+                bits.append(f"lowered {his(r0)} own {esc(r['event'])} record to <span class=\"time\">{esc(r['time'])}</span>")
+            elif r['open_prev']:
+                bits.append(f"broke the {esc(r['event'])} school record with <span class=\"time\">{esc(r['time'])}</span>")
+            else:
+                bits.append(f"set a {GRADE_WORD[r['grade']]} {esc(r['event'])} record of <span class=\"time\">{esc(r['time'])}</span>")
+        return f" {his(r0).replace('his', 'He').replace('her', 'She')} also {' and '.join(bits)}." if bits else ''
+    if sequel:
+        r, p = sequel, sequel['open_prev']
+        rel = relation_of(season, r)
+        oldest, _, _ = oldest_verdict(season, project_root, dict(name=p['name'], event=r['event'], time=p['time']))
+        what = 'the oldest record on the boys books' if oldest else f"the {esc(r['event'])} school record"
+        under5 = (', the first 500 under five minutes in the team\'s records'
+                  if r['event'] == '500 Freestyle' and to_secs(r['time']) < 300 <= to_secs(p['time']) else '')
+        rest = [x for x in recs if x is not r and x['name'] == r['name']]
+        lede = (f"{gap_words(hist_date(p['date']), day)} after {esc(p['name'])} broke {what} in the "
+                f"{esc(r['event'])}, {f'{his(r)} {esc(rel)} ' if rel else ''}<strong>{esc(r['name'])}</strong>, "
+                f"a {GRADE_WORD[r['grade']].lower()}, swam <span class=\"time\"><strong>{esc(r['time'])}</strong></span> "
+                f"&mdash; {to_secs(p['time']) - to_secs(r['time']):.2f} seconds under {esc(first(p['name']))}'s "
+                f"mark{under5}.{also(rest, r)}")
+        links.append(f'<a href="{r["open_prev_href"]}">&larr; Part 1: {esc(first(p["name"]))} at the {esc(p["meet"])}</a>')
+        return dict(headline=f"First {esc(first(p['name']))}, then {esc(first(r['name']))}", lede=lede, links=links,
+                    more=meet_notes(near, alltime, drops))
+    if opens:
+        r, p = opens[0], opens[0]['open_prev']
+        oldest, phrase, runner_up = oldest_verdict(season, project_root, r)
+        head = (f"{esc(r['name'])} breaks the oldest {r['gender']} record" if oldest
+                else f"{esc(r['name'])} sets the {esc(r['event'])} school record")
+        lede = (f"{GRADE_WORD[r['grade']]} <strong>{esc(r['name'])}</strong> swam the {esc(r['event'])} in "
+                f"<span class=\"time\"><strong>{esc(r['time'])}</strong></span>, breaking {esc(p['name'])}'s "
+                f"{esc(p['time'])} from {esc(p['date'])}"
+                + (f" &mdash; <strong>{phrase}</strong>. The next-oldest still standing is the "
+                   f"{describe_record(runner_up)}." if oldest else '.')
+                + f" It is also the new {GRADE_WORD[r['grade']]} record.")
+        b = r['broken_by']
+        if b:
+            rel = next((f['relation'] for f in season.get('milestone_followups', [])
+                        if f['swimmer'] == b['name'] and f['broke_open']['name'] == r['name'] and f.get('relation')), None)
+            lede += (f" It stood {gap_words(day, hist_date(b['date'])).lower()}: on {esc(b['date'])} "
+                     f"{f'{his(r)} {esc(rel)} ' if rel else ''}{esc(b['name'])} lowered it to "
+                     f"<span class=\"time\">{esc(b['time'])}</span>.")
+            if r['broken_by_href']:
+                links.append(f'<a href="{r["broken_by_href"]}">Part 2: {esc(first(b["name"]))} at the {esc(b["meet"])} &rarr;</a>')
+        return dict(headline=head, lede=lede, links=links, more=meet_notes(near, alltime, drops))
+    if recs:
+        items = ', '.join(f"{esc(r['name'])} ({GRADE_WORD[r['grade']]} {esc(r['event'])}, "
+                          f"<span class=\"time\">{esc(r['time'])}</span>)" for r in recs)
+        n = len(recs)
+        return dict(headline=f"{n} class record{'s' if n != 1 else ''} at the {esc(meet['meet'])}",
+                    lede=f"New grade records: {items}.", links=links, more=meet_notes(near, alltime, drops))
+    notes = meet_notes(near, alltime, drops)
+    if notes:
+        if near:
+            head = f"{esc(near[0]['athlete'])} {near[0]['gap']:.2f}s from a record"
+        elif alltime:
+            head = f"{esc(alltime[0]['athlete'])} moves to #{alltime[0]['rank']} all-time"
+        else:
+            head = f"{esc(drops[0]['athlete'])} drops {drops[0]['drop']:.2f}s"
+        return dict(headline=head, lede=' '.join(notes[:2]), links=links, more=notes[2:])
+    return None
 
 
 def record_card(rec, extras):
@@ -157,6 +266,13 @@ def record_card(rec, extras):
 </div>'''
 
 
+def place_label(pl):
+    """'#3' for a scoring place; 'Ex.' (exhibition) passes through as written."""
+    if not pl:
+        return ''
+    return f'<small class="res-pl">{esc(pl if pl == "Ex." else "#" + pl)}</small>'
+
+
 def results_tables(meet):
     """Compact per-event lists, folded under one <details>. Tables are not used:
     the site's phone CSS turns every table row into a tall card."""
@@ -179,7 +295,7 @@ def results_tables(meet):
         for ev in sorted(events, key=order):
             rows = ''.join(f'<div class="res-row"><span class="time">{esc(show_time(t))}</span>'
                            f'<span class="res-who">{who}</span>'
-                           f'{f"<small class=res-pl>#{esc(pl)}</small>" if pl else ""}</div>'
+                           f'{place_label(pl)}</div>'
                            for _, t, who, pl in sorted(events[ev]))
             blocks.append(f'<div class="res-event"><div class="res-ev">{esc(ev)}</div>{rows}</div>')
         out.append(f'<h5 class="mt-3">{g.title()} <small class="text-muted">{len(ind)} swims, '
@@ -199,6 +315,9 @@ def source_line(meet):
 
 STYLE = '''<style>
 .story-card{border-left:4px solid #2d6a35;background:#f4f9f4;border-radius:6px;padding:12px 14px}
+.story-lead{background:#2d6a35;color:#fff;border-radius:8px;padding:14px 16px}
+.story-lead a{color:#d8f0d8}
+.story-lead .time{color:#fff}
 .kicker{font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:#2d6a35;font-weight:700}
 .meet-nav{display:flex;justify-content:space-between;gap:8px;font-size:.9rem}
 .meet-nav a,.crumbs a{text-decoration:none}
@@ -219,9 +338,17 @@ def build_meet(meet, meets, recs, season, project_root):
     records = ''
     if recs:
         records = ('<h3 class="mt-4">&#127942; Records broken</h3>\n' +
-                   '\n'.join(record_card(r, story_extras(season, project_root, r)) for r in recs))
+                   '\n'.join(record_card(r, []) for r in recs))
     near, alltime, drops = meet_highlights(project_root, meet)
     _, hl = highlights_html(meet, near, alltime, drops)
+    st = story(meet, recs, season, project_root, near, alltime, drops)
+    meet['story'] = st
+    lead = ''
+    if st:
+        lead = (f'<div class="story-lead mb-3"><h3 class="mb-2">{st["headline"]}</h3>'
+                f'<p class="mb-2">{st["lede"]}</p>'
+                + (f'<p class="mb-2">Also at this meet: {" ".join(st["more"])}</p>' if st['more'] else '')
+                + ''.join(f'<div class="small">{lk}</div>' for lk in st['links']) + '</div>')
     hl_block = f'<h3 class="mt-4">&#9889; Highlights</h3>\n{hl}' if hl else ''
     content = f'''{STYLE}
 <div class="container py-4">
@@ -229,6 +356,7 @@ def build_meet(meet, meets, recs, season, project_root):
   <h2 class="mb-0">{esc(meet['meet'])}</h2>
   <p class="text-muted mb-2">{long_date(meet['date'])}{' &middot; ' + where if where else ''}</p>
   <div class="meet-nav mb-3">{prev_a}{next_a}</div>
+  {lead}
   {records}
   {hl_block}
   <div class="mt-4">{results_tables(meet)}</div>

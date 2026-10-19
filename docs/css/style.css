@@ -2550,3 +2550,19 @@ h2[id], h3[id], .event-heading[id] {
   font-weight: 600;
   text-decoration: none;
 }
+
+/* Home: latest-meet teaser (the full story is on the meet page). */
+.latest-teaser {
+  border-left: 4px solid var(--tvhs-primary, #2d5a27);
+  background: #f4f9f4;
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+.latest-teaser .kicker {
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--tvhs-primary, #2d5a27);
+  font-weight: 700;
+}
+.latest-teaser h3 { font-size: 1.4rem; }
