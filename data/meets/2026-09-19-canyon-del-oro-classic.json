@@ -1,0 +1,501 @@
+{
+  "meet": "Canyon del Oro Classic",
+  "date": "2026-09-19",
+  "course": "SCY",
+  "team": {
+    "code": "AZTVHS",
+    "name": "Tanque Verde High School"
+  },
+  "source": {
+    "kind": "maxpreps-stats",
+    "url": "https://www.maxpreps.com/az/tucson/tanque-verde-hawks/swimming/fall/26-27/stats/",
+    "fetched_at": "2026-10-19T14:53:20Z"
+  },
+  "dropped": {},
+  "individual": [
+    {
+      "event": "100 Backstroke",
+      "athlete": "Kent Olsson",
+      "grade": "So.",
+      "gender": "boys",
+      "time": "00:57.57",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Backstroke",
+      "athlete": "Gavin Contreras",
+      "grade": "Fr.",
+      "gender": "boys",
+      "time": "01:25.92",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Breaststroke",
+      "athlete": "Bennett Johnston",
+      "grade": "Jr.",
+      "gender": "boys",
+      "time": "01:12.08",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Breaststroke",
+      "athlete": "Jackson Machamer",
+      "grade": "Sr.",
+      "gender": "boys",
+      "time": "01:13.42",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Breaststroke",
+      "athlete": "Brad Enderle",
+      "grade": "Fr.",
+      "gender": "boys",
+      "time": "01:42.43",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Butterfly",
+      "athlete": "Jackson Eftekhar",
+      "grade": "Sr.",
+      "gender": "boys",
+      "time": "00:53.31",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Freestyle",
+      "athlete": "Bennett Johnston",
+      "grade": "Jr.",
+      "gender": "boys",
+      "time": "00:55.26",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Freestyle",
+      "athlete": "Gavin Contreras",
+      "grade": "Fr.",
+      "gender": "boys",
+      "time": "01:04.47",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Freestyle",
+      "athlete": "Shane Gardner",
+      "grade": "So.",
+      "gender": "boys",
+      "time": "01:05.64",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Freestyle",
+      "athlete": "Walker Tappan",
+      "grade": "Fr.",
+      "gender": "boys",
+      "time": "01:07.82",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "200 Individual Medley",
+      "athlete": "Jackson Machamer",
+      "grade": "Sr.",
+      "gender": "boys",
+      "time": "02:19.48",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "50 Freestyle",
+      "athlete": "Jackson Eftekhar",
+      "grade": "Sr.",
+      "gender": "boys",
+      "time": "00:22.53",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "50 Freestyle",
+      "athlete": "Quinn Scott",
+      "grade": "Jr.",
+      "gender": "boys",
+      "time": "00:25.56",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "50 Freestyle",
+      "athlete": "Shane Gardner",
+      "grade": "So.",
+      "gender": "boys",
+      "time": "00:27.86",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "50 Freestyle",
+      "athlete": "Walker Tappan",
+      "grade": "Fr.",
+      "gender": "boys",
+      "time": "00:29.74",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "500 Freestyle",
+      "athlete": "Kent Olsson",
+      "grade": "So.",
+      "gender": "boys",
+      "time": "05:03.13",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "500 Freestyle",
+      "athlete": "Quinn Scott",
+      "grade": "Jr.",
+      "gender": "boys",
+      "time": "06:09.41",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Backstroke",
+      "athlete": "Amira Alitiem",
+      "grade": "Sr.",
+      "gender": "girls",
+      "time": "01:09.56",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Backstroke",
+      "athlete": "Laila Alitiem",
+      "grade": "So.",
+      "gender": "girls",
+      "time": "01:15.86",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Backstroke",
+      "athlete": "Kadynce Drummond",
+      "grade": "Sr.",
+      "gender": "girls",
+      "time": "01:18.22",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Backstroke",
+      "athlete": "Madelyn Pertile",
+      "grade": "Fr.",
+      "gender": "girls",
+      "time": "01:34.00",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Breaststroke",
+      "athlete": "Penelope Dixon",
+      "grade": "Fr.",
+      "gender": "girls",
+      "time": "01:26.68",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Breaststroke",
+      "athlete": "Lilly Bieberstein",
+      "grade": "So.",
+      "gender": "girls",
+      "time": "01:54.46",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Butterfly",
+      "athlete": "Avery Fleming",
+      "grade": "Fr.",
+      "gender": "girls",
+      "time": "01:07.68",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Butterfly",
+      "athlete": "Magdalena McGovern",
+      "grade": "So.",
+      "gender": "girls",
+      "time": "01:30.78",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Freestyle",
+      "athlete": "Hadley Cusson",
+      "grade": "Sr.",
+      "gender": "girls",
+      "time": "00:58.81",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Freestyle",
+      "athlete": "Stella Eftekhar",
+      "grade": "So.",
+      "gender": "girls",
+      "time": "01:00.51",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "100 Freestyle",
+      "athlete": "Isla Cerepak",
+      "grade": "So.",
+      "gender": "girls",
+      "time": "01:01.91",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "200 Freestyle",
+      "athlete": "Rachel Anderson",
+      "grade": "So.",
+      "gender": "girls",
+      "time": "02:08.90",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "200 Freestyle",
+      "athlete": "Ella Bissmeyer",
+      "grade": "Jr.",
+      "gender": "girls",
+      "time": "02:16.17",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "200 Freestyle",
+      "athlete": "Kadynce Drummond",
+      "grade": "Sr.",
+      "gender": "girls",
+      "time": "02:22.13",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "200 Freestyle",
+      "athlete": "Talia Schwab",
+      "grade": "So.",
+      "gender": "girls",
+      "time": "02:22.97",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "200 Individual Medley",
+      "athlete": "Avery Fleming",
+      "grade": "Fr.",
+      "gender": "girls",
+      "time": "02:34.34",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "200 Individual Medley",
+      "athlete": "Ella Bissmeyer",
+      "grade": "Jr.",
+      "gender": "girls",
+      "time": "02:47.59",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "200 Individual Medley",
+      "athlete": "Laura Feldman",
+      "grade": "So.",
+      "gender": "girls",
+      "time": "02:58.88",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "50 Freestyle",
+      "athlete": "Hadley Cusson",
+      "grade": "Sr.",
+      "gender": "girls",
+      "time": "00:26.48",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "50 Freestyle",
+      "athlete": "Stella Eftekhar",
+      "grade": "So.",
+      "gender": "girls",
+      "time": "00:27.00",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "50 Freestyle",
+      "athlete": "Amira Alitiem",
+      "grade": "Sr.",
+      "gender": "girls",
+      "time": "00:28.61",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "50 Freestyle",
+      "athlete": "Laila Alitiem",
+      "grade": "So.",
+      "gender": "girls",
+      "time": "00:32.21",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "500 Freestyle",
+      "athlete": "Rachel Anderson",
+      "grade": "So.",
+      "gender": "girls",
+      "time": "05:43.91",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "500 Freestyle",
+      "athlete": "Talia Schwab",
+      "grade": "So.",
+      "gender": "girls",
+      "time": "06:14.22",
+      "date": "9/19/2026",
+      "round": "Final",
+      "meet": "Canyon del Oro Classic"
+    }
+  ],
+  "relay": [
+    {
+      "event": "200 Free Relay",
+      "gender": "boys",
+      "time": "01:47.44",
+      "participants": [],
+      "date": "9/19/2026",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "200 Medley Relay",
+      "gender": "boys",
+      "time": "01:45.93",
+      "participants": [],
+      "date": "9/19/2026",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "400 Free Relay",
+      "gender": "boys",
+      "time": "03:37.55",
+      "participants": [],
+      "date": "9/19/2026",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "200 Free Relay",
+      "gender": "girls",
+      "time": "01:49.60",
+      "participants": [],
+      "date": "9/19/2026",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "200 Free Relay",
+      "gender": "girls",
+      "time": "02:17.66",
+      "participants": [],
+      "date": "9/19/2026",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "200 Medley Relay",
+      "gender": "girls",
+      "time": "02:05.07",
+      "participants": [],
+      "date": "9/19/2026",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "200 Medley Relay",
+      "gender": "girls",
+      "time": "02:33.90",
+      "participants": [],
+      "date": "9/19/2026",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "400 Free Relay",
+      "gender": "girls",
+      "time": "04:02.36",
+      "participants": [],
+      "date": "9/19/2026",
+      "meet": "Canyon del Oro Classic"
+    },
+    {
+      "event": "400 Free Relay",
+      "gender": "girls",
+      "time": "04:42.65",
+      "participants": [],
+      "date": "9/19/2026",
+      "meet": "Canyon del Oro Classic"
+    }
+  ]
+}

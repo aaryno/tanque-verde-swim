@@ -130,8 +130,6 @@ def show_time(t):
     return sec if not m or int(m) == 0 else f'{int(m)}:{sec}'
 
 
-def margin(old, new):
-    return f'{to_secs(old) - to_secs(new):.2f}'
 
 
 def grade_tables(records_dir, gender):
@@ -163,19 +161,8 @@ def check_followups(records_dir, followups):
                      f"{f['event']} record; records-boys.md says {who} {t}. Fix one of them.")
 
 
-def grades_held(records_dir, event, swimmer):
-    """Which grade records (and Open) a swimmer holds in one boys event, in order."""
-    row = grade_tables(records_dir, 'boys').get(event, {})
-    return [g for g in GRADES + ['Open'] if row.get(g, ('', ''))[1] == swimmer]
 
 
-def latest_meet_file(project_root, season_start, season_end):
-    files = []
-    for path in sorted((project_root / 'data' / 'meets').glob('*.json')):
-        doc = json.loads(path.read_text())
-        if season_start <= doc['date'] <= season_end:
-            files.append(doc)
-    return files[-1] if files else None
 
 
 def meet_highlights(project_root, meet, near_pct=2.5, drop_pct=4.0):
@@ -314,7 +301,57 @@ def season_phase(meets, today):
             f'toward the {esc(state["name"])} on {state_when}.', 'Season in progress.')
 
 
-def schedule_rows(data, today):
+def latest_teaser(project_root, built):
+    """Short home-page teaser for the newest meet page: its records, its single
+    closest near-record and biggest drop, and a "more" link. Older meets are
+    one line each. Everything else lives on the meet pages."""
+    if not built:
+        return '            <p class="mt-3 mb-0">No meet results posted yet this season.</p>', 'none yet'
+    meet, recs = built[-1]
+    day = datetime.strptime(meet['date'], '%Y-%m-%d')
+    when = f"{MONTHS[day.month - 1][:3]} {day.day}"
+    parts = [f'            <h4 class="mt-3 mb-2"><a href="{meet["href"]}">{esc(meet["meet"])}</a> '
+             f'<small class="text-muted">{when}</small></h4>']
+    items = []
+    for r in recs:
+        if r['open_prev']:
+            p = r['open_prev']
+            beat = (f" &mdash; beat {esc(p['name'])}'s {esc(p['time'])} from {esc(p['date'][:6].strip(','))}"
+                    if r['open_prev_href'] else '')
+            items.append(f"&#127942; <strong>{esc(r['name'])}</strong>, {esc(r['event'])} "
+                         f"<span class=\"time\">{esc(r['time'])}</span>: new school record{beat}")
+        else:
+            items.append(f"&#129352; <strong>{esc(r['name'])}</strong>, {esc(r['event'])} "
+                         f"<span class=\"time\">{esc(r['time'])}</span>: new {esc(GRADE_LONG[r['grade']])} record")
+    near, _, drops = meet_highlights(project_root, meet)
+    if near:
+        n = near[0]
+        items.append(f"&#128064; <strong>{esc(n['athlete'])}</strong>, {esc(n['event'])} "
+                     f"<span class=\"time\">{esc(show_time(n['time']))}</span>: {n['gap']:.2f}s off the "
+                     f"{esc(n['label'])} record")
+    if drops:
+        d = drops[0]
+        items.append(f"&#9889; <strong>{esc(d['athlete'])}</strong> dropped {d['drop']:.2f}s in the {esc(d['event'])}")
+    if items:
+        parts.append('            <ul class="mb-2">\n' + '\n'.join(f'                <li>{i}</li>' for i in items)
+                     + '\n            </ul>')
+    parts.append(f'            <p class="mb-3"><a href="{meet["href"]}">&hellip; more: records, highlights and every '
+                 f'Hawks swim &rarr;</a></p>')
+    if len(built) > 1:
+        older = [f'<a href="{m["href"]}">{esc(m["meet"])}</a> ({esc(MONTHS[int(m["date"][5:7]) - 1][:3])} '
+                 f'{int(m["date"][8:])})' for m, _ in reversed(built[:-1])]
+        parts.append(f'            <p class="mb-0 small">Earlier meets: {" &middot; ".join(older)}. '
+                     f'All of them are linked in the <a href="#schedule">schedule</a>.</p>')
+    return '\n'.join(parts), meet['meet']
+
+
+GRADE_LONG = {'FR': 'Freshman', 'SO': 'Sophomore', 'JR': 'Junior', 'SR': 'Senior'}
+
+
+def schedule_rows(data, today, pages_by_date=None):
+    """`pages_by_date`: {date: (meet file, records broken)} for meets with a page.
+    Those rows link to the page and stay full colour (meet-has-page)."""
+    pages_by_date = pages_by_date or {}
     rows = []
     for m in data['schedule']['meets']:
         past = m['date_end'] < today
@@ -324,10 +361,19 @@ def schedule_rows(data, today):
         # the page), so a meet greys out the day after it is swum without a
         # rebuild. The build-time class is only the no-JavaScript fallback.
         cls = ' meet-past' if past else ''
+        name = esc(m['name'])
+        page = pages_by_date.get(m['date_start'])
+        if page:
+            meet, recs = page
+            cls += ' meet-has-page'
+            name = f'<a href="{meet["href"]}">{name}&nbsp;&rsaquo;</a>'
+            if recs:
+                name += (f' <span class="badge bg-success">&#127942; {len(recs)} record'
+                         f'{"s" if len(recs) != 1 else ""}</span>')
         rows.append(
             f'''                        <tr class="meet-row{cls}" data-end="{m['date_end']}">
                             <td class="text-nowrap"><strong>{fmt_meet_date(m['date_start'], m['date_end'])}</strong></td>
-                            <td>{esc(m['name'])} {badge}<br><small class="text-muted">{esc(m['note'])}</small></td>
+                            <td>{name} {badge}<br><small class="text-muted">{esc(m['note'])}</small></td>
                             <td><small>{esc(m['venue'])}</small></td>
                         </tr>''')
     return '\n'.join(rows)
@@ -350,10 +396,6 @@ def senior_cards(names, gender_label):
 
 def build_page(project_root):
     data = json.loads((project_root / 'data' / f'season_{SEASON}.json').read_text())
-    records_dir = project_root / 'records'
-    ms = data['milestone']
-    verdict, phrase, runner_up = verify_oldest_record(records_dir, ms)
-
     sched = data['schedule']
     roster = data['roster']
     res = data['results_so_far']
@@ -362,88 +404,14 @@ def build_page(project_root):
     n_seniors = len(seniors_b) + len(seniors_g)
     today = datetime.now().strftime('%Y-%m-%d')
 
-    broken_desc = (f"The open school record he took down &mdash; {esc(ms['broke_open']['time'])}, "
-                   f"set by {esc(ms['broke_open']['name'])} on {esc(ms['broke_open']['date'])} &mdash;")
-    if verdict == 'oldest':
-        oldest_line = (
-            f'''<p class="mb-0">{broken_desc} was <strong>{phrase}</strong>. '''
-            f'''It had stood longer than any other boys school record, individual or relay. '''
-            f'''The next-oldest still standing is the {describe_record(runner_up)}.</p>''')
-    elif verdict == 'not-oldest':
-        oldest_line = (
-            f'''<p class="mb-0">{broken_desc} was <strong>{phrase}</strong>. '''
-            f'''The oldest still standing is the {describe_record(runner_up)}.</p>''')
-    else:
-        oldest_line = f'<p class="mb-0">{broken_desc} had stood for more than a decade.</p>'
-
-    followups = data.get('milestone_followups', [])
-    check_followups(records_dir, followups)
-    kent_holds = grades_held(records_dir, ms['event'], ms['swimmer'])
-    meet = latest_meet_file(project_root, data['season_start'], data['season_end'])
-    hl_when, hl_html = highlights_html(meet, *meet_highlights(project_root, meet)) if meet else ('', '')
+    # Every meet with a results file gets its own page (generate_meet_pages.py);
+    # the home page only carries a short teaser for the newest one.
+    import generate_meet_pages
+    built = generate_meet_pages.build_all(project_root, data)
+    pages_by_date = {m['date']: (m, recs) for m, recs in built}
+    latest_html, latest_name = latest_teaser(project_root, built)
     phase_lead, phase_head = season_phase(sched['meets'], today)
     n_meets = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'][res['meets_with_results']]
-
-    def card(title, time, prev_time, prev_name, prev_date, prev_meet):
-        return f'''                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">{title}</h5>
-                            <p class="mb-1"><span class="time"><strong>{esc(time)}</strong></span>
-                                &nbsp;<span class="badge badge-pb pb-black">&minus;{margin(prev_time, time)}s</span></p>
-                            <hr class="my-2">
-                            <small class="text-muted">
-                                <strong>Previous:</strong> {esc(prev_time)} &mdash; {esc(prev_name)}<br>
-                                <span style="font-size: 0.85em;">{esc(prev_date)} at {esc(prev_meet)}</span>
-                            </small>
-                        </div>
-                    </div>
-                </div>'''
-
-    cards = [card(f"&#127942; {esc(ms['swimmer'])} &middot; {esc(ms['event'])} &middot; school record",
-                  ms['time'], ms['broke_open']['time'], ms['broke_open']['name'],
-                  ms['broke_open']['date'], ms['broke_open']['meet']),
-             card(f"&#129352; {esc(ms['swimmer'])} &middot; {esc(ms['broke_class']['grade'])} record",
-                  ms['time'], ms['broke_class']['time'], ms['broke_class']['name'],
-                  ms['broke_class']['date'], ms['broke_class']['meet'])]
-    for f in followups:
-        cards.append(card(f"&#127942; {esc(f['swimmer'])} &middot; {esc(f['event'])} &middot; school record",
-                          f['time'], f['broke_open']['time'], f['broke_open']['name'],
-                          f['broke_open']['date'], f['broke_open']['meet']))
-        cards.append(card(f"&#129352; {esc(f['swimmer'])} &middot; {esc(f['broke_class']['grade'])} {esc(f['event'])} record",
-                          f['time'], f['broke_class']['time'], f['broke_class']['name'],
-                          f['broke_class']['date'], f['broke_class']['meet']))
-    record_cards = '\n'.join(cards)
-
-    same = [f for f in followups if f['event'] == ms['event']]
-    others = [f for f in followups if f['event'] != ms['event']]
-    followup_lead = ''
-    if same:
-        f = same[0]
-        also = ''.join(f" He also lowered the {esc(o['event'])} record to "
-                       f"<span class=\"time\"><strong>{esc(o['time'])}</strong></span>"
-                       + (f" &mdash; beating his own record from the {esc(o['broke_open']['meet'])} by "
-                          f"{margin(o['broke_open']['time'], o['time'])}s." if o['broke_open']['name'] == o['swimmer']
-                          else f", previously {esc(o['broke_open']['time'])} by {esc(o['broke_open']['name'])}.")
-                       for o in others)
-        days = (datetime(*parse_record_date(f['date'])) - datetime(*parse_record_date(ms['date']))).days
-        gap_words = (f"{['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six'][days // 7]} week{'s' if days > 7 else ''}"
-                     if days % 7 == 0 and 0 < days <= 42 else f"{days} days")
-        followup_lead = (
-            f'''                <p class="mb-0 mt-2">{gap_words} later, at the {esc(f['meet'])} on
-                {esc(f['date'])}, his {esc(f['relation'])} {esc(f['swimmer'])}, a {esc(f['grade']).lower()},
-                swam <span class="time"><strong>{esc(f['time'])}</strong></span> &mdash;
-                {margin(f['broke_open']['time'], f['time'])} seconds under Kent's mark.{also}</p>''')
-
-    held = [g for g in kent_holds if g != 'Open']
-    if held:
-        named = ' and '.join(held) if len(held) <= 2 else ', '.join(held[:-1]) + ' and ' + held[-1]
-        kent_line = (f"{esc(ms['swimmer'])} still holds the {named} {esc(ms['event'])} "
-                     f"record{'s' if len(held) > 1 else ''}"
-                     + (" and the Open record." if 'Open' in kent_holds else
-                        f", and as a {esc(ms['grade']).lower()} has two more seasons to chase his brother's time."))
-    else:
-        kent_line = ''
 
     nav_html = create_nav_html()
 
@@ -491,8 +459,7 @@ def build_page(project_root):
                             Jump To
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item jump-to-link" href="#kent">&#127942; School Records: the Olsson brothers</a></li>
-                            <li><a class="dropdown-item jump-to-link" href="#highlights">&#9889; {esc(res['latest_meet'])} highlights</a></li>
+                            <li><a class="dropdown-item jump-to-link" href="#latest">&#9889; Latest meet: {esc(latest_name)}</a></li>
                             <li><a class="dropdown-item jump-to-link" href="#season">&#127946; The {SEASON} Season</a></li>
                             <li><a class="dropdown-item jump-to-link" href="#schedule">&#128197; Meet Schedule</a></li>
                             <li><a class="dropdown-item jump-to-link" href="#seniors">&#127891; Senior Class of 2027</a></li>
@@ -503,50 +470,20 @@ def build_page(project_root):
         </div>
     </div>
 
-    <!-- 1. School records: the Olsson brothers -->
-    <div class="container my-5" id="kent">
-        <div class="section-header" data-section="kent">
-            <h2 class="mb-0">&#127942; School Records: the Olsson brothers</h2>
-            <button class="section-toggle" data-target="kent-content">
+    <!-- 1. Latest meet: a short teaser; the whole story is on the meet page -->
+    <div class="container my-5" id="latest">
+        <div class="section-header" data-section="latest">
+            <h2 class="mb-0">&#9889; Latest meet</h2>
+            <button class="section-toggle" data-target="latest-content">
                 <span class="toggle-icon">&#9660;</span>
             </button>
         </div>
-        <div class="section-content" id="kent-content">
-            <div class="alert alert-success mt-3">
-                <h4 class="alert-heading mb-2">First Kent, then Wade</h4>
-                <p class="mb-2">At the {esc(ms['meet'])} on {esc(ms['date'])}, {esc(ms['grade']).lower()}
-                {esc(ms['swimmer'])} swam the {esc(ms['event'])} in
-                <span class="time"><strong>{esc(ms['time'])}</strong></span> and broke two Tanque Verde
-                records in the same swim.</p>
-                {oldest_line}
-{followup_lead}
-            </div>
-
-            <div class="row g-3">
-{record_cards}
-            </div>
-
-            <p class="mt-3 mb-0">{kent_line} See the
-            <a href="/records/overall.html">all-time records</a> and the
-            <a href="/records/boys-bygrade.html">boys records by grade</a>.</p>
+        <div class="section-content" id="latest-content">
+{latest_html}
         </div>
     </div>
 
-    <!-- 2. Latest meet highlights (derived from the meet file) -->
-    <div class="container my-5" id="highlights">
-        <div class="section-header" data-section="highlights">
-            <h2 class="mb-0">&#9889; {esc(res['latest_meet'])} highlights</h2>
-            <button class="section-toggle" data-target="highlights-content">
-                <span class="toggle-icon">&#9660;</span>
-            </button>
-        </div>
-        <div class="section-content" id="highlights-content">
-            <p class="lead mt-3 mb-2">More from {hl_when}.</p>
-{hl_html}
-        </div>
-    </div>
-
-    <!-- 3. Season Introduction -->
+    <!-- 2. Season Introduction -->
     <div class="container my-5" id="season">
         <div class="section-header" data-section="season">
             <h2 class="mb-0">&#127946; The {SEASON} Season</h2>
@@ -576,7 +513,7 @@ def build_page(project_root):
         </div>
     </div>
 
-    <!-- 4. Meet Schedule -->
+    <!-- 3. Meet Schedule -->
     <div class="container my-5" id="schedule">
         <div class="section-header" data-section="schedule">
             <h2 class="mb-0">&#128197; {SEASON} Meet Schedule</h2>
@@ -593,7 +530,7 @@ def build_page(project_root):
                         <tr><th>Date</th><th>Meet</th><th>Where</th></tr>
                     </thead>
                     <tbody>
-{schedule_rows(data, today)}
+{schedule_rows(data, today, pages_by_date)}
                     </tbody>
                 </table>
             </div>
@@ -603,7 +540,7 @@ def build_page(project_root):
         </div>
     </div>
 
-    <!-- 5. Senior Class -->
+    <!-- 4. Senior Class -->
     <div class="container my-5" id="seniors">
         <div class="section-header" data-section="seniors">
             <h2 class="mb-0">&#127891; Senior Class of 2027</h2>
