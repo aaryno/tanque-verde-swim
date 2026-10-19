@@ -2541,3 +2541,12 @@ h2[id], h3[id], .event-heading[id] {
   margin-left: 0.35em;
   color: var(--tvhs-primary, #2d5a27);
 }
+
+/* A swum meet with its own page stays full colour: the link is the archive. */
+.table-schedule tr.meet-past.meet-has-page > td {
+  opacity: 1;
+}
+.table-schedule tr.meet-has-page td a {
+  font-weight: 600;
+  text-decoration: none;
+}
