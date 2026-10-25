@@ -11,6 +11,12 @@ This is the **self-contained** repository for the Tanque Verde High School Swimm
 
 ## Quick Start
 
+### Import a meet's results (Hy-Tek .cl2)
+
+**Read [`IMPORT_MEET.md`](IMPORT_MEET.md) first.** One command does the import and rebuild:
+`python3 scripts/import_meet.py RESULTS.cl2 --meet "<Meet Name>" [--finals-date YYYY-MM-DD] [--report-only]`.
+Record changes it reports are made by hand in `records/` and `data/class_records_history.json`.
+
 ### Regenerate Entire Website (Most Common)
 
 ```bash

@@ -30,7 +30,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from generate_landing_page import (MONTHS, esc, to_secs, show_time,  # noqa: E402
-                                   grade_tables, meet_highlights,
+                                   grade_tables, meet_highlights, meet_days, best_swims, fmt_meet_date,
                                    verify_oldest_record, describe_record, check_followups)
 
 REPO = Path(__file__).resolve().parent.parent
@@ -51,8 +51,12 @@ def hist_date(s):
     raise ValueError(f'unreadable record date {s!r}')
 
 
-def long_date(iso):
+def long_date(iso, end=None):
+    """'Sat, Oct 17, 2026'; a two-day meet reads 'Fri–Sat, Oct 23–24, 2026'."""
     d = datetime.strptime(iso, '%Y-%m-%d')
+    if end and end != iso:
+        e = datetime.strptime(end, '%Y-%m-%d')
+        return f"{d.strftime('%a')}&ndash;{e.strftime('%a')}, {fmt_meet_date(iso, end)}, {e.year}"
     return f"{d.strftime('%a')}, {MONTHS[d.month - 1][:3]} {d.day}, {d.year}"
 
 
@@ -72,8 +76,9 @@ def season_meets(project_root, season):
 
 
 def records_at(history, meets):
-    """Records broken at each meet, keyed by meet date (ISO)."""
-    by_day = {m['date']: m for m in meets}
+    """Records broken at each meet, keyed by the meet's (first) date, ISO. A
+    prelims/finals meet owns every one of its days."""
+    by_day = {d: m for m in meets for d in meet_days(m)}
     out = {}
     for e in history:
         day = hist_date(e['date'])
@@ -93,7 +98,7 @@ def records_at(history, meets):
             d = hist_date(rec['date']).strftime('%Y-%m-%d')
             m = by_day.get(d)
             return m['href'] if m and m['meet'] == rec.get('meet') else None
-        out.setdefault(iso, []).append(dict(e, open_prev=open_prev, open_prev_href=link(open_prev),
+        out.setdefault(by_day[iso]['date'], []).append(dict(e, open_prev=open_prev, open_prev_href=link(open_prev),
                                             broken_by=later[0] if later else None,
                                             broken_by_href=link(later[0]) if later else None))
     return out
@@ -196,9 +201,10 @@ def top_swims(meet, meets, recs, near, alltime, drops):
             html += f" &mdash; broken again {esc(b['date'][:6].strip(','))} by {esc(b['name'])} at {where}"
         items.append((r['name'], 0, html))
     cats.append(('records', '&#127942; Records', '', per_swimmer(items)))
-    # 2. places
+    # 2. places -- finals places only; a prelim place is a qualifying rank, not a finish
     items = [(r['athlete'], int(r['place']), f"{ordinal(int(r['place']))} {esc(short_event(r['event']))} {t(r['time'])}")
-             for r in meet['individual'] if str(r.get('place', '')).isdigit() and 1 <= int(r['place']) <= 8]
+             for r in meet['individual'] if r.get('round', 'Final') == 'Final'
+             and str(r.get('place', '')).isdigit() and 1 <= int(r['place']) <= 8]
     cats.append(('places', '&#129351; Top-8 finishes', '', per_swimmer(items)))
     # 3. season bests: faster than the swimmer's earlier swims this season
     earlier = {}
@@ -208,7 +214,7 @@ def top_swims(meet, meets, recs, near, alltime, drops):
                 k = (r['athlete'], r['event'])
                 earlier[k] = min(earlier.get(k, 1e9), to_secs(r['time']))
     sb = []
-    for r in meet['individual']:
+    for r in best_swims(meet):
         k = (r['athlete'], r['event'])
         if k in earlier and to_secs(r['time']) < earlier[k]:
             sb.append(dict(r, drop=earlier[k] - to_secs(r['time'])))
@@ -239,15 +245,17 @@ def top_swims(meet, meets, recs, near, alltime, drops):
 def summary_sentence(meet, cats, sb, skip=()):
     """One sentence that spreads the credit: wins, then season bests, then the
     swimmers knocking on the door -- leaving out whoever the headline is about."""
-    parts = []
-    wins = [(r['athlete'], r['event']) for r in meet['individual'] if r.get('place') == '1' and r['athlete'] not in skip]
+    parts, named = [], set(skip)
+    wins = [(r['athlete'], r['event']) for r in meet['individual']
+            if r.get('place') == '1' and r.get('round', 'Final') == 'Final' and r['athlete'] not in skip]
     if wins:
         parts.append(' and '.join(f'<strong>{esc(a)}</strong> won the {esc(short_event(e))}' for a, e in wins))
     if sb:
         lead = max(sb, key=lambda r: r['drop'])
+        named.add(lead['athlete'])
         parts.append(f"{len(sb)} swims were season bests, led by <strong>{esc(lead['athlete'])}</strong> "
                      f"(&minus;{lead['drop']:.2f}s, {esc(short_event(lead['event']))})")
-    knock = [who for key, _, _, lines in cats if key == 'knocking' for who, _ in lines if who not in skip]
+    knock = [who for key, _, _, lines in cats if key == 'knocking' for who, _ in lines if who not in named]
     if knock and len(parts) < 2:
         parts.append(f"{names_list(knock[:3])} {'is' if len(knock[:3]) == 1 else 'are'} knocking on the door of records")
     if not parts:
@@ -280,6 +288,7 @@ def story(meet, recs, season, project_root, cats, sb):
         return bits
     if sequel:
         r, p = sequel, sequel['open_prev']
+        day = hist_date(r['date'])
         rel = relation_of(season, r)
         oldest, _, _ = oldest_verdict(season, project_root, dict(name=p['name'], event=r['event'], time=p['time']))
         what = 'the oldest record on the boys books' if oldest else f"the {esc(r['event'])} school record"
@@ -302,6 +311,7 @@ def story(meet, recs, season, project_root, cats, sb):
                     links=links, about={r['name']})
     if opens:
         r, p = opens[0], opens[0]['open_prev']
+        day = hist_date(r['date'])
         oldest, phrase, runner_up = oldest_verdict(season, project_root, r)
         head = (f"{esc(r['name'])} breaks the oldest {r['gender']} record" if oldest
                 else f"{esc(r['name'])} sets the {esc(r['event'])} school record")
@@ -310,6 +320,15 @@ def story(meet, recs, season, project_root, cats, sb):
                 + (f" &mdash; <strong>{phrase}</strong>. The next-oldest still standing is the "
                    f"{describe_record(runner_up)}." if oldest else '.')
                 + f" It is also the new {GRADE_WORD[r['grade']]} record.")
+        more = also([x for x in recs if x is not r and x['name'] == r['name']], r)
+        if more:
+            lede += f" {'He' if r['gender'] == 'boys' else 'She'} also {' and '.join(more)}."
+        for x in (x for x in recs if x['name'] != r['name']):
+            q = x['open_prev'] or x['previous']
+            what = 'school' if x['open_prev'] else GRADE_WORD[x['grade']]
+            lede += (f" {GRADE_WORD[x['grade']]} <strong>{esc(x['name'])}</strong> set a new {what} "
+                     f"{esc(x['event'])} record of {t(x['time'])}, breaking {esc(q['name'])}'s {esc(q['time'])} "
+                     f"from {esc(q['date'][-4:])}.")
         short = (f"{GRADE_WORD[r['grade']]} <strong>{esc(r['name'])}</strong> swam the {esc(short_event(r['event']))} in "
                  f"{t(r['time'])}, breaking a school record from {esc(p['date'][-4:])}"
                  + (" &mdash; the oldest on the boys books." if oldest else '.'))
@@ -330,7 +349,7 @@ def story(meet, recs, season, project_root, cats, sb):
                     lede=f"New class records: {items}.", short=f"New class records for {names_list(who)}.",
                     links=links, about=set(who))
     # No records: the headline goes to a win, then the biggest season best, then the closest near-record.
-    wins = [r for r in meet['individual'] if r.get('place') == '1']
+    wins = [r for r in meet['individual'] if r.get('place') == '1' and r.get('round', 'Final') == 'Final']
     knock = [lines for key, _, _, lines in cats if key == 'knocking']
     if wins:
         w = wins[0]
@@ -368,8 +387,11 @@ def results_html(meet):
         for r in rel:
             who = ', '.join(esc(p) for p in r['participants']) or '<span class="text-muted">swimmers not listed</span>'
             events.setdefault(r['event'], []).append((to_secs(r['time']), r['time'], who, r.get('place')))
+        two = any(r.get('round') == 'Prelim' for r in ind)
         for r in ind:
             who = f"{esc(r['athlete'])} <small class=\"text-muted\">{esc(r['grade'])}</small>"
+            if two:
+                who += f" <small class=\"text-muted\">{'prelim' if r.get('round') == 'Prelim' else 'final'}</small>"
             events.setdefault(r['event'], []).append((to_secs(r['time']), r['time'], who, r.get('place')))
         blocks = []
         for ev in sorted(events, key=order):
@@ -456,7 +478,7 @@ def build_meet(meet, meets, recs, season, project_root):
 <div class="container py-4">
   <div class="crumbs mb-2"><a href="/#schedule">&larr; {esc(season['season'])} schedule</a></div>
   <h2 class="mb-0">{esc(meet['meet'])}</h2>
-  <p class="text-muted mb-2">{long_date(meet['date'])}{' &middot; ' + where if where else ''}</p>
+  <p class="text-muted mb-2">{long_date(meet['date'], meet.get('date_end'))}{' &middot; ' + where if where else ''}</p>
   <div class="meet-nav mb-2">{prev_a}{next_a}</div>
   <nav class="meet-jump">{jump}</nav>
   {''.join(section(*s) for s in secs)}

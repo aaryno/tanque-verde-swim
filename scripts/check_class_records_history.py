@@ -23,8 +23,12 @@ WHAT IT CHECKS
 --------------
   DUPLICATE       the same (season, gender, event, grade, time) appears twice
   REGRADE         the same (season, gender, event, grade) appears twice at
-                  different times -- one season cannot set one class record
-                  twice in the history; the slower one is stale
+                  different times and the entries do not form a chain. A
+                  swimmer may lower a class record twice in one season (Wade
+                  Olsson's senior 200 IM: 1:55.22 on Oct 17, 2026, then 1:54.90
+                  on Oct 24) -- that is allowed only when each faster entry's
+                  `previous` names the slower one exactly (time and swimmer).
+                  Anything else means the slower one is stale.
   MISSING_FIELD   an entry is missing one of the required keys
   BAD_SEASON      season is not YYYY-YY
   SELF_PREVIOUS   `previous` names the same swimmer at the same time as the
@@ -51,6 +55,19 @@ SLOT = ('season', 'gender', 'event', 'grade')
 
 def describe(key, fields):
     return ' / '.join(f'{f}={key[i]!r}' for i, f in enumerate(fields))
+
+
+def secs(t):
+    parts = str(t).split(':')
+    return sum(float(x) * 60 ** i for i, x in enumerate(reversed(parts)))
+
+
+def is_chain(es):
+    """Slowest first, each later entry's `previous` is exactly the one before it."""
+    es = sorted(es, key=lambda e: -secs(e.get('time')))
+    return all((b.get('previous') or {}).get('time') == a.get('time')
+               and (b.get('previous') or {}).get('name') == a.get('name')
+               for a, b in zip(es, es[1:]))
 
 
 def check(path):
@@ -92,7 +109,7 @@ def check(path):
     for key, idxs in sorted(by_slot.items(), key=lambda kv: str(kv[0])):
         if len(idxs) > 1:
             times = [entries[i].get('time') for i in idxs]
-            if len(set(times)) > 1:
+            if len(set(times)) > 1 and not is_chain([entries[i] for i in idxs]):
                 problems.append(('REGRADE',
                                  f'the same class record slot appears {len(idxs)} times at '
                                  f'indexes {idxs} with different times {times}: '

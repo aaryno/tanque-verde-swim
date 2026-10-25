@@ -3031,5 +3031,56 @@
       "season": "2025-26",
       "meet": "Pecan Classic"
     }
+  },
+  {
+    "season": "2026-27",
+    "gender": "boys",
+    "event": "100 Backstroke",
+    "grade": "SO",
+    "time": "56.52",
+    "name": "Kent Olsson",
+    "date": "Oct 24, 2026",
+    "meet": "Southern Arizona Regional Qualifier",
+    "previous": {
+      "time": "56.59",
+      "name": "Nicholas Cusson",
+      "date": "Oct 23, 2021",
+      "season": "2021-22",
+      "meet": "Pecan Classic"
+    }
+  },
+  {
+    "season": "2026-27",
+    "gender": "boys",
+    "event": "100 Breaststroke",
+    "grade": "SR",
+    "time": "58.11",
+    "name": "Wade Olsson",
+    "date": "Oct 24, 2026",
+    "meet": "Southern Arizona Regional Qualifier",
+    "previous": {
+      "time": "59.61",
+      "name": "Zachary Duerkop",
+      "date": "Sep 20, 2025",
+      "season": "2025-26",
+      "meet": "Canyon del Oro Classic"
+    }
+  },
+  {
+    "season": "2026-27",
+    "gender": "boys",
+    "event": "200 Individual Medley",
+    "grade": "SR",
+    "time": "1:54.90",
+    "name": "Wade Olsson",
+    "date": "Oct 24, 2026",
+    "meet": "Southern Arizona Regional Qualifier",
+    "previous": {
+      "time": "1:55.22",
+      "name": "Wade Olsson",
+      "date": "Oct 17, 2026",
+      "season": "2026-27",
+      "meet": "Arena High School Classic"
+    }
   }
 ]

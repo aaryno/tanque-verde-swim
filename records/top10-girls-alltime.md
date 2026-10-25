@@ -1,7 +1,7 @@
 # All-Time Top 10 - Girls
 ## Tanque Verde High School Swimming
 
-**Generated:** October 18, 2026 at 06:05 AM
+**Generated:** October 24, 2026 at 08:23 PM
 
 ---
 
@@ -57,13 +57,13 @@
 | 1 | 5:27.18 | Carly Wilson | JR | Oct 21, 2010 | Pecan Classic |
 | 2 | 5:32.67 | Anna Ellis | SO | Nov 04, 2016 | 2016 D-3 AIA State Championship |
 | 3 | 5:34.97 | Marisol Rivera | SR | Nov 02, 2013 | 2013 AIA Division II State Championships |
-| 4 | 5:43.91 | Rachel Anderson | SO | Sep 19, 2026 | Canyon del Oro Classic |
+| 4 | 5:42.46 | Rachel Anderson | SO | Oct 23, 2026 | Southern Arizona Regional Qualifier |
 | 5 | 5:45.11 | Hazel Dasse | SO | Sep 17, 2016 | Canyon Del Oro Classic |
 | 6 | 5:56.61 | Bridget Spooner | SO | Nov 08, 2014 | 2014 AIA Division II State Championships |
-| 7 | 6:01.25 | Talia Schwab | FR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
-| 8 | 6:13.72 | Sarynn Patterson | SR | Oct 19, 2019 | Mike Ward Invitational |
-| 9 | 6:14.62 | Kadynce Drummond | JR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
-| 10 | 6:22.94 | Summer Cugini | JR | Oct 21, 2023 | Pecan Classic |
+| 7 | 5:58.45 | Avery Fleming | FR | Oct 23, 2026 | Southern Arizona Regional Qualifier |
+| 8 | 6:01.25 | Talia Schwab | FR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
+| 9 | 6:13.72 | Sarynn Patterson | SR | Oct 19, 2019 | Mike Ward Invitational |
+| 10 | 6:14.34 | Ella Bissmeyer | JR | Oct 23, 2026 | Southern Arizona Regional Qualifier |
 
 ### 100 Backstroke
 
@@ -106,9 +106,9 @@
 | 5 | 1:06.15 | Grace Davis | SO | Oct 25, 2024 | Southern Arizona Qualifier |
 | 6 | 1:07.42 | Stella Eftekhar | FR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
 | 7 | 1:07.68 | Avery Fleming | FR | Sep 19, 2026 | Canyon del Oro Classic |
-| 8 | 1:08.62 | Lindsey Schoel-Smith | FR | Oct 03, 2015 | 2015 High School Classic |
-| 9 | 1:10.15 | Amira Alitiem | JR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
-| 10 | 1:11.40 | Rachel Decesari | JR | Nov 2008 | 2008 AIA State Championship |
+| 8 | 1:08.32 | Isla Cerepak | SO | Oct 24, 2026 | Southern Arizona Regional Qualifier |
+| 9 | 1:08.62 | Lindsey Schoel-Smith | FR | Oct 03, 2015 | 2015 High School Classic |
+| 10 | 1:10.15 | Amira Alitiem | JR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
 
 ### 200 Individual Medley
 
@@ -118,9 +118,9 @@
 | 2 | 2:15.55 | Lindsey Schoel-Smith | SO | Nov 04, 2016 | 2016 D-3 AIA State Championship |
 | 3 | 2:20.75 | Sarynn Patterson | SR | Nov 07, 2019 | 2019 D-3 AIA State Championship |
 | 4 | 2:21.97 | Isabelle Sansom | JR | Nov 01, 2018 | AIA D-3 Girls State Championship |
-| 5 | 2:27.21 | Hazel Dasse | FR | Oct 24, 2015 | Small School Championships |
-| 6 | 2:30.38 | Madeline Barnard | SR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
-| 7 | 2:34.34 | Avery Fleming | FR | Sep 19, 2026 | Canyon del Oro Classic |
-| 8 | 2:34.87 | Ella Bissmeyer | SO | Nov 08, 2025 | 2025 D-3 AIA State Championship |
-| 9 | 2:35.04 | Madisyn Clausen | JR | Oct 26, 2013 | Mike Ward Memorial Invitational |
-| 10 | 2:35.54 | Adrianna Witte | SR | Sep 27, 2025 | Arena High School Classic |
+| 5 | 2:26.52 | Rachel Anderson | SO | Oct 24, 2026 | Southern Arizona Regional Qualifier |
+| 6 | 2:27.21 | Hazel Dasse | FR | Oct 24, 2015 | Small School Championships |
+| 7 | 2:30.38 | Madeline Barnard | SR | Nov 08, 2025 | 2025 D-3 AIA State Championship |
+| 8 | 2:31.02 | Avery Fleming | FR | Oct 23, 2026 | Southern Arizona Regional Qualifier |
+| 9 | 2:34.87 | Ella Bissmeyer | SO | Nov 08, 2025 | 2025 D-3 AIA State Championship |
+| 10 | 2:35.04 | Madisyn Clausen | JR | Oct 26, 2013 | Mike Ward Memorial Invitational |

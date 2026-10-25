@@ -114,10 +114,10 @@
     }
   },
   "results_so_far": {
-    "_note": "Two meets are included: Canyon del Oro Classic (MaxPreps /stats/) and Arena High School Classic (Hy-Tek results file, data/meets/). Dual meets are not included. Do not imply a complete season.",
-    "meets_with_results": 2,
-    "latest_meet": "Arena High School Classic",
-    "latest_meet_date": "2026-10-17"
+    "_note": "Written by scripts/import_meet.py from data/meets/. Meets included: Canyon del Oro Classic (Sep 19, 2026, MaxPreps /stats/); Arena High School Classic (Oct 17, 2026, Hy-Tek results file); Southern Arizona Regional Qualifier (Oct 23-24, 2026, Hy-Tek results file). Dual meets are not included. Do not imply a complete season.",
+    "meets_with_results": 3,
+    "latest_meet": "Southern Arizona Regional Qualifier",
+    "latest_meet_date": "2026-10-23"
   },
   "milestone": {
     "_source": "Established in PR #2 (branch worker/tv-swim-2026-27-prepare-2026-09-20) from MaxPreps /stats/ and corroborated by the azpreps365 Division III leaderboard. Round=Final.",

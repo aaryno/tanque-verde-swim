@@ -1,7 +1,7 @@
 # All-Time Top 10 - Boys
 ## Tanque Verde High School Swimming
 
-**Generated:** October 18, 2026 at 06:05 AM
+**Generated:** October 24, 2026 at 08:23 PM
 
 ---
 
@@ -70,7 +70,7 @@
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
 | 1 | 52.68 | Nicholas Cusson | SR | Nov 04, 2023 | 2023 D-3 AIA State Championship |
-| 2 | 56.77 | Kent Olsson | SO | Oct 17, 2026 | Arena High School Classic |
+| 2 | 56.52 | Kent Olsson | SO | Oct 24, 2026 | Southern Arizona Regional Qualifier |
 | 3 | 57.27 | Wade Olsson | JR | Oct 18, 2025 | Pecan Classic |
 | 4 | 59.61 | Austin Morris | SR | Oct 24, 2015 | Small School Championships |
 | 5 | 1:00.82 | Samuel Merrill | JR | Sep 17, 2016 | Canyon Del Oro Classic |
@@ -84,13 +84,13 @@
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| 1 | 59.51 | Zachary Duerkop | JR | Sep 14, 2024 | Canyon del Oro Classic |
-| 2 | 1:00.17 | Wade Olsson | JR | Oct 24, 2025 | Southern Arizona Qualifier |
+| 1 | 58.11 | Wade Olsson | SR | Oct 24, 2026 | Southern Arizona Regional Qualifier |
+| 2 | 59.51 | Zachary Duerkop | JR | Sep 14, 2024 | Canyon del Oro Classic |
 | 3 | 1:08.06 | Samuel Stott | SR | Oct 28, 2022 | Southern AZ Regional Qualifier |
 | 4 | 1:09.05 | Tanner Morris | SR | Nov 05, 2016 | 2016 D-3 AIA State Championship |
-| 5 | 1:10.33 | Lucas Soeder | SR | Nov 09, 2024 | 2024 D-3 AIA State Championship |
-| 6 | 1:10.91 | Oren Zadorozny | SO | Sep 24, 2022 | TYR High School Classic |
-| 7 | 1:11.18 | Bennett Johnston | SO | Nov 08, 2025 | 2025 D-3 AIA State Championship |
+| 5 | 1:09.21 | Bennett Johnston | JR | Oct 23, 2026 | Southern Arizona Regional Qualifier |
+| 6 | 1:10.33 | Lucas Soeder | SR | Nov 09, 2024 | 2024 D-3 AIA State Championship |
+| 7 | 1:10.91 | Oren Zadorozny | SO | Sep 24, 2022 | TYR High School Classic |
 | 8 | 1:11.69 | Samuel Merrill | JR | Oct 01, 2016 | 2016 TYR High School Classic |
 | 9 | 1:12.88 | Alexander Flores | SR | Oct 01, 2016 | 2016 TYR High School Classic |
 | 10 | 1:12.89 | Dominic Colombo | SR | Oct 30, 2020 | SQ  @ CDO (Oro Valley, AZ) |
@@ -108,13 +108,13 @@
 | 7 | 59.89 | Alexander Flores | SR | Nov 05, 2016 | 2016 D-3 AIA State Championship |
 | 8 | 1:02.99 | Stephen Moreland | JR | Sep 23, 2023 | TYR High School Classic |
 | 9 | 1:03.07 | Nolan Radomsky | SR | Sep 23, 2023 | TYR High School Classic |
-| 10 | 1:05.55 | Jackson Machamer | SO | Sep 14, 2024 | Canyon del Oro Classic |
+| 10 | 1:04.02 | Jackson Machamer | SR | Oct 24, 2026 | Southern Arizona Regional Qualifier |
 
 ### 200 Individual Medley
 
 | Rank | Time | Athlete | Year | Date | Meet |
 |-----:|-----:|---------|------|------|------|
-| 1 | 1:55.22 | Wade Olsson | SR | Oct 17, 2026 | Arena High School Classic |
+| 1 | 1:54.90 | Wade Olsson | SR | Oct 24, 2026 | Southern Arizona Regional Qualifier |
 | 2 | 2:00.80 | Zachary Duerkop | SR | Oct 18, 2025 | Pecan Classic |
 | 3 | 2:02.29 | Nicholas Cusson | SR | Sep 16, 2023 | CDO Classic |
 | 4 | 2:03.99 | Samuel Stott | JR | Oct 29, 2021 | Southern AZ Regional Qualifier |

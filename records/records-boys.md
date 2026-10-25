@@ -50,7 +50,7 @@
 | Grade | Time | Athlete | Date | Meet |
 |-------|-----:|---------|------|------|
 | Freshman | 59.71 | Kent Olsson | Oct 24, 2025 | Southern Arizona Qualifier |
-| Sophomore | 56.59 | Nicholas Cusson | Oct 23, 2021 | Pecan Classic |
+| Sophomore | 56.52 | Kent Olsson | Oct 24, 2026 | Southern Arizona Regional Qualifier |
 | Junior | 52.83 | Nicholas Cusson | Nov 05, 2022 | 2022 D-3 AIA Boys State Championship |
 | Senior | 52.68 | Nicholas Cusson | Nov 04, 2023 | 2023 D-3 AIA State Championship |
 | **Open** | **52.68** | **Nicholas Cusson** | **Nov 04, 2023** | **2023 D-3 AIA State Championship** |
@@ -62,8 +62,8 @@
 | Freshman | 1:07.59 | Wade Olsson | Oct 21, 2023 | Pecan Classic |
 | Sophomore | 1:01.51 | Wade Olsson | Oct 25, 2024 | Southern Arizona Qualifier |
 | Junior | 59.51 | Zachary Duerkop | Sep 14, 2024 | Canyon del Oro Classic |
-| Senior | 59.61 | Zachary Duerkop | Sep 20, 2025 | Canyon del Oro Classic |
-| **Open** | **59.51** | **Zachary Duerkop** | **Sep 14, 2024** | **Canyon del Oro Classic** |
+| Senior | 58.11 | Wade Olsson | Oct 24, 2026 | Southern Arizona Regional Qualifier |
+| **Open** | **58.11** | **Wade Olsson** | **Oct 24, 2026** | **Southern Arizona Regional Qualifier** |
 
 ### 100 Butterfly
 
@@ -82,8 +82,8 @@
 | Freshman | 2:07.98 | Samuel Stott | Nov 01, 2019 | Canyon Del Oro Invite |
 | Sophomore | 2:04.88 | Wade Olsson | Nov 09, 2024 | 2024 D-3 AIA State Championship |
 | Junior | 1:57.78 | Wade Olsson | Nov 08, 2025 | 2025 D-3 AIA State Championship |
-| Senior | 1:55.22 | Wade Olsson | Oct 17, 2026 | Arena High School Classic |
-| **Open** | **1:55.22** | **Wade Olsson** | **Oct 17, 2026** | **Arena High School Classic** |
+| Senior | 1:54.90 | Wade Olsson | Oct 24, 2026 | Southern Arizona Regional Qualifier |
+| **Open** | **1:54.90** | **Wade Olsson** | **Oct 24, 2026** | **Southern Arizona Regional Qualifier** |
 
 ---
 

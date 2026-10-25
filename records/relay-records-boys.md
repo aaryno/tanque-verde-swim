@@ -32,19 +32,20 @@
 |-----:|-----:|--------------|------|------|
 | **1** | **01:30.45** | **Jackson Eftekhar, Grayson The, Wade Olsson, Zachary Duerkop** | **Nov 08, 2025** | **D-3 AIA State Championship** |
 | 2 | 01:32.46 | Trevor Clausen, Logan Radomsky, Nicholas Spilotro, Samuel Stott | Nov 07, 2019 | 2019 D-3 AIA State Championship |
-| 3 | 01:33.90 | Nicholas Cusson, Alejandro Alvarez, Stephen Moreland, Samuel Stott | Nov 05, 2022 | 2022 D-3 AIA Boys State Championship |
-| 4 | 01:33.93 | Samuel Stott, Alejandro Alvarez, Nolan Radomsky, Nicholas Cusson | Nov 05, 2021 | AIA D-III Boys State |
-| 5 | 01:34.88 | Nicholas Cusson, Tannor Soeder, Nolan Radomsky, Samuel Stott | Nov 05, 2022 | 2022 D-3 AIA Boys State Championship |
-| 6 | 01:35.01 | Grayson The, Wade Olsson, Peyton Kowalski, Zachary Duerkop | Nov 09, 2024 | 2024 D-3 AIA State Championship |
-| 7 | 01:35.27 | Nolan Radomsky, Jackson Machamer, Zachary Duerkop, Nicholas Cusson | Oct 21, 2023 | Pecan Classic |
-| 8 | 01:35.61 | Jackson Eftekhar, Kent Olsson, Jackson Machamer, Zachary Duerkop | Oct 18, 2025 | Pecan Classic |
-| 9 | 01:35.90 | Jackson Eftekhar, Jackson Machamer, Grayson The, Zachary Duerkop | Sep 28, 2024 | 21st Annual TYR HS Classic |
-| 10 | 01:36.07 | Zachary Duerkop, Wade Olsson, Jackson Machamer, Nicholas Cusson | Oct 25, 2023 | Southern Arizona Region Qualifier |
-| 11 | 01:36.53 | Wade Olsson, Jackson Eftekhar, Jackson Machamer, Zachary Duerkop | Oct 19, 2024 | Pecan Classic |
-| 12 | 01:36.61 | Nicholas Cusson, Nolan Radomsky, Wade Olsson, Stephen Moreland | Sep 16, 2023 | CDO Classic |
-| 13 | 01:37.29 | Samuel Stott, Alejandro Alvarez, Tannor Soeder, Nicholas Cusson | Sep 24, 2022 | TYR High School Classic |
-| 14 | 01:37.46 | Alexander Flores, Samuel Merrill, Tanner Morris, Joseph Breinholt | Sep 17, 2016 | Canyon Del Oro Classic |
-| 15 | 01:38.14 | Nicholas Cusson, Nicholas Spilotro, Joseph Jacobs, Samuel Stott | Nov 05, 2020 | AIA D-3 State Championship |
+| 3 | 01:33.83 | Jackson Machamer, Kent Olsson, Wade Olsson, Jackson Eftekhar | Oct 24, 2026 | Southern Arizona Regional Qualifier |
+| 4 | 01:33.90 | Nicholas Cusson, Alejandro Alvarez, Stephen Moreland, Samuel Stott | Nov 05, 2022 | 2022 D-3 AIA Boys State Championship |
+| 5 | 01:33.93 | Samuel Stott, Alejandro Alvarez, Nolan Radomsky, Nicholas Cusson | Nov 05, 2021 | AIA D-III Boys State |
+| 6 | 01:34.88 | Nicholas Cusson, Tannor Soeder, Nolan Radomsky, Samuel Stott | Nov 05, 2022 | 2022 D-3 AIA Boys State Championship |
+| 7 | 01:35.01 | Grayson The, Wade Olsson, Peyton Kowalski, Zachary Duerkop | Nov 09, 2024 | 2024 D-3 AIA State Championship |
+| 8 | 01:35.27 | Nolan Radomsky, Jackson Machamer, Zachary Duerkop, Nicholas Cusson | Oct 21, 2023 | Pecan Classic |
+| 9 | 01:35.61 | Jackson Eftekhar, Kent Olsson, Jackson Machamer, Zachary Duerkop | Oct 18, 2025 | Pecan Classic |
+| 10 | 01:35.90 | Jackson Eftekhar, Jackson Machamer, Grayson The, Zachary Duerkop | Sep 28, 2024 | 21st Annual TYR HS Classic |
+| 11 | 01:36.07 | Zachary Duerkop, Wade Olsson, Jackson Machamer, Nicholas Cusson | Oct 25, 2023 | Southern Arizona Region Qualifier |
+| 12 | 01:36.53 | Wade Olsson, Jackson Eftekhar, Jackson Machamer, Zachary Duerkop | Oct 19, 2024 | Pecan Classic |
+| 13 | 01:36.61 | Nicholas Cusson, Nolan Radomsky, Wade Olsson, Stephen Moreland | Sep 16, 2023 | CDO Classic |
+| 14 | 01:37.29 | Samuel Stott, Alejandro Alvarez, Tannor Soeder, Nicholas Cusson | Sep 24, 2022 | TYR High School Classic |
+| 15 | 01:37.46 | Alexander Flores, Samuel Merrill, Tanner Morris, Joseph Breinholt | Sep 17, 2016 | Canyon Del Oro Classic |
+| 16 | 01:38.14 | Nicholas Cusson, Nicholas Spilotro, Joseph Jacobs, Samuel Stott | Nov 05, 2020 | AIA D-3 State Championship |
 
 ---
 
@@ -54,18 +55,19 @@
 |-----:|-----:|--------------|------|------|
 | **1** | **03:20.60** | **Wade Olsson, Grayson The, Jackson Eftekhar, Zachary Duerkop** | **Oct 18, 2025** | **Pecan Classic** |
 | 2 | 03:25.97 | Jackson Eftekhar, Grayson The, Jackson Machamer, Zachary Duerkop | Nov 08, 2025 | D-3 AIA State Championship |
-| 3 | 03:26.64 | Nicholas Cusson, Alejandro Alvarez, Nolan Radomsky, Samuel Stott | Nov 05, 2021 | AIA D-III Boys State |
-| 4 | 03:27.09 | Nicholas Cusson, Tannor Soeder, Nolan Radomsky, Samuel Stott | Nov 05, 2022 | 2022 D-3 AIA Boys State Championship |
-| 5 | 03:27.87 | Trevor Clausen, Nicholas Spilotro, Logan Radomsky, Samuel Stott | Nov 07, 2019 | 2019 D-3 AIA State Championship |
-| 6 | 03:29.49 | Wade Olsson, Jackson Eftekhar, Jackson Machamer, Zachary Duerkop | Sep 28, 2024 | 21st Annual TYR HS Classic |
-| 7 | 03:29.96 | Nicholas Cusson, Wade Olsson, Jackson Machamer, Zachary Duerkop | Sep 23, 2023 | TYR High School Classic |
-| 8 | 03:30.05 | Jackson Eftekhar, Jackson Machamer, Peyton Kowalski, Zachary Duerkop | Nov 09, 2024 | 2024 D-3 AIA State Championship |
-| 9 | 03:30.18 | Wade Olsson, Jackson Machamer, Kent Olsson, Zachary Duerkop | Sep 27, 2025 | Arena High School Classic |
-| 10 | 03:30.43 | Zachary Duerkop, Bennett Johnston, Grayson The, Wade Olsson | Oct 24, 2025 | Southern Arizona Qualifier |
-| 11 | 03:31.56 | Nolan Radomsky, Zachary Duerkop, Jackson Machamer, Nicholas Cusson | Sep 16, 2023 | CDO Classic |
-| 12 | 03:32.52 | Zachary Duerkop, Wade Olsson, Nolan Radomsky, Nicholas Cusson | Oct 21, 2023 | Pecan Classic |
-| 13 | 03:35.23 | Nolan Radomsky, Jackson Machamer, Wade Olsson, Nicholas Cusson | Oct 25, 2023 | Southern Arizona Region Qualifier |
-| 14 | 03:36.29 | Nicholas Cusson, Julian Pacheco, Joseph Jacobs, Samuel Stott | Nov 05, 2020 | AIA D-3 State Championship |
-| 15 | 03:36.96 | Nicholas Cusson, Nolan Radomsky, Nicholas Spilotro, Samuel Stott | Oct 29, 2021 | Southern AZ Regional Qualifier |
+| 3 | 03:26.10 | Jackson Machamer, Kent Olsson, Jackson Eftekhar, Wade Olsson | Oct 24, 2026 | Southern Arizona Regional Qualifier |
+| 4 | 03:26.64 | Nicholas Cusson, Alejandro Alvarez, Nolan Radomsky, Samuel Stott | Nov 05, 2021 | AIA D-III Boys State |
+| 5 | 03:27.09 | Nicholas Cusson, Tannor Soeder, Nolan Radomsky, Samuel Stott | Nov 05, 2022 | 2022 D-3 AIA Boys State Championship |
+| 6 | 03:27.87 | Trevor Clausen, Nicholas Spilotro, Logan Radomsky, Samuel Stott | Nov 07, 2019 | 2019 D-3 AIA State Championship |
+| 7 | 03:29.49 | Wade Olsson, Jackson Eftekhar, Jackson Machamer, Zachary Duerkop | Sep 28, 2024 | 21st Annual TYR HS Classic |
+| 8 | 03:29.96 | Nicholas Cusson, Wade Olsson, Jackson Machamer, Zachary Duerkop | Sep 23, 2023 | TYR High School Classic |
+| 9 | 03:30.05 | Jackson Eftekhar, Jackson Machamer, Peyton Kowalski, Zachary Duerkop | Nov 09, 2024 | 2024 D-3 AIA State Championship |
+| 10 | 03:30.18 | Wade Olsson, Jackson Machamer, Kent Olsson, Zachary Duerkop | Sep 27, 2025 | Arena High School Classic |
+| 11 | 03:30.43 | Zachary Duerkop, Bennett Johnston, Grayson The, Wade Olsson | Oct 24, 2025 | Southern Arizona Qualifier |
+| 12 | 03:31.56 | Nolan Radomsky, Zachary Duerkop, Jackson Machamer, Nicholas Cusson | Sep 16, 2023 | CDO Classic |
+| 13 | 03:32.52 | Zachary Duerkop, Wade Olsson, Nolan Radomsky, Nicholas Cusson | Oct 21, 2023 | Pecan Classic |
+| 14 | 03:35.23 | Nolan Radomsky, Jackson Machamer, Wade Olsson, Nicholas Cusson | Oct 25, 2023 | Southern Arizona Region Qualifier |
+| 15 | 03:36.29 | Nicholas Cusson, Julian Pacheco, Joseph Jacobs, Samuel Stott | Nov 05, 2020 | AIA D-3 State Championship |
+| 16 | 03:36.96 | Nicholas Cusson, Nolan Radomsky, Nicholas Spilotro, Samuel Stott | Oct 29, 2021 | Southern AZ Regional Qualifier |
 
 ---

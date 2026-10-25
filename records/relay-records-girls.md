@@ -35,13 +35,14 @@
 | 6 | 01:46.81 | Brianne Foley, Adrianna Witte, Hadley Cusson, Grace Davis | Nov 09, 2024 | 2024 D-3 AIA State Championship |
 | 7 | 01:47.67 | Natalie Armstrong, Ryann Lightcap, Paisley White, Maggie Colombo | Sep 24, 2022 | TYR High School Classic |
 | 8 | 01:47.69 | Isabelle Sansom, Sarynn Patterson, Hazel Dasse, Lindsey Schoel-Smith | Oct 26, 2018 | Southern Arizona Regional Qualifier |
-| 9 | 01:48.11 | Summer Cugini, Ryann Lightcap, Brianne Foley, Natalie Armstrong | Oct 25, 2023 | Southern Arizona Region Qualifier |
-| 10 | 01:48.20 | Chloe Weatherwax, Paisley White, Violet Dasse, Natalie Armstrong | Nov 05, 2020 | AIA D-3 State Championship |
-| 11 | 01:48.27 | Maggie Colombo, Sydney Hagerman, Shaye Sulger, Natalie Armstrong | Nov 06, 2021 | AIA D-III Girls State |
-| 12 | 01:48.54 | Isla Cerepak, Logan Sulger, Adrianna Witte, Hadley Cusson | Nov 08, 2025 | D-3 AIA State Championship |
-| 13 | 01:48.59 | Hadley Cusson, Grace Davis, Ryann Lightcap, Natalie Armstrong | Sep 16, 2023 | CDO Classic |
-| 14 | 01:50.57 | Adrianna Witte, Stella Eftekhar, Logan Sulger, Hadley Cusson | Sep 27, 2025 | Arena High School Classic |
-| 15 | 01:50.63 | Calla Isenberg, Emma Morris, Ellie Radomsky, Hazel Dasse | Oct 07, 2017 | 2017 TYR High School Classic |
+| 9 | 01:47.86 | Stella Eftekhar, Ella Bissmeyer, Hadley Cusson, Rachel Anderson | Oct 24, 2026 | Southern Arizona Regional Qualifier |
+| 10 | 01:48.11 | Summer Cugini, Ryann Lightcap, Brianne Foley, Natalie Armstrong | Oct 25, 2023 | Southern Arizona Region Qualifier |
+| 11 | 01:48.20 | Chloe Weatherwax, Paisley White, Violet Dasse, Natalie Armstrong | Nov 05, 2020 | AIA D-3 State Championship |
+| 12 | 01:48.27 | Maggie Colombo, Sydney Hagerman, Shaye Sulger, Natalie Armstrong | Nov 06, 2021 | AIA D-III Girls State |
+| 13 | 01:48.54 | Isla Cerepak, Logan Sulger, Adrianna Witte, Hadley Cusson | Nov 08, 2025 | D-3 AIA State Championship |
+| 14 | 01:48.59 | Hadley Cusson, Grace Davis, Ryann Lightcap, Natalie Armstrong | Sep 16, 2023 | CDO Classic |
+| 15 | 01:50.57 | Adrianna Witte, Stella Eftekhar, Logan Sulger, Hadley Cusson | Sep 27, 2025 | Arena High School Classic |
+| 16 | 01:50.63 | Calla Isenberg, Emma Morris, Ellie Radomsky, Hazel Dasse | Oct 07, 2017 | 2017 TYR High School Classic |
 
 ---
 
