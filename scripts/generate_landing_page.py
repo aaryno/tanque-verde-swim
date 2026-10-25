@@ -16,7 +16,7 @@ wording rather than printing a claim it cannot support.
 import json
 import re
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -150,15 +150,46 @@ def check_followups(records_dir, followups):
     """Refuse to build if a headline record is not the record the books show.
 
     The headline is hand-entered in the season JSON; the records file is the
-    source of truth. If they disagree -- the record was broken again, or a
-    typo -- the page must not go out saying something the records page denies.
+    source of truth. If they disagree -- a typo, or a record broken again with
+    nothing on file saying so -- the page must not go out saying something the
+    records page denies. A record broken again IS allowed when
+    class_records_history.json holds the faster, later swim that broke it
+    (Wade Olsson's 200 IM: 1:55.22 on Oct 17, 2026, lowered to 1:54.90 on Oct
+    24): that meet's page then says "broken again", which is true.
     """
     boys = grade_tables(records_dir, 'boys')
+    history = json.loads((records_dir.parent / 'data' / 'class_records_history.json').read_text())
     for f in followups:
         t, who, _ = boys[f['event']]['Open']
-        if (t, who) != (f['time'], f['swimmer']):
+        if (t, who) == (f['time'], f['swimmer']):
+            continue
+        later = [h for h in history if h['gender'] == 'boys' and h['event'] == f['event']
+                 and to_secs(h['time']) < to_secs(f['time'])
+                 and (parse_record_date(h['date']) or (0,)) > parse_record_date(f['date'])]
+        if not any((h['time'], h['name']) == (t, who) for h in later):
             sys.exit(f"season JSON headline says {f['swimmer']} {f['time']} holds the "
                      f"{f['event']} record; records-boys.md says {who} {t}. Fix one of them.")
+
+
+def meet_days(meet):
+    """Every day of a meet, ISO: a prelims/finals meet carries date_end."""
+    d, end = datetime.strptime(meet['date'], '%Y-%m-%d'), meet.get('date_end', meet['date'])
+    out = []
+    while d.strftime('%Y-%m-%d') <= end:
+        out.append(d.strftime('%Y-%m-%d'))
+        d += timedelta(days=1)
+    return out
+
+
+def best_swims(meet):
+    """One row per swimmer per event -- the faster of a prelim and a final -- so a
+    swimmer's two swims of one event are one talking point, not two."""
+    best = {}
+    for r in meet['individual']:
+        k = (r['athlete'], r['event'])
+        if k not in best or to_secs(r['time']) < to_secs(best[k]['time']):
+            best[k] = r
+    return list(best.values())
 
 
 
@@ -177,7 +208,7 @@ def meet_highlights(project_root, meet, near_pct=2.5, drop_pct=4.0):
     grade_of = {'Fr.': 'Freshman', 'So.': 'Sophomore', 'Jr.': 'Junior', 'Sr.': 'Senior'}
     tables = {g: grade_tables(records_dir, g) for g in ('boys', 'girls')}
     near, drops = [], []
-    for r in meet['individual']:
+    for r in best_swims(meet):
         rec = tables[r['gender']].get(r['event'], {})
         t = to_secs(r['time'])
         for label in (grade_of[r['grade']], 'Open'):
@@ -195,7 +226,7 @@ def meet_highlights(project_root, meet, near_pct=2.5, drop_pct=4.0):
     near.sort(key=lambda x: x['gap'] / to_secs(x['rec_time']))
     drops.sort(key=lambda x: -x['pct'])
 
-    day = datetime.strptime(meet['date'], '%Y-%m-%d').strftime('%b %d, %Y')
+    days = {datetime.strptime(d, '%Y-%m-%d').strftime('%b %d, %Y') for d in meet_days(meet)}
     alltime = []
     for g in ('boys', 'girls'):
         event = None
@@ -205,7 +236,7 @@ def meet_highlights(project_root, meet, near_pct=2.5, drop_pct=4.0):
                 event = h.group(1).strip()
                 continue
             cells = [c.strip() for c in line.strip().strip('|').split('|')]
-            if line.startswith('|') and len(cells) >= 6 and cells[4] == day and cells[5] == meet['meet']:
+            if line.startswith('|') and len(cells) >= 6 and cells[4] in days and cells[5] == meet['meet']:
                 alltime.append(dict(gender=g, event=event, rank=int(cells[0]), time=cells[1], athlete=cells[2]))
     alltime.sort(key=lambda x: (x['rank'], x['gender']))
     return near, alltime, drops[:8]
@@ -235,15 +266,17 @@ def fmt_meet_date(start, end):
     return f'{mon} {sd} &ndash; {MONTHS[em - 1][:3]} {ed}'
 
 
-def season_phase(meets, today):
+def season_phase(meets, today, done=()):
     """Opening line and status heading for the season intro, from the schedule.
 
     Derived from the build date so the page never says 'just getting started'
-    in October. The last meet on the schedule is the state championship."""
+    in October. The last meet on the schedule is the state championship.
+    `done`: start dates of meets whose results are posted -- a meet that ends
+    today is finished once its results are in."""
     words = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
     state = meets[-1]
-    swum = [m for m in meets if m['date_end'] < today]
-    left = [m for m in meets[:-1] if m['date_end'] >= today]
+    swum = [m for m in meets if m['date_end'] < today or m['date_start'] in done]
+    left = [m for m in meets[:-1] if m['date_end'] >= today and m['date_start'] not in done]
     state_when = fmt_meet_date(state['date_start'], state['date_end'])
     days_to_state = (datetime.strptime(state['date_start'], '%Y-%m-%d')
                      - datetime.strptime(today, '%Y-%m-%d')).days
@@ -282,8 +315,7 @@ def latest_teaser(project_root, built):
     if not built:
         return '            <p class="mt-3 mb-0">No meet results posted yet this season.</p>', 'none yet'
     meet, _ = built[-1]
-    day = datetime.strptime(meet['date'], '%Y-%m-%d')
-    when = f"{MONTHS[day.month - 1][:3]} {day.day}"
+    when = fmt_meet_date(meet['date'], meet.get('date_end', meet['date']))
     st = meet.get('story')
     parts = ['            <div class="latest-teaser mt-3">',
              f'                <div class="kicker">{when} &middot; {esc(meet["meet"])}</div>']
@@ -365,8 +397,13 @@ def build_page(project_root):
     built = generate_meet_pages.build_all(project_root, data)
     pages_by_date = {m['date']: (m, recs) for m, recs in built}
     latest_html, latest_name = latest_teaser(project_root, built)
-    phase_lead, phase_head = season_phase(sched['meets'], today)
+    phase_lead, phase_head = season_phase(sched['meets'], today, done=set(pages_by_date))
     n_meets = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'][res['meets_with_results']]
+    # The newest meet file, not the hand-kept season note, names the latest meet.
+    latest = built[-1][0] if built else dict(meet=res['latest_meet'], date=res['latest_meet_date'])
+    if built and res['meets_with_results'] != len(built):
+        sys.exit(f"season JSON results_so_far says {res['meets_with_results']} meets; "
+                 f"data/meets has {len(built)} this season. Fix the season file.")
 
     nav_html = create_nav_html()
 
@@ -452,7 +489,7 @@ def build_page(project_root):
             <div class="alert alert-warning">
                 <strong>{phase_head}</strong>
                 Results are in from <strong>{n_meets} meets</strong> so far &mdash; most recently the
-                {esc(res['latest_meet'])} on {fmt_meet_date(res['latest_meet_date'], res['latest_meet_date'])}.
+                {esc(latest['meet'])} on {fmt_meet_date(latest['date'], latest.get('date_end', latest['date']))}.
                 Dual-meet results are not included yet. Every {SEASON} page on this site is a running
                 count until the season ends.
             </div>

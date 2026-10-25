@@ -961,7 +961,21 @@ def main():
             sys.exit(1)
         print()
 
-    
+    # GUARD: the in-progress season summary must match the meet files. It used
+    # to be hand-edited after each import; build_season_summary.py derives it,
+    # and this refuses to publish a summary that a new meet file has outdated.
+    #   SKIP_SUMMARY_CHECK=1 python3 scripts/generate_website.py   (deliberate override)
+    if os.environ.get('SKIP_SUMMARY_CHECK') != '1':
+        chk = subprocess.run([sys.executable, str(Path(__file__).resolve().parent / 'build_season_summary.py'), '--check'],
+                             capture_output=True, text=True)
+        print((chk.stdout + chk.stderr).rstrip())
+        if chk.returncode != 0:
+            print()
+            print("Refusing to generate the website on a stale season summary.")
+            sys.exit(1)
+        print()
+
+
     # Get project root (parent of scripts/ directory)
     project_root = Path(__file__).parent.parent
     records_dir = project_root / 'records'

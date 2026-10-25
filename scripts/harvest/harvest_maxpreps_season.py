@@ -317,6 +317,24 @@ def merge_meet_files(out, rosters, season, meets_dir=None):
         doc = json.loads(path.read_text())
         if not start <= datetime.strptime(doc['date'], '%Y-%m-%d') <= end:
             continue
+        # A two-day prelims/finals meet: MaxPreps files every swim under one day
+        # (the 2026 Southern Arizona Regional Qualifier: all on Oct 24, prelims
+        # included). The meet file dates each round correctly, so the MaxPreps
+        # copy of the same swim -- same athlete, event and time, dated inside the
+        # meet -- is dropped and the meet file's row is kept.
+        lo = datetime.strptime(doc['date'], '%Y-%m-%d')
+        hi = datetime.strptime(doc.get('date_end', doc['date']), '%Y-%m-%d')
+        if hi > lo:
+            mine = {(r['athlete'], r['event'], r['time']) for r in doc['individual']}
+            def same_swim(r):
+                return (not str(r.get('source', '')).startswith('meet-file:')
+                        and (aliases.get(r['athlete'], r['athlete']), r['event'], r['time']) in mine
+                        and lo <= datetime.strptime(r['date'], '%m/%d/%Y') <= hi)
+            gone = [r for r in out['individual'] if same_swim(r)]
+            out['individual'] = [r for r in out['individual'] if not same_swim(r)]
+            have = {(r['athlete'], r['event'], r['date'], r['time']) for r in out['individual']}
+            if gone:
+                out['meet_files'].append(f"{path.name}: replaced {len(gone)} MaxPreps rows of the same swims")
         added = 0
         for r in doc['individual']:
             roster_grade = rosters.get(r['gender'], {}).get(r['athlete'])
