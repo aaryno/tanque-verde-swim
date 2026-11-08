@@ -55,6 +55,9 @@ For each RECORD line:
 
 For each RELAY line: insert the row into `records/relay-records-<gender>.md` at its rank and
 renumber. Rows are not dropped off the bottom (the Arena import set this precedent).
+The leg splits come along automatically: the import runs `scripts/harvest/relay_splits_cl2.py`,
+which adds each relay's legs from the `.cl2` to `data/historical_splits/all_relay_splits.json`
+only when they add up to the official time (it prints any it skips — DQs are expected).
 
 **Identity:** names go through `data/swimmer_aliases.json` only. Never merge two swimmers
 because their names look alike: siblings share surnames (Olsson, Radomsky, Alitiem, Caballero,
