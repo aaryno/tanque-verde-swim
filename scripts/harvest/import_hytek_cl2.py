@@ -130,7 +130,8 @@ def parse(path, team, days=0):
             raw = re.findall(r'(\d*:?\d+\.\d\dY|DQY|NSY)', line[44:])[-1]
             ev = f"{int(col(line, 22, 25))} {STROKE[col(line, 26, 26)]}"
             relay = dict(event=ev, letter=col(line, 12, 12), gender=SEX[col(line, 21, 21)],
-                         time=mmss(raw), raw_time=raw, day=shift(col(line, 38, 45), days), participants=[])
+                         time=mmss(raw), raw_time=raw, day=shift(col(line, 38, 45), days), participants=[],
+                         place=place(col(line, 93, 95)) if col(line, 93, 95) else None)
             relays.append(relay)
         elif rt == 'F0' and relay is not None:
             relay['participants'].append(first_last(col(line, 23, 50)))
@@ -142,7 +143,10 @@ def parse(path, team, days=0):
         elif len(r['participants']) != 4:
             dropped.append(f"{label} has {len(r['participants'])} named legs, not 4")
         else:
-            r.pop('raw_time'); kept.append(r)
+            r.pop('raw_time')
+            if r['place'] is None:
+                r.pop('place')
+            kept.append(r)
     return team_name, rows, kept, dropped, meet_days
 
 
