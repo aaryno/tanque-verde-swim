@@ -197,6 +197,42 @@ def best_swims(meet):
 
 
 
+def alltime_rows(text):
+    """top10-<g>-alltime.md text -> {event: {athlete: (rank, time)}}."""
+    out, event = {}, None
+    for line in text.splitlines():
+        h = re.match(r'^###\s+(.*)', line.strip())
+        if h:
+            event = h.group(1).strip()
+            continue
+        cells = [c.strip() for c in line.strip().strip('|').split('|')]
+        if event and line.startswith('|') and len(cells) >= 6 and cells[0].isdigit():
+            out.setdefault(event, {})[cells[2]] = (int(cells[0]), cells[1])
+    return out
+
+
+def alltime_before(project_root, meet, gender):
+    """The all-time list as it stood just before this meet was imported: the
+    committed list in the parent of the commit that added the meet's file.
+    None when git cannot say (no history, or the meet is not committed yet)."""
+    import subprocess
+    files = [p for p in (project_root / 'data' / 'meets').glob(f"{meet['date']}-*.json")
+             if json.loads(p.read_text())['meet'] == meet['meet']]
+    if not files:
+        return None
+    rel = files[0].relative_to(project_root)
+    try:
+        log = subprocess.run(['git', '-C', str(project_root), 'log', '--diff-filter=A', '--format=%H', '--', str(rel)],
+                             capture_output=True, text=True, check=True).stdout.split()
+        if not log:
+            return None
+        text = subprocess.run(['git', '-C', str(project_root), 'show', f'{log[-1]}^:records/top10-{gender}-alltime.md'],
+                              capture_output=True, text=True, check=True).stdout
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return None
+    return alltime_rows(text)
+
+
 def meet_highlights(project_root, meet, near_pct=2.5, drop_pct=4.0):
     """Derive one meet's talking points from the meet file and the records.
 
@@ -239,6 +275,11 @@ def meet_highlights(project_root, meet, near_pct=2.5, drop_pct=4.0):
             cells = [c.strip() for c in line.strip().strip('|').split('|')]
             if line.startswith('|') and len(cells) >= 6 and cells[4] in days and cells[5] == meet['meet']:
                 alltime.append(dict(gender=g, event=event, rank=int(cells[0]), time=cells[1], athlete=cells[2]))
+        before = alltime_before(project_root, meet, g)
+        for a in alltime:
+            if a['gender'] == g:
+                # before is None: history unknown, so say nothing about movement
+                a['before'] = None if before is None else before.get(a['event'], {}).get(a['athlete'], False)
     alltime.sort(key=lambda x: (x['rank'], x['gender']))
     return near, alltime, drops[:8]
 
