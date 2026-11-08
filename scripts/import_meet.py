@@ -43,6 +43,9 @@ S = ROOT / 'scripts'
 GRADE = {'Fr.': 'Freshman', 'So.': 'Sophomore', 'Jr.': 'Junior', 'Sr.': 'Senior'}
 
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from site_seasons import season_complete  # noqa: E402
+
 def run(*cmd):
     print(f"\n$ {' '.join(str(c) for c in cmd)}", flush=True)
     r = subprocess.run([sys.executable, *map(str, cmd)], cwd=ROOT)
@@ -182,9 +185,14 @@ def main():
     last = datetime.strptime(last, '%Y-%m-%d')
     s0, s1 = (datetime.strptime(season[k], '%Y-%m-%d') for k in ('season_start', 'season_end'))
     words = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
-    note = (f"⚠️ Season in progress. Covers {words[len(meets)]} meets swum through {last:%b} {last.day}, {last.year} "
-            f"({', '.join(m['meet'] for m in meets)}); dual-meet results are not included. The {season['season']} season "
-            f"runs {s0:%b} {s0.day}, {s0.year} – {s1:%b} {s1.day}, {s1.year}. Not a final season list.")
+    listed = ', '.join(m['meet'] for m in meets)
+    if season_complete(season):
+        note = (f"Season complete. Covers the {words[len(meets)]} meets with posted results, the last on "
+                f"{last:%b} {last.day}, {last.year} ({listed}); dual-meet results are not included.")
+    else:
+        note = (f"⚠️ Season in progress. Covers {words[len(meets)]} meets swum through {last:%b} {last.day}, {last.year} "
+                f"({listed}); dual-meet results are not included. The {season['season']} season "
+                f"runs {s0:%b} {s0.day}, {s0.year} – {s1:%b} {s1.day}, {s1.year}. Not a final season list.")
     slug_season = f"{season['season'][2:4]}-{season['season'][5:7]}"
     run(S / 'harvest' / 'harvest_maxpreps_season.py', '--season', slug_season, '--write-top10', 'records',
         '--in-progress-note', note, '--out', '/dev/null')

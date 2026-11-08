@@ -25,6 +25,9 @@ from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from site_seasons import season_complete  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 GRADE = {'Fr.': 'FR', 'So.': 'SO', 'Jr.': 'JR', 'Sr.': 'SR'}
 GRADE_NAME = {'FR': 'Freshman', 'SO': 'Sophomore', 'JR': 'Junior', 'SR': 'Senior'}
@@ -57,6 +60,124 @@ def hist_date(s):
 
 def nice(d):
     return d.strftime('%b %d, %Y')
+
+EV_SHORT = {'Freestyle': 'Free', 'Backstroke': 'Back', 'Breaststroke': 'Breast', 'Butterfly': 'Fly',
+            'Individual Medley': 'IM'}
+
+
+def short_ev(e):
+    d, s = e.split(' ', 1)
+    return f"{d} {EV_SHORT.get(s, s)}"
+
+
+def fmt(t):
+    """'00:58.30' -> '58.30', '01:05.75' -> '1:05.75'."""
+    t = t.lstrip('0').lstrip(':')
+    return t.lstrip('0') if t.startswith('0') and ':' in t else t
+
+
+def and_list(xs):
+    return xs[0] if len(xs) == 1 else ', '.join(xs[:-1]) + ' and ' + xs[-1]
+
+
+def relay_records_in(root, lo, hi):
+    """Relays at #1 on records/relay-records-*.md, swum inside the season."""
+    out = []
+    for g in ('boys', 'girls'):
+        ev = None
+        for line in (root / 'records' / f'relay-records-{g}.md').read_text().splitlines():
+            if line.startswith('## '):
+                ev, first = line[3:].strip(), True
+            elif line.startswith('|') and ev and first and not line.startswith(('| Rank', '|--', '|-')):
+                first = False
+                c = [x.strip().strip('*').strip() for x in line.strip().strip('|').split('|')]
+                d = hist_date(c[3])
+                if lo <= f"{d:%Y-%m-%d}" <= hi:
+                    out.append(dict(gender=g, event=ev, time=fmt(c[1]), names=c[2]))
+    return out
+
+
+def review(root, season, meets, swims, history, broken):
+    """'Season in Review', written only once the State meet is imported. Every
+    sentence is derived from the meet files, the records lists and the roster."""
+    lo, hi = season['season_start'], season['season_end']
+    state = next((m for m in meets if 'State Championship' in m['meet']), None)
+    out = ["## 🌟 Season in Review", ""]
+    # 1. State
+    if state:
+        fin = [r for r in state['individual'] if r.get('round', 'Final') == 'Final' and r.get('place', '').isdigit()]
+        titles = [r for r in fin if r['place'] == '1']
+        rtitles = [r for r in state['relay'] if r.get('place') == '1']
+        top8 = [r for r in fin if 2 <= int(r['place']) <= 8] + \
+               [r for r in state['relay'] if r.get('place', '').isdigit() and 2 <= int(r['place']) <= 8]
+        won = defaultdict(list)
+        for r in titles:
+            won[r['athlete']].append(f"{short_ev(r['event'])} {fmt(r['time'])}")
+        champs = [f"**{w}** ({and_list(evs)})" for w, evs in won.items()]
+        n_titles = len(titles) + len(rtitles)
+        champs += [f"the **{r['gender']} {r['event']}** ({fmt(r['time'])})" for r in rtitles]
+        s = f"**At State ({state['meet']}).** "
+        if champs:
+            s += f"Tanque Verde won {WORDS[n_titles]} state title{'s' if n_titles > 1 else ''}: {and_list(champs)}. "
+        s += (f"{WORDS[len(top8)].capitalize()} more finals swims finished in the top eight."
+              if top8 else '')
+        out += [f"- {s.strip()}"]
+    # 2. Records
+    school_events = {(e['gender'], e['event']) for _, e, _ in broken}
+    rrel = relay_records_in(root, lo, hi)
+    cls = [e for e in history if e['season'] == season['season']]
+    holders = Counter(e['name'] for e in cls)
+    s = (f"**Records.** School records fell {WORDS[len(broken)] if len(broken) < len(WORDS) else len(broken)} "
+         f"times in {WORDS[len(school_events)]} individual events")
+    now = {}
+    for _, e, _ in broken:
+        now[(e['gender'], e['event'])] = e
+    held = defaultdict(list)
+    for e in now.values():
+        held[e['name']].append(short_ev(e['event']))
+    s += ' (' + '; '.join(f"{n} now holds the {and_list(evs)}" for n, evs in held.items()) + ')' 
+    if rrel:
+        s += ', and ' + and_list([f"the {r['gender']} {r['event']} set a new school record of {r['time']}"
+                                  for r in rrel])
+    s += (f". Class records fell {len(cls)} times, to "
+          + and_list([f"{n} ({c})" for n, c in holders.most_common()]) + '.')
+    out += [f"- {s}"]
+    # 3. Most improved: each swimmer's best at their first meet in an event vs
+    # their season best at a later meet. Swims from one meet are not compared.
+    by = defaultdict(list)
+    for x in swims:
+        by[(x['athlete'], x['event'])].append(x)
+    imp = []
+    for (who, ev), xs in by.items():
+        days = sorted({x['date'] for x in xs}, key=lambda d: datetime.strptime(d, '%m/%d/%Y'))
+        if len(days) < 2:
+            continue
+        first = min((x for x in xs if x['date'] == days[0]), key=lambda x: secs(x['time']))
+        later = min((x for x in xs if x['date'] != days[0]), key=lambda x: secs(x['time']))
+        drop = secs(first['time']) - secs(later['time'])
+        if drop > 0:
+            imp.append((drop / secs(first['time']), drop, who, ev, first, later))
+    imp.sort(reverse=True)
+    seen, top = set(), []
+    for x in imp:
+        if x[2] not in seen:
+            seen.add(x[2])
+            top.append(x)
+        if len(top) == 5:
+            break
+    if top:
+        out += ["- **Most improved.** The biggest drops from a swimmer's first meet in an event to their best "
+                "later in the season (one event per swimmer):"]
+        out += [f"  - **{w}** — {short_ev(ev)} {fmt(f['time'])} → {fmt(l['time'])} "
+                f"(−{d:.2f}s, {pct * 100:.1f}%)" for pct, d, w, ev, f, l in top]
+    # 4. Seniors
+    r = season.get('roster', {})
+    sen = r.get('seniors_boys', []) + r.get('seniors_girls', [])
+    if sen:
+        year = int(season['season'][:4]) + 1
+        out += [f"- **Seniors.** Thank you to the Class of {year}: {and_list(sen)}. "
+                f"[Senior page](/seniors/class-of-{year}.html)."]
+    return out + ["", "---", ""]
 
 
 def render(root, season, today):
@@ -92,6 +213,7 @@ def render(root, season, today):
     broken.sort(key=lambda x: x[0])
 
     n_meets = len(meets)
+    done = season_complete(season)
     names = ', '.join(f"the {m['meet']} ({hist_date(nice(datetime.strptime(m['date'], '%Y-%m-%d'))).strftime('%b')} "
                       f"{int(m['date'][8:])}{'-' + str(int(m['date_end'][8:])) if m.get('date_end') else ''})"
                       for m in meets)
@@ -108,13 +230,18 @@ def render(root, season, today):
     t_hi = datetime.strptime(hi, '%Y-%m-%d')
     out = [f"# {season['season']} Season Summary", "## Tanque Verde High School Swimming", "",
            f"**Generated:** {today:%B %d, %Y}".replace(' 0', ' '), "",
-           "> ⚠️ **SEASON IN PROGRESS — NOT A FINAL SUMMARY.**",
-           f"> The {season['season']} season runs {t_lo:%b} {t_lo.day}, {t_lo.year} through {t_hi:%b} {t_hi.day}, {t_hi.year}. "
-           f"As of {today:%b} {today.day}, {today.year} this summary",
-           f"> covers **{WORDS[n_meets]}** meets: {names}. Dual-meet results are not included. "
-           "Every number below is a running count.", ">",
+           *(["> **Season complete.**",
+               f"> This summary covers the **{WORDS[n_meets]}** meets with posted results: {names}. "
+               "Dual-meet results are not included."] if done else
+             ["> ⚠️ **SEASON IN PROGRESS — NOT A FINAL SUMMARY.**",
+              f"> The {season['season']} season runs {t_lo:%b} {t_lo.day}, {t_lo.year} through {t_hi:%b} {t_hi.day}, {t_hi.year}. "
+              f"As of {today:%b} {today.day}, {today.year} this summary",
+              f"> covers **{WORDS[n_meets]}** meets: {names}. Dual-meet results are not included. "
+              "Every number below is a running count."]), ">",
            "> **How the counts are made.** " + '. '.join(sources) + ". DQs and no-swims are excluded.",
-           "", "---", "", "## Season Overview", "",
+           "", "---", "",
+           *(review(root, season, meets, swims, history, broken) if done else []),
+           "## Season Overview", "",
            f"**Total Swims:** {len(swims)}",
            f"**Swimmers:** {len({s['athlete'] for s in swims})}",
            f"**Meets Attended:** {n_meets}", "", "### Participation by Gender"]
@@ -162,7 +289,8 @@ def render(root, season, today):
             if groups[gr]:
                 out += [f"**{gr}:**"] + [f"- {n} ({count[n]} swims)" for n in sorted(groups[gr])] + [""]
     out += ["---", "",
-            f"*Generated: {today:%B} {today.day}, {today.year} — season in progress, {n_meets} meets included "
+            f"*Generated: {today:%B} {today.day}, {today.year} — "
+            f"{'season complete' if done else 'season in progress'}, {n_meets} meets included "
             "(dual meets not included).*"]
     return '\n'.join(out) + '\n'
 
