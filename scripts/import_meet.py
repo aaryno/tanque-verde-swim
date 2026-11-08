@@ -178,6 +178,9 @@ def main():
     if a.report_only:
         return
 
+    # Relay legs (Aaryn, 2026-11-08: "Need times in relay record entries").
+    run(S / 'harvest' / 'relay_splits_cl2.py', *(Path(f).resolve() for f in a.cl2), '--team', a.team or 'AZTVHS')
+
     sf, season = season_for(doc['date'])
     meets = meets_in(season)
     update_season_file(sf, season, meets)
