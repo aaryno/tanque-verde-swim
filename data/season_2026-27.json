@@ -59,10 +59,10 @@
       {
         "date_start": "2026-10-17",
         "date_end": "2026-10-17",
-        "name": "HS Classic",
+        "name": "Arena High School Classic",
         "venue": "Hillenbrand Aquatic Center, University of Arizona, Tucson",
         "home": false,
-        "note": "AIA state qualifier, co-hosted by Catalina Foothills HS and Ford Aquatics. No start time published."
+        "note": "AIA state qualifier, co-hosted by Catalina Foothills HS and Ford Aquatics. No start time published. Renamed from 'HS Classic' to the meet's own name (Aaryn, 2026-11-08)."
       },
       {
         "date_start": "2026-10-23",
@@ -86,7 +86,7 @@
         "name": "AIA Division III State Championship",
         "venue": "Dady Aquatic Center, Phoenix Country Day School, Paradise Valley",
         "home": false,
-        "note": "No start time published."
+        "note": "No start time published. Venue confirmed by Aaryn 2026-11-08; the Hy-Tek results file's header says Skyline Aquatic Center, which is wrong."
       }
     ]
   },
