@@ -176,7 +176,7 @@ def per_swimmer(items):
             by[who] = []
             order.append(who)
         by[who].append(html)
-    return [(who, '; '.join(by[who])) for who in order]
+    return [(who, by[who]) for who in order]
 
 
 def top_swims(meet, meets, recs, near, alltime, drops, relay_recs=()):
@@ -537,7 +537,7 @@ details.msec>summary::-webkit-details-marker{display:none}
 details.msec>summary::after{content:"\\25BC";font-size:.8rem;transition:transform .2s}
 details.msec:not([open])>summary::after{transform:rotate(-90deg)}
 details.msec>.msec-body{padding:.75rem .25rem 0}
-.cat h5{margin:.9rem 0 .3rem}.cat ul{padding-left:1.1rem;margin-bottom:.3rem}.cat li{margin:.2rem 0}
+.cat h5{margin:.9rem 0 .3rem}.cat ul{padding-left:1.1rem;margin-bottom:.3rem}.cat li{margin:.2rem 0}.cat ul.sub{list-style:circle;padding-left:1.2rem;margin:.1rem 0 .2rem}.cat ul.sub li{margin:.1rem 0}
 .res-event{margin:.6rem 0}.res-ev{font-weight:700;font-size:.9rem;color:#2d6a35;border-bottom:1px solid #dee2e6}
 .res-row{display:flex;gap:.6rem;align-items:baseline;padding:.15rem 0;font-size:.95rem}
 .res-row .time{min-width:4.5rem}.res-who{flex:1}.res-pl{color:#888}
@@ -554,6 +554,23 @@ if (location.hash) { var d = document.querySelector(location.hash); if (d && d.t
 def section(sid, title, body, is_open=True):
     return (f'<details class="msec" id="{sid}"{" open" if is_open else ""}><summary>{title}</summary>'
             f'<div class="msec-body">{body}</div></details>')
+
+
+def swimmer_li(who, items):
+    """One swim: 'Name — swim' on one line. Two or more: the name, then one
+    sub-bullet per event, so a phone does not wrap them into one run-on line."""
+    if len(items) == 1:
+        return f'<li><strong>{esc(who)}</strong> &mdash; {items[0]}</li>'
+    return (f'<li><strong>{esc(who)}</strong><ul class="sub">'
+            + ''.join(f'<li>{x}</li>' for x in items) + '</ul></li>')
+
+
+def title_dates(meet):
+    a = datetime.strptime(meet['date'], '%Y-%m-%d')
+    if not meet.get('date_end') or meet['date_end'] == meet['date']:
+        return short_date(a)
+    e = datetime.strptime(meet['date_end'], '%Y-%m-%d')
+    return f"{short_date(a)}–{e.day}" if e.month == a.month else f"{short_date(a)} – {short_date(e)}"
 
 
 def build_meet(meet, meets, recs, season, project_root):
@@ -580,7 +597,7 @@ def build_meet(meet, meets, recs, season, project_root):
         secs.append(('story', '&#128214; The story', body, True))
     if cats:
         body = ''.join(f'<div class="cat"><h5>{title}</h5>' + (f'<p class="small text-muted mb-1">{intro}</p>' if intro else '')
-                       + '<ul>' + ''.join(f'<li><strong>{esc(who)}</strong> &mdash; {html}</li>' for who, html in lines)
+                       + '<ul>' + ''.join(swimmer_li(who, its) for who, its in lines)
                        + '</ul></div>' for _, title, intro, lines in cats)
         secs.append(('top-swims', '&#11088; Top swims', body, True))
     n = len(meet['individual']) + len(meet['relay'])
@@ -599,7 +616,7 @@ def build_meet(meet, meets, recs, season, project_root):
 {JUMP_JS}'''
     out = project_root / 'docs' / 'meets' / f"{meet['slug']}.html"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(create_html_page(f"{meet['meet']} ({short_date(datetime.strptime(meet['date'], '%Y-%m-%d'))})", content))
+    out.write_text(create_html_page(f"{meet['meet']} ({title_dates(meet)})", content))
     return out
 
 
