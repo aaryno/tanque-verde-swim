@@ -430,7 +430,40 @@ def lineup_change(r, prev):
     return f" {lead}; " + '; '.join(came) + '.'
 
 
-def championship_story(meet, recs, rrecs):
+def relay_near(meet, project_root, top=5, pct=2.0):
+    """This meet's relays that are not records but sit high on the all-time
+    list and close to the record: {(gender, event): (rank, gap_secs, record_row)}.
+    Read from records/relay-records-<gender>.md, like relay_records."""
+    out = {}
+    for r in meet['relay']:
+        md = (project_root / 'records' / f"relay-records-{r['gender']}.md").read_text().split('\n')
+        try:
+            i = md.index(f"## {r['event']}")
+        except ValueError:
+            continue
+        rows = []
+        for l in md[i + 4:]:
+            if not l.startswith('|'):
+                break
+            rows.append([c.strip().strip('*').strip() for c in l.strip().strip('|').split('|')])
+        day = datetime.strptime(r['date'], '%m/%d/%Y').strftime('%b %d, %Y')
+        for k, row in enumerate(rows[1:top], start=2):
+            if to_secs(row[1]) == to_secs(r['time']) and row[3] == day:
+                gap = to_secs(r['time']) - to_secs(rows[0][1])
+                if gap <= to_secs(rows[0][1]) * pct / 100:
+                    out[(r['gender'], r['event'])] = (k, gap, dict(time=rows[0][1].lstrip('0').lstrip(':'),
+                                                                   date=rows[0][3]))
+                break
+    return out
+
+
+def near_phrase(n):
+    k, gap, rec = n
+    return (f"the #{k} time in team history, {gap:.2f} seconds off the {esc(rec['date'][-4:])} "
+            f"school record of {esc(rec['time'])}")
+
+
+def championship_story(meet, recs, rrecs, rnear=None):
     """A state meet leads with its state titles, then the records. Returns None
     when nobody won an event, so the record-led story is used instead."""
     wins = {}
@@ -477,7 +510,9 @@ def championship_story(meet, recs, rrecs):
         lede.append(s + '.' + (lineup_change(r, rec['previous']) if rec else ''))
     others = [r for r in meet['relay'] if r.get('place', '').isdigit() and 2 <= int(r['place']) <= 3]
     for r in others:
-        lede.append(f"The {r['gender']} {esc(r['event'])} took {ordinal(int(r['place']))} in {t(r['time'])}.")
+        n = (rnear or {}).get((r['gender'], r['event']))
+        lede.append(f"The {r['gender']} {esc(r['event'])} took {ordinal(int(r['place']))} in {t(r['time'])}"
+                    + (f", {near_phrase(n)}" if n else '') + '.')
     rest = [r for r in recs if (r['name'], r['event']) not in told]
     by = {}
     for r in sorted(rest, key=lowers_own):
@@ -496,6 +531,11 @@ def championship_story(meet, recs, rrecs):
             label = 'school ' + label
         lede.append(f"{GRADE_WORD[rs[0]['grade']]} <strong>{esc(who)}</strong> set "
                     f"{num.get(len(rs), len(rs)) if len(rs) > 1 else 'a'} {label}: " + ' and '.join(bits) + '.')
+    told_rel = {(r['gender'], r['event']) for r in others}
+    for r in meet['relay']:
+        n = (rnear or {}).get((r['gender'], r['event']))
+        if n and (r['gender'], r['event']) not in told_rel:
+            lede.append(f"The {r['gender']} {esc(r['event'])}'s {t(r['time'])} is {near_phrase(n)}.")
     head = head_bits[0][0].upper() + head_bits[0][1:]
     if len(head_bits) > 1:
         head += ', and ' + ', '.join(head_bits[1:])
@@ -616,7 +656,7 @@ def build_meet(meet, meets, recs, season, project_root):
     near, alltime, drops = meet_highlights(project_root, meet)
     rrecs = relay_records(meet, project_root)
     cats, sb = top_swims(meet, meets, recs, near, alltime, drops, rrecs)
-    st = (championship_story(meet, recs, rrecs) if is_championship(meet) else None) \
+    st = (championship_story(meet, recs, rrecs, relay_near(meet, project_root)) if is_championship(meet) else None) \
         or story(meet, recs, season, project_root, cats, sb)
     summary = summary_sentence(meet, cats, sb, skip=st['about'] if st else ())
     if st:
