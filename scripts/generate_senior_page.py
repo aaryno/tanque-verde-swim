@@ -177,21 +177,36 @@ def progression_block(s):
 
 
 def state_block(s):
-    if not s["state"]:
+    if not s["state_meets"]:
         return ""
-    items = []
-    for x in s["state"]:
-        if x["round"] == "Final" and str(x["place"]).isdigit():
-            where = "State champion" if str(x["place"]) == "1" else f'{ordinal(x["place"])} at State'
-        else:
-            where = "Prelims"
-        gold = " sr-gold" if str(x["place"]) == "1" and x["round"] == "Final" else ""
-        mates = f'<span class="sr-src">with {e(and_list(x["mates"]))}</span>' if x.get("mates") else ""
-        items.append(f'<li><span class="sr-chip{gold}">{e(where)}</span> {e(x["short"])} '
-                     f'<span class="sr-t">{e(x["time"])}</span>{mates}</li>')
-    meet = s["state"][0]
-    return (f'<h4 class="sr-h4">{icon("medal")}<a href="{meet["page"]}">{e(meet["meet"])}</a> '
-            f'<span class="sr-count">{meet["year"]}</span></h4><ul class="sr-list">{"".join(items)}</ul>')
+    out = [f'<h4 class="sr-h4">{icon("medal")}State Championships</h4>']
+    for m in s["state_meets"]:
+        mine = [x for x in s["state"] if x["year"] == m["year"]]
+        if not m["swam"]:
+            continue
+        link = (f'<a href="{m["page"]}">{e(m["meet"])}</a>' if m["page"] else
+                f'<a href="{e(m["source"])}" rel="noopener">{e(m["meet"])}</a>' if m["source"] else e(m["meet"]))
+        team = ""
+        if m["team"]:
+            t = m["team"]
+            team = (f'<span class="sr-chip sr-gold">{s["gender"].title()} team: State champions</span>'
+                    if t["place"] == 1 else
+                    f'<span class="sr-chip">{s["gender"].title()} team: {ordinal(t["place"])}</span>')
+        items = []
+        for x in mine:
+            if x["final"] and x["place"] == 1:
+                where, gold = "State champion", " sr-gold"
+            elif x["final"] and x["place"]:
+                where, gold = f'{ordinal(x["place"])} at State', " sr-gold" if x["place"] <= 3 else ""
+            else:
+                where, gold = (f'{ordinal(x["place"])} in prelims' if x["place"] else "Prelims"), " sr-quiet"
+            mates = f'<span class="sr-src">with {e(and_list(x["mates"]))}</span>' if x.get("mates") else ""
+            items.append(f'<li><span class="sr-chip{gold}">{e(where)}</span> {e(x["short"])} '
+                         f'<span class="sr-t">{e(x["time"])}</span>{mates}</li>')
+        grade = GRADE_NAME[m["grade"]].lower()
+        out.append(f'<p class="sr-state-y"><strong>{m["year"]}</strong> &middot; as a {grade} &middot; {link} {team}</p>'
+                   f'<ul class="sr-list">{"".join(items)}</ul>')
+    return "".join(out)
 
 
 def relay_block(s):
@@ -238,17 +253,19 @@ def card(s, year):
 def class_stats(c):
     """Class-wide accomplishments, each counted from the cards' own facts."""
     everyone = c["boys"] + c["girls"]
-    titles = {(s["gender"], x["event"]) for s in everyone for x in s["state"]
-              if x["round"] == "Final" and str(x["place"]) == "1"}
+    titles = {(s["gender"], x["year"], x["event"]) for s in everyone for x in s["state"]
+              if x["final"] and x["place"] == 1}
+    team_titles = {(s["gender"], m["year"]) for s in everyone for m in s["team_titles"]}
     school = {(s["gender"], r["event"]) for s in everyone for r in s["open_records"]}
     school |= {(s["gender"], r["event"]) for s in everyone for r in s["relays"] if r["rank"] == 1}
     class_recs = sum(len(s["class_records"]) for s in everyone)
     at_state = sum(1 for s in everyone if s["state"])
     alltime = sum(1 for s in everyone if any(ev["alltime"] for ev in s["events"]))
-    stats = [(len(titles), "State title", "State titles"),
+    stats = [(len(team_titles), "State team title", "State team titles"),
+             (len(titles), "State event title", "State event titles"),
              (len(school), "school record held", "school records held"),
              (class_recs, "class record", "class records"),
-             (at_state, f"senior swam at State {c['season'][:4]}", f"seniors swam at State {c['season'][:4]}"),
+             (at_state, "senior who swam at State", "seniors who swam at State"),
              (alltime, "senior on the all-time Top 10", "seniors on the all-time Top 10")]
     return [(n, one if n == 1 else many) for n, one, many in stats if n]
 
@@ -266,8 +283,10 @@ def coverage(c):
                      "come from each season&rsquo;s team Top 10 lists. "
                      "A swim that did not make its season&rsquo;s Top 10 is not in our files, so a missing time is a gap "
                      "in our records, not in a swimmer&rsquo;s career.")
-        parts.append(f"State places come from the posted {e(and_list([m for m in meets if 'state' in m.lower()]) or 'State')} "
-                     "results; places from earlier State meets are not in our files.")
+        hist = sorted(p.stem for p in (REPO / "data" / "state_history").glob("*.json"))
+        parts.append("State places, relay lineups and team finishes come from the official meet results: "
+                     f"the posted {e(and_list([m for m in meets if 'state' in m.lower()]) or 'State')} results"
+                     + (f", and the AIA results for {and_list(hist)}" if hist else "") + ".")
     else:
         parts.append("Career swims come from each season&rsquo;s team Top 10 lists. A swim that did not make its "
                      "season&rsquo;s Top 10 is not in our files, so a missing time is a gap in our records, not in a "

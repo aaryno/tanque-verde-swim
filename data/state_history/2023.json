@@ -1,0 +1,358 @@
+{
+ "year": 2023,
+ "meet": "2023 D-3 AIA State Championship",
+ "date": "2023-11-04",
+ "source": {
+  "urls": [
+   "https://aiaonline.org/files/18187/2023-swimming-and-diving-divisions-i-iii-state-championships.pdf"
+  ],
+  "files": [
+   {
+    "file": "aia-2023.pdf",
+    "sha256": "d3352c83e6dea342b2f7357308646b01b4d505972baa3697d297108712c468a9"
+   }
+  ]
+ },
+ "rounds": {
+  "A": "championship final",
+  "B": "consolation final",
+  "P": "prelims only",
+  "TF": "timed final"
+ },
+ "team_scores": {
+  "boys": {
+   "place": 5,
+   "points": 115
+  },
+  "girls": {
+   "place": 15,
+   "points": 54.5
+  }
+ },
+ "swims": [
+  {
+   "gender": "boys",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "P",
+   "place": 17,
+   "time": "1:51.83",
+   "swimmers": [
+    "Stephen Moreland",
+    "Wade Olsson",
+    "Nolan Radomsky",
+    "Jackson Machamer"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 11,
+   "athlete": "Zachary Duerkop",
+   "grade": "10",
+   "time": "1:54.85"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 22,
+   "athlete": "Jackson Machamer",
+   "grade": "09",
+   "time": "1:58.58"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "B",
+   "place": 13,
+   "athlete": "Wade Olsson",
+   "grade": "09",
+   "time": "2:10.74"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": 25,
+   "athlete": "Nolan Radomsky",
+   "grade": "12",
+   "time": "2:20.32"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 2,
+   "athlete": "Nicholas Cusson",
+   "grade": "12",
+   "time": "46.44"
+  },
+  {
+   "gender": "boys",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 12,
+   "athlete": "Wade Olsson",
+   "grade": "09",
+   "time": "5:17.84"
+  },
+  {
+   "gender": "boys",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 21,
+   "athlete": "Jackson Machamer",
+   "grade": "09",
+   "time": "5:30.12"
+  },
+  {
+   "gender": "boys",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 29,
+   "athlete": "Peyton Kowalski",
+   "grade": "11",
+   "time": "5:43.87"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 4,
+   "time": "1:33.23",
+   "swimmers": [
+    "Zachary Duerkop",
+    "Nolan Radomsky",
+    "Stephen Moreland",
+    "Nicholas Cusson"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "A",
+   "place": 1,
+   "athlete": "Nicholas Cusson",
+   "grade": "12",
+   "time": "52.68"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 21,
+   "athlete": "Stephen Moreland",
+   "grade": "11",
+   "time": "1:02.03"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 25,
+   "athlete": "Nolan Radomsky",
+   "grade": "12",
+   "time": "1:03.49"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 31,
+   "athlete": "Jackson Eftekhar",
+   "grade": "09",
+   "time": "1:06.38"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "B",
+   "place": 12,
+   "athlete": "Zachary Duerkop",
+   "grade": "10",
+   "time": "1:04.23"
+  },
+  {
+   "gender": "boys",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 5,
+   "time": "3:26.67",
+   "swimmers": [
+    "Zachary Duerkop",
+    "Jackson Machamer",
+    "Wade Olsson",
+    "Nicholas Cusson"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "P",
+   "place": 19,
+   "time": "2:07.67",
+   "swimmers": [
+    "Summer Cugini",
+    "Alexa Barrera",
+    "Hadley Cusson",
+    "Ryann Lightcap"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 16,
+   "athlete": "Grace Davis",
+   "grade": "09",
+   "time": "2:10.09"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 19,
+   "athlete": "Natalie Armstrong",
+   "grade": "12",
+   "time": "2:09.16"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 17,
+   "athlete": "Brianne Foley",
+   "grade": "11",
+   "time": "25.83"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "B",
+   "place": 15,
+   "athlete": "Grace Davis",
+   "grade": "09",
+   "time": "1:06.77"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": 18,
+   "athlete": "Brianne Foley",
+   "grade": "11",
+   "time": "1:06.84"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 13,
+   "athlete": "Natalie Armstrong",
+   "grade": "12",
+   "time": "56.94"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 23,
+   "athlete": "Hadley Cusson",
+   "grade": "09",
+   "time": "1:00.13"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 6,
+   "time": "1:44.02",
+   "swimmers": [
+    "Natalie Armstrong",
+    "Ryann Lightcap",
+    "Grace Davis",
+    "Brianne Foley"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 19,
+   "athlete": "Summer Cugini",
+   "grade": "11",
+   "time": "1:09.30"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 28,
+   "athlete": "Logan Sulger",
+   "grade": "10",
+   "time": "1:11.02"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 18,
+   "athlete": "Alexa Barrera",
+   "grade": null,
+   "time": "1:17.21"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 25,
+   "athlete": "Madeline Barnard",
+   "grade": "10",
+   "time": "1:18.91"
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 8,
+   "time": "3:53.12",
+   "swimmers": [
+    "Brianne Foley",
+    "Hadley Cusson",
+    "Grace Davis",
+    "Natalie Armstrong"
+   ]
+  }
+ ]
+}

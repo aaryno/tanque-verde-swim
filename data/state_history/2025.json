@@ -1,0 +1,708 @@
+{
+ "year": 2025,
+ "meet": "2025 D-3 AIA State Championship",
+ "date": "2025-11-08",
+ "source": {
+  "urls": [
+   "https://swimswam.com/wp-content/uploads/2025/11/d3-results.pdf"
+  ],
+  "files": [
+   {
+    "file": "aia-2025-d3-swimswam.pdf",
+    "sha256": "871695e688bd87e9b74f5a714886a565d9c747bcd04bd2a1e22a5f2026bc9901"
+   }
+  ]
+ },
+ "rounds": {
+  "A": "championship final",
+  "B": "consolation final",
+  "P": "prelims only",
+  "TF": "timed final"
+ },
+ "team_scores": {
+  "boys": {
+   "place": 1,
+   "points": 257
+  },
+  "girls": {
+   "place": 8,
+   "points": 182
+  }
+ },
+ "swims": [
+  {
+   "gender": "girls",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "TF",
+   "place": 6,
+   "time": "2:00.57",
+   "swimmers": [
+    "Logan Sulger",
+    "Adrianna Witte",
+    "Stella Eftekhar",
+    "Isla Cerepak"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "TF",
+   "place": 4,
+   "time": "1:42.70",
+   "swimmers": [
+    "Kent Olsson",
+    "Wade Olsson",
+    "Jackson Eftekhar",
+    "Grayson The"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 23,
+   "athlete": "Ella Bissmeyer",
+   "grade": "10",
+   "time": "2:16.83"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 25,
+   "athlete": "Kadynce Drummond",
+   "grade": "11",
+   "time": "2:17.29"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 30,
+   "athlete": "Talia Schwab",
+   "grade": "09",
+   "time": "2:19.62"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 23,
+   "athlete": "Quinn Scott",
+   "grade": "10",
+   "time": "2:05.71"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "B",
+   "place": 13,
+   "athlete": "Madeline Barnard",
+   "grade": "12",
+   "time": "2:30.38"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": 14,
+   "athlete": "Madeline Barnard",
+   "grade": "12",
+   "time": "2:31.30"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": 20,
+   "athlete": "Ella Bissmeyer",
+   "grade": "10",
+   "time": "2:34.87"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "A",
+   "place": 2,
+   "athlete": "Wade Olsson",
+   "grade": "11",
+   "time": "1:57.78"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "B",
+   "place": 16,
+   "athlete": "Jackson Machamer",
+   "grade": "11",
+   "time": "2:15.87"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": 2,
+   "athlete": "Wade Olsson",
+   "grade": "11",
+   "time": "1:59.71"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": 15,
+   "athlete": "Jackson Machamer",
+   "grade": "11",
+   "time": "2:15.32"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 10,
+   "athlete": "Hadley Cusson",
+   "grade": "11",
+   "time": "26.61"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 19,
+   "athlete": "Stella Eftekhar",
+   "grade": "09",
+   "time": "27.62"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 10,
+   "athlete": "Hadley Cusson",
+   "grade": "11",
+   "time": "26.68"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 17,
+   "athlete": "Stella Eftekhar",
+   "grade": "09",
+   "time": "27.22"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 28,
+   "athlete": "Logan Sulger",
+   "grade": "12",
+   "time": "27.79"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 35,
+   "athlete": "Amelia Kidd",
+   "grade": "11",
+   "time": "28.55"
+  },
+  {
+   "gender": "boys",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 10,
+   "athlete": "Grayson The",
+   "grade": "12",
+   "time": "23.54"
+  },
+  {
+   "gender": "boys",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 10,
+   "athlete": "Grayson The",
+   "grade": "12",
+   "time": "23.93"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "B",
+   "place": 16,
+   "athlete": "Amira Alitiem",
+   "grade": "11",
+   "time": "1:10.15"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "B",
+   "place": 20,
+   "athlete": "Stella Eftekhar",
+   "grade": "09",
+   "time": "1:11.81"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": 13,
+   "athlete": "Stella Eftekhar",
+   "grade": "09",
+   "time": "1:07.42"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": 17,
+   "athlete": "Amira Alitiem",
+   "grade": "11",
+   "time": "1:10.82"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": 26,
+   "athlete": "Adrianna Witte",
+   "grade": "12",
+   "time": "1:14.16"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "A",
+   "place": 2,
+   "athlete": "Zachary Duerkop",
+   "grade": "12",
+   "time": "52.48"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "A",
+   "place": 8,
+   "athlete": "Jackson Eftekhar",
+   "grade": "11",
+   "time": "54.92"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": 2,
+   "athlete": "Zachary Duerkop",
+   "grade": "12",
+   "time": "52.59"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": 4,
+   "athlete": "Jackson Eftekhar",
+   "grade": "11",
+   "time": "54.41"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 12,
+   "athlete": "Hadley Cusson",
+   "grade": "11",
+   "time": "58.11"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 16,
+   "athlete": "Isla Cerepak",
+   "grade": "09",
+   "time": "58.95"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 13,
+   "athlete": "Isla Cerepak",
+   "grade": "09",
+   "time": "58.02"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 14,
+   "athlete": "Hadley Cusson",
+   "grade": "11",
+   "time": "58.64"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 18,
+   "athlete": "Talia Schwab",
+   "grade": "09",
+   "time": "6:01.25"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 19,
+   "athlete": "Rachel Anderson",
+   "grade": "09",
+   "time": "6:02.49"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 18,
+   "athlete": "Talia Schwab",
+   "grade": "09",
+   "time": "6:05.36"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 20,
+   "athlete": "Rachel Anderson",
+   "grade": "09",
+   "time": "6:07.69"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 24,
+   "athlete": "Kadynce Drummond",
+   "grade": "11",
+   "time": "6:14.62"
+  },
+  {
+   "gender": "boys",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 4,
+   "athlete": "Kent Olsson",
+   "grade": "09",
+   "time": "5:07.85"
+  },
+  {
+   "gender": "boys",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 13,
+   "athlete": "Jackson Machamer",
+   "grade": "11",
+   "time": "5:25.44"
+  },
+  {
+   "gender": "boys",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 8,
+   "athlete": "Kent Olsson",
+   "grade": "09",
+   "time": "5:16.57"
+  },
+  {
+   "gender": "boys",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 11,
+   "athlete": "Jackson Machamer",
+   "grade": "11",
+   "time": "5:24.58"
+  },
+  {
+   "gender": "boys",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 26,
+   "athlete": "Quinn Scott",
+   "grade": "10",
+   "time": "5:51.79"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "TF",
+   "place": 7,
+   "time": "1:48.54",
+   "swimmers": [
+    "Isla Cerepak",
+    "Logan Sulger",
+    "Adrianna Witte",
+    "Hadley Cusson"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "TF",
+   "place": 1,
+   "time": "1:30.45",
+   "swimmers": [
+    "Jackson Eftekhar",
+    "Grayson The",
+    "Wade Olsson",
+    "Zachary Duerkop"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "A",
+   "place": 5,
+   "athlete": "Logan Sulger",
+   "grade": "12",
+   "time": "1:02.29"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 7,
+   "athlete": "Logan Sulger",
+   "grade": "12",
+   "time": "1:04.66"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 22,
+   "athlete": "Amira Alitiem",
+   "grade": "11",
+   "time": "1:12.22"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 32,
+   "athlete": "Laila Alitiem",
+   "grade": "09",
+   "time": "1:13.93"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "A",
+   "place": 10,
+   "athlete": "Kent Olsson",
+   "grade": "09",
+   "time": "1:00.15"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 10,
+   "athlete": "Kent Olsson",
+   "grade": "09",
+   "time": "1:00.43"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "A",
+   "place": 8,
+   "athlete": "Adrianna Witte",
+   "grade": "12",
+   "time": "1:14.68"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "A",
+   "place": 10,
+   "athlete": "Madeline Barnard",
+   "grade": "12",
+   "time": "1:15.82"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 9,
+   "athlete": "Adrianna Witte",
+   "grade": "12",
+   "time": "1:15.29"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 10,
+   "athlete": "Madeline Barnard",
+   "grade": "12",
+   "time": "1:15.32"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 26,
+   "athlete": "Rachel Anderson",
+   "grade": "09",
+   "time": "1:20.76"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 27,
+   "athlete": "Amelia Kidd",
+   "grade": "11",
+   "time": "1:22.46"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "A",
+   "place": 3,
+   "athlete": "Wade Olsson",
+   "grade": "11",
+   "time": "1:00.82"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "A",
+   "place": null,
+   "athlete": "Zachary Duerkop",
+   "grade": "12",
+   "time": "1:00.61"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 2,
+   "athlete": "Zachary Duerkop",
+   "grade": "12",
+   "time": "1:00.33"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 4,
+   "athlete": "Wade Olsson",
+   "grade": "11",
+   "time": "1:00.92"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 25,
+   "athlete": "Bennett Johnston",
+   "grade": "10",
+   "time": "1:11.18"
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "TF",
+   "place": 11,
+   "time": "4:00.33",
+   "swimmers": [
+    "Isla Cerepak",
+    "Rachel Anderson",
+    "Stella Eftekhar",
+    "Hadley Cusson"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "TF",
+   "place": 5,
+   "time": "3:25.97",
+   "swimmers": [
+    "Jackson Eftekhar",
+    "Grayson The",
+    "Jackson Machamer",
+    "Zachary Duerkop"
+   ]
+  }
+ ]
+}

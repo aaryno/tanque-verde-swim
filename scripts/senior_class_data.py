@@ -16,6 +16,9 @@ Sources, and what each can and cannot tell us:
                                     its season's team Top 10 is not known to us.
   data/meets/*.json                 every posted swim of the meets imported from
                                     Hy-Tek (2026-27 on), including State places.
+  data/state_history/<year>.json    TV's results at earlier State meets (places,
+                                    relay lineups, team finish), harvested from the
+                                    official results PDFs by harvest/state_history.py.
 
 A gap in these sources is a gap, not a lack of achievement: the page says what
 it covers and never turns "not in our files" into "did not happen".
@@ -206,36 +209,62 @@ def senior(name, gender, year, ctx):
                      if ctx["class_rank"].get((c, event, name))}))
     s["strongest"] = sorted(s["events"], key=lambda e: e["strength"])
 
-    # 2. State, from the posted State meet(s).
-    state = []
-    for season, _ in career_seasons(year):
-        for d in ctx["meets"].get(season, []):
-            if "state" not in d["meet"].lower():
-                continue
-            mine = {}
+    # 2. State: the posted State meet of each career season (data/meets), or
+    #    the official results harvested into data/state_history/<year>.json.
+    state, state_meets = [], []
+    for season, code in career_seasons(year):
+        y = season[:4]
+        mine_ind, mine_rel, team, meet, page, src = {}, [], None, None, None, None
+        docs = [d for d in ctx["meets"].get(season, []) if "state" in d["meet"].lower()]
+        if docs:
+            d = docs[-1]
+            meet, page = d["meet"], d["_page"]
+            team = (d.get("team_scores") or {}).get(gender)
             for x in d.get("individual", []):
                 if x["athlete"] == name and x.get("gender") == gender:
+                    fin = x.get("round") == "Final"
                     k = x["event"]
-                    if k not in mine or x.get("round") == "Final":
-                        mine[k] = x
-            for ev, x in mine.items():
-                state.append(dict(event=ev, short=SHORT.get(ev, ev), relay=False, round=x.get("round"),
-                                  place=x.get("place"), time=tidy(x["time"]), meet=d["meet"], page=d["_page"],
-                                  year=d["date"][:4]))
+                    if k not in mine_ind or (fin and not mine_ind[k]["final"]):
+                        mine_ind[k] = dict(event=k, final=fin, place=x.get("place"), time=tidy(x["time"]))
             for r in d.get("relay", []):
                 if name in r.get("participants", []) and r.get("gender") == gender:
-                    state.append(dict(event=r["event"], short=r["event"], relay=True, round="Final",
-                                      place=r.get("place"), time=tidy(r["time"]), meet=d["meet"],
-                                      page=d["_page"], year=d["date"][:4],
-                                      mates=[p for p in r["participants"] if p != name]))
-    def pl(x):
-        try:
-            return int(x["place"])
-        except (TypeError, ValueError):
-            return 99
-    s["state"] = sorted(state, key=lambda x: (pl(x) if x["round"] == "Final" else 50 + pl(x), x["relay"]))
-    # Years they swam at State, from any listed swim (a positive record only; see module doc).
-    s["state_years"] = sorted({o["date"][-4:] for o in obs if "state" in o["meet"].lower()})
+                    mine_rel.append(dict(event=r["event"], final=True, place=r.get("place"), time=tidy(r["time"]),
+                                         mates=[q for q in r["participants"] if q != name]))
+        elif y in ctx["state_history"]:
+            h = ctx["state_history"][y]
+            meet, src = h["meet"], h["source"]["urls"][0]
+            team = h.get("team_scores", {}).get(gender)
+            for x in h["swims"]:
+                if x["gender"] != gender:
+                    continue
+                if x["relay"]:
+                    if name in x["swimmers"]:
+                        mine_rel.append(dict(event=x["event"], final=x["round"] != "P", place=x["place"],
+                                             time=x["time"], mates=[q for q in x["swimmers"] if q != name]))
+                elif x["athlete"] == name:
+                    g = {"09": "FR", "10": "SO", "11": "JR", "12": "SR"}.get(x.get("grade") or "")
+                    if g and g != code:
+                        s["warnings"].append(f"State {y} {x['event']}: listed grade {x['grade']}, expected {code}")
+                        continue
+                    fin = x["round"] in ("A", "B")
+                    k = x["event"]
+                    if k not in mine_ind or (fin and not mine_ind[k]["final"]):
+                        mine_ind[k] = dict(event=k, final=fin, place=x["place"], time=x["time"])
+        swam = bool(mine_ind or mine_rel)
+        if meet:
+            state_meets.append(dict(year=y, meet=meet, page=page, source=src, team=team, swam=swam, grade=code))
+        for x in list(mine_ind.values()) + mine_rel:
+            x.update(year=y, meet=meet, page=page, source=src, relay="Relay" in x["event"],
+                     short=SHORT.get(x["event"], x["event"]))
+            try:
+                x["place"] = int(x["place"])
+            except (TypeError, ValueError):
+                x["place"] = None
+            state.append(x)
+    s["state"] = sorted(state, key=lambda x: (-int(x["year"]), not x["final"], x["place"] or 99))
+    s["state_meets"] = sorted(state_meets, key=lambda m: m["year"], reverse=True)
+    s["state_years"] = sorted({m["year"] for m in state_meets if m["swam"]})
+    s["team_titles"] = [m for m in state_meets if m["swam"] and m["team"] and m["team"].get("place") == 1]
 
     # 3. Relays on the all-time relay lists.
     relays = []
@@ -271,17 +300,30 @@ def and_list(xs):
 def highlights(s):
     """Ordered by prestige: (tier, gold, title, detail). Tier 1 is the most prestigious."""
     out = []
-    titles = [x for x in s["state"] if x["round"] == "Final" and str(x["place"]) == "1"]
+    def by_year(xs, fmt):
+        years = sorted({x["year"] for x in xs}, reverse=True)
+        return "; ".join(f'{and_list([fmt(x) for x in xs if x["year"] == y])} ({y})' for y in years)
+    fin = [x for x in s["state"] if x["final"] and x["place"]]
+    titles = [x for x in fin if x["place"] == 1]
     if titles:
         out.append((1, True, "State champion" if len(titles) == 1 else f"{len(titles)}× State champion",
-                    and_list(x["short"] for x in titles)))
-    finals = [x for x in s["state"] if x["round"] == "Final" and str(x["place"]) != "1"
-              and str(x["place"]).isdigit()]
+                    by_year(titles, lambda x: x["short"])))
+    for m in s["team_titles"]:
+        out.append((1, True, "State team champion", f'{s["gender"].title()}, {m["year"]}'))
+    podium = [x for x in fin if x["place"] in (2, 3)]
+    if podium:
+        out.append((1, True, "State podium", by_year(podium, lambda x: f'{ordinal(x["place"])} {x["short"]}')))
+    finals = [x for x in fin if 4 <= x["place"] <= 16]
     if finals:
-        out.append((1, False, "State finals", and_list(f"{ordinal(x['place'])} {x['short']}" for x in finals)))
-    prelim_only = [x for x in s["state"] if x["round"] != "Final"]
-    if prelim_only and not finals and not titles:
-        out.append((1, False, "Swam at State", and_list(x["short"] for x in prelim_only)))
+        grouped = {}
+        for x in finals:
+            grouped.setdefault((x["place"], x["short"]), []).append(x["year"])
+        best = sorted(grouped.items())
+        shown = [f'{ordinal(p)} {ev} ({and_list(sorted(ys))})' for (p, ev), ys in best[:4]]
+        more = f" and {len(best) - 4} more" if len(best) > 4 else ""
+        out.append((1, False, "State finals", ", ".join(shown) + more))
+    if s["state_years"] and not (titles or podium or finals):
+        out.append((1, False, "Swam at State", and_list(s["state_years"])))
     if s["open_records"]:
         out.append((2, True, "School record" + ("s" if len(s["open_records"]) > 1 else ""),
                     and_list(f"{SHORT.get(r['event'], r['event'])} {r['time']}" for r in s["open_records"])))
@@ -314,7 +356,7 @@ def highlights(s):
                     f"to {e['career']['time']} as a {GRADE_NAME[e['career']['grade']].lower()}"))
     if s["meets_this_season"] and len(out) < 3:
         out.append((6, False, "Senior season", "swam at " + and_list(s["meets_this_season"])))
-    if s["state_years"] and not s["state"]:
+    if s["state_years"] and (titles or podium or finals):
         out.append((6, False, "Swam at State", and_list(s["state_years"])))
     return out
 
@@ -329,6 +371,7 @@ def context(gender, year):
                 ctx["alltime"][k] = dict(rank=int(r[header.index("Rank")]), time=tidy(r[header.index("Time")]))
         if rows:
             ctx["alltime_top1"][event] = rows[0][header.index("Time")]
+    ctx["state_history"] = {p.stem: json.loads(p.read_text()) for p in (DATA / "state_history").glob("*.json")}
     ctx["class_rank"] = {}
     for code, lists in class_lists(gender).items():
         for event, rows in lists.items():
