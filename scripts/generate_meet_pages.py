@@ -166,6 +166,13 @@ def names_list(names):
     return names[0] if len(names) == 1 else ', '.join(names[:-1]) + ' and ' + names[-1]
 
 
+def lowers_own(r):
+    """True when a record only lowers the swimmer's own earlier mark. A record
+    taken from someone else is new to the books and is told first."""
+    p = r['open_prev'] or r['previous']
+    return bool(p) and p['name'] == r['name']
+
+
 def per_swimmer(items):
     """[(athlete, sort_key, html)] -> [(athlete, html joined)] in first-seen order of
     each swimmer's best item. One line per swimmer, so one swimmer's three great
@@ -199,7 +206,7 @@ def top_swims(meet, meets, recs, near, alltime, drops, relay_recs=()):
             b = r['broken_by']
             where = f'<a href="{r["broken_by_href"]}">{esc(b["meet"])}</a>' if r['broken_by_href'] else esc(b['meet'])
             html += f" &mdash; broken again {esc(b['date'][:6].strip(','))} by {esc(b['name'])} at {where}"
-        items.append((r['name'], 0, html))
+        items.append((r['name'], int(lowers_own(r)), html))
     for r in relay_recs:
         p = r['previous']
         was = f" (was {esc(p['time'])}, {esc(p['date'][-4:])})" if p else ''
@@ -473,7 +480,7 @@ def championship_story(meet, recs, rrecs):
         lede.append(f"The {r['gender']} {esc(r['event'])} took {ordinal(int(r['place']))} in {t(r['time'])}.")
     rest = [r for r in recs if (r['name'], r['event']) not in told]
     by = {}
-    for r in rest:
+    for r in sorted(rest, key=lowers_own):
         by.setdefault(r['name'], []).append(r)
     for who, rs in by.items():
         pron = 'his' if rs[0]['gender'] == 'boys' else 'her'
