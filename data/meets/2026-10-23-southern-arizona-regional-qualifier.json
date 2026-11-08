@@ -17,6 +17,43 @@
   "Lily Niccum 100 Breaststroke prelim: NSY",
   "girls A 200 Medley Relay: DQY"
  ],
+ "excluded": [
+  {
+   "kind": "individual",
+   "event": "50 Freestyle",
+   "athlete": "Lily Niccum",
+   "gender": "girls",
+   "round": "Prelim",
+   "result": "NS"
+  },
+  {
+   "kind": "individual",
+   "event": "100 Breaststroke",
+   "athlete": "Lily Niccum",
+   "gender": "girls",
+   "round": "Prelim",
+   "result": "NS"
+  },
+  {
+   "kind": "relay",
+   "event": "200 Medley Relay",
+   "gender": "girls",
+   "letter": "A",
+   "result": "DQ",
+   "participants": [
+    "Amira Alitiem",
+    "Ella Bissmeyer",
+    "Avery Fleming",
+    "Hadley Cusson"
+   ],
+   "grades": [
+    "Sr.",
+    "Jr.",
+    "Fr.",
+    "Sr."
+   ]
+  }
+ ],
  "individual": [
   {
    "event": "50 Freestyle",

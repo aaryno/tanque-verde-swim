@@ -27,6 +27,46 @@
   "boys A 200 Free Relay: DQY",
   "girls A 400 Free Relay: DQY"
  ],
+ "excluded": [
+  {
+   "kind": "relay",
+   "event": "200 Free Relay",
+   "gender": "boys",
+   "letter": "A",
+   "result": "DQ",
+   "participants": [
+    "Gavin Contreras",
+    "Quinn Scott",
+    "Bennett Johnston",
+    "Jackson Machamer"
+   ],
+   "grades": [
+    "Fr.",
+    "Jr.",
+    "Jr.",
+    "Sr."
+   ]
+  },
+  {
+   "kind": "relay",
+   "event": "400 Free Relay",
+   "gender": "girls",
+   "letter": "A",
+   "result": "DQ",
+   "participants": [
+    "Hadley Cusson",
+    "Isla Cerepak",
+    "Stella Eftekhar",
+    "Rachel Anderson"
+   ],
+   "grades": [
+    "Sr.",
+    "So.",
+    "So.",
+    "So."
+   ]
+  }
+ ],
  "individual": [
   {
    "event": "100 Butterfly",

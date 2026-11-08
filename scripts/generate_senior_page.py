@@ -418,7 +418,7 @@ def class_stats(c):
              (len(titles), "State event title", "State event titles"),
              (len(school), "school record held", "school records held"),
              (class_recs, "class record", "class records"),
-             (at_state, "senior who swam at State", "seniors who swam at State"),
+             (at_state, "senior who swam at State in their career", "seniors who swam at State in their careers"),
              (alltime, "senior on the all-time Top 10", "seniors on the all-time Top 10")]
     return [(n, one if n == 1 else many) for n, one, many in stats if n]
 
