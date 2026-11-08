@@ -101,6 +101,7 @@ def create_nav_html():
 def create_html_page(title, content, page_type="default"):
     """Create a complete HTML page with Bootstrap and navigation"""
     nav_html = create_nav_html()
+    body_class = f' class="page-{page_type}"' if page_type != "default" else ""
     
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -119,7 +120,7 @@ def create_html_page(title, content, page_type="default"):
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="apple-touch-icon" href="/images/hawk-logo.png">
 </head>
-<body>
+<body{body_class}>
     {nav_html}
     
     <!-- Page Header -->
@@ -1062,6 +1063,9 @@ def main():
     print("\n\U0001F393 Generating senior class page...")
     import generate_senior_page
     generate_senior_page.build()
+    import check_senior_page
+    if check_senior_page.main():
+        sys.exit("Refusing: the senior class page failed its check (scripts/check_senior_page.py).")
 
     # Generate the season landing page (docs/index.html)
     print("\n\U0001F3E0 Generating Season Landing Page...")
