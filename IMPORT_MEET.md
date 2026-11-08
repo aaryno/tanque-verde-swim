@@ -76,6 +76,11 @@ are dropped), runs `apply_aliases.py`, the all-time rebuild and `build_season_su
 finally `generate_website.py`, which runs the guards. A red guard stops the import. Fix the
 cause; never override it.
 
+Swims the results list without a time (DQ, NS) are not swims, but they are kept in the meet
+file's `excluded` list, with relay swimmers and grades, so a meet page can say who swam on a
+disqualified relay. A State Championship meet with team scores gets the championship layout
+(`scripts/championship_page.py`) automatically.
+
 Then check:
 
 - `python3 scripts/validate_records.py`, `check_relay_split_attachment.py` and

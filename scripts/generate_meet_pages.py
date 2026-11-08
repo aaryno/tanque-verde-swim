@@ -780,6 +780,28 @@ def build_meet(meet, meets, recs, season, project_root):
     if st:
         st['summary'] = summary if summary != st['lede'] else ''
     meet['story'] = st
+    if is_championship(meet) and meet.get('team_scores'):
+        import championship_page
+        prior, prior_year = prior_state_team(meet, project_root)
+        s = meet['source']
+        source = f'<p>{source_line(meet)}</p>'
+        if s.get('date_shift_days'):
+            source += (f"<p>Dates: the meet was {long_date(meet['date'], meet.get('date_end'))}. The results file dates "
+                       f"every swim {s['date_shift_days']} day{'s' if s['date_shift_days'] != 1 else ''} early; the dates "
+                       f"here are corrected ({esc(s['date_shift_source'])}).</p>")
+        if sched.get('note') and 'enue' in sched['note']:
+            source += f"<p>Venue: {where}. {esc(sched['note'].split('. ', 1)[-1])}</p>"
+        source += ('<p><strong>Record honors</strong> come from the team&rsquo;s record books; a school record and the '
+                   'class record set by the same swim are counted separately. <strong>Season best</strong>: faster than '
+                   'the swimmer&rsquo;s earlier swims this season in our results. Places are the official ones.</p>')
+        crumbs = (f'<a href="/#schedule">&larr; {esc(season["season"])} schedule</a><span class="meet-nav">{prev_a}{next_a}</span>')
+        content = championship_page.page(meet, recs, rrecs, sb, alltime, prior, prior_year,
+                                         long_date(meet['date'], meet.get('date_end')), sched.get('venue', ''),
+                                         crumbs, source, project_root)
+        out = project_root / 'docs' / 'meets' / f"{meet['slug']}.html"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(create_html_page(f"{meet['meet']} ({title_dates(meet)})", content, page_type="champ"))
+        return out
     secs = []
     if st:
         paras = st.get('paras') or [st['lede']]

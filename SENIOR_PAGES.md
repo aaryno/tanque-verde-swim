@@ -30,10 +30,20 @@ supporting story.
    by the same swim are two achievements. Regression case: Wade Olsson,
    Class of 2027, 10 records = 3 Open + 3 Senior + 1 Junior + 2 Sophomore +
    1 Freshman.
-5. **Expandable career section** per card: records; every event's progression
-   by grade (Fr / So / Jr / Sr, with a sparkline at 3+ seasons); State results
-   by year with grade, team finish and every swim (place, time, relay mates);
-   relays.
+5. **Expandable career section** per card, which never repeats the collapsed
+   highlights. Section links (Progression · Records · State · Relays; empty ones
+   omitted) over four sections:
+   - **Progression**, the centerpiece: one row per event with Fr / So / Jr / Sr
+     columns, the career best highlighted, class records and class ranks marked,
+     the change since the first season, and for 3+ seasons a chart on one
+     zero-based "% faster than the first season" scale per card. "–" means no
+     time in our files, never "did not swim".
+   - **Records & rankings**: every school and class record with meet and date,
+     all-time Top 10, class Top 10.
+   - **State Championships**: year tiles, then each year with grade, team
+     finish, individual swims and relays (with teammates) kept apart.
+   - **Relays**: school relay records and places on the all-time lists.
+   On desktop an open card spans the row.
 6. **Every senior gets a meaningful card.** Non-record holders get the same
    treatment: strongest events, improvement, State appearances, meets.
 7. **No fabrication.** Every fact is derived from the published files; a gap

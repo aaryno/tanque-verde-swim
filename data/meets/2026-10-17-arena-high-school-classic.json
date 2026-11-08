@@ -19,6 +19,67 @@
   "Sarah Moritz 100 Backstroke: DQY",
   "girls A 200 Medley Relay: DQY"
  ],
+ "excluded": [
+  {
+   "kind": "individual",
+   "event": "100 Backstroke",
+   "athlete": "Lilly Bieberstein",
+   "gender": "girls",
+   "round": null,
+   "result": "DQ"
+  },
+  {
+   "kind": "individual",
+   "event": "100 Backstroke",
+   "athlete": "Matilda Bridgett-Bowman",
+   "gender": "girls",
+   "round": null,
+   "result": "DQ"
+  },
+  {
+   "kind": "individual",
+   "event": "50 Freestyle",
+   "athlete": "Gracie Kendle",
+   "gender": "girls",
+   "round": null,
+   "result": "NS"
+  },
+  {
+   "kind": "individual",
+   "event": "100 Backstroke",
+   "athlete": "Gracie Kendle",
+   "gender": "girls",
+   "round": null,
+   "result": "NS"
+  },
+  {
+   "kind": "individual",
+   "event": "100 Backstroke",
+   "athlete": "Sarah Moritz",
+   "gender": "girls",
+   "round": null,
+   "result": "DQ"
+  },
+  {
+   "kind": "relay",
+   "event": "200 Medley Relay",
+   "gender": "girls",
+   "letter": "A",
+   "result": "DQ",
+   "participants": [
+    "Talia Schwab",
+    "Rachel Anderson",
+    "Stella Eftekhar",
+    "Hadley Cusson"
+   ],
+   "grades": [
+    "So.",
+    "So.",
+    "So.",
+    "Sr."
+   ]
+  }
+ ],
  "individual": [
   {
    "event": "100 Freestyle",

@@ -22,7 +22,10 @@ What it reads, and what it refuses to guess:
     swim -- records and season bests have always counted them -- and a swimmer
     who misses the final has no other time. A timed-final meet (no prelim
     column) gives exactly one 'Final' row per swim, as before. DQ / NS /
-    scratch rows are dropped and counted -- a DQ is not a time.
+    scratch rows are dropped and counted -- a DQ is not a time. Each one is
+    also kept, without a time, in the meet file's `excluded` list (who, what,
+    and the code the file gives: DQ, NS, ...) so a meet page can say that a
+    relay was disqualified and who swam on it, without treating it as a swim.
   * The .cl2 carries one date per individual swim: the PRELIM day. The finals
     day is not in the file, so a meet with prelims needs --finals-date; it is
     refused, not guessed (finals are often, but not always, the next day). It
@@ -126,6 +129,7 @@ def standings(points, team_name):
 
 def parse(path, team, days=0):
     rows, relays, dropped, team_name, cur, relay = [], [], [], None, None, None
+    excluded = []
     meet_days = None
     for line in open(path, encoding='latin-1'):
         rt = line[:2]
@@ -150,11 +154,15 @@ def parse(path, team, days=0):
                     rows.append(swim(mmss(pre), 'Prelim', col(line, 133, 135)))
                 else:
                     dropped.append(f"{who} {ev} prelim: {pre}")
+                    excluded.append(dict(kind='individual', event=ev, athlete=who, gender=SEX[col(line, 67, 67)],
+                                         round='Prelim', result=pre.strip().rstrip('Y')))
             if fin:
                 if mmss(fin):
                     rows.append(swim(mmss(fin), 'Final', col(line, 136, 138)))
                 else:
                     dropped.append(f"{who} {ev}{' final' if pre else ''}: {fin}")
+                    excluded.append(dict(kind='individual', event=ev, athlete=who, gender=SEX[col(line, 67, 67)],
+                                         round='Final' if pre else None, result=fin.strip().rstrip('Y')))
             if not pre and not fin:
                 dropped.append(f"{who} {ev}: no time")
         elif rt == 'E0':
@@ -166,19 +174,25 @@ def parse(path, team, days=0):
             relays.append(relay)
         elif rt == 'F0' and relay is not None:
             relay['participants'].append(first_last(col(line, 23, 50)))
+            g = re.search(r'\b(09|10|11|12|FR|SO|JR|SR)[MF]\b', line[50:80])
+            relay.setdefault('grades', []).append(GRADE.get(g.group(1), '') if g else '')
     kept = []
     for r in relays:
         label = f"{r['gender']} {r['letter']} {r['event']}: {r['raw_time']}"
         if not r['time']:
             dropped.append(label)
+            excluded.append(dict(kind='relay', event=r['event'], gender=r['gender'], letter=r['letter'],
+                                 result=r['raw_time'].rstrip('Y'), participants=r['participants'],
+                                 grades=r.get('grades', [])))
         elif len(r['participants']) != 4:
             dropped.append(f"{label} has {len(r['participants'])} named legs, not 4")
         else:
             r.pop('raw_time')
+            r.pop('grades', None)
             if r['place'] is None:
                 r.pop('place')
             kept.append(r)
-    return team_name, rows, kept, dropped, meet_days
+    return team_name, rows, kept, dropped, meet_days, excluded
 
 
 def main():
@@ -195,9 +209,10 @@ def main():
     if a.date_shift_days and not a.date_shift_source:
         sys.exit("--date-shift-days needs --date-shift-source: say who or what gave the true dates")
 
-    team_name, rows, relays, dropped, meet_days = None, [], [], [], None
+    team_name, rows, relays, dropped, meet_days, excluded = None, [], [], [], None, []
     for f in a.cl2:
-        tn, r, rl, dr, md = parse(f, a.team, a.date_shift_days)
+        tn, r, rl, dr, md, ex = parse(f, a.team, a.date_shift_days)
+        excluded += ex
         if not r and not rl:
             sys.exit(f"no {a.team} swims in {f}")
         if meet_days and md != meet_days:
@@ -247,6 +262,7 @@ def main():
                    **({'date_shift_days': a.date_shift_days, 'date_shift_source': a.date_shift_source}
                       if a.date_shift_days else {})},
         'dropped': dropped,
+        'excluded': excluded,
         'individual': rows,
         'relay': relays,
     }
