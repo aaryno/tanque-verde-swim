@@ -2676,3 +2676,6 @@ h2[id], h3[id], .event-heading[id] {
   .page-senior #main-nav, .page-senior #quick-nav, .sr-roll, .sr-anchor { display: none !important; }
   .sr-card { break-inside: avoid; }
 }
+.sr-state-y { font-size: .8rem; margin: .5rem 0 .15rem; display: flex; flex-wrap: wrap; gap: .3rem; align-items: center; }
+.sr-state-y a { color: var(--tvhs-primary); }
+.sr-chip.sr-quiet { background: #f1f3f2; color: var(--sr-muted); }
