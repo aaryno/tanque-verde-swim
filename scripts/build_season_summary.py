@@ -76,6 +76,10 @@ def fmt(t):
     return t.lstrip('0') if t.startswith('0') and ':' in t else t
 
 
+def ORD(n):
+    return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
+
+
 def and_list(xs):
     return xs[0] if len(xs) == 1 else ', '.join(xs[:-1]) + ' and ' + xs[-1]
 
@@ -117,6 +121,11 @@ def review(root, season, meets, swims, history, broken):
         n_titles = len(titles) + len(rtitles)
         champs += [f"the **{r['gender']} {r['event']}** ({fmt(r['time'])})" for r in rtitles]
         s = f"**At State ({state['meet']}).** "
+        ts = state.get('team_scores') or {}
+        if ts:
+            s += 'Team places: ' + and_list([f"{g} {ORD(x['place'])} of {x['teams']} ({x['points']} points)"
+                                             for g, x in ts.items()]) + '. '
+
         if champs:
             s += f"Tanque Verde won {WORDS[n_titles]} state title{'s' if n_titles > 1 else ''}: {and_list(champs)}. "
         s += (f"{WORDS[len(top8)].capitalize()} more finals swims finished in the top eight."

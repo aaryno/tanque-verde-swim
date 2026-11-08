@@ -738,5 +738,101 @@
    "date": "11/7/2026",
    "meet": "AIA Division III State Championship"
   }
- ]
+ ],
+ "team_scores": {
+  "boys": {
+   "place": 4,
+   "points": 225,
+   "teams": 36,
+   "top": [
+    [
+     "Chandler Prep High School",
+     308
+    ],
+    [
+     "Phoenix Country Day High Schoo",
+     303
+    ],
+    [
+     "Ala - Gilbert North High Schoo",
+     255
+    ],
+    [
+     "Tanque Verde High School",
+     225
+    ],
+    [
+     "Ala - Queen Creek High School",
+     218
+    ],
+    [
+     "Odyssey Institute High School",
+     211
+    ],
+    [
+     "Gilbert Classical Academy High",
+     210
+    ],
+    [
+     "Sabino High School",
+     160
+    ],
+    [
+     "Shadow Mountain High School",
+     153
+    ],
+    [
+     "Notre Dame Prep High School",
+     122
+    ]
+   ]
+  },
+  "girls": {
+   "place": 5,
+   "points": 178,
+   "teams": 36,
+   "top": [
+    [
+     "Phoenix Country Day High Schoo",
+     354
+    ],
+    [
+     "Ala - Gilbert North High Schoo",
+     316
+    ],
+    [
+     "Notre Dame Prep High School",
+     277
+    ],
+    [
+     "Gilbert Christian High School",
+     212
+    ],
+    [
+     "Tanque Verde High School",
+     178
+    ],
+    [
+     "Northland Prep Academy High Sc",
+     176
+    ],
+    [
+     "Pusch Ridge Christian Academy",
+     166
+    ],
+    [
+     "Yuma Catholic High School",
+     146
+    ],
+    [
+     "Shadow Mountain High School",
+     143
+    ],
+    [
+     "Gilbert Classical Academy High",
+     139
+    ]
+   ]
+  }
+ }
 }

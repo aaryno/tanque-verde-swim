@@ -12,7 +12,7 @@
 
 ## 🌟 Season in Review
 
-- **At State (AIA Division III State Championship).** Tanque Verde won three state titles: **Wade Olsson** (100 Breast 58.30 and 200 IM 1:54.17) and the **boys 200 Medley Relay** (1:40.44). Nine more finals swims finished in the top eight.
+- **At State (AIA Division III State Championship).** Team places: boys 4th of 36 (225 points) and girls 5th of 36 (178 points). Tanque Verde won three state titles: **Wade Olsson** (100 Breast 58.30 and 200 IM 1:54.17) and the **boys 200 Medley Relay** (1:40.44). Nine more finals swims finished in the top eight.
 - **Records.** School records fell six times in three individual events (Wade Olsson now holds the 500 Free, 200 IM and 100 Breast), and the boys 200 Medley Relay set a new school record of 1:40.44. Class records fell 11 times, to Wade Olsson (5), Kent Olsson (4) and Avery Fleming (2).
 - **Most improved.** The biggest drops from a swimmer's first meet in an event to their best later in the season (one event per swimmer):
   - **Isla Cerepak** — 100 Fly 1:16.11 → 1:08.32 (−7.79s, 10.2%)

@@ -463,21 +463,79 @@ def near_phrase(n):
             f"school record of {esc(rec['time'])}")
 
 
-def championship_story(meet, recs, rrecs, rnear=None):
-    """A state meet leads with its state titles, then the records. Returns None
-    when nobody won an event, so the record-led story is used instead."""
+def prior_state_team(meet, project_root):
+    """Last season's State team places: {gender: {place, points}} and its year,
+    from last season's meet file (team_scores) or data/state_team_results.json."""
+    y, mo = int(meet['date'][:4]), int(meet['date'][5:7])
+    start = y if mo >= 8 else y - 1
+    prev = f"{start - 1}-{str(start)[2:]}"
+    for path in sorted((project_root / 'data' / 'meets').glob(f'{start - 1}-1*-*.json')):
+        doc = json.loads(path.read_text())
+        if 'State Championship' in doc['meet'] and doc.get('team_scores'):
+            return doc['team_scores'], str(start - 1)
+    f = project_root / 'data' / 'state_team_results.json'
+    if f.exists():
+        e = json.loads(f.read_text()).get(prev)
+        if e:
+            return {g: e[g] for g in ('boys', 'girls') if g in e}, str(start - 1)
+    return {}, ''
+
+
+def team_sentence(meet, project_root):
+    """'The boys finished 4th of 36 teams with 225 points ...' -- the team result
+    first, then how it compares with last year's State."""
+    ts = meet.get('team_scores') or {}
+    if not ts:
+        return '', ''
+    prior, year = prior_state_team(meet, project_root)
+    bits, head = [], []
+    for g in ('boys', 'girls'):
+        x = ts.get(g)
+        if not x:
+            continue
+        head.append(f"{g if head else g.title()} {ordinal(x['place'])}")
+        s = f"the {g} finished <strong>{ordinal(x['place'])}</strong> of {x['teams']} teams with {x['points']} points"
+        p = prior.get(g)
+        if p:
+            if x['place'] < p['place']:
+                s += f" &mdash; up from {ordinal(p['place'])} in {year}"
+            elif x['place'] == p['place']:
+                s += f", the same place as in {year}"
+            elif p['place'] == 1:
+                s += f", a year after winning the {year} state title"
+            else:
+                s += f", after {ordinal(p['place'])} in {year}"
+        top = x.get('top', [])
+        if x['place'] < len(top):
+            gap = x['points'] - top[x['place']][1]
+            if 0 < gap <= 5:
+                s += f", and held off {ordinal(x['place'] + 1)} place by {gap:g} point{'s' if gap != 1 else ''}"
+        bits.append(s)
+    text = ('At the ' + esc(meet['meet']) + ', ' + '; '.join(bits) + '.') if bits else ''
+    return text, ', '.join(head)
+
+
+def championship_story(meet, recs, rrecs, rnear=None, project_root=None):
+    """A state meet is told team first: team places, then the titles and every
+    finals swim, then the seniors' last high-school meet, then the records.
+    Returns None when nobody won an event and no team score is known."""
+    finals = [r for r in meet['individual'] if r.get('round', 'Final') == 'Final' and r.get('place', '').isdigit()]
     wins = {}
-    for r in meet['individual']:
-        if r.get('place') == '1' and r.get('round', 'Final') == 'Final':
+    for r in finals:
+        if r['place'] == '1':
             wins.setdefault(r['athlete'], []).append(r)
     rwins = [r for r in meet['relay'] if r.get('place') == '1']
-    if not wins and not rwins:
+    team, team_head = team_sentence(meet, project_root) if project_root else ('', '')
+    if not wins and not rwins and not team:
         return None
     num = {1: 'a', 2: 'two', 3: 'three', 4: 'four'}
     rec_by = {(r['name'], r['event']): r for r in recs}
     rrec = {(r['gender'], r['event']): r for r in rrecs}
     grade = {r['athlete']: r['grade'] for r in meet['individual']}
-    head_bits, lede, about, told = [], [], set(), set()
+    gword = lambda w: GRADE_WORD.get(grade.get(w), '')  # noqa: E731
+    head_bits, about, told = [], set(), set()
+    p_team, p_wins, p_seniors, p_recs = [team] if team else [], [], [], []
+    # -- titles
     for who, ws in wins.items():
         about.add(who)
         n = len(ws)
@@ -488,15 +546,11 @@ def championship_story(meet, recs, rrecs, rnear=None):
             rec = rec_by.get((who, w['event']))
             if rec:
                 told.add((who, w['event']))
-                p = rec['open_prev'] or rec['previous']
-                kind = 'a school record' if rec['open_prev'] else f"a {GRADE_WORD[rec['grade']]} record"
-                own = f"{'his' if w['gender'] == 'boys' else 'her'} own" if p['name'] == who else f"{esc(p['name'])}'s"
-                bit += f", {kind} that lowers {own} {esc(p['time'])}"
+                bit += ', a school record' if rec['open_prev'] else f", a {GRADE_WORD[rec['grade']]} record"
             evs.append(bit)
-        g = {'Fr.': 'Freshman', 'So.': 'Sophomore', 'Jr.': 'Junior', 'Sr.': 'Senior'}.get(grade.get(who), '')
-        lede.append(f"{g} <strong>{esc(who)}</strong> is a state champion {'twice over' if n == 2 else ''}: "
-                    .replace(' :', ':') + f"{'he' if ws[0]['gender'] == 'boys' else 'she'} won "
-                    + ' and '.join(evs) + '.')
+        p_wins.append(f"{gword(who)} <strong>{esc(who)}</strong> is a state champion"
+                      f"{' twice over' if n == 2 else ''}: {'he' if ws[0]['gender'] == 'boys' else 'she'} won "
+                      + ' and '.join(evs) + '.')
     for r in rwins:
         rec = rrec.get((r['gender'], r['event']))
         head_bits.append(f"the {r['gender']} {esc(r['event'].replace(' Relay', '').lower())} relay wins"
@@ -507,15 +561,55 @@ def championship_story(meet, recs, rrecs, rnear=None):
             p = rec['previous']
             s += (f", a school record {to_secs(p['time']) - to_secs(r['time']):.2f} seconds under the "
                   f"{esc(p['time'])} from {esc(p['date'][-4:])}")
-        lede.append(s + '.' + (lineup_change(r, rec['previous']) if rec else ''))
-    others = [r for r in meet['relay'] if r.get('place', '').isdigit() and 2 <= int(r['place']) <= 3]
-    for r in others:
+        p_wins.append(s + '.' + (lineup_change(r, rec['previous']) if rec else ''))
+    # -- every other finals swim: top 10, then the rest of the finalists
+    def pl(r):
+        return int(r['place'])
+    rel = [r for r in meet['relay'] if r.get('place', '').isdigit() and pl(r) > 1]
+    for r in sorted(rel, key=pl):
         n = (rnear or {}).get((r['gender'], r['event']))
-        lede.append(f"The {r['gender']} {esc(r['event'])} took {ordinal(int(r['place']))} in {t(r['time'])}"
-                    + (f", {near_phrase(n)}" if n else '') + '.')
-    rest = [r for r in recs if (r['name'], r['event']) not in told]
+        if pl(r) <= 10:
+            p_wins.append(f"The {r['gender']} {esc(r['event'])} took {ordinal(pl(r))} in {t(r['time'])}"
+                          + (f", {near_phrase(n)}" if n else '') + '.')
+    def grouped(rows):
+        by = {}
+        for r in sorted(rows, key=pl):
+            by.setdefault(r['athlete'], []).append(f"{ordinal(pl(r))} {esc(short_event(r['event']))}")
+        return [f"<strong>{esc(w)}</strong> ({', '.join(v)})" for w, v in by.items()]
+    top10 = grouped([r for r in finals if 2 <= pl(r) <= 10])
+    rest = grouped([r for r in finals if pl(r) > 10])
+    late_rel = [f"the {r['gender']} {esc(r['event'])} ({ordinal(pl(r))})" for r in rel if pl(r) > 10]
+    if top10:
+        p_wins.append('Top-10 finishes: ' + and_list(top10) + '.')
+    if rest or late_rel:
+        p_wins.append('Also swimming in finals: ' + and_list(rest + late_rel) + '.')
+    # -- seniors: their last high-school meet
+    seniors = [w for w, g in grade.items() if g == 'Sr.']
+    if seniors:
+        def did(w):
+            mine = sorted((r for r in finals if r['athlete'] == w), key=pl)
+            won = [esc(short_event(r['event'])) for r in mine if pl(r) == 1]
+            bits = ([f"won the {and_list(won)}"] if won else []) + \
+                   [f"{ordinal(pl(r))} {esc(short_event(r['event']))}" for r in mine if pl(r) > 1]
+            for r in meet['relay']:
+                if w in r['participants'] and r.get('place', '').isdigit():
+                    bits.append(f"{'the winning' if pl(r) == 1 else ordinal(pl(r))} {esc(short_event(r['event']))}"
+                                .replace(' Relay', ' relay'))
+            return bits
+        made = [(w, did(w)) for w in seniors]
+        with_finals = [f"<strong>{esc(w)}</strong> ({', '.join(b)})" for w, b in made if b]
+        others = [esc(w) for w, b in made if not b]
+        words = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
+        s = (f"It was the last high-school meet for the {words[len(seniors)] if len(seniors) < 11 else len(seniors)} "
+             f"seniors who swam at State"
+             + (', and they went out swimming fast: ' + and_list(with_finals) + '.' if with_finals else '.'))
+        if others:
+            s += f" {and_list(others)} also swam {'at her' if len(others) == 1 else 'at their'} final State."
+        p_seniors.append(s)
+    # -- records
+    left = [r for r in recs if (r['name'], r['event']) not in told]
     by = {}
-    for r in sorted(rest, key=lowers_own):
+    for r in sorted(left, key=lowers_own):
         by.setdefault(r['name'], []).append(r)
     for who, rs in by.items():
         pron = 'his' if rs[0]['gender'] == 'boys' else 'her'
@@ -529,22 +623,34 @@ def championship_story(meet, recs, rrecs, rnear=None):
         label = (f"{kind.pop()} record{'s' if len(rs) > 1 else ''}" if len(kind) == 1 else 'records')
         if any(r['open_prev'] for r in rs):
             label = 'school ' + label
-        lede.append(f"{GRADE_WORD[rs[0]['grade']]} <strong>{esc(who)}</strong> set "
-                    f"{num.get(len(rs), len(rs)) if len(rs) > 1 else 'a'} {label}: " + ' and '.join(bits) + '.')
-    told_rel = {(r['gender'], r['event']) for r in others}
+        p_recs.append(f"{GRADE_WORD[rs[0]['grade']]} <strong>{esc(who)}</strong> set "
+                      f"{num.get(len(rs), len(rs)) if len(rs) > 1 else 'a'} {label}: " + ' and '.join(bits) + '.')
+    told_rel = {(r['gender'], r['event']) for r in rel if pl(r) <= 10}
     for r in meet['relay']:
         n = (rnear or {}).get((r['gender'], r['event']))
         if n and (r['gender'], r['event']) not in told_rel:
-            lede.append(f"The {r['gender']} {esc(r['event'])}'s {t(r['time'])} is {near_phrase(n)}.")
-    head = head_bits[0][0].upper() + head_bits[0][1:]
-    if len(head_bits) > 1:
-        head += ', and ' + ', '.join(head_bits[1:])
+            p_recs.append(f"The {r['gender']} {esc(r['event'])}'s {t(r['time'])} is {near_phrase(n)}.")
+    if team_head:
+        head = f"{team_head} at State" + (f": {head_bits[0]}" if head_bits else '')
+        if len(head_bits) > 1:
+            head += ', and ' + ', '.join(head_bits[1:])
+    else:
+        head = head_bits[0][0].upper() + head_bits[0][1:]
+        if len(head_bits) > 1:
+            head += ', and ' + ', '.join(head_bits[1:])
     nrec = len(recs) + len(rrecs)
-    short = (' '.join(lede[:2] if wins and rwins else lede[:1])
-             + (f" {nrec} Tanque Verde records fell at State." if nrec > 1 else ''))
-    n_ind = len(wins)
-    paras = [' '.join(lede[:n_ind + len(rwins) + len(others)]), ' '.join(lede[n_ind + len(rwins) + len(others):])]
-    return dict(headline=head, lede=' '.join(lede), paras=[x for x in paras if x], short=short, links=[], about=about)
+    short = ' '.join((p_team or []) + p_wins[:1]) + (f" {nrec} Tanque Verde records fell at State." if nrec > 1 else '')
+    paras = [' '.join(x) for x in (p_team + p_wins[:0], p_wins, p_seniors, p_recs)]
+    if p_team:
+        paras = [p_team[0] + ' ' + ' '.join(p_wins[:len(wins) + len(rwins)])] + \
+                [' '.join(p_wins[len(wins) + len(rwins):]), ' '.join(p_seniors), ' '.join(p_recs)]
+    return dict(headline=head, lede=' '.join(p for p in paras if p), paras=[x for x in paras if x], short=short,
+                links=[], about=about)
+
+
+def and_list(xs):
+    xs = list(xs)
+    return xs[0] if len(xs) == 1 else ', '.join(xs[:-1]) + ' and ' + xs[-1]
 
 
 def place_label(pl):
@@ -656,7 +762,7 @@ def build_meet(meet, meets, recs, season, project_root):
     near, alltime, drops = meet_highlights(project_root, meet)
     rrecs = relay_records(meet, project_root)
     cats, sb = top_swims(meet, meets, recs, near, alltime, drops, rrecs)
-    st = (championship_story(meet, recs, rrecs, relay_near(meet, project_root)) if is_championship(meet) else None) \
+    st = (championship_story(meet, recs, rrecs, relay_near(meet, project_root), project_root) if is_championship(meet) else None) \
         or story(meet, recs, season, project_root, cats, sb)
     summary = summary_sentence(meet, cats, sb, skip=st['about'] if st else ())
     if st:
