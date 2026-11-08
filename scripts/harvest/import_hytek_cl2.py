@@ -93,6 +93,37 @@ def shift(mdy, days):
     return (datetime.strptime(mdy, '%m%d%Y') + timedelta(days=days)).strftime('%m%d%Y') if days else mdy
 
 
+def team_points(path):
+    """Points each team scored, by gender, from the file's own point columns:
+    D0 cols 139-142 (individual, finals) and E0 cols 96-99 (relays). Every team
+    in the meet is in the file, so this is the meet's team standings. Empty when
+    the host did not score the meet."""
+    pts, names, cur = {}, {}, None
+    for line in open(path, encoding='latin-1'):
+        rt = line[:2]
+        if rt == 'C1':
+            cur = col(line, 12, 17)
+            names[cur] = col(line, 18, 47)
+        elif rt in ('D0', 'E0'):
+            raw = col(line, 139, 142) if rt == 'D0' else col(line, 96, 99)
+            g = SEX.get(col(line, 67, 67) if rt == 'D0' else col(line, 21, 21))
+            if raw and g:
+                by = pts.setdefault(g, {})
+                by[cur] = by.get(cur, 0) + float(raw)
+    return {g: {names.get(t, t): p for t, p in by.items()} for g, by in pts.items()}
+
+
+def standings(points, team_name):
+    """{team: points} -> our place, points and the top of the table."""
+    if team_name not in points:
+        return None
+    mine = points[team_name]
+    table = sorted(points.items(), key=lambda x: -x[1])
+    num = lambda p: int(p) if p == int(p) else p  # noqa: E731
+    return {'place': 1 + sum(1 for p in points.values() if p > mine), 'points': num(mine),
+            'teams': len(points), 'top': [[t, num(p)] for t, p in table[:10]]}
+
+
 def parse(path, team, days=0):
     rows, relays, dropped, team_name, cur, relay = [], [], [], None, None, None
     meet_days = None
@@ -219,6 +250,14 @@ def main():
         'individual': rows,
         'relay': relays,
     }
+    scores = {}
+    for f in a.cl2:
+        for g, pts in team_points(f).items():
+            for t, p in pts.items():
+                scores.setdefault(g, {})[t] = scores.get(g, {}).get(t, 0) + p
+    team_scores = {g: s for g, s in ((g, standings(p, team_name)) for g, p in sorted(scores.items())) if s}
+    if team_scores:
+        doc['team_scores'] = team_scores
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(doc, indent=1) + "\n")
     print(f"wrote {out}: {len(rows)} individual, {len(relays)} relay; dropped {len(dropped)}")

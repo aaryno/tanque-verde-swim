@@ -1,0 +1,10 @@
+{
+  "_note": "Tanque Verde's team place at the AIA State Championship, by season. Seasons whose meet file carries team_scores (from the Hy-Tek point columns) do not need an entry here; this holds earlier seasons, each with its source.",
+  "2025-26": {
+    "meet": "2025 D-3 AIA State Championship",
+    "dates": "Nov 7-8, 2025",
+    "boys": {"place": 1, "points": 257},
+    "girls": {"place": 8, "points": 182},
+    "_source": "All Sports Tucson state results roundup, https://allsportstucson.com/?p=236172 (fetched 2026-11-08): 'CHAMPION: Tanque Verde 257' (D-III boys), '8: Tanque Verde 182' (D-III girls). Boys title corroborated by SwimSwam, 'Tanque Verde Boys Win First Title, Country Day Girls Repeat In Arizona Division III'."
+  }
+}
