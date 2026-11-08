@@ -401,6 +401,16 @@ def build_page(project_root):
     n_meets = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'][res['meets_with_results']]
     # The newest meet file, not the hand-kept season note, names the latest meet.
     latest = built[-1][0] if built else dict(meet=res['latest_meet'], date=res['latest_meet_date'])
+    latest_when = fmt_meet_date(latest['date'], latest.get('date_end', latest['date']))
+    season_over = phase_head == 'Season complete.'
+    if season_over:
+        status_body = (f"Results are in from <strong>{n_meets} meets</strong>, the last being the "
+                       f"{esc(latest['meet'])} on {latest_when}. Dual-meet results are not included, so the "
+                       f"{SEASON} lists count only those meets.")
+    else:
+        status_body = (f"Results are in from <strong>{n_meets} meets</strong> so far &mdash; most recently the "
+                       f"{esc(latest['meet'])} on {latest_when}. Dual-meet results are not included yet. "
+                       f"Every {SEASON} page on this site is a running count until the season ends.")
     if built and res['meets_with_results'] != len(built):
         sys.exit(f"season JSON results_so_far says {res['meets_with_results']} meets; "
                  f"data/meets has {len(built)} this season. Fix the season file.")
@@ -488,16 +498,13 @@ def build_page(project_root):
 
             <div class="alert alert-warning">
                 <strong>{phase_head}</strong>
-                Results are in from <strong>{n_meets} meets</strong> so far &mdash; most recently the
-                {esc(latest['meet'])} on {fmt_meet_date(latest['date'], latest.get('date_end', latest['date']))}.
-                Dual-meet results are not included yet. Every {SEASON} page on this site is a running
-                count until the season ends.
+                {status_body}
             </div>
 
             <p class="mb-2">Where to look:</p>
             <ul class="mb-0">
                 <li><a href="/top10/boys-{SEASON}.html">Boys {SEASON} Top 10</a> &middot;
-                    <a href="/top10/girls-{SEASON}.html">Girls {SEASON} Top 10</a> &mdash; the fastest times swum so far this year</li>
+                    <a href="/top10/girls-{SEASON}.html">Girls {SEASON} Top 10</a> &mdash; the fastest times swum {'this season' if season_over else 'so far this year'}</li>
                 <li><a href="/annual/{SEASON}.html">{SEASON} season summary</a></li>
                 <li><a href="/records/overall.html">All-time school records</a></li>
                 <li><a href="/seniors/class-of-2026.html">Class of 2026 senior recognition</a> &mdash; last year's graduating class</li>

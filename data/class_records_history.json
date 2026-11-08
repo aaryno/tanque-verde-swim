@@ -3082,5 +3082,90 @@
       "season": "2026-27",
       "meet": "Arena High School Classic"
     }
+  },
+  {
+    "season": "2026-27",
+    "gender": "boys",
+    "event": "100 Backstroke",
+    "grade": "SO",
+    "time": "55.27",
+    "name": "Kent Olsson",
+    "date": "Nov 07, 2026",
+    "meet": "AIA Division III State Championship",
+    "previous": {
+      "time": "56.52",
+      "name": "Kent Olsson",
+      "date": "Oct 24, 2026",
+      "season": "2026-27",
+      "meet": "Southern Arizona Regional Qualifier"
+    }
+  },
+  {
+    "season": "2026-27",
+    "gender": "boys",
+    "event": "200 Individual Medley",
+    "grade": "SR",
+    "time": "1:54.17",
+    "name": "Wade Olsson",
+    "date": "Nov 07, 2026",
+    "meet": "AIA Division III State Championship",
+    "previous": {
+      "time": "1:54.90",
+      "name": "Wade Olsson",
+      "date": "Oct 24, 2026",
+      "season": "2026-27",
+      "meet": "Southern Arizona Regional Qualifier"
+    }
+  },
+  {
+    "season": "2026-27",
+    "gender": "boys",
+    "event": "500 Freestyle",
+    "grade": "SO",
+    "time": "4:58.44",
+    "name": "Kent Olsson",
+    "date": "Nov 07, 2026",
+    "meet": "AIA Division III State Championship",
+    "previous": {
+      "time": "5:03.13",
+      "name": "Kent Olsson",
+      "date": "Sep 19, 2026",
+      "season": "2026-27",
+      "meet": "Canyon del Oro Classic"
+    }
+  },
+  {
+    "season": "2026-27",
+    "gender": "girls",
+    "event": "100 Backstroke",
+    "grade": "FR",
+    "time": "1:06.14",
+    "name": "Avery Fleming",
+    "date": "Nov 06, 2026",
+    "meet": "AIA Division III State Championship",
+    "previous": {
+      "time": "1:06.38",
+      "name": "Sarynn Patterson",
+      "date": "Nov 04, 2016",
+      "season": "2016-17",
+      "meet": "2016 D-3 AIA State Championship"
+    }
+  },
+  {
+    "season": "2026-27",
+    "gender": "girls",
+    "event": "100 Butterfly",
+    "grade": "FR",
+    "time": "1:05.75",
+    "name": "Avery Fleming",
+    "date": "Nov 06, 2026",
+    "meet": "AIA Division III State Championship",
+    "previous": {
+      "time": "1:05.90",
+      "name": "Paisley White",
+      "date": "Nov 07, 2019",
+      "season": "2019-20",
+      "meet": "2019 D-3 AIA State Championship"
+    }
   }
 ]

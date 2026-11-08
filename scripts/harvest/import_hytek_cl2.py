@@ -40,14 +40,26 @@ What it reads, and what it refuses to guess:
 
 The source file's name and SHA-256 are recorded, so a row can always be traced
 to the exact file it came from.
+
+Several files, one meet: a meet exported per gender (the AIA state
+championships send girls and boys as two zips) is imported in ONE run, every
+.cl2 on the command line, so they land in one meet file instead of the second
+overwriting the first.
+
+A file whose dates are wrong: --date-shift-days N moves every date the file
+carries (swims, relays, its B1 start/end) by N days, and --date-shift-source
+must say who or what established the true dates. The shift and its source are
+written into the meet file. Without the flag the file's dates are used as-is.
 """
 import argparse, hashlib, json, re, sys
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 STROKE = {'1': 'Freestyle', '2': 'Backstroke', '3': 'Breaststroke', '4': 'Butterfly',
           '5': 'Individual Medley', '6': 'Free Relay', '7': 'Medley Relay'}
-GRADE = {'FR': 'Fr.', 'SO': 'So.', 'JR': 'Jr.', 'SR': 'Sr.'}
+GRADE = {'FR': 'Fr.', 'SO': 'So.', 'JR': 'Jr.', 'SR': 'Sr.',
+         # some hosts write the grade number (AIA D-III state 2026); checked against earlier meets
+         '09': 'Fr.', '10': 'So.', '11': 'Jr.', '12': 'Sr.'}
 SEX = {'M': 'boys', 'F': 'girls'}
 TIME = re.compile(r'^(?:(\d+):)?(\d{1,2}\.\d{2})Y$')
 
@@ -76,13 +88,18 @@ def place(raw):
     The swim still happened and its time stands; it just did not score."""
     return 'Ex.' if raw.strip() in ('0', '00', '000') else raw.strip()
 
-def parse(path, team):
+def shift(mdy, days):
+    """'11052026' moved by `days` days, same MMDDYYYY form."""
+    return (datetime.strptime(mdy, '%m%d%Y') + timedelta(days=days)).strftime('%m%d%Y') if days else mdy
+
+
+def parse(path, team, days=0):
     rows, relays, dropped, team_name, cur, relay = [], [], [], None, None, None
     meet_days = None
     for line in open(path, encoding='latin-1'):
         rt = line[:2]
         if rt == 'B1':
-            meet_days = (col(line, 122, 129), col(line, 130, 137))
+            meet_days = (shift(col(line, 122, 129), days), shift(col(line, 130, 137), days))
         if rt == 'C1':
             cur = col(line, 12, 17)
             if cur == team:
@@ -94,7 +111,7 @@ def parse(path, team):
             who = first_last(col(line, 12, 39))
             def swim(t, rnd, pl):
                 return dict(event=ev, athlete=who, grade=GRADE.get(col(line, 64, 65), ''),
-                            gender=SEX[col(line, 67, 67)], time=t, date=col(line, 81, 88),
+                            gender=SEX[col(line, 67, 67)], time=t, date=shift(col(line, 81, 88), days),
                             round=rnd, place=place(pl), seed=mmss(col(line, 89, 97)))
             pre, fin = col(line, 98, 106), col(line, 116, 124)
             if pre:
@@ -113,7 +130,7 @@ def parse(path, team):
             raw = re.findall(r'(\d*:?\d+\.\d\dY|DQY|NSY)', line[44:])[-1]
             ev = f"{int(col(line, 22, 25))} {STROKE[col(line, 26, 26)]}"
             relay = dict(event=ev, letter=col(line, 12, 12), gender=SEX[col(line, 21, 21)],
-                         time=mmss(raw), raw_time=raw, day=col(line, 38, 45), participants=[])
+                         time=mmss(raw), raw_time=raw, day=shift(col(line, 38, 45), days), participants=[])
             relays.append(relay)
         elif rt == 'F0' and relay is not None:
             relay['participants'].append(first_last(col(line, 23, 50)))
@@ -131,16 +148,32 @@ def parse(path, team):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('cl2')
+    ap.add_argument('cl2', nargs='+', help="one or more .cl2 files from the SAME meet (e.g. girls + boys)")
     ap.add_argument('--meet', required=True, help="meet name as records/*.md should show it")
-    ap.add_argument('--team', default='AZTVHS', help="SDIF team code (default AZTVHS)")
+    ap.add_argument('--team', default='AZTVHS', help="SDIF team code (default AZTVHS; some hosts write TVHS)")
     ap.add_argument('--out-dir', default='data/meets')
     ap.add_argument('--finals-date', help="YYYY-MM-DD the finals were swum; required when the file has prelims")
+    ap.add_argument('--date-shift-days', type=int, default=0,
+                    help="move every date in the file(s) by N days, when the host's dates are wrong")
+    ap.add_argument('--date-shift-source', help="who/what established the true dates; required with --date-shift-days")
     a = ap.parse_args()
+    if a.date_shift_days and not a.date_shift_source:
+        sys.exit("--date-shift-days needs --date-shift-source: say who or what gave the true dates")
 
-    team_name, rows, relays, dropped, meet_days = parse(a.cl2, a.team)
+    team_name, rows, relays, dropped, meet_days = None, [], [], [], None
+    for f in a.cl2:
+        tn, r, rl, dr, md = parse(f, a.team, a.date_shift_days)
+        if not r and not rl:
+            sys.exit(f"no {a.team} swims in {f}")
+        if meet_days and md != meet_days:
+            sys.exit(f"{f} is dated {md}, the other file(s) {meet_days}: not the same meet")
+        team_name, meet_days = team_name or tn, md
+        rows += r; relays += rl; dropped += dr
     if not rows:
-        sys.exit(f"no {a.team} swims in {a.cl2}")
+        sys.exit(f"no {a.team} individual swims in {a.cl2}")
+    blank = sorted({r['athlete'] for r in rows if not r['grade']})
+    if blank:
+        sys.exit(f"no grade (FR/SO/JR/SR or 09-12) in the file for: {', '.join(blank)}; class records need one")
     dates = {r['date'] for r in rows}
     if len(dates) != 1:
         sys.exit(f"expected one prelim/timed-final date on individual swims, found {sorted(dates)}")
@@ -172,8 +205,12 @@ def main():
         **({'date_end': f"{last:%Y-%m-%d}"} if last != day else {}),
         'course': 'SCY',
         'team': {'code': a.team, 'name': team_name},
-        'source': {'kind': 'hytek-sdif-cl2', 'file': Path(a.cl2).name,
-                   'sha256': hashlib.sha256(Path(a.cl2).read_bytes()).hexdigest()},
+        'source': {'kind': 'hytek-sdif-cl2', 'file': ', '.join(Path(f).name for f in a.cl2),
+                   **({'sha256': hashlib.sha256(Path(a.cl2[0]).read_bytes()).hexdigest()} if len(a.cl2) == 1 else
+                      {'files': [{'file': Path(f).name, 'sha256': hashlib.sha256(Path(f).read_bytes()).hexdigest()}
+                                 for f in a.cl2]}),
+                   **({'date_shift_days': a.date_shift_days, 'date_shift_source': a.date_shift_source}
+                      if a.date_shift_days else {})},
         'dropped': dropped,
         'individual': rows,
         'relay': relays,
