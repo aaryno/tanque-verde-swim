@@ -400,6 +400,29 @@ def relay_name(r):
     return f"{r['gender'].title()} {r['event']}"
 
 
+def lineup_change(r, prev):
+    """How a record relay's lineup compares with the record it broke: the
+    swimmers who were on both, and who came in for whom (same leg)."""
+    if not prev or not prev.get('names'):
+        return ''
+    old = [n.strip() for n in prev['names'].split(',')]
+    new = r['participants']
+    back = [n for n in new if n in old]
+    if not back or len(old) != len(new):
+        return ''
+    words = {1: 'One', 2: 'Two', 3: 'Three', 4: 'All four'}
+    year = esc(prev['date'][-4:])
+    if len(back) == len(new):
+        return f" The same four swimmers held the {year} record."
+    came = [f"{esc(n)} is new to the record, in place of {esc(o)}" for n, o in zip(new, old) if n not in old]
+    if len(back) == 1:
+        lead = f"{esc(back[0])} was also on the {year} record relay"
+    else:
+        lead = (f"{words[len(back)]} of the four &mdash; {esc(', '.join(back[:-1]))} and {esc(back[-1])} &mdash; "
+                f"swam on the {year} record relay")
+    return f" {lead}; " + '; '.join(came) + '.'
+
+
 def championship_story(meet, recs, rrecs):
     """A state meet leads with its state titles, then the records. Returns None
     when nobody won an event, so the record-led story is used instead."""
@@ -444,7 +467,7 @@ def championship_story(meet, recs, rrecs):
             p = rec['previous']
             s += (f", a school record {to_secs(p['time']) - to_secs(r['time']):.2f} seconds under the "
                   f"{esc(p['time'])} from {esc(p['date'][-4:])}")
-        lede.append(s + '.')
+        lede.append(s + '.' + (lineup_change(r, rec['previous']) if rec else ''))
     others = [r for r in meet['relay'] if r.get('place', '').isdigit() and 2 <= int(r['place']) <= 3]
     for r in others:
         lede.append(f"The {r['gender']} {esc(r['event'])} took {ordinal(int(r['place']))} in {t(r['time'])}.")
