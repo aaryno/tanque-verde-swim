@@ -1,0 +1,101 @@
+# Senior class pages — the formula
+
+How `docs/seniors/class-of-<year>.html` is made, so every graduating class gets
+the same page. First built for the Class of 2027 (PRs #31 and #32,
+2026-11-08). Aaryn: "Love the way that page turned out - we need to save that
+formula!"
+
+This file is the authoritative procedure. The code carries the detail; this
+file says what the page promises and how to make one.
+
+## What the page promises
+
+The success test, from the brief: *a parent opens the page, finds their
+senior, feels proud of what their swimmer contributed, and shares it with
+family — whether or not their swimmer holds a school record.* Celebrate the
+class first, the individuals second, and records and statistics as the
+supporting story.
+
+1. **Class hero first.** Count of seniors (boys / girls) and class-wide
+   accomplishments the data supports: State team titles, State event titles,
+   school records held, class records, seniors who swam at State, seniors on
+   the all-time Top 10.
+2. **One card per senior, same layout for everyone.** Boys and girls
+   sections, each alphabetical by last name. Never rank seniors by prestige.
+3. **Achievements in prestige order** on each card: State (titles, team
+   title, podium, finals, swam at State) → school (Open) records → class
+   records → all-time Top 10 → class Top 10 → most improved event → senior
+   season meets.
+4. **Records count independently.** An Open record and the class record set
+   by the same swim are two achievements. Regression case: Wade Olsson,
+   Class of 2027, 10 records = 3 Open + 3 Senior + 1 Junior + 2 Sophomore +
+   1 Freshman.
+5. **Expandable career section** per card: records; every event's progression
+   by grade (Fr / So / Jr / Sr, with a sparkline at 3+ seasons); State results
+   by year with grade, team finish and every swim (place, time, relay mates);
+   relays.
+6. **Every senior gets a meaningful card.** Non-record holders get the same
+   treatment: strongest events, improvement, State appearances, meets.
+7. **No fabrication.** Every fact is derived from the published files; a gap
+   in the sources is a gap, never "did not happen". The page carries a
+   coverage statement saying which seasons and sources it covers.
+8. **Wording.** "State champion" for 1st, "State podium" for 2nd–3rd,
+   "Nth at State" for other finals. Do not say "medal" until the AIA medal
+   places are verified.
+9. **Look.** Green and white with subtle gold, SVG stroke icons (no emoji),
+   tabular numbers, no photos, works on phone (390px) and desktop.
+
+## Where the facts come from
+
+| Source | Gives |
+|---|---|
+| `records/records-{g}.md` | Open and class records, current holders |
+| `records/relay-records-{g}.md` | relay lists; #1 is the record |
+| `records/top10-{g}-alltime.md`, `class_top10.class_lists()` | all-time and class Top 10 |
+| `records/top10-{g}-{season}.md` | each season's bests — the career history before 2026-27 |
+| `data/meets/*.json` | every swim of Hy-Tek-imported meets (2026-27 on), incl. State |
+| `data/state_history/<year>.json` | TV at earlier State meets: places, relay lineups, team finish |
+| `data/season_*.json` | the roster (current class only) |
+
+An earlier class has no roster file; its roster is the swimmers listed as SR in
+that season's Top 10 lists, and the page says so.
+
+## Code
+
+- `scripts/senior_class_data.py` — derives each senior's facts. Run
+  `python3 scripts/senior_class_data.py <YEAR>` to print every card's content
+  and read it before rendering.
+- `scripts/generate_senior_page.py` — renders the page. `--class YEAR --out PATH`
+  makes a preview of any class without touching the live page.
+- `scripts/check_senior_page.py` — the guard: roster vs cards, no empty card,
+  record counts match `records-{g}.md`. `generate_website.py` refuses to build
+  if it fails.
+- `scripts/harvest/state_history.py` — adds a past State meet from its official
+  Hy-Tek results PDF (see its docstring for three-column PDFs and
+  `--team-scores`). Keep the PDFs in `~/workspaces/tv-swim/incoming/state-history/`.
+- CSS: the "Senior class celebration page" section of `docs/css/style.css`
+  (`.page-senior`, `.sr-*`).
+
+## Making a page for a class
+
+1. **State history.** For each of the class's four seasons, make sure
+   `data/state_history/<year>.json` exists (the current season comes from
+   `data/meets`). Missing → find the official results (AIA, or the PDFs
+   SwimSwam posts), harvest them, and spot-check against the records files
+   (a relay record's time and swimmers should match).
+2. **Read the facts.** `python3 scripts/senior_class_data.py <YEAR>`. Check
+   names (never merge on similarity — siblings share last names), grades, and
+   any warnings.
+3. **Preview.** `python3 scripts/generate_senior_page.py --class <YEAR> --out /tmp/c.html`,
+   then screenshot desktop and phone width (390px via an iframe wrapper;
+   headless Chrome will not go narrower than ~500px).
+4. **Publish** with the usual routine: branch, BOARD announce with the rollback
+   sha, PR, merge, poll the live page until it shows the change, BOARD receipt.
+   A hand-built page already live (e.g. Class of 2026) is replaced only with
+   Aaryn's go-ahead.
+
+## Open
+
+- Past classes (2026 and earlier) are a to-do — see the tv-swim issue
+  "Senior pages for previous classes". Earlier classes need State results
+  before 2023 and have no roster file.
