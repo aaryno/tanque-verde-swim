@@ -154,15 +154,20 @@ def update_season_file(path, season, meets):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[1])
-    ap.add_argument('cl2')
+    ap.add_argument('cl2', nargs='+', help='one or more .cl2 files from the same meet (e.g. girls + boys)')
     ap.add_argument('--meet', required=True, help='meet name as the records should show it')
     ap.add_argument('--finals-date', help='YYYY-MM-DD, for a meet with prelims')
+    ap.add_argument('--team', help='SDIF team code, if not AZTVHS')
+    ap.add_argument('--date-shift-days', type=int, help="move the file's dates by N days (host dates wrong)")
+    ap.add_argument('--date-shift-source', help='who/what established the true dates')
     ap.add_argument('--report-only', action='store_true', help='import + report, then stop')
     a = ap.parse_args()
 
-    cmd = [S / 'harvest' / 'import_hytek_cl2.py', Path(a.cl2).resolve(), '--meet', a.meet]
-    if a.finals_date:
-        cmd += ['--finals-date', a.finals_date]
+    cmd = [S / 'harvest' / 'import_hytek_cl2.py', *(Path(f).resolve() for f in a.cl2), '--meet', a.meet]
+    for flag, v in (('--finals-date', a.finals_date), ('--team', a.team),
+                    ('--date-shift-days', a.date_shift_days), ('--date-shift-source', a.date_shift_source)):
+        if v is not None:
+            cmd += [flag, str(v)]
     run(*cmd)
     slug = re.sub(r'[^a-z0-9]+', '-', a.meet.lower()).strip('-')
     doc = next(json.loads(p.read_text()) for p in sorted((ROOT / 'data' / 'meets').glob(f'*-{slug}.json'), reverse=True))

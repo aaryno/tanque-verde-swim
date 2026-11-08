@@ -49,7 +49,7 @@
 
 | Grade | Time | Athlete | Date | Meet |
 |-------|-----:|---------|------|------|
-| Freshman | 1:06.38 | Sarynn Patterson | Nov 04, 2016 | 2016 D-3 AIA State Championship |
+| Freshman | 1:06.14 | Avery Fleming | Nov 06, 2026 | AIA Division III State Championship |
 | Sophomore | 1:05.84 | Paisley White | Nov 05, 2020 | AIA D-3 State Championship |
 | Junior | 1:04.64 | Sarynn Patterson | Nov 03, 2018 | 2018 D-3 AIA State Championship |
 | Senior | 1:02.29 | Logan Sulger | Nov 08, 2025 | 2025 D-3 AIA State Championship |
@@ -69,7 +69,7 @@
 
 | Grade | Time | Athlete | Date | Meet |
 |-------|-----:|---------|------|------|
-| Freshman | 1:05.90 | Paisley White | Nov 07, 2019 | 2019 D-3 AIA State Championship |
+| Freshman | 1:05.75 | Avery Fleming | Nov 06, 2026 | AIA Division III State Championship |
 | Sophomore | 1:00.33 | Carly Wilson | Sep 23, 2010 | CDO Classic |
 | Junior | 1:03.68 | Brianne Foley | Sep 23, 2023 | TYR High School Classic |
 | Senior | 1:01.84 | Brianne Foley | Nov 09, 2024 | 2024 D-3 AIA State Championship |

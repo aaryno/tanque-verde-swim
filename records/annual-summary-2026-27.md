@@ -1,31 +1,31 @@
 # 2026-27 Season Summary
 ## Tanque Verde High School Swimming
 
-**Generated:** October 24, 2026
+**Generated:** November 8, 2026
 
 > ⚠️ **SEASON IN PROGRESS — NOT A FINAL SUMMARY.**
-> The 2026-27 season runs Aug 1, 2026 through Jul 31, 2027. As of Oct 24, 2026 this summary
-> covers **three** meets: the Canyon del Oro Classic (Sep 19), the Arena High School Classic (Oct 17) and the Southern Arizona Regional Qualifier (Oct 23-24). Dual-meet results are not included. Every number below is a running count.
+> The 2026-27 season runs Aug 1, 2026 through Jul 31, 2027. As of Nov 8, 2026 this summary
+> covers **four** meets: the Canyon del Oro Classic (Sep 19), the Arena High School Classic (Oct 17), the Southern Arizona Regional Qualifier (Oct 23-24) and the AIA Division III State Championship (Nov 6-7). Dual-meet results are not included. Every number below is a running count.
 >
-> **How the counts are made.** Canyon del Oro Classic swims come from the MaxPreps "Best Times by Event" tables (`data/meets/2026-09-19-canyon-del-oro-classic.json`). Arena High School Classic swims come from the meet's own Hy-Tek results file (`data/meets/2026-10-17-arena-high-school-classic.json`). Southern Arizona Regional Qualifier swims come from the meet's own Hy-Tek results file (`data/meets/2026-10-23-southern-arizona-regional-qualifier.json`) -- prelims and finals, every swim of both rounds. DQs and no-swims are excluded.
+> **How the counts are made.** Canyon del Oro Classic swims come from the MaxPreps "Best Times by Event" tables (`data/meets/2026-09-19-canyon-del-oro-classic.json`). Arena High School Classic swims come from the meet's own Hy-Tek results file (`data/meets/2026-10-17-arena-high-school-classic.json`). Southern Arizona Regional Qualifier swims come from the meet's own Hy-Tek results file (`data/meets/2026-10-23-southern-arizona-regional-qualifier.json`) -- prelims and finals, every swim of both rounds. AIA Division III State Championship swims come from the meet's own Hy-Tek results file (`data/meets/2026-11-06-aia-division-iii-state-championship.json`) -- prelims and finals, every swim of both rounds. DQs and no-swims are excluded.
 
 ---
 
 ## Season Overview
 
-**Total Swims:** 178
+**Total Swims:** 232
 **Swimmers:** 33
-**Meets Attended:** 3
+**Meets Attended:** 4
 
 ### Participation by Gender
-- **Boys:** 72 swims
-- **Girls:** 106 swims
+- **Boys:** 93 swims
+- **Girls:** 139 swims
 
 ### Participation by Grade
-- **Freshman:** 38 swims
-- **Sophomore:** 63 swims
-- **Junior:** 24 swims
-- **Senior:** 53 swims
+- **Freshman:** 43 swims
+- **Sophomore:** 81 swims
+- **Junior:** 34 swims
+- **Senior:** 74 swims
 
 ---
 
@@ -36,6 +36,7 @@
 | Sep 19, 2026 | Canyon del Oro Classic (Oro Valley, AZ) |
 | Oct 17, 2026 | Arena High School Classic (Tucson, AZ) |
 | Oct 23, 2026 | Southern Arizona Regional Qualifier (Oro Valley, AZ) |
+| Nov 06, 2026 | AIA Division III State Championship (Paradise Valley, AZ) |
 
 ---
 
@@ -66,6 +67,11 @@
 - *Previous:* 1:55.22 - Wade Olsson
 - *Date:* Oct 24, 2026 at Southern Arizona Regional Qualifier (Oro Valley, AZ)
 
+**Boys 200 IM SCY**
+- **NEW:** 1:54.17 - Wade Olsson (SR)
+- *Previous:* 1:54.90 - Wade Olsson
+- *Date:* Nov 07, 2026 at AIA Division III State Championship (Paradise Valley, AZ)
+
 
 ---
 
@@ -73,14 +79,14 @@
 
 | Event | Boys Time | Boys Swimmer | Girls Time | Girls Swimmer |
 |-------|----------:|--------------|-----------:|---------------|
-| 50 Free | 22.53 | Jackson Eftekhar (SR) | 26.48 | Hadley Cusson (SR) |
-| 100 Free | 53.31 | Jackson Eftekhar (SR) | 58.81 | Hadley Cusson (SR) |
-| 200 Free | 1:52.37 | Kent Olsson (SO) | 2:06.64 | Rachel Anderson (SO) |
+| 50 Free | 22.53 | Jackson Eftekhar (SR) | 26.12 | Hadley Cusson (SR) |
+| 100 Free | 53.31 | Jackson Eftekhar (SR) | 57.48 | Hadley Cusson (SR) |
+| 200 Free | 1:52.37 | Kent Olsson (SO) | 2:06.33 | Rachel Anderson (SO) |
 | 500 Free | 4:53.96 | Wade Olsson (SR) | 5:42.46 | Rachel Anderson (SO) |
-| 100 Back | 56.52 | Kent Olsson (SO) | 1:07.96 | Avery Fleming (FR) |
+| 100 Back | 55.27 | Kent Olsson (SO) | 1:06.14 | Avery Fleming (FR) |
 | 100 Breast | 58.11 | Wade Olsson (SR) | 1:15.26 | Rachel Anderson (SO) |
-| 100 Fly | 53.31 | Jackson Eftekhar (SR) | 1:07.68 | Avery Fleming (FR) |
-| 200 IM | 1:54.90 | Wade Olsson (SR) | 2:26.52 | Rachel Anderson (SO) |
+| 100 Fly | 53.31 | Jackson Eftekhar (SR) | 1:05.75 | Avery Fleming (FR) |
+| 200 IM | 1:54.17 | Wade Olsson (SR) | 2:26.52 | Rachel Anderson (SO) |
 
 ---
 
@@ -95,50 +101,50 @@
 - Walker Tappan (6 swims)
 
 **SO:**
-- Kent Olsson (8 swims)
+- Kent Olsson (12 swims)
 - Shane Gardner (6 swims)
 
 **JR:**
-- Bennett Johnston (8 swims)
-- Quinn Scott (8 swims)
+- Bennett Johnston (12 swims)
+- Quinn Scott (11 swims)
 
 **SR:**
-- Jackson Eftekhar (8 swims)
-- Jackson Machamer (8 swims)
-- Wade Olsson (6 swims)
+- Jackson Eftekhar (12 swims)
+- Jackson Machamer (10 swims)
+- Wade Olsson (10 swims)
 
 ### Girls
 
 **FR:**
-- Avery Fleming (8 swims)
+- Avery Fleming (12 swims)
 - Kayley Barrett (1 swims)
 - Madelyn Pertile (4 swims)
 - Matilda Bridgett-Bowman (1 swims)
-- Penelope Dixon (4 swims)
+- Penelope Dixon (5 swims)
 
 **SO:**
-- Isla Cerepak (7 swims)
-- Laila Alitiem (5 swims)
+- Isla Cerepak (10 swims)
+- Laila Alitiem (6 swims)
 - Laine Lightcap (2 swims)
 - Laura Feldman (5 swims)
 - Lilly Bieberstein (2 swims)
 - Magdalena McGovern (4 swims)
-- Rachel Anderson (8 swims)
+- Rachel Anderson (12 swims)
 - Sarah Moritz (1 swims)
-- Stella Eftekhar (7 swims)
-- Talia Schwab (8 swims)
+- Stella Eftekhar (11 swims)
+- Talia Schwab (10 swims)
 
 **JR:**
-- Ella Bissmeyer (8 swims)
+- Ella Bissmeyer (11 swims)
 
 **SR:**
-- Amelia Kidd (4 swims)
-- Amira Alitiem (7 swims)
-- Hadley Cusson (8 swims)
-- Kadynce Drummond (6 swims)
+- Amelia Kidd (6 swims)
+- Amira Alitiem (10 swims)
+- Hadley Cusson (12 swims)
+- Kadynce Drummond (8 swims)
 - Lily Niccum (2 swims)
 - Madeline VanDeMark (4 swims)
 
 ---
 
-*Generated: October 24, 2026 — season in progress, 3 meets included (dual meets not included).*
+*Generated: November 8, 2026 — season in progress, 4 meets included (dual meets not included).*

@@ -24,6 +24,16 @@ python3 scripts/import_meet.py "<path>.cl2" --meet "<Meet Name>" --report-only
 - **`--finals-date`**: the `.cl2` carries only the prelim day for individual swims. If the file
   has prelim times the importer refuses to run without this flag. Check it against the `.hy3`:
   `E2P` lines carry the prelim date and `E2F` lines the finals date (columns 88–95).
+- **Several files, one meet**: a meet exported per gender (the AIA state meet sends girls and
+  boys as two zips) is imported in ONE run, all `.cl2` files on the command line. Two runs would
+  write the same meet file and the second would erase the first.
+- **`--team`**: the team code is usually `AZTVHS`; some hosts write `TVHS` (AIA D-III state 2026).
+  "no AZTVHS swims" means: look at the `C1` line for Tanque Verde and pass its code.
+- **`--date-shift-days N --date-shift-source "…"`**: when the host's dates are wrong (the 2026 D-III
+  state files put Fri/Sat swims on Thu/Fri), shift every date in the files and say who gave the
+  true dates. Both are written into the meet file. Never shift without a source.
+- Grades may be numbers (`09`–`12`) instead of `FR`–`SR`; both are read. A blank grade stops the
+  import, because class records need it.
 - Both rounds are kept, one row per swim. A prelim swim is official and counts for records
   and season bests.
 
