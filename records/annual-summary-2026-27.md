@@ -3,11 +3,24 @@
 
 **Generated:** November 8, 2026
 
-> ⚠️ **SEASON IN PROGRESS — NOT A FINAL SUMMARY.**
-> The 2026-27 season runs Aug 1, 2026 through Jul 31, 2027. As of Nov 8, 2026 this summary
-> covers **four** meets: the Canyon del Oro Classic (Sep 19), the Arena High School Classic (Oct 17), the Southern Arizona Regional Qualifier (Oct 23-24) and the AIA Division III State Championship (Nov 6-7). Dual-meet results are not included. Every number below is a running count.
+> **Season complete.**
+> This summary covers the **four** meets with posted results: the Canyon del Oro Classic (Sep 19), the Arena High School Classic (Oct 17), the Southern Arizona Regional Qualifier (Oct 23-24) and the AIA Division III State Championship (Nov 6-7). Dual-meet results are not included.
 >
 > **How the counts are made.** Canyon del Oro Classic swims come from the MaxPreps "Best Times by Event" tables (`data/meets/2026-09-19-canyon-del-oro-classic.json`). Arena High School Classic swims come from the meet's own Hy-Tek results file (`data/meets/2026-10-17-arena-high-school-classic.json`). Southern Arizona Regional Qualifier swims come from the meet's own Hy-Tek results file (`data/meets/2026-10-23-southern-arizona-regional-qualifier.json`) -- prelims and finals, every swim of both rounds. AIA Division III State Championship swims come from the meet's own Hy-Tek results file (`data/meets/2026-11-06-aia-division-iii-state-championship.json`) -- prelims and finals, every swim of both rounds. DQs and no-swims are excluded.
+
+---
+
+## 🌟 Season in Review
+
+- **At State (AIA Division III State Championship).** Tanque Verde won three state titles: **Wade Olsson** (100 Breast 58.30 and 200 IM 1:54.17) and the **boys 200 Medley Relay** (1:40.44). Nine more finals swims finished in the top eight.
+- **Records.** School records fell six times in three individual events (Wade Olsson now holds the 500 Free, 200 IM and 100 Breast), and the boys 200 Medley Relay set a new school record of 1:40.44. Class records fell 11 times, to Wade Olsson (5), Kent Olsson (4) and Avery Fleming (2).
+- **Most improved.** The biggest drops from a swimmer's first meet in an event to their best later in the season (one event per swimmer):
+  - **Isla Cerepak** — 100 Fly 1:16.11 → 1:08.32 (−7.79s, 10.2%)
+  - **Gavin Contreras** — 100 Back 1:25.92 → 1:18.59 (−7.33s, 8.5%)
+  - **Quinn Scott** — 500 Free 6:09.41 → 5:41.21 (−28.20s, 7.6%)
+  - **Stella Eftekhar** — 100 Fly 1:10.75 → 1:06.41 (−4.34s, 6.1%)
+  - **Ella Bissmeyer** — 100 Fly 1:14.93 → 1:11.58 (−3.35s, 4.5%)
+- **Seniors.** Thank you to the Class of 2027: Jackson Eftekhar, Jackson Machamer, Wade Olsson, Amira Alitiem, Hadley Cusson, Kadynce Drummond, Amelia Kidd, Lily Niccum and Madeline VanDeMark. [Senior page](/seniors/class-of-2027.html).
 
 ---
 
@@ -147,4 +160,4 @@
 
 ---
 
-*Generated: November 8, 2026 — season in progress, 4 meets included (dual meets not included).*
+*Generated: November 8, 2026 — season complete, 4 meets included (dual meets not included).*

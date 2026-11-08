@@ -23,6 +23,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from generate_website import create_nav_html
 
 SEASON = '2026-27'
+CLASS = 2000 + int(SEASON[-2:])
 
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June',
           'July', 'August', 'September', 'October', 'November', 'December']
@@ -507,7 +508,7 @@ def build_page(project_root):
                     <a href="/top10/girls-{SEASON}.html">Girls {SEASON} Top 10</a> &mdash; the fastest times swum {'this season' if season_over else 'so far this year'}</li>
                 <li><a href="/annual/{SEASON}.html">{SEASON} season summary</a></li>
                 <li><a href="/records/overall.html">All-time school records</a></li>
-                <li><a href="/seniors/class-of-2026.html">Class of 2026 senior recognition</a> &mdash; last year's graduating class</li>
+                {f'<li><a href="/seniors/class-of-{CLASS}.html">Class of {CLASS} seniors</a> &mdash; this year&rsquo;s graduating class, and <a href="/seniors/class-of-2026.html">Class of 2026</a></li>' if season_over else '<li><a href="/seniors/class-of-2026.html">Class of 2026 senior recognition</a> &mdash; last year&rsquo;s graduating class</li>'}
             </ul>
         </div>
     </div>
@@ -563,8 +564,7 @@ def build_page(project_root):
 
             <p class="mt-4 mb-0"><small class="text-muted">Seniors listed from the team's own
             {SEASON} roster, which states each swimmer's grade. Spelling follows the roster.
-            A full senior recognition page will follow at the end of the season, as it did for the
-            <a href="/seniors/class-of-2026.html">Class of 2026</a>.</small></p>
+            {f'Each senior&rsquo;s season, swim by swim, is on the <a href="/seniors/class-of-{CLASS}.html">Class of {CLASS} page</a>.' if season_over else 'A full senior recognition page will follow at the end of the season, as it did for the <a href="/seniors/class-of-2026.html">Class of 2026</a>.'}</small></p>
         </div>
     </div>
 

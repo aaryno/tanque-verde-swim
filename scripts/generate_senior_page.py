@@ -28,6 +28,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from class_top10 import _tables, class_lists, EVENTS, GRADES  # noqa: E402
+from site_seasons import season_complete  # noqa: E402
 
 REPO = Path(__file__).resolve().parent.parent
 RECORDS = REPO / "records"
@@ -130,9 +131,14 @@ def build():
                         "\n".join(card(n, gender, season, alltime, seniors_top10) for n in names) +
                         '</div>')
     total = len(roster.get("seniors_boys", [])) + len(roster.get("seniors_girls", []))
-    intro = (f'<div class="alert alert-light border">{total} seniors. Swims so far this season '
-             f'&mdash; {meets} meet{"s" if meets != 1 else ""} with posted results, so this is a running '
-             f'snapshot, not a final season. 🏆 marks a class record the swimmer currently holds.</div>')
+    if season_complete(data):
+        intro = (f'<div class="alert alert-light border">{total} seniors. Their swims this season '
+                 f'&mdash; the {meets} meet{"s" if meets != 1 else ""} with posted results; dual meets are not '
+                 f'included. 🏆 marks a class record the swimmer currently holds.</div>')
+    else:
+        intro = (f'<div class="alert alert-light border">{total} seniors. Swims so far this season '
+                 f'&mdash; {meets} meet{"s" if meets != 1 else ""} with posted results, so this is a running '
+                 f'snapshot, not a final season. 🏆 marks a class record the swimmer currently holds.</div>')
     content = (f'<div class="container py-4"><h2 class="mb-3">🎓 Senior Class of {year}</h2>'
                f'{intro}{"".join(sections)}'
                f'<p class="mt-4 small"><a href="/seniors/class-of-{year - 1}.html">Class of {year - 1} &rarr;</a></p></div>')

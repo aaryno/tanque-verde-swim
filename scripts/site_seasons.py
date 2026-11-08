@@ -52,3 +52,33 @@ def seasons_with_annual(records_dir=None):
     seasons = {f.name[len('annual-summary-'):-len('.md')]
                for f in records_dir.glob('annual-summary-*.md')}
     return sorted((s for s in seasons if SEASON_RE.fullmatch(s)), key=_season_key)
+
+
+DATA_DIR = Path(__file__).parent.parent / 'data'
+
+
+def season_complete(season):
+    """True once the season's State championship results are imported.
+
+    `season` is a data/season_<season>.json document. The championship is the
+    schedule's meet named '... State Championship'; it counts as done when a
+    data/meets/*.json file carries that meet name. Derived from committed files,
+    not from today's date, so a rebuild is reproducible.
+    """
+    state = [m['name'] for m in season['schedule']['meets'] if 'State Championship' in m['name']]
+    if not state:
+        return False
+    import json
+    names = {json.loads(p.read_text())['meet'] for p in (DATA_DIR / 'meets').glob('*.json')}
+    return state[-1] in names
+
+
+def in_progress_seasons():
+    """Seasons with a data/season_*.json whose State meet is not imported yet."""
+    import json
+    out = []
+    for p in sorted(DATA_DIR.glob('season_*.json')):
+        doc = json.loads(p.read_text())
+        if not season_complete(doc):
+            out.append(doc['season'])
+    return out

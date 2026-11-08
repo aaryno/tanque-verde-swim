@@ -25,7 +25,7 @@ SPLITS_FILE = PROJECT_ROOT / 'data' / 'historical_splits' / 'all_relay_splits.js
 # shared with generate_annual_pages.py and rebuild_relay_pages.py -- three
 # private copies of the same list is how the relay pages ended up two seasons
 # behind every other page. See scripts/site_seasons.py.
-from site_seasons import seasons_with_annual, seasons_with_top10  # noqa: E402
+from site_seasons import in_progress_seasons, seasons_with_annual, seasons_with_top10  # noqa: E402
 
 
 def create_nav_html():
@@ -469,7 +469,7 @@ def convert_class_year_to_badges(html_content):
 # Seasons still being swum, keyed to the records/top10-*-<season>.md files.
 # A partial season's top 10 is a running snapshot, so the page has to say so --
 # otherwise it is indistinguishable from a finished season's final list.
-IN_PROGRESS_SEASONS = ["2026-27"]
+IN_PROGRESS_SEASONS = in_progress_seasons()  # derived: State meet not imported yet
 
 
 def convert_top10_to_cards(md_file, output_file, title, notice=None):

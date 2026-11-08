@@ -14,6 +14,7 @@ from pathlib import Path as _P
 sys.path.insert(0, str(_P(__file__).resolve().parent))
 from generate_senior_page import senior_href  # noqa: E402
 import re
+import html as html_lib
 import sys
 from pathlib import Path
 from datetime import datetime
@@ -33,7 +34,7 @@ INCOMPLETE_DATA_YEARS = ["2007-08", "2008-09", "2009-10", "2010-11", "2011-12"]
 # The season menus are derived from the committed sources, in one place shared
 # with generate_website.py and rebuild_relay_pages.py. See scripts/site_seasons.py
 # for why three private copies of this list was the bug rather than the style.
-from site_seasons import seasons_with_annual, seasons_with_top10
+from site_seasons import in_progress_seasons, seasons_with_annual, seasons_with_top10
 
 TOP10_SEASONS = seasons_with_top10()
 
@@ -211,6 +212,10 @@ def parse_annual_summary(md_file, records_dir=None):
         if grade_match:
             data['grade_swims'][grade] = int(grade_match.group(1))
     
+    # Season in Review (written by build_season_summary.py once State is in)
+    rv = re.search(r'## 🌟 Season in Review\n\n(.*?)\n---', content, re.DOTALL)
+    data['review'] = [l for l in rv.group(1).splitlines() if l.strip()] if rv else []
+
     # Extract meets
     meets_section = re.search(r'## Meet Schedule.*?\n\|(.*?)\n---', content, re.DOTALL)
     if meets_section:
@@ -352,7 +357,44 @@ def generate_nav_html():
 # final tally. INCOMPLETE_DATA_YEARS is a different claim -- those are finished
 # seasons we only hold partial history for -- so this needs its own list and its
 # own wording.
-IN_PROGRESS_SEASONS = ["2026-27"]
+IN_PROGRESS_SEASONS = in_progress_seasons()  # derived: State meet not imported yet
+
+
+def _inline_md(s):
+    s = html_lib.escape(s, quote=False)
+    s = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', s)
+    return re.sub(r'\[(.+?)\]\((/[^)\s]*)\)', r'<a href="\2">\1</a>', s)
+
+
+def generate_review_html(data):
+    """The Season in Review card: top-level bullets, with indented sub-bullets."""
+    if not data.get('review'):
+        return ''
+    out, sub = [], []
+    def flush():
+        if sub:
+            out[-1] = out[-1][:-5] + '<ul class="mb-1">' + ''.join(sub) + '</ul></li>'
+            sub.clear()
+    for line in data['review']:
+        if line.startswith('  - '):
+            sub.append(f'<li>{_inline_md(line[4:])}</li>')
+        else:
+            flush()
+            out.append(f'<li class="mb-2">{_inline_md(line[2:])}</li>')
+    flush()
+    return f'''
+    <!-- Season in Review -->
+    <div class="container my-5" id="season-review">
+        <div class="section-header" data-section="review">
+            <h2 class="mb-0">🌟 {data['season']} Season in Review</h2>
+            <button class="section-toggle" data-target="review-content">
+                <span class="toggle-icon">▼</span>
+            </button>
+        </div>
+        <div class="section-content" id="review-content">
+            <ul class="mt-3 mb-0">{''.join(out)}</ul>
+        </div>
+    </div>'''
 
 
 def generate_season_overview_html(data, class_records_count):
@@ -411,6 +453,12 @@ def generate_season_overview_html(data, class_records_count):
                 <small>⚠️ <strong>Season in progress.</strong> The ''' + data['season'] + ''' season runs
                 Aug 1, 2026 through Jul 31, 2027. Everything on this page reflects only the meets
                 swum so far and will keep changing; it is not a final season summary.</small>
+            </div>'''
+    elif data.get('review'):
+        html += '''
+            <div class="alert alert-light border mt-4">
+                <small><strong>Season complete.</strong> Counts cover the invitational and championship
+                meets with posted results; dual-meet results are not included.</small>
             </div>'''
 
     # Add incomplete data notice if applicable
@@ -797,7 +845,7 @@ def generate_page_html(data, class_records):
                 <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
                     Jump To
                 </button>
-                <ul class="dropdown-menu dropdown-menu-end">
+                <ul class="dropdown-menu dropdown-menu-end">{chr(10) + '                    <li><a class="dropdown-item jump-to-link" href="#season-review">🌟 Season in Review</a></li>' if data.get('review') else ''}
                     <li><a class="dropdown-item jump-to-link" href="#season-overview">📊 Season Overview</a></li>
                     <li><a class="dropdown-item jump-to-link" href="#boys-best-times">🏊 Boys Season Best</a></li>
                     <li><a class="dropdown-item jump-to-link" href="#girls-best-times">🏊 Girls Season Best</a></li>
@@ -807,7 +855,7 @@ def generate_page_html(data, class_records):
             </div>
         </div>
     </div>
-{generate_season_overview_html(data, class_records_count)}
+{generate_review_html(data)}{generate_season_overview_html(data, class_records_count)}
 {generate_season_best_times_html(data)}
 {generate_records_broken_html(data)}
 {generate_class_records_html(class_records, season)}
