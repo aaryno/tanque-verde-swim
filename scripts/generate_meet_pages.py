@@ -249,9 +249,21 @@ def top_swims(meet, meets, recs, near, alltime, drops, relay_recs=()):
     cats.append(('drops', '&#9889; Big drops from entry time',
                  "Entry times are what the coach entered, not verified best times.", per_swimmer(items)))
     # 6. all-time Top 10
-    items = [(a['athlete'], a['rank'], f"#{a['rank']} {esc(a['gender'])} {esc(short_event(a['event']))} {t(a['time'])}")
-             for a in alltime if a['rank'] > 1]
-    cats.append(('alltime', '&#128200; New on the all-time Top 10', '', per_swimmer(items)))
+    def move(a):
+        b = a.get('before')
+        if b is None:
+            return ''
+        if b is False:
+            return ' &mdash; new to the list'
+        if to_secs(b[1]) <= to_secs(a['time']):
+            return ''  # this swim was already on the list before the import
+        if b[0] > a['rank']:
+            return f" &mdash; up from #{b[0]} ({esc(b[1])})"
+        return f" &mdash; faster in the same spot (was {esc(b[1])})"
+    items = [(a['athlete'], a['rank'], f"#{a['rank']} {esc(a['gender'])} {esc(short_event(a['event']))} "
+              f"{t(a['time'])}{move(a)}") for a in alltime if a['rank'] > 1]
+    cats.append(('alltime', '&#128200; All-time Top 10', 'Swims from this meet on the all-time lists, and how each '
+                 'moved compared with the list before the meet.', per_swimmer(items)))
     return [c for c in cats if c[3]], sb
 
 
