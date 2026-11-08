@@ -472,7 +472,9 @@ def championship_story(meet, recs, rrecs):
     nrec = len(recs) + len(rrecs)
     short = (' '.join(lede[:2] if wins and rwins else lede[:1])
              + (f" {nrec} Tanque Verde records fell at State." if nrec > 1 else ''))
-    return dict(headline=head, lede=' '.join(lede), short=short, links=[], about=about)
+    n_ind = len(wins)
+    paras = [' '.join(lede[:n_ind + len(rwins) + len(others)]), ' '.join(lede[n_ind + len(rwins) + len(others):])]
+    return dict(headline=head, lede=' '.join(lede), paras=[x for x in paras if x], short=short, links=[], about=about)
 
 
 def place_label(pl):
@@ -523,7 +525,8 @@ def source_line(meet):
 
 
 STYLE = '''<style>
-.story-lead{background:#2d6a35;color:#fff;border-radius:8px;padding:14px 16px}
+.story-lead{background:#2d6a35;color:#fff;border-radius:8px;padding:14px 16px;margin-bottom:.8rem}
+.story-p{margin:0 0 .7rem;line-height:1.5}
 .story-lead a{color:#d8f0d8}
 .story-lead .time{color:#fff}
 .meet-nav{display:flex;justify-content:space-between;gap:8px;font-size:.9rem}
@@ -591,9 +594,11 @@ def build_meet(meet, meets, recs, season, project_root):
     meet['story'] = st
     secs = []
     if st:
-        body = (f'<div class="story-lead"><h3 class="mb-2">{st["headline"]}</h3><p class="mb-2">{st["lede"]}</p>'
-                + (f'<p class="mb-2">{st["summary"]}</p>' if st['summary'] else '')
-                + ''.join(f'<div class="small">{lk}</div>' for lk in st['links']) + '</div>')
+        paras = st.get('paras') or [st['lede']]
+        body = (f'<div class="story-lead"><h3 class="mb-0">{st["headline"]}</h3></div>'
+                + ''.join(f'<p class="story-p">{x}</p>' for x in paras)
+                + (f'<p class="story-p">{st["summary"]}</p>' if st['summary'] else '')
+                + ''.join(f'<div class="small">{lk}</div>' for lk in st['links']))
         secs.append(('story', '&#128214; The story', body, True))
     if cats:
         body = ''.join(f'<div class="cat"><h5>{title}</h5>' + (f'<p class="small text-muted mb-1">{intro}</p>' if intro else '')
