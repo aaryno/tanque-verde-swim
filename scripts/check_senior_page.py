@@ -15,6 +15,7 @@ Fails when:
     So/Jr/Sr 200 IM, Open 500 Free/100 Breast/200 IM). Checked against the
     records file itself, so it stays true as records change.
 """
+import re
 import sys
 from pathlib import Path
 
@@ -42,6 +43,10 @@ def check(year):
         for s in c[g]:
             if f'id="{s["slug"]}"' not in page:
                 bad.append(f"{s['name']}: no card on the page")
+            # A State "swim" must have a time: a DQ or scratch is not one (2026-11-09).
+            for x in s["state"]:
+                if not re.fullmatch(r"\d+:\d\d\.\d\d|\d?\d\.\d\d", str(x["time"])):
+                    bad.append(f"{s['name']}: State {x['year']} {x['event']} shows {x['time']!r}, not a time")
             if not s["highlights"] and not s["events"]:
                 bad.append(f"{s['name']}: empty card")
             held = sum(1 for _, h, rows in _tables(REPO / "records" / f"records-{g}.md") if "Grade" in h

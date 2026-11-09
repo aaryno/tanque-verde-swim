@@ -169,20 +169,6 @@
    "gender": "girls",
    "event": "200 Free Relay",
    "relay": true,
-   "round": "B",
-   "place": null,
-   "time": "DQ",
-   "swimmers": [
-    "Violet Dasse",
-    "Kennady Pautler",
-    "Hayley Jones",
-    "Emma Morris"
-   ]
-  },
-  {
-   "gender": "girls",
-   "event": "200 Free Relay",
-   "relay": true,
    "round": "P",
    "place": null,
    "time": "1:58.91",
@@ -290,6 +276,22 @@
     "Sarynn Patterson",
     "Calla Isenberg"
    ]
+  }
+ ],
+ "excluded": [
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "B",
+   "place": null,
+   "swimmers": [
+    "Violet Dasse",
+    "Kennady Pautler",
+    "Hayley Jones",
+    "Emma Morris"
+   ],
+   "result": "DQ"
   }
  ]
 }

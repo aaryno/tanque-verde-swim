@@ -236,6 +236,11 @@ def main():
         if k not in seen:
             seen.add(k)
             uniq.append(s)
+    # A DQ, scratch or no-show is not a swim: keep it out of the swims, like the
+    # meet importer does, but on file. (2026-11-09: a 2017 relay DQ showed on the
+    # Class of 2021 page as "Prelims ... DQ".)
+    excluded = [x for x in uniq if not re.fullmatch(r"\d+:\d\d\.\d\d|\d?\d\.\d\d", x["time"])]
+    uniq = [x for x in uniq if x not in excluded]
     doc = {"year": a.year, "meet": a.meet, "date": a.date,
            "source": {"urls": a.source,
                       "files": [{"file": Path(f).name, "sha256": hashlib.sha256(Path(f).read_bytes()).hexdigest()}
@@ -245,6 +250,8 @@ def main():
            "team_scores": teams, "swims": uniq}
     if a.note:
         doc["notes"] = a.note
+    if excluded:
+        doc["excluded"] = [dict(x, result=x.pop("time")) for x in excluded]
     if a.team_scores:
         doc["team_scores"].update(json.loads(a.team_scores))
     OUT.mkdir(parents=True, exist_ok=True)
