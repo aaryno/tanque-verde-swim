@@ -507,7 +507,8 @@ def coverage(c):
         parts.append(state_coverage(c, meets))
     if c["roster_source"] == "top10":
         parts.append("This class&rsquo;s list of seniors is taken from swimmers listed as seniors on that season&rsquo;s "
-                     "Top 10 lists; a senior who never made a Top 10 list is missing from this page. "
+                     "Top 10 lists or in that fall&rsquo;s official State results; a senior who made neither is "
+                     "missing from this page. "
                      "Corrections are welcome.")
     legend = [("School record", "fastest ever by a Tanque Verde swimmer."),
               ("Class record", "fastest ever by a Tanque Verde freshman, sophomore, junior or senior."),

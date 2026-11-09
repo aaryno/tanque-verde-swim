@@ -107,7 +107,17 @@ def roster(year):
             for _, header, rows in _tables(p):
                 if "Year" in header:
                     names |= {r[header.index("Athlete")] for r in rows if r[header.index("Year")] == "SR"}
-        out[g] = sorted(names)
+        out[g] = names
+    # A swimmer listed as a senior (grade 12) in the official results of that
+    # fall's State meet is a senior too, whether or not they made a Top 10 list
+    # (2026-11-09: Ellie Radomsky swam 2018 State as a senior and was missing
+    # from the Class of 2019 page).
+    sh = DATA / "state_history" / f"{year - 1}.json"
+    if sh.exists():
+        for x in json.loads(sh.read_text())["swims"]:
+            if not x["relay"] and x.get("grade") == "12":
+                out[x["gender"]].add(x["athlete"])
+    out = {g: sorted(v) for g, v in out.items()}
     return out, "top10"
 
 
