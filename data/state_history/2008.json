@@ -128,16 +128,6 @@
    "time": "3:04.04"
   },
   {
-   "gender": "girls",
-   "event": "200 Freestyle",
-   "relay": false,
-   "round": "P",
-   "place": null,
-   "athlete": "Madeline Carlton",
-   "grade": "10",
-   "time": "DFS"
-  },
-  {
    "gender": "boys",
    "event": "200 Individual Medley",
    "relay": false,
@@ -246,16 +236,6 @@
    "athlete": "Claire Hain",
    "grade": "11",
    "time": "44.21"
-  },
-  {
-   "gender": "girls",
-   "event": "50 Freestyle",
-   "relay": false,
-   "round": "P",
-   "place": null,
-   "athlete": "Megan Slawson",
-   "grade": "11",
-   "time": "DFS"
   },
   {
    "gender": "boys",
@@ -388,16 +368,6 @@
    "time": "7:59.38"
   },
   {
-   "gender": "girls",
-   "event": "500 Freestyle",
-   "relay": false,
-   "round": "P",
-   "place": null,
-   "athlete": "Brroke Nelson",
-   "grade": "09",
-   "time": "SCR"
-  },
-  {
    "gender": "boys",
    "event": "200 Free Relay",
    "relay": true,
@@ -494,16 +464,6 @@
    "time": "1:44.87"
   },
   {
-   "gender": "girls",
-   "event": "100 Backstroke",
-   "relay": false,
-   "round": "P",
-   "place": null,
-   "athlete": "Megan Slawson",
-   "grade": "11",
-   "time": "SCR"
-  },
-  {
    "gender": "boys",
    "event": "100 Breaststroke",
    "relay": false,
@@ -512,16 +472,6 @@
    "athlete": "Kurt Matsunaga",
    "grade": "10",
    "time": "1:22.18"
-  },
-  {
-   "gender": "girls",
-   "event": "100 Breaststroke",
-   "relay": false,
-   "round": "P",
-   "place": null,
-   "athlete": "Madeline Carlton",
-   "grade": "10",
-   "time": "SCR"
   },
   {
    "gender": "boys",
@@ -578,6 +528,58 @@
     "Samantha Kappler",
     "Rachel Decesari"
    ]
+  }
+ ],
+ "excluded": [
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Madeline Carlton",
+   "grade": "10",
+   "result": "DFS"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Megan Slawson",
+   "grade": "11",
+   "result": "DFS"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Brroke Nelson",
+   "grade": "09",
+   "result": "SCR"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Megan Slawson",
+   "grade": "11",
+   "result": "SCR"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Madeline Carlton",
+   "grade": "10",
+   "result": "SCR"
   }
  ]
 }

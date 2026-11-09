@@ -354,16 +354,6 @@
    "time": "1:43.49"
   },
   {
-   "gender": "girls",
-   "event": "100 Backstroke",
-   "relay": false,
-   "round": "P",
-   "place": null,
-   "athlete": "Claire Hain",
-   "grade": "10",
-   "time": "DQ"
-  },
-  {
    "gender": "boys",
    "event": "100 Backstroke",
    "relay": false,
@@ -412,6 +402,18 @@
    "athlete": "Kurt Matsunaga",
    "grade": "09",
    "time": "1:31.04"
+  }
+ ],
+ "excluded": [
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Claire Hain",
+   "grade": "10",
+   "result": "DQ"
   }
  ]
 }

@@ -193,20 +193,6 @@
    "gender": "girls",
    "event": "400 Free Relay",
    "relay": true,
-   "round": "B",
-   "place": null,
-   "time": "DQ",
-   "swimmers": [
-    "Meghan Marner",
-    "Marisol Rivera",
-    "Delaney Hughes",
-    "Carly Wilson"
-   ]
-  },
-  {
-   "gender": "girls",
-   "event": "400 Free Relay",
-   "relay": true,
    "round": "P",
    "place": null,
    "time": "4:08.59",
@@ -230,6 +216,22 @@
     "Michael Marner",
     "Xavier Rivera"
    ]
+  }
+ ],
+ "excluded": [
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "B",
+   "place": null,
+   "swimmers": [
+    "Meghan Marner",
+    "Marisol Rivera",
+    "Delaney Hughes",
+    "Carly Wilson"
+   ],
+   "result": "DQ"
   }
  ]
 }

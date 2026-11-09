@@ -168,16 +168,6 @@
    "time": "3:01.98"
   },
   {
-   "gender": "girls",
-   "event": "200 Individual Medley",
-   "relay": false,
-   "round": "P",
-   "place": null,
-   "athlete": "Samantha Kappler",
-   "grade": "12",
-   "time": "DQ"
-  },
-  {
    "gender": "boys",
    "event": "200 Individual Medley",
    "relay": false,
@@ -614,16 +604,6 @@
    "time": "1:46.67"
   },
   {
-   "gender": "girls",
-   "event": "100 Backstroke",
-   "relay": false,
-   "round": "P",
-   "place": null,
-   "athlete": "Christina Cressler",
-   "grade": "12",
-   "time": "DQ"
-  },
-  {
    "gender": "boys",
    "event": "100 Backstroke",
    "relay": false,
@@ -798,6 +778,28 @@
     "Michael Marner",
     "Xavier Rivera"
    ]
+  }
+ ],
+ "excluded": [
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Samantha Kappler",
+   "grade": "12",
+   "result": "DQ"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Christina Cressler",
+   "grade": "12",
+   "result": "DQ"
   }
  ]
 }
