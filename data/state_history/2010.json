@@ -1,0 +1,115 @@
+{
+ "year": 2010,
+ "meet": "2010 AIA Division II State Championship",
+ "date": "2010-11-06",
+ "source": {
+  "urls": [
+   "https://aiaonline.org/files/11757/x.pdf",
+   "https://azpreps365.com/archives/swimming-boys"
+  ],
+  "files": [
+   {
+    "file": "aia-2010.pdf",
+    "sha256": "5585932bb5e16b1af2384f9c99cfc8ae4d487055e2b51add97c0d9b6a37329f4"
+   }
+  ]
+ },
+ "rounds": {
+  "A": "championship final",
+  "B": "consolation final",
+  "P": "prelims only",
+  "TF": "timed final"
+ },
+ "team_scores": {
+  "girls": {
+   "place": 16,
+   "points": 34
+  },
+  "boys": {
+   "place": 32,
+   "points": 8
+  }
+ },
+ "swims": [
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 2,
+   "athlete": "Carly Wilson",
+   "grade": "11",
+   "time": "23.84"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Carly Wilson",
+   "grade": "11",
+   "time": "24.45"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "B",
+   "place": 10,
+   "athlete": "Xavier Rivera",
+   "grade": "11",
+   "time": "57.54"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Xavier Rivera",
+   "grade": "11",
+   "time": "58.26"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 2,
+   "athlete": "Carly Wilson",
+   "grade": "11",
+   "time": "52.12"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Carly Wilson",
+   "grade": "11",
+   "time": "53.49"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "B",
+   "place": 16,
+   "athlete": "Xavier Rivera",
+   "grade": "11",
+   "time": "1:01.64"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Xavier Rivera",
+   "grade": "11",
+   "time": "1:01.53"
+  }
+ ]
+}

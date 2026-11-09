@@ -8,6 +8,11 @@ harvest that swapped lineups between relays (e.g. the girls 1:43.75 200 Free
 Relay listed Ryann Lightcap for Paisley White). The official AIA results
 (data/state_history/2022.json) settled them. Order of swimmers is not checked;
 membership and event are.
+
+2026-11-09: extended to every year 2007-2025. It caught two girls relays filed
+under the 200 Medley Relay that the official results give as 200 Free Relay
+swims (1:55.49 in 2016, 1:53.58 in 2018). Where the official file prints no
+swimmers (2018) only the event and time are checked.
 """
 import json
 import re
@@ -41,8 +46,9 @@ def problems():
             if not (ROOT / "data" / "state_history" / f"{year}.json").exists():
                 continue
             names = {canon(n) for n in c[2].split(",")}
+            # A file that prints no relay swimmers (2018) can confirm event and time only.
             match = [o for o in official.get((g, t(c[1]), year), [])
-                     if o["event"] == ev and set(o["swimmers"]) == names]
+                     if o["event"] == ev and (set(o["swimmers"]) == names or not o["swimmers"])]
             if not match:
                 got = official.get((g, t(c[1]), year))
                 out.append(f"{g} {ev} {c[1]} ({year}): list has {sorted(names)}; official: "

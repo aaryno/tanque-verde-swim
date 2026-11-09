@@ -1,0 +1,100 @@
+{
+ "year": 2014,
+ "meet": "2014 AIA Division II State Championship",
+ "date": "2014-11-08",
+ "source": {
+  "urls": [
+   "https://aiaonline.org/files/14651/x.pdf",
+   "https://azpreps365.com/archives/swimming-boys"
+  ],
+  "files": [
+   {
+    "file": "aia-2014.pdf",
+    "sha256": "4be89374e396fe31ebe50f0f762f5f12c35f2c4f81ea42453be4a42ee1bd5b59"
+   }
+  ]
+ },
+ "rounds": {
+  "A": "championship final",
+  "B": "consolation final",
+  "P": "prelims only",
+  "TF": "timed final"
+ },
+ "team_scores": {},
+ "swims": [
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 25,
+   "athlete": "Bridget Spooner",
+   "grade": "10",
+   "time": "2:11.68"
+  },
+  {
+   "gender": "boys",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 26,
+   "athlete": "Austin Morris",
+   "grade": "11",
+   "time": "5:29.68"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 28,
+   "athlete": "Bridget Spooner",
+   "grade": "10",
+   "time": "5:56.61"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 19,
+   "athlete": "Austin Morris",
+   "grade": "11",
+   "time": "1:00.88"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 29,
+   "athlete": "Samuel Merrill",
+   "grade": "09",
+   "time": "1:02.84"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 18,
+   "athlete": "Madisyn Clausen",
+   "grade": "12",
+   "time": "1:16.21"
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": 21,
+   "time": "4:11.63",
+   "swimmers": [
+    "Bridget Spooner",
+    "Sierra Roh",
+    "Alix Morris",
+    "Madisyn Clausen"
+   ]
+  }
+ ]
+}

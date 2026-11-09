@@ -1,0 +1,583 @@
+{
+ "year": 2008,
+ "meet": "2008 AIA 1A/2A/3A State Championship",
+ "date": "2008-10-18",
+ "source": {
+  "urls": [
+   "https://aiaonline.org/files/9361/x.pdf",
+   "https://azpreps365.com/archives/swimming-boys"
+  ],
+  "files": [
+   {
+    "file": "aia-2008.pdf",
+    "sha256": "bd940fbcb6473e6d5ebc7e6afa625bb859d3b8ac4654717b7f7539dd61a16cff"
+   }
+  ]
+ },
+ "rounds": {
+  "A": "championship final",
+  "B": "consolation final",
+  "P": "prelims only",
+  "TF": "timed final"
+ },
+ "team_scores": {
+  "girls": {
+   "place": 7,
+   "points": 107
+  },
+  "boys": {
+   "place": 11,
+   "points": 83
+  }
+ },
+ "swims": [
+  {
+   "gender": "boys",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "B",
+   "place": 10,
+   "time": "2:03.12",
+   "swimmers": [
+    "Xavier Rivera",
+    "Kurt Matsunaga",
+    "Matthew Nanni",
+    "Jose Perez"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "P",
+   "place": 10,
+   "time": "2:02.85",
+   "swimmers": [
+    "Xavier Rivera",
+    "Kurt Matsunaga",
+    "Matthew Nanni",
+    "Jose Perez"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "A",
+   "place": 7,
+   "time": "2:27.98",
+   "swimmers": [
+    "Brroke Nelson",
+    "Dana Kristofitz",
+    "Rachel Decesari",
+    "Samantha Kappler"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "P",
+   "place": 8,
+   "time": "2:26.78",
+   "swimmers": [
+    "Brroke Nelson",
+    "Samantha Kappler",
+    "Rachel Decesari",
+    "Dana Kristofitz"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 22,
+   "athlete": "Kurt Matsunaga",
+   "grade": "10",
+   "time": "2:31.75"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 26,
+   "athlete": "Ben Wheeler",
+   "grade": "10",
+   "time": "2:40.69"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 30,
+   "athlete": "Michael Marner",
+   "grade": "09",
+   "time": "2:50.38"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 28,
+   "athlete": "Samantha Kappler",
+   "grade": "11",
+   "time": "3:04.04"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Madeline Carlton",
+   "grade": "10",
+   "time": "DFS"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "B",
+   "place": 10,
+   "athlete": "Matthew Nanni",
+   "grade": "10",
+   "time": "2:23.23"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": 10,
+   "athlete": "Matthew Nanni",
+   "grade": "10",
+   "time": "2:26.10"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "B",
+   "place": 11,
+   "athlete": "Dana Kristofitz",
+   "grade": "10",
+   "time": "2:55.24"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": 14,
+   "athlete": "Dana Kristofitz",
+   "grade": "10",
+   "time": "3:00.35"
+  },
+  {
+   "gender": "boys",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 23,
+   "athlete": "Jose Perez",
+   "grade": "09",
+   "time": "28.22"
+  },
+  {
+   "gender": "boys",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 26,
+   "athlete": "Nick Georgiopolis",
+   "grade": "09",
+   "time": "28.56"
+  },
+  {
+   "gender": "boys",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 40,
+   "athlete": "Paul Wright",
+   "grade": "10",
+   "time": "32.98"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 4,
+   "athlete": "Rachel Decesari",
+   "grade": "11",
+   "time": "27.52"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 4,
+   "athlete": "Rachel Decesari",
+   "grade": "11",
+   "time": "27.67"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 32,
+   "athlete": "Christina Cressler",
+   "grade": "11",
+   "time": "36.41"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 42,
+   "athlete": "Claire Hain",
+   "grade": "11",
+   "time": "44.21"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Megan Slawson",
+   "grade": "11",
+   "time": "DFS"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "A",
+   "place": 8,
+   "athlete": "Matthew Nanni",
+   "grade": "10",
+   "time": "1:04.45"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": 8,
+   "athlete": "Matthew Nanni",
+   "grade": "10",
+   "time": "1:04.86"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "A",
+   "place": 7,
+   "athlete": "Rachel Decesari",
+   "grade": "11",
+   "time": "1:13.76"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": 4,
+   "athlete": "Rachel Decesari",
+   "grade": "11",
+   "time": "1:11.40"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 12,
+   "athlete": "Xavier Rivera",
+   "grade": "09",
+   "time": "56.66"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 12,
+   "athlete": "Xavier Rivera",
+   "grade": "09",
+   "time": "56.66"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 23,
+   "athlete": "Jose Perez",
+   "grade": "09",
+   "time": "1:04.46"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 24,
+   "athlete": "Nick Georgiopolis",
+   "grade": "09",
+   "time": "1:05.63"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 36,
+   "athlete": "Paul Wright",
+   "grade": "10",
+   "time": "1:18.26"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 17,
+   "athlete": "Dana Kristofitz",
+   "grade": "10",
+   "time": "1:10.11"
+  },
+  {
+   "gender": "boys",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 27,
+   "athlete": "Ben Wheeler",
+   "grade": "10",
+   "time": "7:19.89"
+  },
+  {
+   "gender": "boys",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 29,
+   "athlete": "Michael Marner",
+   "grade": "09",
+   "time": "8:16.91"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 22,
+   "athlete": "Christina Cressler",
+   "grade": "11",
+   "time": "7:59.38"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Brroke Nelson",
+   "grade": "09",
+   "time": "SCR"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "B",
+   "place": 12,
+   "time": "2:04.03",
+   "swimmers": [
+    "Ben Wheeler",
+    "Nick Georgiopolis",
+    "Michael Marner",
+    "Paul Wright"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": 12,
+   "time": "2:12.78",
+   "swimmers": [
+    "Ben Wheeler",
+    "Paul Wright",
+    "Michael Marner",
+    "Nick Georgiopolis"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 6,
+   "time": "2:29.74",
+   "swimmers": [
+    "Brroke Nelson",
+    "Samantha Kappler",
+    "Claire Hain",
+    "Christina Cressler"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": 8,
+   "time": "2:32.22",
+   "swimmers": [
+    "Brroke Nelson",
+    "Samantha Kappler",
+    "Claire Hain",
+    "Christina Cressler"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "A",
+   "place": 5,
+   "athlete": "Xavier Rivera",
+   "grade": "09",
+   "time": "1:04.76"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 5,
+   "athlete": "Xavier Rivera",
+   "grade": "09",
+   "time": "1:06.91"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 20,
+   "athlete": "Brroke Nelson",
+   "grade": "09",
+   "time": "1:26.93"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 28,
+   "athlete": "Claire Hain",
+   "grade": "11",
+   "time": "1:44.87"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Megan Slawson",
+   "grade": "11",
+   "time": "SCR"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 19,
+   "athlete": "Kurt Matsunaga",
+   "grade": "10",
+   "time": "1:22.18"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Madeline Carlton",
+   "grade": "10",
+   "time": "SCR"
+  },
+  {
+   "gender": "boys",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 8,
+   "time": "4:05.02",
+   "swimmers": [
+    "Xavier Rivera",
+    "Jose Perez",
+    "Kurt Matsunaga",
+    "Matthew Nanni"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": 8,
+   "time": "4:05.25",
+   "swimmers": [
+    "Xavier Rivera",
+    "Jose Perez",
+    "Kurt Matsunaga",
+    "Matthew Nanni"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 7,
+   "time": "4:59.03",
+   "swimmers": [
+    "Dana Kristofitz",
+    "Brroke Nelson",
+    "Samantha Kappler",
+    "Rachel Decesari"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": 7,
+   "time": "4:57.06",
+   "swimmers": [
+    "Dana Kristofitz",
+    "Brroke Nelson",
+    "Samantha Kappler",
+    "Rachel Decesari"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,235 @@
+{
+ "year": 2011,
+ "meet": "2011 AIA Division II State Championship",
+ "date": "2011-11-05",
+ "source": {
+  "urls": [
+   "https://aiaonline.org/files/12611/x.pdf",
+   "https://azpreps365.com/archives/swimming-boys"
+  ],
+  "files": [
+   {
+    "file": "aia-2011.pdf",
+    "sha256": "9f94f7a3f4f6901d06e49723f341fdf5a3165b8a85b9e6197646e6a6d2042c68"
+   }
+  ]
+ },
+ "rounds": {
+  "A": "championship final",
+  "B": "consolation final",
+  "P": "prelims only",
+  "TF": "timed final"
+ },
+ "team_scores": {
+  "boys": {
+   "place": 31,
+   "points": 7
+  },
+  "girls": {
+   "place": 13,
+   "points": 53
+  }
+ },
+ "swims": [
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "B",
+   "place": 16,
+   "athlete": "Marisol Rivera",
+   "grade": "10",
+   "time": "2:32.55"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Marisol Rivera",
+   "grade": "10",
+   "time": "2:31.56"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 3,
+   "athlete": "Carly Wilson",
+   "grade": "12",
+   "time": "24.41"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Carly Wilson",
+   "grade": "12",
+   "time": "24.77"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 18,
+   "athlete": "Meghan Marner",
+   "grade": "10",
+   "time": "26.94"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "B",
+   "place": 13,
+   "athlete": "Marisol Rivera",
+   "grade": "10",
+   "time": "1:06.04"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Marisol Rivera",
+   "grade": "10",
+   "time": "1:05.31"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "B",
+   "place": 12,
+   "athlete": "Xavier Rivera",
+   "grade": "12",
+   "time": "59.91"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Xavier Rivera",
+   "grade": "12",
+   "time": "59.90"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 1,
+   "athlete": "Carly Wilson",
+   "grade": "12",
+   "time": "52.54"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Carly Wilson",
+   "grade": "12",
+   "time": "53.48"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "B",
+   "place": 11,
+   "time": "1:51.87",
+   "swimmers": [
+    "Meghan Marner",
+    "Marisol Rivera",
+    "Amanda Grimshaw",
+    "Carly Wilson"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "1:52.46",
+   "swimmers": [
+    "Meghan Marner",
+    "Marisol Rivera",
+    "Amanda Grimshaw",
+    "Carly Wilson"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "B",
+   "place": 15,
+   "athlete": "Xavier Rivera",
+   "grade": "12",
+   "time": "1:03.62"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Xavier Rivera",
+   "grade": "12",
+   "time": "1:02.84"
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "B",
+   "place": null,
+   "time": "DQ",
+   "swimmers": [
+    "Meghan Marner",
+    "Marisol Rivera",
+    "Delaney Hughes",
+    "Carly Wilson"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "4:08.59",
+   "swimmers": [
+    "Meghan Marner",
+    "Marisol Rivera",
+    "Delaney Hughes",
+    "Carly Wilson"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": 17,
+   "time": "3:48.78",
+   "swimmers": [
+    "Raul Acuna Vega",
+    "Andrew Lam",
+    "Michael Marner",
+    "Xavier Rivera"
+   ]
+  }
+ ]
+}

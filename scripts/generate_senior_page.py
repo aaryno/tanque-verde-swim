@@ -475,6 +475,10 @@ def state_coverage(c, meets):
         (have if posted or (REPO / "data" / "state_history" / f"{y}.json").exists() else missing).append(y)
     out = ("State places, relay lineups and team finishes come from the official meet results"
            + (f" for {and_list([str(y) for y in have])}" if have else "") + ".")
+    for y in have:
+        f = REPO / "data" / "state_history" / f"{y}.json"
+        for note in (json.loads(f.read_text()).get("notes", []) if f.exists() else []):
+            out += f" {y}: {html.escape(note)}"
     if missing:
         out += (f" We do not yet have official results for the {and_list([str(y) for y in missing])} State "
                 f"meet{'s' if len(missing) > 1 else ''}, so State swims from "

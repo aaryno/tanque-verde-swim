@@ -1,0 +1,322 @@
+{
+ "year": 2020,
+ "meet": "2020 AIA Division III State Championship",
+ "date": "2020-11-07",
+ "source": {
+  "urls": [
+   "https://aiaonline.org/files/17252/x.pdf",
+   "https://azpreps365.com/archives/swimming-boys"
+  ],
+  "files": [
+   {
+    "file": "aia-2020.pdf",
+    "sha256": "b7b1ba63a5bb51fa3f77f4bdd0ff7aae3cc6741f630e87ad52e2341a11185e34"
+   }
+  ]
+ },
+ "rounds": {
+  "A": "championship final",
+  "B": "consolation final",
+  "P": "prelims only",
+  "TF": "timed final"
+ },
+ "team_scores": {
+  "girls": {
+   "place": 5,
+   "points": 155
+  },
+  "boys": {
+   "place": 8,
+   "points": 113.5
+  }
+ },
+ "swims": [
+  {
+   "gender": "boys",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "TF",
+   "place": 12,
+   "time": "1:54.75",
+   "swimmers": [
+    "Julian Pacheco",
+    "Dominic Colombo",
+    "Beck Caballero",
+    "Nicholas Spilotro"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "TF",
+   "place": 8,
+   "time": "2:02.90",
+   "swimmers": [
+    "Maggie Colombo",
+    "Sage Weatherwax",
+    "Chloe Weatherwax",
+    "Kennady Pautler"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "TF",
+   "place": 12,
+   "athlete": "Nicholas Cusson",
+   "grade": null,
+   "time": "1:54.31"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "TF",
+   "place": 8,
+   "athlete": "Natalie Armstrong",
+   "grade": null,
+   "time": "2:08.36"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "TF",
+   "place": 22,
+   "athlete": "Kennady Pautler",
+   "grade": null,
+   "time": "2:26.22"
+  },
+  {
+   "gender": "boys",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "TF",
+   "place": 6,
+   "athlete": "Samuel Stott",
+   "grade": null,
+   "time": "22.24"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "TF",
+   "place": 8,
+   "athlete": "Chloe Weatherwax",
+   "grade": null,
+   "time": "26.56"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "TF",
+   "place": 10,
+   "athlete": "Maggie Colombo",
+   "grade": null,
+   "time": "26.62"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "TF",
+   "place": 12,
+   "athlete": "Paisley White",
+   "grade": null,
+   "time": "1:05.63"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "TF",
+   "place": 13,
+   "athlete": "Chloe Weatherwax",
+   "grade": null,
+   "time": "1:05.95"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "TF",
+   "place": 2,
+   "athlete": "Samuel Stott",
+   "grade": null,
+   "time": "47.71"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "TF",
+   "place": 4,
+   "athlete": "Nicholas Cusson",
+   "grade": null,
+   "time": "50.34"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "TF",
+   "place": 6,
+   "athlete": "Natalie Armstrong",
+   "grade": null,
+   "time": "58.58"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "TF",
+   "place": 9,
+   "athlete": "Maggie Colombo",
+   "grade": null,
+   "time": "59.10"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "TF",
+   "place": 18,
+   "athlete": "Kennady Pautler",
+   "grade": null,
+   "time": "1:01.59"
+  },
+  {
+   "gender": "boys",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "TF",
+   "place": 20,
+   "athlete": "Julian Pacheco",
+   "grade": null,
+   "time": "5:57.26"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "TF",
+   "place": 21,
+   "athlete": "Sage Weatherwax",
+   "grade": null,
+   "time": "6:23.20"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "TF",
+   "place": 7,
+   "time": "1:38.14",
+   "swimmers": [
+    "Nicholas Cusson",
+    "Nicholas Spilotro",
+    "Joseph Jacobs",
+    "Samuel Stott"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "TF",
+   "place": 4,
+   "time": "1:48.20",
+   "swimmers": [
+    "Chloe Weatherwax",
+    "Paisley White",
+    "Violet Dasse",
+    "Natalie Armstrong"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "TF",
+   "place": 11,
+   "athlete": "Nicholas Spilotro",
+   "grade": null,
+   "time": "1:04.06"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "TF",
+   "place": 18,
+   "athlete": "Julian Pacheco",
+   "grade": null,
+   "time": "1:05.92"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "TF",
+   "place": 8,
+   "athlete": "Paisley White",
+   "grade": null,
+   "time": "1:05.84"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "TF",
+   "place": 17,
+   "athlete": "Shaye Sulger",
+   "grade": null,
+   "time": "1:11.82"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "TF",
+   "place": 18,
+   "athlete": "Sage Weatherwax",
+   "grade": null,
+   "time": "1:18.77"
+  },
+  {
+   "gender": "boys",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "TF",
+   "place": 7,
+   "time": "3:36.29",
+   "swimmers": [
+    "Nicholas Cusson",
+    "Julian Pacheco",
+    "Joseph Jacobs",
+    "Samuel Stott"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "TF",
+   "place": 3,
+   "time": "3:58.56",
+   "swimmers": [
+    "Maggie Colombo",
+    "Paisley White",
+    "Kennady Pautler",
+    "Natalie Armstrong"
+   ]
+  }
+ ],
+ "notes": [
+  "Swum as a virtual meet (timed finals at each school) because of COVID-19; the file gives no grades."
+ ]
+}

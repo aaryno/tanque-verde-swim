@@ -1,0 +1,803 @@
+{
+ "year": 2009,
+ "meet": "2009 AIA 1A/2A/3A State Championship",
+ "date": "2009-10-17",
+ "source": {
+  "urls": [
+   "https://aiaonline.org/files/10504/x.pdf",
+   "https://azpreps365.com/archives/swimming-boys"
+  ],
+  "files": [
+   {
+    "file": "aia-2009.pdf",
+    "sha256": "7758a44c03896e865b710ab553961ffa79abd0ba091cf2feadb9fff8b00b316c"
+   }
+  ]
+ },
+ "rounds": {
+  "A": "championship final",
+  "B": "consolation final",
+  "P": "prelims only",
+  "TF": "timed final"
+ },
+ "team_scores": {
+  "girls": {
+   "place": 10,
+   "points": 80
+  },
+  "boys": {
+   "place": 7,
+   "points": 112
+  }
+ },
+ "swims": [
+  {
+   "gender": "girls",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "B",
+   "place": 10,
+   "time": "2:24.97",
+   "swimmers": [
+    "Dana Kristofitz",
+    "Delaney Hughes",
+    "Carly Wilson",
+    "Rachel Foss"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "P",
+   "place": 11,
+   "time": "2:25.20",
+   "swimmers": [
+    "Dana Kristofitz",
+    "Delaney Hughes",
+    "Carly Wilson",
+    "Rachel Foss"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "A",
+   "place": 8,
+   "time": "2:02.19",
+   "swimmers": [
+    "Xavier Rivera",
+    "Walter Johnson",
+    "Kurt Matsunaga",
+    "Jose Perez"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "P",
+   "place": 8,
+   "time": "2:03.64",
+   "swimmers": [
+    "Xavier Rivera",
+    "Walter Johnson",
+    "Kurt Matsunaga",
+    "Jose Perez"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 20,
+   "athlete": "Rachel Foss",
+   "grade": "09",
+   "time": "2:55.51"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 24,
+   "athlete": "Madeline Carlton",
+   "grade": "11",
+   "time": "3:03.92"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 21,
+   "athlete": "Michael Marner",
+   "grade": "10",
+   "time": "2:35.96"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 33,
+   "athlete": "Nick Lavery",
+   "grade": "11",
+   "time": "2:56.22"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 35,
+   "athlete": "Zachary Flannery",
+   "grade": "09",
+   "time": "2:58.20"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 36,
+   "athlete": "Cary Reis",
+   "grade": "10",
+   "time": "3:08.21"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "B",
+   "place": 13,
+   "athlete": "Dana Kristofitz",
+   "grade": "11",
+   "time": "3:02.53"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": 13,
+   "athlete": "Dana Kristofitz",
+   "grade": "11",
+   "time": "3:01.98"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Samantha Kappler",
+   "grade": "12",
+   "time": "DQ"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "B",
+   "place": 9,
+   "athlete": "Ben Wheeler",
+   "grade": "11",
+   "time": "2:54.53"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "B",
+   "place": 10,
+   "athlete": "James Leon",
+   "grade": "10",
+   "time": "2:59.76"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": 9,
+   "athlete": "Ben Wheeler",
+   "grade": "11",
+   "time": "2:56.97"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": 10,
+   "athlete": "James Leon",
+   "grade": "10",
+   "time": "3:02.39"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 3,
+   "athlete": "Carly Wilson",
+   "grade": "10",
+   "time": "25.79"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 2,
+   "athlete": "Carly Wilson",
+   "grade": "10",
+   "time": "25.58"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 40,
+   "athlete": "Leah Van Prooyen",
+   "grade": "09",
+   "time": "36.19"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 44,
+   "athlete": "Claire Hain",
+   "grade": "12",
+   "time": "40.71"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 51,
+   "athlete": "Jesse Hampton",
+   "grade": "11",
+   "time": "44.32"
+  },
+  {
+   "gender": "boys",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 25,
+   "athlete": "Jose Perez",
+   "grade": "10",
+   "time": "26.92"
+  },
+  {
+   "gender": "boys",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 34,
+   "athlete": "Brandon Kapela",
+   "grade": "09",
+   "time": "28.40"
+  },
+  {
+   "gender": "boys",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 43,
+   "athlete": "Joshua Paraninfo",
+   "grade": "09",
+   "time": "30.16"
+  },
+  {
+   "gender": "boys",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 50,
+   "athlete": "Ben Vickers",
+   "grade": "09",
+   "time": "35.10"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "A",
+   "place": 3,
+   "athlete": "Carly Wilson",
+   "grade": "10",
+   "time": "1:00.93"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": 3,
+   "athlete": "Carly Wilson",
+   "grade": "10",
+   "time": "1:03.20"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": 21,
+   "athlete": "Leah Van Prooyen",
+   "grade": "09",
+   "time": "2:04.47"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "A",
+   "place": 7,
+   "athlete": "Xavier Rivera",
+   "grade": "10",
+   "time": "59.55"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "B",
+   "place": 10,
+   "athlete": "Kurt Matsunaga",
+   "grade": "11",
+   "time": "1:09.02"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "B",
+   "place": 14,
+   "athlete": "Walter Johnson",
+   "grade": "11",
+   "time": "1:15.23"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": 8,
+   "athlete": "Xavier Rivera",
+   "grade": "10",
+   "time": "1:00.99"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": 11,
+   "athlete": "Kurt Matsunaga",
+   "grade": "11",
+   "time": "1:08.89"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": 15,
+   "athlete": "Walter Johnson",
+   "grade": "11",
+   "time": "1:18.20"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 43,
+   "athlete": "Johnson Ariel",
+   "grade": "12",
+   "time": "1:26.17"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 50,
+   "athlete": "Jesse Hampton",
+   "grade": "11",
+   "time": "1:46.41"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 19,
+   "athlete": "Jose Perez",
+   "grade": "10",
+   "time": "1:02.24"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 27,
+   "athlete": "Brandon Kapela",
+   "grade": "09",
+   "time": "1:05.67"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 40,
+   "athlete": "Joshua Paraninfo",
+   "grade": "09",
+   "time": "1:11.66"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 44,
+   "athlete": "Ben Vickers",
+   "grade": "09",
+   "time": "1:22.01"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 11,
+   "athlete": "Delaney Hughes",
+   "grade": "09",
+   "time": "7:08.38"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 11,
+   "athlete": "Delaney Hughes",
+   "grade": "09",
+   "time": "7:12.29"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 21,
+   "athlete": "Christina Cressler",
+   "grade": "12",
+   "time": "8:07.26"
+  },
+  {
+   "gender": "boys",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 17,
+   "athlete": "Keith Kristofitz",
+   "grade": "09",
+   "time": "6:56.60"
+  },
+  {
+   "gender": "boys",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 23,
+   "athlete": "Michael Marner",
+   "grade": "10",
+   "time": "7:24.71"
+  },
+  {
+   "gender": "boys",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 24,
+   "athlete": "Ben Wheeler",
+   "grade": "11",
+   "time": "7:24.84"
+  },
+  {
+   "gender": "boys",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 26,
+   "athlete": "Zachary Flannery",
+   "grade": "09",
+   "time": "7:51.20"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "B",
+   "place": 14,
+   "time": "2:19.48",
+   "swimmers": [
+    "Madeline Carlton",
+    "Johnson Ariel",
+    "Samantha Kappler",
+    "Rachel Foss"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": 14,
+   "time": "2:22.54",
+   "swimmers": [
+    "Madeline Carlton",
+    "Johnson Ariel",
+    "Samantha Kappler",
+    "Rachel Foss"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "B",
+   "place": 15,
+   "time": "2:02.91",
+   "swimmers": [
+    "James Leon",
+    "Joshua Paraninfo",
+    "Keith Kristofitz",
+    "Brandon Kapela"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": 15,
+   "time": "2:05.46",
+   "swimmers": [
+    "James Leon",
+    "Joshua Paraninfo",
+    "Keith Kristofitz",
+    "Brandon Kapela"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 21,
+   "athlete": "Dana Kristofitz",
+   "grade": "11",
+   "time": "1:28.61"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 24,
+   "athlete": "Rachel Foss",
+   "grade": "09",
+   "time": "1:33.12"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 32,
+   "athlete": "Claire Hain",
+   "grade": "12",
+   "time": "1:46.67"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Christina Cressler",
+   "grade": "12",
+   "time": "DQ"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "A",
+   "place": 4,
+   "athlete": "Xavier Rivera",
+   "grade": "10",
+   "time": "1:01.91"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 4,
+   "athlete": "Xavier Rivera",
+   "grade": "10",
+   "time": "1:03.96"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 18,
+   "athlete": "James Leon",
+   "grade": "10",
+   "time": "1:26.96"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 26,
+   "athlete": "Keith Kristofitz",
+   "grade": "09",
+   "time": "1:34.44"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 28,
+   "athlete": "Alex Mitchell",
+   "grade": "09",
+   "time": "2:03.75"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 18,
+   "athlete": "Delaney Hughes",
+   "grade": "09",
+   "time": "1:34.37"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 25,
+   "athlete": "Madeline Carlton",
+   "grade": "11",
+   "time": "1:42.68"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 27,
+   "athlete": "Samantha Kappler",
+   "grade": "12",
+   "time": "1:43.80"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 31,
+   "athlete": "Johnson Ariel",
+   "grade": "12",
+   "time": "1:46.44"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "B",
+   "place": 10,
+   "athlete": "Kurt Matsunaga",
+   "grade": "11",
+   "time": "1:16.71"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 12,
+   "athlete": "Kurt Matsunaga",
+   "grade": "11",
+   "time": "1:18.32"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 27,
+   "athlete": "Walter Johnson",
+   "grade": "11",
+   "time": "1:30.21"
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "B",
+   "place": 9,
+   "time": "4:45.73",
+   "swimmers": [
+    "Carly Wilson",
+    "Delaney Hughes",
+    "Christina Cressler",
+    "Dana Kristofitz"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": 9,
+   "time": "4:56.94",
+   "swimmers": [
+    "Dana Kristofitz",
+    "Delaney Hughes",
+    "Christina Cressler",
+    "Carly Wilson"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 6,
+   "time": "4:04.02",
+   "swimmers": [
+    "Kurt Matsunaga",
+    "Jose Perez",
+    "Michael Marner",
+    "Xavier Rivera"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": 7,
+   "time": "4:06.02",
+   "swimmers": [
+    "Kurt Matsunaga",
+    "Jose Perez",
+    "Michael Marner",
+    "Xavier Rivera"
+   ]
+  }
+ ]
+}
