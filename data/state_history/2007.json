@@ -1,0 +1,417 @@
+{
+ "year": 2007,
+ "meet": "2007 AIA 1A/2A/3A State Championship",
+ "date": "2007-10-27",
+ "source": {
+  "urls": [
+   "https://aiaonline.org/files/7844/x.pdf",
+   "https://azpreps365.com/archives/swimming-boys"
+  ],
+  "files": [
+   {
+    "file": "aia-2007.pdf",
+    "sha256": "5e3f7e688f5a2fc856e6ed0d229c83cbdff49342b5d383bc51e04be4f2208b11"
+   }
+  ]
+ },
+ "rounds": {
+  "A": "championship final",
+  "B": "consolation final",
+  "P": "prelims only",
+  "TF": "timed final"
+ },
+ "team_scores": {
+  "girls": {
+   "place": 9,
+   "points": 76
+  },
+  "boys": {
+   "place": 9,
+   "points": 80
+  }
+ },
+ "swims": [
+  {
+   "gender": "girls",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "A",
+   "place": 8,
+   "time": "2:35.58",
+   "swimmers": [
+    "Samantha Kappler",
+    "Janessa Grabe",
+    "Dana Kristofitz",
+    "Christina Cressler"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "P",
+   "place": 8,
+   "time": "2:34.19",
+   "swimmers": [
+    "Samantha Kappler",
+    "Janessa Grabe",
+    "Dana Kristofitz",
+    "Christina Cressler"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "B",
+   "place": 9,
+   "time": "2:09.82",
+   "swimmers": [
+    "Conor Montijo",
+    "Kurt Matsunaga",
+    "Matthew Nanni",
+    "Jordon Jacobs"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "P",
+   "place": 10,
+   "time": "2:14.00",
+   "swimmers": [
+    "Conor Montijo",
+    "Kurt Matsunaga",
+    "Matthew Nanni",
+    "Jordon Jacobs"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 22,
+   "athlete": "Kurt Matsunaga",
+   "grade": "09",
+   "time": "2:48.05"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "B",
+   "place": 11,
+   "athlete": "Dana Kristofitz",
+   "grade": "09",
+   "time": "2:58.12"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": 12,
+   "athlete": "Dana Kristofitz",
+   "grade": "09",
+   "time": "3:00.32"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "A",
+   "place": 7,
+   "athlete": "Matthew Nanni",
+   "grade": "09",
+   "time": "2:30.66"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "B",
+   "place": 13,
+   "athlete": "Conor Montijo",
+   "grade": "09",
+   "time": "2:38.82"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": 7,
+   "athlete": "Matthew Nanni",
+   "grade": "09",
+   "time": "2:33.55"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": 12,
+   "athlete": "Conor Montijo",
+   "grade": "09",
+   "time": "2:44.48"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 24,
+   "athlete": "Samantha Kappler",
+   "grade": "10",
+   "time": "35.65"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 30,
+   "athlete": "Claire Hain",
+   "grade": "10",
+   "time": "46.68"
+  },
+  {
+   "gender": "boys",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 22,
+   "athlete": "Jordon Jacobs",
+   "grade": "09",
+   "time": "27.53"
+  },
+  {
+   "gender": "boys",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 29,
+   "athlete": "Kevin Matsunaga",
+   "grade": "12",
+   "time": "31.15"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "B",
+   "place": 11,
+   "athlete": "Matthew Nanni",
+   "grade": "09",
+   "time": "1:12.30"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": 11,
+   "athlete": "Matthew Nanni",
+   "grade": "09",
+   "time": "1:12.47"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 18,
+   "athlete": "Dana Kristofitz",
+   "grade": "09",
+   "time": "1:11.48"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 27,
+   "athlete": "Christina Cressler",
+   "grade": "10",
+   "time": "1:27.41"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 25,
+   "athlete": "Jordon Jacobs",
+   "grade": "09",
+   "time": "1:06.27"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 28,
+   "athlete": "Kevin Matsunaga",
+   "grade": "12",
+   "time": "1:09.88"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 4,
+   "athlete": "Janessa Grabe",
+   "grade": "12",
+   "time": "6:14.55"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 20,
+   "athlete": "Christina Cressler",
+   "grade": "10",
+   "time": "8:43.08"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 5,
+   "athlete": "Janessa Grabe",
+   "grade": "12",
+   "time": "6:25.65"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "B",
+   "place": 9,
+   "time": "2:16.62",
+   "swimmers": [
+    "Samantha Kappler",
+    "Dana Kristofitz",
+    "Janessa Grabe",
+    "Christina Cressler"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": 9,
+   "time": "2:15.48",
+   "swimmers": [
+    "Samantha Kappler",
+    "Dana Kristofitz",
+    "Janessa Grabe",
+    "Christina Cressler"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 6,
+   "time": "1:54.72",
+   "swimmers": [
+    "Conor Montijo",
+    "Jordon Jacobs",
+    "Matthew Nanni",
+    "Kevin Matsunaga"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": 9,
+   "time": "1:58.18",
+   "swimmers": [
+    "Conor Montijo",
+    "Jordon Jacobs",
+    "Matthew Nanni",
+    "Kevin Matsunaga"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 17,
+   "athlete": "Samantha Kappler",
+   "grade": "10",
+   "time": "1:43.49"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Claire Hain",
+   "grade": "10",
+   "time": "DQ"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "A",
+   "place": 5,
+   "athlete": "Conor Montijo",
+   "grade": "09",
+   "time": "1:12.51"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 5,
+   "athlete": "Conor Montijo",
+   "grade": "09",
+   "time": "1:13.44"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "A",
+   "place": 4,
+   "athlete": "Janessa Grabe",
+   "grade": "12",
+   "time": "1:20.06"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 4,
+   "athlete": "Janessa Grabe",
+   "grade": "12",
+   "time": "1:20.72"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 27,
+   "athlete": "Kurt Matsunaga",
+   "grade": "09",
+   "time": "1:31.04"
+  }
+ ]
+}

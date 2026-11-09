@@ -59,6 +59,16 @@
    "event": "200 Freestyle",
    "relay": false,
    "round": "P",
+   "place": null,
+   "athlete": "Zachary Duerkop",
+   "grade": "10",
+   "time": "1:55.34"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
    "place": 22,
    "athlete": "Jackson Machamer",
    "grade": "09",
@@ -73,6 +83,16 @@
    "athlete": "Wade Olsson",
    "grade": "09",
    "time": "2:10.74"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Wade Olsson",
+   "grade": "09",
+   "time": "2:11.17"
   },
   {
    "gender": "boys",
@@ -96,6 +116,16 @@
   },
   {
    "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Nicholas Cusson",
+   "grade": "12",
+   "time": "46.81"
+  },
+  {
+   "gender": "boys",
    "event": "500 Freestyle",
    "relay": false,
    "round": "B",
@@ -103,6 +133,16 @@
    "athlete": "Wade Olsson",
    "grade": "09",
    "time": "5:17.84"
+  },
+  {
+   "gender": "boys",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Wade Olsson",
+   "grade": "09",
+   "time": "5:24.27"
   },
   {
    "gender": "boys",
@@ -140,6 +180,20 @@
   },
   {
    "gender": "boys",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "1:33.73",
+   "swimmers": [
+    "Zachary Duerkop",
+    "Nolan Radomsky",
+    "Stephen Moreland",
+    "Nicholas Cusson"
+   ]
+  },
+  {
+   "gender": "boys",
    "event": "100 Backstroke",
    "relay": false,
    "round": "A",
@@ -147,6 +201,16 @@
    "athlete": "Nicholas Cusson",
    "grade": "12",
    "time": "52.68"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Nicholas Cusson",
+   "grade": "12",
+   "time": "52.87"
   },
   {
    "gender": "boys",
@@ -190,11 +254,35 @@
   },
   {
    "gender": "boys",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Zachary Duerkop",
+   "grade": "10",
+   "time": "1:04.04"
+  },
+  {
+   "gender": "boys",
    "event": "400 Free Relay",
    "relay": true,
    "round": "A",
    "place": 5,
    "time": "3:26.67",
+   "swimmers": [
+    "Zachary Duerkop",
+    "Jackson Machamer",
+    "Wade Olsson",
+    "Nicholas Cusson"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "3:29.71",
    "swimmers": [
     "Zachary Duerkop",
     "Jackson Machamer",
@@ -231,6 +319,16 @@
    "event": "200 Freestyle",
    "relay": false,
    "round": "P",
+   "place": null,
+   "athlete": "Grace Davis",
+   "grade": "09",
+   "time": "2:08.08"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
    "place": 19,
    "athlete": "Natalie Armstrong",
    "grade": "12",
@@ -261,6 +359,16 @@
    "event": "100 Butterfly",
    "relay": false,
    "round": "P",
+   "place": null,
+   "athlete": "Grace Davis",
+   "grade": "09",
+   "time": "1:06.65"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
    "place": 18,
    "athlete": "Brianne Foley",
    "grade": "11",
@@ -281,6 +389,16 @@
    "event": "100 Freestyle",
    "relay": false,
    "round": "P",
+   "place": null,
+   "athlete": "Natalie Armstrong",
+   "grade": "12",
+   "time": "57.42"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
    "place": 23,
    "athlete": "Hadley Cusson",
    "grade": "09",
@@ -293,6 +411,20 @@
    "round": "A",
    "place": 6,
    "time": "1:44.02",
+   "swimmers": [
+    "Natalie Armstrong",
+    "Ryann Lightcap",
+    "Grace Davis",
+    "Brianne Foley"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "1:45.82",
    "swimmers": [
     "Natalie Armstrong",
     "Ryann Lightcap",
@@ -347,6 +479,20 @@
    "round": "A",
    "place": 8,
    "time": "3:53.12",
+   "swimmers": [
+    "Brianne Foley",
+    "Hadley Cusson",
+    "Grace Davis",
+    "Natalie Armstrong"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "3:55.25",
    "swimmers": [
     "Brianne Foley",
     "Hadley Cusson",

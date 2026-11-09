@@ -1,0 +1,295 @@
+{
+ "year": 2017,
+ "meet": "2017 AIA Division III State Championship",
+ "date": "2017-11-04",
+ "source": {
+  "urls": [
+   "https://aiaonline.org/files/16054/x.pdf",
+   "https://azpreps365.com/archives/swimming-boys"
+  ],
+  "files": [
+   {
+    "file": "aia-2017.pdf",
+    "sha256": "780b3fd0175f81d614cd73a311d92dbfef349613a3af491a92e5701d2599fe03"
+   }
+  ]
+ },
+ "rounds": {
+  "A": "championship final",
+  "B": "consolation final",
+  "P": "prelims only",
+  "TF": "timed final"
+ },
+ "team_scores": {
+  "girls": {
+   "place": 11,
+   "points": 85
+  }
+ },
+ "swims": [
+  {
+   "gender": "boys",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 22,
+   "athlete": "Titan Flint",
+   "grade": "11",
+   "time": "5:50.41"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "B",
+   "place": 9,
+   "time": "2:02.03",
+   "swimmers": [
+    "Calla Isenberg",
+    "Sarynn Patterson",
+    "Hazel Dasse",
+    "Ellie Radomsky"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "2:02.77",
+   "swimmers": [
+    "Calla Isenberg",
+    "Sarynn Patterson",
+    "Hazel Dasse",
+    "Ellie Radomsky"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 14,
+   "athlete": "Hazel Dasse",
+   "grade": "11",
+   "time": "2:08.37"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Hazel Dasse",
+   "grade": "11",
+   "time": "2:09.61"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "B",
+   "place": 10,
+   "athlete": "Sarynn Patterson",
+   "grade": "10",
+   "time": "2:24.79"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Sarynn Patterson",
+   "grade": "10",
+   "time": "2:27.93"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "B",
+   "place": 14,
+   "athlete": "Emma Morris",
+   "grade": "10",
+   "time": "2:32.02"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Emma Morris",
+   "grade": "10",
+   "time": "2:31.22"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 13,
+   "athlete": "Calla Isenberg",
+   "grade": "12",
+   "time": "26.17"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Calla Isenberg",
+   "grade": "12",
+   "time": "26.07"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 12,
+   "athlete": "Anna Ellis",
+   "grade": "11",
+   "time": "5:45.23"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Anna Ellis",
+   "grade": "11",
+   "time": "5:47.53"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "B",
+   "place": null,
+   "time": "DQ",
+   "swimmers": [
+    "Violet Dasse",
+    "Kennady Pautler",
+    "Hayley Jones",
+    "Emma Morris"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "1:58.91",
+   "swimmers": [
+    "Violet Dasse",
+    "Kennady Pautler",
+    "Hayley Jones",
+    "Emma Morris"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "A",
+   "place": 6,
+   "athlete": "Calla Isenberg",
+   "grade": "12",
+   "time": "1:03.81"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Calla Isenberg",
+   "grade": "12",
+   "time": "1:02.81"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "B",
+   "place": 13,
+   "athlete": "Sarynn Patterson",
+   "grade": "10",
+   "time": "1:06.63"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Sarynn Patterson",
+   "grade": "10",
+   "time": "1:06.41"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 17,
+   "athlete": "Hazel Dasse",
+   "grade": "11",
+   "time": "1:08.06"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 21,
+   "athlete": "Emma Morris",
+   "grade": "10",
+   "time": "1:09.29"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": 24,
+   "athlete": "Ellie Radomsky",
+   "grade": "11",
+   "time": "1:22.87"
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 5,
+   "time": "3:59.44",
+   "swimmers": [
+    "Hazel Dasse",
+    "Ellie Radomsky",
+    "Sarynn Patterson",
+    "Calla Isenberg"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "4:02.10",
+   "swimmers": [
+    "Hazel Dasse",
+    "Ellie Radomsky",
+    "Sarynn Patterson",
+    "Calla Isenberg"
+   ]
+  }
+ ]
+}

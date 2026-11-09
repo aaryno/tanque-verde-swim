@@ -1,0 +1,533 @@
+{
+ "year": 2016,
+ "meet": "2016 AIA Division III State Championship",
+ "date": "2016-11-05",
+ "source": {
+  "urls": [
+   "https://aiaonline.org/files/15661/x.pdf",
+   "https://azpreps365.com/archives/swimming-boys"
+  ],
+  "files": [
+   {
+    "file": "aia-2016.pdf",
+    "sha256": "1fa9a684ea7bb44ff709c490dfde4a75d3235b7160530982568d3a907d82b80c"
+   }
+  ]
+ },
+ "rounds": {
+  "A": "championship final",
+  "B": "consolation final",
+  "P": "prelims only",
+  "TF": "timed final"
+ },
+ "team_scores": {
+  "girls": {
+   "place": 6,
+   "points": 140
+  },
+  "boys": {
+   "place": 11,
+   "points": 94
+  }
+ },
+ "swims": [
+  {
+   "gender": "boys",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "B",
+   "place": 15,
+   "time": "2:17.68",
+   "swimmers": [
+    "Logan Radomsky",
+    "Titan Flint",
+    "Paul Morrison",
+    "Parker Boccardo"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "2:15.02",
+   "swimmers": [
+    "Logan Radomsky",
+    "Titan Flint",
+    "Paul Morrison",
+    "Parker Boccardo"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "A",
+   "place": 5,
+   "time": "2:02.58",
+   "swimmers": [
+    "Hazel Dasse",
+    "Lindsey Schoel-Smith",
+    "Madison Winkle",
+    "Bridget Spooner"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "2:00.34",
+   "swimmers": [
+    "Hazel Dasse",
+    "Lindsey Schoel-Smith",
+    "Madison Winkle",
+    "Bridget Spooner"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 7,
+   "athlete": "Hazel Dasse",
+   "grade": "10",
+   "time": "2:05.53"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Hazel Dasse",
+   "grade": "10",
+   "time": "2:05.33"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 17,
+   "athlete": "Bridget Spooner",
+   "grade": "12",
+   "time": "2:12.22"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 18,
+   "athlete": "Ellie Radomsky",
+   "grade": "10",
+   "time": "2:14.23"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "B",
+   "place": 9,
+   "athlete": "Alexander Flores",
+   "grade": "12",
+   "time": "2:13.67"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Alexander Flores",
+   "grade": "12",
+   "time": "2:14.11"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "A",
+   "place": 5,
+   "athlete": "Lindsey Schoel-Smith",
+   "grade": "10",
+   "time": "2:15.55"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Lindsey Schoel-Smith",
+   "grade": "10",
+   "time": "2:17.23"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": 17,
+   "athlete": "Emma Morris",
+   "grade": "09",
+   "time": "2:31.29"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": 18,
+   "athlete": "Sarynn Patterson",
+   "grade": "09",
+   "time": "2:32.24"
+  },
+  {
+   "gender": "boys",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 3,
+   "athlete": "Joseph Breinholt",
+   "grade": "12",
+   "time": "22.30"
+  },
+  {
+   "gender": "boys",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Joseph Breinholt",
+   "grade": "12",
+   "time": "22.13"
+  },
+  {
+   "gender": "boys",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 18,
+   "athlete": "Tanner Morris",
+   "grade": "12",
+   "time": "24.23"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "B",
+   "place": 14,
+   "athlete": "Alexander Flores",
+   "grade": "12",
+   "time": "59.89"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Alexander Flores",
+   "grade": "12",
+   "time": "59.50"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 2,
+   "athlete": "Joseph Breinholt",
+   "grade": "12",
+   "time": "47.65"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Joseph Breinholt",
+   "grade": "12",
+   "time": "48.27"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 10,
+   "athlete": "Bridget Spooner",
+   "grade": "12",
+   "time": "58.66"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Bridget Spooner",
+   "grade": "12",
+   "time": "58.59"
+  },
+  {
+   "gender": "boys",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 21,
+   "athlete": "Malachi Poulsen",
+   "grade": "11",
+   "time": "5:56.55"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 8,
+   "athlete": "Anna Ellis",
+   "grade": "10",
+   "time": "5:38.20"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Anna Ellis",
+   "grade": "10",
+   "time": "5:32.67"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 12,
+   "athlete": "Emma Morris",
+   "grade": "09",
+   "time": "5:47.48"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Emma Morris",
+   "grade": "09",
+   "time": "5:45.74"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 19,
+   "athlete": "Ellie Radomsky",
+   "grade": "10",
+   "time": "6:03.49"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 8,
+   "time": "1:37.59",
+   "swimmers": [
+    "Joseph Breinholt",
+    "Tanner Morris",
+    "Malachi Poulsen",
+    "Alexander Flores"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "1:38.01",
+   "swimmers": [
+    "Joseph Breinholt",
+    "Tanner Morris",
+    "Malachi Poulsen",
+    "Alexander Flores"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "B",
+   "place": 14,
+   "time": "1:56.14",
+   "swimmers": [
+    "Ellie Radomsky",
+    "Emma Morris",
+    "Regan Hughes",
+    "Sarynn Patterson"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "1:55.49",
+   "swimmers": [
+    "Ellie Radomsky",
+    "Emma Morris",
+    "Regan Hughes",
+    "Sarynn Patterson"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "B",
+   "place": 11,
+   "athlete": "Sarynn Patterson",
+   "grade": "09",
+   "time": "1:06.38"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Sarynn Patterson",
+   "grade": "09",
+   "time": "1:09.12"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "B",
+   "place": 13,
+   "athlete": "Hazel Dasse",
+   "grade": "10",
+   "time": "1:06.84"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Hazel Dasse",
+   "grade": "10",
+   "time": "1:05.85"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "B",
+   "place": 12,
+   "athlete": "Tanner Morris",
+   "grade": "12",
+   "time": "1:09.05"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Tanner Morris",
+   "grade": "12",
+   "time": "1:09.05"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "A",
+   "place": 4,
+   "athlete": "Lindsey Schoel-Smith",
+   "grade": "10",
+   "time": "1:07.01"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Lindsey Schoel-Smith",
+   "grade": "10",
+   "time": "1:07.66"
+  },
+  {
+   "gender": "boys",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "B",
+   "place": 9,
+   "time": "3:37.10",
+   "swimmers": [
+    "Joseph Breinholt",
+    "Tanner Morris",
+    "Malachi Poulsen",
+    "Alexander Flores"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "3:58.96",
+   "swimmers": [
+    "Joseph Breinholt",
+    "Tanner Morris",
+    "Malachi Poulsen",
+    "Alexander Flores"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 3,
+   "time": "3:56.02",
+   "swimmers": [
+    "Bridget Spooner",
+    "Hazel Dasse",
+    "Sarynn Patterson",
+    "Lindsey Schoel-Smith"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "3:57.61",
+   "swimmers": [
+    "Bridget Spooner",
+    "Hazel Dasse",
+    "Sarynn Patterson",
+    "Lindsey Schoel-Smith"
+   ]
+  }
+ ]
+}

@@ -8,19 +8,17 @@
 | Rank | Time | Participants | Date | Meet |
 |-----:|-----:|--------------|------|------|
 | **1** | **01:53.50** | **Isabelle Sansom, Sarynn Patterson, Kennady Pautler, Lindsey Schoel-Smith** | **Oct 26, 2018** | **Southern Arizona Regional Qualifier** |
-| 2 | 01:53.58 | Isabelle Sansom, Kennady Pautler, Violet Dasse, Trinity Weatherwax | Nov 01, 2018 | AIA D-3 Girls State Championship |
-| 3 | 01:54.06 | Hazel Dasse, Sarynn Patterson, Ellie Radomsky, Lindsey Schoel-Smith | Oct 01, 2016 | 2016 TYR High School Classic |
-| 4 | 01:54.87 | Sarynn Patterson, Lindsey Schoel-Smith, Hazel Dasse, Ellie Radomsky | Nov 01, 2018 | AIA D-3 Girls State Championship |
-| 5 | 01:55.49 | Ellie Radomsky, Emma Morris, Regan Hughes, Sarynn Patterson | Nov 04, 2016 | 2016 D-3 AIA State Championship |
-| 6 | 01:56.01 | Summer Cugini, Logan Sulger, Ella Bissmeyer, Adrianna Witte | Sep 28, 2024 | 21st Annual TYR HS Classic |
-| 7 | 01:56.16 | Marisol Rivera, Sierra Roh, Amanda Grimshaw, Meghan Marner | Oct 06, 2012 | High School Classic |
-| 8 | 01:56.54 | Emma Morris, Hayley Jones, Violet Dasse, Ellie Radomsky | Oct 27, 2017 | Southern Arizona Regional Qualifier |
-| 9 | 01:56.96 | Shaye Sulger, Lainie Radomsky, Sydney Hagerman, Alexandra Foley | Sep 25, 2021 | TYR HS Classic |
-| 10 | 01:58.24 | Emma Morris, Ellie Radomsky, Madison Winkle, Anna Ellis | Sep 17, 2016 | Canyon Del Oro Classic |
-| 11 | 01:58.70 | Amira Alitiem, Lily Niccum, Madeline Barnard, Summer Cugini | Oct 21, 2023 | Pecan Classic |
-| 12 | 01:58.80 | Sarynn Patterson, Isabelle Sansom, Paisley White, Maggie Colombo | Nov 07, 2019 | 2019 D-3 AIA State Championship |
-| 13 | 02:05.79 | Amira Alitiem, Isla Cerepak, Avery Fleming, Ella Bissmeyer | Nov 07, 2026 | AIA Division III State Championship |
-| 14 | 02:16.97 | Kadynce Drummond, Lily Niccum, Isla Cerepak, Amelia Kidd | Oct 17, 2026 | Arena High School Classic |
+| 2 | 01:54.06 | Hazel Dasse, Sarynn Patterson, Ellie Radomsky, Lindsey Schoel-Smith | Oct 01, 2016 | 2016 TYR High School Classic |
+| 3 | 01:54.87 | Sarynn Patterson, Lindsey Schoel-Smith, Hazel Dasse, Ellie Radomsky | Nov 01, 2018 | AIA D-3 Girls State Championship |
+| 4 | 01:56.01 | Summer Cugini, Logan Sulger, Ella Bissmeyer, Adrianna Witte | Sep 28, 2024 | 21st Annual TYR HS Classic |
+| 5 | 01:56.16 | Marisol Rivera, Sierra Roh, Amanda Grimshaw, Meghan Marner | Oct 06, 2012 | High School Classic |
+| 6 | 01:56.54 | Emma Morris, Hayley Jones, Violet Dasse, Ellie Radomsky | Oct 27, 2017 | Southern Arizona Regional Qualifier |
+| 7 | 01:56.96 | Shaye Sulger, Lainie Radomsky, Sydney Hagerman, Alexandra Foley | Sep 25, 2021 | TYR HS Classic |
+| 8 | 01:58.24 | Emma Morris, Ellie Radomsky, Madison Winkle, Anna Ellis | Sep 17, 2016 | Canyon Del Oro Classic |
+| 9 | 01:58.70 | Amira Alitiem, Lily Niccum, Madeline Barnard, Summer Cugini | Oct 21, 2023 | Pecan Classic |
+| 10 | 01:58.80 | Sarynn Patterson, Isabelle Sansom, Paisley White, Maggie Colombo | Nov 07, 2019 | 2019 D-3 AIA State Championship |
+| 11 | 02:05.79 | Amira Alitiem, Isla Cerepak, Avery Fleming, Ella Bissmeyer | Nov 07, 2026 | AIA Division III State Championship |
+| 12 | 02:16.97 | Kadynce Drummond, Lily Niccum, Isla Cerepak, Amelia Kidd | Oct 17, 2026 | Arena High School Classic |
 
 ---
 

@@ -132,6 +132,14 @@ without. A State relay on the relay lists must match the official lineup
 
 ## Open
 
-- Official results for the 2015-2021 State meets (Classes of 2019-2025); only
-  2022 on are harvested.
-- A roster source for the Classes of 2008-2018. 2021 is on Meet Mobile and SwimCloud only; 2020 was a virtual meet.
+- A roster source for the Classes of 2008-2018.
+
+## State history coverage
+
+`data/state_history/` holds every State meet from 2007 (added 2026-11-09 from
+the AIA's own PDFs; file ids are listed in the azpreps365 swimming archive).
+Known gaps are in each file's `notes` and shown on the pages: 2018 and 2019
+list finals only, 2018 prints no relay swimmers, 2020 was virtual with no
+grades. 2007-2009 need `--lanes 8` and a left-margin crop (`pdftotext -x 25`);
+2020 needs the three-column cut. Of the State swims on our season Top 10
+lists, 168 match the official results exactly. 2021 is on Meet Mobile and SwimCloud only; 2020 was a virtual meet.

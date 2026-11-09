@@ -1,0 +1,406 @@
+{
+ "year": 2019,
+ "meet": "2019 AIA Division III State Championship",
+ "date": "2019-11-08",
+ "source": {
+  "urls": [
+   "https://aiaonline.org/files/16845/x.pdf",
+   "https://azpreps365.com/archives/swimming-boys"
+  ],
+  "files": [
+   {
+    "file": "aia-2019.pdf",
+    "sha256": "59ba976e7e027d288cd32a56b0087e5d2048acc69e08d27e9fa9f6807c3d88d6"
+   }
+  ]
+ },
+ "rounds": {
+  "A": "championship final",
+  "B": "consolation final",
+  "P": "prelims only",
+  "TF": "timed final"
+ },
+ "team_scores": {
+  "girls": {
+   "place": 5,
+   "points": 138.5
+  },
+  "boys": {
+   "place": 8,
+   "points": 97
+  }
+ },
+ "swims": [
+  {
+   "gender": "girls",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "A",
+   "place": 6,
+   "time": "1:58.80",
+   "swimmers": [
+    "Sarynn Patterson",
+    "Isabelle Sansom",
+    "Paisley White",
+    "Maggie Colombo"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "1:58.91",
+   "swimmers": [
+    "Sarynn Patterson",
+    "Isabelle Sansom",
+    "Paisley White",
+    "Maggie Colombo"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "B",
+   "place": 14,
+   "time": "1:51.65",
+   "swimmers": [
+    "Nicholas Spilotro",
+    "Dominic Colombo",
+    "Trevor Clausen",
+    "Logan Radomsky"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "1:54.48",
+   "swimmers": [
+    "Nicholas Spilotro",
+    "Dominic Colombo",
+    "Trevor Clausen",
+    "Logan Radomsky"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 16,
+   "athlete": "Maggie Colombo",
+   "grade": null,
+   "time": "2:14.48"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Maggie Colombo",
+   "grade": null,
+   "time": "2:14.05"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 6,
+   "athlete": "Samuel Stott",
+   "grade": null,
+   "time": "1:46.05"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Samuel Stott",
+   "grade": null,
+   "time": "1:47.48"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "B",
+   "place": 9,
+   "athlete": "Sarynn Patterson",
+   "grade": null,
+   "time": "2:20.75"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Sarynn Patterson",
+   "grade": null,
+   "time": "2:22.96"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 4,
+   "athlete": "Isabelle Sansom",
+   "grade": null,
+   "time": "25.19"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Isabelle Sansom",
+   "grade": null,
+   "time": "25.14"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "B",
+   "place": 14,
+   "athlete": "Trevor Clausen",
+   "grade": null,
+   "time": "59.37"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Trevor Clausen",
+   "grade": null,
+   "time": "59.28"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 5,
+   "athlete": "Isabelle Sansom",
+   "grade": null,
+   "time": "55.11"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Isabelle Sansom",
+   "grade": null,
+   "time": "54.11"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 4,
+   "athlete": "Samuel Stott",
+   "grade": null,
+   "time": "47.93"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Samuel Stott",
+   "grade": null,
+   "time": "47.93"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 4,
+   "time": "1:44.10",
+   "swimmers": [
+    "Paisley White",
+    "Maggie Colombo",
+    "Sarynn Patterson",
+    "Isabelle Sansom"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "1:44.79",
+   "swimmers": [
+    "Paisley White",
+    "Maggie Colombo",
+    "Sarynn Patterson",
+    "Isabelle Sansom"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 2,
+   "time": "1:32.46",
+   "swimmers": [
+    "Trevor Clausen",
+    "Logan Radomsky",
+    "Nicholas Spilotro",
+    "Samuel Stott"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "1:33.77",
+   "swimmers": [
+    "Trevor Clausen",
+    "Logan Radomsky",
+    "Nicholas Spilotro",
+    "Samuel Stott"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "A",
+   "place": 4,
+   "athlete": "Sarynn Patterson",
+   "grade": null,
+   "time": "1:03.34"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Sarynn Patterson",
+   "grade": null,
+   "time": "1:03.70"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "B",
+   "place": 10,
+   "athlete": "Paisley White",
+   "grade": null,
+   "time": "1:06.77"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Paisley White",
+   "grade": null,
+   "time": "1:07.22"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "B",
+   "place": 13,
+   "athlete": "Sage Weatherwax",
+   "grade": null,
+   "time": "1:18.38"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Sage Weatherwax",
+   "grade": null,
+   "time": "1:19.33"
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "B",
+   "place": 9,
+   "time": "4:04.55",
+   "swimmers": [
+    "Maggie Colombo",
+    "Kennady Pautler",
+    "Violet Dasse",
+    "Paisley White"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "4:29.78",
+   "swimmers": [
+    "Maggie Colombo",
+    "Kennady Pautler",
+    "Violet Dasse",
+    "Paisley White"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 6,
+   "time": "3:27.87",
+   "swimmers": [
+    "Trevor Clausen",
+    "Nicholas Spilotro",
+    "Logan Radomsky",
+    "Samuel Stott"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "3:30.08",
+   "swimmers": [
+    "Trevor Clausen",
+    "Nicholas Spilotro",
+    "Logan Radomsky",
+    "Samuel Stott"
+   ]
+  }
+ ],
+ "notes": [
+  "The official file lists only the finals of this division: a swimmer who swam prelims only is not in it."
+ ]
+}

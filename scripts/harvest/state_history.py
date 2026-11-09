@@ -37,18 +37,26 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "data" / "state_history"
 ALIASES = json.loads((ROOT / "data" / "swimmer_aliases.json").read_text())
-TEAM = r"(?:Tanque Verde High School|TVHS)"
+TEAM = r"(?:Tanque Verde(?: High School| HS)?|TVHS)"
+GRADES = {"FR": "09", "SO": "10", "JR": "11", "SR": "12"}
 EVENT = re.compile(r"(?:Event\s+\d+|#\d+)\s+(Boys|Girls|Men|Women)\s+(\d+)\s+Yard\s+([A-Za-z ]+?)\)?\s*$")
 TIME = re.compile(r"\bJ?(\d+:\d\d\.\d\d|\d?\d\.\d\d)\b|\b(DQ|NS|SCR|DFS)\b")
 STROKE = {"Freestyle": "Freestyle", "Free": "Freestyle", "Backstroke": "Backstroke", "Back": "Backstroke",
           "Breaststroke": "Breaststroke", "Breast": "Breaststroke", "Butterfly": "Butterfly", "Fly": "Butterfly",
           "IM": "Individual Medley", "Individual Medley": "Individual Medley"}
-NAME = re.compile(r"([A-Z][A-Za-z'\-]+(?: [A-Z][A-Za-z'\-]+)*, [A-Z][A-Za-z'\-.]+(?: [A-Z][A-Za-z'\-.]+)*)")
+# "Last, First [Middle]". Older files put a letter grade right after the name
+# ("Kappler, Samantha SO"), so a grade is never taken as a name word; a middle
+# initial is read but dropped (canon).
+_W = r"(?!(?:FR|SO|JR|SR)\b)[A-Z][A-Za-z'\-.]*"
+NAME = re.compile(r"([A-Z][A-Za-z'\-]+(?: [A-Z][A-Za-z'\-]+)*,\s+" + _W + r"(?: " + _W + r")*)")
 
 
 def canon(last_first):
     last, first = [x.strip() for x in last_first.split(",", 1)]
-    n = f"{first} {last}"
+    words = first.split()
+    while len(words) > 1 and re.fullmatch(r"[A-Z]\.?", words[-1]):
+        words.pop()  # middle initial
+    n = f"{' '.join(words)} {last}"
     return ALIASES.get(n, n)
 
 
@@ -62,14 +70,35 @@ def event_name(dist, stroke):
     return f"{dist} {STROKE[stroke]}", False
 
 
-def parse(lines):
+def round_by_columns(listing, n_times, place, lanes):
+    """Round from the listing a row sits in and how many times it carries, for
+    files whose "A - Final" / "B - Final" headings do not survive text
+    extraction (2007-2009). In the finals listing ("Prelim Time  Finals Time") a
+    row with both times swam a final -- A for places 1..lanes, B after; a row
+    with one time swam prelims only. Every row of the prelims listing ("Seed
+    Time  Prelim Time") is a prelim swim."""
+    if listing == "F":
+        if n_times >= 2 and place:
+            return "A" if place <= lanes else "B"
+        return "P"
+    return listing
+
+
+def parse(lines, lanes=None, relays_without_names=False):
     swims, problems = [], []
     gender = event = None
     relay = False
     section = "TF"
+    listing = "TF"
     i = 0
     while i < len(lines):
         line = lines[i]
+        if re.search(r"Prelim Time\s+Finals Time", line):
+            listing = "F"
+        elif re.search(r"Seed Time\s+Prelim Time", line):
+            listing = "P"
+        elif re.search(r"Seed Time\s+Finals Time", line):
+            listing = "TF"
         m = EVENT.search(line)
         if m:
             g = {"Boys": "boys", "Men": "boys", "Girls": "girls", "Women": "girls"}[m.group(1)]
@@ -90,25 +119,34 @@ def parse(lines):
             i += 1
             continue
         if event and re.search(TEAM, line):
+            if len(re.findall(TEAM, line)) > 1 or re.search(r"Team (?:Rankings|Scores)", line):
+                i += 1
+                continue  # a team-score line ("13  Tanque Verde High School  Tanque Verde High School  63")
             if relay:
-                m = re.search(r"(?:^|\s)\*?(\d+|---)\s+" + TEAM + r"\s+(?:[A-Z]\s+)?(.*)$", line)
+                m = re.search(r"(?:^|\s)\*?(\d+|---)\s+" + TEAM + r"\s+(?:'?[A-Z]'?\s+)?(.*)$", line)
                 if m:
                     times = [a or b for a, b in TIME.findall(m.group(2))]
                     names = []
                     for nxt in lines[i + 1:i + 4]:
                         if EVENT.search(nxt) or re.search(TEAM, nxt):
                             break
-                        names += [canon(n) for n in NAME.findall(re.sub(r"\d\)", " ", nxt))]
+                        names += [canon(n) for n in NAME.findall(re.sub(r"\d\)", " ", nxt))]  # grade words never match NAME
                         if len(names) >= 4:
                             break
-                    if len(names) != 4 or not times:
+                    if (len(names) != 4 or not times) and not (relays_without_names and not names and times):
                         problems.append(f"{gender} {event}: relay line unreadable: {line.strip()} -> {names}")
                     else:
-                        swims.append(dict(gender=gender, event=event, relay=True, round=section,
-                                          place=None if m.group(1) == "---" else int(m.group(1)),
-                                          time=times[-1], swimmers=names))
+                        place = None if m.group(1) == "---" else int(m.group(1))
+                        rnd = round_by_columns(listing, len(re.findall(r"\d+:\d\d\.\d\d|\d?\d\.\d\d", m.group(2))),
+                                               place, lanes) if lanes else section
+                        swims.append(dict(gender=gender, event=event, relay=True, round=rnd,
+                                          place=place, time=times[-1], swimmers=names))
+                        if not lanes and listing == "F" and rnd in ("A", "B") and len(times) >= 2 \
+                                and re.fullmatch(r"\d+:\d\d\.\d\d|\d?\d\.\d\d", times[-2]):
+                            swims.append(dict(gender=gender, event=event, relay=True, round="P", place=None,
+                                              time=times[-2], swimmers=names, inline=True))
             else:
-                m = re.search(r"\*?(\d+|---)\s+\*?" + NAME.pattern + r"\s+(?:(\d{2})\s+)?" + TEAM + r"\s+(.*)$", line)
+                m = re.search(r"\*?(\d+|---)\s+\*?" + NAME.pattern + r"\s+(?:(\d{2}|FR|SO|JR|SR)\s+)?" + TEAM + r"\b\s*(.*)$", line)
                 if not m:
                     problems.append(f"{gender} {event}: unreadable: {line.strip()}")
                 else:
@@ -116,21 +154,51 @@ def parse(lines):
                     if not times:
                         problems.append(f"{gender} {event}: no time: {line.strip()}")
                     else:
-                        swims.append(dict(gender=gender, event=event, relay=False, round=section,
-                                          place=None if m.group(1) == "---" else int(m.group(1)),
-                                          athlete=canon(m.group(2)), grade=m.group(3), time=times[-1]))
+                        place = None if m.group(1) == "---" else int(m.group(1))
+                        rnd = round_by_columns(listing, len(re.findall(r"\d+:\d\d\.\d\d|\d?\d\.\d\d", m.group(4))),
+                                               place, lanes) if lanes else section
+                        swims.append(dict(gender=gender, event=event, relay=False, round=rnd,
+                                          place=place,
+                                          athlete=canon(m.group(2)), grade=GRADES.get(m.group(3), m.group(3)),
+                                          time=times[-1]))
+                        # Older layouts (2010-2021) print a finalist's prelim and final on one
+                        # row ("Prelim Time  Finals Time"); keep the prelim swim too. The row
+                        # gives no prelim place. (2007-2009 list prelims separately: --lanes.)
+                        if not lanes and listing == "F" and rnd in ("A", "B") and len(times) >= 2 \
+                                and re.fullmatch(r"\d+:\d\d\.\d\d|\d?\d\.\d\d", times[-2]):
+                            swims.append(dict(gender=gender, event=event, relay=False, round="P", place=None,
+                                              athlete=canon(m.group(2)), grade=GRADES.get(m.group(3), m.group(3)),
+                                              time=times[-2], inline=True))
         i += 1
+    # An inline prelim is kept only when the file has no prelims listing of its
+    # own for that swim (2025 has both; 2023 only the inline one).
+    def key(x):
+        return (x["gender"], x["event"], x.get("athlete") or tuple(x["swimmers"]), x["time"])
+    listed = {key(x) for x in swims if x["round"] == "P" and not x.get("inline")}
+    swims = [x for x in swims if not (x.get("inline") and key(x) in listed)]
+    for x in swims:
+        x.pop("inline", None)
     return swims, problems
 
 
 def team_places(lines):
+    """TV's place and points per gender from the file's team scores. Three
+    layouts: "Men - Team Rankings" with "13. Tanque Verde High School 63"
+    (one or two columns), and "Boys - Team Scores" with the team named twice
+    ("13  Tanque Verde High School  Tanque Verde High School  63"). Combined
+    boys+girls tables are skipped. The last table in the file wins, so an
+    interim "Through Event 25" table is overridden by the final one."""
     out, gender = {}, None
     for line in lines:
-        m = re.search(r"(Men|Women) - Team Rankings", line)
+        m = re.search(r"\b(Men|Women|Boys|Girls)\b[ -]*Team (?:Rankings|Scores)", line)
         if m:
-            gender = "boys" if m.group(1) == "Men" else "girls"
+            gender = "boys" if m.group(1) in ("Men", "Boys") else "girls"
             continue
-        m = re.search(r"(\d+)\.\s+Tanque Verde High School\s+([\d.]+)", line)
+        if re.search(r"Combined Team Scores", line):
+            gender = None
+            continue
+        m = (re.search(r"(\d+)\.\s+" + TEAM + r"\s+([\d.]+)(?:\s|$)", line)
+             or re.search(r"^\s*(\d+)\s+" + TEAM + r"\s+" + TEAM + r"\s+([\d.]+)\s*$", line))
         if m and gender:
             pts = float(m.group(2))
             out[gender] = {"place": int(m.group(1)), "points": int(pts) if pts == int(pts) else pts}
@@ -145,12 +213,18 @@ def main():
     ap.add_argument("--date", required=True, help="final day, YYYY-MM-DD")
     ap.add_argument("--source", action="append", required=True)
     ap.add_argument("--pdf", action="append", default=[])
+    ap.add_argument("--lanes", type=int, help="final heat size; set it when the round headings are unreadable "
+                    "(2007-2009) so the round comes from the listing and the places instead (round_by_columns)")
+    ap.add_argument("--relays-without-names", action="store_true",
+                    help="the file prints relays with no swimmers (2018): keep them with an empty lineup")
+    ap.add_argument("--note", action="append", default=[],
+                    help="a known gap in this file, shown with the State coverage (e.g. finals only)")
     ap.add_argument("--team-scores", help="JSON for team places when the file has none, with its source")
     a = ap.parse_args()
     swims, problems, teams = [], [], {}
     for t in a.txt:
         lines = Path(t).read_text(errors="ignore").splitlines()
-        s, p = parse(lines)
+        s, p = parse(lines, a.lanes, a.relays_without_names)
         swims += s
         problems += p
         teams.update(team_places(lines))
@@ -169,6 +243,8 @@ def main():
            "rounds": {"A": "championship final", "B": "consolation final", "P": "prelims only",
                       "TF": "timed final"},
            "team_scores": teams, "swims": uniq}
+    if a.note:
+        doc["notes"] = a.note
     if a.team_scores:
         doc["team_scores"].update(json.loads(a.team_scores))
     OUT.mkdir(parents=True, exist_ok=True)

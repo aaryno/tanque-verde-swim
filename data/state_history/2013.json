@@ -1,0 +1,65 @@
+{
+ "year": 2013,
+ "meet": "2013 AIA Division II State Championship",
+ "date": "2013-11-09",
+ "source": {
+  "urls": [
+   "https://aiaonline.org/files/14249/x.pdf",
+   "https://azpreps365.com/archives/swimming-boys"
+  ],
+  "files": [
+   {
+    "file": "aia-2013.pdf",
+    "sha256": "347a1f40f1893605c55044009a32927b5071fb51b77c015b4dfa20876e40a9b3"
+   }
+  ]
+ },
+ "rounds": {
+  "A": "championship final",
+  "B": "consolation final",
+  "P": "prelims only",
+  "TF": "timed final"
+ },
+ "team_scores": {
+  "girls": {
+   "place": 29,
+   "points": 15
+  }
+ },
+ "swims": [
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "TF",
+   "place": 11,
+   "athlete": "Marisol Rivera",
+   "grade": "12",
+   "time": "2:03.27"
+  },
+  {
+   "gender": "girls",
+   "event": "500 Freestyle",
+   "relay": false,
+   "round": "TF",
+   "place": 9,
+   "athlete": "Marisol Rivera",
+   "grade": "12",
+   "time": "5:34.97"
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": 19,
+   "time": "4:04.26",
+   "swimmers": [
+    "Madisyn Clausen",
+    "Sierra Roh",
+    "Bridget Spooner",
+    "Marisol Rivera"
+   ]
+  }
+ ]
+}

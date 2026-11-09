@@ -1,0 +1,351 @@
+{
+ "year": 2018,
+ "meet": "2018 AIA Division III State Championship",
+ "date": "2018-11-03",
+ "source": {
+  "urls": [
+   "https://aiaonline.org/files/16553/x.pdf",
+   "https://azpreps365.com/archives/swimming-boys"
+  ],
+  "files": [
+   {
+    "file": "aia-2018.pdf",
+    "sha256": "85a5b107b0932af5625925c7586a690dfb9d94cacd505f6d71b7c83e0295b804"
+   }
+  ]
+ },
+ "rounds": {
+  "A": "championship final",
+  "B": "consolation final",
+  "P": "prelims only",
+  "TF": "timed final"
+ },
+ "team_scores": {
+  "girls": {
+   "place": 9,
+   "points": 44.5
+  },
+  "boys": {
+   "place": 23,
+   "points": 12
+  }
+ },
+ "swims": [
+  {
+   "gender": "girls",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "A",
+   "place": 2,
+   "time": "1:54.87",
+   "swimmers": []
+  },
+  {
+   "gender": "girls",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "1:56.42",
+   "swimmers": []
+  },
+  {
+   "gender": "boys",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 7,
+   "athlete": "John Denninghoff",
+   "grade": null,
+   "time": "1:49.38"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "John Denninghoff",
+   "grade": null,
+   "time": "1:48.60"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 11,
+   "athlete": "Hazel Dasse",
+   "grade": "12",
+   "time": "2:05.99"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Hazel Dasse",
+   "grade": "12",
+   "time": "2:05.30"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 16,
+   "athlete": "Ellie Radomsky",
+   "grade": "12",
+   "time": "2:12.97"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Ellie Radomsky",
+   "grade": "12",
+   "time": "2:12.29"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "B",
+   "place": 14,
+   "athlete": "Sarynn Patterson",
+   "grade": "11",
+   "time": "2:23.86"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Sarynn Patterson",
+   "grade": "11",
+   "time": "2:24.74"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "B",
+   "place": 16,
+   "athlete": "Isabelle Sansom",
+   "grade": "11",
+   "time": "2:26.37"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Isabelle Sansom",
+   "grade": "11",
+   "time": "2:21.97"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 5,
+   "athlete": "John Denninghoff",
+   "grade": null,
+   "time": "49.71"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "John Denninghoff",
+   "grade": null,
+   "time": "49.74"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 10,
+   "athlete": "Isabelle Sansom",
+   "grade": "11",
+   "time": "57.20"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Isabelle Sansom",
+   "grade": "11",
+   "time": "56.94"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "B",
+   "place": 14,
+   "time": "2:02.65",
+   "swimmers": []
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "1:53.58",
+   "swimmers": []
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "B",
+   "place": 16,
+   "athlete": "Nicholas Spilotro",
+   "grade": "09",
+   "time": "1:05.50"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Nicholas Spilotro",
+   "grade": "09",
+   "time": "1:04.24"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "B",
+   "place": 10,
+   "athlete": "Lindsey Schoel-Smith",
+   "grade": null,
+   "time": "1:03.12"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Lindsey Schoel-Smith",
+   "grade": null,
+   "time": "1:03.91"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "B",
+   "place": 12,
+   "athlete": "Sarynn Patterson",
+   "grade": "11",
+   "time": "1:04.64"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Sarynn Patterson",
+   "grade": "11",
+   "time": "1:04.68"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "B",
+   "place": 16,
+   "athlete": "Hazel Dasse",
+   "grade": "12",
+   "time": "1:06.82"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Hazel Dasse",
+   "grade": "12",
+   "time": "1:06.31"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "A",
+   "place": 3,
+   "athlete": "Lindsey Schoel-Smith",
+   "grade": null,
+   "time": "1:05.79"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Breaststroke",
+   "relay": false,
+   "round": "P",
+   "place": null,
+   "athlete": "Lindsey Schoel-Smith",
+   "grade": null,
+   "time": "1:05.10"
+  },
+  {
+   "gender": "boys",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "B",
+   "place": 15,
+   "time": "3:53.50",
+   "swimmers": []
+  },
+  {
+   "gender": "boys",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "3:44.52",
+   "swimmers": []
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 6,
+   "time": "3:55.63",
+   "swimmers": []
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": null,
+   "time": "3:57.21",
+   "swimmers": []
+  }
+ ],
+ "notes": [
+  "The official file lists only the finals of this division: a swimmer who swam prelims only is not in it.",
+  "The official file gives no relay swimmers this year, so relays are not credited to anyone."
+ ]
+}
