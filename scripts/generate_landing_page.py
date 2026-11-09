@@ -377,6 +377,32 @@ def latest_teaser(project_root, built):
     return '\n'.join(parts), meet['meet']
 
 
+def season_tiles(project_root, data):
+    """Season-complete numbers for the top of the home page, from the same
+    derivations as the season summary's Season in Review."""
+    import build_season_summary
+    h = build_season_summary.headline(project_root, data)
+    if not h:
+        return ''
+    def ordinal(n):
+        return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
+    tiles = []
+    for g in ('boys', 'girls'):
+        t = h['teams'].get(g)
+        if t:
+            tiles.append((ordinal(t['place']), f"{g.title()} at State", f"of {t['teams']} teams &middot; {t['points']} pts"))
+    if h['titles']:
+        tiles.append((str(h['titles']), f"State title{'s' if h['titles'] != 1 else ''}", 'individual and relay'))
+    if h['school']:
+        tiles.append((str(h['school']), 'School records', 'broken this season'))
+    if h['cls']:
+        tiles.append((str(h['cls']), 'Class records', 'broken this season'))
+    tiles.append((str(h['swimmers']), 'Swimmers', f"in {h['meets']} meets with results"))
+    cells = ''.join(f'<div class="ss-tile"><div class="ss-n">{n}</div><div class="ss-l">{l}</div>'
+                    f'<div class="ss-s">{sub}</div></div>' for n, l, sub in tiles)
+    return f'            <div class="ss-tiles mt-3">{cells}</div>'
+
+
 def schedule_rows(data, today, pages_by_date=None):
     """`pages_by_date`: {date: (meet file, records broken)} for meets with a page.
     Those rows link to the page and stay full colour (meet-has-page)."""
@@ -408,20 +434,24 @@ def schedule_rows(data, today, pages_by_date=None):
     return '\n'.join(rows)
 
 
-def senior_cards(names, gender_label):
+def senior_cards(names, gender_label, link=False):
+    """`link`: the class page is up, so each card opens that senior's card on it
+    (same slug rule as senior_class_data)."""
     cards = []
     for n in names:
+        slug = re.sub(r"[^a-z0-9]+", "-", n.lower()).strip("-")
+        name = (f'<a class="stretched-link" href="/seniors/class-of-{CLASS}.html#{slug}">{esc(n)}</a>' if link
+                else esc(n))
         cards.append(
             f'''                <div class="col-6 col-md-4">
                     <div class="card h-100 senior-card">
                         <div class="card-body">
-                            <h5 class="card-title mb-1">{esc(n)}</h5>
-                            <p class="mb-0"><small class="text-muted">{gender_label} &middot; Class of 2027</small></p>
+                            <h5 class="card-title mb-1">{name}</h5>
+                            <p class="mb-0"><small class="text-muted">{gender_label} &middot; Class of {CLASS}</small></p>
                         </div>
                     </div>
                 </div>''')
     return '\n'.join(cards)
-
 
 def build_page(project_root):
     data = json.loads((project_root / 'data' / f'season_{SEASON}.json').read_text())
@@ -445,10 +475,14 @@ def build_page(project_root):
     latest = built[-1][0] if built else dict(meet=res['latest_meet'], date=res['latest_meet_date'])
     latest_when = fmt_meet_date(latest['date'], latest.get('date_end', latest['date']))
     season_over = phase_head == 'Season complete.'
+    tiles_html = season_tiles(project_root, data) if season_over else ''
     if season_over:
-        status_body = (f"Results are in from <strong>{n_meets} meets</strong>, the last being the "
-                       f"{esc(latest['meet'])} on {latest_when}. Dual-meet results are not included, so the "
-                       f"{SEASON} lists count only those meets.")
+        words = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
+        n_dual = sum(1 for m in sched['meets'] if m['name'].startswith(('vs ', 'at ')))
+        status_body = (f"The numbers come from the <strong>{n_meets} meets with posted results</strong>, the last being the "
+                       f"{esc(latest['meet'])} on {latest_when}."
+                       + (f" The {words[n_dual] if n_dual < len(words) else n_dual} dual meets have no published results, "
+                          f"so they are not counted." if n_dual else ''))
     else:
         status_body = (f"Results are in from <strong>{n_meets} meets</strong> so far &mdash; most recently the "
                        f"{esc(latest['meet'])} on {latest_when}. Dual-meet results are not included yet. "
@@ -457,6 +491,71 @@ def build_page(project_root):
         sys.exit(f"season JSON results_so_far says {res['meets_with_results']} meets; "
                  f"data/meets has {len(built)} this season. Fix the season file.")
 
+    summary_cta = (f'            <div class="ss-cta my-3">'
+                   f'<a class="btn btn-success btn-lg" href="/annual/{SEASON}.html">The {SEASON} season summary &rarr;</a>'
+                   f'<a class="btn btn-outline-success btn-lg" href="/seniors/class-of-{CLASS}.html">'
+                   f'&#127891; Celebrating the Class of {CLASS} &rarr;</a></div>' if season_over else '')
+    season_html = f'''    <!-- Season: first on the page once the season is complete -->
+    <div class="container my-5" id="season">
+        <div class="section-header" data-section="season">
+            <h2 class="mb-0">&#127946; The {SEASON} Season</h2>
+            <button class="section-toggle" data-target="season-content">
+                <span class="toggle-icon">&#9660;</span>
+            </button>
+        </div>
+        <div class="section-content" id="season-content">
+            <p class="lead mb-3 mt-3">{phase_lead}</p>
+{tiles_html}
+{summary_cta}
+            {f'<p class="small text-muted mb-3">{status_body}</p>' if season_over else f"""<div class="alert alert-warning">
+                <strong>{phase_head}</strong>
+                {status_body}
+            </div>"""}
+
+            <p class="mb-2">More from the season:</p>
+            <ul class="mb-0">
+                <li><a href="/top10/boys-{SEASON}.html">Boys {SEASON} Top 10</a> &middot;
+                    <a href="/top10/girls-{SEASON}.html">Girls {SEASON} Top 10</a> &mdash; the fastest times swum {'this season' if season_over else 'so far this year'}</li>
+                {'' if season_over else f'<li><a href="/annual/{SEASON}.html">{SEASON} season summary</a></li>'}
+                <li><a href="/records/overall.html">All-time school records</a></li>
+                {f'<li><a href="/seniors/class-of-{CLASS}.html">Class of {CLASS} seniors</a> &mdash; this year&rsquo;s graduating class, and <a href="/seniors/class-of-2026.html">Class of 2026</a></li>' if season_over else '<li><a href="/seniors/class-of-2026.html">Class of 2026 senior recognition</a> &mdash; last year&rsquo;s graduating class</li>'}
+            </ul>
+        </div>
+    </div>
+
+'''
+    jump = [f'<li><a class="dropdown-item jump-to-link" href="#latest">&#9889; Latest meet: {esc(latest_name)}</a></li>',
+            f'<li><a class="dropdown-item jump-to-link" href="#season">&#127946; The {SEASON} Season</a></li>']
+    jump_first = '\n                            '.join(reversed(jump) if season_over else jump)
+    seniors_html = f'''    <!-- 4. Senior Class -->
+    <div class="container my-5" id="seniors">
+        <div class="section-header" data-section="seniors">
+            <h2 class="mb-0">&#127891; Senior Class of 2027</h2>
+            <button class="section-toggle" data-target="seniors-content">
+                <span class="toggle-icon">&#9660;</span>
+            </button>
+        </div>
+        <div class="section-content" id="seniors-content">
+            <p class="lead mb-4 mt-3">{n_seniors} seniors {'swam' if season_over else 'are swimming'} their final season for the Hawks
+            &mdash; {len(seniors_b)} on the boys team and {len(seniors_g)} on the girls team.</p>
+
+            <h5 class="mb-3">Boys</h5>
+            <div class="row g-3 mb-4">
+{senior_cards(seniors_b, 'Boys', season_over)}
+            </div>
+
+            <h5 class="mb-3">Girls</h5>
+            <div class="row g-3">
+{senior_cards(seniors_g, 'Girls', season_over)}
+            </div>
+
+            <p class="mt-4 mb-0"><small class="text-muted">Seniors listed from the team's own
+            {SEASON} roster, which states each swimmer's grade. Spelling follows the roster.
+            {f'Each senior&rsquo;s season, swim by swim, is on the <a href="/seniors/class-of-{CLASS}.html">Class of {CLASS} page</a>.' if season_over else 'A full senior recognition page will follow at the end of the season, as it did for the <a href="/seniors/class-of-2026.html">Class of 2026</a>.'}</small></p>
+        </div>
+    </div>
+
+'''
     nav_html = create_nav_html()
 
     return f'''<!DOCTYPE html>
@@ -503,8 +602,7 @@ def build_page(project_root):
                             Jump To
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item jump-to-link" href="#latest">&#9889; Latest meet: {esc(latest_name)}</a></li>
-                            <li><a class="dropdown-item jump-to-link" href="#season">&#127946; The {SEASON} Season</a></li>
+                            {jump_first}
                             <li><a class="dropdown-item jump-to-link" href="#schedule">&#128197; Meet Schedule</a></li>
                             <li><a class="dropdown-item jump-to-link" href="#seniors">&#127891; Senior Class of 2027</a></li>
                         </ul>
@@ -514,7 +612,7 @@ def build_page(project_root):
         </div>
     </div>
 
-    <!-- 1. Latest meet: a short teaser; the whole story is on the meet page -->
+{season_html if season_over else ''}    <!-- 1. Latest meet: a short teaser; the whole story is on the meet page -->
     <div class="container my-5" id="latest">
         <div class="section-header" data-section="latest">
             <h2 class="mb-0">&#9889; Latest meet</h2>
@@ -527,34 +625,7 @@ def build_page(project_root):
         </div>
     </div>
 
-    <!-- 2. Season Introduction -->
-    <div class="container my-5" id="season">
-        <div class="section-header" data-section="season">
-            <h2 class="mb-0">&#127946; The {SEASON} Season</h2>
-            <button class="section-toggle" data-target="season-content">
-                <span class="toggle-icon">&#9660;</span>
-            </button>
-        </div>
-        <div class="section-content" id="season-content">
-            <p class="lead mb-3 mt-3">{phase_lead}</p>
-
-            <div class="alert alert-warning">
-                <strong>{phase_head}</strong>
-                {status_body}
-            </div>
-
-            <p class="mb-2">Where to look:</p>
-            <ul class="mb-0">
-                <li><a href="/top10/boys-{SEASON}.html">Boys {SEASON} Top 10</a> &middot;
-                    <a href="/top10/girls-{SEASON}.html">Girls {SEASON} Top 10</a> &mdash; the fastest times swum {'this season' if season_over else 'so far this year'}</li>
-                <li><a href="/annual/{SEASON}.html">{SEASON} season summary</a></li>
-                <li><a href="/records/overall.html">All-time school records</a></li>
-                {f'<li><a href="/seniors/class-of-{CLASS}.html">Class of {CLASS} seniors</a> &mdash; this year&rsquo;s graduating class, and <a href="/seniors/class-of-2026.html">Class of 2026</a></li>' if season_over else '<li><a href="/seniors/class-of-2026.html">Class of 2026 senior recognition</a> &mdash; last year&rsquo;s graduating class</li>'}
-            </ul>
-        </div>
-    </div>
-
-    <!-- 3. Meet Schedule -->
+{'' if season_over else season_html}{seniors_html if season_over else ''}    <!-- 3. Meet Schedule -->
     <div class="container my-5" id="schedule">
         <div class="section-header" data-section="schedule">
             <h2 class="mb-0">&#128197; {SEASON} Meet Schedule</h2>
@@ -581,35 +652,7 @@ def build_page(project_root):
         </div>
     </div>
 
-    <!-- 4. Senior Class -->
-    <div class="container my-5" id="seniors">
-        <div class="section-header" data-section="seniors">
-            <h2 class="mb-0">&#127891; Senior Class of 2027</h2>
-            <button class="section-toggle" data-target="seniors-content">
-                <span class="toggle-icon">&#9660;</span>
-            </button>
-        </div>
-        <div class="section-content" id="seniors-content">
-            <p class="lead mb-4 mt-3">{n_seniors} seniors are swimming their final season for the Hawks
-            &mdash; {len(seniors_b)} on the boys team and {len(seniors_g)} on the girls team.</p>
-
-            <h5 class="mb-3">Boys</h5>
-            <div class="row g-3 mb-4">
-{senior_cards(seniors_b, 'Boys')}
-            </div>
-
-            <h5 class="mb-3">Girls</h5>
-            <div class="row g-3">
-{senior_cards(seniors_g, 'Girls')}
-            </div>
-
-            <p class="mt-4 mb-0"><small class="text-muted">Seniors listed from the team's own
-            {SEASON} roster, which states each swimmer's grade. Spelling follows the roster.
-            {f'Each senior&rsquo;s season, swim by swim, is on the <a href="/seniors/class-of-{CLASS}.html">Class of {CLASS} page</a>.' if season_over else 'A full senior recognition page will follow at the end of the season, as it did for the <a href="/seniors/class-of-2026.html">Class of 2026</a>.'}</small></p>
-        </div>
-    </div>
-
-    <!-- Footer -->
+{'' if season_over else seniors_html}    <!-- Footer -->
     <footer class="mt-5">
         <div class="container text-center">
             <div class="disclaimer mb-3">

@@ -41,6 +41,7 @@ EVENT_ORDER = ['200 Medley Relay', '200 Freestyle', '200 Individual Medley', '50
                '400 Free Relay']
 
 ICONS = {
+    "link": '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
     "medal": '<circle cx="12" cy="15" r="5"/><path d="M8.5 11.5 6 3h4l2 5 2-5h4l-2.5 8.5"/>',
     "star": '<path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',
     "trend": '<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
@@ -495,7 +496,7 @@ def hawks(d, senior_href):
             cap = (f'<a class="ch-cap" href="{senior_href(who)}" title="Senior">{icon("cap")}</a>' if gr == 'Sr.' and senior_href(who)
                    else (f'<span class="ch-cap">{icon("cap")}</span>' if gr == 'Sr.' else ''))
             cards.append(f'''<details class="ch-hawk{f" ch-hawk-{f['gold']}" if f['gold'] else ''}" id="hawk-{slug(who)}">
-  <summary><span class="ch-hawk-n">{esc(who)}{cap}</span><span class="ch-hawk-g">{esc(GRADE_WORD.get(gr, ''))}</span>
+  <summary><span class="ch-hawk-n">{esc(who)}{cap}<a class="ch-hawk-link" href="#hawk-{slug(who)}" aria-label="Link to {esc(who)}">{icon("link")}</a></span><span class="ch-hawk-g">{esc(GRADE_WORD.get(gr, ''))}</span>
   <span class="ch-hawk-h">{f['head']}</span><span class="ch-hawk-d">{esc(f['detail']) if '&' not in f['detail'] else f['detail']}</span>
   <span class="ch-hawk-more">{f['n']} swim{'s' if f['n'] != 1 else ''}</span></summary>
   {swim_rows(d, f, who)}
@@ -591,8 +592,14 @@ def results(d, meet):
 
 NAV_JS = """<script>
 (function(){
-  function openFor(h){var t=h&&document.getElementById(h.slice(1));if(t&&t.tagName==='DETAILS')t.open=true;}
+  function openFor(h){var t=h&&h.length>1&&document.getElementById(decodeURIComponent(h.slice(1)));if(t&&t.tagName==='DETAILS'){t.open=true;t.scrollIntoView();}}
+  // Opening a swimmer's card puts it in the address bar (bookmarkable,
+  // shareable); closing it takes it back out.
+  document.querySelectorAll('details.ch-hawk[id]').forEach(function(d){d.addEventListener('toggle',function(){
+    if(d.open&&location.hash!=='#'+d.id)history.replaceState(null,'','#'+d.id);
+    else if(!d.open&&location.hash==='#'+d.id)history.replaceState(null,'',location.pathname+location.search);});});
   window.addEventListener('hashchange',function(){openFor(location.hash)});openFor(location.hash);
+  window.addEventListener('load',function(){openFor(location.hash)});
   if(!('IntersectionObserver' in window))return;
   var links=document.querySelectorAll('.ch-nav a');
   var io=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;

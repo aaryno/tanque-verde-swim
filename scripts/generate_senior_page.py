@@ -160,7 +160,8 @@ def where(o):
 
 def sec_head(s, key, ic, title, count=""):
     return (f'<h4 class="sr-h4 sr-sec-h" id="{s["slug"]}-{key}">{icon(ic)}{title}'
-            f'{f" <span class=sr-count>{count}</span>" if count else ""}</h4>')
+            f'{f" <span class=sr-count>{count}</span>" if count else ""}'
+            f'<a class="sr-sec-link" href="#{s["slug"]}-{key}" aria-label="Link to {e(s["name"])}: {title}">{icon("link")}</a></h4>')
 
 
 def prog_events(s):
@@ -391,8 +392,18 @@ def card(s, year):
 # plain anchors.
 SECNAV_JS = """<script>
 (function(){
-  function openFor(h){var t=h&&document.getElementById(h.slice(1));var d=t&&t.closest('details.sr-more');if(d&&!d.open){d.open=true;t.scrollIntoView();}}
+  function openFor(h){var t=h&&h.length>1&&document.getElementById(decodeURIComponent(h.slice(1)));if(!t)return;
+    var d=t.classList.contains('sr-card')?t.querySelector('details.sr-more'):t.closest('details.sr-more');
+    if(d&&!d.open)d.open=true;t.scrollIntoView();}
+  function mine(id){var h=location.hash;return h==='#'+id||h.indexOf('#'+id+'-')===0;}
+  // Opening a card's career section puts the card in the address bar, so the
+  // open card can be bookmarked or shared; closing it takes it back out.
+  document.querySelectorAll('details.sr-more').forEach(function(d){d.addEventListener('toggle',function(){
+    var id=d.closest('.sr-card').id;
+    if(d.open&&!mine(id))history.replaceState(null,'','#'+id);
+    else if(!d.open&&mine(id))history.replaceState(null,'',location.pathname+location.search);});});
   window.addEventListener('hashchange',function(){openFor(location.hash)});openFor(location.hash);
+  window.addEventListener('load',function(){openFor(location.hash)});
   if(!('IntersectionObserver' in window))return;
   var io=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;
     var card=en.target.closest('.sr-card');card.querySelectorAll('.sr-secnav a').forEach(function(a){
