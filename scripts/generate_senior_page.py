@@ -53,7 +53,10 @@ def senior_class_year():
     return int("20" + current_season()["season"].split("-")[1])
 
 
-FIRST_CLASS = 2024  # earliest class with a generated page (Aaryn, 2026-11-08)
+FIRST_CLASS = 2019  # earliest class with a generated page. 2024 on 2026-11-08; Aaryn on 2026-11-09:
+                    # "Now that we have 4 years, let's go back and fill in all the years". Before 2019
+                    # the season Top 10 lists rarely carry grades, so the SR-derived roster is too thin
+                    # (Classes 2009-2011 would have no seniors at all).
 
 
 def class_years():
@@ -64,6 +67,26 @@ def class_years():
 def senior_href():
     """Nav target for Seniors -- always the current senior class."""
     return f"/seniors/class-of-{senior_class_year()}.html"
+
+
+def all_classes():
+    """Every class with a senior page, newest first: the generated ones plus any
+    hand-built page already in docs/seniors."""
+    return sorted(set(class_years()) | {int(p.stem.split("-")[-1])
+                                        for p in (REPO / "docs" / "seniors").glob("class-of-*.html")},
+                  reverse=True)
+
+
+def seniors_nav_item(indent=16):
+    """The Seniors menu in the quick nav: one entry per class, newest first.
+    Shared by generate_website.py, generate_annual_pages.py and rebuild_relay_pages.py."""
+    pad = " " * indent
+    items = "\n".join(f'{pad}        <li><a class="dropdown-item" href="/seniors/class-of-{y}.html">Class of {y}</a></li>'
+                      for y in all_classes())
+    return (f'{pad}<li class="nav-item dropdown">\n'
+            f'{pad}    <a class="nav-link dropdown-toggle" href="{senior_href()}" data-bs-toggle="dropdown" id="nav-seniors" '
+            f'title="Seniors">🎓<span class="d-none d-md-inline ms-1">Seniors</span></a>\n'
+            f'{pad}    <ul class="dropdown-menu dropdown-menu-scroll">\n{items}\n{pad}    </ul>\n{pad}</li>')
 
 
 # One small, coherent icon set (stroke icons, currentColor) in place of emoji.
@@ -515,10 +538,9 @@ def page(c):
                 if year >= senior_class_year() else
                 f"Thank you to the {tw} seniors of the Class of {year} for every race, every relay and every "
                 "early practice &mdash; and for the team you left behind.")
-    others = [y for y in sorted(set(class_years()) | {int(p.stem.split("-")[-1])
-                                                     for p in (REPO / "docs" / "seniors").glob("class-of-*.html")},
-                                reverse=True) if y != year]
-    other_links = " &middot; ".join(f'<a href="/seniors/class-of-{y}.html">Class of {y}</a>' for y in others)
+    others = [y for y in all_classes() if y != year]
+    other_links = "".join(f'<li><a class="dropdown-item" href="/seniors/class-of-{y}.html">Class of {y}</a></li>'
+                          for y in others)
     return f'''<div class="sr-page">
 <section class="sr-hero">
   <div class="container">
@@ -534,7 +556,7 @@ def page(c):
   <nav class="sr-roll" aria-label="The class">{roll}</nav>
   {"".join(sections)}
   <section class="sr-about"><h2 class="sr-h2">About this page</h2>{coverage(c)}</section>
-  {f'<p class="sr-others">Other classes: {other_links}</p>' if other_links else ''}
+  {f'<div class="sr-others dropup"><button class="btn sr-others-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">{icon("cap", "sr-ico")} Other classes</button><ul class="dropdown-menu dropdown-menu-scroll">{other_links}</ul></div>' if other_links else ''}
 </div>
 </div>{SECNAV_JS}'''
 

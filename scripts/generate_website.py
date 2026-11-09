@@ -13,7 +13,7 @@ from datetime import datetime
 
 # Allow importing sibling scripts (check_alltime_current) regardless of CWD.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from generate_senior_page import senior_href  # noqa: E402
+from generate_senior_page import senior_href, seniors_nav_item  # noqa: E402
 
 
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -77,9 +77,7 @@ def create_nav_html():
                 <li class="nav-item">
                     <a class="nav-link" href="#" id="nav-relays" title="Relay Records">🤝<span class="d-none d-md-inline ms-1">Relays</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="''' + senior_href() + '''" id="nav-seniors" title="Seniors">🎓<span class="d-none d-md-inline ms-1">Seniors</span></a>
-                </li>
+''' + seniors_nav_item(16) + '''
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅<span class="d-none d-md-inline ms-1">Top 10 by Year</span></a>
                     <ul class="dropdown-menu dropdown-menu-scroll">
