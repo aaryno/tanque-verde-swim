@@ -189,7 +189,9 @@ def review(root, season, meets, swims, history, broken):
     return out + ["", "---", ""]
 
 
-def render(root, season, today):
+def load(root, season):
+    """The season's meet files, individual swims, class-record history and the
+    school records broken this season -- shared by the summary and the home page."""
     aliases = json.loads((root / 'data' / 'swimmer_aliases.json').read_text())
     lo, hi = season['season_start'], season['season_end']
     meets = []
@@ -221,6 +223,12 @@ def render(root, season, today):
             broken.append((day, e, best))
     broken.sort(key=lambda x: x[0])
 
+    return meets, swims, history, broken, town
+
+
+def render(root, season, today):
+    lo, hi = season['season_start'], season['season_end']
+    meets, swims, history, broken, town = load(root, season)
     n_meets = len(meets)
     done = season_complete(season)
     names = ', '.join(f"the {m['meet']} ({hist_date(nice(datetime.strptime(m['date'], '%Y-%m-%d'))).strftime('%b')} "
@@ -302,6 +310,25 @@ def render(root, season, today):
             f"{'season complete' if done else 'season in progress'}, {n_meets} meets included "
             "(dual meets not included).*"]
     return '\n'.join(out) + '\n'
+
+
+def headline(root, season):
+    """Numbers for the home page's season card, once the season is complete.
+    The same derivations as the Season in Review, so the two never disagree."""
+    if not season_complete(season):
+        return None
+    lo, hi = season['season_start'], season['season_end']
+    meets, swims, history, broken, _ = load(root, season)
+    state = next((m for m in meets if 'State Championship' in m['meet']), None)
+    titles = 0
+    teams = {}
+    if state:
+        titles = (sum(1 for r in state['individual'] if r.get('round', 'Final') == 'Final' and r.get('place') == '1')
+                  + sum(1 for r in state['relay'] if r.get('place') == '1'))
+        teams = state.get('team_scores') or {}
+    return dict(teams=teams, titles=titles, school=len(broken) + len(relay_records_in(root, lo, hi)),
+                cls=sum(1 for e in history if e['season'] == season['season']),
+                swimmers=len({x['athlete'] for x in swims}), meets=len(meets))
 
 
 def main():

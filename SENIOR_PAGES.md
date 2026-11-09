@@ -44,6 +44,10 @@ supporting story.
      finish, individual swims and relays (with teammates) kept apart.
    - **Relays**: school relay records and places on the all-time lists.
    On desktop an open card spans the row.
+   **Permalinks:** opening a card's career section puts `#<slug>` in the address
+   bar (closing takes it out), and each section heading links to `#<slug>-<section>`;
+   loading either opens the card and scrolls to it. The home page's senior cards
+   link to `#<slug>`. The State page's swimmer cards work the same way (`#hawk-<slug>`).
 6. **Every senior gets a meaningful card.** Non-record holders get the same
    treatment: strongest events, improvement, State appearances, meets.
 7. **No fabrication.** Every fact is derived from the published files; a gap
