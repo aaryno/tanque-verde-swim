@@ -108,8 +108,19 @@ that season's Top 10 lists, and the page says so.
    A hand-built page already live (e.g. Class of 2026) is replaced only with
    Aaryn's go-ahead.
 
+## Every class
+
+`generate_website.py` builds a page for every class from `FIRST_CLASS` (2024, in
+`generate_senior_page.py`) through the current seniors, and
+`check_senior_page.py` guards each one. Classes 2024-2026 were added on
+2026-11-08 (Aaryn: "Can we do this for the class of 2026, 2025, 2024, as
+well?"), replacing the hand-built Class of 2026 page.
+
+The coverage note names the State meets with official results and the ones
+without. A State relay on the relay lists must match the official lineup
+(`check_state_relays.py`).
+
 ## Open
 
-- Past classes (2026 and earlier) are a to-do — see the tv-swim issue
-  "Senior pages for previous classes". Earlier classes need State results
-  before 2023 and have no roster file.
+- Official results for the 2020 and 2021 State meets (Classes of 2024 and
+  2025). 2021 is on Meet Mobile and SwimCloud only; 2020 was a virtual meet.
