@@ -2574,7 +2574,7 @@ h2[id], h3[id], .event-heading[id] {
    ========================================== */
 .page-senior, .page-champ { --sr-gold: #b8892b; --sr-gold-bg: #fbf5e6; --sr-ink: #1d2a22; --sr-muted: #5d6b62; --sr-line: #dfe7e1; background: #f6f8f6; }
 .page-senior .page-header, .page-champ .page-header { display: none; }
-.page-senior .quick-nav, .page-champ .quick-nav { position: relative; }  /* not sticky, but still above the hero so menus drop over it */
+.page-senior .quick-nav, .page-champ .quick-nav { position: relative; top: auto; }  /* not sticky, but still above the hero so menus drop over it */
 @media (max-width: 576px) {
   .page-senior .quick-nav .nav-link, .page-champ .quick-nav .nav-link { font-size: 1.05rem; padding: 0.15rem 0.4rem; }
   .page-senior .quick-nav .nav-logo, .page-champ .quick-nav .nav-logo { height: 18px; }
