@@ -144,10 +144,20 @@ def review(root, season, meets, swims, history, broken):
     held = defaultdict(list)
     for e in now.values():
         held[e['name']].append(short_ev(e['event']))
-    s += ' (' + '; '.join(f"{n} now holds the {and_list(evs)}" for n, evs in held.items()) + ')' 
+    setters = Counter(e['name'] for _, e, _ in broken)
+    s += ', by ' + and_list([f"{n} ({c})" for n, c in setters.most_common()])
+    # A record that fell again this season to someone else would vanish from
+    # "now holds"; name its setter and how long it stood.
+    for i, (day, e, prev) in enumerate(broken):
+        nxt = next((x for d2, x, _ in broken[i + 1:] if (x['gender'], x['event']) == (e['gender'], e['event'])), None)
+        if nxt and nxt['name'] != e['name']:
+            since = f", breaking a record from {hist_date(prev['date']).year}" if prev and hist_date(prev['date']).year < day.year else ''
+            s += (f". {e['name']}'s {short_ev(e['event'])} ({fmt(e['time'])}, {day:%b} {day.day}{since}) "
+                  f"stood until {nxt['name']} swam {fmt(nxt['time'])} on {hist_date(nxt['date']):%b} {hist_date(nxt['date']).day}")
+    s += '. ' + '; '.join(f"{n} now holds the {and_list(evs)}" for n, evs in held.items())
     if rrel:
-        s += ', and ' + and_list([f"the {r['gender']} {r['event']} set a new school record of {r['time']}"
-                                  for r in rrel])
+        s += '. ' + ' '.join(f"The {r['gender']} {r['event']} ({r['names']}) set a new school record of {r['time']}."
+                             for r in rrel).rstrip('.')
     s += (f". Class records fell {len(cls)} times, to "
           + and_list([f"{n} ({c})" for n, c in holders.most_common()]) + '.')
     out += [f"- {s}"]
