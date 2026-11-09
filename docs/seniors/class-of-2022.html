@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Senior Class of 2022 | Tanque Verde Swimming</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/hawk-logo.png">
+</head>
+<body class="page-senior">
+    
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-dark" id="main-nav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html">
+                <img src="/images/hawk-logo.png" alt="Tanque Verde Hawks" class="navbar-logo">
+                <span class="navbar-brand-text d-md-none">TVHS</span>
+                <span class="navbar-brand-text d-none d-md-inline">Tanque Verde Swimming Records</span>
+            </a>
+            <!-- Gender Toggle -->
+            <div class="gender-toggle" id="gender-toggle">
+                <button class="btn btn-gender active" data-gender="boys">Boys</button>
+                <button class="btn btn-gender" data-gender="girls">Girls</button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Quick Nav Bar -->
+    <nav class="navbar navbar-dark quick-nav" id="quick-nav">
+        <div class="container-fluid justify-content-start">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link nav-home" href="/index.html" title="Home">
+                        <img src="/images/hawk-logo.png" alt="Home" class="nav-logo">
+                        <span class="d-none d-md-inline">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/records/overall.html" id="nav-overall" title="Overall Records">🏆<span class="d-none d-md-inline ms-1">Records</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nav-top10" title="All-Time Top 10">🔟<span class="d-none d-md-inline ms-1">Top 10</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-class-top10" title="Class Top 10">🏅<span class="d-none d-md-inline ms-1">Class Top 10</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item class-link" data-grade="freshman" href="/top10/boys-freshman.html">Freshman</a></li>
+                        <li><a class="dropdown-item class-link" data-grade="sophomore" href="/top10/boys-sophomore.html">Sophomore</a></li>
+                        <li><a class="dropdown-item class-link" data-grade="junior" href="/top10/boys-junior.html">Junior</a></li>
+                        <li><a class="dropdown-item class-link" data-grade="senior" href="/top10/boys-senior.html">Senior</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item class-link" data-grade="bygrade" href="/records/boys-bygrade.html">Class Records</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nav-relays" title="Relay Records">🤝<span class="d-none d-md-inline ms-1">Relays</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/seniors/class-of-2027.html" data-bs-toggle="dropdown" id="nav-seniors" title="Seniors">🎓<span class="d-none d-md-inline ms-1">Seniors</span></a>
+                    <ul class="dropdown-menu dropdown-menu-scroll">
+                        <li><a class="dropdown-item" href="/seniors/class-of-2027.html">Class of 2027</a></li>
+                        <li><a class="dropdown-item" href="/seniors/class-of-2026.html">Class of 2026</a></li>
+                        <li><a class="dropdown-item" href="/seniors/class-of-2025.html">Class of 2025</a></li>
+                        <li><a class="dropdown-item" href="/seniors/class-of-2024.html">Class of 2024</a></li>
+                        <li><a class="dropdown-item" href="/seniors/class-of-2023.html">Class of 2023</a></li>
+                        <li><a class="dropdown-item" href="/seniors/class-of-2022.html">Class of 2022</a></li>
+                        <li><a class="dropdown-item" href="/seniors/class-of-2021.html">Class of 2021</a></li>
+                        <li><a class="dropdown-item" href="/seniors/class-of-2020.html">Class of 2020</a></li>
+                        <li><a class="dropdown-item" href="/seniors/class-of-2019.html">Class of 2019</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅<span class="d-none d-md-inline ms-1">Top 10 by Year</span></a>
+                    <ul class="dropdown-menu dropdown-menu-scroll">
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2026-27</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2025-26</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2024-25</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2023-24</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2022-23</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2021-22</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2020-21</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2019-20</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2018-19</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2017-18</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2016-17</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2015-16</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2014-15</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2013-14</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2012-13</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2011-12</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2010-11</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2009-10</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2008-09</a></li>
+                        <li><a class="dropdown-item season-link" data-path="top10" href="#">2007-08</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-summary" title="Season Summary">📈<span class="d-none d-md-inline ms-1">Summary by Year</span></a>
+                    <ul class="dropdown-menu dropdown-menu-scroll dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/annual/2026-27.html">2026-27</a></li>
+                        <li><a class="dropdown-item" href="/annual/2025-26.html">2025-26</a></li>
+                        <li><a class="dropdown-item" href="/annual/2024-25.html">2024-25</a></li>
+                        <li><a class="dropdown-item" href="/annual/2023-24.html">2023-24</a></li>
+                        <li><a class="dropdown-item" href="/annual/2022-23.html">2022-23</a></li>
+                        <li><a class="dropdown-item" href="/annual/2021-22.html">2021-22</a></li>
+                        <li><a class="dropdown-item" href="/annual/2020-21.html">2020-21</a></li>
+                        <li><a class="dropdown-item" href="/annual/2019-20.html">2019-20</a></li>
+                        <li><a class="dropdown-item" href="/annual/2018-19.html">2018-19</a></li>
+                        <li><a class="dropdown-item" href="/annual/2017-18.html">2017-18</a></li>
+                        <li><a class="dropdown-item" href="/annual/2016-17.html">2016-17</a></li>
+                        <li><a class="dropdown-item" href="/annual/2015-16.html">2015-16</a></li>
+                        <li><a class="dropdown-item" href="/annual/2014-15.html">2014-15</a></li>
+                        <li><a class="dropdown-item" href="/annual/2013-14.html">2013-14</a></li>
+                        <li><a class="dropdown-item" href="/annual/2012-13.html">2012-13</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container d-flex align-items-center justify-content-between flex-wrap">
+            <h1 class="mb-0">Senior Class of 2022</h1>
+            <div id="jump-to-container"></div>
+        </div>
+    </div>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Build Jump To dropdown from event headings (h2 or h3.event-heading)
+        let headings = document.querySelectorAll('h2, h3.event-heading');
+        if (headings.length > 2) {
+            let options = '<div class="jump-to-dropdown dropdown"><button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">Jump To</button><ul class="dropdown-menu dropdown-menu-end dropdown-menu-scroll">';
+            headings.forEach(function(h, i) {
+                const id = 'event-' + i;
+                h.id = id;
+                options += '<li><a class="dropdown-item" href="#' + id + '">' + h.textContent + '</a></li>';
+            });
+            options += '</ul></div>';
+            document.getElementById('jump-to-container').innerHTML = options;
+        }
+        
+        // Check if this is a relay records page
+        const isRelayPage = document.title.toLowerCase().includes('relay');
+        if (isRelayPage && window.innerWidth <= 576) {
+            // Transform relay tables for mobile
+            document.querySelectorAll('table tbody tr').forEach(function(row) {
+                const cells = row.querySelectorAll('td');
+                if (cells.length >= 5) {
+                    const participants = cells[2].textContent;
+                    const date = cells[3].textContent;  // Date is column 4 (index 3)
+                    const meet = cells[4].textContent;  // Meet is column 5 (index 4)
+                    
+                    // Extract last names
+                    const names = participants.split(',').map(n => n.trim());
+                    const lastNames = names.map(n => {
+                        const parts = n.split(' ');
+                        return parts[parts.length - 1];
+                    }).join(', ');
+                    
+                    // Create expandable content
+                    const shortNames = document.createElement('div');
+                    shortNames.className = 'relay-names';
+                    shortNames.textContent = lastNames;
+                    
+                    const details = document.createElement('div');
+                    details.className = 'relay-details';
+                    names.forEach(n => {
+                        const member = document.createElement('span');
+                        member.className = 'member';
+                        member.textContent = n;
+                        details.appendChild(member);
+                    });
+                    
+                    // Split meet name from location (typically in parentheses)
+                    const meetMatch = meet.match(/^(.+?)(\s*\([^)]+\))?$/);
+                    const meetName = meetMatch ? meetMatch[1].trim() : meet;
+                    const meetLocation = meetMatch && meetMatch[2] ? meetMatch[2].trim() : '';
+                    
+                    const meetDiv = document.createElement('div');
+                    meetDiv.className = 'meet-full';
+                    const meetNameSpan = document.createElement('span');
+                    meetNameSpan.className = 'meet-name';
+                    meetNameSpan.textContent = meetName;
+                    meetDiv.appendChild(meetNameSpan);
+                    if (meetLocation) {
+                        const meetLocSpan = document.createElement('span');
+                        meetLocSpan.className = 'meet-location';
+                        meetLocSpan.textContent = meetLocation;
+                        meetDiv.appendChild(meetLocSpan);
+                    }
+                    details.appendChild(meetDiv);
+                    
+                    // Replace participants cell content
+                    cells[2].innerHTML = '';
+                    cells[2].appendChild(shortNames);
+                    cells[2].appendChild(details);
+                    
+                    // Put date in the date cell (hide meet cell)
+                    cells[3].textContent = date;
+                    cells[4].style.display = 'none';  // Hide meet column
+                    
+                    // Add click handler
+                    shortNames.addEventListener('click', function() {
+                        this.classList.toggle('expanded');
+                        details.classList.toggle('show');
+                    });
+                }
+            });
+        }
+        
+        // Gender toggle and navigation
+        let currentGender = localStorage.getItem('tvhs-gender') || 'boys';
+        
+        // Detect current page gender from URL
+        const currentPath = window.location.pathname;
+        if (currentPath.includes('girls')) {
+            currentGender = 'girls';
+        } else if (currentPath.includes('boys')) {
+            currentGender = 'boys';
+        }
+        localStorage.setItem('tvhs-gender', currentGender);
+        
+        function updateGenderUI() {
+            document.querySelectorAll('.btn-gender').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.gender === currentGender);
+            });
+            updateNavLinks();
+        }
+        
+        function updateNavLinks() {
+            const g = currentGender;
+            // Update nav links based on current gender
+            document.getElementById('nav-top10').href = '/top10/' + g + '-alltime.html';
+            document.getElementById('nav-relays').href = '/records/' + g + '-relays.html';
+            
+            // Update class top 10 links (Class Records lives under /records/)
+            document.querySelectorAll('.class-link').forEach(link => {
+                const grade = link.dataset.grade;
+                link.href = grade === 'bygrade'
+                    ? '/records/' + g + '-bygrade.html'
+                    : '/top10/' + g + '-' + grade + '.html';
+            });
+
+            // Update season links
+            document.querySelectorAll('.season-link').forEach(link => {
+                const season = link.textContent;
+                link.href = '/top10/' + g + '-' + season + '.html';
+            });
+            
+            // Reorder sections on Overall Records page based on gender
+            const overallPage = document.querySelector('.overall-records-page');
+            if (overallPage) {
+                const boysSection = document.getElementById('boys-records');
+                const girlsSection = document.getElementById('girls-records');
+                if (boysSection && girlsSection) {
+                    if (g === 'girls') {
+                        overallPage.insertBefore(girlsSection, boysSection);
+                    } else {
+                        overallPage.insertBefore(boysSection, girlsSection);
+                    }
+                }
+            }
+        }
+        
+        // Gender toggle click handlers - navigate to corresponding gender page
+        document.querySelectorAll('.btn-gender').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const newGender = this.dataset.gender;
+                if (newGender === currentGender) return;
+                
+                localStorage.setItem('tvhs-gender', newGender);
+                
+                // Try to navigate to the corresponding gender version of current page
+                const path = window.location.pathname;
+                let newPath = path;
+                
+                if (path.includes('boys')) {
+                    newPath = path.replace('boys', 'girls');
+                } else if (path.includes('girls')) {
+                    newPath = path.replace('girls', 'boys');
+                } else {
+                    // Not a gendered page, just update UI
+                    currentGender = newGender;
+                    updateGenderUI();
+                    return;
+                }
+                
+                // Navigate to the new page
+                window.location.href = newPath;
+            });
+        });
+        
+        // Initialize
+        updateGenderUI();
+        
+        // Collapsible sections
+        document.querySelectorAll('.section-header').forEach(header => {
+            header.addEventListener('click', function(e) {
+                e.preventDefault();
+                const toggleBtn = this.querySelector('.section-toggle');
+                if (!toggleBtn) return;
+                
+                const targetId = toggleBtn.dataset.target;
+                const content = document.getElementById(targetId);
+                
+                if (content) {
+                    this.classList.toggle('collapsed');
+                    content.classList.toggle('collapsed');
+                }
+            });
+        });
+    });
+    </script>
+    
+    <!-- Main Content -->
+    <div class="container my-4">
+        <div class="sr-page">
+<section class="sr-hero">
+  <div class="container">
+    <img src="/images/hawk-logo.svg" alt="" class="sr-hero-logo">
+    <div class="sr-hero-eyebrow"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></svg>Tanque Verde Swimming</div>
+    <h1 class="sr-hero-title">Senior Class of 2022</h1>
+    <p class="sr-hero-msg">Thank you to the five seniors of the Class of 2022 for every race, every relay and every early practice &mdash; and for the team you left behind.</p>
+    <p class="sr-hero-count"><span>5 seniors</span><span>1 boys</span><span>4 girls</span></p>
+    <div class="sr-stats"><div class="sr-stat"><span class="sr-stat-n">2</span><span class="sr-stat-l">seniors on the all-time Top 10</span></div></div>
+  </div>
+</section>
+<div class="container sr-body">
+  <nav class="sr-roll" aria-label="The class"><a href="#nicholas-spilotro">Nicholas Spilotro</a><a href="#emma-kalway">Emma Kalway</a><a href="#lainie-radomsky">Lainie Radomsky</a><a href="#zoe-strangis">Zoe Strangis</a><a href="#shaye-sulger">Shaye Sulger</a></nav>
+  <section class="sr-sec"><h2 class="sr-h2">Boys <span>1</span></h2><div class="sr-grid"><article class="sr-card" id="nicholas-spilotro">
+  <header class="sr-card-h">
+    <div class="sr-eyebrow"><svg class="sr-ico sr-cap" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></svg>Class of 2022 &middot; Boys</div>
+    <h3 class="sr-name">Nicholas Spilotro</h3>
+    <a class="sr-anchor" href="#nicholas-spilotro" aria-label="Link to Nicholas Spilotro"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></a>
+  </header>
+  <ul class="sr-hls"><li class="sr-hl"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V12M12 20V5M19 20v-6"/></svg><span><strong>All-time Top 10</strong> <span class="sr-hl-d">#8 100 Back</span></span></li><li class="sr-hl"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V12M12 20V5M19 20v-6"/></svg><span><strong>All-time relay Top 10</strong> <span class="sr-hl-d">#2 200 Free Relay, #7 400 Free Relay and #9 200 Medley Relay</span></span></li></ul><ul class="sr-best"><li><span class="sr-ev">50 Free</span><span class="sr-t">25.51</span></li><li><span class="sr-ev">100 Back</span><span class="sr-t">1:02.75</span><span class="sr-chip">#8 all-time</span></li><li><span class="sr-ev">100 Fly</span><span class="sr-t">1:06.30</span></li></ul>
+  <details class="sr-more"><summary>Career, records &amp; progression</summary><div class="sr-more-b"><nav class="sr-secnav" aria-label="Nicholas Spilotro: career sections"><a href="#nicholas-spilotro-prog">Progression</a><a href="#nicholas-spilotro-rec">Records</a><a href="#nicholas-spilotro-relay">Relays</a></nav><section class="sr-sub" data-sec="prog"><h4 class="sr-h4 sr-sec-h" id="nicholas-spilotro-prog"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>Progression <span class=sr-count>5 events</span><a class="sr-sec-link" href="#nicholas-spilotro-prog" aria-label="Link to Nicholas Spilotro: Progression"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></a></h4><p class="sr-note">Each season&rsquo;s best time. The highlighted time is the career best. &ldquo;&ndash;&rdquo; means no time in our files for that season, not that there was no swim. Charts show how much faster than the first season, all on the same 0&ndash;10% scale; higher is faster.</p><div class="sr-pg"><div class="sr-er sr-er-h" aria-hidden="true"><div class="sr-er-n">Event</div><div class="sr-er-c"><span>Fr.</span><span>So.</span><span>Jr.</span><span>Sr.</span></div><div class="sr-er-d">Change</div></div><div class="sr-er sr-er-story"><div class="sr-er-n"><span class="sr-ev-n">100 Back</span><span class="sr-chip sr-quiet">#8 all-time</span></div><div class="sr-er-c"><div class="sr-c"><span class="visually-hidden">Freshman: </span><span class="sr-t" title="AIA D-3 Boys State Championship, Nov 1, 2018">1:04.24</span><span class="sr-mark sr-green" title="#3 fastest ever as a freshman">#3 Fr.</span></div><div class="sr-c sr-cb"><span class="visually-hidden">Sophomore: </span><span class="sr-t" title="Canyon Del Oro Invite, Nov 1, 2019">1:02.75</span><span class=visually-hidden> (career best)</span><span class="sr-mark sr-green" title="#5 fastest ever as a sophomore">#5 So.</span></div><div class="sr-c"><span class="visually-hidden">Junior: </span><span class="sr-t" title="AIA D-3 State Championship, Nov 5, 2020">1:04.06</span><span class="sr-mark sr-green" title="#6 fastest ever as a junior">#6 Jr.</span></div><div class="sr-c"><span class="visually-hidden">Senior: </span><span class="sr-t" title="Southern AZ Regional Qualifier, Oct 29, 2021">1:04.84</span><span class="sr-mark sr-green" title="#5 fastest ever as a senior">#5 Sr.</span></div></div><div class="sr-er-d"><span class="sr-drop">&minus;1.49s</span><span class="sr-drop-p">2.3% since Fr.</span></div><div class="sr-er-v"><svg class="sr-chart" viewBox="0 0 400 116" role="img" aria-label="100 Back season bests: freshman 1:04.24, sophomore 1:02.75, junior 1:04.06, senior 1:04.84; 2.3% faster than the first season"><title>100 Back season bests: freshman 1:04.24, sophomore 1:02.75, junior 1:04.06, senior 1:04.84; 2.3% faster than the first season</title><line class="sr-ax" x1="0" x2="400" y1="89.7" y2="89.7"/><line class="sr-grid-l" x1="0" x2="400" y1="22.0" y2="22.0"/><text class="sr-ax-t" x="1" y="86.7">0%</text><text class="sr-ax-t" x="1" y="19.0">10% faster</text><line class="sr-pl" x1="50.0" y1="89.7" x2="150.0" y2="74.0"/><line class="sr-pl" x1="150.0" y1="74.0" x2="250.0" y2="87.8"/><line class="sr-pl" x1="250.0" y1="87.8" x2="350.0" y2="96.0"/><circle class="sr-pt" cx="50.0" cy="89.7" r="3"/><text class="sr-pt-t" x="50.0" y="81.7" text-anchor="middle">1:04.24</text><circle class="sr-pt sr-pt-cb" cx="150.0" cy="74.0" r="4"/><text class="sr-pt-t sr-pt-cbt" x="150.0" y="66.0" text-anchor="middle">1:02.75</text><circle class="sr-pt" cx="250.0" cy="87.8" r="3"/><text class="sr-pt-t" x="250.0" y="79.8" text-anchor="middle">1:04.06</text><circle class="sr-pt" cx="350.0" cy="96.0" r="3"/><text class="sr-pt-t" x="350.0" y="88.0" text-anchor="middle">1:04.84</text></svg><details class="sr-when"><summary>Meets &amp; dates</summary><ul><li><span>Fr.</span> <b>1:04.24</b> AIA D-3 Boys State Championship, Nov 1, 2018</li><li><span>So.</span> <b>1:02.75</b> Canyon Del Oro Invite, Nov 1, 2019</li><li><span>Jr.</span> <b>1:04.06</b> AIA D-3 State Championship, Nov 5, 2020</li><li><span>Sr.</span> <b>1:04.84</b> Southern AZ Regional Qualifier, Oct 29, 2021</li></ul></details></div></div><div class="sr-er sr-er-story"><div class="sr-er-n"><span class="sr-ev-n">50 Free</span><span class="sr-chip">Most improved</span></div><div class="sr-er-c"><div class="sr-c"><span class="visually-hidden">Freshman: </span><span class="sr-t" title="Mike Ward Invitational, Oct 20, 2018">27.42</span><span class="sr-mark sr-green" title="#3 fastest ever as a freshman">#3 Fr.</span></div><div class="sr-c sr-cb"><span class="visually-hidden">Sophomore: </span><span class="sr-t" title="Canyon Del Oro Invite, Nov 1, 2019">25.51</span><span class=visually-hidden> (career best)</span><span class="sr-mark sr-green" title="#6 fastest ever as a sophomore">#6 So.</span></div><div class="sr-c"><span class="visually-hidden">Junior: </span><span class="sr-t" title="SQ  @ CDO (Oro Valley, AZ), Oct 30, 2020">25.72</span><span class="sr-mark sr-green" title="#9 fastest ever as a junior">#9 Jr.</span></div><div class="sr-c sr-none"><span class="visually-hidden">Senior: </span><span title="No senior time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div></div><div class="sr-er-d"><span class="sr-drop">&minus;1.91s</span><span class="sr-drop-p">7.0% since Fr.</span></div><div class="sr-er-v"><svg class="sr-chart" viewBox="0 0 400 116" role="img" aria-label="50 Free season bests: freshman 27.42, sophomore 25.51, junior 25.72; 7.0% faster than the first season"><title>50 Free season bests: freshman 27.42, sophomore 25.51, junior 25.72; 7.0% faster than the first season</title><line class="sr-ax" x1="0" x2="400" y1="96.0" y2="96.0"/><line class="sr-grid-l" x1="0" x2="400" y1="22.0" y2="22.0"/><text class="sr-ax-t" x="1" y="93.0">0%</text><text class="sr-ax-t" x="1" y="19.0">10% faster</text><line class="sr-pl" x1="50.0" y1="96.0" x2="150.0" y2="44.5"/><line class="sr-pl" x1="150.0" y1="44.5" x2="250.0" y2="50.1"/><circle class="sr-pt" cx="50.0" cy="96.0" r="3"/><text class="sr-pt-t" x="50.0" y="88.0" text-anchor="middle">27.42</text><circle class="sr-pt sr-pt-cb" cx="150.0" cy="44.5" r="4"/><text class="sr-pt-t sr-pt-cbt" x="150.0" y="36.5" text-anchor="middle">25.51</text><circle class="sr-pt" cx="250.0" cy="50.1" r="3"/><text class="sr-pt-t" x="250.0" y="42.1" text-anchor="middle">25.72</text></svg><details class="sr-when"><summary>Meets &amp; dates</summary><ul><li><span>Fr.</span> <b>27.42</b> Mike Ward Invitational, Oct 20, 2018</li><li><span>So.</span> <b>25.51</b> Canyon Del Oro Invite, Nov 1, 2019</li><li><span>Jr.</span> <b>25.72</b> SQ  @ CDO (Oro Valley, AZ), Oct 30, 2020</li></ul></details></div></div><div class="sr-er"><div class="sr-er-n"><span class="sr-ev-n">100 Free</span></div><div class="sr-er-c"><div class="sr-c sr-cb"><span class="visually-hidden">Freshman: </span><span class="sr-t" title="Southern Arizona Regional Qualifier, Oct 26, 2018">59.40</span><span class=visually-hidden> (career best)</span><span class="sr-mark sr-green" title="#7 fastest ever as a freshman">#7 Fr.</span></div><div class="sr-c sr-none"><span class="visually-hidden">Sophomore: </span><span title="No sophomore time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c sr-none"><span class="visually-hidden">Junior: </span><span title="No junior time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c"><span class="visually-hidden">Senior: </span><span class="sr-t" title="Southern AZ Regional Qualifier, Oct 29, 2021">1:00.62</span></div></div><div class="sr-er-d"><span class="sr-drop-p">Fastest as a fr.</span></div><div class="sr-er-v"><p class="sr-when-i">Fr. Southern Arizona Regional Qualifier, Oct 26, 2018 &middot; Sr. Southern AZ Regional Qualifier, Oct 29, 2021</p></div></div><div class="sr-er"><div class="sr-er-n"><span class="sr-ev-n">100 Fly</span></div><div class="sr-er-c"><div class="sr-c sr-none"><span class="visually-hidden">Freshman: </span><span title="No freshman time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c sr-cb"><span class="visually-hidden">Sophomore: </span><span class="sr-t" title="High School Classic, Oct 5, 2019">1:06.30</span><span class=visually-hidden> (career best)</span><span class="sr-mark sr-green" title="#6 fastest ever as a sophomore">#6 So.</span></div><div class="sr-c sr-none"><span class="visually-hidden">Junior: </span><span title="No junior time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c sr-none"><span class="visually-hidden">Senior: </span><span title="No senior time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div></div><div class="sr-er-d"></div><div class="sr-er-v"><p class="sr-when-i">So. High School Classic, Oct 5, 2019</p></div></div><div class="sr-er"><div class="sr-er-n"><span class="sr-ev-n">200 IM</span></div><div class="sr-er-c"><div class="sr-c sr-none"><span class="visually-hidden">Freshman: </span><span title="No freshman time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c sr-cb"><span class="visually-hidden">Sophomore: </span><span class="sr-t" title="Mike Ward Invitational, Oct 19, 2019">2:30.71</span><span class=visually-hidden> (career best)</span><span class="sr-mark sr-green" title="#7 fastest ever as a sophomore">#7 So.</span></div><div class="sr-c sr-none"><span class="visually-hidden">Junior: </span><span title="No junior time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c sr-none"><span class="visually-hidden">Senior: </span><span title="No senior time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div></div><div class="sr-er-d"></div><div class="sr-er-v"><p class="sr-when-i">So. Mike Ward Invitational, Oct 19, 2019</p></div></div></div></section><section class="sr-sub" data-sec="rec"><h4 class="sr-h4 sr-sec-h" id="nicholas-spilotro-rec"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>Records &amp; rankings<a class="sr-sec-link" href="#nicholas-spilotro-rec" aria-label="Link to Nicholas Spilotro: Records &amp; rankings"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></a></h4><h5 class="sr-h5">All-time Top 10</h5><ul class="sr-list"><li><span class="sr-chip">#8 all-time</span> 100 Backstroke <span class="sr-t">1:02.75</span></li></ul><h5 class="sr-h5">Class Top 10</h5><ul class="sr-list"><li><span class="sr-chip sr-quiet">#3 freshman</span> 50 Freestyle <span class="sr-t">27.42</span></li><li><span class="sr-chip sr-quiet">#3 freshman</span> 100 Backstroke <span class="sr-t">1:04.24</span></li><li><span class="sr-chip sr-quiet">#5 sophomore</span> 100 Backstroke <span class="sr-t">1:02.75</span></li><li><span class="sr-chip sr-quiet">#5 senior</span> 100 Backstroke <span class="sr-t">1:04.84</span></li><li><span class="sr-chip sr-quiet">#6 sophomore</span> 50 Freestyle <span class="sr-t">25.51</span></li><li><span class="sr-chip sr-quiet">#6 junior</span> 100 Backstroke <span class="sr-t">1:04.06</span></li><li><span class="sr-chip sr-quiet">#6 sophomore</span> 100 Butterfly <span class="sr-t">1:06.30</span></li><li><span class="sr-chip sr-quiet">#7 freshman</span> 100 Freestyle <span class="sr-t">59.40</span></li><li><span class="sr-chip sr-quiet">#7 sophomore</span> 200 Individual Medley <span class="sr-t">2:30.71</span></li><li><span class="sr-chip sr-quiet">#9 junior</span> 50 Freestyle <span class="sr-t">25.72</span></li></ul></section><section class="sr-sub" data-sec="relay"><h4 class="sr-h4 sr-sec-h" id="nicholas-spilotro-relay"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="7" r="2.5"/><path d="M3 20c0-3 2-5 4-5s4 2 4 5M13 20c0-3 2-5 4-5s4 2 4 5"/></svg>Relays <span class=sr-count>3 on the all-time lists</span><a class="sr-sec-link" href="#nicholas-spilotro-relay" aria-label="Link to Nicholas Spilotro: Relays"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></a></h4><p class="sr-note">Each relay&rsquo;s best place on the team&rsquo;s all-time lists.</p><h5 class="sr-h5">On the all-time relay lists</h5><ul class="sr-list"><li><span class="sr-chip">#2 all-time</span> 200 Free Relay <span class="sr-t">1:32.46</span><span class="sr-src">with Trevor Clausen, Logan Radomsky and Samuel Stott</span><span class="sr-src">2019 D-3 AIA State Championship, Nov 7, 2019 &middot; on 2 of the list&rsquo;s times</span></li><li><span class="sr-chip">#7 all-time</span> 400 Free Relay <span class="sr-t">3:27.87</span><span class="sr-src">with Trevor Clausen, Logan Radomsky and Samuel Stott</span><span class="sr-src">2019 D-3 AIA State Championship, Nov 7, 2019 &middot; on 2 of the list&rsquo;s times</span></li><li><span class="sr-chip">#9 all-time</span> 200 Medley Relay <span class="sr-t">1:46.69</span><span class="sr-src">with Stephen Moreland, Alejandro Alvarez and Nolan Radomsky</span><span class="sr-src">Pecan Classic, Oct 23, 2021 &middot; on 4 of the list&rsquo;s times</span></li></ul></section></div></details>
+</article></div></section><section class="sr-sec"><h2 class="sr-h2">Girls <span>4</span></h2><div class="sr-grid"><article class="sr-card" id="emma-kalway">
+  <header class="sr-card-h">
+    <div class="sr-eyebrow"><svg class="sr-ico sr-cap" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></svg>Class of 2022 &middot; Girls</div>
+    <h3 class="sr-name">Emma Kalway</h3>
+    <a class="sr-anchor" href="#emma-kalway" aria-label="Link to Emma Kalway"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></a>
+  </header>
+  <ul class="sr-hls"><li class="sr-hl"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg><span><strong>Most improved event</strong> <span class="sr-hl-d">50 Free: 34.19 as a freshman to 31.38 as a senior</span></span></li></ul><ul class="sr-best"><li><span class="sr-ev">50 Free</span><span class="sr-t">31.38</span></li><li><span class="sr-ev">100 Breast</span><span class="sr-t">1:31.56</span></li><li><span class="sr-ev">200 IM</span><span class="sr-t">3:12.29</span></li></ul>
+  <details class="sr-more"><summary>Career, records &amp; progression</summary><div class="sr-more-b"><nav class="sr-secnav" aria-label="Emma Kalway: career sections"><a href="#emma-kalway-prog">Progression</a></nav><section class="sr-sub" data-sec="prog"><h4 class="sr-h4 sr-sec-h" id="emma-kalway-prog"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>Progression <span class=sr-count>3 events</span><a class="sr-sec-link" href="#emma-kalway-prog" aria-label="Link to Emma Kalway: Progression"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></a></h4><p class="sr-note">Each season&rsquo;s best time. The highlighted time is the career best. &ldquo;&ndash;&rdquo; means no time in our files for that season, not that there was no swim. Charts show how much faster than the first season, all on the same 0&ndash;10% scale; higher is faster.</p><div class="sr-pg"><div class="sr-er sr-er-h" aria-hidden="true"><div class="sr-er-n">Event</div><div class="sr-er-c"><span>Fr.</span><span>So.</span><span>Jr.</span><span>Sr.</span></div><div class="sr-er-d">Change</div></div><div class="sr-er sr-er-story"><div class="sr-er-n"><span class="sr-ev-n">50 Free</span><span class="sr-chip">Most improved</span></div><div class="sr-er-c"><div class="sr-c"><span class="visually-hidden">Freshman: </span><span class="sr-t" title="Southern Arizona Regional Qualifier, Oct 26, 2018">34.19</span></div><div class="sr-c"><span class="visually-hidden">Sophomore: </span><span class="sr-t" title="Red Wolf Qualifier, Sep 27, 2019">33.20</span></div><div class="sr-c sr-none"><span class="visually-hidden">Junior: </span><span title="No junior time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c sr-cb"><span class="visually-hidden">Senior: </span><span class="sr-t" title="TYR HS Classic, Sep 25, 2021">31.38</span><span class=visually-hidden> (career best)</span></div></div><div class="sr-er-d"><span class="sr-drop">&minus;2.81s</span><span class="sr-drop-p">8.2% since Fr.</span></div><div class="sr-er-v"><svg class="sr-chart" viewBox="0 0 400 116" role="img" aria-label="50 Free season bests: freshman 34.19, sophomore 33.20, senior 31.38; 8.2% faster than the first season"><title>50 Free season bests: freshman 34.19, sophomore 33.20, senior 31.38; 8.2% faster than the first season</title><line class="sr-ax" x1="0" x2="400" y1="96.0" y2="96.0"/><line class="sr-grid-l" x1="0" x2="400" y1="22.0" y2="22.0"/><text class="sr-ax-t" x="1" y="93.0">0%</text><text class="sr-ax-t" x="1" y="19.0">10% faster</text><line class="sr-pl" x1="50.0" y1="96.0" x2="150.0" y2="74.6"/><line class="sr-pl sr-pl-gap" x1="150.0" y1="74.6" x2="350.0" y2="35.2"/><circle class="sr-pt" cx="50.0" cy="96.0" r="3"/><text class="sr-pt-t" x="50.0" y="88.0" text-anchor="middle">34.19</text><circle class="sr-pt" cx="150.0" cy="74.6" r="3"/><text class="sr-pt-t" x="150.0" y="66.6" text-anchor="middle">33.20</text><circle class="sr-pt sr-pt-cb" cx="350.0" cy="35.2" r="4"/><text class="sr-pt-t sr-pt-cbt" x="350.0" y="27.2" text-anchor="middle">31.38</text></svg><details class="sr-when"><summary>Meets &amp; dates</summary><ul><li><span>Fr.</span> <b>34.19</b> Southern Arizona Regional Qualifier, Oct 26, 2018</li><li><span>So.</span> <b>33.20</b> Red Wolf Qualifier, Sep 27, 2019</li><li><span>Sr.</span> <b>31.38</b> TYR HS Classic, Sep 25, 2021</li></ul></details></div></div><div class="sr-er"><div class="sr-er-n"><span class="sr-ev-n">100 Breast</span></div><div class="sr-er-c"><div class="sr-c sr-none"><span class="visually-hidden">Freshman: </span><span title="No freshman time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c"><span class="visually-hidden">Sophomore: </span><span class="sr-t" title="Red Wolf Qualifier, Sep 27, 2019">1:35.75</span></div><div class="sr-c sr-none"><span class="visually-hidden">Junior: </span><span title="No junior time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c sr-cb"><span class="visually-hidden">Senior: </span><span class="sr-t" title="Pecan Classic, Oct 23, 2021">1:31.56</span><span class=visually-hidden> (career best)</span></div></div><div class="sr-er-d"><span class="sr-drop">&minus;4.19s</span><span class="sr-drop-p">4.4% since So.</span></div><div class="sr-er-v"><p class="sr-when-i">So. Red Wolf Qualifier, Sep 27, 2019 &middot; Sr. Pecan Classic, Oct 23, 2021</p></div></div><div class="sr-er"><div class="sr-er-n"><span class="sr-ev-n">200 IM</span></div><div class="sr-er-c"><div class="sr-c sr-none"><span class="visually-hidden">Freshman: </span><span title="No freshman time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c sr-cb"><span class="visually-hidden">Sophomore: </span><span class="sr-t" title="Canyon Del Oro Invite, Nov 1, 2019">3:12.29</span><span class=visually-hidden> (career best)</span></div><div class="sr-c"><span class="visually-hidden">Junior: </span><span class="sr-t" title="SQ  @ CDO (Oro Valley, AZ), Oct 30, 2020">3:12.30</span></div><div class="sr-c sr-none"><span class="visually-hidden">Senior: </span><span title="No senior time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div></div><div class="sr-er-d"><span class="sr-drop-p">Fastest as a so.</span></div><div class="sr-er-v"><p class="sr-when-i">So. Canyon Del Oro Invite, Nov 1, 2019 &middot; Jr. SQ  @ CDO (Oro Valley, AZ), Oct 30, 2020</p></div></div></div></section></div></details>
+</article><article class="sr-card" id="lainie-radomsky">
+  <header class="sr-card-h">
+    <div class="sr-eyebrow"><svg class="sr-ico sr-cap" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></svg>Class of 2022 &middot; Girls</div>
+    <h3 class="sr-name">Lainie Radomsky</h3>
+    <a class="sr-anchor" href="#lainie-radomsky" aria-label="Link to Lainie Radomsky"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></a>
+  </header>
+  <ul class="sr-hls"><li class="sr-hl"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V12M12 20V5M19 20v-6"/></svg><span><strong>All-time relay Top 10</strong> <span class="sr-hl-d">#9 200 Medley Relay</span></span></li><li class="sr-hl"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V12M12 20V5M19 20v-6"/></svg><span><strong>Class Top 10</strong> <span class="sr-hl-d">#6 senior 500 Free, #8 sophomore 100 Breast and #9 senior 200 IM</span></span></li></ul><ul class="sr-best"><li><span class="sr-ev">200 IM</span><span class="sr-t">2:46.02</span></li><li><span class="sr-ev">100 Breast</span><span class="sr-t">1:21.26</span></li><li><span class="sr-ev">500 Free</span><span class="sr-t">6:51.44</span></li></ul>
+  <details class="sr-more"><summary>Career, records &amp; progression</summary><div class="sr-more-b"><nav class="sr-secnav" aria-label="Lainie Radomsky: career sections"><a href="#lainie-radomsky-prog">Progression</a><a href="#lainie-radomsky-rec">Records</a><a href="#lainie-radomsky-relay">Relays</a></nav><section class="sr-sub" data-sec="prog"><h4 class="sr-h4 sr-sec-h" id="lainie-radomsky-prog"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>Progression <span class=sr-count>4 events</span><a class="sr-sec-link" href="#lainie-radomsky-prog" aria-label="Link to Lainie Radomsky: Progression"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></a></h4><p class="sr-note">Each season&rsquo;s best time. The highlighted time is the career best. &ldquo;&ndash;&rdquo; means no time in our files for that season, not that there was no swim. Charts show how much faster than the first season, all on the same 0&ndash;10% scale; higher is faster.</p><div class="sr-pg"><div class="sr-er sr-er-h" aria-hidden="true"><div class="sr-er-n">Event</div><div class="sr-er-c"><span>Fr.</span><span>So.</span><span>Jr.</span><span>Sr.</span></div><div class="sr-er-d">Change</div></div><div class="sr-er sr-er-story"><div class="sr-er-n"><span class="sr-ev-n">100 Breast</span><span class="sr-chip">Most improved</span></div><div class="sr-er-c"><div class="sr-c"><span class="visually-hidden">Freshman: </span><span class="sr-t" title="Southern Arizona Regional Qualifier, Oct 26, 2018">1:25.81</span><span class="sr-mark sr-green" title="#9 fastest ever as a freshman">#9 Fr.</span></div><div class="sr-c"><span class="visually-hidden">Sophomore: </span><span class="sr-t" title="Canyon Del Oro Invite, Nov 1, 2019">1:23.57</span><span class="sr-mark sr-green" title="#8 fastest ever as a sophomore">#8 So.</span></div><div class="sr-c"><span class="visually-hidden">Junior: </span><span class="sr-t" title="SQ  @ CDO (Oro Valley, AZ), Oct 30, 2020">1:23.24</span><span class="sr-mark sr-green" title="#9 fastest ever as a junior">#9 Jr.</span></div><div class="sr-c sr-cb"><span class="visually-hidden">Senior: </span><span class="sr-t" title="Southern AZ Regional Qualifier, Oct 29, 2021">1:21.26</span><span class=visually-hidden> (career best)</span><span class="sr-mark sr-green" title="#9 fastest ever as a senior">#9 Sr.</span></div></div><div class="sr-er-d"><span class="sr-drop">&minus;4.55s</span><span class="sr-drop-p">5.3% since Fr.</span></div><div class="sr-er-v"><svg class="sr-chart" viewBox="0 0 400 116" role="img" aria-label="100 Breast season bests: freshman 1:25.81, sophomore 1:23.57, junior 1:23.24, senior 1:21.26; 5.3% faster than the first season"><title>100 Breast season bests: freshman 1:25.81, sophomore 1:23.57, junior 1:23.24, senior 1:21.26; 5.3% faster than the first season</title><line class="sr-ax" x1="0" x2="400" y1="96.0" y2="96.0"/><line class="sr-grid-l" x1="0" x2="400" y1="22.0" y2="22.0"/><text class="sr-ax-t" x="1" y="93.0">0%</text><text class="sr-ax-t" x="1" y="19.0">10% faster</text><line class="sr-pl" x1="50.0" y1="96.0" x2="150.0" y2="76.7"/><line class="sr-pl" x1="150.0" y1="76.7" x2="250.0" y2="73.8"/><line class="sr-pl" x1="250.0" y1="73.8" x2="350.0" y2="56.8"/><circle class="sr-pt" cx="50.0" cy="96.0" r="3"/><text class="sr-pt-t" x="50.0" y="88.0" text-anchor="middle">1:25.81</text><circle class="sr-pt" cx="150.0" cy="76.7" r="3"/><text class="sr-pt-t" x="150.0" y="68.7" text-anchor="middle">1:23.57</text><circle class="sr-pt" cx="250.0" cy="73.8" r="3"/><text class="sr-pt-t" x="250.0" y="65.8" text-anchor="middle">1:23.24</text><circle class="sr-pt sr-pt-cb" cx="350.0" cy="56.8" r="4"/><text class="sr-pt-t sr-pt-cbt" x="350.0" y="48.8" text-anchor="middle">1:21.26</text></svg><details class="sr-when"><summary>Meets &amp; dates</summary><ul><li><span>Fr.</span> <b>1:25.81</b> Southern Arizona Regional Qualifier, Oct 26, 2018</li><li><span>So.</span> <b>1:23.57</b> Canyon Del Oro Invite, Nov 1, 2019</li><li><span>Jr.</span> <b>1:23.24</b> SQ  @ CDO (Oro Valley, AZ), Oct 30, 2020</li><li><span>Sr.</span> <b>1:21.26</b> Southern AZ Regional Qualifier, Oct 29, 2021</li></ul></details></div></div><div class="sr-er sr-er-story"><div class="sr-er-n"><span class="sr-ev-n">200 IM</span></div><div class="sr-er-c"><div class="sr-c sr-none"><span class="visually-hidden">Freshman: </span><span title="No freshman time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c"><span class="visually-hidden">Sophomore: </span><span class="sr-t" title="Mike Ward Invitational, Oct 19, 2019">2:52.89</span></div><div class="sr-c"><span class="visually-hidden">Junior: </span><span class="sr-t" title="SQ  @ CDO (Oro Valley, AZ), Oct 30, 2020">2:48.88</span></div><div class="sr-c sr-cb"><span class="visually-hidden">Senior: </span><span class="sr-t" title="TYR HS Classic, Sep 25, 2021">2:46.02</span><span class=visually-hidden> (career best)</span><span class="sr-mark sr-green" title="#9 fastest ever as a senior">#9 Sr.</span></div></div><div class="sr-er-d"><span class="sr-drop">&minus;6.87s</span><span class="sr-drop-p">4.0% since So.</span></div><div class="sr-er-v"><svg class="sr-chart" viewBox="0 0 400 116" role="img" aria-label="200 IM season bests: sophomore 2:52.89, junior 2:48.88, senior 2:46.02; 4.0% faster than the first season"><title>200 IM season bests: sophomore 2:52.89, junior 2:48.88, senior 2:46.02; 4.0% faster than the first season</title><line class="sr-ax" x1="0" x2="400" y1="96.0" y2="96.0"/><line class="sr-grid-l" x1="0" x2="400" y1="22.0" y2="22.0"/><text class="sr-ax-t" x="1" y="93.0">0%</text><text class="sr-ax-t" x="1" y="19.0">10% faster</text><line class="sr-pl" x1="150.0" y1="96.0" x2="250.0" y2="78.8"/><line class="sr-pl" x1="250.0" y1="78.8" x2="350.0" y2="66.6"/><circle class="sr-pt" cx="150.0" cy="96.0" r="3"/><text class="sr-pt-t" x="150.0" y="88.0" text-anchor="middle">2:52.89</text><circle class="sr-pt" cx="250.0" cy="78.8" r="3"/><text class="sr-pt-t" x="250.0" y="70.8" text-anchor="middle">2:48.88</text><circle class="sr-pt sr-pt-cb" cx="350.0" cy="66.6" r="4"/><text class="sr-pt-t sr-pt-cbt" x="350.0" y="58.6" text-anchor="middle">2:46.02</text></svg><details class="sr-when"><summary>Meets &amp; dates</summary><ul><li><span>So.</span> <b>2:52.89</b> Mike Ward Invitational, Oct 19, 2019</li><li><span>Jr.</span> <b>2:48.88</b> SQ  @ CDO (Oro Valley, AZ), Oct 30, 2020</li><li><span>Sr.</span> <b>2:46.02</b> TYR HS Classic, Sep 25, 2021</li></ul></details></div></div><div class="sr-er"><div class="sr-er-n"><span class="sr-ev-n">500 Free</span></div><div class="sr-er-c"><div class="sr-c sr-none"><span class="visually-hidden">Freshman: </span><span title="No freshman time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c"><span class="visually-hidden">Sophomore: </span><span class="sr-t" title="Red Wolf Qualifier, Sep 27, 2019">6:52.12</span><span class="sr-mark sr-green" title="#10 fastest ever as a sophomore">#10 So.</span></div><div class="sr-c sr-none"><span class="visually-hidden">Junior: </span><span title="No junior time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c sr-cb"><span class="visually-hidden">Senior: </span><span class="sr-t" title="Pecan Classic, Oct 23, 2021">6:51.44</span><span class=visually-hidden> (career best)</span><span class="sr-mark sr-green" title="#6 fastest ever as a senior">#6 Sr.</span></div></div><div class="sr-er-d"><span class="sr-drop">&minus;0.68s</span><span class="sr-drop-p">0.2% since So.</span></div><div class="sr-er-v"><p class="sr-when-i">So. Red Wolf Qualifier, Sep 27, 2019 &middot; Sr. Pecan Classic, Oct 23, 2021</p></div></div><div class="sr-er"><div class="sr-er-n"><span class="sr-ev-n">50 Free</span></div><div class="sr-er-c"><div class="sr-c sr-cb"><span class="visually-hidden">Freshman: </span><span class="sr-t" title="Mike Ward Invitational, Oct 20, 2018">31.77</span><span class=visually-hidden> (career best)</span></div><div class="sr-c sr-none"><span class="visually-hidden">Sophomore: </span><span title="No sophomore time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c sr-none"><span class="visually-hidden">Junior: </span><span title="No junior time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c sr-none"><span class="visually-hidden">Senior: </span><span title="No senior time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div></div><div class="sr-er-d"></div><div class="sr-er-v"><p class="sr-when-i">Fr. Mike Ward Invitational, Oct 20, 2018</p></div></div></div></section><section class="sr-sub" data-sec="rec"><h4 class="sr-h4 sr-sec-h" id="lainie-radomsky-rec"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>Records &amp; rankings<a class="sr-sec-link" href="#lainie-radomsky-rec" aria-label="Link to Lainie Radomsky: Records &amp; rankings"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></a></h4><h5 class="sr-h5">Class Top 10</h5><ul class="sr-list"><li><span class="sr-chip sr-quiet">#6 senior</span> 500 Freestyle <span class="sr-t">6:51.44</span></li><li><span class="sr-chip sr-quiet">#8 sophomore</span> 100 Breaststroke <span class="sr-t">1:23.57</span></li><li><span class="sr-chip sr-quiet">#9 freshman</span> 100 Breaststroke <span class="sr-t">1:25.81</span></li><li><span class="sr-chip sr-quiet">#9 junior</span> 100 Breaststroke <span class="sr-t">1:23.24</span></li><li><span class="sr-chip sr-quiet">#9 senior</span> 100 Breaststroke <span class="sr-t">1:21.26</span></li><li><span class="sr-chip sr-quiet">#9 senior</span> 200 Individual Medley <span class="sr-t">2:46.02</span></li><li><span class="sr-chip sr-quiet">#10 sophomore</span> 500 Freestyle <span class="sr-t">6:52.12</span></li></ul></section><section class="sr-sub" data-sec="relay"><h4 class="sr-h4 sr-sec-h" id="lainie-radomsky-relay"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="7" r="2.5"/><path d="M3 20c0-3 2-5 4-5s4 2 4 5M13 20c0-3 2-5 4-5s4 2 4 5"/></svg>Relays <span class=sr-count>1 on the all-time lists</span><a class="sr-sec-link" href="#lainie-radomsky-relay" aria-label="Link to Lainie Radomsky: Relays"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></a></h4><p class="sr-note">Each relay&rsquo;s best place on the team&rsquo;s all-time lists.</p><h5 class="sr-h5">On the all-time relay lists</h5><ul class="sr-list"><li><span class="sr-chip">#9 all-time</span> 200 Medley Relay <span class="sr-t">1:56.96</span><span class="sr-src">with Shaye Sulger, Sydney Hagerman and Alexandra Foley</span><span class="sr-src">TYR HS Classic, Sep 25, 2021</span></li></ul></section></div></details>
+</article><article class="sr-card" id="zoe-strangis">
+  <header class="sr-card-h">
+    <div class="sr-eyebrow"><svg class="sr-ico sr-cap" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></svg>Class of 2022 &middot; Girls</div>
+    <h3 class="sr-name">Zoe Strangis</h3>
+    <a class="sr-anchor" href="#zoe-strangis" aria-label="Link to Zoe Strangis"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></a>
+  </header>
+  <ul class="sr-best"><li><span class="sr-ev">50 Free</span><span class="sr-t">58.14</span></li></ul>
+  <details class="sr-more"><summary>Career, records &amp; progression</summary><div class="sr-more-b"><nav class="sr-secnav" aria-label="Zoe Strangis: career sections"><a href="#zoe-strangis-prog">Progression</a></nav><section class="sr-sub" data-sec="prog"><h4 class="sr-h4 sr-sec-h" id="zoe-strangis-prog"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>Progression <span class=sr-count>1 event</span><a class="sr-sec-link" href="#zoe-strangis-prog" aria-label="Link to Zoe Strangis: Progression"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></a></h4><p class="sr-note">Each season&rsquo;s best time. The highlighted time is the career best. &ldquo;&ndash;&rdquo; means no time in our files for that season, not that there was no swim.</p><div class="sr-pg"><div class="sr-er sr-er-h" aria-hidden="true"><div class="sr-er-n">Event</div><div class="sr-er-c"><span>Fr.</span><span>So.</span><span>Jr.</span><span>Sr.</span></div><div class="sr-er-d">Change</div></div><div class="sr-er"><div class="sr-er-n"><span class="sr-ev-n">50 Free</span></div><div class="sr-er-c"><div class="sr-c sr-none"><span class="visually-hidden">Freshman: </span><span title="No freshman time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c sr-none"><span class="visually-hidden">Sophomore: </span><span title="No sophomore time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c sr-none"><span class="visually-hidden">Junior: </span><span title="No junior time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c sr-cb"><span class="visually-hidden">Senior: </span><span class="sr-t" title="Southern AZ Regional Qualifier, Oct 29, 2021">58.14</span><span class=visually-hidden> (career best)</span></div></div><div class="sr-er-d"></div><div class="sr-er-v"><p class="sr-when-i">Sr. Southern AZ Regional Qualifier, Oct 29, 2021</p></div></div></div></section></div></details>
+</article><article class="sr-card" id="shaye-sulger">
+  <header class="sr-card-h">
+    <div class="sr-eyebrow"><svg class="sr-ico sr-cap" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></svg>Class of 2022 &middot; Girls</div>
+    <h3 class="sr-name">Shaye Sulger</h3>
+    <a class="sr-anchor" href="#shaye-sulger" aria-label="Link to Shaye Sulger"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></a>
+  </header>
+  <ul class="sr-hls"><li class="sr-hl"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V12M12 20V5M19 20v-6"/></svg><span><strong>All-time Top 10</strong> <span class="sr-hl-d">#9 100 Back</span></span></li><li class="sr-hl"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V12M12 20V5M19 20v-6"/></svg><span><strong>All-time relay Top 10</strong> <span class="sr-hl-d">#6 200 Free Relay, #7 400 Free Relay and #9 200 Medley Relay</span></span></li></ul><ul class="sr-best"><li><span class="sr-ev">100 Back</span><span class="sr-t">1:07.64</span><span class="sr-chip">#9 all-time</span></li><li><span class="sr-ev">50 Free</span><span class="sr-t">27.66</span></li><li><span class="sr-ev">200 Free</span><span class="sr-t">2:24.45</span></li></ul>
+  <details class="sr-more"><summary>Career, records &amp; progression</summary><div class="sr-more-b"><nav class="sr-secnav" aria-label="Shaye Sulger: career sections"><a href="#shaye-sulger-prog">Progression</a><a href="#shaye-sulger-rec">Records</a><a href="#shaye-sulger-relay">Relays</a></nav><section class="sr-sub" data-sec="prog"><h4 class="sr-h4 sr-sec-h" id="shaye-sulger-prog"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>Progression <span class=sr-count>3 events</span><a class="sr-sec-link" href="#shaye-sulger-prog" aria-label="Link to Shaye Sulger: Progression"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></a></h4><p class="sr-note">Each season&rsquo;s best time. The highlighted time is the career best. &ldquo;&ndash;&rdquo; means no time in our files for that season, not that there was no swim.</p><div class="sr-pg"><div class="sr-er sr-er-h" aria-hidden="true"><div class="sr-er-n">Event</div><div class="sr-er-c"><span>Fr.</span><span>So.</span><span>Jr.</span><span>Sr.</span></div><div class="sr-er-d">Change</div></div><div class="sr-er"><div class="sr-er-n"><span class="sr-ev-n">100 Back</span><span class="sr-chip">Most improved</span><span class="sr-chip sr-quiet">#9 all-time</span></div><div class="sr-er-c"><div class="sr-c sr-none"><span class="visually-hidden">Freshman: </span><span title="No freshman time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c sr-none"><span class="visually-hidden">Sophomore: </span><span title="No sophomore time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c"><span class="visually-hidden">Junior: </span><span class="sr-t" title="SQ  @ CDO (Oro Valley, AZ), Oct 30, 2020">1:11.40</span><span class="sr-mark sr-green" title="#8 fastest ever as a junior">#8 Jr.</span></div><div class="sr-c sr-cb"><span class="visually-hidden">Senior: </span><span class="sr-t" title="TYR HS Classic, Sep 25, 2021">1:07.64</span><span class=visually-hidden> (career best)</span><span class="sr-mark sr-green" title="#8 fastest ever as a senior">#8 Sr.</span></div></div><div class="sr-er-d"><span class="sr-drop">&minus;3.76s</span><span class="sr-drop-p">5.3% since Jr.</span></div><div class="sr-er-v"><p class="sr-when-i">Jr. SQ  @ CDO (Oro Valley, AZ), Oct 30, 2020 &middot; Sr. TYR HS Classic, Sep 25, 2021</p></div></div><div class="sr-er"><div class="sr-er-n"><span class="sr-ev-n">200 Free</span></div><div class="sr-er-c"><div class="sr-c sr-none"><span class="visually-hidden">Freshman: </span><span title="No freshman time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c sr-none"><span class="visually-hidden">Sophomore: </span><span title="No sophomore time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c"><span class="visually-hidden">Junior: </span><span class="sr-t" title="SQ  @ CDO (Oro Valley, AZ), Oct 30, 2020">2:26.84</span></div><div class="sr-c sr-cb"><span class="visually-hidden">Senior: </span><span class="sr-t" title="TYR HS Classic, Sep 25, 2021">2:24.45</span><span class=visually-hidden> (career best)</span><span class="sr-mark sr-green" title="#10 fastest ever as a senior">#10 Sr.</span></div></div><div class="sr-er-d"><span class="sr-drop">&minus;2.39s</span><span class="sr-drop-p">1.6% since Jr.</span></div><div class="sr-er-v"><p class="sr-when-i">Jr. SQ  @ CDO (Oro Valley, AZ), Oct 30, 2020 &middot; Sr. TYR HS Classic, Sep 25, 2021</p></div></div><div class="sr-er"><div class="sr-er-n"><span class="sr-ev-n">50 Free</span></div><div class="sr-er-c"><div class="sr-c sr-none"><span class="visually-hidden">Freshman: </span><span title="No freshman time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c sr-none"><span class="visually-hidden">Sophomore: </span><span title="No sophomore time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c sr-none"><span class="visually-hidden">Junior: </span><span title="No junior time in our files">&ndash;</span><span class="visually-hidden">no time in our files</span></div><div class="sr-c sr-cb"><span class="visually-hidden">Senior: </span><span class="sr-t" title="AIA  D-III Girls State, Nov 6, 2021">27.66</span><span class=visually-hidden> (career best)</span><span class="sr-mark sr-green" title="#10 fastest ever as a senior">#10 Sr.</span></div></div><div class="sr-er-d"></div><div class="sr-er-v"><p class="sr-when-i">Sr. AIA  D-III Girls State, Nov 6, 2021</p></div></div></div></section><section class="sr-sub" data-sec="rec"><h4 class="sr-h4 sr-sec-h" id="shaye-sulger-rec"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>Records &amp; rankings<a class="sr-sec-link" href="#shaye-sulger-rec" aria-label="Link to Shaye Sulger: Records &amp; rankings"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></a></h4><h5 class="sr-h5">All-time Top 10</h5><ul class="sr-list"><li><span class="sr-chip">#9 all-time</span> 100 Backstroke <span class="sr-t">1:07.64</span></li></ul><h5 class="sr-h5">Class Top 10</h5><ul class="sr-list"><li><span class="sr-chip sr-quiet">#8 junior</span> 100 Backstroke <span class="sr-t">1:11.40</span></li><li><span class="sr-chip sr-quiet">#8 senior</span> 100 Backstroke <span class="sr-t">1:07.64</span></li><li><span class="sr-chip sr-quiet">#10 senior</span> 50 Freestyle <span class="sr-t">27.66</span></li><li><span class="sr-chip sr-quiet">#10 senior</span> 200 Freestyle <span class="sr-t">2:24.45</span></li></ul></section><section class="sr-sub" data-sec="relay"><h4 class="sr-h4 sr-sec-h" id="shaye-sulger-relay"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="7" r="2.5"/><path d="M3 20c0-3 2-5 4-5s4 2 4 5M13 20c0-3 2-5 4-5s4 2 4 5"/></svg>Relays <span class=sr-count>3 on the all-time lists</span><a class="sr-sec-link" href="#shaye-sulger-relay" aria-label="Link to Shaye Sulger: Relays"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></a></h4><p class="sr-note">Each relay&rsquo;s best place on the team&rsquo;s all-time lists.</p><h5 class="sr-h5">On the all-time relay lists</h5><ul class="sr-list"><li><span class="sr-chip">#6 all-time</span> 200 Free Relay <span class="sr-t">1:46.46</span><span class="sr-src">with Maggie Colombo, Natalie Armstrong and Paisley White</span><span class="sr-src">AIA D-III Girls State, Nov 6, 2021 &middot; on 2 of the list&rsquo;s times</span></li><li><span class="sr-chip">#7 all-time</span> 400 Free Relay <span class="sr-t">3:58.96</span><span class="sr-src">with Maggie Colombo, Brianne Foley and Natalie Armstrong</span><span class="sr-src">AIA D-III Girls State, Nov 6, 2021 &middot; on 2 of the list&rsquo;s times</span></li><li><span class="sr-chip">#9 all-time</span> 200 Medley Relay <span class="sr-t">1:56.96</span><span class="sr-src">with Lainie Radomsky, Sydney Hagerman and Alexandra Foley</span><span class="sr-src">TYR HS Classic, Sep 25, 2021</span></li></ul></section></div></details>
+</article></div></section>
+  <section class="sr-about"><h2 class="sr-h2">About this page</h2><p>Career swims come from each season&rsquo;s team Top 10 lists. A swim that did not make its season&rsquo;s Top 10 is not in our files, so a missing time is a gap in our records, not in a swimmer&rsquo;s career.</p> <p>State places, relay lineups and team finishes come from the official meet results. We do not yet have official results for the 2018, 2019, 2020 and 2021 State meets, so State swims from those years are not on this page.</p> <p>This class&rsquo;s list of seniors is taken from swimmers listed as seniors on that season&rsquo;s Top 10 lists; a senior who never made a Top 10 list is missing from this page. Corrections are welcome.</p><dl class="sr-legend"><dt>School record</dt><dd>fastest ever by a Tanque Verde swimmer.</dd><dt>Class record</dt><dd>fastest ever by a Tanque Verde freshman, sophomore, junior or senior.</dd><dt>All-time Top 10</dt><dd>one of the ten fastest Tanque Verde swimmers ever in the event.</dd><dt>Class Top 10</dt><dd>among the ten fastest ever in that grade (e.g. &ldquo;#4 junior&rdquo;).</dd><dt>Career best</dt><dd>the swimmer&rsquo;s fastest time in our files.</dd></dl></section>
+  <div class="sr-others dropup"><button class="btn sr-others-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><svg class="sr-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></svg> Other classes</button><ul class="dropdown-menu dropdown-menu-scroll"><li><a class="dropdown-item" href="/seniors/class-of-2027.html">Class of 2027</a></li><li><a class="dropdown-item" href="/seniors/class-of-2026.html">Class of 2026</a></li><li><a class="dropdown-item" href="/seniors/class-of-2025.html">Class of 2025</a></li><li><a class="dropdown-item" href="/seniors/class-of-2024.html">Class of 2024</a></li><li><a class="dropdown-item" href="/seniors/class-of-2023.html">Class of 2023</a></li><li><a class="dropdown-item" href="/seniors/class-of-2021.html">Class of 2021</a></li><li><a class="dropdown-item" href="/seniors/class-of-2020.html">Class of 2020</a></li><li><a class="dropdown-item" href="/seniors/class-of-2019.html">Class of 2019</a></li></ul></div>
+</div>
+</div><script>
+(function(){
+  function openFor(h){var t=h&&h.length>1&&document.getElementById(decodeURIComponent(h.slice(1)));if(!t)return;
+    var d=t.classList.contains('sr-card')?t.querySelector('details.sr-more'):t.closest('details.sr-more');
+    if(d&&!d.open)d.open=true;t.scrollIntoView();}
+  function mine(id){var h=location.hash;return h==='#'+id||h.indexOf('#'+id+'-')===0;}
+  // Opening a card's career section puts the card in the address bar, so the
+  // open card can be bookmarked or shared; closing it takes it back out.
+  document.querySelectorAll('details.sr-more').forEach(function(d){d.addEventListener('toggle',function(){
+    var id=d.closest('.sr-card').id;
+    if(d.open&&!mine(id))history.replaceState(null,'','#'+id);
+    else if(!d.open&&mine(id))history.replaceState(null,'',location.pathname+location.search);});});
+  window.addEventListener('hashchange',function(){openFor(location.hash)});openFor(location.hash);
+  window.addEventListener('load',function(){openFor(location.hash)});
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;
+    var card=en.target.closest('.sr-card');card.querySelectorAll('.sr-secnav a').forEach(function(a){
+      a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.querySelector('.sr-sec-h').id);});});},
+    {rootMargin:'-45% 0px -50% 0px'});
+  document.querySelectorAll('.sr-sub').forEach(function(s){io.observe(s)});
+})();
+</script>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container text-center">
+            <div class="disclaimer mb-3">
+                <small class="text-muted">
+                    Results compiled from meets published on <a href="https://azpreps365.com" target="_blank">AZPreps365</a> 
+                    and <a href="https://maxpreps.com" target="_blank">MaxPreps</a> with limited data availability — 
+                    not necessarily a complete compilation of all records. 
+                    Contact <a href="mailto:aaryno@gmail.com">aaryno@gmail.com</a> with additional sources, errors, or corrections.
+                </small>
+            </div>
+            <p class="mb-2">&copy; 2026 Tanque Verde High School Swimming</p>
+            <p class="mb-0">
+                <small>
+                    Generated on November 09, 2026 | 
+                    <a href="https://github.com/aaryno/tanque-verde-swim">View on GitHub</a>
+                </small>
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

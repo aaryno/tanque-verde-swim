@@ -12,7 +12,7 @@ import json
 import sys
 from pathlib import Path as _P
 sys.path.insert(0, str(_P(__file__).resolve().parent))
-from generate_senior_page import senior_href  # noqa: E402
+from generate_senior_page import senior_href, seniors_nav_item  # noqa: E402
 import re
 import html as html_lib
 import sys
@@ -332,9 +332,7 @@ def generate_nav_html():
                 <li class="nav-item">
                     <a class="nav-link" href="/records/boys-relays.html" id="nav-relays" title="Relay Records">🤝<span class="d-none d-md-inline ms-1">Relays</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="''' + senior_href() + '''" id="nav-seniors" title="Seniors">🎓<span class="d-none d-md-inline ms-1">Seniors</span></a>
-                </li>
+''' + seniors_nav_item(16) + '''
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="nav-season-top10" title="Season Top 10">📅<span class="d-none d-md-inline ms-1">Top 10 by Year</span></a>
                     <ul class="dropdown-menu dropdown-menu-scroll">

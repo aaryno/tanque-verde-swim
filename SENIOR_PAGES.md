@@ -110,11 +110,21 @@ that season's Top 10 lists, and the page says so.
 
 ## Every class
 
-`generate_website.py` builds a page for every class from `FIRST_CLASS` (2024, in
+`generate_website.py` builds a page for every class from `FIRST_CLASS` (2019, in
 `generate_senior_page.py`) through the current seniors, and
 `check_senior_page.py` guards each one. Classes 2024-2026 were added on
 2026-11-08 (Aaryn: "Can we do this for the class of 2026, 2025, 2024, as
-well?"), replacing the hand-built Class of 2026 page.
+well?"), replacing the hand-built Class of 2026 page; Classes 2019-2023 on
+2026-11-09 (Aaryn: "let's go back and fill in all the years").
+
+Why 2019: before the 2018-19 season the Top 10 lists seldom carry a grade, so a
+roster read from SR rows comes out empty (Classes 2009-2011) or one-sided (no
+boys in 2015 or 2018) -- a gap in the files, not an empty class. Earlier
+classes need another roster source first.
+
+Navigation: the quick nav's Seniors item is a menu of every class
+(`seniors_nav_item()`, shared by the three page generators), and each senior
+page ends with an "Other classes" menu.
 
 The coverage note names the State meets with official results and the ones
 without. A State relay on the relay lists must match the official lineup
@@ -122,5 +132,6 @@ without. A State relay on the relay lists must match the official lineup
 
 ## Open
 
-- Official results for the 2020 and 2021 State meets (Classes of 2024 and
-  2025). 2021 is on Meet Mobile and SwimCloud only; 2020 was a virtual meet.
+- Official results for the 2015-2021 State meets (Classes of 2019-2025); only
+  2022 on are harvested.
+- A roster source for the Classes of 2008-2018. 2021 is on Meet Mobile and SwimCloud only; 2020 was a virtual meet.

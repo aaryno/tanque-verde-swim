@@ -2574,7 +2574,7 @@ h2[id], h3[id], .event-heading[id] {
    ========================================== */
 .page-senior, .page-champ { --sr-gold: #b8892b; --sr-gold-bg: #fbf5e6; --sr-ink: #1d2a22; --sr-muted: #5d6b62; --sr-line: #dfe7e1; background: #f6f8f6; }
 .page-senior .page-header, .page-champ .page-header { display: none; }
-.page-senior .quick-nav, .page-champ .quick-nav { position: static; }
+.page-senior .quick-nav, .page-champ .quick-nav { position: relative; }  /* not sticky, but still above the hero so menus drop over it */
 @media (max-width: 576px) {
   .page-senior .quick-nav .nav-link, .page-champ .quick-nav .nav-link { font-size: 1.05rem; padding: 0.15rem 0.4rem; }
   .page-senior .quick-nav .nav-logo, .page-champ .quick-nav .nav-logo { height: 18px; }
@@ -2921,3 +2921,9 @@ li.ch-gold .ch-r-pl { color: #7a5a14; font-weight: 700; } li.ch-silver .ch-r-pl 
 .sr-legend dt { font-weight: 700; margin: 0; }
 .sr-legend dd { margin: 0; }
 @media (max-width: 480px) { .sr-legend { grid-template-columns: minmax(5.5rem, max-content) 1fr; gap: .4rem .7rem; } }
+/* "Other classes" drop-up at the foot of a senior page */
+.sr-others { margin-top: 1.2rem; }
+.sr-others .sr-others-btn { --bs-btn-bg: var(--tvhs-primary); --bs-btn-color: #fff; --bs-btn-border-color: var(--tvhs-primary);
+  --bs-btn-hover-bg: var(--tvhs-dark-green); --bs-btn-hover-color: #fff; --bs-btn-hover-border-color: var(--tvhs-dark-green);
+  --bs-btn-active-bg: var(--tvhs-dark-green); --bs-btn-active-color: #fff; --bs-btn-active-border-color: var(--tvhs-dark-green);
+  font-size: .9rem; border-radius: 8px; padding: .4rem .9rem; display: inline-flex; gap: .4rem; align-items: center; }
