@@ -2916,3 +2916,8 @@ li.ch-gold .ch-r-pl { color: #7a5a14; font-weight: 700; } li.ch-silver .ch-r-pl 
 .ch-hawk-link { color: #9aa9a0; display: inline-flex; }
 .ch-hawk-link .sr-ico { width: 1rem; height: 1rem; }
 .sr-card, .sr-sec-h, .ch-hawk { scroll-margin-top: 4.5rem; }
+/* Legends: one term per line, meanings aligned (senior page, State page) */
+.sr-legend { display: grid; grid-template-columns: max-content 1fr; gap: .35rem 1rem; margin: .8rem 0 1rem; }
+.sr-legend dt { font-weight: 700; margin: 0; }
+.sr-legend dd { margin: 0; }
+@media (max-width: 480px) { .sr-legend { grid-template-columns: minmax(5.5rem, max-content) 1fr; gap: .4rem .7rem; } }

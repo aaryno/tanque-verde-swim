@@ -791,9 +791,11 @@ def build_meet(meet, meets, recs, season, project_root):
                        f"here are corrected ({esc(s['date_shift_source'])}).</p>")
         if sched.get('note') and 'enue' in sched['note']:
             source += f"<p>Venue: {where}. {esc(sched['note'].split('. ', 1)[-1])}</p>"
-        source += ('<p><strong>Record honors</strong> come from the team&rsquo;s record books; a school record and the '
-                   'class record set by the same swim are counted separately. <strong>Season best</strong>: faster than '
-                   'the swimmer&rsquo;s earlier swims this season in our results. Places are the official ones.</p>')
+        source += ('<dl class="sr-legend">'
+                   '<dt>Record honors</dt><dd>from the team&rsquo;s record books; a school record and the class record '
+                   'set by the same swim are counted separately.</dd>'
+                   '<dt>Season best</dt><dd>faster than the swimmer&rsquo;s earlier swims this season in our results.</dd>'
+                   '<dt>Places</dt><dd>the official ones.</dd></dl>')
         crumbs = (f'<a href="/#schedule">&larr; {esc(season["season"])} schedule</a><span class="meet-nav">{prev_a}{next_a}</span>')
         content = championship_page.page(meet, recs, rrecs, sb, alltime, prior, prior_year,
                                          long_date(meet['date'], meet.get('date_end')), sched.get('venue', ''),

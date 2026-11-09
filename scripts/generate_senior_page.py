@@ -459,12 +459,17 @@ def coverage(c):
         parts.append("This class&rsquo;s list of seniors is taken from swimmers listed as seniors on that season&rsquo;s "
                      "Top 10 lists; a senior who never made a Top 10 list is missing from this page. "
                      "Corrections are welcome.")
-    legend = ("<strong>School record</strong>: fastest ever by a Tanque Verde swimmer. "
-              "<strong>Class record</strong>: fastest ever by a Tanque Verde freshman, sophomore, junior or senior. "
-              "<strong>All-time Top 10</strong>: one of the ten fastest Tanque Verde swimmers ever in the event. "
-              "<strong>Class Top 10</strong> (e.g. &ldquo;#4 junior&rdquo;): among the ten fastest ever in that grade. "
-              "<strong>Career best</strong>: the swimmer&rsquo;s fastest time in our files.")
-    return " ".join(f"<p>{p}</p>" for p in parts) + f"<p>{legend}</p>"
+    legend = [("School record", "fastest ever by a Tanque Verde swimmer."),
+              ("Class record", "fastest ever by a Tanque Verde freshman, sophomore, junior or senior."),
+              ("All-time Top 10", "one of the ten fastest Tanque Verde swimmers ever in the event."),
+              ("Class Top 10", "among the ten fastest ever in that grade (e.g. &ldquo;#4 junior&rdquo;)."),
+              ("Career best", "the swimmer&rsquo;s fastest time in our files.")]
+    return " ".join(f"<p>{p}</p>" for p in parts) + legend_dl(legend)
+
+
+def legend_dl(items):
+    """Terms and their meanings, one per line, the meanings lined up."""
+    return '<dl class="sr-legend">' + "".join(f"<dt>{t}</dt><dd>{d}</dd>" for t, d in items) + "</dl>"
 
 
 def page(c):
