@@ -134,7 +134,7 @@ def meet_docs(season):
 
 def senior(name, gender, year, ctx):
     """One senior's facts. ctx carries the per-gender lists, loaded once."""
-    s = {"name": name, "gender": gender, "slug": re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-"),
+    s = {"name": " ".join(name.split()), "gender": gender, "slug": re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-"),
          "warnings": []}
     expected = dict(career_seasons(year))
 

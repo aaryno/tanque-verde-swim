@@ -21,14 +21,18 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from class_top10 import _tables  # noqa: E402
 from senior_class_data import senior_class, roster  # noqa: E402
-from generate_senior_page import senior_class_year  # noqa: E402
+from generate_senior_page import senior_class_year, class_years  # noqa: E402
 
 REPO = Path(__file__).resolve().parent.parent
 
 
 def main():
-    year = senior_class_year()
+    return max(check(y) for y in class_years())
+
+
+def check(year):
     names, _ = roster(year)
+    names = {g: [" ".join(n.split()) for n in v] for g, v in names.items()}
     c = senior_class(year)
     page = (REPO / "docs" / "seniors" / f"class-of-{year}.html").read_text()
     bad = []
@@ -41,7 +45,7 @@ def main():
             if not s["highlights"] and not s["events"]:
                 bad.append(f"{s['name']}: empty card")
             held = sum(1 for _, h, rows in _tables(REPO / "records" / f"records-{g}.md") if "Grade" in h
-                       for r in rows if r[h.index("Athlete")] == s["name"])
+                       for r in rows if " ".join(r[h.index("Athlete")].split()) == s["name"])
             if held != len(s["records"]):
                 bad.append(f"{s['name']}: records file has {held} record rows, card counts {len(s['records'])}")
     if page.count('class="sr-card"') != sum(len(names[g]) for g in names):
@@ -50,7 +54,7 @@ def main():
         print("⛔", b)
     if bad:
         return 1
-    print(f"senior page: {sum(len(c[g]) for g in ('boys', 'girls'))} seniors, every card has content, records counted independently")
+    print(f"senior page {year}: {sum(len(c[g]) for g in ('boys', 'girls'))} seniors, every card has content, records counted independently")
     return 0
 
 

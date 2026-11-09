@@ -37,7 +37,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from class_top10 import GRADES, seconds  # noqa: E402
-from senior_class_data import senior_class, GRADE_NAME, ordinal, and_list  # noqa: E402
+from senior_class_data import senior_class, career_seasons, GRADE_NAME, ordinal, and_list  # noqa: E402
 
 REPO = Path(__file__).resolve().parent.parent
 e = html.escape
@@ -51,6 +51,14 @@ def current_season():
 def senior_class_year():
     """2026-27 -> 2027. Used by the nav so Seniors always points at this year's class."""
     return int("20" + current_season()["season"].split("-")[1])
+
+
+FIRST_CLASS = 2024  # earliest class with a generated page (Aaryn, 2026-11-08)
+
+
+def class_years():
+    """Every class that gets a page: FIRST_CLASS through the current seniors."""
+    return list(range(FIRST_CLASS, senior_class_year() + 1))
 
 
 def senior_href():
@@ -434,6 +442,23 @@ def class_stats(c):
     return [(n, one if n == 1 else many) for n, one, many in stats if n]
 
 
+def state_coverage(c, meets):
+    """Which of the class's four State meets the page has official results for,
+    and which it does not -- a missing year is a gap in our files."""
+    years = [int(season[:4]) for season, _ in career_seasons(c["year"])]
+    have, missing = [], []
+    for y in years:
+        posted = any("state" in m.lower() for m in meets) and y == int(c["season"][:4])
+        (have if posted or (REPO / "data" / "state_history" / f"{y}.json").exists() else missing).append(y)
+    out = ("State places, relay lineups and team finishes come from the official meet results"
+           + (f" for {and_list([str(y) for y in have])}" if have else "") + ".")
+    if missing:
+        out += (f" We do not yet have official results for the {and_list([str(y) for y in missing])} State "
+                f"meet{'s' if len(missing) > 1 else ''}, so State swims from "
+                f"{'those years' if len(missing) > 1 else 'that year'} are not on this page.")
+    return out
+
+
 def coverage(c):
     season, meets = c["season"], c["season_meets"]
     first = int(season[:4]) - 3
@@ -447,14 +472,12 @@ def coverage(c):
                      "come from each season&rsquo;s team Top 10 lists. "
                      "A swim that did not make its season&rsquo;s Top 10 is not in our files, so a missing time is a gap "
                      "in our records, not in a swimmer&rsquo;s career.")
-        hist = sorted(p.stem for p in (REPO / "data" / "state_history").glob("*.json"))
-        parts.append("State places, relay lineups and team finishes come from the official meet results: "
-                     f"the posted {e(and_list([m for m in meets if 'state' in m.lower()]) or 'State')} results"
-                     + (f", and the AIA results for {and_list(hist)}" if hist else "") + ".")
+        parts.append(state_coverage(c, meets))
     else:
         parts.append("Career swims come from each season&rsquo;s team Top 10 lists. A swim that did not make its "
                      "season&rsquo;s Top 10 is not in our files, so a missing time is a gap in our records, not in a "
-                     "swimmer&rsquo;s career. State places are not in our files for this class.")
+                     "swimmer&rsquo;s career.")
+        parts.append(state_coverage(c, meets))
     if c["roster_source"] == "top10":
         parts.append("This class&rsquo;s list of seniors is taken from swimmers listed as seniors on that season&rsquo;s "
                      "Top 10 lists; a senior who never made a Top 10 list is missing from this page. "
@@ -487,8 +510,14 @@ def page(c):
         if c[g]:
             sections.append(f'<section class="sr-sec"><h2 class="sr-h2">{label} <span>{len(c[g])}</span></h2>'
                             f'<div class="sr-grid">{"".join(card(s, year) for s in c[g])}</div></section>')
-    others = sorted(int(p.stem.split("-")[-1]) for p in (REPO / "docs" / "seniors").glob("class-of-*.html"))
-    others = [y for y in others if y != year]
+    hero_msg = (f"Congratulations to our {tw} graduating seniors. Thank you for every race, every relay "
+                "and every early practice &mdash; and for the team you leave behind."
+                if year >= senior_class_year() else
+                f"Thank you to the {tw} seniors of the Class of {year} for every race, every relay and every "
+                "early practice &mdash; and for the team you left behind.")
+    others = [y for y in sorted(set(class_years()) | {int(p.stem.split("-")[-1])
+                                                     for p in (REPO / "docs" / "seniors").glob("class-of-*.html")},
+                                reverse=True) if y != year]
     other_links = " &middot; ".join(f'<a href="/seniors/class-of-{y}.html">Class of {y}</a>' for y in others)
     return f'''<div class="sr-page">
 <section class="sr-hero">
@@ -496,8 +525,7 @@ def page(c):
     <img src="/images/hawk-logo.svg" alt="" class="sr-hero-logo">
     <div class="sr-hero-eyebrow">{icon("cap", "sr-ico")}Tanque Verde Swimming</div>
     <h1 class="sr-hero-title">Senior Class of {year}</h1>
-    <p class="sr-hero-msg">Congratulations to our {tw} graduating seniors. Thank you for every race, every relay
-    and every early practice &mdash; and for the team you leave behind.</p>
+    <p class="sr-hero-msg">{hero_msg}</p>
     <p class="sr-hero-count"><span>{total} seniors</span><span>{nb} boys</span><span>{ng} girls</span></p>
     {f'<div class="sr-stats">{stats}</div>' if stats else ''}
   </div>

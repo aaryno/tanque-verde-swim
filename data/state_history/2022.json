@@ -1,0 +1,442 @@
+{
+ "year": 2022,
+ "meet": "2022 AIA Division 3 State Championship",
+ "date": "2022-11-05",
+ "source": {
+  "urls": [
+   "https://aiaonline.org/files/17935/2022-swimming-and-diving-divisions-i-iii-state-championships-results.pdf"
+  ],
+  "files": [
+   {
+    "file": "aia-2022.pdf",
+    "sha256": "2cf9bf5e547cb783cdae3b7fd09c7ca4765e05f12768b7d2711b39ab65f852d7"
+   }
+  ]
+ },
+ "rounds": {
+  "A": "championship final",
+  "B": "consolation final",
+  "P": "prelims only",
+  "TF": "timed final"
+ },
+ "team_scores": {
+  "girls": {
+   "place": 10,
+   "points": 92
+  },
+  "boys": {
+   "place": 6,
+   "points": 122
+  }
+ },
+ "swims": [
+  {
+   "gender": "boys",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "B",
+   "place": 14,
+   "time": "1:54.12",
+   "swimmers": [
+    "Stephen Moreland",
+    "Tannor Soeder",
+    "Nolan Radomsky",
+    "Alejandro Alvarez"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "P",
+   "place": 13,
+   "time": "1:55.38",
+   "swimmers": [
+    "Stephen Moreland",
+    "Tannor Soeder",
+    "Nolan Radomsky",
+    "Alejandro Alvarez"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "B",
+   "place": 15,
+   "time": "2:06.50",
+   "swimmers": [
+    "Summer Cugini",
+    "Madeline Barnard",
+    "Brianne Foley",
+    "Ryann Lightcap"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Medley Relay",
+   "relay": true,
+   "round": "P",
+   "place": 16,
+   "time": "2:07.62",
+   "swimmers": [
+    "Summer Cugini",
+    "Madeline Barnard",
+    "Brianne Foley",
+    "Ryann Lightcap"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 5,
+   "athlete": "Nicholas Cusson",
+   "grade": "11",
+   "time": "1:44.74"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 3,
+   "athlete": "Nicholas Cusson",
+   "grade": "11",
+   "time": "1:43.60"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 13,
+   "athlete": "Natalie Armstrong",
+   "grade": "11",
+   "time": "2:09.05"
+  },
+  {
+   "gender": "girls",
+   "event": "200 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 15,
+   "athlete": "Natalie Armstrong",
+   "grade": "11",
+   "time": "2:08.63"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Individual Medley",
+   "relay": false,
+   "round": "P",
+   "place": 27,
+   "athlete": "Nolan Radomsky",
+   "grade": "11",
+   "time": "2:26.37"
+  },
+  {
+   "gender": "boys",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 5,
+   "athlete": "Samuel Stott",
+   "grade": "12",
+   "time": "22.13"
+  },
+  {
+   "gender": "boys",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 4,
+   "athlete": "Samuel Stott",
+   "grade": "12",
+   "time": "22.27"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 13,
+   "athlete": "Maggie Colombo",
+   "grade": "12",
+   "time": "26.29"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 14,
+   "athlete": "Brianne Foley",
+   "grade": "10",
+   "time": "26.30"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 10,
+   "athlete": "Maggie Colombo",
+   "grade": "12",
+   "time": "26.05"
+  },
+  {
+   "gender": "girls",
+   "event": "50 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 14,
+   "athlete": "Brianne Foley",
+   "grade": "10",
+   "time": "26.34"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "B",
+   "place": 9,
+   "athlete": "Paisley White",
+   "grade": "12",
+   "time": "1:04.42"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Butterfly",
+   "relay": false,
+   "round": "P",
+   "place": 9,
+   "athlete": "Paisley White",
+   "grade": "12",
+   "time": "1:04.47"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "A",
+   "place": 3,
+   "athlete": "Samuel Stott",
+   "grade": "12",
+   "time": "48.20"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 3,
+   "athlete": "Samuel Stott",
+   "grade": "12",
+   "time": "48.45"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 11,
+   "athlete": "Maggie Colombo",
+   "grade": "12",
+   "time": "57.32"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "B",
+   "place": 15,
+   "athlete": "Natalie Armstrong",
+   "grade": "11",
+   "time": "58.23"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 11,
+   "athlete": "Maggie Colombo",
+   "grade": "12",
+   "time": "57.40"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Freestyle",
+   "relay": false,
+   "round": "P",
+   "place": 14,
+   "athlete": "Natalie Armstrong",
+   "grade": "11",
+   "time": "58.78"
+  },
+  {
+   "gender": "boys",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 6,
+   "time": "1:33.90",
+   "swimmers": [
+    "Nicholas Cusson",
+    "Tannor Soeder",
+    "Nolan Radomsky",
+    "Samuel Stott"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": 7,
+   "time": "1:34.88",
+   "swimmers": [
+    "Nicholas Cusson",
+    "Tannor Soeder",
+    "Nolan Radomsky",
+    "Samuel Stott"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 4,
+   "time": "1:43.75",
+   "swimmers": [
+    "Maggie Colombo",
+    "Brianne Foley",
+    "Natalie Armstrong",
+    "Paisley White"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "200 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": 3,
+   "time": "1:43.71",
+   "swimmers": [
+    "Natalie Armstrong",
+    "Brianne Foley",
+    "Paisley White",
+    "Maggie Colombo"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "A",
+   "place": 1,
+   "athlete": "Nicholas Cusson",
+   "grade": "11",
+   "time": "53.10"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 1,
+   "athlete": "Nicholas Cusson",
+   "grade": "11",
+   "time": "52.83"
+  },
+  {
+   "gender": "boys",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 27,
+   "athlete": "Stephen Moreland",
+   "grade": "10",
+   "time": "1:05.82"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "B",
+   "place": 13,
+   "athlete": "Paisley White",
+   "grade": "12",
+   "time": "1:06.54"
+  },
+  {
+   "gender": "girls",
+   "event": "100 Backstroke",
+   "relay": false,
+   "round": "P",
+   "place": 10,
+   "athlete": "Paisley White",
+   "grade": "12",
+   "time": "1:04.81"
+  },
+  {
+   "gender": "boys",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 6,
+   "time": "3:27.09",
+   "swimmers": [
+    "Nicholas Cusson",
+    "Alejandro Alvarez",
+    "Nolan Radomsky",
+    "Samuel Stott"
+   ]
+  },
+  {
+   "gender": "boys",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": 5,
+   "time": "3:26.85",
+   "swimmers": [
+    "Nicholas Cusson",
+    "Alejandro Alvarez",
+    "Nolan Radomsky",
+    "Samuel Stott"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "A",
+   "place": 6,
+   "time": "3:53.88",
+   "swimmers": [
+    "Maggie Colombo",
+    "Brianne Foley",
+    "Natalie Armstrong",
+    "Paisley White"
+   ]
+  },
+  {
+   "gender": "girls",
+   "event": "400 Free Relay",
+   "relay": true,
+   "round": "P",
+   "place": 6,
+   "time": "3:55.11",
+   "swimmers": [
+    "Natalie Armstrong",
+    "Brianne Foley",
+    "Maggie Colombo",
+    "Paisley White"
+   ]
+  }
+ ]
+}

@@ -29,7 +29,7 @@
 | Rank | Time | Participants | Date | Meet |
 |-----:|-----:|--------------|------|------|
 | **1** | **01:43.71** | **Maggie Colombo, Paisley White, Natalie Armstrong, Brianne Foley** | **Nov 05, 2022** | **2022 D-3 AIA Girls State Championship** |
-| 2 | 01:43.75 | Brianne Foley, Ryann Lightcap, Maggie Colombo, Natalie Armstrong | Nov 05, 2022 | 2022 D-3 AIA Girls State Championship |
+| 2 | 01:43.75 | Maggie Colombo, Brianne Foley, Natalie Armstrong, Paisley White | Nov 05, 2022 | 2022 D-3 AIA Girls State Championship |
 | 3 | 01:44.10 | Paisley White, Maggie Colombo, Sarynn Patterson, Isabelle Sansom | Nov 07, 2019 | 2019 D-3 AIA State Championship |
 | 4 | 01:44.97 | Grace Davis, Ryann Lightcap, Brianne Foley, Natalie Armstrong | Oct 21, 2023 | Pecan Classic |
 | 5 | 01:45.53 | Ella Bissmeyer, Hadley Cusson, Stella Eftekhar, Rachel Anderson | Nov 07, 2026 | AIA Division III State Championship |

@@ -1059,10 +1059,16 @@ def main():
                                        f"{gender.title()} {name} Top 10",
                                        notice=class_notice.format(grade=name.lower()))
 
+    import check_state_relays
+    if check_state_relays.main():
+        sys.exit("Refusing: a State relay on the relay lists disagrees with the official results "
+                 "(scripts/check_state_relays.py).")
+
     # Current senior class page; the class year follows the newest season file.
     print("\n\U0001F393 Generating senior class page...")
     import generate_senior_page
-    generate_senior_page.build()
+    for y in generate_senior_page.class_years():
+        generate_senior_page.build(y)
     import check_senior_page
     if check_senior_page.main():
         sys.exit("Refusing: the senior class page failed its check (scripts/check_senior_page.py).")
